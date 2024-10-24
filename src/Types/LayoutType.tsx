@@ -14,6 +14,4 @@ export interface MenuItemtype {
 export interface MenuListType {
   menu: MenuItemtype[] | undefined;
   level: number;
-  toggleSection: (title: string) => void;
-  openSections: Record<string, boolean>;
 }

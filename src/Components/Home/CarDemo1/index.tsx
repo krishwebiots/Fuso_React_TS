@@ -1,9 +1,12 @@
-import React from 'react'
+import { Fragment } from "react";
+import CarHomeSection from "./CarHomeSection";
 
 const CarDemo1Container = () => {
   return (
-    <div>CarDemo1Container</div>
-  )
-}
+    <Fragment>
+      <CarHomeSection />
+    </Fragment>
+  );
+};
 
-export default CarDemo1Container
+export default CarDemo1Container;

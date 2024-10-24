@@ -1,20 +1,22 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row } from "reactstrap";
 import { Href } from "../../../Constants/Constants";
 import { MenuItem } from "../../../Data/Layout/Header";
+import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
+import { setCartData } from "../../../ReduxToolkit/Reducers/Layout/LayoutReducers";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, Image } from "../../../Utils";
 import SidebarSubMenu from "./SidebarSubMenu";
-import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { setCartData } from "../../../ReduxToolkit/Reducers/Layout/LayoutReducers";
+import { useTranslation } from "react-i18next";
 
 const Sidebar = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
   const { sidebarOpen } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
-  const toggleSection = (title: string) => setOpenSections((prevState) => ({ ...prevState, [title]: !prevState[title] }));
+  const toggleSection = (title: string) => setOpenSections((prevState) => ({ [title]: !prevState[title] }));
   return (
     <nav className={`sidebar-nav ${sidebarOpen ? "open" : ""}`}>
       <div className="menu-header">
@@ -27,8 +29,8 @@ const Sidebar = () => {
         {MenuItem &&
           MenuItem.map((mainMenu, index) => (
             <li className={`expand-btn ${!mainMenu.megaMenuImage && !mainMenu.megaMenu ? "dropdown-menus" : ""}`} key={index}>
-              <Link to={Href} className={`menu-item ${openSections[mainMenu.title] ? "open" :""}`} onClick={() => toggleSection(mainMenu.title)}>
-                {mainMenu.title}
+              <Link to={Href} className={`menu-item ${openSections[mainMenu.title] ? "open" : ""}`} onClick={() => toggleSection(mainMenu.title)}>
+                {t(mainMenu.title)}
               </Link>
               {mainMenu.megaMenuImage && (
                 <div className="mega-menu sample">
@@ -41,33 +43,32 @@ const Sidebar = () => {
                               <Image src={dynamicImage(child.image)} alt="demo-1" />
                             </div>
                           </div>
-                          <h6>{child.title}</h6>
+                          <h6>{t(child.title)}</h6>
                         </Link>
                       </Col>
                     ))}
                   </Row>
                 </div>
               )}
-              {
-                !mainMenu.megaMenuImage && !mainMenu.megaMenu &&
-              (<ul className="dropdown-megamenu sample link-list">
-                <SidebarSubMenu menu={mainMenu.children} level={0} toggleSection={toggleSection} openSections={openSections}/>
-              </ul>)
-              }
+              {!mainMenu.megaMenuImage && !mainMenu.megaMenu && (
+                <ul className="dropdown-megamenu sample link-list">
+                  <SidebarSubMenu menu={mainMenu.children} level={0} />
+                </ul>
+              )}
               {mainMenu.megaMenu && (
                 <div className="mega-menu sample">
                   <Row className="row-cols-xxl-5 gy-xl-4">
                     {mainMenu.children.map((child, index) => (
                       <div className="col" key={index}>
                         {child.section &&
-                          child.section.map((item,index) => (
+                          child.section.map((item, index) => (
                             <div key={index} className="link-section">
-                              <h5 className="menu-title">{item.title}</h5>
+                              <h5 className="menu-title">{t(item.title)}</h5>
                               <ul className="link-list">
                                 {item.children.map((subChild, subIndex) => (
                                   <li key={subIndex}>
                                     <Link className="menu-link" to={subChild.path ? subChild.path : RouteList.Home.CarDemo1}>
-                                      {subChild.title}
+                                      {t(subChild.title)}
                                     </Link>
                                   </li>
                                 ))}

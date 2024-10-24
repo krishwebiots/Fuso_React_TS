@@ -1002,3 +1002,13 @@ export const MenuItem = [
     ],
   },
 ];
+
+export const AccountData = ["All Rides", "My Account", "Saved Rides", "Privacy", "Searches", "Recommendations", "My Profile"];
+
+export const LanguagesData = [
+  { data: "en", language: "English" },
+  { data: "sp", language: "Spanish" },
+  { data: "fr", language: "French" },
+  { data: "ge", language: "German" },
+  { data: "ko", language: "Korean" },
+];

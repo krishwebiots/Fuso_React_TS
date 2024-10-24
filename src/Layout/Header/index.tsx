@@ -1,39 +1,40 @@
+import { LanguageCircle, ProfileCircle } from "iconsax-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Container } from "reactstrap";
-import { Href } from "../../Constants/Constants";
-import { Cities } from "../../Data/Layout/Header";
-import Sidebar from "./Sidebar";
+import { Href, Language, MyActive, SignOut } from "../../Constants/Constants";
+import { AccountData, Cities, LanguagesData } from "../../Data/Layout/Header";
 import { useAppDispatch, useAppSelector } from "../../ReduxToolkit/Hooks";
 import { setCartData } from "../../ReduxToolkit/Reducers/Layout/LayoutReducers";
+import { RouteList } from "../../Routers/RouteList";
+import { dynamicImage, Image } from "../../Utils";
+import Sidebar from "./Sidebar";
 
 const Header = () => {
   const [selectedCity, setSelectedCity] = useState("Amsterdam");
   const { sidebarOpen } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
+  const { i18n } = useTranslation();
 
   return (
-    <header className="px-0 bg-dark" id="header">
+    <header className="px-0" id="header">
       <Container>
         <div className="header-flex">
           <div className="left-side-header">
-            <a href="#!" className={`toggle ${sidebarOpen ? "open" : ""}`} onClick={() => dispatch(setCartData())}>
+            <a href={Href} className={`toggle ${sidebarOpen ? "open" : ""}`} onClick={() => dispatch(setCartData())}>
               <i className="ri-menu-line" />
             </a>
-            <a href="index.html" className="header-logo">
-              <img src="assets/images/logo/1.png" alt="logo" className="img-fluid" />
-            </a>
+            <Link to={RouteList.Home.CarDemo1} className="header-logo">
+              <Image src={dynamicImage("logo/1.png")} alt="logo" className="img-fluid" />
+            </Link>
             <div className="select-dropdown">
-              <a href="#!" className="select-button">
-                {selectedCity}
-              </a>
+              <a href={Href} className="select-button">{selectedCity}</a>
               <div className="mega-menu-1">
                 <ul className="select-menu">
                   {Cities.map((city) => (
                     <li key={city}>
-                      <a className={`select-item ${city === selectedCity ? "active" : ""}`} href="#!" onClick={() => setSelectedCity(city)}>
-                        {city}
-                      </a>
+                      <a className={`select-item ${city === selectedCity ? "active" : ""}`} href={Href} onClick={() => setSelectedCity(city)}>{city}</a>
                     </li>
                   ))}
                 </ul>
@@ -44,73 +45,43 @@ const Header = () => {
           <div className="right-side-header">
             <div className="icon-side">
               <div className="login-flex onhover-dropdown">
-                <a href="#!" className="login-icon">
-                  <i className="iconsax" data-icon="user-2-circle" />
+                <a href={Href} className="login-icon">
+                  <ProfileCircle />
                   <span>Account</span>
                   <i className="ri-arrow-down-wide-line" />
                 </a>
                 <ul className="login-list onhover-list">
+                  <li className="active-item"><span>{MyActive}</span></li>
+                  {AccountData.map((item, index) => (
+                    <li key={index} className="active-item">
+                      <Link to={RouteList.Pages.Other.UserDashboard}>{item}</Link>
+                      {item === "Searches" && <label>New</label>}
+                    </li>
+                  ))}
                   <li className="active-item">
-                    <span>my active</span>
-                  </li>
-                  <li className="active-item">
-                    <a href="user-dashboard.html">All Rides</a>
-                  </li>
-                  <li className="active-item">
-                    <a href="user-dashboard.html">My Account</a>
-                  </li>
-                  <li className="active-item">
-                    <a href="user-dashboard.html">Saved Rides</a>
-                  </li>
-                  <li className="active-item">
-                    <a href="privacy.html">Privacy</a>
-                  </li>
-                  <li className="active-item">
-                    <a href="user-dashboard.html">Searches</a>
-                    <label>New</label>
-                  </li>
-                  <li className="active-item">
-                    <a href="user-dashboard.html">Recommendations</a>
-                  </li>
-                  <li className="active-item">
-                    <a href="user-dashboard.html">My Profile</a>
-                  </li>
-                  <li className="active-item">
-                    <a href="login1.html" className="btn-solid">
-                      Sign out
-                    </a>
+                    <Link to={RouteList.Pages.Other.Login1} className="btn-solid">{SignOut}</Link>
                   </li>
                 </ul>
               </div>
               <div className="login-flex onhover-dropdown">
-                <a href="#!" className="login-icon">
-                  <i className="iconsax" data-icon="language-circle" />
-                  <span>Language</span>
+                <a href={Href} className="login-icon">
+                  <LanguageCircle />
+                  <span>{Language}</span>
                   <i className="ri-arrow-down-wide-line" />
                 </a>
                 <ul className="active-list onhover-list">
-                  <li className="active-item">
-                    <a href="#!">English</a>
-                  </li>
-                  <li className="active-item">
-                    <a href="#!">Spanish</a>
-                  </li>
-                  <li className="active-item">
-                    <a href="#!">French</a>
-                  </li>
-                  <li className="active-item">
-                    <a href="#!">German</a>
-                  </li>
-                  <li className="active-item">
-                    <a href="#!">Korean</a>
-                  </li>
+                  {LanguagesData.map((item, index) => (
+                    <li className="active-item" key={index} onClick={() => i18n.changeLanguage(item.data)}>
+                      <a href={Href}>{item.language}</a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </Container>
-      <Link to={Href} className="overlay" />
+      <Link to={Href} className={`overlay${sidebarOpen ? " overlay--active" : ""}`} />
     </header>
   );
 };
