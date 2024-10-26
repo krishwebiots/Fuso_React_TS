@@ -1,9 +1,10 @@
 import { Fragment, useState } from "react";
+import { getTrackBackground, Range } from "react-range";
 import { Link } from "react-router-dom";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Input, Nav, NavLink, TabContent, TabPane } from "reactstrap";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { CarRental, Href, Rental } from "../../../Constants/Constants";
+import { CarRental, Href, MAX, MIN, Rental, STEP } from "../../../Constants/Constants";
 import { DropdownData } from "../../../Data/Demo/CradDemo1";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
@@ -12,8 +13,9 @@ const CarHomeSection = () => {
   const [basicTab, setBasicTab] = useState(1);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(Array(DropdownData.length).fill(false));
-  const toggle = (index: number) => setDropdownOpen(dropdownOpen.map((item, i) => (i === index ? !item : item)));
+  const [values, setValues] = useState([20000, 100000]);
 
+  const toggle = (index: number) => setDropdownOpen(dropdownOpen.map((item, i) => (i === index ? !item : item)));
   return (
     <Fragment>
       <div className="car-home-section">
@@ -69,7 +71,9 @@ const CarHomeSection = () => {
                             {dropdownItems &&
                               dropdownItems.map((item, i) =>
                                 typeof item === "string" ? (
-                                  <DropdownItem key={i} href={Href}>{item}</DropdownItem>
+                                  <DropdownItem key={i} href={Href}>
+                                    {item}
+                                  </DropdownItem>
                                 ) : (
                                   <DropdownItem key={i} href={Href}>
                                     <i className={item.icon} />
@@ -80,10 +84,25 @@ const CarHomeSection = () => {
                             {index === 3 && (
                               <DropdownItem href={Href}>
                                 <div className="range-slider">
-                                  <Input type="range" min={0} max={120000} step={1} defaultValue={20000} className="range-slider-input" />
-                                  <Input type="range" min={0} max={120000} step={1} defaultValue={100000} className="range-slider-input" />
-                                  <div className="range-slider-display" />
+                                <Range
+                                  values={values}
+                                  step={STEP}
+                                  min={MIN}
+                                  max={MAX}
+                                  onChange={(values) => setValues(values)}
+                                  renderTrack={({ props, children }) => (
+                                    <div onMouseDown={props.onMouseDown} onTouchStart={props.onTouchStart} className="range-track">
+                                      <output className="range-slider-input">{values[0]}</output>
+                                      <div ref={props.ref} className="range-slider-display" style={{ background: getTrackBackground({ values, colors: ["#ccc", "var(--content-color)", "#ccc"], min: MIN, max: MAX }) }}>
+                                        {children}
+                                      </div>
+                                      <output className="range-slider-input">{values[1]}</output>
+                                    </div>
+                                  )}
+                                  renderThumb={({ props, index }) => <div {...props} key={index} className="price-range-thumb" style={{ ...props.style, backgroundColor: "var(--content-color)" }}></div>}
+                                />
                                 </div>
+
                               </DropdownItem>
                             )}
                           </DropdownMenu>
@@ -91,7 +110,9 @@ const CarHomeSection = () => {
                       </li>
                     ))}
                     <li className="tab-item">
-                      <Link to={RouteList.Car.Grid.Car3Grid} className="btn-solid">Search</Link>
+                      <Link to={RouteList.Car.Grid.Car3Grid} className="btn-solid">
+                        Search
+                      </Link>
                     </li>
                   </ul>
                 </TabPane>

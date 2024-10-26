@@ -8,3 +8,10 @@ export interface ImageProps {
   title?: string;
   width?: number;
 }
+
+export interface CommonHeaderType {
+  title: string;
+  content?: string;
+  animation?: boolean;
+  headClass?: string;
+}
