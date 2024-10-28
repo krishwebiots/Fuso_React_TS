@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "value": "honda",
+    "label": "Honda",
+    "categoryImage": "car/category/1.png",
+    "categoryLogo": "car/offer/honda.svg"
+  },
+  {
+    "id": 2,
+    "value": "mercedes",
+    "label": "Mercedes",
+    "categoryImage": "car/category/2.png",
+    "categoryLogo": "car/offer/mercedes.svg"
+  },
+  {
+    "id": 3,
+    "value": "renault",
+    "label": "Renault",
+    "categoryImage": "car/category/3.png",
+    "categoryLogo": "car/offer/renault.svg"
+  },
+  {
+    "id": 4,
+    "value": "citroen",
+    "label": "Citroen",
+    "categoryImage": "car/category/4.png",
+    "categoryLogo": "car/offer/citroen.svg"
+  },
+  {
+    "id": 5,
+    "value": "audi",
+    "label": "Audi",
+    "categoryImage": "car/category/5.png",
+    "categoryLogo": "car/offer/audi.svg"
+  },
+  {
+    "id": 6,
+    "value": "bmw",
+    "label": "BMW",
+    "categoryImage": "car/category/1.png",
+    "categoryLogo": "car/offer/bmw.svg"
+  },
+  {
+    "id": 7,
+    "value": "lexus",
+    "label": "Lexus",
+    "categoryImage": "car/category/2.png",
+    "categoryLogo": "car/offer/lexus.svg"
+  },
+  {
+    "id": 8,
+    "value": "hatchback",
+    "label": "Hatchback",
+    "categoryImage": "car2/category/1.jpg"
+  },
+  {
+    "id": 9,
+    "value": "suv",
+    "label": "SUV",
+    "categoryImage": "car2/category/2.jpg"
+  },
+  {
+    "id": 10,
+    "value": "convertible",
+    "label": "Convertible",
+    "categoryImage": "car2/category/3.jpg"
+  },
+  {
+    "id": 11,
+    "value": "sedan",
+    "label": "Sedan",
+    "categoryImage": "car2/category/4.jpg"
+  },
+  {
+    "id": 12,
+    "value": "crossover",
+    "label": "Crossover",
+    "categoryImage": "car2/category/5.jpg"
+  },
+  {
+    "id": 13,
+    "value": "bmw",
+    "label": "BMW",
+    "categoryImage": "car2/blog/2.jpg"
+  }
+]

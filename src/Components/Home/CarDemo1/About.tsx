@@ -2,9 +2,9 @@ import { ArrowRight } from "iconsax-react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import { AboutTitle } from "../../../Constants/Constants";
-import { AboutContentData, AboutData } from "../../../Data/Demo/CradDemo1";
+import { AboutContentData, AboutData } from "../../../Data/Demo/CarDemo1";
 import { RouteList } from "../../../Routers/RouteList";
-import { dynamicImage, Image } from "../../../Utils";
+import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
 
 const About = () => {
@@ -35,7 +35,7 @@ const About = () => {
                 {AboutData.map((item, index) => (
                   <li key={index}>
                     <div className="about-list-icon">
-                      <Image src={item.image} alt="timer" className="img-fluid" />
+                      <Image src={dynamicSvg(item.image)} alt="timer" className="img-fluid" />
                     </div>
                     <span>{item.title}</span>
                   </li>

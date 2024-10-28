@@ -3,43 +3,48 @@ import { Button, Container, Nav, NavItem, NavLink, TabContent, TabPane } from "r
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { OfferTitle } from "../../../Constants/Constants";
-import { OfferContentData, OfferTabs } from "../../../Data/Demo/CradDemo1";
-import { AllData } from "../../../Data/Demo/Product";
+import { OfferContentData } from "../../../Data/Demo/CarDemo1";
+import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { RouteList } from "../../../Routers/RouteList";
-import { Image } from "../../../Utils";
+import { dynamicSvg, Image } from "../../../Utils";
 import CarProductCard from "../Common/CarProductCard";
 import CommonHeader from "../Common/CommonHeader";
 
 const Offer = () => {
   const [activeTab, setActiveTab] = useState("honda");
+  const { productItem, categoryItem } = useAppSelector((state) => state.product);
 
   return (
     <section className="car-offer-section car-product-section section-b-space bg-color">
       <Container>
         <CommonHeader title={OfferTitle} content={OfferContentData} headClass="title-style-2" animation />
         <Nav pills>
-          {OfferTabs.map((tab, index) => (
+          {categoryItem.slice(0, 7).map((tab, index) => (
             <NavItem key={index}>
-              <Button className={`nav-link${tab.id === activeTab ? " active" : ""}`} onClick={() => setActiveTab(tab.id)}>
-                <Image src={tab.imgSrc} alt={tab.label} className="img-fluid" />
+              <Button className={`nav-link${tab.value === activeTab ? " active" : ""}`} onClick={() => setActiveTab(tab.value)}>
+                <Image src={dynamicSvg(tab.categoryLogo)} alt={tab.label} className="img-fluid" />
                 {tab.label}
               </Button>
             </NavItem>
           ))}
           <NavItem>
-            <NavLink to={RouteList.Car.Grid.Car3Grid}>More 10+</NavLink>
+            <NavLink href={RouteList.Car.Grid.Car3Grid}>More 10+</NavLink>
           </NavItem>
         </Nav>
         <TabContent activeTab={activeTab}>
-          <TabPane className={`fade ${activeTab === "honda" ? "show" : ""}`} tabId={"honda"}>
-            <Swiper slidesPerView={4} spaceBetween={30} autoplay={{ delay: 2500, disableOnInteraction: false }} modules={[Autoplay]} loop={true} className="car-tab-slider ratio_65">
-              {AllData.map((item, index) => (
-                <SwiperSlide key={index}>
-                  <CarProductCard data={item} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </TabPane>
+          {categoryItem.map((item, index) => (
+            <TabPane className={`fade ${activeTab === item.value ? "show" : ""}`} tabId={item.value} key={index}>
+              <Swiper slidesPerView={4} spaceBetween={30} autoplay={{ delay: 2500, disableOnInteraction: false }} modules={[Autoplay]} className="car-tab-slider ratio_65">
+                {productItem
+                  .filter((i) => i.category.includes(activeTab))
+                  .map((item, index) => (
+                    <SwiperSlide key={index}>
+                      <CarProductCard data={item} />
+                    </SwiperSlide>
+                  ))}
+              </Swiper>
+            </TabPane>
+          ))}
         </TabContent>
       </Container>
     </section>

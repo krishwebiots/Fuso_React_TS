@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "reactstrap";
 import { ExperienceTitle } from "../../../Constants/Constants";
-import { ExperienceCarData, ExperienceContentData, ExperienceData } from "../../../Data/Demo/CradDemo1";
-import { dynamicImage, Image } from "../../../Utils";
+import { ExperienceCarData, ExperienceContentData, ExperienceData } from "../../../Data/Demo/CarDemo1";
+import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
 
 const Experience = () => {
@@ -41,7 +41,7 @@ const Experience = () => {
               <Col md="3" xs="6" className="p-0" key={index}>
                 <div className="experience-box">
                   <div className="experience-icon">
-                    <Image src={item.icon} alt={`e-${index + 1}`} className="img-fluid" />
+                    <Image src={dynamicSvg(item.icon)} alt={`e-${index + 1}`} className="img-fluid" />
                   </div>
                   <div className="experience-content">
                     <h5>{item.label}</h5>

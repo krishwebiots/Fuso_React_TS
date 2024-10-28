@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "reactstrap";
 import { ServiceTitle } from "../../../Constants/Constants";
-import { ServiceContentData, ServiceData } from "../../../Data/Demo/CradDemo1";
+import { ServiceContentData, ServiceData } from "../../../Data/Demo/CarDemo1";
 import { dynamicImage, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
 

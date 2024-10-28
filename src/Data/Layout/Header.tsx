@@ -1012,3 +1012,10 @@ export const LanguagesData = [
   { data: "ge", language: "German" },
   { data: "ko", language: "Korean" },
 ];
+
+export const SocialLinks = [
+  { href: "https://www.facebook.com/", icon: "ri-facebook-fill" },
+  { href: "https://x.com/", icon: "ri-twitter-x-line" },
+  { href: "https://www.instagram.com/", icon: "ri-instagram-line" },
+  { href: "https://www.youtube.com/", icon: "ri-youtube-fill" },
+];

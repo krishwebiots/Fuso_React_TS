@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "reactstrap";
 import { WorkTitle } from "../../../Constants/Constants";
-import { WorkContentData, WorkData } from "../../../Data/Demo/CradDemo1";
-import { Image } from "../../../Utils";
+import { WorkContentData, WorkData } from "../../../Data/Demo/CarDemo1";
+import { dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
 
 const Work = () => {
@@ -13,14 +13,14 @@ const Work = () => {
           <div className="row">
             {WorkData.map((item, index) => (
               <Col lg="4" sm="6" key={index}>
-                {item.svg && <Image src={"assets/svg/car/svg-line.svg"} alt="svg-line" className="img-fluid top-wave" />}
+                {item.svg && <Image src={dynamicSvg("car/svg-line.svg")} alt="svg-line" className="img-fluid top-wave" />}
                 <div className="work-box" data-aos="zoom-in" data-aos-duration={item.duration}>
                   <div className="work-icon">{item.icon}</div>
                   <div className="work-content">
                     <p>{item.text}</p>
                   </div>
                 </div>
-                {item.svg && <Image src={"assets/svg/car/svg-line.svg"} alt="svg-line" className="img-fluid bottom-wave" />}
+                {item.svg && <Image src={dynamicSvg("car/svg-line.svg")} alt="svg-line" className="img-fluid bottom-wave" />}
               </Col>
             ))}
           </div>

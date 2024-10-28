@@ -1,14 +1,15 @@
+/* eslint-disable array-callback-return */
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import { ContactListData, FooterDetailData, SocialMediaData } from "../../Data/Layout/Footer";
 import { RouteList } from "../../Routers/RouteList";
 import { dynamicImage, Image } from "../../Utils";
-import { useState } from "react";
 
 const Footer = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
 
-  const toggleSection = (title: string) => setOpenSections((prevState) => ({[title]: !prevState[title]}));
+  const toggleSection = (title: string) => setOpenSections((prevState) => ({ [title]: !prevState[title] }));
   return (
     <footer className="property-footer-section">
       <Container>
@@ -31,7 +32,7 @@ const Footer = () => {
               </Link>
               <p>Find your ideal career with personalized support, together.</p>
               <ul className="dark-footer-social">
-                {SocialMediaData.map((item, index) => (
+                {SocialMediaData.slice(0, 3).map((item, index) => (
                   <li key={index}>
                     <Link to={item.url} target="_blank">
                       <i className={item.icon} />
@@ -42,22 +43,26 @@ const Footer = () => {
             </Col>
             <Col lg="9" xs="12">
               <Row className="gy-lg-4 gy-3">
-                {FooterDetailData.map((item, index) => (
-                  <Col md="3" sm="6" key={index} className={openSections[item.title] ? "open-footer-content" : ""}>
-                    <div>
-                      <div className="footer-title">
-                        <h4 onClick={() => toggleSection(item.title)}>{item.title}</h4>
-                      </div>
-                      <ul className="footer-link">
-                        {item.links.map((link, idx) => (
-                          <li key={idx}>
-                            <Link to={link.url}>{link.title}</Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </Col>
-                ))}
+                {FooterDetailData.map((item, index) => {
+                  if (!item.contactList) {
+                    return (
+                      <Col md="3" sm="6" key={index} className={openSections[item.title] ? "open-footer-content" : ""}>
+                        <div>
+                          <div className="footer-title">
+                            <h4 onClick={() => toggleSection(item.title)}>{item.title}</h4>
+                          </div>
+                          <ul className="footer-link">
+                            {item.links.map((link, idx) => (
+                              <li key={idx}>
+                                <Link to={link.url ? link.url : ""}>{link.title}</Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </Col>
+                    );
+                  }
+                })}
               </Row>
             </Col>
           </Row>

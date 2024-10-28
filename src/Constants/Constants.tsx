@@ -19,3 +19,7 @@ export const ExperienceTitle: string = "Best Customer Experience";
 export const AboutTitle: string = "About Us";
 export const TestimonialsTitle: string = "Testimonials";
 export const OfferTitle: string = "Explore Our Top Deal";
+export const Subscribe: string = "Subscribe";
+export const ExploreByCategory: string = "Explore by Category";
+export const StepBookingTitle: string = "Follow the Steps for Booking";
+export const BlogsTitle: string = "Our Blogs";

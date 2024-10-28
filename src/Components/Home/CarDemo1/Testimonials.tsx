@@ -4,7 +4,7 @@ import { Container } from "reactstrap";
 import { Swiper as SwiperType } from "swiper"; // Import Swiper type
 import { Swiper, SwiperSlide } from "swiper/react";
 import { TestimonialsTitle } from "../../../Constants/Constants";
-import { TestimonialsContentData, TestimonialsData, TestimonialsSwiperSetting } from "../../../Data/Demo/CradDemo1";
+import { TestimonialsContentData, TestimonialsData, TestimonialsSwiperSetting } from "../../../Data/Demo/CarDemo1";
 import { dynamicImage, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
 

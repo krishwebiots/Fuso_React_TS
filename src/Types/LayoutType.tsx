@@ -15,3 +15,15 @@ export interface MenuListType {
   menu: MenuItemtype[] | undefined;
   level: number;
 }
+
+export interface FooterListType {
+  title: string;
+  url?: string;
+  icon?: string;
+}
+
+export interface FooterDetailType {
+  title: string;
+  contactList?: boolean;
+  links: FooterListType[];
+}

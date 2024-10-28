@@ -27,19 +27,6 @@ export const DropdownData = [
   },
 ];
 
-export const CategoriesData = [
-  { img: "1.png", name: "Maruti" },
-  { img: "2.png", name: "Hyundai" },
-  { img: "3.png", name: "Tata" },
-  { img: "4.png", name: "Kia" },
-  { img: "5.png", name: "Toyota" },
-  { img: "1.png", name: "Skoda" },
-  { img: "2.png", name: "Honda" },
-  { img: "3.png", name: "Renault" },
-  { img: "4.png", name: "BMW" },
-  { img: "5.png", name: "Mercedes" },
-];
-
 export const CategoriesSettingData = {
   slidesPerView: 5,
   spaceBetween: 30,
@@ -74,22 +61,22 @@ export const ExperienceContentData = "Discover why our customers trust us to mak
 export const ExperienceData = [[{ icon: <Tag2 /> }, { icon: <Wallet3 /> }, { icon: <Call /> }], [{ image: true }], [{ icon: <Award /> }, { icon: <Coin1 /> }, { icon: <Car /> }]];
 
 export const ExperienceCarData = [
-  { icon: "assets/svg/car/experience/1.svg", label: "Horsepower", value: "310" },
-  { icon: "assets/svg/car/experience/2.svg", label: "Starting at", value: "$44,870" },
-  { icon: "assets/svg/car/experience/3.svg", label: "MPG City/Hwy", value: "20/30" },
-  { icon: "assets/svg/car/experience/4.svg", label: "Fuel (gal)", value: "15 cu.ft." },
-  { icon: "assets/svg/car/experience/5.svg", label: "Seats up to", value: "5 Seats" },
-  { icon: "assets/svg/car/experience/6.svg", label: "Drivetrain", value: "AWD" },
-  { icon: "assets/svg/car/experience/7.svg", label: "Acceleration", value: "5.9 Seconds" },
-  { icon: "assets/svg/car/experience/8.svg", label: "Length (in)", value: "180.6" },
+  { icon: "car/experience/1.svg", label: "Horsepower", value: "310" },
+  { icon: "car/experience/2.svg", label: "Starting at", value: "$44,870" },
+  { icon: "car/experience/3.svg", label: "MPG City/Hwy", value: "20/30" },
+  { icon: "car/experience/4.svg", label: "Fuel (gal)", value: "15 cu.ft." },
+  { icon: "car/experience/5.svg", label: "Seats up to", value: "5 Seats" },
+  { icon: "car/experience/6.svg", label: "Drivetrain", value: "AWD" },
+  { icon: "car/experience/7.svg", label: "Acceleration", value: "5.9 Seconds" },
+  { icon: "car/experience/8.svg", label: "Length (in)", value: "180.6" },
 ];
 
 export const AboutContentData = "Experience the new standard of quality with Fuso. Discover why we’re the trusted choice for Car and achieve your goals with confidence.";
 
 export const AboutData = [
-  { image: "assets/svg/car/about/timer.svg", title: "Mileage unlimited" },
-  { image: "assets/svg/car/about/driving.svg", title: "Pick up service" },
-  { image: "assets/svg/car/about/door.svg", title: "Delivery to door" },
+  { image: "car/about/timer.svg", title: "Mileage unlimited" },
+  { image: "car/about/driving.svg", title: "Pick up service" },
+  { image: "car/about/door.svg", title: "Delivery to door" },
 ];
 
 export const TestimonialsContentData = "Discover the appropriate property that is most acceptable for you, ranging from houses";
@@ -155,13 +142,3 @@ export const ProductSwiperSetting = {
 };
 
 export const OfferContentData = "Get exclusive offers on high-end residences and coveted cars! Our incredible deals will help you save a tonne of money and improve your lifestyle.";
-
-export const OfferTabs = [
-  { id: "honda", label: "Honda", imgSrc: "assets/svg/car/offer/honda.svg" },
-  { id: "mercedes", label: "Mercedes", imgSrc: "assets/svg/car/offer/mercedes.svg" },
-  { id: "renault", label: "Renault", imgSrc: "assets/svg/car/offer/renault.svg" },
-  { id: "citroen", label: "Citroen", imgSrc: "assets/svg/car/offer/citroen.svg" },
-  { id: "audi", label: "Audi", imgSrc: "assets/svg/car/offer/audi.svg" },
-  { id: "bmw", label: "BMW", imgSrc: "assets/svg/car/offer/bmw.svg" },
-  { id: "lexus", label: "Lexus", imgSrc: "assets/svg/car/offer/lexus.svg" },
-];

@@ -1,7 +1,8 @@
+/* eslint-disable no-useless-escape */
 import { LanguageCircle, ProfileCircle } from "iconsax-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Container } from "reactstrap";
 import { Href, Language, MyActive, SignOut } from "../../Constants/Constants";
 import { AccountData, Cities, LanguagesData } from "../../Data/Layout/Header";
@@ -10,16 +11,25 @@ import { setCartData } from "../../ReduxToolkit/Reducers/Layout/LayoutReducers";
 import { RouteList } from "../../Routers/RouteList";
 import { dynamicImage, Image } from "../../Utils";
 import Sidebar from "./Sidebar";
+import TopBar from "./TopBar";
 
 const Header = () => {
   const [selectedCity, setSelectedCity] = useState("Amsterdam");
   const { sidebarOpen } = useAppSelector((state) => state.layout);
+  const path = useLocation();
+  const symbolRegex = /[!@#\$%\^\*\(\)_\+\{\}\[\]:;"'<>,.?/\\|`~=]/g;
+  const [firstPart] = path.pathname
+    .split("/")
+    .slice(1)
+    .map((item) => item.replace(symbolRegex, " "));
+
   const dispatch = useAppDispatch();
   const { i18n } = useTranslation();
 
   return (
-    <header className="px-0" id="header">
-      <Container>
+    <header className={`px-0${firstPart === "car-2" ? " car-top-header" : ""}`} id="header">
+      {firstPart === "car-2" && <TopBar />}
+      <Container className={firstPart === "car-2" ? "car2-header" : ""}>
         <div className="header-flex">
           <div className="left-side-header">
             <a href={Href} className={`toggle ${sidebarOpen ? "open" : ""}`} onClick={() => dispatch(setCartData())}>
@@ -29,12 +39,16 @@ const Header = () => {
               <Image src={dynamicImage("logo/1.png")} alt="logo" className="img-fluid" />
             </Link>
             <div className="select-dropdown">
-              <a href={Href} className="select-button">{selectedCity}</a>
+              <a href={Href} className="select-button">
+                {selectedCity}
+              </a>
               <div className="mega-menu-1">
                 <ul className="select-menu">
                   {Cities.map((city) => (
                     <li key={city}>
-                      <a className={`select-item ${city === selectedCity ? "active" : ""}`} href={Href} onClick={() => setSelectedCity(city)}>{city}</a>
+                      <a className={`select-item ${city === selectedCity ? "active" : ""}`} href={Href} onClick={() => setSelectedCity(city)}>
+                        {city}
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -51,7 +65,9 @@ const Header = () => {
                   <i className="ri-arrow-down-wide-line" />
                 </a>
                 <ul className="login-list onhover-list">
-                  <li className="active-item"><span>{MyActive}</span></li>
+                  <li className="active-item">
+                    <span>{MyActive}</span>
+                  </li>
                   {AccountData.map((item, index) => (
                     <li key={index} className="active-item">
                       <Link to={RouteList.Pages.Other.UserDashboard}>{item}</Link>
@@ -59,7 +75,9 @@ const Header = () => {
                     </li>
                   ))}
                   <li className="active-item">
-                    <Link to={RouteList.Pages.Other.Login1} className="btn-solid">{SignOut}</Link>
+                    <Link to={RouteList.Pages.Other.Login1} className="btn-solid">
+                      {SignOut}
+                    </Link>
                   </li>
                 </ul>
               </div>

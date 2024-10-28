@@ -26,3 +26,16 @@ export interface ProductType {
 export interface CarProductCardType {
   data: ProductType;
 }
+
+export interface ProductSliceProp {
+  productItem: ProductType[];
+  categoryItem: CategoryType[];
+}
+
+export interface CategoryType {
+  id: number;
+  value: string;
+  label: string;
+  categoryImage: string;
+  categoryLogo: string;
+}

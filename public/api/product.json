@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "image": ["car/featured/1.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
+    "title": "Speedster GT-X",
+    "emi": "EMI starts 1,61,613/mo",
+    "type": "fashion",
+    "category": ["honda", "renault", "audi", "lexus"],
+    "features": [
+      { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
+      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/km.svg", "text": "20,000 km" }
+    ],
+    "price": "$4,16,464",
+    "label": {
+      "text": "Certified",
+      "icon": "ri-verified-badge-line"
+    }
+  },
+  {
+    "id": 2,
+    "image": ["car/featured/2.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
+    "title": "Velocity Racer Pro",
+    "emi": "EMI starts 1,54,646/mo",
+    "type": "fashion",
+    "category": ["mercedes", "citroen", "bmw", "renault"],
+    "features": [
+      { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
+      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/km.svg", "text": "46,000 km" }
+    ],
+    "price": "$2,40,000"
+  },
+  {
+    "id": 3,
+    "image": ["car/featured/3.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
+    "title": "Infinity Roadster",
+    "emi": "EMI starts 1,23,463/mo",
+    "type": "fashion",
+    "category": ["honda", "mercedes", "bmw", "lexus"],
+    "features": [
+      { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
+      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/km.svg", "text": "46,700 km" }
+    ],
+    "price": "$5,15,629",
+    "label": {
+      "text": "Direct Owner",
+      "icon": "ri-send-plane-line",
+      "class": "direct-label"
+    }
+  },
+  {
+    "id": 4,
+    "image": ["car/featured/4.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
+    "title": "Titan X-Force",
+    "emi": "EMI starts 1,20,225/mo",
+    "type": "fashion",
+    "category": ["honda", "renault", "audi", "mercedes"],
+    "features": [
+      { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
+      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/km.svg", "text": "20,000 km" }
+    ],
+    "price": "$2,69,900"
+  },
+  {
+    "id": 5,
+    "image": ["car/featured/5.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
+    "title": "Aero Commander",
+    "emi": "EMI starts @ 1,46,234/mo",
+    "type": "fashion",
+    "category": ["mercedes", "citroen", "bmw", "lexus"],
+    "features": [
+      { "icon": "car/product/profile-2user.svg", "text": "6 Person" },
+      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/km.svg", "text": "18,500 km" }
+    ],
+    "price": "$3,50,300",
+    "link": "car-classic.html",
+    "label": {
+      "text": "Partner",
+      "icon": "ri-team-line",
+      "class": "partner-label"
+    }
+  },
+  {
+    "id": 6,
+    "image": ["car/featured/6.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
+    "title": "Cyclone Spinner",
+    "emi": "EMI starts @ 12,000/mo",
+    "type": "fashion",
+    "category": ["honda", "audi", "bmw", "renault"],
+    "features": [
+      { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
+      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/km.svg", "text": "30,000 km" }
+    ],
+    "price": "$44,622",
+    "link": "car-classic.html"
+  },
+  {
+    "id": 7,
+    "image": ["car/featured/7.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
+    "title": "Fusion Fury",
+    "emi": "EMI starts @ 1,73,742/mo",
+    "type": "fashion",
+    "category": ["renault", "audi", "bmw", "lexus"],
+    "features": [
+      { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
+      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/km.svg", "text": "25,000 km" }
+    ],
+    "price": "$3,80,000",
+    "link": "car-classic.html",
+    "label": {
+      "text": "Hot Deal",
+      "icon": "ri-fire-line",
+      "class": "hot-label"
+    }
+  },
+  {
+    "id": 8,
+    "image": ["car/featured/8.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
+    "title": "Galaxy Striker",
+    "emi": "EMI starts @ 1,40,872/mo",
+    "type": "fashion",
+    "category": ["honda", "audi", "citroen", "lexus"],
+    "features": [
+      { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
+      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/km.svg", "text": "30,000 km" }
+    ],
+    "price": "$2,89,000",
+    "link": "car-classic.html"
+  }
+]

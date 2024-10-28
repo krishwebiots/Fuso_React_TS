@@ -5,9 +5,9 @@ import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Input, Nav, NavLi
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CarRental, Href, MAX, MIN, Rental, STEP } from "../../../Constants/Constants";
-import { DropdownData } from "../../../Data/Demo/CradDemo1";
+import { DropdownData } from "../../../Data/Demo/CarDemo1";
 import { RouteList } from "../../../Routers/RouteList";
-import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
+import { dynamicGrf, dynamicImage, dynamicNumber, Image } from "../../../Utils";
 
 const CarHomeSection = () => {
   const [basicTab, setBasicTab] = useState(1);
@@ -84,25 +84,24 @@ const CarHomeSection = () => {
                             {index === 3 && (
                               <DropdownItem href={Href}>
                                 <div className="range-slider">
-                                <Range
-                                  values={values}
-                                  step={STEP}
-                                  min={MIN}
-                                  max={MAX}
-                                  onChange={(values) => setValues(values)}
-                                  renderTrack={({ props, children }) => (
-                                    <div onMouseDown={props.onMouseDown} onTouchStart={props.onTouchStart} className="range-track">
-                                      <output className="range-slider-input">{values[0]}</output>
-                                      <div ref={props.ref} className="range-slider-display" style={{ background: getTrackBackground({ values, colors: ["#ccc", "var(--content-color)", "#ccc"], min: MIN, max: MAX }) }}>
-                                        {children}
+                                  <Range
+                                    values={values}
+                                    step={STEP}
+                                    min={MIN}
+                                    max={MAX}
+                                    onChange={(values) => setValues(values)}
+                                    renderTrack={({ props, children }) => (
+                                      <div onMouseDown={props.onMouseDown} onTouchStart={props.onTouchStart} className="range-track">
+                                        <output className="range-slider-input">{values[0]}</output>
+                                        <div ref={props.ref} className="range-slider-display" style={{ background: getTrackBackground({ values, colors: ["#ccc", "var(--content-color)", "#ccc"], min: MIN, max: MAX }) }}>
+                                          {children}
+                                        </div>
+                                        <output className="range-slider-input">{values[1]}</output>
                                       </div>
-                                      <output className="range-slider-input">{values[1]}</output>
-                                    </div>
-                                  )}
-                                  renderThumb={({ props, index }) => <div {...props} key={index} className="price-range-thumb" style={{ ...props.style, backgroundColor: "var(--content-color)" }}></div>}
-                                />
+                                    )}
+                                    renderThumb={({ props, index }) => <div {...props} key={index} className="price-range-thumb" style={{ ...props.style, backgroundColor: "var(--content-color)" }}></div>}
+                                  />
                                 </div>
-
                               </DropdownItem>
                             )}
                           </DropdownMenu>
@@ -119,7 +118,7 @@ const CarHomeSection = () => {
               ))}
             </TabContent>
             <Link to={Href} className="scroll-down">
-              <Image src={"assets/gif/mouse-animation.gif"} alt="mouse-animation" className="img-fluid" />
+              <Image src={dynamicGrf("mouse-animation.gif")} alt="mouse-animation" className="img-fluid" />
             </Link>
           </div>
         </div>

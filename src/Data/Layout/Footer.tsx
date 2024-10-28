@@ -1,5 +1,6 @@
 import { Call, Location, Sms } from "iconsax-react";
 import { RouteList } from "../../Routers/RouteList";
+import { FooterDetailType } from "../../Types/LayoutType";
 
 export const ContactListData = [
   { icon: <Call />, title: "Call", text: "(702) 555-0122" },
@@ -11,9 +12,10 @@ export const SocialMediaData = [
   { url: "https://www.instagram.com/", icon: "ri-instagram-line" },
   { url: "https://www.facebook.com/", icon: "ri-facebook-line" },
   { url: "https://x.com/", icon: "ri-twitter-x-line" },
+  { url: "https://in.pinterest.com/", icon: "ri-pinterest-line" },
 ];
 
-export const FooterDetailData = [
+export const FooterDetailData: FooterDetailType[] = [
   {
     title: "Location",
     links: [
@@ -31,6 +33,15 @@ export const FooterDetailData = [
       { title: "Profile", url: RouteList.Pages.Other.UserDashboard },
       { title: "Post Cars", url: RouteList.Pages.Other.UserDashboard },
       { title: "Privacy", url: RouteList.Pages.Other.Privacy },
+    ],
+  },
+  {
+    title: "official info",
+    contactList: true,
+    links: [
+      { title: "4517 Washington Ave. ManchesteR", icon: "ri-map-pin-fill" },
+      { title: "(702) 555-0122", icon: "ri-phone-fill" },
+      { title: "general.info@gmail.com", icon: "ri-mail-fill" },
     ],
   },
   {
