@@ -13,14 +13,13 @@ export interface ProductType {
   id: number;
   image: string[];
   title: string;
-  emi: string;
+  emi?: string;
   type: string;
   category: string[];
   features: Feature[];
   price: string;
-  link: string;
   label?: Label;
-  aos_duration?: number;
+  description?: string;
 }
 
 export interface CarProductCardType {

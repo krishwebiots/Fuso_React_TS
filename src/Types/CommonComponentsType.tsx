@@ -14,4 +14,5 @@ export interface CommonHeaderType {
   content?: string;
   animation?: boolean;
   headClass?: string;
+  titleClass?: string;
 }

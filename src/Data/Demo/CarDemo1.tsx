@@ -1,5 +1,7 @@
 import { Award, Calendar1, Call, Car, Coin1, Driving, Location, SearchNormal1, Tag2, Verify, Wallet, Wallet3 } from "iconsax-react";
 import { Autoplay, Navigation } from "swiper/modules";
+import { dynamicImage, Image } from "../../Utils";
+import { Href } from "../../Constants/Constants";
 
 export const DropdownData = [
   {
@@ -142,3 +144,20 @@ export const ProductSwiperSetting = {
 };
 
 export const OfferContentData = "Get exclusive offers on high-end residences and coveted cars! Our incredible deals will help you save a tonne of money and improve your lifestyle.";
+
+export const CarHomeSliderSettings = {
+  customPaging: (i: number) => {
+    return (
+      <a href={Href}>
+        <Image src={dynamicImage(`car/home-img/${i + 1}.png`)} className="img-fluid" />
+      </a>
+    );
+  },
+  dots: true,
+  dotsClass: "slick-dots slick-thumb car-slider",
+  infinite: false,
+  arrows: false,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};

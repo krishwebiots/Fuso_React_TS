@@ -10,7 +10,7 @@ import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
 
-const Categories = () => {
+const Category = () => {
   const { categoryItem } = useAppSelector((state) => state.product);
   const swiperRef = useRef<SwiperType | null>(null);
 
@@ -44,4 +44,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default Category;

@@ -23,3 +23,4 @@ export const Subscribe: string = "Subscribe";
 export const ExploreByCategory: string = "Explore by Category";
 export const StepBookingTitle: string = "Follow the Steps for Booking";
 export const BlogsTitle: string = "Our Blogs";
+export const FeaturedCarTitle: string = "Featured Car";

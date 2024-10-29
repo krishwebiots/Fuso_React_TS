@@ -5,13 +5,14 @@ import { Col, Container, Row } from "reactstrap";
 import { ContactListData, FooterDetailData, SocialMediaData } from "../../Data/Layout/Footer";
 import { RouteList } from "../../Routers/RouteList";
 import { dynamicImage, Image } from "../../Utils";
+import { FooterTypes } from "../../Types/LayoutType";
 
-const Footer = () => {
+const Footer: React.FC<FooterTypes> = ({ part }) => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
 
   const toggleSection = (title: string) => setOpenSections((prevState) => ({ [title]: !prevState[title] }));
   return (
-    <footer className="property-footer-section">
+    <footer className={`property-footer-section${part?.includes("job-1") ? " job-footer-section" : ""}`}>
       <Container>
         <ul className="footer-contact-list">
           {ContactListData.map((item, index) => (

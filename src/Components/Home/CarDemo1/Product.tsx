@@ -19,7 +19,7 @@ const Product = () => {
       <Container>
         <CommonHeader title={MostSearchedTitle} content={MostSearchedContentData} headClass="title-style-2" animation />
         <Row className="gy-4 ratio_65">
-          {productItem.map((item, index) => (
+          {productItem.slice(0, 8).map((item, index) => (
             <Col xxl="3" lg="4" sm="6" data-aos="fade-up" data-aos-duration={`${index + 2}00`} key={index}>
               <CarProductCard data={item} />
             </Col>

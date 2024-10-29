@@ -1,14 +1,14 @@
 /* eslint-disable no-useless-escape */
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Button } from "reactstrap";
 import { dynamicImage, Image } from "../Utils";
-import { useLocation } from "react-router-dom";
 
 const TapTop = () => {
   const [tapTopStyle, setTapTopStyle] = useState(false);
-  const path = useLocation();
+  const { pathname } = useLocation();
   const symbolRegex = /[!@#\$%\^\*\(\)_\+\{\}\[\]:;"'<>,.?/\\|`~=]/g;
-  const [firstPart] = path.pathname
+  const [firstPart] = pathname
     .split("/")
     .slice(1)
     .map((item) => item.replace(symbolRegex, " "));
@@ -26,7 +26,7 @@ const TapTop = () => {
   return (
     <div className={`tap-to-tap car-top${tapTopStyle ? " show" : ""}`}>
       <Button color="transparent" onClick={executeScroll}>
-        <Image src={dynamicImage(`${firstPart.includes("car-2") ? "car2/tap-to-top.png" : "car/tap-to-top.png"}`)} alt="car-top" className="img-fluid" />
+        <Image src={dynamicImage(`${firstPart.includes("car-2") ? "car2" : "car"}/tap-to-top.png`)} alt="car-top" className="img-fluid" />
       </Button>
     </div>
   );

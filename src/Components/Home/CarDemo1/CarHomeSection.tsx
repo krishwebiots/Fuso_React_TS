@@ -1,17 +1,15 @@
 import { Fragment, useState } from "react";
 import { getTrackBackground, Range } from "react-range";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Input, Nav, NavLink, TabContent, TabPane } from "reactstrap";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { CarRental, Href, MAX, MIN, Rental, STEP } from "../../../Constants/Constants";
-import { DropdownData } from "../../../Data/Demo/CarDemo1";
+import { CarHomeSliderSettings, DropdownData } from "../../../Data/Demo/CarDemo1";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicGrf, dynamicImage, dynamicNumber, Image } from "../../../Utils";
 
 const CarHomeSection = () => {
   const [basicTab, setBasicTab] = useState(1);
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(Array(DropdownData.length).fill(false));
   const [values, setValues] = useState([20000, 100000]);
 
@@ -25,20 +23,13 @@ const CarHomeSection = () => {
             <h1>{Rental}</h1>
           </div>
           <div className="home-img-slider">
-            <Swiper spaceBetween={10} navigation={true} thumbs={{ swiper: thumbsSwiper }} modules={[FreeMode, Navigation, Thumbs]} className="mySwiper2 car-slider-main">
+            <Slider {...CarHomeSliderSettings} className="car-slider-main">
               {dynamicNumber(3).map((item, index) => (
-                <SwiperSlide key={index}>
-                  <Image src={dynamicImage(`car/home-img/${item}.png`)} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            <Swiper onSwiper={() => setThumbsSwiper} spaceBetween={10} slidesPerView={3} modules={[FreeMode, Navigation, Thumbs]} className="mySwiper car-slider">
-              {dynamicNumber(3).map((item, index) => (
-                <SwiperSlide key={index}>
+                <div className="main-car-img" key={index}>
                   <Image src={dynamicImage(`car/home-img/${item}.png`)} className="img-fluid" />
-                </SwiperSlide>
+                </div>
               ))}
-            </Swiper>
+            </Slider>
           </div>
         </div>
         <div className="property-home-tab car-home-tab">

@@ -36,6 +36,7 @@ const Offer = () => {
             <TabPane className={`fade ${activeTab === item.value ? "show" : ""}`} tabId={item.value} key={index}>
               <Swiper slidesPerView={4} spaceBetween={30} autoplay={{ delay: 2500, disableOnInteraction: false }} modules={[Autoplay]} className="car-tab-slider ratio_65">
                 {productItem
+                  .slice(0, 8)
                   .filter((i) => i.category.includes(activeTab))
                   .map((item, index) => (
                     <SwiperSlide key={index}>

@@ -3,10 +3,11 @@ import Aos from "aos";
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "./Footer";
+import FooterDemo2 from "./Footer/FooterDemo2";
 import Header from "./Header";
+import Loader from "./Loader";
 import MobileMenu from "./MobileMenu";
 import TapTop from "./TapTop";
-import FooterDemo2 from "./Footer/FooterDemo2";
 
 const Layout = () => {
   const path = useLocation();
@@ -28,6 +29,7 @@ const Layout = () => {
   }, [firstPart]);
   return (
     <div>
+      <Loader />
       <Header />
       <MobileMenu />
       <Outlet />
@@ -35,7 +37,7 @@ const Layout = () => {
         if (firstPart.includes("car-2")) {
           return <FooterDemo2 />;
         } else {
-          return <Footer />;
+          return <Footer part={firstPart} />;
         }
       })()}
       <TapTop />

@@ -27,3 +27,13 @@ export interface FooterDetailType {
   contactList?: boolean;
   links: FooterListType[];
 }
+
+export interface LoaderConfig {
+  src?: string;
+  text?: string;
+  svg?: JSX.Element;
+}
+
+export interface FooterTypes {
+  part?: string;
+}

@@ -4,7 +4,7 @@
     "image": ["car/featured/1.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Speedster GT-X",
     "emi": "EMI starts 1,61,613/mo",
-    "type": "fashion",
+    "type": "car",
     "category": ["honda", "renault", "audi", "lexus"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
@@ -22,7 +22,7 @@
     "image": ["car/featured/2.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Velocity Racer Pro",
     "emi": "EMI starts 1,54,646/mo",
-    "type": "fashion",
+    "type": "car",
     "category": ["mercedes", "citroen", "bmw", "renault"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
@@ -36,7 +36,7 @@
     "image": ["car/featured/3.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Infinity Roadster",
     "emi": "EMI starts 1,23,463/mo",
-    "type": "fashion",
+    "type": "car",
     "category": ["honda", "mercedes", "bmw", "lexus"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
@@ -55,7 +55,7 @@
     "image": ["car/featured/4.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Titan X-Force",
     "emi": "EMI starts 1,20,225/mo",
-    "type": "fashion",
+    "type": "car",
     "category": ["honda", "renault", "audi", "mercedes"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
@@ -69,7 +69,7 @@
     "image": ["car/featured/5.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Aero Commander",
     "emi": "EMI starts @ 1,46,234/mo",
-    "type": "fashion",
+    "type": "car",
     "category": ["mercedes", "citroen", "bmw", "lexus"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "6 Person" },
@@ -77,7 +77,6 @@
       { "icon": "car/product/km.svg", "text": "18,500 km" }
     ],
     "price": "$3,50,300",
-    "link": "car-classic.html",
     "label": {
       "text": "Partner",
       "icon": "ri-team-line",
@@ -89,22 +88,21 @@
     "image": ["car/featured/6.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Cyclone Spinner",
     "emi": "EMI starts @ 12,000/mo",
-    "type": "fashion",
+    "type": "car",
     "category": ["honda", "audi", "bmw", "renault"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "30,000 km" }
     ],
-    "price": "$44,622",
-    "link": "car-classic.html"
+    "price": "$44,622"
   },
   {
     "id": 7,
     "image": ["car/featured/7.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Fusion Fury",
     "emi": "EMI starts @ 1,73,742/mo",
-    "type": "fashion",
+    "type": "car",
     "category": ["renault", "audi", "bmw", "lexus"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
@@ -112,7 +110,6 @@
       { "icon": "car/product/km.svg", "text": "25,000 km" }
     ],
     "price": "$3,80,000",
-    "link": "car-classic.html",
     "label": {
       "text": "Hot Deal",
       "icon": "ri-fire-line",
@@ -124,14 +121,57 @@
     "image": ["car/featured/8.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Galaxy Striker",
     "emi": "EMI starts @ 1,40,872/mo",
-    "type": "fashion",
+    "type": "car",
     "category": ["honda", "audi", "citroen", "lexus"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "30,000 km" }
     ],
-    "price": "$2,89,000",
-    "link": "car-classic.html"
+    "price": "$2,89,000"
+  },
+  {
+    "id": 9,
+    "title": "Velocity Racer Pro",
+    "description": "The Velocity Racer Pro is a marvel of modern engineering, designed for the ultimate driving experience.",
+    "price": "$625.00",
+    "type": "car",
+    "category": ["honda", "audi", "citroen", "lexus"],
+    "features": [
+      { "icon": "car2/featured/1.svg", "text": "6 Seater" },
+      { "icon": "car2/featured/2.svg", "text": "Petrol" },
+      { "icon": "car2/featured/3.svg", "text": "Auto" },
+      { "icon": "car2/featured/4.svg", "text": "50,000KM" }
+    ],
+    "image": ["car2/featured/2.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"]
+  },
+  {
+    "id": 10,
+    "title": "Aero Commander",
+    "description": "The Titan X-Force features a 600-hp twin-turbo V8 and advanced all-wheel drive, blending luxury with top performance.",
+    "price": "$465.00",
+    "type": "car",
+    "category": ["honda", "audi", "citroen", "lexus"],
+    "features": [
+      { "icon": "car2/featured/1.svg", "text": "5 Seater" },
+      { "icon": "car2/featured/2.svg", "text": "Petrol" },
+      { "icon": "car2/featured/3.svg", "text": "Auto" },
+      { "icon": "car2/featured/4.svg", "text": "50,000KM" }
+    ],
+    "image": ["car2/featured/3.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"]
+  },
+  {
+    "id": 11,
+    "title": "Velocity Racer Pro",
+    "description": "The Velocity Racer Pro is a marvel of modern engineering, designed for the ultimate driving experience.",
+    "price": "$625.00",
+    "type": "car",
+    "features": [
+      { "icon": "car2/featured/1.svg", "text": "6 Seater" },
+      { "icon": "car2/featured/2.svg", "text": "Petrol" },
+      { "icon": "car2/featured/3.svg", "text": "Auto" },
+      { "icon": "car2/featured/4.svg", "text": "50,000KM" }
+    ],
+    "image": ["car2/featured/2.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"]
   }
 ]

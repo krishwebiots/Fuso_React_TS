@@ -20,8 +20,8 @@ const CarProductCard: React.FC<CarProductCardType> = ({ data }) => {
         <Link to={RouteList.Car.Detail.CarClassic} className="featured-img">
           <Swiper {...ProductSwiperSetting} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
             {data.image.map((testimonial, index) => (
-              <SwiperSlide key={index}>
-                <Image src={dynamicImage(testimonial)} alt="featured-img" className="img-fluid bg-img" />
+              <SwiperSlide key={index} className="bg-size" style={{ backgroundImage: `url(${dynamicImage(testimonial)})` }}>
+                <Image src={dynamicImage(testimonial)} alt="featured-img" className="img-fluid bg-img" style={{ display: "none" }} />
               </SwiperSlide>
             ))}
             <div className="swiper-button-next" />

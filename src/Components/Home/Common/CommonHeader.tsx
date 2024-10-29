@@ -1,6 +1,6 @@
 import { CommonHeaderType } from "../../../Types/CommonComponentsType";
 
-const CommonHeader: React.FC<CommonHeaderType> = ({ title, content, animation, headClass }) => {
+const CommonHeader: React.FC<CommonHeaderType> = ({ title, content, animation, headClass, titleClass }) => {
   return (
     <div className={headClass}>
       <div className="title-flex">
@@ -10,7 +10,7 @@ const CommonHeader: React.FC<CommonHeaderType> = ({ title, content, animation, h
             <span />
           </div>
         )}
-        <h2>{title}</h2>
+        <h2 className={titleClass}>{title}</h2>
         {animation && (
           <div className="title-animation-right">
             <span />
@@ -18,7 +18,7 @@ const CommonHeader: React.FC<CommonHeaderType> = ({ title, content, animation, h
           </div>
         )}
       </div>
-        <p>{content}</p>
+      <p>{content}</p>
     </div>
   );
 };
