@@ -604,15 +604,29 @@
         margin-top: calc(0px + (-220 - 0) * ((100vw - 320px) / (1920 - 320)));
 
         .car-slider-main {
-            margin-bottom: calc(10px + (100 - 10) * ((100vw - 320px) / (1920 - 320)));
+            margin-bottom: calc(80px + (180 - 80) * ((100vw - 320px) / (1920 - 320)));
 
-            .swiper-slide {
+            .slick-slider {
                 transition: 0.4s ease;
+
+                .slick-list {
+                    .slick-track {
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                }
             }
 
             .main-car-img {
                 text-align: center;
                 position: relative;
+                display: flex !important;
+                justify-content: center;
+
+                &:focus-visible {
+                    outline: none;
+                }
 
                 &::after {
                     @include after_before;
@@ -633,30 +647,42 @@
                     }
                 }
             }
-        }
 
-        .car-slider {
-            .swiper-wrapper {
-                justify-content: center;
-                gap: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
-            }
-
-            .swiper-slide {
-                width: auto !important;
-                transition: 0.4s ease;
-                transform: scale(0.8);
-
-                &.slick-active {
-                    transform: scale(1);
+            .car-slider {
+                .swiper-wrapper {
+                    justify-content: center;
+                    gap: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
                 }
 
-                img {
-                    height: calc(28px + (38 - 28) * ((100vw - 320px) / (1920 - 320)));
-                    width: auto;
-                    object-fit: cover;
+                &.slick-dots {
+                    transform: translateY(96px);
+
+                    li {
+                        width: auto !important;
+
+                        a {
+                            width: auto !important;
+                            transition: 0.4s ease;
+                            transform: scale(0.8);
+
+                            img {
+                                height: calc(28px + (38 - 28) * ((100vw - 320px) / (1920 - 320)));
+                                width: auto;
+                                object-fit: cover;
+                            }
+                        }
+
+
+                        &.slick-active {
+                            a {
+                                transform: scale(1);
+                            }
+                        }
+                    }
                 }
             }
         }
+
     }
 
     .car-home-tab {

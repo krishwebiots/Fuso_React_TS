@@ -148,7 +148,7 @@ export const OfferContentData = "Get exclusive offers on high-end residences and
 export const CarHomeSliderSettings = {
   customPaging: (i: number) => {
     return (
-      <a href={Href}>
+      <a href={Href} className="car-active">
         <Image src={dynamicImage(`car/home-img/${i + 1}.png`)} className="img-fluid" />
       </a>
     );
