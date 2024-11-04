@@ -29,13 +29,13 @@ export const MenuItem = [
       },
       {
         title: "Job Minimal Demo",
-        image: "other/menu/4.jpg",
+        image: "other/menu/5.jpg",
         path: RouteList.Home.JobDemo2,
         type: "link",
       },
       {
         title: "Job Minimal Demo",
-        image: "other/menu/5.jpg",
+        image: "other/menu/4.jpg",
         path: RouteList.Home.JobDemo3,
         type: "link",
       },

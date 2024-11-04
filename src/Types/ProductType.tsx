@@ -20,10 +20,22 @@ export interface ProductType {
   price: string;
   label?: Label;
   description?: string;
+  company?: string;
+  jobType?: string;
+  location?: string;
+  time?: string;
+  salary?: string;
+  applied?: string;
+  rating?: number;
+  jobTags: string[];
 }
 
 export interface CarProductCardType {
   data: ProductType;
+}
+
+export interface JobCardType {
+  jobData: ProductType;
 }
 
 export interface ProductSliceProp {
@@ -37,4 +49,5 @@ export interface CategoryType {
   label: string;
   categoryImage: string;
   categoryLogo: string;
+  jobList?: string;
 }

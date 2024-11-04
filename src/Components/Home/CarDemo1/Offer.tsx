@@ -19,33 +19,37 @@ const Offer = () => {
       <Container>
         <CommonHeader title={OfferTitle} content={OfferContentData} headClass="title-style-2" animation />
         <Nav pills>
-          {categoryItem.slice(0, 7).map((tab, index) => (
-            <NavItem key={index}>
-              <Button className={`nav-link${tab.value === activeTab ? " active" : ""}`} onClick={() => setActiveTab(tab.value)}>
-                <Image src={dynamicSvg(tab.categoryLogo)} alt={tab.label} className="img-fluid" />
-                {tab.label}
-              </Button>
-            </NavItem>
-          ))}
+          {categoryItem
+            .filter((e) => [1, 2, 3, 4, 5, 6, 7].includes(e.id))
+            .map((tab, index) => (
+              <NavItem key={index}>
+                <Button className={`nav-link${tab.value === activeTab ? " active" : ""}`} onClick={() => setActiveTab(tab.value)}>
+                  <Image src={dynamicSvg(tab.categoryLogo)} alt={tab.label} className="img-fluid" />
+                  {tab.label}
+                </Button>
+              </NavItem>
+            ))}
           <NavItem>
             <NavLink href={RouteList.Car.Grid.Car3Grid}>More 10+</NavLink>
           </NavItem>
         </Nav>
         <TabContent activeTab={activeTab}>
-          {categoryItem.map((item, index) => (
-            <TabPane className={`fade ${activeTab === item.value ? "show" : ""}`} tabId={item.value} key={index}>
-              <Swiper slidesPerView={4} spaceBetween={30} autoplay={{ delay: 2500, disableOnInteraction: false }} modules={[Autoplay]} className="car-tab-slider ratio_65">
-                {productItem
-                  .slice(0, 8)
-                  .filter((i) => i.category.includes(activeTab))
-                  .map((item, index) => (
-                    <SwiperSlide key={index}>
-                      <CarProductCard data={item} />
-                    </SwiperSlide>
-                  ))}
-              </Swiper>
-            </TabPane>
-          ))}
+          {categoryItem
+            .filter(({ id }) => [1, 2, 3, 4, 5, 6, 7].includes(id))
+            .map((item, index) => (
+              <TabPane className={`fade ${activeTab === item.value ? "show" : ""}`} tabId={item.value} key={index}>
+                <Swiper slidesPerView={4} spaceBetween={30} autoplay={{ delay: 2500, disableOnInteraction: false }} modules={[Autoplay]} className="car-tab-slider ratio_65">
+                  {productItem
+                    .filter(({ id }) => [1, 2, 3, 4, 5, 6, 7, 8].includes(id))
+                    .filter((i) => i.category.includes(activeTab))
+                    .map((item, index) => (
+                      <SwiperSlide key={index}>
+                        <CarProductCard data={item} />
+                      </SwiperSlide>
+                    ))}
+                </Swiper>
+              </TabPane>
+            ))}
         </TabContent>
       </Container>
     </section>

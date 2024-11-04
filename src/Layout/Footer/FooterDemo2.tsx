@@ -1,29 +1,38 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Col, Container, Input, Row } from "reactstrap";
 import { Subscribe } from "../../Constants/Constants";
 import { FooterDetailData, SocialMediaData } from "../../Data/Layout/Footer";
 import { RouteList } from "../../Routers/RouteList";
 import { dynamicImage, Image } from "../../Utils";
+import { FooterTypes } from "../../Types/LayoutType";
 
-const FooterDemo2 = () => {
+const FooterDemo2: React.FC<FooterTypes> = ({ part }) => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
 
   const toggleSection = (title: string) => setOpenSections((prevState) => ({ [title]: !prevState[title] }));
+  const headerClassMap: { [key: string]: string } = {
+    "car-2": "car2-footer",
+    "job-2": "dark-footer-section section-t-space",
+    "property-2": "property2-footer",
+  };
+
   return (
-    <footer className="job3-footer car2-footer">
+    <footer className={`job3-footer ${headerClassMap[part || ""]}`}>
       <Container>
-        <Row className="justify-content-between align-items-center footer-head gy-md-0 gy-3">
-          <Col lg="5" md="6">
-            <h2 className="text-white">Find your Next Grate Job Opportunity!</h2>
-          </Col>
-          <Col md="6">
-            <div className="search-pill">
-              <Input type="text" placeholder="Enter your email address" />
-              <Button className="btn-pills">{Subscribe}</Button>
-            </div>
-          </Col>
-        </Row>
+        {!part?.includes("job-2") && (
+          <Row className="justify-content-between align-items-center footer-head gy-md-0 gy-3">
+            <Col lg="5" md="6">
+              <h2 className="text-white">Find your Next Grate Job Opportunity!</h2>
+            </Col>
+            <Col md="6">
+              <div className="search-pill">
+                <Input type="text" placeholder="Enter your email address" />
+                <Button className="btn-pills">{Subscribe}</Button>
+              </div>
+            </Col>
+          </Row>
+        )}
         <div className="dark-job-footer">
           <Row className="justify-content-between gy-lg-0 gy-sm-4 gy-3">
             <Col lg="4">
@@ -53,10 +62,10 @@ const FooterDemo2 = () => {
                       {item.links.map((link, idx) => (
                         <li key={idx}>
                           {item.contactList ? (
-                            <>
+                            <Fragment>
                               <i className={link.icon} />
                               <span>{link.title}</span>
-                            </>
+                            </Fragment>
                           ) : (
                             <Link to={link.url ? link.url : ""}>{link.title}</Link>
                           )}
@@ -69,7 +78,7 @@ const FooterDemo2 = () => {
           </Row>
         </div>
         <div className="copyright-box">
-          <p className="text-white">@ 2024 All Rights Reserved</p>
+          <p>@ 2024 All Rights Reserved</p>
           <Image src={dynamicImage("dark-job/payment-img.png")} alt="payment-img" className="img-fluid" />
         </div>
       </Container>

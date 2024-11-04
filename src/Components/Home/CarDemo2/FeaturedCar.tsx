@@ -18,57 +18,59 @@ const FeaturedCar = () => {
       <Container>
         <CommonHeader title={FeaturedCarTitle} content={FeaturedCarContentData} headClass="title-style-5" titleClass="text-white" />
         <Row className="gy-4 justify-content-center">
-          {productItem.slice(8, 11).map((car) => (
-            <Col xl="4" md="6" key={car.id}>
-              <div className="car2-featured-box">
-                <Link to={RouteList.Car.Detail.CarClassic} className="car2-featured-img">
-                  <Swiper pagination={true} modules={[Pagination]} className="car2-featured-slider ratio_60">
-                    <div className="overlay-box" />
-                    {car.image.map((imgSrc, idx) => (
-                      <SwiperSlide key={idx} className="bg-size" style={{ backgroundImage: `url(${dynamicImage(imgSrc)})` }}>
-                        <Image src={dynamicImage(imgSrc)} alt={`featured-img-${idx}`} className="img-fluid bg-img" style={{ display: "none" }} />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                  <div className="car2-label-flex">
-                    <span>Featured</span>
-                    <span>Rent</span>
-                  </div>
-                </Link>
-                <div className="car2-featured-content">
-                  <div className="rating-flex">
-                    <Link to={RouteList.Car.Detail.CarClassic}>
-                      <h4>{car.title}</h4>
-                    </Link>
-                    <ul className="rate-list">
-                      <Rating initialValue={5} size={17} fillColor="#232323" />
+          {productItem
+            .filter(({ id }) => [9, 10, 11].includes(id))
+            .map((car) => (
+              <Col xl="4" md="6" key={car.id}>
+                <div className="car2-featured-box">
+                  <Link to={RouteList.Car.Detail.CarClassic} className="car2-featured-img">
+                    <Swiper pagination={true} modules={[Pagination]} className="car2-featured-slider ratio_60">
+                      <div className="overlay-box" />
+                      {car.image.map((imgSrc, idx) => (
+                        <SwiperSlide key={idx} className="bg-size" style={{ backgroundImage: `url(${dynamicImage(imgSrc)})` }}>
+                          <Image src={dynamicImage(imgSrc)} alt={`featured-img-${idx}`} className="img-fluid bg-img" style={{ display: "none" }} />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                    <div className="car2-label-flex">
+                      <span>Featured</span>
+                      <span>Rent</span>
+                    </div>
+                  </Link>
+                  <div className="car2-featured-content">
+                    <div className="rating-flex">
+                      <Link to={RouteList.Car.Detail.CarClassic}>
+                        <h4>{car.title}</h4>
+                      </Link>
+                      <ul className="rate-list">
+                        <Rating initialValue={5} size={17} fillColor="#232323" />
+                      </ul>
+                    </div>
+                    <p>{car.description}</p>
+                    <ul className="tag-list">
+                      <li>Classic design</li>
+                      <li>Comfortable interior</li>
                     </ul>
-                  </div>
-                  <p>{car.description}</p>
-                  <ul className="tag-list">
-                    <li>Classic design</li>
-                    <li>Comfortable interior</li>
-                  </ul>
-                  <ul className="featured-list">
-                    {car.features.map((item, index) => (
-                      <li key={index}>
-                        <Image src={dynamicSvg(item.icon)} alt="profile-2user" className="img-fluid" />
-                        <span>{item.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="price-flex">
-                    <h4>
-                      {car.price}/<span>Per day</span>
-                    </h4>
-                    <Link to={RouteList.Car.Detail.CarClassic} className="btn-pills">
-                      Book Now
-                    </Link>
+                    <ul className="featured-list">
+                      {car.features.map((item, index) => (
+                        <li key={index}>
+                          <Image src={dynamicSvg(item.icon)} alt="profile-2user" className="img-fluid" />
+                          <span>{item.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="price-flex">
+                      <h4>
+                        {car.price}/<span>Per day</span>
+                      </h4>
+                      <Link to={RouteList.Car.Detail.CarClassic} className="btn-pills">
+                        Book Now
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Col>
-          ))}
+              </Col>
+            ))}
         </Row>
       </Container>
     </section>

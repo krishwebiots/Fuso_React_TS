@@ -83,5 +83,61 @@
     "value": "volvo",
     "label": "Volvo",
     "categoryImage": "car2/blog/2.jpg"
+  },
+  {
+    "id": 14,
+    "value": "programming & tech",
+    "label": "Programming & Tech",
+    "categoryImage": "job/category/1.svg",
+    "jobList": "120+ new jobs"
+  },
+  {
+    "id": 15,
+    "value": "customer support",
+    "label": "Customer Support",
+    "categoryImage": "job/category/2.svg",
+    "jobList": "143+ new jobs"
+  },
+  {
+    "id": 16,
+    "value": "product management",
+    "label": "Product Management",
+    "categoryImage": "job/category/3.svg",
+    "jobList": "80+ new jobs"
+  },
+  {
+    "id": 17,
+    "value": "finance & accounting",
+    "label": "Finance & Accounting",
+    "categoryImage": "job/category/4.svg",
+    "jobList": "150+ new jobs"
+  },
+  {
+    "id": 18,
+    "value": "art & design",
+    "label": "Art & Design",
+    "categoryImage": "job/category/5.svg",
+    "jobList": "50+ new jobs"
+  },
+  {
+    "id": 19,
+    "value": "digital marketing",
+    "label": "Digital Marketing",
+    "categoryImage": "job/category/6.svg",
+    "jobList": "135+ new jobs"
+  },
+  {
+    "id": 20,
+    "value": "video editing",
+    "label": "Video Editing",
+    "categoryImage": "job/category/7.svg",
+    "jobList": "165+ new jobs"
+  },
+  {
+    "id": 21,
+    "value": "writing & translation",
+    "label": "Writing & Translation",
+    "categoryImage": "job/category/8.svg",
+    "jobList": "123+ new jobs"
   }
 ]

@@ -17,16 +17,25 @@ const TapTop = () => {
     if (window.scrollY > 100) setTapTopStyle(true);
     else setTapTopStyle(false);
   };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isJobOrProperty = ["job", "property"].some((item) => firstPart.includes(item));
+
   return (
-    <div className={`tap-to-tap car-top${tapTopStyle ? " show" : ""}`}>
-      <Button color="transparent" onClick={executeScroll}>
-        <Image src={dynamicImage(`${firstPart.includes("car-2") ? "car2" : "car"}/tap-to-top.png`)} alt="car-top" className="img-fluid" />
+    <div className={`tap-to-tap ${isJobOrProperty ? (firstPart.includes("job-1") ? "job-color-change" : "") : "car-top"} ${tapTopStyle ? " show" : ""}`}>
+      <Button color="transparent" onClick={executeScroll} className={isJobOrProperty ? "top-box" : ""}>
+        {(() => {
+          if (isJobOrProperty) {
+            return <i className="ri-arrow-up-line" />;
+          } else {
+            return <Image src={dynamicImage(`${firstPart.includes("car-2") ? "car2" : "car"}/tap-to-top.png`)} alt="car-top" className="img-fluid" />;
+          }
+        })()}
       </Button>
     </div>
   );

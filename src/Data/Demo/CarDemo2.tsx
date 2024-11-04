@@ -1,5 +1,5 @@
 import { Calendar1, Location } from "iconsax-react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 export const CounterData = [
   { end: 135, suffix: "+", label: "Freelancer Joined" },
@@ -40,8 +40,7 @@ export const CategoriesSettingData = {
   },
   slidesPerView: 5,
   spaceBetween: 30,
-  autoplay: { delay: 2500, disableOnInteraction: false },
-  modules: [Autoplay, Navigation],
+  modules: [Navigation],
 };
 
 export const StepBookingContentData = "When it comes to renting a car for your next adventure, we understand you have choices.";

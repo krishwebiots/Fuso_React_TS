@@ -20,13 +20,15 @@ const Layout = () => {
   useEffect(() => {
     if (firstPart.includes("car-2")) document.body.className = "car2-color";
     else if (firstPart.includes("job-1")) document.body.className = "job-color";
-    else if (firstPart.includes("job-2")) document.body.className = "job2-color";
-    else if (firstPart.includes("job-3")) document.body.className = "job3-color";
+    else if (firstPart.includes("job-2")) document.body.className = "job2-color large-container";
+    else if (firstPart.includes("job-3")) document.body.className = "job3-color large-container";
     else if (firstPart.includes("property-1")) document.body.className = "";
     else if (firstPart.includes("property-2")) document.body.className = "property2-color";
     else document.body.className = "car-color";
     Aos.init({ once: true });
   }, [firstPart]);
+  const isJobOrProperty = ["car-2", "job-3", "job-2", "property-2"].some((item) => firstPart.includes(item));
+
   return (
     <div>
       <Loader />
@@ -34,8 +36,8 @@ const Layout = () => {
       <MobileMenu />
       <Outlet />
       {(() => {
-        if (firstPart.includes("car-2")) {
-          return <FooterDemo2 />;
+        if (isJobOrProperty) {
+          return <FooterDemo2 part={firstPart} />;
         } else {
           return <Footer part={firstPart} />;
         }

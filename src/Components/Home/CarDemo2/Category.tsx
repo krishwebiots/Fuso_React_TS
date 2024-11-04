@@ -23,18 +23,20 @@ const Category = () => {
         <CommonHeader title={ExploreByCategory} content={CategoriesContentData} headClass="title-style-2" />
         <div className="arrow-style-2 position-relative">
           <Swiper {...CategoriesSettingData} className="car2-category-slider ratio3_2" onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
-            {categoryItem.slice(7, 13).map((car, index) => (
-              <SwiperSlide key={index}>
-                <div className="category-box">
-                  <Link to={RouteList.Car.Grid.Car3Grid} className="category-img bg-size" style={{ backgroundImage: `url(${dynamicImage(car.categoryImage)})` }}>
-                    <Image src={dynamicImage(car.categoryImage)} alt={`car-${index + 1}`} className="img-fluid" style={{ display: "none" }} />
-                  </Link>
-                  <Link to={RouteList.Car.Grid.Car3Grid} className="category-title">
-                    {car.label}
-                  </Link>
-                </div>
-              </SwiperSlide>
-            ))}
+            {categoryItem
+              .filter((e) => [8, 9, 10, 11, 12, 13].includes(e.id))
+              .map((car, index) => (
+                <SwiperSlide key={index}>
+                  <div className="category-box">
+                    <Link to={RouteList.Car.Grid.Car3Grid} className="category-img bg-size" style={{ backgroundImage: `url(${dynamicImage(car.categoryImage)})` }}>
+                      <Image src={dynamicImage(car.categoryImage)} alt={`car-${index + 1}`} className="img-fluid" style={{ display: "none" }} />
+                    </Link>
+                    <Link to={RouteList.Car.Grid.Car3Grid} className="category-title">
+                      {car.label}
+                    </Link>
+                  </div>
+                </SwiperSlide>
+              ))}
             <div className="swiper-button-next car2-category-next" />
             <div className="swiper-button-prev car2-category-prev" />
           </Swiper>

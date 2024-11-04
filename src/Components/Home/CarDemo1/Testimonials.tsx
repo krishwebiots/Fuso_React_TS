@@ -1,7 +1,7 @@
 import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
 import { useEffect, useRef } from "react";
 import { Container } from "reactstrap";
-import { Swiper as SwiperType } from "swiper"; // Import Swiper type
+import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { TestimonialsTitle } from "../../../Constants/Constants";
 import { TestimonialsContentData, TestimonialsData, TestimonialsSwiperSetting } from "../../../Data/Demo/CarDemo1";
