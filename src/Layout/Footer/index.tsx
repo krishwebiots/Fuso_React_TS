@@ -5,9 +5,9 @@ import { Col, Container, Row } from "reactstrap";
 import { ContactListData, FooterDetailData, SocialMediaData } from "../../Data/Layout/Footer";
 import { RouteList } from "../../Routers/RouteList";
 import { dynamicImage, Image } from "../../Utils";
-import { FooterTypes } from "../../Types/LayoutType";
+import { PathTypes } from "../../Types/LayoutType";
 
-const Footer: React.FC<FooterTypes> = ({ part }) => {
+const Footer: React.FC<PathTypes> = ({ part }) => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
 
   const toggleSection = (title: string) => setOpenSections((prevState) => ({ [title]: !prevState[title] }));

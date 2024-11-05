@@ -42,12 +42,12 @@ const Layout = () => {
 
   return (
     <div>
-      <Loader />
-      <Header />
+      <Loader part={firstPart} />
+      <Header part={firstPart} />
       <MobileMenu />
       <Outlet />
       {isJobOrProperty ? <FooterDemo2 part={firstPart} /> : <Footer part={firstPart} />}
-      <TapTop />
+      <TapTop part={firstPart} />
     </div>
   );
 };

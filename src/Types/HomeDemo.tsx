@@ -15,3 +15,9 @@ export interface JobHomeMeanClassData {
   meanClass: string;
   multipleImage: (JobHomeImageData | { childrenClass: string; childrenImage: JobHomeImageData[] })[];
 }
+
+export interface LogoSectionType {
+  sectionClass?: string;
+  swiperClass?: string;
+  title?: string;
+}

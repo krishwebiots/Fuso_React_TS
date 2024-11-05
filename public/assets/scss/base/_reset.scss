@@ -159,8 +159,8 @@ input[type="number"] {
 }
 
 .bg-size {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: block;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    display: block !important;
 }

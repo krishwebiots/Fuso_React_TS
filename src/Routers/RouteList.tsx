@@ -124,7 +124,7 @@ export const RouteList = {
     },
     JobWishlist: `job-wishlist`,
   },
-  
+
   Pages: {
     Blog: {
       BlogLeftSidebar: `blog-left-sidebar`,

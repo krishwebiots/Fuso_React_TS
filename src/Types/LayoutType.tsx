@@ -34,8 +34,8 @@ export interface LoaderConfig {
   svg?: JSX.Element;
 }
 
-export interface FooterTypes {
-  part?: string;
+export interface PathTypes {
+  part?: string | any;
 }
 
 export interface PathSettings {

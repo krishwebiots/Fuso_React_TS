@@ -1,24 +1,19 @@
 /* eslint-disable no-useless-escape */
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 import { Loaders } from "../Data/Layout/Loader";
+import { PathTypes } from "../Types/LayoutType";
 import { dynamicGrf, Image } from "../Utils";
 
-const Loader: React.FC = () => {
+const Loader: React.FC<PathTypes> = ({ part }) => {
   const [show, setShow] = useState<boolean>(true);
-  const { pathname } = useLocation();
-  const [firstPart] = pathname
-    .split("/")
-    .slice(1)
-    .map((item) => item.replace(/[!@#\$%\^\*\(\)_\+\{\}\[\]:;"'<>,.?/\\|`~=]/g, " "));
 
   useEffect(() => {
     const timeout = setTimeout(() => setShow(false), 2000);
     return () => clearTimeout(timeout);
   }, [show]);
 
-  const loaderKey = Object.keys(Loaders).find((key) => firstPart.includes(key));
+  const loaderKey = Object.keys(Loaders).find((key) => part?.includes(key));
   const loaderContent = Loaders[loaderKey || ""]?.svg || (
     <Fragment>
       <Image src={dynamicGrf(Loaders[loaderKey || ""]?.src || "car1-loader.gif")} alt="loader" className="img-fluid" />
@@ -30,7 +25,7 @@ const Loader: React.FC = () => {
     <Fragment>
       {show && (
         <div className="loader-wrapper">
-          <div className={`${firstPart.includes("property") ? "property-loader" : `text-center ${firstPart.includes("job") ? "job-loader" : "car-loader"}`}`}>{loaderContent}</div>
+          <div className={`${part?.includes("property") ? "property-loader" : `text-center ${part?.includes("job") ? "job-loader" : "car-loader"}`}`}>{loaderContent}</div>
         </div>
       )}
     </Fragment>

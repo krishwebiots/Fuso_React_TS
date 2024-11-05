@@ -23,7 +23,7 @@ const CarDemo2Container = () => {
     <Fragment>
       <CarHomeSection />
       <TabSection />
-      <LogoSection />
+      <LogoSection swiperClass="logo-car2-slider" sectionClass="section-t-lg-space" />
       <AboutUs />
       <Categories />
       <FeaturedCar />

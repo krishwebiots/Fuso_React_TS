@@ -2,26 +2,21 @@
 import { ExportCurve, LanguageCircle, ProfileCircle } from "iconsax-react";
 import { Fragment, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Container } from "reactstrap";
 import { ApplyNow, Href, Language, Login, MyActive, PostProperty, Signin, SignOut, UploadResume } from "../../Constants/Constants";
 import { AccountData, Cities, LanguagesData } from "../../Data/Layout/Header";
 import { useAppDispatch, useAppSelector } from "../../ReduxToolkit/Hooks";
 import { setCartData } from "../../ReduxToolkit/Reducers/Layout/LayoutReducers";
 import { RouteList } from "../../Routers/RouteList";
+import { PathTypes } from "../../Types/LayoutType";
 import { dynamicImage, Image } from "../../Utils";
 import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
 
-const Header = () => {
+const Header: React.FC<PathTypes> = ({ part }) => {
   const [selectedCity, setSelectedCity] = useState("Amsterdam");
   const { sidebarOpen } = useAppSelector((state) => state.layout);
-  const path = useLocation();
-  const symbolRegex = /[!@#\$%\^\*\(\)_\+\{\}\[\]:;"'<>,.?/\\|`~=]/g;
-  const [firstPart] = path.pathname
-    .split("/")
-    .slice(1)
-    .map((item) => item.replace(symbolRegex, " "));
   const dispatch = useAppDispatch();
   const { i18n } = useTranslation();
 
@@ -32,13 +27,13 @@ const Header = () => {
     "job-3": " job3-header",
     "property-2": " position-relative",
   };
-  const isJobOrProperty = ["job-2", "job-3", "property-2"].some((item) => firstPart.includes(item));
-  const isLogin = ["job-2", "job-3"].some((item) => firstPart.includes(item));
+  const isJobOrProperty = ["job-2", "job-3", "property-2"].some((item) => part?.includes(item));
+  const isLogin = ["job-2", "job-3"].some((item) => part?.includes(item));
 
   return (
-    <header className={`px-0${headerClassMap[firstPart] || ""}`} id="header">
-      {firstPart === "car-2" && <TopBar />}
-      <Container className={firstPart === "car-2" ? "car2-header" : ""}>
+    <header className={`px-0${headerClassMap[part] || ""}`} id="header">
+      {part === "car-2" && <TopBar />}
+      <Container className={part === "car-2" ? "car2-header" : ""}>
         <div className="header-flex">
           <div className="left-side-header">
             <a href={Href} className={`toggle ${sidebarOpen ? "open" : ""}`} onClick={() => dispatch(setCartData())}>
@@ -71,10 +66,10 @@ const Header = () => {
             {isLogin && (
               <Fragment>
                 <Link to={RouteList.Pages.Other.Login1} className="white-text-btn">
-                  {firstPart.includes("job-2") ? Login : Signin}
+                  {part?.includes("job-2") ? Login : Signin}
                 </Link>
-                <Link to={RouteList.Pages.Other.ContactUs1} className={firstPart.includes("job-2") ? "btn-pills pills-sm" : "btn-solid"}>
-                  {firstPart.includes("job-2") ? (
+                <Link to={RouteList.Pages.Other.ContactUs1} className={part?.includes("job-2") ? "btn-pills pills-sm" : "btn-solid"}>
+                  {part?.includes("job-2") ? (
                     ApplyNow
                   ) : (
                     <Fragment>
@@ -85,7 +80,7 @@ const Header = () => {
                 </Link>
               </Fragment>
             )}
-            {firstPart.includes("property") && (
+            {part?.includes("property") && (
               <Link to={RouteList.Pages.Other.UserDashboard} className="btn-solid">
                 {PostProperty}
               </Link>
@@ -115,7 +110,7 @@ const Header = () => {
                     </li>
                   </ul>
                 </div>
-                {!firstPart.includes("property-1") && (
+                {!part?.includes("property-1") && (
                   <div className="login-flex onhover-dropdown">
                     <a href={Href} className="login-icon">
                       <LanguageCircle />
