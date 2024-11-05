@@ -13,7 +13,7 @@ import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
 import SvgIcon from "../Common/SvgIcon";
 
-const About = () => {
+const AboutAndAboutSlider = () => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {
@@ -107,4 +107,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutAndAboutSlider;

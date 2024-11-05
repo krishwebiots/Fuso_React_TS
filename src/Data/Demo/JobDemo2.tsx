@@ -42,3 +42,50 @@ export const StepsGoalData = [
     description: "Apply to your dream job easily. Find the best real estate in your country and start your career.",
   },
 ];
+
+export const ServiceIconData = ["job/category/1.svg", "job/category/5.svg", "job/category/7.svg"];
+
+export const ServiceListData = ["Say goodbye to endless scrolling through unreliable job postings.", "Receive personalized job suggestions that match your criteria.", "We're more than just a job board."];
+
+export const ServiceCounterListData = [
+  { end: 135, label: "Freelancer Joined" },
+  { end: 8, prefix: "0", label: "Years of Experience" },
+  { end: 35, suffix: "K", label: "Company Joined" },
+];
+
+export const TestimonialsContent = "Discover why job seekers everywhere are raving about fuso. Here's what they have to say!";
+
+export const TestimonialsData = [
+  {
+    name: "Sarah M.",
+    role: "UI/UX Designer",
+    text: "I found my dream job within weeks! The personalized recommendations and comprehensive resources made all the difference in my job search journey.",
+  },
+  {
+    name: "Sarah M.",
+    role: "Marketing Specialist",
+    text: "I landed my ideal role in weeks thanks to personalized job recommendations, extensive resources, and tailored support.",
+  },
+  {
+    name: "James P.",
+    role: "Graphic Designer",
+    text: "Tailored tools and job suggestions were game-changers in my search, helping me find my dream job quickly and efficiently.",
+  },
+  {
+    name: "Olivia M.",
+    role: "Human Resources Manager",
+    text: "Rich resources and tailored job suggestions were useful to me in this search. I'm happy to have fast found a role that matches my goals and skill set.",
+  },
+  {
+    name: "Emma W.",
+    role: "Data Analyst",
+    text: "Targeted job recommendations and resources helped me quickly secure my ideal position with invaluable support.",
+  },
+  {
+    name: "Lucas G.",
+    role: "UI/UX Designer",
+    text: "Customized recommendations and resources helped me find a fantastic opportunity within weeks. I’m thrilled!",
+  },
+];
+
+export const LatestJobOpeningsContent = "Stay updated with the newest job opportunities across industries, tailored to match your skills and career goals.";

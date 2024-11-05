@@ -36,3 +36,6 @@ export const UploadResume: string = "Upload Resume";
 export const PostProperty: string = "Post Property";
 export const Search: string = "Search";
 export const BrowseByCategory: string = "Browse by Category";
+export const LearnMore: string = "Learn More";
+export const PeopleSays: string = "What People Says";
+export const LatestJobOpenings: string = "Explore the Latest Job Openings";

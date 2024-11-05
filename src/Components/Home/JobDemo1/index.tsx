@@ -1,7 +1,7 @@
 import { Fragment, useEffect } from "react";
 import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
 import { fetchCategoryApiData, fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
-import About from "./About";
+import AboutAndAboutSlider from "./AboutAndAboutSlider";
 import Category from "./Category";
 import CompanyLogo from "./CompanyLogo";
 import JobHere from "./JobHere";
@@ -25,7 +25,7 @@ const JobDemo1Container = () => {
       <Step />
       <Category />
       <JobHiring />
-      <About />
+      <AboutAndAboutSlider />
       <Newsletter />
     </Fragment>
   );

@@ -311,7 +311,8 @@
     "time": "18 min ago",
     "applied": "8 Applied",
     "rating": 4.5,
-    "jobTags": ["Retail", "Automobile", "Foreign MNC"]
+    "jobTags": ["Retail", "Automobile", "Foreign MNC"],
+    "description": "We are seeking a talented Knitted Fashion Designer to join our team. As a Knitted Fashion Designer."
   },
   {
     "id": 22,
@@ -325,5 +326,33 @@
     "applied": "2 Applied",
     "rating": 4.2,
     "jobTags": ["BPO / Call Centre", "Indian MNC", "Internet"]
+  },
+  {
+    "id": 23,
+    "image": ["job/job-box/12.svg"],
+    "title": "Product UI Designer",
+    "company": "Atica Inc",
+    "type": "job",
+    "category": ["programming & tech"],
+    "location": "Jeford, UK",
+    "time": "4 days ago",
+    "applied": "2 Applied",
+    "rating": 4.2,
+    "jobTags": ["BPO / Call Centre", "Indian MNC", "Internet"],
+    "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience."
+  },
+  {
+    "id": 24,
+    "image": ["job/job-box/14.svg"],
+    "title": "Full Stack .Net MVC Developer",
+    "company": "ARS Recycling pvt.",
+    "type": "job",
+    "category": ["programming & tech"],
+    "location": "Salbe, Canada",
+    "time": "20 min ago",
+    "applied": "2 Applied",
+    "rating": 4.2,
+    "jobTags": ["BPO / Call Centre", "Indian MNC", "Internet"],
+    "description": "We are looking for highly motivated and skilled Full Stack .NET Developers to join our dynamic team.and explore a career in Full Stack.NET Development."
   }
 ]

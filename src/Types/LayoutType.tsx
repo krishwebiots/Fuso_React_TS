@@ -37,3 +37,8 @@ export interface LoaderConfig {
 export interface FooterTypes {
   part?: string;
 }
+
+export interface PathSettings {
+  className: string;
+  favicon: string;
+}
