@@ -16,7 +16,7 @@ const JobHiring = () => {
         <CommonHeader title={JobHiringTitle} content={JobHiringContentData} headClass="title-style-3 text-center" />
         <Row className="gy-4 justify-content-center">
           {productItem
-            .filter(({ id }) => [18, 13, 19, 15, 20, 17, 21, 22].includes(id))
+            .filter(({ id }) => [17, 19, 21, 22, 23, 24, 25, 26].includes(id))
             .map((job, index) => (
               <Col xl="3" lg="4" sm="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
                 <div className="hire-box">

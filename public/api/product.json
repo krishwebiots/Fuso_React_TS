@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
+    "type": "car",
     "image": ["car/featured/1.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Speedster GT-X",
     "emi": "EMI starts 1,61,613/mo",
-    "type": "car",
     "category": ["honda", "renault", "audi", "lexus"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
@@ -19,10 +19,10 @@
   },
   {
     "id": 2,
+    "type": "car",
     "image": ["car/featured/2.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Velocity Racer Pro",
     "emi": "EMI starts 1,54,646/mo",
-    "type": "car",
     "category": ["mercedes", "citroen", "bmw", "renault"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
@@ -33,10 +33,10 @@
   },
   {
     "id": 3,
+    "type": "car",
     "image": ["car/featured/3.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Infinity Roadster",
     "emi": "EMI starts 1,23,463/mo",
-    "type": "car",
     "category": ["honda", "mercedes", "bmw", "lexus"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
@@ -52,10 +52,10 @@
   },
   {
     "id": 4,
+    "type": "car",
     "image": ["car/featured/4.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Titan X-Force",
     "emi": "EMI starts 1,20,225/mo",
-    "type": "car",
     "category": ["honda", "renault", "audi", "mercedes"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
@@ -66,10 +66,10 @@
   },
   {
     "id": 5,
+    "type": "car",
     "image": ["car/featured/5.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Aero Commander",
     "emi": "EMI starts @ 1,46,234/mo",
-    "type": "car",
     "category": ["mercedes", "citroen", "bmw", "lexus"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "6 Person" },
@@ -85,10 +85,10 @@
   },
   {
     "id": 6,
+    "type": "car",
     "image": ["car/featured/6.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Cyclone Spinner",
     "emi": "EMI starts @ 12,000/mo",
-    "type": "car",
     "category": ["honda", "audi", "bmw", "renault"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
@@ -99,10 +99,10 @@
   },
   {
     "id": 7,
+    "type": "car",
     "image": ["car/featured/7.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Fusion Fury",
     "emi": "EMI starts @ 1,73,742/mo",
-    "type": "car",
     "category": ["renault", "audi", "bmw", "lexus"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
@@ -118,10 +118,10 @@
   },
   {
     "id": 8,
+    "type": "car",
     "image": ["car/featured/8.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Galaxy Striker",
     "emi": "EMI starts @ 1,40,872/mo",
-    "type": "car",
     "category": ["honda", "audi", "citroen", "lexus"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
@@ -132,26 +132,80 @@
   },
   {
     "id": 9,
+    "type": "car",
+    "image": ["car/featured/9.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
+    "title": "Dynamo Flash",
+    "emi": "EMI starts @ 1,46,234/mo",
+    "category": ["renault", "audi", "bmw", "lexus"],
+    "features": [
+      { "icon": "car/product/profile-2user.svg", "text": "6 Person" },
+      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/km.svg", "text": "18,500 km" }
+    ],
+    "price": "$3,50,300"
+  },
+  {
+    "id": 10,
+    "type": "car",
+    "image": ["car/featured/10.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
+    "title": "Apex Trailblazer",
+    "emi": "EMI starts @ 15,000/mo",
+    "category": ["honda", "audi", "bmw", "renault"],
+    "features": [
+      { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
+      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/km.svg", "text": "30,000 km" }
+    ],
+    "price": "$60,666"
+  },
+  {
+    "id": 11,
+    "type": "car",
+    "image": ["car/featured/11.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
+    "title": "Raptor Turbo",
+    "emi": "EMI starts @ 1,30,742/mo",
+    "category": ["mercedes", "citroen", "bmw", "lexus"],
+    "features": [
+      { "icon": "car/product/profile-2user.svg", "text": "6 Person" },
+      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/km.svg", "text": "25,000 km" }
+    ],
+    "price": "$2,78,000"
+  },
+  {
+    "id": 12,
+    "type": "car",
+    "image": ["car/featured/12.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
+    "title": "Maverick Turbo",
+    "emi": "EMI starts @ 1,25,812/mo",
+    "category": ["mercedes", "citroen", "bmw", "lexus"],
+    "features": [
+      { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
+      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/km.svg", "text": "30,000 km" }
+    ],
+    "price": "$1,89,000"
+  },
+  {
+    "id": 13,
+    "type": "car",
     "title": "Velocity Racer Pro",
     "description": "The Velocity Racer Pro is a marvel of modern engineering, designed for the ultimate driving experience.",
     "price": "$625.00",
-    "type": "car",
-    "category": ["honda", "audi", "citroen", "lexus"],
     "features": [
       { "icon": "car2/featured/1.svg", "text": "6 Seater" },
       { "icon": "car2/featured/2.svg", "text": "Petrol" },
       { "icon": "car2/featured/3.svg", "text": "Auto" },
       { "icon": "car2/featured/4.svg", "text": "50,000KM" }
     ],
-    "image": ["car2/featured/2.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"]
+    "image": ["car2/featured/1.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"]
   },
   {
-    "id": 10,
+    "id": 14,
+    "type": "car",
     "title": "Aero Commander",
     "description": "The Titan X-Force features a 600-hp twin-turbo V8 and advanced all-wheel drive, blending luxury with top performance.",
     "price": "$465.00",
-    "type": "car",
-    "category": ["honda", "audi", "citroen", "lexus"],
     "features": [
       { "icon": "car2/featured/1.svg", "text": "5 Seater" },
       { "icon": "car2/featured/2.svg", "text": "Petrol" },
@@ -161,11 +215,11 @@
     "image": ["car2/featured/3.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"]
   },
   {
-    "id": 11,
+    "id": 15,
+    "type": "car",
     "title": "Velocity Racer Pro",
     "description": "The Velocity Racer Pro is a marvel of modern engineering, designed for the ultimate driving experience.",
     "price": "$625.00",
-    "type": "car",
     "features": [
       { "icon": "car2/featured/1.svg", "text": "6 Seater" },
       { "icon": "car2/featured/2.svg", "text": "Petrol" },
@@ -175,25 +229,26 @@
     "image": ["car2/featured/2.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"]
   },
   {
-    "id": 12,
+    "id": 16,
+    "type": "job",
     "image": ["job/job-box/1.svg"],
     "title": "Product UI Designer",
-    "company": "Allies Infotech",
-    "type": "job",
-    "category": ["programming & tech"],
+    "company": "Figgo Inc",
+    "category": ["programming & tech", "product management", "digital marketing"],
     "salary": "18-20K USD",
     "jobType": "Full Time",
     "location": "Toronto, Canada",
     "time": "20 min ago",
+    "rating": 4.5,
     "description": "We are seeking a talented Product UI Designer to join our dynamic team. The ideal candidate will have a strong interest in creating visually appealing, straightforward, and easy-to-use user interfaces."
   },
   {
-    "id": 13,
+    "id": 17,
+    "type": "job",
     "image": ["job/job-box/2.svg"],
     "title": "Business Development",
     "company": "Allies Infotech",
-    "type": "job",
-    "category": ["programming & tech"],
+    "category": ["programming & tech", "finance & accounting", "art & design"],
     "salary": "15-22K USD",
     "jobType": "Full Time",
     "location": "Skaque, Canada",
@@ -204,12 +259,12 @@
     "jobTags": ["Oil & Gas", "Foreign MNC", "B2B", "Public", "B2C"]
   },
   {
-    "id": 14,
+    "id": 18,
+    "type": "job",
     "image": ["job/job-box/3.svg"],
     "title": "BDM for Waste Management",
     "company": "ARS Recycling pvt.",
-    "type": "job",
-    "category": ["programming & tech"],
+    "category": ["programming & tech", "product management", "digital marketing"],
     "salary": "20-60K USD",
     "jobType": "Part Time",
     "location": "Richu, UK",
@@ -217,12 +272,12 @@
     "description": "Work on-site at project locations as needed in support of the field services teams. Minimum experience required 3 Years."
   },
   {
-    "id": 15,
+    "id": 19,
+    "type": "job",
     "image": ["job/job-box/4.svg"],
     "title": "Full Stack .Net MVC Developer",
     "company": "Omega PVT LTD",
-    "type": "job",
-    "category": ["programming & tech"],
+    "category": ["programming & tech", "finance & accounting", "art & design"],
     "salary": "30-80K USD",
     "jobType": "Full Time",
     "location": "Jured, Australia",
@@ -233,12 +288,12 @@
     "jobTags": ["Engineering & Construction", "Private"]
   },
   {
-    "id": 16,
+    "id": 20,
+    "type": "job",
     "image": ["job/job-box/5.svg"],
     "title": "Sales & Marketing",
     "company": "Atica Inc",
-    "type": "job",
-    "category": ["programming & tech"],
+    "category": ["programming & tech", "product management", "digital marketing"],
     "salary": "10-30K USD",
     "jobType": "Part Time",
     "location": "Jeford, UK",
@@ -246,12 +301,12 @@
     "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience."
   },
   {
-    "id": 17,
+    "id": 21,
+    "type": "job",
     "image": ["job/job-box/6.svg"],
     "title": "Fashion Designer",
     "company": "Allies Business",
-    "type": "job",
-    "category": ["programming & tech"],
+    "category": ["programming & tech", "finance & accounting", "digital marketing", "art & design"],
     "salary": "14-30K USD",
     "jobType": "Full Time",
     "location": "Salbe, Canada",
@@ -262,97 +317,251 @@
     "jobTags": ["IT Services & Consulting", "Electronic Components"]
   },
   {
-    "id": 18,
+    "id": 22,
+    "type": "job",
     "image": ["job/job-box/7.svg"],
     "title": "Fashion Designer",
     "company": "Google.com",
-    "type": "job",
-    "category": ["programming & tech"],
+    "category": ["customer support", "product management", "digital marketing"],
     "location": "United States",
     "time": "18 min ago",
     "applied": "15 Applied",
     "rating": 4.5,
-    "jobTags": ["Consulting", "Internet", "Service", "Research"]
+    "jobTags": ["Consulting", "Internet", "Service", "Research"],
+    "salary": "15-20K USD",
+    "jobType": "Full Time",
+    "description": "Collaborating with the marketing team, & internal and external designers to ensure the creation and delivery of tailored."
   },
   {
-    "id": 19,
+    "id": 23,
+    "type": "job",
     "image": ["job/job-box/8.svg"],
     "title": "Web Designer/Developer",
     "company": "Airbnab",
-    "type": "job",
-    "category": ["programming & tech"],
+    "category": ["customer support", "art & design", "digital marketing"],
     "location": "United States",
     "time": "18 min ago",
     "applied": "15 Applied",
     "rating": 3.5,
-    "jobTags": ["Software Product", "Internet", "Travel & Tourism"]
+    "jobTags": ["Software Product", "Internet", "Travel & Tourism"],
+    "salary": "10-20K USD",
+    "jobType": "Part Time",
+    "description": "We are seeking a talented Knitted Fashion Designer to join our team. As a Knitted Fashion Designer."
   },
   {
-    "id": 20,
+    "id": 24,
+    "type": "job",
     "image": ["job/job-box/9.svg"],
     "title": "UI Product Designer",
     "company": "Airtasker",
-    "type": "job",
-    "category": ["programming & tech"],
+    "category": ["customer support", "product management", "digital marketing"],
     "location": "United States",
     "time": "18 min ago",
     "applied": "4 Applied",
     "rating": 3.0,
-    "jobTags": ["Corporate", "B2B", "BPO/KPO", "Private", "BPO / Call Centre"]
+    "jobTags": ["Corporate", "B2B", "BPO/KPO", "Private", "BPO / Call Centre"],
+    "salary": "12-20K USD",
+    "jobType": "Full Time",
+    "description": "Work on-site at project locations as needed in support of the field services teams. Minimum experience required 3 Years."
   },
   {
-    "id": 21,
+    "id": 25,
+    "type": "job",
     "image": ["job/job-box/10.svg"],
     "title": "UX Designer",
     "company": "Amazon",
-    "type": "job",
-    "category": ["programming & tech"],
+    "category": ["customer support", "finance & accounting", "art & design"],
     "location": "United States",
     "time": "18 min ago",
     "applied": "8 Applied",
     "rating": 4.5,
     "jobTags": ["Retail", "Automobile", "Foreign MNC"],
+    "salary": "20-30K USD",
+    "jobType": "Part Time",
     "description": "We are seeking a talented Knitted Fashion Designer to join our team. As a Knitted Fashion Designer."
   },
   {
-    "id": 22,
+    "id": 26,
+    "type": "job",
     "image": ["job/job-box/11.svg"],
     "title": "BDM for Waste Management",
     "company": "Asana",
-    "type": "job",
-    "category": ["programming & tech"],
+    "category": ["customer support", "digital marketing", "product management"],
     "location": "United States",
     "time": "18 min ago",
     "applied": "2 Applied",
     "rating": 4.2,
-    "jobTags": ["BPO / Call Centre", "Indian MNC", "Internet"]
+    "jobTags": ["BPO / Call Centre", "Indian MNC", "Internet"],
+    "salary": "10-20K USD",
+    "jobType": "Full Time",
+    "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience."
   },
   {
-    "id": 23,
+    "id": 27,
+    "type": "job",
     "image": ["job/job-box/12.svg"],
     "title": "Product UI Designer",
     "company": "Atica Inc",
-    "type": "job",
-    "category": ["programming & tech"],
+    "category": ["customer support", "finance & accounting", "art & design"],
     "location": "Jeford, UK",
     "time": "4 days ago",
     "applied": "2 Applied",
     "rating": 4.2,
     "jobTags": ["BPO / Call Centre", "Indian MNC", "Internet"],
+    "salary": "15-25K USD",
+    "jobType": "Part Time",
     "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience."
   },
   {
-    "id": 24,
+    "id": 28,
+    "type": "job",
     "image": ["job/job-box/14.svg"],
     "title": "Full Stack .Net MVC Developer",
     "company": "ARS Recycling pvt.",
-    "type": "job",
-    "category": ["programming & tech"],
+    "category": ["product management", "Digital Marketing", "finance & accounting"],
     "location": "Salbe, Canada",
     "time": "20 min ago",
     "applied": "2 Applied",
     "rating": 4.2,
     "jobTags": ["BPO / Call Centre", "Indian MNC", "Internet"],
+    "salary": "10-20K USD",
+    "jobType": "Full Time",
     "description": "We are looking for highly motivated and skilled Full Stack .NET Developers to join our dynamic team.and explore a career in Full Stack.NET Development."
+  },
+  {
+    "id": 29,
+    "type": "property",
+    "image": ["property/featured/1.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
+    "title": "Vintage House Miniature",
+    "location": "83562 Van Isle, Minot, Maryland - 73040, Guatemala",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "4 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "2 Bath" }
+    ],
+    "price": "$2,94,000",
+    "label": {
+      "text": "Sale"
+    }
+  },
+  {
+    "id": 30,
+    "type": "property",
+    "image": ["property/featured/2.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
+    "title": "Modern Building House",
+    "location": "883 Lourdes Gateway, Rocky Mount, Arkansas - 98771, Singapore",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "3 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "2 Bath" }
+    ],
+    "price": "$1,40,000",
+    "label": {
+      "text": "Sale"
+    }
+  },
+  {
+    "id": 31,
+    "type": "property",
+    "image": ["property/featured/3.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
+    "title": "Unveiling Your Dream Home",
+    "location": "51107 London Road, West Lialand, Iowa - 23046, Slovakia",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "4 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "3 Bath" }
+    ],
+    "price": "$6,000",
+    "label": {
+      "text": "Rent"
+    }
+  },
+  {
+    "id": 32,
+    "type": "property",
+    "image": ["property/featured/4.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
+    "title": "Forest Escape Cottage",
+    "location": "5962 Eliezer Vista, Pollichside, Connecticut - 41465, Belize",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "5 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "4 Bath" }
+    ],
+    "price": "$2,69,900",
+    "label": {
+      "text": "Sale"
+    }
+  },
+  {
+    "id": 33,
+    "type": "property",
+    "image": ["property/featured/5.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
+    "title": "Luxury 3-Bedroom Mansion with Pool",
+    "location": "6256 Pine Grove, Haltom City, Virginia - 51171, Maldives",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "6 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "3 Bath" }
+    ],
+    "price": "$5900",
+    "label": {
+      "text": "Rent"
+    }
+  },
+  {
+    "id": 34,
+    "type": "property",
+    "image": ["property/featured/6.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
+    "title": "Charming Garden House",
+    "location": "5781 Geovany Light, Daisyfield, Wyoming - 74526, Iraq",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "2 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "1 Bath" }
+    ],
+    "price": "$2800",
+    "label": {
+      "text": "Rent"
+    }
+  },
+  {
+    "id": 35,
+    "type": "property",
+    "image": ["property/featured/7.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
+    "title": "Dream Home Delights",
+    "location": "212 Gage Park, Lavinafield, Kentucky - 69076, Ecuador",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "5 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "4 Bath" }
+    ],
+    "price": "$1,80,000",
+    "label": {
+      "text": "Sale"
+    }
+  },
+  {
+    "id": 36,
+    "type": "property",
+    "image": ["property/featured/8.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
+    "title": "Modern Architectural Marvel",
+    "location": "706 Okuneva Drive, Titusville, Indiana - 21258, Japan",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "3 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "2 Bath" }
+    ],
+    "price": "$2,89,000",
+    "label": {
+      "text": "Sale"
+    }
   }
 ]

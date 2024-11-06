@@ -22,7 +22,7 @@ const Product = () => {
           {productItem
             .filter(({ id }) => [1, 2, 3, 4, 5, 6, 7, 8].includes(id))
             .map((item, index) => (
-              <Col xxl="3" lg="4" sm="6" data-aos="fade-up" data-aos-duration={`${index + 2}00`} key={index}>
+              <Col xxl="3" lg="4" sm="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
                 <CarProductCard data={item} />
               </Col>
             ))}

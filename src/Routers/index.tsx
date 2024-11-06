@@ -6,6 +6,7 @@ import CarDemo2 from "../Pages/Home/CarDemo2";
 import JobDemo1 from "../Pages/Home/JobDemo1";
 import JobDemo2 from "../Pages/Home/JobDemo2";
 import JobDemo3 from "../Pages/Home/JobDemo3";
+import PropertyDemo1 from "../Pages/Home/PropertyDemo1";
 
 const Router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const Router = createBrowserRouter([
       { path: RouteList.Home.JobDemo1, element: <JobDemo1 /> },
       { path: RouteList.Home.JobDemo2, element: <JobDemo2 /> },
       { path: RouteList.Home.JobDemo3, element: <JobDemo3 /> },
-      { path: RouteList.Home.PropertyDemo1, element: <JobDemo1 /> },
+      { path: RouteList.Home.PropertyDemo1, element: <PropertyDemo1 /> },
       { path: RouteList.Home.PropertyDemo2, element: <JobDemo1 /> },
     ],
   },

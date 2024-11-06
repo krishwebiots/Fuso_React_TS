@@ -14,7 +14,7 @@ const JobHere = () => {
         <CommonHeader title={JobHereTitle} content={JobHereContentData} headClass="title-style-3 text-center" />
         <Row className="g-4">
           {productItem
-            .filter((e) => [12, 13, 14, 15, 16, 17].includes(e.id))
+            .filter((e) => [16, 17, 18, 19, 20, 21].includes(e.id))
             .map((job, index) => (
               <Col xl="4" md="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
                 <JobCard jobData={job} />

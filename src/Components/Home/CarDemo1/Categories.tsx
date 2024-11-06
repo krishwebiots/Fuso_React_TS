@@ -16,7 +16,7 @@ const Categories = () => {
         <CommonHeader title={CategoriesTitle} content={CategoriesContentData} headClass="title-style-2" animation />
         <Swiper {...CategoriesSettingData} className="car-categories-slider">
           {categoryItem
-            .filter((e) => [0, 1, 2, 3, 4, 5, 6, 7].includes(e.id))
+            .filter((e) => [1, 2, 3, 4, 5, 6, 7].includes(e.id))
             .map((car, index) => (
               <SwiperSlide key={index}>
                 <div className="categories-box">

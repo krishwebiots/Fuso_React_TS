@@ -40,8 +40,7 @@ const Offer = () => {
               <TabPane className={`fade ${activeTab === item.value ? "show" : ""}`} tabId={item.value} key={index}>
                 <Swiper slidesPerView={4} spaceBetween={30} autoplay={{ delay: 2500, disableOnInteraction: false }} modules={[Autoplay]} className="car-tab-slider ratio_65">
                   {productItem
-                    .filter(({ id }) => [1, 2, 3, 4, 5, 6, 7, 8].includes(id))
-                    .filter((i) => i.category.includes(activeTab))
+                    .filter(({ category }) => category?.includes(activeTab))
                     .map((item, index) => (
                       <SwiperSlide key={index}>
                         <CarProductCard data={item} />

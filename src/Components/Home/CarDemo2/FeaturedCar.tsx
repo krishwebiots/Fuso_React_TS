@@ -19,7 +19,7 @@ const FeaturedCar = () => {
         <CommonHeader title={FeaturedCarTitle} content={FeaturedCarContentData} headClass="title-style-5" titleClass="text-white" />
         <Row className="gy-4 justify-content-center">
           {productItem
-            .filter(({ id }) => [9, 10, 11].includes(id))
+            .filter(({ id }) => [13, 14, 15].includes(id))
             .map((car) => (
               <Col xl="4" md="6" key={car.id}>
                 <div className="car2-featured-box">

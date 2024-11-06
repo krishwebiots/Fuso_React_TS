@@ -16,7 +16,7 @@ const JobOpenings = () => {
         <CommonHeader title={LatestJobOpenings} content={LatestJobOpeningsContent} headClass="title-style-4" />
         <Row className="gy-4">
           {productItem
-            .filter((e) => [13, 16, 23, 24, 21].includes(e.id))
+            .filter((e) => [17, 20, 25, 27, 28].includes(e.id))
             .map((job, index) => (
               <Col xxl="4" lg="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
                 <div className="job-box dark-job-box">

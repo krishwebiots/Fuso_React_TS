@@ -2,13 +2,13 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Href } from "../../../Constants/Constants";
 import { ProductSwiperSetting } from "../../../Data/Demo/CarDemo1";
-import { ProductCardType } from "../../../Types/ProductType";
-import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import { RouteList } from "../../../Routers/RouteList";
+import { ProductCardType } from "../../../Types/ProductType";
+import { dynamicImage, Image } from "../../../Utils";
+import SvgIcon from "./SvgIcon";
 
-const CarProductCard: React.FC<ProductCardType> = ({ data }) => {
+const PropertyCard: React.FC<ProductCardType> = ({ data }) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const CarProductCard: React.FC<ProductCardType> = ({ data }) => {
   return (
     <div className="featured-box">
       <div className="featured-main-img">
-        <Link to={RouteList.Car.Detail.CarClassic} className="featured-img">
+        <Link to={RouteList.Property.Detail.PropertySidebarLayout} className="featured-img">
           <Swiper {...ProductSwiperSetting} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
             {data.image.map((testimonial, index) => (
               <SwiperSlide key={index} className="bg-size" style={{ backgroundImage: `url(${dynamicImage(testimonial)})` }}>
@@ -28,31 +28,23 @@ const CarProductCard: React.FC<ProductCardType> = ({ data }) => {
             <div className="swiper-button-prev" />
           </Swiper>
         </Link>
-        <a href={Href} className="save-btn">
-          <i className="ri-bookmark-line" />
-        </a>
-        {data.label && (
-          <label className={data.label.class}>
-            <i className={data.label.icon} />
-            {data.label.text}
-          </label>
-        )}
+        {data.label && <label className={data.label.class ? data.label.class : "save-btn"}>{data.label.text}</label>}
       </div>
       <div className="featured-content">
-        <Link to={RouteList.Car.Detail.CarClassic}>{data.title}</Link>
-        <p>{data.emi}</p>
+        <Link to={RouteList.Property.Detail.PropertySidebarLayout}>{data.title}</Link>
+        <p>{data.location}</p>
         <ul className="featured-list">
           {data.features.map((item, index) => (
             <li key={index}>
-              <Image src={dynamicSvg(item.icon)} alt="profile-2user" className="img-fluid" />
+              <SvgIcon iconId={`property/sprite/featured.svg#${item.icon}`} />
               <span>{item.text}</span>
             </li>
           ))}
         </ul>
         <div className="featured-price">
           <h5>{data.price}</h5>
-          <Link to={RouteList.Car.Detail.CarClassic} className="arrow-btn">
-            Show More <i className="ri-arrow-right-up-line" />
+          <Link to={RouteList.Property.Detail.PropertySidebarLayout} className="btn-solid">
+            Show More
           </Link>
         </div>
       </div>
@@ -60,4 +52,4 @@ const CarProductCard: React.FC<ProductCardType> = ({ data }) => {
   );
 };
 
-export default CarProductCard;
+export default PropertyCard;

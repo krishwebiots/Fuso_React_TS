@@ -15,6 +15,8 @@ export interface CommonHeaderType {
   animation?: boolean;
   headClass?: string;
   titleClass?: string;
+  view?: boolean;
+  subClass?: string;
 }
 
 export interface SvgType {

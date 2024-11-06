@@ -5,7 +5,7 @@ export interface Feature {
 
 export interface Label {
   text: string;
-  icon: string;
+  icon?: string;
   class?: string;
 }
 
@@ -15,7 +15,7 @@ export interface ProductType {
   title: string;
   emi?: string;
   type: string;
-  category: string[];
+  category?: string[];
   features: Feature[];
   price: string;
   label?: Label;
@@ -30,7 +30,7 @@ export interface ProductType {
   jobTags: string[];
 }
 
-export interface CarProductCardType {
+export interface ProductCardType {
   data: ProductType;
 }
 
@@ -45,6 +45,7 @@ export interface ProductSliceProp {
 
 export interface CategoryType {
   id: number;
+  type: string;
   value: string;
   label: string;
   categoryImage: string;
