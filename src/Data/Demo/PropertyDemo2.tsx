@@ -1,0 +1,48 @@
+import { NavType } from "../../Types/HomeDemo";
+
+export const HomeNavData = [
+  { id: 1, title: "Buy" },
+  { id: 2, title: "Rent" },
+  { id: 3, title: "Co-Living" },
+];
+
+export const HomeTabData: NavType[] = [
+  {
+    id: 1,
+    dropdownMenu: [
+      { title: "City,Locality", icon: <i className="ri-map-pin-line" /> },
+      { title: "Area (like a Salmina)", icon: <i className="ri-map-pin-4-line" /> },
+      { title: "Project or Builder name", icon: <i className="ri-building-4-line" /> },
+    ],
+  },
+  {
+    id: 2,
+    dropdownMenu: [{ title: "Apartment" }, { title: "House" }, { title: "Vila" }, { title: "Office" }, { title: "Farmhouse" }],
+  },
+  {
+    id: 3,
+    dropdownMenu: [{ title: "Amsterdam" }, { title: "Kansas City" }, { title: "Santiago" }, { title: "Lisbon" }, { title: "Los Angeles" }, { title: "Sydney" }, { title: "Beijing" }],
+  },
+  {
+    id: 4,
+    rangeSlider: true,
+  },
+];
+
+export const ExperienceContent = ["knowledge of the local real estate market", "property trends and investment opportunities", "Clear and open communication"];
+
+export const CheckListData = ["Comprehensive Services", "Innovative Marketing", "Expert Guidance", "Investment Expertise", "Personalized Approach", "Trusted Partner"];
+
+export const ServiceData = [
+  { img: "1.svg", title: "Sell Spaces", desc: "We sell your space at the greatest market value and in a timely manner." },
+  { img: "2.svg", title: "Free Marketing", desc: "We promote on many internet platforms to find the greatest real estate for you." },
+  { img: "3.svg", title: "Rent Spaces", desc: "We provide free consultation to help you find a tenant for your new house." },
+  { img: "6.svg", title: "Buy Spaces", desc: "We assist you in purchasing your ideal home for you and your family at the best possible price." },
+];
+
+export const CityData = [
+  { img: "1.jpg", city: "New York", properties: "120 Properties" },
+  { img: "2.jpg", city: "London", properties: "546 Properties" },
+  { img: "3.jpg", city: "Canada", properties: "354 Properties" },
+  { img: "4.jpg", city: "Germany", properties: "145 Properties" },
+];

@@ -25,22 +25,29 @@ const Header: React.FC<PathTypes> = ({ part }) => {
     "job-1": " job-header",
     "job-2": " dark-job-header",
     "job-3": " job3-header",
-    "property-2": " position-relative",
+    "property-2": " position-relative p-0",
   };
+
+  const containerClassMap: { [key: string]: string } = {
+    "car-2": "car2-header",
+    "property-2": "property2-header",
+  };
+
   const isJobOrProperty = ["job-2", "job-3", "property-2"].some((item) => part?.includes(item));
   const isLogin = ["job-2", "job-3"].some((item) => part?.includes(item));
+  const isTopBar = ["car-2", "property-2"].some((item) => part?.includes(item));
 
   return (
     <header className={`px-0${headerClassMap[part] || ""}`} id="header">
-      {part === "car-2" && <TopBar />}
-      <Container className={part === "car-2" ? "car2-header" : ""}>
+      {isTopBar && <TopBar part={part} />}
+      <Container className={containerClassMap[part] || ""}>
         <div className="header-flex">
           <div className="left-side-header">
             <a href={Href} className={`toggle ${sidebarOpen ? "open" : ""}`} onClick={() => dispatch(setCartData())}>
               <i className="ri-menu-line" />
             </a>
             <Link to={RouteList.Home.CarDemo1} className="header-logo">
-              <Image src={dynamicImage("logo/1.png")} alt="logo" className="img-fluid" />
+              <Image src={dynamicImage(`logo/${part?.includes("property-2") ? "2" : "1"}.png`)} alt="logo" className="img-fluid" />
             </Link>
             {!isJobOrProperty && (
               <div className="select-dropdown">

@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { SocialLinks } from "../../../Data/Layout/Header";
 import { dynamicSvg, Image } from "../../../Utils";
+import { PathTypes } from "../../../Types/LayoutType";
 
-const TopBar = () => {
+const TopBar: React.FC<PathTypes> = ({ part }) => {
   return (
-    <div className="first-topbar">
+    <div className={`first-topbar${part === "property-2" ? " bg-topbar" : ""}`}>
       <div className="container">
         <div className="topbar-flex">
           <ul className="topbar-left">

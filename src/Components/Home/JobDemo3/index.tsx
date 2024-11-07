@@ -1,7 +1,7 @@
 import { Fragment, useEffect } from "react";
 import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
 import { fetchCategoryApiData, fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
-import LogoSection from "../CarDemo2/LogoSection";
+import LogoSection from "../Common/LogoSection";
 import AboutAndJobOpening from "./AboutAndJobOpening";
 import InterviewQuestion from "./InterviewQuestion";
 import JobCitiesAndCompany from "./JobCitiesAndCompany";

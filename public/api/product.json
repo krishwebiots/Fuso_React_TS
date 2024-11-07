@@ -236,7 +236,7 @@
     "company": "Figgo Inc",
     "category": ["programming & tech", "product management", "digital marketing"],
     "salary": "18-20K USD",
-    "jobType": "Full Time",
+    "jobType": ["full time", "part time", "wfh"],
     "location": "Toronto, Canada",
     "time": "20 min ago",
     "rating": 4.5,
@@ -250,7 +250,7 @@
     "company": "Allies Infotech",
     "category": ["programming & tech", "finance & accounting", "art & design"],
     "salary": "15-22K USD",
-    "jobType": "Full Time",
+    "jobType": ["internship", "wfh", "freelancing"],
     "location": "Skaque, Canada",
     "time": "1 day ago",
     "description": "Collaborating with the marketing team, & internal and external designers to ensure the creation and delivery of tailored.",
@@ -266,7 +266,7 @@
     "company": "ARS Recycling pvt.",
     "category": ["programming & tech", "product management", "digital marketing"],
     "salary": "20-60K USD",
-    "jobType": "Part Time",
+    "jobType": ["part time", "wfo", "wfh"],
     "location": "Richu, UK",
     "time": "20 min ago",
     "description": "Work on-site at project locations as needed in support of the field services teams. Minimum experience required 3 Years."
@@ -279,7 +279,7 @@
     "company": "Omega PVT LTD",
     "category": ["programming & tech", "finance & accounting", "art & design"],
     "salary": "30-80K USD",
-    "jobType": "Full Time",
+    "jobType": ["full time", "internship", "freelancing"],
     "location": "Jured, Australia",
     "time": "1 day ago",
     "description": "We are looking for highly motivated and skilled Full Stack .NET Developers to join our dynamic team.",
@@ -295,7 +295,7 @@
     "company": "Atica Inc",
     "category": ["programming & tech", "product management", "digital marketing"],
     "salary": "10-30K USD",
-    "jobType": "Part Time",
+    "jobType": ["part time", "wfo", "remote"],
     "location": "Jeford, UK",
     "time": "20 min ago",
     "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience."
@@ -308,7 +308,7 @@
     "company": "Allies Business",
     "category": ["programming & tech", "finance & accounting", "digital marketing", "art & design"],
     "salary": "14-30K USD",
-    "jobType": "Full Time",
+    "jobType": ["full time", "wfh", "freelancing"],
     "location": "Salbe, Canada",
     "time": "10 days ago",
     "description": "We are seeking a talented Knitted Fashion Designer to join our team. As a Knitted Fashion Designer.",
@@ -329,7 +329,7 @@
     "rating": 4.5,
     "jobTags": ["Consulting", "Internet", "Service", "Research"],
     "salary": "15-20K USD",
-    "jobType": "Full Time",
+    "jobType": ["internship", "wfh", "remote"],
     "description": "Collaborating with the marketing team, & internal and external designers to ensure the creation and delivery of tailored."
   },
   {
@@ -345,7 +345,7 @@
     "rating": 3.5,
     "jobTags": ["Software Product", "Internet", "Travel & Tourism"],
     "salary": "10-20K USD",
-    "jobType": "Part Time",
+    "jobType": ["part time", "wfo", "remote", "freelancing"],
     "description": "We are seeking a talented Knitted Fashion Designer to join our team. As a Knitted Fashion Designer."
   },
   {
@@ -361,7 +361,7 @@
     "rating": 3.0,
     "jobTags": ["Corporate", "B2B", "BPO/KPO", "Private", "BPO / Call Centre"],
     "salary": "12-20K USD",
-    "jobType": "Full Time",
+    "jobType": ["full time", "internship", "wfh"],
     "description": "Work on-site at project locations as needed in support of the field services teams. Minimum experience required 3 Years."
   },
   {
@@ -377,7 +377,7 @@
     "rating": 4.5,
     "jobTags": ["Retail", "Automobile", "Foreign MNC"],
     "salary": "20-30K USD",
-    "jobType": "Part Time",
+    "jobType": ["part time", "wfo", "freelancing"],
     "description": "We are seeking a talented Knitted Fashion Designer to join our team. As a Knitted Fashion Designer."
   },
   {
@@ -393,7 +393,7 @@
     "rating": 4.2,
     "jobTags": ["BPO / Call Centre", "Indian MNC", "Internet"],
     "salary": "10-20K USD",
-    "jobType": "Full Time",
+    "jobType": ["full time", "internship", "remote"],
     "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience."
   },
   {
@@ -409,7 +409,7 @@
     "rating": 4.2,
     "jobTags": ["BPO / Call Centre", "Indian MNC", "Internet"],
     "salary": "15-25K USD",
-    "jobType": "Part Time",
+    "jobType": ["part time", "internship", "wfo", "remote", "freelancing"],
     "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience."
   },
   {
@@ -425,7 +425,7 @@
     "rating": 4.2,
     "jobTags": ["BPO / Call Centre", "Indian MNC", "Internet"],
     "salary": "10-20K USD",
-    "jobType": "Full Time",
+    "jobType": ["full time", "wfo", "remote"],
     "description": "We are looking for highly motivated and skilled Full Stack .NET Developers to join our dynamic team.and explore a career in Full Stack.NET Development."
   },
   {
@@ -560,6 +560,74 @@
       { "icon": "3", "text": "2 Bath" }
     ],
     "price": "$2,89,000",
+    "label": {
+      "text": "Sale"
+    }
+  },
+  {
+    "id": 37,
+    "type": "property",
+    "image": ["property/featured/9.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
+    "title": "Elegant Estate in Prime Location",
+    "location": "12792 Nigel Locks, Hanford, Oregon - 18665, Egypt",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "6 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "3 Bath" }
+    ],
+    "price": "$2,50,460",
+    "label": {
+      "text": "Sale"
+    }
+  },
+  {
+    "id": 38,
+    "type": "property",
+    "image": ["property/featured/10.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
+    "title": "Magnificent Villa with Luxurious Furnishings",
+    "location": "678 Angelina Park, Dublin, Idaho - 22291, Hungary",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "2 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "1 Bath" }
+    ],
+    "price": "$1,65,648",
+    "label": {
+      "text": "Sale"
+    }
+  },
+  {
+    "id": 39,
+    "type": "property",
+    "image": ["property/featured/11.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
+    "title": "Extremely Attractive Classic Colonies",
+    "location": "8400 Dannie Rest, Albamouth, Montana - 69072, Guam",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "5 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "4 Bath" }
+    ],
+    "price": "$18000",
+    "label": {
+      "text": "Rent"
+    }
+  },
+  {
+    "id": 40,
+    "type": "property",
+    "image": ["property/featured/12.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
+    "title": "Lovely Family House in a Calm Neighbourhood",
+    "location": "80752 Wolf Park, North Sydni, Illinois - 39070, Iran",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "3 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "2 Bath" }
+    ],
+    "price": "$2,30,000",
     "label": {
       "text": "Sale"
     }

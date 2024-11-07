@@ -12,7 +12,7 @@ import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
 
 const AboutAndJobOpening = () => {
-  const [activeTab, setActiveTab] = useState("programming & tech");
+  const [activeTab, setActiveTab] = useState("part time");
   const { productItem, categoryItem } = useAppSelector((state) => state.product);
   return (
     <div className="overflow-x-hidden">
@@ -64,7 +64,7 @@ const AboutAndJobOpening = () => {
           <CommonHeader title={LatestJobOpenings} content={LatestJobOpeningsContent} headClass="title-style-5" />
           <Nav pills className="justify-content-center">
             {categoryItem
-              .filter((e) => [14, 15, 16, 17, 18, 19].includes(e.id))
+              .filter((e) => [22, 23, 24, 25, 26, 27, 28].includes(e.id))
               .map((tab, index) => (
                 <NavItem key={index}>
                   <Button color="" className={`nav-link${tab.value === activeTab ? " active" : ""}`} onClick={() => setActiveTab(tab.value)}>
@@ -75,12 +75,12 @@ const AboutAndJobOpening = () => {
           </Nav>
           <TabContent activeTab={activeTab}>
             {categoryItem
-              .filter(({ id }) => [14, 15, 16, 17, 18, 19].includes(id))
+              .filter(({ id }) => [22, 23, 24, 25, 26, 27, 28].includes(id))
               .map((item, index) => (
                 <TabPane className={`fade ${activeTab === item.value ? "show" : ""}`} tabId={item.value} key={index}>
                   <Row className="g-4">
                     {productItem
-                      .filter(({ category }) => category?.includes(activeTab))
+                      .filter(({ jobType }) => jobType?.includes(activeTab))
                       .slice(0, 6)
                       .map((item, index) => (
                         <Col xl="4" md="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
@@ -104,7 +104,7 @@ const AboutAndJobOpening = () => {
                             </div>
                             <p>{item.description}</p>
                             <div className="job-tag">
-                              <label>{item.jobType}</label>
+                              <label>{activeTab}</label>
                               <label>{item.salary}</label>
                             </div>
                             <div className="location-flex">

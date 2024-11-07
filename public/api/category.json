@@ -163,34 +163,76 @@
   },
   {
     "id": 22,
+    "type": "job",
+    "value": "part time",
+    "label": "Part time"
+  },
+  {
+    "id": 23,
+    "type": "job",
+    "value": "full time",
+    "label": "Full time"
+  },
+  {
+    "id": 24,
+    "type": "job",
+    "value": "internship",
+    "label": "Internship"
+  },
+  {
+    "id": 25,
+    "type": "job",
+    "value": "wfo",
+    "label": "WFO"
+  },
+  {
+    "id": 26,
+    "type": "job",
+    "value": "wfh",
+    "label": "WFH"
+  },
+  {
+    "id": 27,
+    "type": "job",
+    "value": "remote",
+    "label": "Remote"
+  },
+  {
+    "id": 28,
+    "type": "job",
+    "value": "freelancing",
+    "label": "freelancing"
+  },
+  {
+    "id": 29,
     "type": "Property",
     "value": "room",
     "label": "Room",
     "categoryImage": "property/categories/1.jpg"
   },
   {
-    "id": 23,
+    "id": 30,
     "type": "Property",
     "value": "dailyrental",
     "label": "Dailyrental",
     "categoryImage": "property/categories/2.jpg"
   },
   {
-    "id": 24,
+    "id": 31,
     "type": "Property",
     "value": "apartment",
     "label": "Apartment",
     "categoryImage": "property/categories/3.jpg"
   },
   {
-    "id": 25,
+    "id": 32,
     "type": "Property",
     "value": "house",
     "label": "House",
     "categoryImage": "property/categories/4.jpg"
   },
   {
-    "id": 26,
+    "id": 33,
     "type": "Property",
     "value": "office",
     "label": "Office",

@@ -21,3 +21,14 @@ export interface LogoSectionType {
   swiperClass?: string;
   title?: string;
 }
+
+export interface DropdownMenu {
+  title: string;
+  icon?: JSX.Element;
+}
+
+export interface NavType {
+  id: number;
+  dropdownMenu?: DropdownMenu[];
+  rangeSlider?: boolean;
+}

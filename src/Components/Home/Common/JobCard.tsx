@@ -31,7 +31,7 @@ const JobCard: React.FC<JobCardType> = ({ jobData }) => {
         </label>
         <label>
           <Image src={dynamicSvg("job/job-box/briefcase.svg")} alt="briefcase" className="img-fluid" />
-          {jobData.jobType}
+          {jobData.jobType?.slice(0, 1).map((job) => job)}
         </label>
       </div>
       <p>{jobData.description}</p>

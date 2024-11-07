@@ -49,3 +49,4 @@ export const OurAchievementsTitle: string = "Our Achievements";
 export const ViewAll: string = "View All";
 export const OurTestimonial: string = "Our Testimonial";
 export const OurFeaturedProperties: string = "Our Featured Properties";
+export const CityTitle: string = "Explore By City";

@@ -6,6 +6,7 @@ import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { dynamicGrf, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
 import PropertyCard from "../Common/PropertyCard";
+import { RouteList } from "../../../Routers/RouteList";
 
 const AboutUsAndPropertyFeature = () => {
   const { productItem } = useAppSelector((state) => state.product);
@@ -37,7 +38,7 @@ const AboutUsAndPropertyFeature = () => {
       </section>
       <section className="property-featured-section section-b-space bg-color">
         <Container>
-          <CommonHeader title={OurFeaturedProperties} headClass="title-style-1" subClass="horizontal-title" view />
+          <CommonHeader title={OurFeaturedProperties} headClass="title-style-1" subClass="horizontal-title" url={RouteList.Property.Grid.Property3Grid} view />
           <Row className="gy-4 ratio_landscape">
             {productItem
               .filter(({ id }) => [29, 30, 31, 32, 33, 34, 35, 36].includes(id))

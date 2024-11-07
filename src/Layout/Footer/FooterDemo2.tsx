@@ -28,7 +28,7 @@ const FooterDemo2: React.FC<PathTypes> = ({ part }) => {
             <Col md="6">
               <div className="search-pill">
                 <Input type="text" placeholder="Enter your email address" />
-                <Button className="btn-pills">{Subscribe}</Button>
+                <Button className={part === "property-2" ? "btn-solid property2-change" : "btn-pills"}>{Subscribe}</Button>
               </div>
             </Col>
           </Row>

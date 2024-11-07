@@ -6,7 +6,7 @@ import Blogs from "./Blogs";
 import CarHomeSection from "./CarHomeSection";
 import Categories from "./Category";
 import FeaturedCar from "./FeaturedCar";
-import LogoSection from "./LogoSection";
+import LogoSection from "../Common/LogoSection";
 import Service from "./Service";
 import StepBooking from "./StepBooking";
 import TabSection from "./TabSection";

@@ -4,13 +4,14 @@ import { OurTestimonial, Subscribe } from "../../../Constants/Constants";
 import { TestimonialsData } from "../../../Data/Demo/PropertyDemo1";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
+import { RouteList } from "../../../Routers/RouteList";
 
 const TestimonialsAndNewsletter = () => {
   return (
     <Fragment>
       <section className="property-testimonials-section section-b-space bg-color">
         <Container>
-          <CommonHeader title={OurTestimonial} headClass="title-style-1" subClass="horizontal-title" view />
+          <CommonHeader title={OurTestimonial} headClass="title-style-1" subClass="horizontal-title" url={RouteList.Pages.Other.Testimonial} view />
           <Row className="justify-content-center gy-lg-0 gy-4">
             {TestimonialsData.map((testimonial, index) => (
               <Col lg="4" md="6" key={index}>

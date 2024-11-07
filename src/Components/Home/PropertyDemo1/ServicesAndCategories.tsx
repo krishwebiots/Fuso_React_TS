@@ -56,7 +56,7 @@ const ServicesAndCategories = () => {
           <CommonHeader title={CategoriesTitle} headClass="title-style-1" />
           <Row className="row-cols-xl-5 row-cols-sm-3 row-cols-2 justify-content-center gy-xl-0 g-3">
             {categoryItem
-              .filter((e) => [22, 23, 24, 25, 26].includes(e.id))
+              .filter((e) => [29, 30, 31, 32, 33].includes(e.id))
               .map((item, index) => (
                 <Col key={index}>
                   <Link to={RouteList.Property.Grid.Property3Grid} className="categories-box">

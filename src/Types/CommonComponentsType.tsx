@@ -17,6 +17,7 @@ export interface CommonHeaderType {
   titleClass?: string;
   view?: boolean;
   subClass?: string;
+  url?: string;
 }
 
 export interface SvgType {

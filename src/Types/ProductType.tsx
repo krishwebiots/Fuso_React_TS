@@ -21,7 +21,7 @@ export interface ProductType {
   label?: Label;
   description?: string;
   company?: string;
-  jobType?: string;
+  jobType?: string[];
   location?: string;
   time?: string;
   salary?: string;
