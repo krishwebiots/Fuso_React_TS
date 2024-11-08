@@ -205,37 +205,69 @@
   },
   {
     "id": 29,
-    "type": "Property",
+    "type": "property",
     "value": "room",
     "label": "Room",
     "categoryImage": "property/categories/1.jpg"
   },
   {
     "id": 30,
-    "type": "Property",
+    "type": "property",
     "value": "dailyrental",
     "label": "Dailyrental",
     "categoryImage": "property/categories/2.jpg"
   },
   {
     "id": 31,
-    "type": "Property",
+    "type": "property",
     "value": "apartment",
     "label": "Apartment",
     "categoryImage": "property/categories/3.jpg"
   },
   {
     "id": 32,
-    "type": "Property",
+    "type": "property",
     "value": "house",
     "label": "House",
     "categoryImage": "property/categories/4.jpg"
   },
   {
     "id": 33,
-    "type": "Property",
+    "type": "property",
     "value": "office",
     "label": "Office",
     "categoryImage": "property/categories/5.jpg"
+  },
+  {
+    "id": 34,
+    "type": "property",
+    "value": "apartment",
+    "label": "Apartment",
+    "categoryImage": "property2/category/1.jpg",
+    "propertyList": "131 Properties"
+  },
+  {
+    "id": 35,
+    "type": "property",
+    "value": "row house",
+    "label": "Row House",
+    "categoryImage": "property2/category/2.jpg",
+    "propertyList": "153 Properties"
+  },
+  {
+    "id": 36,
+    "type": "property",
+    "value": "bungalows",
+    "label": "Bungalows",
+    "categoryImage": "property2/category/3.jpg",
+    "propertyList": "564 Properties"
+  },
+  {
+    "id": 37,
+    "type": "property",
+    "value": "villa",
+    "label": "Villa",
+    "categoryImage": "property2/category/4.jpg",
+    "propertyList": "120 Properties"
   }
 ]

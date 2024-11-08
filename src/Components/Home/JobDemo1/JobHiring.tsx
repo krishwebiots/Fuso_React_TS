@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { Col, Container, Row } from "reactstrap";
+import { Col, Container, Label, Row } from "reactstrap";
 import { ApplyNow, Href, JobHiringTitle } from "../../../Constants/Constants";
 import { JobHiringContentData } from "../../../Data/Demo/JobDemo1";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
-import SvgIcon from "../Common/SvgIcon";
+import SvgIcon from "../../../Utils/SvgIcon";
 
 const JobHiring = () => {
   const { productItem } = useAppSelector((state) => state.product);
@@ -37,7 +37,7 @@ const JobHiring = () => {
                     </Link>
                     <div className="hire-tag">
                       {job.jobTags.map((tag, idx) => (
-                        <label key={idx}>{tag}</label>
+                        <Label key={idx}>{tag}</Label>
                       ))}
                     </div>
                     <Link to={RouteList.Job.Grid.JobLeftSidebar}>

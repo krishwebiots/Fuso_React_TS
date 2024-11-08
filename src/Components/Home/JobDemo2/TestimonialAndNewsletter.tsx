@@ -6,11 +6,12 @@ import { PeopleSays, Subscribe } from "../../../Constants/Constants";
 import { TestimonialsContent, TestimonialsData } from "../../../Data/Demo/JobDemo2";
 import { dynamicImage, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
+import RatioImage from "../../../Utils/RatioImage";
 
 const TestimonialAndNewsletter = () => {
   return (
-    <div className="combine-bg overflow-hidden bg-size" style={{ backgroundImage: `url(${dynamicImage("dark-job/bg-effect/newsletter-bg.png")})` }}>
-      <Image src={dynamicImage("dark-job/bg-effect/newsletter-bg.png")} alt="newsletter-bg" className="bg-img" style={{ display: "none" }} />
+    <div className="combine-bg overflow-hidden">
+      <RatioImage src={dynamicImage("dark-job/bg-effect/newsletter-bg.png")} alt="newsletter-bg" className="bg-img" />
       <section className="dark-testimonial-section">
         <Container>
           <CommonHeader title={PeopleSays} content={TestimonialsContent} headClass="title-style-4" />

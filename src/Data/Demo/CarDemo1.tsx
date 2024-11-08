@@ -1,7 +1,8 @@
 import { Award, Calendar1, Call, Car, Coin1, Driving, Location, SearchNormal1, Tag2, Verify, Wallet, Wallet3 } from "iconsax-react";
 import { Autoplay, Navigation } from "swiper/modules";
-import { dynamicImage, Image } from "../../Utils";
 import { Href } from "../../Constants/Constants";
+import { dynamicImage, Image } from "../../Utils";
+import { NavType } from "../../Types/HomeDemo";
 
 export const DropdownData = [
   {
@@ -24,6 +25,36 @@ export const DropdownData = [
     dropdownItems: ["Hatchback", "SUV", "Convertible", "Sedan", "Crossover"],
   },
   {
+    icon: <Wallet />,
+    label: "Price",
+  },
+];
+
+export const HomeTabData: NavType[] = [
+  {
+    id: 1,
+    icon: <SearchNormal1 />,
+    label: "Search",
+    dropdownMenu: [
+      { title: "City,Locality", icon: <i className="ri-map-pin-line" /> },
+      { title: "Area (like a Salmina)", icon: <i className="ri-map-pin-4-line" /> },
+      { title: "Project or Builder name", icon: <i className="ri-building-4-line" /> },
+    ],
+  },
+  {
+    id: 2,
+    icon: <Location />,
+    label: "Location",
+    dropdownMenu: [{ title: "Apartment" }, { title: "Kansas City" }, { title: "Santiago" }, { title: "Lisbon" }, { title: "Los Angeles" }, { title: "Sydney" }, { title: "Beijing" }],
+  },
+  {
+    id: 3,
+    icon: <Car />,
+    label: "Car Type",
+    dropdownMenu: [{ title: "Hatchback" }, { title: "SUV" }, { title: "Convertible" }, { title: "Sedan" }, { title: "Crossover" }],
+  },
+  {
+    id: 4,
     icon: <Wallet />,
     label: "Price",
   },
@@ -74,6 +105,8 @@ export const ExperienceCarData = [
 ];
 
 export const AboutContentData = "Experience the new standard of quality with Fuso. Discover why we’re the trusted choice for Car and achieve your goals with confidence.";
+
+export const LuxuryCarContentData = "We provide free consultation to help you find a tenant for your new house.We provide free consultation to help you find a tenant for your new house.We provide free consultation to help.";
 
 export const AboutData = [
   { image: "car/about/timer.svg", title: "Mileage unlimited" },

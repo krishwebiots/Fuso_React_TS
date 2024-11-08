@@ -7,7 +7,8 @@ import { ExploreByCategory } from "../../../Constants/Constants";
 import { CategoriesContentData, CategoriesSettingData } from "../../../Data/Demo/CarDemo2";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { RouteList } from "../../../Routers/RouteList";
-import { dynamicImage, Image } from "../../../Utils";
+import { dynamicImage } from "../../../Utils";
+import RatioImage from "../../../Utils/RatioImage";
 import CommonHeader from "../Common/CommonHeader";
 
 const Category = () => {
@@ -28,8 +29,8 @@ const Category = () => {
               .map((car, index) => (
                 <SwiperSlide key={index}>
                   <div className="category-box">
-                    <Link to={RouteList.Car.Grid.Car3Grid} className="category-img bg-size" style={{ backgroundImage: `url(${dynamicImage(car.categoryImage)})` }}>
-                      <Image src={dynamicImage(car.categoryImage)} alt={`car-${index + 1}`} className="img-fluid" style={{ display: "none" }} />
+                    <Link to={RouteList.Car.Grid.Car3Grid} className="category-img">
+                      <RatioImage src={dynamicImage(car.categoryImage)} alt={`car-${index + 1}`} className="img-fluid bg-img" />
                     </Link>
                     <Link to={RouteList.Car.Grid.Car3Grid} className="category-title">
                       {car.label}

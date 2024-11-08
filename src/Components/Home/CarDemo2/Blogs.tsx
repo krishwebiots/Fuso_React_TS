@@ -3,19 +3,20 @@ import { Add } from "iconsax-react";
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Col, Container, Modal, ModalBody, Row } from "reactstrap";
-import { BlogsTitle } from "../../../Constants/Constants";
+import { BlogsTitle, Close, ReadMore } from "../../../Constants/Constants";
 import { BlogsContentData, BlogsData } from "../../../Data/Demo/CarDemo2";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
+import RatioImage from "../../../Utils/RatioImage";
 
 const Blogs = () => {
   const [videoCall, setVideoCall] = useState(false);
   const toggleClick = () => setVideoCall(!videoCall);
   return (
     <Fragment>
-      <section className="car2-blog-section section-t-lg-space section-b-lg-space overflow-hidden bg-size" style={{ backgroundImage: `url(${dynamicImage("car2/bg-effect/featured-bg.png")})` }}>
-        <Image src={dynamicImage("car2/bg-effect/featured-bg.png")} alt="featured-bg" className="bg-img" style={{ display: "none" }} />
+      <section className="car2-blog-section section-t-lg-space section-b-lg-space overflow-hidden">
+        <RatioImage src={dynamicImage("car2/bg-effect/featured-bg.png")} alt="featured-bg" className="bg-img" />
         <Container>
           <CommonHeader title={BlogsTitle} content={BlogsContentData} titleClass="text-white" headClass="title-style-5" />
           <Row className="justify-content-center gy-4">
@@ -40,7 +41,7 @@ const Blogs = () => {
                       </Link>
                       <p>{blog.description}</p>
                       <Link to={RouteList.Pages.Blog.Detail.BlogLeftClassic} className="text-btn">
-                        Read More <i className="ri-arrow-right-line" />
+                        {ReadMore} <i className="ri-arrow-right-line" />
                       </Link>
                     </div>
                   </li>
@@ -53,7 +54,7 @@ const Blogs = () => {
       <Modal isOpen={videoCall} fade toggle={toggleClick} className="theme-modal modal-lg modal-dialog-centered">
         <div className="modal-header">
           <Button close onClick={toggleClick}>
-            Close
+            {Close}
             <Add />
           </Button>
         </div>

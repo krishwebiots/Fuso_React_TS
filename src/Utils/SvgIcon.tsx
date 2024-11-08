@@ -1,4 +1,4 @@
-import { SvgType } from "../../../Types/CommonComponentsType";
+import { SvgType } from "../Types/CommonComponentsType";
 
 const SvgIcon: React.FC<SvgType> = (props) => {
   return (

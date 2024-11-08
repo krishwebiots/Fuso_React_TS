@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import { Container, Row } from "reactstrap";
-import CommonHeader from "../Common/CommonHeader";
-import { RouteList } from "../../../Routers/RouteList";
 import { CityTitle } from "../../../Constants/Constants";
 import { CityData } from "../../../Data/Demo/PropertyDemo2";
-import { dynamicImage, Image } from "../../../Utils";
-import { Link } from "react-router-dom";
+import { RouteList } from "../../../Routers/RouteList";
+import { dynamicImage } from "../../../Utils";
+import RatioImage from "../../../Utils/RatioImage";
+import CommonHeader from "../Common/CommonHeader";
 
 const City = () => {
   return (
@@ -16,7 +17,7 @@ const City = () => {
             <div key={index} className="col-lg-3 col-6">
               <Link to={RouteList.Property.Grid.Property3Grid} className="city-box">
                 <div className="city-img">
-                  <Image src={dynamicImage(`property2/city/${item.img}`)} alt={`c-${index + 1}`} className="bg-img" />
+                  <RatioImage src={dynamicImage(`property2/city/${item.img}`)} alt={`c-${index + 1}`} className="bg-img" />
                 </div>
                 <div className="city-content">
                   <h4>{item.city}</h4>

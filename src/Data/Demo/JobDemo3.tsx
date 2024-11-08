@@ -82,3 +82,5 @@ export const RatedJobData = [
 ];
 
 export const TopRatedCompanyContent = "Are you ready to take the next step in your career with a top-rated employer? . We're committed to excellence in every aspect of our business, and that starts with our talented team.";
+
+export const JobAboutContent = "We will help you to find a job with your interests and help build your project more elegant.";

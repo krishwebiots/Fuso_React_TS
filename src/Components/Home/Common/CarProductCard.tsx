@@ -2,11 +2,13 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Href } from "../../../Constants/Constants";
+import { Href, ShowMore } from "../../../Constants/Constants";
 import { ProductSwiperSetting } from "../../../Data/Demo/CarDemo1";
 import { ProductCardType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import { RouteList } from "../../../Routers/RouteList";
+import RatioImage from "../../../Utils/RatioImage";
+import { Label } from "reactstrap";
 
 const CarProductCard: React.FC<ProductCardType> = ({ data }) => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -20,8 +22,8 @@ const CarProductCard: React.FC<ProductCardType> = ({ data }) => {
         <Link to={RouteList.Car.Detail.CarClassic} className="featured-img">
           <Swiper {...ProductSwiperSetting} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
             {data.image.map((testimonial, index) => (
-              <SwiperSlide key={index} className="bg-size" style={{ backgroundImage: `url(${dynamicImage(testimonial)})` }}>
-                <Image src={dynamicImage(testimonial)} alt="featured-img" className="img-fluid bg-img" style={{ display: "none" }} />
+              <SwiperSlide key={index} className="bg-size">
+                <RatioImage src={dynamicImage(testimonial)} alt="featured-img" className="img-fluid bg-img" />
               </SwiperSlide>
             ))}
             <div className="swiper-button-next" />
@@ -32,10 +34,10 @@ const CarProductCard: React.FC<ProductCardType> = ({ data }) => {
           <i className="ri-bookmark-line" />
         </a>
         {data.label && (
-          <label className={data.label.class}>
+          <Label className={data.label.class}>
             <i className={data.label.icon} />
             {data.label.text}
-          </label>
+          </Label>
         )}
       </div>
       <div className="featured-content">
@@ -52,7 +54,7 @@ const CarProductCard: React.FC<ProductCardType> = ({ data }) => {
         <div className="featured-price">
           <h5>{data.price}</h5>
           <Link to={RouteList.Car.Detail.CarClassic} className="arrow-btn">
-            Show More <i className="ri-arrow-right-up-line" />
+            {ShowMore} <i className="ri-arrow-right-up-line" />
           </Link>
         </div>
       </div>

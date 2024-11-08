@@ -29,6 +29,14 @@ export interface DropdownMenu {
 
 export interface NavType {
   id: number;
+  icon?: JSX.Element;
   dropdownMenu?: DropdownMenu[];
   rangeSlider?: boolean;
+  label?: string;
+}
+
+export interface FeaturedType {
+  title: string;
+  data: number[];
+  label: string;
 }

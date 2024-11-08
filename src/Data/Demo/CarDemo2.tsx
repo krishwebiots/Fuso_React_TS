@@ -9,15 +9,18 @@ export const CounterData = [
 
 export const DropdownData = [
   {
+    id: 1,
     icon: <Location />,
     label: "Location",
-    dropdownItems: ["Amsterdam", "Kansas City", "Santiago", "Lisbon", "Los Angeles", "Sydney", "Beijing"],
+    dropdownMenu: [{ title: "Amsterdam" }, { title: "Kansas City" }, { title: "Santiago" }, { title: "Lisbon" }, { title: "Los Angeles" }, { title: "Sydney" }, { title: "Beijing" }],
   },
   {
+    id: 2,
     icon: <Calendar1 />,
     label: "Car Type",
   },
   {
+    id: 3,
     icon: <Calendar1 />,
     label: "Price",
   },
@@ -144,3 +147,7 @@ export const TestimonialsData = [
 export const InstagramSliderData = ["1", "2", "3", "4", "5", "6", "1", "2", "3", "4", "5", "6"];
 
 export const FeaturedCarContentData = "As one of the best-selling midsize sedans in America, the Camry offers an exceptional driving experience for both daily commutes and long road trips.";
+
+export const ChooseUsContent = "We understand that you have options when it comes to renting a car for your travels. Here's why we believe we stand out from the rest.";
+
+export const OurDedicationContent = "We are committed to ensuring that every aspect of your rental experience is designed to bring you pleasure and contentment.";

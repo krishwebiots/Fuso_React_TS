@@ -2,10 +2,10 @@ import { Clock, Location } from "iconsax-react";
 import { useState } from "react";
 import CountUp from "react-countup";
 import { Link } from "react-router-dom";
-import { Button, Col, Container, Nav, NavItem, Row, TabContent, TabPane } from "reactstrap";
-import { LatestJobOpenings, LearnMore, ViewDetails } from "../../../Constants/Constants";
+import { Button, Col, Container, Label, Nav, NavItem, Row, TabContent, TabPane } from "reactstrap";
+import { LatestJobOpenings, LearnMore, ProvideJobs, ViewDetails } from "../../../Constants/Constants";
 import { LatestJobOpeningsContent, ServiceCounterListData } from "../../../Data/Demo/JobDemo2";
-import { AboutImageData, AboutList } from "../../../Data/Demo/JobDemo3";
+import { AboutImageData, AboutList, JobAboutContent } from "../../../Data/Demo/JobDemo3";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
@@ -28,8 +28,7 @@ const AboutAndJobOpening = () => {
             </Col>
             <Col lg="6">
               <div className="about-content">
-                <h2>We Provide a Place to Find Trusted Jobs</h2>
-                <p>We will help you to find a job with your interests and help build your project more elegant.</p>
+                <CommonHeader title={ProvideJobs} content={JobAboutContent} />
                 <ul className="counter-list">
                   {ServiceCounterListData.map((item, index) => (
                     <li className="counter-box" key={index}>
@@ -104,8 +103,8 @@ const AboutAndJobOpening = () => {
                             </div>
                             <p>{item.description}</p>
                             <div className="job-tag">
-                              <label>{activeTab}</label>
-                              <label>{item.salary}</label>
+                              <Label>{activeTab}</Label>
+                              <Label>{item.salary}</Label>
                             </div>
                             <div className="location-flex">
                               <div className="post-time">

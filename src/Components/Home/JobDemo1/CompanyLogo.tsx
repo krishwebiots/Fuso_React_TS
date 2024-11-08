@@ -1,13 +1,13 @@
 import { Col, Container, Row } from "reactstrap";
 import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
+import CommonHeader from "../Common/CommonHeader";
+import { WorldBestCompanies } from "../../../Constants/Constants";
 
 const CompanyLogo = () => {
   return (
     <section className="job-logo-section section-b-space">
       <Container>
-        <div className="title-style-3 text-center">
-          <h3>World best companies are hiring on hireup</h3>
-        </div>
+        <CommonHeader title={WorldBestCompanies} headClass="title-style-3 text-center" />
         <div className="experience-car-feature">
           <Row className="row-cols-lg-5 row-cols-2">
             {dynamicNumber(10).map((item, index) => (

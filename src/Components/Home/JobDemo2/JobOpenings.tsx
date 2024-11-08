@@ -1,6 +1,6 @@
 import { ArrowRight, Clock, Location } from "iconsax-react";
 import { Link } from "react-router-dom";
-import { Col, Container, Row } from "reactstrap";
+import { Col, Container, Label, Row } from "reactstrap";
 import { ApplyNow, LatestJobOpenings } from "../../../Constants/Constants";
 import { LatestJobOpeningsContent } from "../../../Data/Demo/JobDemo2";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
@@ -53,8 +53,8 @@ const JobOpenings = () => {
                     </div>
                   </div>
                   <div className="job-tag">
-                    <label>Part Time</label>
-                    <label>Full Time</label>
+                    <Label>Part Time</Label>
+                    <Label>Full Time</Label>
                     <Link to={RouteList.Pages.Other.ContactUs1} className="border-pills">
                       {ApplyNow}
                     </Link>

@@ -5,8 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { ProductSwiperSetting } from "../../../Data/Demo/CarDemo1";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductCardType } from "../../../Types/ProductType";
-import { dynamicImage, Image } from "../../../Utils";
-import SvgIcon from "./SvgIcon";
+import { dynamicImage } from "../../../Utils";
+import RatioImage from "../../../Utils/RatioImage";
+import SvgIcon from "../../../Utils/SvgIcon";
+import { Label } from "reactstrap";
+import { ShowMore } from "../../../Constants/Constants";
 
 const PropertyCard: React.FC<ProductCardType> = ({ data }) => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -20,15 +23,15 @@ const PropertyCard: React.FC<ProductCardType> = ({ data }) => {
         <Link to={RouteList.Property.Detail.PropertySidebarLayout} className="featured-img">
           <Swiper {...ProductSwiperSetting} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
             {data.image.map((testimonial, index) => (
-              <SwiperSlide key={index} className="bg-size" style={{ backgroundImage: `url(${dynamicImage(testimonial)})` }}>
-                <Image src={dynamicImage(testimonial)} alt="featured-img" className="img-fluid bg-img" style={{ display: "none" }} />
+              <SwiperSlide key={index} className="bg-size">
+                <RatioImage src={dynamicImage(testimonial)} alt="featured-img" className="img-fluid bg-img" />
               </SwiperSlide>
             ))}
             <div className="swiper-button-next" />
             <div className="swiper-button-prev" />
           </Swiper>
         </Link>
-        {data.label && <label className={data.label.class ? data.label.class : "save-btn"}>{data.label.text}</label>}
+        {data.label && <Label className={data.label.class ? data.label.class : "save-btn"}>{data.label.text}</Label>}
       </div>
       <div className="featured-content">
         <Link to={RouteList.Property.Detail.PropertySidebarLayout}>{data.title}</Link>
@@ -44,7 +47,7 @@ const PropertyCard: React.FC<ProductCardType> = ({ data }) => {
         <div className="featured-price">
           <h5>{data.price}</h5>
           <Link to={RouteList.Property.Detail.PropertySidebarLayout} className="btn-solid">
-            Show More
+            {ShowMore}
           </Link>
         </div>
       </div>

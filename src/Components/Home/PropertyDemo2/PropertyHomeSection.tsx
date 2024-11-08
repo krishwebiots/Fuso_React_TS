@@ -5,7 +5,8 @@ import { Button, Col, Container, Dropdown, DropdownItem, DropdownMenu, Input, Na
 import { Href, MAX, MIN, STEP } from "../../../Constants/Constants";
 import { HomeNavData, HomeTabData } from "../../../Data/Demo/PropertyDemo2";
 import { RouteList } from "../../../Routers/RouteList";
-import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
+import { dynamicImage, dynamicNumber } from "../../../Utils";
+import RatioImage from "../../../Utils/RatioImage";
 import LogoSection from "../Common/LogoSection";
 
 const PropertyHomeSection = () => {
@@ -18,8 +19,8 @@ const PropertyHomeSection = () => {
   const handleSelect = (index: number, value: any) => setSelectedCity((prev) => prev.map((item, i) => (i === index ? value.title : item)));
 
   return (
-    <div className="property2-section overflow-hidden bg-size" style={{ backgroundImage: `url(${dynamicImage("property2/home-img.jpg")})` }}>
-      <Image src={dynamicImage("property2/home-img.jpg")} alt="home-img" className="bg-img" style={{ display: "none" }} />
+    <div className="property2-section overflow-hidden">
+      <RatioImage src={dynamicImage("property2/home-img.jpg")} alt="home-img" className="bg-img" />
       <Container>
         <Row className="justify-content-between align-items-center gy-lg-0 gy-4">
           <Col lg="7">

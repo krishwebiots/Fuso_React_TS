@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getTrackBackground, Range } from "react-range";
 import { Link } from "react-router-dom";
-import { Button, Col, Container, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Input, Nav, NavItem, Row, TabContent, TabPane } from "reactstrap";
+import { Button, Col, Container, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Input, Label, Nav, NavItem, Row, TabContent, TabPane } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Href, MAX, MIN, Search, STEP } from "../../../Constants/Constants";
 import { DropdownData } from "../../../Data/Demo/CarDemo1";
@@ -49,7 +49,7 @@ const PropertyHomeSection = () => {
                           <li className="tab-item" key={index}>
                             <div className="label-flex">
                               {icon}
-                              <label>{label}</label>
+                              <Label>{label}</Label>
                             </div>
                             <Dropdown isOpen={dropdownOpen[index]} toggle={() => toggle(index)}>
                               <DropdownToggle color="" className="select-button">

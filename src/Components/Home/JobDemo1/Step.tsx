@@ -1,6 +1,8 @@
 import { Col, Container, Row } from "reactstrap";
-import { StepImagesData, StepsData } from "../../../Data/Demo/JobDemo1";
+import { StepImagesData, StepsData, StepToFollowContent } from "../../../Data/Demo/JobDemo1";
 import { dynamicImage, Image } from "../../../Utils";
+import { StepToFollow } from "../../../Constants/Constants";
+import CommonHeader from "../Common/CommonHeader";
 
 const Step = () => {
   return (
@@ -23,10 +25,7 @@ const Step = () => {
             </div>
           </Col>
           <Col xl="8" lg="7">
-            <div className="title-style-3 dark-title">
-              <h2>Step To Follow</h2>
-              <p>Find the best match for your career goals.</p>
-            </div>
+            <CommonHeader title={StepToFollow} content={StepToFollowContent} headClass="title-style-3 dark-title" />
             <Row className="g-xl-5 gy-4">
               {StepsData.map((step, index) => (
                 <Col md="6" key={index}>

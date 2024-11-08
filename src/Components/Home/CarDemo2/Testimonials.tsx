@@ -7,6 +7,7 @@ import { Href, TestimonialsTitle } from "../../../Constants/Constants";
 import { InstagramSliderData, TestimonialsContentData, TestimonialsData } from "../../../Data/Demo/CarDemo2";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
+import RatioImage from "../../../Utils/RatioImage";
 
 const Testimonials = () => {
   return (
@@ -42,8 +43,8 @@ const Testimonials = () => {
         <Swiper loop={true} slidesPerView={9} className="car2-insta-slider ratio_square">
           {InstagramSliderData.map((item, index) => (
             <SwiperSlide key={index}>
-              <a href={Href} className="insta-img bg-size" style={{ backgroundImage: `url(${dynamicImage(`car2/insta/${item}.jpg`)})` }}>
-                <Image src={dynamicImage(`car2/insta/${item}.jpg`)} alt="i-1" className="bg-img" style={{ display: "none" }} />
+              <a href={Href} className="insta-img">
+                <RatioImage src={dynamicImage(`car2/insta/${item}.jpg`)} alt="i-1" className="bg-img" />
                 <div className="insta-overlay">
                   <i className="ri-instagram-line" />
                 </div>

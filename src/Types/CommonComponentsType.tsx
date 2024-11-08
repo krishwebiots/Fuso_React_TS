@@ -31,3 +31,10 @@ export interface SvgType {
   };
   onClick?: () => void;
 }
+
+export interface RatioImageType {
+  className?: string;
+  src: string;
+  alt: string;
+  style?: { height: number };
+}

@@ -7,6 +7,7 @@ import { Cities } from "../../../Data/Demo/JobDemo2";
 import { JobCategoriesScrollData, JobHomeIcon, SelectExperienceData } from "../../../Data/Demo/JobDemo3";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
+import RatioImage from "../../../Utils/RatioImage";
 
 const JobHomeSection = () => {
   const [selectedCity, setSelectedCity] = useState(["Select Experience", "Select Location"]);
@@ -31,7 +32,7 @@ const JobHomeSection = () => {
   }, []);
 
   return (
-    <div className="job3-home-section bg-size" style={{ backgroundImage: `url(${dynamicImage("job-3/bg-effect/home-bg-effect.png")})` }}>
+    <div className="job3-home-section">
       <ul className="home-icons">
         {JobHomeIcon.map((item, index) => (
           <li key={index}>
@@ -41,7 +42,7 @@ const JobHomeSection = () => {
           </li>
         ))}
       </ul>
-      <Image src={dynamicImage("job-3/bg-effect/home-bg-effect.png")} className="bg-img" style={{ display: "none" }} />
+      <RatioImage src={dynamicImage("job-3/bg-effect/home-bg-effect.png")} className="bg-img" alt="job" />
       <Container>
         <Row className="justify-content-center">
           <Col xll="8" xl="9" lg="10">

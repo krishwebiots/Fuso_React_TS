@@ -3,7 +3,7 @@ import { ExportCurve, LanguageCircle, ProfileCircle } from "iconsax-react";
 import { Fragment, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Container } from "reactstrap";
+import { Container, Label } from "reactstrap";
 import { ApplyNow, Href, Language, Login, MyActive, PostProperty, Signin, SignOut, UploadResume } from "../../Constants/Constants";
 import { AccountData, Cities, LanguagesData } from "../../Data/Layout/Header";
 import { useAppDispatch, useAppSelector } from "../../ReduxToolkit/Hooks";
@@ -107,7 +107,7 @@ const Header: React.FC<PathTypes> = ({ part }) => {
                     {AccountData.map((item, index) => (
                       <li key={index} className="active-item">
                         <Link to={RouteList.Pages.Other.UserDashboard}>{item}</Link>
-                        {item === "Searches" && <label>New</label>}
+                        {item === "Searches" && <Label>New</Label>}
                       </li>
                     ))}
                     <li className="active-item">

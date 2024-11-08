@@ -3,9 +3,11 @@ import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
 import { fetchCategoryApiData, fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
 import LogoSection from "../Common/LogoSection";
 import AboutAndJobOpening from "./AboutAndJobOpening";
+import Company from "./Company";
 import InterviewQuestion from "./InterviewQuestion";
-import JobCitiesAndCompany from "./JobCitiesAndCompany";
+import JobCities from "./JobCities";
 import JobHomeSection from "./JobHomeSection";
+import Newsletter from "./Newsletter";
 
 const JobDemo3Container = () => {
   const dispatch = useAppDispatch();
@@ -19,8 +21,10 @@ const JobDemo3Container = () => {
       <JobHomeSection />
       <LogoSection swiperClass="logo-job3-slider" title="World best companies are hiring on hireup" />
       <AboutAndJobOpening />
-      <JobCitiesAndCompany />
+      <JobCities />
+      <Company />
       <InterviewQuestion />
+      <Newsletter />
     </Fragment>
   );
 };

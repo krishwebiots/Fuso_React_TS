@@ -46,3 +46,25 @@ export const CityData = [
   { img: "3.jpg", city: "Canada", properties: "354 Properties" },
   { img: "4.jpg", city: "Germany", properties: "145 Properties" },
 ];
+
+export const CounterData = [
+  { end: 8, label: "Year of Experience" },
+  { end: 135, label: "Home Brokers" },
+  { end: 35, suffix: "K", label: "Home Rented" },
+  { end: 10, label: "Win An award" },
+];
+
+export const TestimonialData = [
+  { content: "We couldn't have asked for a better experience with Premier Estates. From the moment we set foot in Serenity Cove, we knew it was the perfect place for our family.", title: "-The Johnson Family" },
+  { content: "This fantastic staff helped us find our ideal house! Their advice proved to be useful, and the procedure went well. What a difference their experience made.", title: "-The Grimsby Family" },
+  { content: "A achievement of a dream! The house is incredible and the neighbourhood is peaceful and secure. We made the most important choice of our lives when we moved here.", title: "-The Ashford Family" },
+];
+
+export const TeamData = [
+  { name: "John Miller", image: "1.jpg" },
+  { name: "Mia Thomas", image: "2.jpg" },
+  { name: "Daniel Lewis", image: "3.jpg" },
+  { name: "Robert Taylor", image: "4.jpg" },
+];
+
+export const SocialData = ["facebook", "skype", "instagram", "mail"];

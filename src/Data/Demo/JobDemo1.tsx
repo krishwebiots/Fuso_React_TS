@@ -1,6 +1,6 @@
-import { ImportCurve, Note1, Profile, SearchNormal1 } from "iconsax-react";
+import { Building, ImportCurve, Note1, Profile, SearchNormal1, Wallet } from "iconsax-react";
 import { Navigation } from "swiper/modules";
-import { JobHomeImageData, JobHomeMeanClassData } from "../../Types/HomeDemo";
+import { JobHomeImageData, JobHomeMeanClassData, NavType } from "../../Types/HomeDemo";
 
 export const JobCounterData = [
   { end: 20, suffix: "M+", label: "Users" },
@@ -156,3 +156,35 @@ export const JobCategoryContentData = "Explore different job categories to disco
 export const JobHereContentData = "Search and connect with the right company faster.";
 
 export const JobHiringContentData = "A job that is ideal for you can be found. 20,000+ new positions are added each day.";
+
+export const StepToFollowContent = "Find the best match for your career goals.";
+
+export const HomeTabData: NavType[] = [
+  {
+    id: 1,
+    icon: <SearchNormal1 />,
+    label: "Search",
+    dropdownMenu: [
+      { title: "City,Locality", icon: <i className="ri-map-pin-line" /> },
+      { title: "Area (like a Salmina)", icon: <i className="ri-map-pin-4-line" /> },
+      { title: "Project or Builder name", icon: <i className="ri-building-4-line" /> },
+    ],
+  },
+  {
+    id: 2,
+    icon: <Building />,
+    label: "All Categories",
+    dropdownMenu: [{ title: "Education" }, { title: "Law & government" }, { title: "Arts" }, { title: "Construction" }, { title: "Finance" }, { title: "Technology" }, { title: "Communications" }, { title: "Health care" }],
+  },
+  {
+    id: 3,
+    icon: <Wallet />,
+    label: "Job Type",
+    dropdownMenu: [{ title: "Freelance" }, { title: "Full Time" }, { title: "Internship" }, { title: "Part Time" }],
+  },
+  {
+    id: 4,
+    icon: <Wallet />,
+    label: "Salary",
+  },
+];

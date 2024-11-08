@@ -4,6 +4,7 @@ import { ApplyNow, Href } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { JobCardType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
+import { Label } from "reactstrap";
 
 const JobCard: React.FC<JobCardType> = ({ jobData }) => {
   return (
@@ -25,14 +26,14 @@ const JobCard: React.FC<JobCardType> = ({ jobData }) => {
         </Link>
       </div>
       <div className="job-tag">
-        <label>
+        <Label>
           <Image src={dynamicSvg("job/job-box/dollar-circle.svg")} alt="dollar-circle" className="img-fluid" />
           {jobData.salary}
-        </label>
-        <label>
+        </Label>
+        <Label>
           <Image src={dynamicSvg("job/job-box/briefcase.svg")} alt="briefcase" className="img-fluid" />
           {jobData.jobType?.slice(0, 1).map((job) => job)}
-        </label>
+        </Label>
       </div>
       <p>{jobData.description}</p>
       <ul className="post-time">

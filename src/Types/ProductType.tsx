@@ -51,4 +51,5 @@ export interface CategoryType {
   categoryImage: string;
   categoryLogo: string;
   jobList?: string;
+  propertyList?: string;
 }

@@ -1,8 +1,10 @@
 import { Col, Container, Row } from "reactstrap";
-import { AboutListData } from "../../../Data/Demo/CarDemo2";
+import { AboutListData, ChooseUsContent } from "../../../Data/Demo/CarDemo2";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import { Link } from "react-router-dom";
 import { RouteList } from "../../../Routers/RouteList";
+import CommonHeader from "../Common/CommonHeader";
+import { ChooseUs, LearnMore } from "../../../Constants/Constants";
 
 const AboutUs = () => {
   return (
@@ -17,8 +19,7 @@ const AboutUs = () => {
           </Col>
           <Col lg="6">
             <div className="about-content">
-              <h2>Why Choose Us</h2>
-              <p>We understand that you have options when it comes to renting a car for your travels. Here's why we believe we stand out from the rest.</p>
+              <CommonHeader title={ChooseUs} content={ChooseUsContent} />
               <ul className="about-list">
                 {AboutListData.map((item, index) => (
                   <li key={index}>
@@ -30,7 +31,7 @@ const AboutUs = () => {
                 ))}
               </ul>
               <Link to={RouteList.Pages.Other.AboutUs1} className="btn-pills">
-                Learn More
+                {LearnMore}
               </Link>
             </div>
           </Col>

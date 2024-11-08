@@ -631,5 +631,95 @@
     "label": {
       "text": "Sale"
     }
+  },
+  {
+    "id": 41,
+    "type": "property",
+    "image": ["property2/featured/1.jpg", "property2/featured/2.jpg", "property2/featured/3.jpg"],
+    "title": "Sunset Haven",
+    "location": "123 Maple Avenue, Willow Creek, CA",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "4 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "2 Bath" },
+      { "icon": "5", "text": "Location" }
+    ],
+    "price": "$7,50,000"
+  },
+  {
+    "id": 42,
+    "type": "property",
+    "image": ["property2/featured/2.jpg", "property2/featured/1.jpg", "property2/featured/3.jpg"],
+    "title": "Sunset Villa",
+    "location": "321 Beachfront Avenue, Seaview, FL",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "4 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "2 Bath" },
+      { "icon": "5", "text": "Location" }
+    ],
+    "price": "$1,35,000"
+  },
+  {
+    "id": 43,
+    "type": "property",
+    "image": ["property2/featured/3.jpg", "property2/featured/2.jpg", "property2/featured/1.jpg"],
+    "title": "Tranquil Heights",
+    "location": "789 Oakwood Lane, Riverdale, CA",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "4 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "2 Bath" },
+      { "icon": "5", "text": "Location" }
+    ],
+    "price": "$9,50,000"
+  },
+  {
+    "id": 44,
+    "type": "property",
+    "image": ["property2/featured/4.jpg", "property2/featured/5.jpg", "property2/featured/6.jpg"],
+    "title": "Evergreen Retreat",
+    "location": "456 Pinecrest Drive, Mountain Valley, CO",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "4 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "2 Bath" },
+      { "icon": "5", "text": "Location" }
+    ],
+    "price": "$8,25,000"
+  },
+  {
+    "id": 45,
+    "type": "property",
+    "image": ["property2/featured/5.jpg", "property2/featured/6.jpg", "property2/featured/4.jpg"],
+    "title": "Serenity Cove",
+    "location": "101 Lakeview Terrace, Lakeside, WA",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "4 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "2 Bath" },
+      { "icon": "5", "text": "Location" }
+    ],
+    "price": "$1,15,000"
+  },
+  {
+    "id": 46,
+    "type": "property",
+    "image": ["property2/featured/6.jpg", "property2/featured/4.jpg", "property2/featured/5.jpg"],
+    "title": "Whispering Pines Estate",
+    "location": "555 Forest Way, Woodland Hills, CA",
+    "category": [],
+    "features": [
+      { "icon": "1", "text": "4 Rooms" },
+      { "icon": "2", "text": "Bed" },
+      { "icon": "3", "text": "2 Bath" },
+      { "icon": "5", "text": "Location" }
+    ],
+    "price": "$1,80,000"
   }
 ]

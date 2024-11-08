@@ -2,24 +2,27 @@ import React, { useState } from "react";
 import CountUp from "react-countup";
 import { getTrackBackground, Range } from "react-range";
 import { Link } from "react-router-dom";
-import { Col, Container, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Input, Row, TabContent, TabPane } from "reactstrap";
-import { Href, MAX, MIN, STEP } from "../../../Constants/Constants";
-import { DropdownData } from "../../../Data/Demo/CarDemo1";
-import { JobCounterData, JobHomeSectionData } from "../../../Data/Demo/JobDemo1";
+import { Col, Container, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Input, Label, Row, TabContent, TabPane } from "reactstrap";
+import { Href, MAX, MIN, Search, STEP } from "../../../Constants/Constants";
+import { HomeTabData, JobCounterData, JobHomeSectionData } from "../../../Data/Demo/JobDemo1";
 import { RouteList } from "../../../Routers/RouteList";
 import { JobHomeType } from "../../../Types/HomeDemo";
 import { dynamicGrf, dynamicImage, dynamicSvg, Image } from "../../../Utils";
 
 const JobHomeSection = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(Array(DropdownData.length).fill(false));
+  const [dropdownOpen, setDropdownOpen] = useState<{ [key: number]: boolean }>({});
   const [values, setValues] = useState([20000, 100000]);
+  const [selectedCity, setSelectedCity] = useState(["Enter Keyword...", "Enter Category Type", "Enter Job Type", "Enter Salary"]);
 
-  const toggle = (index: number) => setDropdownOpen(dropdownOpen.map((item, i) => (i === index ? !item : item)));
+  const toggle = (title: number) => setDropdownOpen((prevState) => ({ [title]: !prevState[title] }));
+
+  const handleSelect = (index: number, value: any) => setSelectedCity((prev) => prev.map((item, i) => (i === index ? value.title : item)));
 
   const renderImage: React.FC<JobHomeType> = (imageData, key) => {
     const src = imageData.type === "svg" ? dynamicSvg(imageData.image) : dynamicImage(imageData.image);
     return <Image key={key} src={src} alt={imageData.image} className={`img-fluid ${imageData.class || ""}`} />;
   };
+
   return (
     <div className="job-home-section">
       <Container>
@@ -74,52 +77,77 @@ const JobHomeSection = () => {
           <TabContent>
             <TabPane className="fade show active">
               <ul className="tab-list">
-                {DropdownData.map(({ icon, label, dropdownItems }, index) => (
+                {HomeTabData.map((item, index) => (
                   <li className="tab-item" key={index}>
                     <div className="label-flex">
-                      {icon}
-                      <label>{label}</label>
+                      {item.icon}
+                      <Label>{item.label}</Label>
                     </div>
                     <Dropdown isOpen={dropdownOpen[index]} toggle={() => toggle(index)}>
                       <DropdownToggle color="" className="select-button">
-                        <Input type="text" placeholder="Enter Keyword..." readOnly />
+                        <Input type="text" placeholder={selectedCity[index]} readOnly />
                       </DropdownToggle>
-                      <DropdownMenu className="select-menu">
-                        {dropdownItems &&
-                          dropdownItems.map((item, i) =>
-                            typeof item === "string" ? (
-                              <DropdownItem key={i} href={Href}>
-                                {item}
-                              </DropdownItem>
-                            ) : (
-                              <DropdownItem key={i} href={Href}>
-                                <i className={item.icon} />
-                                <h6>{item.label}</h6>
-                              </DropdownItem>
-                            )
-                          )}
-                        {index === 3 && (
-                          <DropdownItem href={Href}>
-                            <div className="range-slider">
-                              <Range
-                                values={values}
-                                step={STEP}
-                                min={MIN}
-                                max={MAX}
-                                onChange={(values) => setValues(values)}
-                                renderTrack={({ props, children }) => (
-                                  <div onMouseDown={props.onMouseDown} onTouchStart={props.onTouchStart} className="range-track">
-                                    <output className="range-slider-input">{values[0]}</output>
-                                    <div ref={props.ref} className="range-slider-display" style={{ background: getTrackBackground({ values, colors: ["#ccc", "var(--content-color)", "#ccc"], min: MIN, max: MAX }) }}>
-                                      {children}
-                                    </div>
-                                    <output className="range-slider-input">{values[1]}</output>
+                      <DropdownMenu className={`select-menu ${item.id === 4 ? "home-range" : ""}`}>
+                        {item.dropdownMenu ? (
+                          item.dropdownMenu?.map((list, idx) => (
+                            <DropdownItem key={idx}>
+                              <a className={item.id === 1 ? "dropdown-item" : "select-item"} href={Href} onClick={() => handleSelect(index, list)}>
+                                {list.icon ? list.icon : ""}
+                                {index === 1 ? <h6>{list.title}</h6> : list.title}
+                              </a>
+                            </DropdownItem>
+                          ))
+                        ) : (
+                          <div className="range-slider">
+                            <Range
+                              values={values}
+                              step={STEP}
+                              min={MIN}
+                              max={MAX}
+                              onChange={(values) => setValues(values)}
+                              renderTrack={({ props, children }) => (
+                                <div
+                                  onMouseDown={props.onMouseDown}
+                                  onTouchStart={props.onTouchStart}
+                                  className="range-track"
+                                  style={{
+                                    ...props.style,
+                                    height: "5px",
+                                    width: "100%",
+                                    borderRadius: "4px",
+                                    background: getTrackBackground({
+                                      values: values,
+                                      colors: ["#ccc", "var(--theme-default2)", "#ccc"],
+                                      min: MIN || 1000,
+                                      max: MAX || 10000,
+                                    }),
+                                    alignSelf: "center",
+                                  }}
+                                >
+                                  <input type="range" defaultValue={values[0]} className="range-slider-input" />
+                                  <div ref={props.ref} className="range-slider-display">
+                                    {children}
                                   </div>
-                                )}
-                                renderThumb={({ props, index }) => <div {...props} key={index} className="price-range-thumb" style={{ ...props.style, backgroundColor: "var(--content-color)" }}></div>}
-                              />
-                            </div>
-                          </DropdownItem>
+                                  <input type="range" defaultValue={values[1]} className="range-slider-input" />
+                                </div>
+                              )}
+                              renderThumb={({ props, index }) => {
+                                const { key, ...restProps } = props;
+                                const prop = { ...restProps };
+                                return (
+                                  <div key={index} {...prop}>
+                                    <div
+                                      style={{
+                                        height: "16px",
+                                        width: "8px",
+                                        borderRadius: "30%",
+                                      }}
+                                    />
+                                  </div>
+                                );
+                              }}
+                            />
+                          </div>
                         )}
                       </DropdownMenu>
                     </Dropdown>
@@ -127,7 +155,7 @@ const JobHomeSection = () => {
                 ))}
                 <li className="tab-item">
                   <Link to={RouteList.Job.Grid.JobLeftSidebar} className="btn-solid">
-                    Search
+                    {Search}
                   </Link>
                 </li>
                 <li className="scroll-down tab-item">

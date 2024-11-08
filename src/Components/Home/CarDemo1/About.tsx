@@ -1,8 +1,8 @@
 import { ArrowRight } from "iconsax-react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import { AboutTitle } from "../../../Constants/Constants";
-import { AboutContentData, AboutData } from "../../../Data/Demo/CarDemo1";
+import { AboutTitle, FollowUsForMore, FusoCarRental, LuxuryCar } from "../../../Constants/Constants";
+import { AboutContentData, AboutData, LuxuryCarContentData } from "../../../Data/Demo/CarDemo1";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
@@ -20,17 +20,16 @@ const About = () => {
           </Col>
           <Col xl="3" lg="4">
             <div className="about-top-content">
-              <h2>Fuso car rental</h2>
+              <h2>{FusoCarRental}</h2>
               <Link to={RouteList.Pages.Other.AboutUs2} className="simple-btn">
-                Follow us for more
+                {FollowUsForMore}
                 <ArrowRight />
               </Link>
             </div>
           </Col>
           <Col xl="5" lg="6" className="order-lg-0 order-1">
             <div className="about-bottom-content">
-              <h2>Luxury car rental FUSO</h2>
-              <p>We provide free consultation to help you find a tenant for your new house.We provide free consultation to help you find a tenant for your new house.We provide free consultation to help .</p>
+              <CommonHeader title={LuxuryCar} content={LuxuryCarContentData} />
               <ul className="about-list">
                 {AboutData.map((item, index) => (
                   <li key={index}>

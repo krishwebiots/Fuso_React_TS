@@ -9,12 +9,13 @@ import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
+import RatioImage from "../../../Utils/RatioImage";
 
 const FeaturedCar = () => {
   const { productItem } = useAppSelector((state) => state.product);
   return (
-    <section className="car2-featured-section section-t-lg-space section-b-lg-space overflow-hidden bg-size" style={{ backgroundImage: `url(${dynamicImage("car2/bg-effect/featured-bg.png")})` }}>
-      <Image src={dynamicImage("car2/bg-effect/featured-bg.png")} alt="featured-bg" className="bg-img" style={{ display: "none" }} />
+    <section className="car2-featured-section section-t-lg-space section-b-lg-space overflow-hidden">
+      <RatioImage src={dynamicImage("car2/bg-effect/featured-bg.png")} alt="featured-bg" className="bg-img" />
       <Container>
         <CommonHeader title={FeaturedCarTitle} content={FeaturedCarContentData} headClass="title-style-5" titleClass="text-white" />
         <Row className="gy-4 justify-content-center">
@@ -27,8 +28,8 @@ const FeaturedCar = () => {
                     <Swiper pagination={true} modules={[Pagination]} className="car2-featured-slider ratio_60">
                       <div className="overlay-box" />
                       {car.image.map((imgSrc, idx) => (
-                        <SwiperSlide key={idx} className="bg-size" style={{ backgroundImage: `url(${dynamicImage(imgSrc)})` }}>
-                          <Image src={dynamicImage(imgSrc)} alt={`featured-img-${idx}`} className="img-fluid bg-img" style={{ display: "none" }} />
+                        <SwiperSlide key={idx} className="bg-size">
+                          <RatioImage src={dynamicImage(imgSrc)} alt={`featured-img-${idx}`} className="img-fluid bg-img" />
                         </SwiperSlide>
                       ))}
                     </Swiper>
