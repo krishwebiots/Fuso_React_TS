@@ -22,7 +22,7 @@ const Header: React.FC<PathTypes> = ({ part }) => {
 
   const headerClassMap: { [key: string]: string } = {
     "car-2": " car-top-header",
-    "job-1": " job-header",
+    "job": " job-header",
     "job-2": " dark-job-header",
     "job-3": " job3-header",
     "property-2": " position-relative p-0",
@@ -117,7 +117,7 @@ const Header: React.FC<PathTypes> = ({ part }) => {
                     </li>
                   </ul>
                 </div>
-                {!part?.includes("property-1") && (
+                {!part?.includes("property") && (
                   <div className="login-flex onhover-dropdown">
                     <a href={Href} className="login-icon">
                       <LanguageCircle />

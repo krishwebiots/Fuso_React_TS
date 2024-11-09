@@ -8,6 +8,7 @@ import JobDemo2 from "../Pages/Home/JobDemo2";
 import JobDemo3 from "../Pages/Home/JobDemo3";
 import PropertyDemo1 from "../Pages/Home/PropertyDemo1";
 import PropertyDemo2 from "../Pages/Home/PropertyDemo2";
+import Property2Grid from "../Pages/Property/Grid/Property2Grid";
 
 const Router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const Router = createBrowserRouter([
       { path: RouteList.Home.JobDemo3, element: <JobDemo3 /> },
       { path: RouteList.Home.PropertyDemo1, element: <PropertyDemo1 /> },
       { path: RouteList.Home.PropertyDemo2, element: <PropertyDemo2 /> },
+      { path: RouteList.Property.Grid.Property2Grid, element: <Property2Grid /> },
     ],
   },
 ]);

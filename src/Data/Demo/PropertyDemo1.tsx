@@ -1,4 +1,6 @@
+import { Building, Location, SearchNormal1, Wallet } from "iconsax-react";
 import { Autoplay, EffectFade } from "swiper/modules";
+import { NavType } from "../../Types/HomeDemo";
 
 export const PropertyHomeSliderSetting = {
   effect: "fade",
@@ -80,5 +82,35 @@ export const TestimonialsData = [
     name: "Jenny Wilson",
     position: "Jenny Wilson",
     content: "“The process of renting the apartment was very smooth and straightforward. The leasing agent, Sarah, was very professional, responsive, and helpful in answering all my questions and concerns.”",
+  },
+];
+
+export const HomeTabData: NavType[] = [
+  {
+    id: 1,
+    icon: <SearchNormal1 />,
+    label: "Search",
+    dropdownMenu: [
+      { title: "City,Locality", icon: <i className="ri-map-pin-line" /> },
+      { title: "Area (like a Salmina)", icon: <i className="ri-map-pin-4-line" /> },
+      { title: "Project or Builder name", icon: <i className="ri-building-4-line" /> },
+    ],
+  },
+  {
+    id: 2,
+    icon: <Location />,
+    label: "Location",
+    dropdownMenu: [{ title: "Apartment" }, { title: "Kansas City" }, { title: "Santiago" }, { title: "Lisbon" }, { title: "Los Angeles" }, { title: "Sydney" }, { title: "Beijing" }],
+  },
+  {
+    id: 3,
+    icon: <Building />,
+    label: "Property Type",
+    dropdownMenu: [{ title: "Apartment" }, { title: "House" }, { title: "Vila" }, { title: "Office" }, { title: "Farmhouse" }],
+  },
+  {
+    id: 4,
+    icon: <Wallet />,
+    label: "Price",
   },
 ];

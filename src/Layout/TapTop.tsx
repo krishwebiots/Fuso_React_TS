@@ -22,7 +22,7 @@ const TapTop: React.FC<PathTypes> = ({ part }) => {
   const isJobOrProperty = ["job", "property"].some((item) => part?.includes(item));
 
   return (
-    <div className={`tap-to-tap ${isJobOrProperty ? (part?.includes("job-1") ? "job-color-change" : "") : "car-top"} ${tapTopStyle ? " show" : ""}`}>
+    <div className={`tap-to-tap ${isJobOrProperty ? (part?.includes("job") ? "job-color-change" : "") : "car-top"} ${tapTopStyle ? " show" : ""}`}>
       <Button color="transparent" onClick={executeScroll} className={isJobOrProperty ? "top-box" : ""}>
         {isJobOrProperty ? <i className="ri-arrow-up-line" /> : <Image src={dynamicImage(`${part?.includes("car-2") ? "car2" : "car"}/tap-to-top.png`)} alt="car-top" className="img-fluid" />}
       </Button>

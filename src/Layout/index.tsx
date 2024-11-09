@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { PathSettings } from "../Types/LayoutType";
 import { setFavicon } from "../Utils/setFavicon";
+import Customizer from "./Customizer";
 import Footer from "./Footer";
 import FooterDemo2 from "./Footer/FooterDemo2";
 import Header from "./Header";
@@ -21,10 +22,10 @@ const Layout = () => {
 
   const pathSettings: Record<string, PathSettings> = {
     "car-2": { className: "car2-color", favicon: "favicon-4.png" },
-    "job-1": { className: "job-color", favicon: "favicon-5.png" },
+    "job": { className: "job-color", favicon: "favicon-5.png" },
     "job-2": { className: "job2-color large-container", favicon: "favicon-6.png" },
     "job-3": { className: "job3-color large-container", favicon: "favicon-7.png" },
-    "property-1": { className: "", favicon: "favicon-1.png" },
+    property: { className: "", favicon: "favicon-1.png" },
     "property-2": { className: "property2-color", favicon: "favicon-2.png" },
     default: { className: "car-color", favicon: "favicon-3.png" },
   };
@@ -48,6 +49,7 @@ const Layout = () => {
       <Outlet />
       {isJobOrProperty ? <FooterDemo2 part={firstPart} /> : <Footer part={firstPart} />}
       <TapTop part={firstPart} />
+      <Customizer part={firstPart} />
     </div>
   );
 };

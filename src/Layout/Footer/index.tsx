@@ -12,7 +12,7 @@ const Footer: React.FC<PathTypes> = ({ part }) => {
 
   const toggleSection = (title: string) => setOpenSections((prevState) => ({ [title]: !prevState[title] }));
   return (
-    <footer className={`property-footer-section${part?.includes("job-1") ? " job-footer-section" : ""}`}>
+    <footer className={`property-footer-section${part?.includes("job") ? " job-footer-section" : ""}`}>
       <Container>
         <ul className="footer-contact-list">
           {ContactListData.map((item, index) => (

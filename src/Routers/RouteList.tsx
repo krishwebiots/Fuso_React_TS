@@ -2,21 +2,21 @@ export const RouteList = {
   Home: {
     CarDemo1: `/`,
     CarDemo2: `/car-2`,
-    JobDemo1: `/job-1`,
+    JobDemo1: `/job`,
     JobDemo2: `/job-2`,
     JobDemo3: `/job-3`,
-    PropertyDemo1: `/property-1`,
+    PropertyDemo1: `/property`,
     PropertyDemo2: `/property-2`,
   },
 
   Property: {
     Grid: {
-      Property2Grid: `property-2-grid`,
-      Property2RightGrid: `property-2-right-grid`,
-      Property3Grid: `property-3-grid`,
-      Property3RightGrid: `property-3-right-grid`,
-      Property4Grid: `property-4-grid`,
-      PropertyGridNoSidebar: `property-grid-no-sidebar`,
+      Property2Grid: `/property/grid/property-2-grid`,
+      Property2RightGrid: `/property/grid/property-2-right-grid`,
+      Property3Grid: `/property/grid/property-3-grid`,
+      Property3RightGrid: `/property/grid/property-3-right-grid`,
+      Property4Grid: `/property/grid/property-4-grid`,
+      PropertyGridNoSidebar: `/property/grid/property-grid-no-sidebar`,
     },
     Listing: {
       PropertyLeftList: `property-left-list`,

@@ -434,7 +434,7 @@
     "image": ["property/featured/1.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Vintage House Miniature",
     "location": "83562 Van Isle, Minot, Maryland - 73040, Guatemala",
-    "category": [],
+    "category": ["apartment"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -451,7 +451,7 @@
     "image": ["property/featured/2.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Modern Building House",
     "location": "883 Lourdes Gateway, Rocky Mount, Arkansas - 98771, Singapore",
-    "category": [],
+    "category": ["farmhouse"],
     "features": [
       { "icon": "1", "text": "3 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -468,7 +468,7 @@
     "image": ["property/featured/3.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Unveiling Your Dream Home",
     "location": "51107 London Road, West Lialand, Iowa - 23046, Slovakia",
-    "category": [],
+    "category": ["apartment"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -485,7 +485,7 @@
     "image": ["property/featured/4.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Forest Escape Cottage",
     "location": "5962 Eliezer Vista, Pollichside, Connecticut - 41465, Belize",
-    "category": [],
+    "category": ["house"],
     "features": [
       { "icon": "1", "text": "5 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -502,7 +502,7 @@
     "image": ["property/featured/5.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Luxury 3-Bedroom Mansion with Pool",
     "location": "6256 Pine Grove, Haltom City, Virginia - 51171, Maldives",
-    "category": [],
+    "category": ["farmhouse"],
     "features": [
       { "icon": "1", "text": "6 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -519,7 +519,7 @@
     "image": ["property/featured/6.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Charming Garden House",
     "location": "5781 Geovany Light, Daisyfield, Wyoming - 74526, Iraq",
-    "category": [],
+    "category": ["house"],
     "features": [
       { "icon": "1", "text": "2 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -536,7 +536,7 @@
     "image": ["property/featured/7.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Dream Home Delights",
     "location": "212 Gage Park, Lavinafield, Kentucky - 69076, Ecuador",
-    "category": [],
+    "category": ["office"],
     "features": [
       { "icon": "1", "text": "5 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -553,7 +553,7 @@
     "image": ["property/featured/8.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Modern Architectural Marvel",
     "location": "706 Okuneva Drive, Titusville, Indiana - 21258, Japan",
-    "category": [],
+    "category": ["house"],
     "features": [
       { "icon": "1", "text": "3 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -570,7 +570,7 @@
     "image": ["property/featured/9.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Elegant Estate in Prime Location",
     "location": "12792 Nigel Locks, Hanford, Oregon - 18665, Egypt",
-    "category": [],
+    "category": ["office"],
     "features": [
       { "icon": "1", "text": "6 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -587,7 +587,7 @@
     "image": ["property/featured/10.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Magnificent Villa with Luxurious Furnishings",
     "location": "678 Angelina Park, Dublin, Idaho - 22291, Hungary",
-    "category": [],
+    "category": ["villa"],
     "features": [
       { "icon": "1", "text": "2 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -604,7 +604,7 @@
     "image": ["property/featured/11.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Extremely Attractive Classic Colonies",
     "location": "8400 Dannie Rest, Albamouth, Montana - 69072, Guam",
-    "category": [],
+    "category": ["office"],
     "features": [
       { "icon": "1", "text": "5 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -621,7 +621,7 @@
     "image": ["property/featured/12.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Lovely Family House in a Calm Neighbourhood",
     "location": "80752 Wolf Park, North Sydni, Illinois - 39070, Iran",
-    "category": [],
+    "category": ["villa"],
     "features": [
       { "icon": "1", "text": "3 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -638,7 +638,7 @@
     "image": ["property2/featured/1.jpg", "property2/featured/2.jpg", "property2/featured/3.jpg"],
     "title": "Sunset Haven",
     "location": "123 Maple Avenue, Willow Creek, CA",
-    "category": [],
+    "category": ["office"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -653,7 +653,7 @@
     "image": ["property2/featured/2.jpg", "property2/featured/1.jpg", "property2/featured/3.jpg"],
     "title": "Sunset Villa",
     "location": "321 Beachfront Avenue, Seaview, FL",
-    "category": [],
+    "category": ["house"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -668,7 +668,7 @@
     "image": ["property2/featured/3.jpg", "property2/featured/2.jpg", "property2/featured/1.jpg"],
     "title": "Tranquil Heights",
     "location": "789 Oakwood Lane, Riverdale, CA",
-    "category": [],
+    "category": ["office"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -683,7 +683,7 @@
     "image": ["property2/featured/4.jpg", "property2/featured/5.jpg", "property2/featured/6.jpg"],
     "title": "Evergreen Retreat",
     "location": "456 Pinecrest Drive, Mountain Valley, CO",
-    "category": [],
+    "category": ["house"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -698,7 +698,7 @@
     "image": ["property2/featured/5.jpg", "property2/featured/6.jpg", "property2/featured/4.jpg"],
     "title": "Serenity Cove",
     "location": "101 Lakeview Terrace, Lakeside, WA",
-    "category": [],
+    "category": ["villa"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },
@@ -713,7 +713,7 @@
     "image": ["property2/featured/6.jpg", "property2/featured/4.jpg", "property2/featured/5.jpg"],
     "title": "Whispering Pines Estate",
     "location": "555 Forest Way, Woodland Hills, CA",
-    "category": [],
+    "category": ["house"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },

@@ -3,10 +3,10 @@ import { LoaderConfig } from "../../Types/LayoutType";
 
 export const Loaders: Record<string, LoaderConfig> = {
   "car-2": { src: "car2-loader.gif", text: "Loading Car rental Template. Please wait…" },
-  "job-1": { src: "job1-loader.gif", text: "Loading job rental Template. Please wait…" },
+  "job": { src: "job1-loader.gif", text: "Loading job rental Template. Please wait…" },
   "job-2": { src: "job2-loader.gif", text: "Loading job rental Template. Please wait…" },
   "job-3": { src: "job3-loader.gif", text: "Loading job rental Template. Please wait…" },
-  "property-1": {
+  property: {
     svg: (
       <Fragment>
         <svg className="ha-logo loading" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
