@@ -16,7 +16,7 @@ const Property2GridContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView />
+      <GridView type={"property"} />
     </Fragment>
   );
 };

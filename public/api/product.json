@@ -441,6 +441,9 @@
       { "icon": "3", "text": "2 Bath" }
     ],
     "price": "$2,94,000",
+    "bhk": "1 BHK",
+    "amenities": "Air Conditioning",
+    "squareFeet": 1000,
     "label": {
       "text": "Sale"
     }
@@ -458,6 +461,9 @@
       { "icon": "3", "text": "2 Bath" }
     ],
     "price": "$1,40,000",
+    "bhk": "1 BHK",
+    "amenities": "Doorman",
+    "squareFeet": 500,
     "label": {
       "text": "Sale"
     }
@@ -475,6 +481,9 @@
       { "icon": "3", "text": "3 Bath" }
     ],
     "price": "$6,000",
+    "bhk": "2 BHK",
+    "amenities": "Family Room",
+    "squareFeet": 1500,
     "label": {
       "text": "Rent"
     }
@@ -492,6 +501,9 @@
       { "icon": "3", "text": "4 Bath" }
     ],
     "price": "$2,69,900",
+    "bhk": "2 BHK",
+    "amenities": "Parking",
+    "squareFeet": 1100,
     "label": {
       "text": "Sale"
     }
@@ -509,6 +521,9 @@
       { "icon": "3", "text": "3 Bath" }
     ],
     "price": "$5900",
+    "bhk": "3 BHK",
+    "amenities": "Waterfront",
+    "squareFeet": 2000,
     "label": {
       "text": "Rent"
     }
@@ -526,6 +541,9 @@
       { "icon": "3", "text": "1 Bath" }
     ],
     "price": "$2800",
+    "bhk": "3 BHK",
+    "amenities": "Onsite Parking",
+    "squareFeet": 2500,
     "label": {
       "text": "Rent"
     }
@@ -543,6 +561,9 @@
       { "icon": "3", "text": "4 Bath" }
     ],
     "price": "$1,80,000",
+    "bhk": "4 BHK",
+    "amenities": "Fireplace",
+    "squareFeet": 3000,
     "label": {
       "text": "Sale"
     }
@@ -560,6 +581,9 @@
       { "icon": "3", "text": "2 Bath" }
     ],
     "price": "$2,89,000",
+    "bhk": "4 BHK",
+    "amenities": "Hardwood Flows",
+    "squareFeet": 3500,
     "label": {
       "text": "Sale"
     }
@@ -577,6 +601,9 @@
       { "icon": "3", "text": "3 Bath" }
     ],
     "price": "$2,50,460",
+    "bhk": "5 BHK",
+    "amenities": "Dishwasher",
+    "squareFeet": 600,
     "label": {
       "text": "Sale"
     }
@@ -594,6 +621,9 @@
       { "icon": "3", "text": "1 Bath" }
     ],
     "price": "$1,65,648",
+    "bhk": "5 BHK",
+    "amenities": "Dining Room",
+    "squareFeet": 700,
     "label": {
       "text": "Sale"
     }
@@ -611,6 +641,9 @@
       { "icon": "3", "text": "4 Bath" }
     ],
     "price": "$18000",
+    "bhk": "1 BHK",
+    "amenities": "Cleaning Service",
+    "squareFeet": 800,
     "label": {
       "text": "Rent"
     }
@@ -628,6 +661,9 @@
       { "icon": "3", "text": "2 Bath" }
     ],
     "price": "$2,30,000",
+    "bhk": "2 BHK",
+    "amenities": "Central Heating",
+    "squareFeet": 900,
     "label": {
       "text": "Sale"
     }
@@ -638,13 +674,16 @@
     "image": ["property2/featured/1.jpg", "property2/featured/2.jpg", "property2/featured/3.jpg"],
     "title": "Sunset Haven",
     "location": "123 Maple Avenue, Willow Creek, CA",
-    "category": ["office"],
+    "category": ["apartment"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },
       { "icon": "3", "text": "2 Bath" },
       { "icon": "5", "text": "Location" }
     ],
+    "bhk": "3 BHK",
+    "amenities": "Unit Washer/Dryer",
+    "squareFeet": 1200,
     "price": "$7,50,000"
   },
   {
@@ -653,13 +692,16 @@
     "image": ["property2/featured/2.jpg", "property2/featured/1.jpg", "property2/featured/3.jpg"],
     "title": "Sunset Villa",
     "location": "321 Beachfront Avenue, Seaview, FL",
-    "category": ["house"],
+    "category": ["villa"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },
       { "icon": "3", "text": "2 Bath" },
       { "icon": "5", "text": "Location" }
     ],
+    "bhk": "4 BHK",
+    "amenities": "Gym",
+    "squareFeet": 1300,
     "price": "$1,35,000"
   },
   {
@@ -668,13 +710,16 @@
     "image": ["property2/featured/3.jpg", "property2/featured/2.jpg", "property2/featured/1.jpg"],
     "title": "Tranquil Heights",
     "location": "789 Oakwood Lane, Riverdale, CA",
-    "category": ["office"],
+    "category": ["house"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },
       { "icon": "3", "text": "2 Bath" },
       { "icon": "5", "text": "Location" }
     ],
+    "bhk": "5 BHK",
+    "amenities": "Wifi",
+    "squareFeet": 1400,
     "price": "$9,50,000"
   },
   {
@@ -683,13 +728,16 @@
     "image": ["property2/featured/4.jpg", "property2/featured/5.jpg", "property2/featured/6.jpg"],
     "title": "Evergreen Retreat",
     "location": "456 Pinecrest Drive, Mountain Valley, CO",
-    "category": ["house"],
+    "category": ["apartment"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },
       { "icon": "3", "text": "2 Bath" },
       { "icon": "5", "text": "Location" }
     ],
+    "bhk": "1 BHK",
+    "amenities": "TV Cable",
+    "squareFeet": 1600,
     "price": "$8,25,000"
   },
   {
@@ -705,6 +753,9 @@
       { "icon": "3", "text": "2 Bath" },
       { "icon": "5", "text": "Location" }
     ],
+    "bhk": "3 BHK",
+    "amenities": "Microwave",
+    "squareFeet": 400,
     "price": "$1,15,000"
   },
   {
@@ -713,13 +764,16 @@
     "image": ["property2/featured/6.jpg", "property2/featured/4.jpg", "property2/featured/5.jpg"],
     "title": "Whispering Pines Estate",
     "location": "555 Forest Way, Woodland Hills, CA",
-    "category": ["house"],
+    "category": ["farmhouse"],
     "features": [
       { "icon": "1", "text": "4 Rooms" },
       { "icon": "2", "text": "Bed" },
       { "icon": "3", "text": "2 Bath" },
       { "icon": "5", "text": "Location" }
     ],
+    "bhk": "5 BHK",
+    "amenities": "Refrigerator",
+    "squareFeet": 2200,
     "price": "$1,80,000"
   }
 ]

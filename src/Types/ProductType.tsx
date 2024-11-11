@@ -15,7 +15,7 @@ export interface ProductType {
   title: string;
   emi?: string;
   type: string;
-  category?: string[];
+  category?: string[] | string;
   features: Feature[];
   price: string;
   label?: Label;
@@ -28,6 +28,9 @@ export interface ProductType {
   applied?: string;
   rating?: number;
   jobTags: string[];
+  bhk?: string;
+  amenities?: string;
+  squareFeet?: number;
 }
 
 export interface ProductCardType {
@@ -52,4 +55,22 @@ export interface CategoryType {
   categoryLogo: string;
   jobList?: string;
   propertyList?: string;
+}
+
+export interface GridViewType {
+  type: string;
+}
+
+export interface GridLayoutType {
+  value: ProductType[];
+  type: string;
+  setTotalProduct: (temp: number) => void;
+}
+
+export interface FilterProductsType {
+  value: ProductType[];
+}
+
+export interface TopPanelType {
+  totalProduct: number;
 }

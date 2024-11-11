@@ -1,10 +1,53 @@
-import { PropertyTypeData } from "../../../../Data/Property/Grid";
+import { ChangeEvent, useState } from "react";
+import { Amenities, BhkOptions, PropertyTypeData } from "../../../../Data/Property/Grid";
 import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
-import { setPropertyType } from "../../../../ReduxToolkit/Reducers/FilterReducers";
+import { setBedsRooms, setPropertyType, setAmenities, setSquareFeetStatus } from "../../../../ReduxToolkit/Reducers/FilterReducers";
 
 const FilterSidebar = () => {
   const dispatch = useAppDispatch();
-  const { propertyType } = useAppSelector((state) => state.filter);
+  const { propertyType, bedsRooms, amenities, squareFeetStatus } = useAppSelector((state) => state.filter);
+  const [squareFeet, setSquareFeet] = useState({ min: squareFeetStatus.min, max: squareFeetStatus.max });
+
+  const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    const isChecked = event.target.checked;
+
+    let updatedPropertyType: string[] = [];
+    if (isChecked) {
+      if (value === "all") updatedPropertyType = ["all", "apartment", "house", "villa", "office", "farmhouse"];
+      else updatedPropertyType = propertyType.includes("all") ? [value] : [...propertyType, value];
+    } else {
+      if (value === "all") updatedPropertyType = [];
+      else updatedPropertyType = propertyType.filter((selectedValue) => selectedValue !== value);
+    }
+    if (updatedPropertyType.length >= 5 && !updatedPropertyType.includes("all")) updatedPropertyType = ["all", "apartment", "house", "villa", "office", "farmhouse"];
+
+    dispatch(setPropertyType(updatedPropertyType));
+  };
+
+  const handleBhkOptions = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    const isChecked = event.target.checked;
+
+    if (isChecked) dispatch(setBedsRooms([...bedsRooms, value]));
+    else dispatch(setBedsRooms(bedsRooms.filter((selectedValue) => selectedValue !== value)));
+  };
+
+  const handleAmenities = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    const isChecked = event.target.checked;
+    if (isChecked) dispatch(setAmenities([...amenities, value]));
+    else dispatch(setAmenities(amenities.filter((selectedValue) => selectedValue !== value)));
+  };
+
+  const handleSquareFeet = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setSquareFeet((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    dispatch(setSquareFeetStatus({ min: squareFeet.min, max: squareFeet.max }));
+  };
 
   return (
     <div className="col-xl-3 filter-sidebar">
@@ -25,12 +68,11 @@ const FilterSidebar = () => {
             <div id="accordion-one" className="accordion-collapse collapse show">
               <div className="accordion-body">
                 <ul className="most-rating">
-                  {PropertyTypeData.map(({ id, label, count, type }) => (
-                    <li key={id}>
-                      <input type="checkbox" id={id} checked={propertyType.includes("all") ? true : propertyType.includes(type)} onChange={() => dispatch(setPropertyType(type))} />
-                      <label htmlFor={id}>
-                        <span>{label}</span>
-                        <span>{count}</span>
+                  {PropertyTypeData.map((item, index) => (
+                    <li key={index}>
+                      <input type="checkbox" id={item.id} value={item.type} checked={propertyType.includes(item.type)} onChange={handleCheckboxChange} />
+                      <label htmlFor={item.id}>
+                        <span>{item.label}</span>
                       </label>
                     </li>
                   ))}
@@ -63,36 +105,14 @@ const FilterSidebar = () => {
             <div id="accordion-three" className="accordion-collapse collapse show">
               <div className="accordion-body">
                 <ul className="most-rating scroll-box">
-                  <li>
-                    <input type="checkbox" id="bed-one" />
-                    <label htmlFor="bed-one">
-                      <span>1 BHK</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="bed-two" />
-                    <label htmlFor="bed-two">
-                      <span>2 BHK</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="bed-three" />
-                    <label htmlFor="bed-three">
-                      <span>3 BHK</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="bed-four" />
-                    <label htmlFor="bed-four">
-                      <span>4 BHK</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="bed-five" />
-                    <label htmlFor="bed-five">
-                      <span>5 BHK</span>
-                    </label>
-                  </li>
+                  {BhkOptions.map((bhk, index) => (
+                    <li key={index}>
+                      <input type="checkbox" id={`bed-${index + 1}`} value={bhk} checked={bedsRooms.includes(bhk)} onChange={handleBhkOptions} />
+                      <label htmlFor={`bed-${index + 1}`}>
+                        <span>{bhk}</span>
+                      </label>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -107,11 +127,11 @@ const FilterSidebar = () => {
               <div className="accordion-body">
                 <div className="main-number">
                   <div className="input-number range-number">
-                    <input type="number" placeholder="Min" className="form-control" />
+                    <input type="number" placeholder="Min" name="min" className="form-control" value={squareFeet.min} onChange={handleSquareFeet} />
                   </div>
                   -
                   <div className="input-number range-number">
-                    <input type="number" placeholder="Max" className="form-control" />
+                    <input type="number" placeholder="Max" name="max" className="form-control" value={squareFeet.max} onChange={handleSquareFeet} />
                   </div>
                 </div>
               </div>
@@ -146,126 +166,14 @@ const FilterSidebar = () => {
             <div id="accordion-seven" className="accordion-collapse collapse show">
               <div className="accordion-body">
                 <ul className="most-rating scroll-box">
-                  <li>
-                    <input type="checkbox" id="service-one" />
-                    <label htmlFor="service-one">
-                      <span>Air Conditioning</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-two" />
-                    <label htmlFor="service-two">
-                      <span>Doorman</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-three" />
-                    <label htmlFor="service-three">
-                      <span>Family Room</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-four" />
-                    <label htmlFor="service-four">
-                      <span>Parking</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-five" />
-                    <label htmlFor="service-five">
-                      <span>Waterfront</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-six" />
-                    <label htmlFor="service-six">
-                      <span>Onsite Parking</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-seven" />
-                    <label htmlFor="service-seven">
-                      <span>Fireplace</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-eight" />
-                    <label htmlFor="service-eight">
-                      <span>Hardwood Flows</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-nine" />
-                    <label htmlFor="service-nine">
-                      <span>Dishwasher</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-ten" />
-                    <label htmlFor="service-ten">
-                      <span>Dining Room</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-eleven" />
-                    <label htmlFor="service-eleven">
-                      <span>Cleaning Service</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-twelve" />
-                    <label htmlFor="service-twelve">
-                      <span>Central Heating</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-thirteen" />
-                    <label htmlFor="service-thirteen">
-                      <span>Unit Washer/Dryer</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-fourteen" />
-                    <label htmlFor="service-fourteen">
-                      <span>Pets Allowed</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-fifteen" />
-                    <label htmlFor="service-fifteen">
-                      <span>Wifi</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-sixteen" />
-                    <label htmlFor="service-sixteen">
-                      <span>TV Cable</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-seventeen" />
-                    <label htmlFor="service-seventeen">
-                      <span>Microwave</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-eighteen" />
-                    <label htmlFor="service-eighteen">
-                      <span>Refrigerator</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-nineteen" />
-                    <label htmlFor="service-nineteen">
-                      <span>TV Cable</span>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="service-twenty" />
-                    <label htmlFor="service-twenty">
-                      <span>Gym</span>
-                    </label>
-                  </li>
+                  {Amenities.map((item, index) => (
+                    <li key={index}>
+                      <input type="checkbox" id={`service-${index + 1}`} value={item} checked={amenities.includes(item)} onChange={handleAmenities} />
+                      <label htmlFor={`service-${index + 1}`}>
+                        <span>{item}</span>
+                      </label>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

@@ -1,9 +1,10 @@
 import React from "react";
+import { TopPanelType } from "../../../../Types/ProductType";
 
-const TopPanel = () => {
+const TopPanel: React.FC<TopPanelType> = ({ totalProduct }) => {
   return (
     <div className="top-panel">
-      <h4>2,285 properties in Amsterdam</h4>
+      <h4>{totalProduct} properties in Amsterdam</h4>
       <div className="dropdown select-dropdown">
         <button type="button" className="select-button" data-bs-toggle="dropdown" aria-expanded="false">
           Sort By

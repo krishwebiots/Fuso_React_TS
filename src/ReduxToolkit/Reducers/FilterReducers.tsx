@@ -1,7 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState: any = {
-  propertyType: [],
+interface FilterSliceType {
+  propertyType: string[];
+  bedsRooms: string[];
+  amenities: string[];
+  squareFeetStatus: { min: number; max: number };
+}
+
+const initialState: FilterSliceType = {
+  propertyType: ["villa"],
+  bedsRooms: [],
+  amenities: [],
+  squareFeetStatus: { min: 400, max: 4000 },
 };
 
 const FilterSlice = createSlice({
@@ -9,15 +19,19 @@ const FilterSlice = createSlice({
   initialState,
   reducers: {
     setPropertyType: (state, action) => {
-      const type = action.payload;
-      if (state.propertyType.includes(type)) {
-        state.propertyType = state.propertyType.filter((item: any) => item !== type);
-      } else {
-        state.propertyType.push(type);
-      }
+      state.propertyType = action.payload;
+    },
+    setBedsRooms: (state, action) => {
+      state.bedsRooms = action.payload;
+    },
+    setAmenities: (state, action) => {
+      state.amenities = action.payload;
+    },
+    setSquareFeetStatus: (state, action) => {
+      state.squareFeetStatus = { min: action.payload[0] || action.payload.min, max: action.payload[1] || action.payload.max };
     },
   },
 });
 
-export const { setPropertyType } = FilterSlice.actions;
+export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus } = FilterSlice.actions;
 export default FilterSlice.reducer;
