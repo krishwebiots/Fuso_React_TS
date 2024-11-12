@@ -1,12 +1,15 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 import { Amenities, BhkOptions, PropertyTypeData } from "../../../../Data/Property/Grid";
 import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
-import { setBedsRooms, setPropertyType, setAmenities, setSquareFeetStatus } from "../../../../ReduxToolkit/Reducers/FilterReducers";
+import { setAmenities, setBedsRooms, setPropertyType, setSquareFeetStatus, setYserBuiltStatus } from "../../../../ReduxToolkit/Reducers/FilterReducers";
+import { FilterSidebarType } from "../../../../Types/ProductType";
+import RangeInputFields from "./RangeInputFields";
+import { Col } from "reactstrap";
+import { Href } from "../../../../Constants/Constants";
 
-const FilterSidebar = () => {
+const FilterSidebar: React.FC<FilterSidebarType> = ({ value, type }) => {
   const dispatch = useAppDispatch();
-  const { propertyType, bedsRooms, amenities, squareFeetStatus } = useAppSelector((state) => state.filter);
-  const [squareFeet, setSquareFeet] = useState({ min: squareFeetStatus.min, max: squareFeetStatus.max });
+  const { propertyType, bedsRooms, amenities, squareFeetStatus, yserBuiltStatus } = useAppSelector((state) => state.filter);
 
   const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -40,21 +43,32 @@ const FilterSidebar = () => {
     else dispatch(setAmenities(amenities.filter((selectedValue) => selectedValue !== value)));
   };
 
-  const handleSquareFeet = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setSquareFeet((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-    dispatch(setSquareFeetStatus({ min: squareFeet.min, max: squareFeet.max }));
+  const handleSquareFeetChange = (e: ChangeEvent<HTMLInputElement>, field: string) => {
+    const value = parseInt(e.target.value, 10) || 0;
+    dispatch(
+      setSquareFeetStatus({
+        min: field === "min" ? value : squareFeetStatus.min,
+        max: field === "max" ? value : squareFeetStatus.max,
+      })
+    );
+  };
+
+  const handleYserBuiltChange = (e: ChangeEvent<HTMLInputElement>, field: string) => {
+    const value = parseInt(e.target.value, 10) || 0;
+    dispatch(
+      setYserBuiltStatus({
+        min: field === "min" ? value : yserBuiltStatus.min,
+        max: field === "max" ? value : yserBuiltStatus.max,
+      })
+    );
   };
 
   return (
-    <div className="col-xl-3 filter-sidebar">
+    <Col xl="3" className="filter-sidebar">
       <div className="property-sidebar">
         <div className="sidebar-title-flex">
           <h5>Filter</h5>
-          <a href="#!" className="close-btn">
+          <a href={Href} className="close-btn">
             <i className="ri-close-line" />
           </a>
         </div>
@@ -88,11 +102,7 @@ const FilterSidebar = () => {
             </h2>
             <div id="accordion-two" className="accordion-collapse collapse show">
               <div className="accordion-body">
-                <div className="range-slider">
-                  <input type="range" min={0} max={120000} step={1} defaultValue={20000} className="range-slider-input" />
-                  <input type="range" min={0} max={120000} step={1} defaultValue={100000} className="range-slider-input" />
-                  <div className="range-slider-display" />
-                </div>
+                <RangeInputFields />
               </div>
             </div>
           </div>
@@ -127,11 +137,11 @@ const FilterSidebar = () => {
               <div className="accordion-body">
                 <div className="main-number">
                   <div className="input-number range-number">
-                    <input type="number" placeholder="Min" name="min" className="form-control" value={squareFeet.min} onChange={handleSquareFeet} />
+                    <input type="number" placeholder="Min" className="form-control" value={squareFeetStatus.min} onChange={(e) => handleSquareFeetChange(e, "min")} />
                   </div>
                   -
                   <div className="input-number range-number">
-                    <input type="number" placeholder="Max" name="max" className="form-control" value={squareFeet.max} onChange={handleSquareFeet} />
+                    <input type="number" placeholder="Max" className="form-control" value={squareFeetStatus.max} onChange={(e) => handleSquareFeetChange(e, "max")} />
                   </div>
                 </div>
               </div>
@@ -147,11 +157,11 @@ const FilterSidebar = () => {
               <div className="accordion-body">
                 <div className="main-number">
                   <div className="input-number range-number">
-                    <input type="number" placeholder={"2019"} className="form-control" />
+                    <input type="number" placeholder={"2019"} className="form-control" value={yserBuiltStatus.min} onChange={(e) => handleYserBuiltChange(e, "min")} />
                   </div>
                   -
                   <div className="input-number range-number">
-                    <input type="number" placeholder={"2022"} className="form-control" />
+                    <input type="number" placeholder={"2024"} className="form-control" value={yserBuiltStatus.max} onChange={(e) => handleYserBuiltChange(e, "max")} />
                   </div>
                 </div>
               </div>
@@ -180,7 +190,7 @@ const FilterSidebar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Col>
   );
 };
 

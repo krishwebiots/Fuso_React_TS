@@ -17,7 +17,7 @@ export interface ProductType {
   type: string;
   category?: string[] | string;
   features: Feature[];
-  price: string;
+  price?: number;
   label?: Label;
   description?: string;
   company?: string;
@@ -31,6 +31,8 @@ export interface ProductType {
   bhk?: string;
   amenities?: string;
   squareFeet?: number;
+  year?: number;
+  productState?: string;
 }
 
 export interface ProductCardType {
@@ -73,4 +75,25 @@ export interface FilterProductsType {
 
 export interface TopPanelType {
   totalProduct: number;
+}
+
+export interface FilterSidebarType {
+  value: ProductType[];
+  type: string;
+}
+
+export interface PriceType {
+  value: any;
+  price: number;
+}
+
+export interface FilterSliceType {
+  propertyType: string[];
+  bedsRooms: string[];
+  amenities: string[];
+  squareFeetStatus: { min: number; max: number };
+  yserBuiltStatus: { min: number; max: number };
+  priceStatus: { min: number; max: number };
+  sortBy: null;
+  popular: null;
 }

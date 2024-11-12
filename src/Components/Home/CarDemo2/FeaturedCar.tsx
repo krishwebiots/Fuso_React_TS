@@ -62,7 +62,7 @@ const FeaturedCar = () => {
                     </ul>
                     <div className="price-flex">
                       <h4>
-                        {car.price}/<span>Per day</span>
+                        ${car.price}/<span>Per day</span>
                       </h4>
                       <Link to={RouteList.Car.Detail.CarClassic} className="btn-pills">
                         Book Now

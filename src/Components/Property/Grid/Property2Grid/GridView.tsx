@@ -15,7 +15,7 @@ const GridView: React.FC<GridViewType> = ({ type }) => {
     <section className="section-t-md-space section-b-md-space">
       <Container>
         <Row>
-          <FilterSidebar />
+          <FilterSidebar value={showProduct} type={type} />
           <div className="col-xl-9">
             <TopPanel totalProduct={totalProduct} />
             <GridLayout value={showProduct} type={type} setTotalProduct={setTotalProduct} />

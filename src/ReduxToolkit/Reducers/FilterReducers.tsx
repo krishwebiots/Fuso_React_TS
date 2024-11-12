@@ -1,17 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-interface FilterSliceType {
-  propertyType: string[];
-  bedsRooms: string[];
-  amenities: string[];
-  squareFeetStatus: { min: number; max: number };
-}
+import { FilterSliceType } from "../../Types/ProductType";
 
 const initialState: FilterSliceType = {
-  propertyType: ["villa"],
+  propertyType: [],
   bedsRooms: [],
   amenities: [],
   squareFeetStatus: { min: 400, max: 4000 },
+  yserBuiltStatus: { min: 2019, max: 2024 },
+  priceStatus: { min: 1000, max: 1000000 },
+  sortBy: null,
+  popular: null,
 };
 
 const FilterSlice = createSlice({
@@ -30,8 +28,20 @@ const FilterSlice = createSlice({
     setSquareFeetStatus: (state, action) => {
       state.squareFeetStatus = { min: action.payload[0] || action.payload.min, max: action.payload[1] || action.payload.max };
     },
+    setYserBuiltStatus: (state, action) => {
+      state.yserBuiltStatus = { min: action.payload[0] || action.payload.min, max: action.payload[1] || action.payload.max };
+    },
+    setPriceStatus: (state, action) => {
+      state.priceStatus = { min: action.payload[0] || action.payload.min, max: action.payload[1] || action.payload.max };
+    },
+    setSortBy: (state, action) => {
+      state.sortBy = action.payload;
+    },
+    setPopular: (state, action) => {
+      state.popular = action.payload;
+    },
   },
 });
 
-export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus } = FilterSlice.actions;
+export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setYserBuiltStatus, setPriceStatus, setSortBy, setPopular } = FilterSlice.actions;
 export default FilterSlice.reducer;

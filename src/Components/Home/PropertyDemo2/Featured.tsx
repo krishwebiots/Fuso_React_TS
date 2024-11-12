@@ -54,7 +54,7 @@ const Featured: React.FC<FeaturedType> = ({ title, data, label }) => {
                     </ul>
                     <div className="price-flex">
                       <h4>
-                        {item.price}/<span>{Month}</span>
+                        ${item.price}/<span>{Month}</span>
                       </h4>
                       <Link to={RouteList.Property.Detail.PropertySidebarLayout} className="btn-solid">
                         {ViewProperty}

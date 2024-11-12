@@ -52,7 +52,7 @@ const CarProductCard: React.FC<ProductCardType> = ({ data }) => {
           ))}
         </ul>
         <div className="featured-price">
-          <h5>{data.price}</h5>
+          <h5>${data.price}</h5>
           <Link to={RouteList.Car.Detail.CarClassic} className="arrow-btn">
             {ShowMore} <i className="ri-arrow-right-up-line" />
           </Link>

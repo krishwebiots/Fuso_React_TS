@@ -52,7 +52,7 @@ const GridLayout: React.FC<GridLayoutType> = ({ value, type, setTotalProduct }) 
                 ))}
               </ul>
               <div className="featured-price">
-                <h5>{data.price}</h5>
+                <h5>${data.price}</h5>
                 <Link to={RouteList.Property.Detail.PropertySidebarLayout} className="btn-solid">
                   {ShowMore}
                 </Link>

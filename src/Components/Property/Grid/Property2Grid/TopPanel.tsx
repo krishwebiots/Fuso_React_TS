@@ -1,33 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { TopPanelType } from "../../../../Types/ProductType";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
+import { Href } from "../../../../Constants/Constants";
+import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
+import { setPopular, setSortBy } from "../../../../ReduxToolkit/Reducers/FilterReducers";
 
 const TopPanel: React.FC<TopPanelType> = ({ totalProduct }) => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dispatch = useAppDispatch();
+  const { sortBy } = useAppSelector((state) => state.filter);
+
+  const handleSortBy = (sortOption: string) => {
+    if (sortOption === "Most Popular") dispatch(setPopular(sortOption));
+    else dispatch(setSortBy(sortOption));
+    setDropdownOpen(false);
+  };
+
   return (
     <div className="top-panel">
       <h4>{totalProduct} properties in Amsterdam</h4>
-      <div className="dropdown select-dropdown">
-        <button type="button" className="select-button" data-bs-toggle="dropdown" aria-expanded="false">
-          Sort By
-        </button>
-        <ul className="dropdown-menu select-menu dropdown-menu-end">
-          <li>
-            <a href="#!" className="select-item">
+      <Dropdown className="select-dropdown" isOpen={dropdownOpen} toggle={() => setDropdownOpen(!dropdownOpen)}>
+        <DropdownToggle className="select-button">{sortBy || "Sort By"}</DropdownToggle>
+        <DropdownMenu className="select-menu" end>
+          <DropdownItem onClick={() => handleSortBy("Most Popular")}>
+            <a href={Href} className="select-item">
               Most Popular
             </a>
-          </li>
-          <li>
-            <a href="#!" className="select-item">
+          </DropdownItem>
+          <DropdownItem onClick={() => handleSortBy("User Rating (High to Low)")}>
+            <a href={Href} className="select-item">
               User Rating (High to Low)
             </a>
-          </li>
-          <li>
-            <a href="#!" className="select-item">
+          </DropdownItem>
+          <DropdownItem onClick={() => handleSortBy("Price (High to Low)")}>
+            <a href={Href} className="select-item">
               Price (High to Low)
             </a>
-          </li>
-        </ul>
-      </div>
-      <a href="#!" className="btn-solid filter-btn">
+          </DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+      <a href={Href} className="btn-solid filter-btn">
         Filter
       </a>
     </div>
