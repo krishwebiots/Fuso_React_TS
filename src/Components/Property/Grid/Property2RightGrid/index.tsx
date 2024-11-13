@@ -6,7 +6,7 @@ import { useAppDispatch } from "../../../../ReduxToolkit/Hooks";
 import { fetchCategoryApiData, fetchProductApiData } from "../../../../ReduxToolkit/Reducers/ProductReducers";
 import { setCardToShow } from "../../../../ReduxToolkit/Reducers/SidebarReducers";
 
-const Property2GridContainer = () => {
+const Property3RightGridContainer = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -18,9 +18,9 @@ const Property2GridContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView type={"property"} />
+      <GridView type="property" side="right" />
     </Fragment>
   );
 };
 
-export default Property2GridContainer;
+export default Property3RightGridContainer;

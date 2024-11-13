@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { TopPanelType } from "../../../../Types/ProductType";
+import { TopPanelType } from "../../../../../Types/ProductType";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
-import { Href } from "../../../../Constants/Constants";
-import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
-import { setPopular, setSortBy } from "../../../../ReduxToolkit/Reducers/FilterReducers";
+import { Href } from "../../../../../Constants/Constants";
+import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
+import { setPopular, setSortBy } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { setOpenFilterSidebar } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
 
-const TopPanel: React.FC<TopPanelType> = ({ totalProduct }) => {
+const FilterTags: React.FC<TopPanelType> = ({ totalProduct, side }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useAppDispatch();
   const { sortBy } = useAppSelector((state) => state.filter);
@@ -39,11 +40,13 @@ const TopPanel: React.FC<TopPanelType> = ({ totalProduct }) => {
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
-      <a href={Href} className="btn-solid filter-btn">
-        Filter
-      </a>
+      {side !== "no" && (
+        <a href={Href} className="btn-solid filter-btn" onClick={() => dispatch(setOpenFilterSidebar())}>
+          Filter
+        </a>
+      )}
     </div>
   );
 };
 
-export default TopPanel;
+export default FilterTags;

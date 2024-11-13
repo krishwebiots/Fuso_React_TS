@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import { FilterProductsType, ProductType } from "../../../../Types/ProductType";
 import { useAppSelector } from "../../../../ReduxToolkit/Hooks";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 const UseFilterProperty = ({ value }: FilterProductsType) => {
   const [showProduct, setShowProduct] = useState<ProductType[]>(value);
   const { propertyType, bedsRooms, amenities, squareFeetStatus, yserBuiltStatus, priceStatus, sortBy, popular } = useAppSelector((state) => state.filter);
+  const { pathname } = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const router = useNavigate();
 
   useEffect(() => {
     const filteredProducts = value
@@ -25,7 +29,21 @@ const UseFilterProperty = ({ value }: FilterProductsType) => {
         return 0;
       });
     setShowProduct(filteredProducts);
-  }, [amenities, bedsRooms, popular, priceStatus, propertyType, sortBy, squareFeetStatus, value, yserBuiltStatus]);
+
+    const params = new URLSearchParams(searchParams);
+
+    ["rate", "price", "trip", "flights", "travel"].forEach((name) => params.delete(name));
+
+    propertyType.forEach((property: string) => {
+      params.append("rate", property);
+    });
+    if (!isNaN(priceStatus.min) && !isNaN(priceStatus.max)) {
+      params.set("min", `${priceStatus.min}`);
+      params.set("max", `${priceStatus.max}`);
+    }
+
+    router(pathname + "?" + params.toString());
+  }, [amenities, bedsRooms, pathname, popular, priceStatus, propertyType, router, searchParams, sortBy, squareFeetStatus, value, yserBuiltStatus]);
 
   return showProduct;
 };

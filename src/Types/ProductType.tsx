@@ -61,12 +61,15 @@ export interface CategoryType {
 
 export interface GridViewType {
   type: string;
+  side?: string;
+  gridSize?: number;
 }
 
 export interface GridLayoutType {
   value: ProductType[];
   type: string;
   setTotalProduct: (temp: number) => void;
+  gridSize?: number;
 }
 
 export interface FilterProductsType {
@@ -75,6 +78,7 @@ export interface FilterProductsType {
 
 export interface TopPanelType {
   totalProduct: number;
+  side?: string;
 }
 
 export interface FilterSidebarType {
@@ -96,4 +100,24 @@ export interface FilterSliceType {
   priceStatus: { min: number; max: number };
   sortBy: null;
   popular: null;
+}
+
+export interface PaginationType {
+  totalPages1: number;
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
+}
+
+export interface FilterDataType {
+  id: string;
+  label: string;
+  type: string;
+}
+
+export interface CommonFilterType {
+  title: string;
+  id: string;
+  data?: FilterDataType[];
+  checkValue?: string | string[];
+  priceRange?: boolean;
 }

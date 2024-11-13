@@ -7,7 +7,7 @@ import { Container, Label } from "reactstrap";
 import { ApplyNow, Href, Language, Login, MyActive, PostProperty, Signin, SignOut, UploadResume } from "../../Constants/Constants";
 import { AccountData, Cities, LanguagesData } from "../../Data/Layout/Header";
 import { useAppDispatch, useAppSelector } from "../../ReduxToolkit/Hooks";
-import { setCartData } from "../../ReduxToolkit/Reducers/Layout/LayoutReducers";
+import { setSidebarOpen } from "../../ReduxToolkit/Reducers/SidebarReducers";
 import { RouteList } from "../../Routers/RouteList";
 import { PathTypes } from "../../Types/LayoutType";
 import { dynamicImage, Image } from "../../Utils";
@@ -16,13 +16,13 @@ import TopBar from "./TopBar";
 
 const Header: React.FC<PathTypes> = ({ part }) => {
   const [selectedCity, setSelectedCity] = useState("Amsterdam");
-  const { sidebarOpen } = useAppSelector((state) => state.layout);
+  const { sidebarOpen } = useAppSelector((state) => state.sidebar);
   const dispatch = useAppDispatch();
   const { i18n } = useTranslation();
 
   const headerClassMap: { [key: string]: string } = {
     "car-2": " car-top-header",
-    "job": " job-header",
+    job: " job-header",
     "job-2": " dark-job-header",
     "job-3": " job3-header",
     "property-2": " position-relative p-0",
@@ -43,7 +43,7 @@ const Header: React.FC<PathTypes> = ({ part }) => {
       <Container className={containerClassMap[part] || ""}>
         <div className="header-flex">
           <div className="left-side-header">
-            <a href={Href} className={`toggle ${sidebarOpen ? "open" : ""}`} onClick={() => dispatch(setCartData())}>
+            <a href={Href} className={`toggle ${sidebarOpen ? "open" : ""}`} onClick={() => dispatch(setSidebarOpen())}>
               <i className="ri-menu-line" />
             </a>
             <Link to={RouteList.Home.CarDemo1} className="header-logo">

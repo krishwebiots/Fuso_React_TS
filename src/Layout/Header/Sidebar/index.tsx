@@ -4,7 +4,7 @@ import { Col, Row } from "reactstrap";
 import { Href } from "../../../Constants/Constants";
 import { MenuItem } from "../../../Data/Layout/Header";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { setCartData } from "../../../ReduxToolkit/Reducers/Layout/LayoutReducers";
+import { setSidebarOpen } from "../../../ReduxToolkit/Reducers/SidebarReducers";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, Image } from "../../../Utils";
 import SidebarSubMenu from "./SidebarSubMenu";
@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 
 const Sidebar = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
-  const { sidebarOpen } = useAppSelector((state) => state.layout);
+  const { sidebarOpen } = useAppSelector((state) => state.sidebar);
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
@@ -21,7 +21,7 @@ const Sidebar = () => {
     <nav className={`sidebar-nav ${sidebarOpen ? "open" : ""}`}>
       <div className="menu-header">
         <h5 className="menu-title">Menu</h5>
-        <a href={Href} className="close-btn" onClick={() => dispatch(setCartData())}>
+        <a href={Href} className="close-btn" onClick={() => dispatch(setSidebarOpen())}>
           <i className="ri-close-line" />
         </a>
       </div>

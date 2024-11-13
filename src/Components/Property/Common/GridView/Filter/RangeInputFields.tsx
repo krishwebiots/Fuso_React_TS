@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getTrackBackground, Range } from "react-range";
-import { useAppDispatch } from "../../../../ReduxToolkit/Hooks";
-import { setPriceStatus } from "../../../../ReduxToolkit/Reducers/FilterReducers";
+import { useAppDispatch } from "../../../../../ReduxToolkit/Hooks";
+import { setPriceStatus } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
 
 const RangeInputFields = () => {
   const dispatch = useAppDispatch();
