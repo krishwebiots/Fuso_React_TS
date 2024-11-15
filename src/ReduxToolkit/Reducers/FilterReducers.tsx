@@ -5,9 +5,9 @@ const initialState: FilterSliceType = {
   propertyType: [],
   bedsRooms: [],
   amenities: [],
-  squareFeetStatus: { min: 400, max: 4000 },
-  yserBuiltStatus: { min: 2019, max: 2024 },
-  priceStatus: { min: 1000, max: 1000000 },
+  priceStatus: [2500, 500000],
+  squareFeetStatus: [400, 4000],
+  yearBuiltStatus: [2019, 2024],
   sortBy: null,
   popular: null,
 };
@@ -26,13 +26,13 @@ const FilterSlice = createSlice({
       state.amenities = action.payload;
     },
     setSquareFeetStatus: (state, action) => {
-      state.squareFeetStatus = { min: action.payload[0] || action.payload.min, max: action.payload[1] || action.payload.max };
+      action.payload ? (state.squareFeetStatus = [...action.payload]) : state.squareFeetStatus.splice(0, state.squareFeetStatus.length);
     },
-    setYserBuiltStatus: (state, action) => {
-      state.yserBuiltStatus = { min: action.payload[0] || action.payload.min, max: action.payload[1] || action.payload.max };
+    setyearBuiltStatus: (state, action) => {
+      action.payload ? (state.yearBuiltStatus = [...action.payload]) : state.yearBuiltStatus.splice(0, state.yearBuiltStatus.length);
     },
     setPriceStatus: (state, action) => {
-      state.priceStatus = { min: action.payload[0] || action.payload.min, max: action.payload[1] || action.payload.max };
+      action.payload ? (state.priceStatus = [...action.payload]) : state.priceStatus.splice(0, state.priceStatus.length);
     },
     setSortBy: (state, action) => {
       state.sortBy = action.payload;
@@ -43,5 +43,5 @@ const FilterSlice = createSlice({
   },
 });
 
-export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setYserBuiltStatus, setPriceStatus, setSortBy, setPopular } = FilterSlice.actions;
+export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setyearBuiltStatus, setPriceStatus, setSortBy, setPopular } = FilterSlice.actions;
 export default FilterSlice.reducer;

@@ -1,19 +1,18 @@
 import { useState } from "react";
-import { getTrackBackground, Range } from "react-range";
 import { Link } from "react-router-dom";
 import { Button, Col, Container, Dropdown, DropdownItem, DropdownMenu, Input, Nav, NavItem, Row, TabContent, TabPane } from "reactstrap";
-import { Href, MAX, MIN, STEP } from "../../../Constants/Constants";
+import { Href } from "../../../Constants/Constants";
 import { HomeNavData, HomeTabData } from "../../../Data/Demo/PropertyDemo2";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicNumber } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
+import RangeInputFields from "../../Property/Common/GridView/Filter/RangeInputFields";
 import LogoSection from "../Common/LogoSection";
 
 const PropertyHomeSection = () => {
   const [basicTab, setBasicTab] = useState(1);
   const [dropdownOpen, setDropdownOpen] = useState(Array(HomeTabData.length).fill(false));
   const [selectedCity, setSelectedCity] = useState(["Enter Keyword...", "Property Type", "Location", "Pricing"]);
-  const [values, setValues] = useState([20000, 100000]);
 
   const toggle = (index: number) => setDropdownOpen(dropdownOpen.map((item, i) => (i === index ? !item : item)));
   const handleSelect = (index: number, value: any) => setSelectedCity((prev) => prev.map((item, i) => (i === index ? value.title : item)));
@@ -67,56 +66,7 @@ const PropertyHomeSection = () => {
                                   </DropdownItem>
                                 ))
                               ) : (
-                                <div className="range-slider">
-                                  <Range
-                                    values={values}
-                                    step={STEP}
-                                    min={MIN}
-                                    max={MAX}
-                                    onChange={(values) => setValues(values)}
-                                    renderTrack={({ props, children }) => (
-                                      <div
-                                        onMouseDown={props.onMouseDown}
-                                        onTouchStart={props.onTouchStart}
-                                        className="range-track"
-                                        style={{
-                                          ...props.style,
-                                          height: "5px",
-                                          width: "100%",
-                                          borderRadius: "4px",
-                                          background: getTrackBackground({
-                                            values: values,
-                                            colors: ["#ccc", "var(--theme-default2)", "#ccc"],
-                                            min: MIN || 1000,
-                                            max: MAX || 10000,
-                                          }),
-                                          alignSelf: "center",
-                                        }}
-                                      >
-                                        <input type="range" defaultValue={values[0]} className="range-slider-input" />
-                                        <div ref={props.ref} className="range-slider-display">
-                                          {children}
-                                        </div>
-                                        <input type="range" defaultValue={values[1]} className="range-slider-input" />
-                                      </div>
-                                    )}
-                                    renderThumb={({ props, index }) => {
-                                      const { key, ...restProps } = props;
-                                      const prop = { ...restProps };
-                                      return (
-                                        <div key={index} {...prop}>
-                                          <div
-                                            style={{
-                                              height: "16px",
-                                              width: "8px",
-                                              borderRadius: "30%",
-                                            }}
-                                          />
-                                        </div>
-                                      );
-                                    }}
-                                  />
-                                </div>
+                                <RangeInputFields />
                               )}
                             </DropdownMenu>
                           </Dropdown>

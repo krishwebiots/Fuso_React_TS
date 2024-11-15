@@ -33,6 +33,7 @@ export interface ProductType {
   squareFeet?: number;
   year?: number;
   productState?: string;
+  video?: string;
 }
 
 export interface ProductCardType {
@@ -63,6 +64,10 @@ export interface GridViewType {
   type: string;
   side?: string;
   gridSize?: number;
+  sectionClass?: string;
+  gridType?: string;
+  view?: string;
+  topFilter?: boolean;
 }
 
 export interface GridLayoutType {
@@ -70,6 +75,8 @@ export interface GridLayoutType {
   type: string;
   setTotalProduct: (temp: number) => void;
   gridSize?: number;
+  gridType?: string;
+  view?: string;
 }
 
 export interface FilterProductsType {
@@ -79,6 +86,7 @@ export interface FilterProductsType {
 export interface TopPanelType {
   totalProduct: number;
   side?: string;
+  topFilter?: boolean;
 }
 
 export interface FilterSidebarType {
@@ -95,9 +103,9 @@ export interface FilterSliceType {
   propertyType: string[];
   bedsRooms: string[];
   amenities: string[];
-  squareFeetStatus: { min: number; max: number };
-  yserBuiltStatus: { min: number; max: number };
-  priceStatus: { min: number; max: number };
+  squareFeetStatus: number[];
+  yearBuiltStatus: number[];
+  priceStatus: number[];
   sortBy: null;
   popular: null;
 }
@@ -120,4 +128,16 @@ export interface CommonFilterType {
   data?: FilterDataType[];
   checkValue?: string | string[];
   priceRange?: boolean;
+  squareFeet?: boolean;
+  values?: number[];
+}
+
+export interface ProductBoxType {
+  data: ProductType;
+  view?: string;
+}
+
+export interface PropertyBoxSliderType {
+  view?: string;
+  data: ProductType;
 }

@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import { RouteList } from "./RouteList";
-import CarDemo1 from "../Pages/Home/CarDemo1";
 import Layout from "../Layout";
+import CarDemo1 from "../Pages/Home/CarDemo1";
 import CarDemo2 from "../Pages/Home/CarDemo2";
 import JobDemo1 from "../Pages/Home/JobDemo1";
 import JobDemo2 from "../Pages/Home/JobDemo2";
@@ -14,6 +13,13 @@ import Property3Grid from "../Pages/Property/Grid/Property3Grid";
 import Property3RightGrid from "../Pages/Property/Grid/Property3RightGrid";
 import Property4Grid from "../Pages/Property/Grid/Property4Grid";
 import PropertyGridNoSidebar from "../Pages/Property/Grid/PropertyGridNoSidebar";
+import PropertyLeftList from "../Pages/Property/Listing/PropertyLeftList";
+import PropertyRightList from "../Pages/Property/Listing/PropertyRightList";
+import PropertyThumbList from "../Pages/Property/Listing/PropertyThumbList";
+import PropertyVideoList from "../Pages/Property/Listing/PropertyVideoList";
+import PropertyWithoutSlider from "../Pages/Property/Listing/PropertyWithoutSlider";
+import { RouteList } from "./RouteList";
+import PropertyLeftDrawer from "../Pages/Property/Other/PropertyLeftDrawer";
 
 const Router = createBrowserRouter([
   {
@@ -32,6 +38,12 @@ const Router = createBrowserRouter([
       { path: RouteList.Property.Grid.Property3RightGrid, element: <Property3RightGrid /> },
       { path: RouteList.Property.Grid.Property4Grid, element: <Property4Grid /> },
       { path: RouteList.Property.Grid.PropertyGridNoSidebar, element: <PropertyGridNoSidebar /> },
+      { path: RouteList.Property.Listing.PropertyLeftList, element: <PropertyLeftList /> },
+      { path: RouteList.Property.Listing.PropertyRightList, element: <PropertyRightList /> },
+      { path: RouteList.Property.Listing.PropertyVideoList, element: <PropertyVideoList /> },
+      { path: RouteList.Property.Listing.PropertyThumbList, element: <PropertyThumbList /> },
+      { path: RouteList.Property.Listing.PropertyWithoutSlider, element: <PropertyWithoutSlider /> },
+      { path: RouteList.Property.Other.PropertyLeftDrawer, element: <PropertyLeftDrawer /> },
     ],
   },
 ]);

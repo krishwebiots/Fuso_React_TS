@@ -1,15 +1,15 @@
 import React, { ChangeEvent } from "react";
 import { AccordionBody, AccordionHeader, AccordionItem, Input, Label } from "reactstrap";
 import { useAppDispatch, useAppSelector } from "../../../../../../ReduxToolkit/Hooks";
-import { setAmenities, setBedsRooms, setPropertyType } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { setAmenities, setBedsRooms, setPropertyType, setSquareFeetStatus, setyearBuiltStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
 import { CommonFilterType } from "../../../../../../Types/ProductType";
 import RangeInputFields from "../RangeInputFields";
 
-const CommonFilter: React.FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange }) => {
+const CommonFilter: React.FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values }) => {
   const dispatch = useAppDispatch();
   const { propertyType, bedsRooms, amenities } = useAppSelector((state) => state.filter);
 
-  const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>, title: string) => {
+  const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>, title: string, field?: string) => {
     const value = event.target.value;
     const isChecked = event.target.checked;
 
@@ -31,6 +31,12 @@ const CommonFilter: React.FC<CommonFilterType> = ({ title, id, data, checkValue,
     } else if (title === "Amenities") {
       if (isChecked) dispatch(setAmenities([...amenities, value]));
       else dispatch(setAmenities(amenities.filter((selectedValue) => selectedValue !== value)));
+    } else if (title === "Square Feet") {
+      const value = parseInt(event.target.value, 10) || 0;
+      dispatch(setSquareFeetStatus([field === "min" ? value : values && values[0], field === "max" ? value : values && values[1]]));
+    } else if (title === "Year Built") {
+      const value = parseInt(event.target.value, 10) || 0;
+      dispatch(setyearBuiltStatus([field === "min" ? value : values && values[0], field === "max" ? value : values && values[1]]));
     }
   };
 
@@ -40,6 +46,16 @@ const CommonFilter: React.FC<CommonFilterType> = ({ title, id, data, checkValue,
       <AccordionBody accordionId={id}>
         {priceRange ? (
           <RangeInputFields />
+        ) : squareFeet ? (
+          <div className="main-number">
+            <div className="input-number range-number">
+              <Input type="number" placeholder="Min" value={values ? values[0] : 0} onChange={(event) => handleCheckboxChange(event, title, "min")} />
+            </div>
+            -
+            <div className="input-number range-number">
+              <Input type="number" placeholder="Max" value={values ? values[1] : 0} onChange={(event) => handleCheckboxChange(event, title, "max")} />
+            </div>
+          </div>
         ) : (
           <ul className={`most-rating ${id !== "1" && "scroll-box"}`}>
             {data?.map((item, index) => (

@@ -35,3 +35,19 @@ export const Amenities = [
   { id: "amenity-17", label: "Refrigerator", type: "Refrigerator" },
   { id: "amenity-18", label: "Gym", type: "Gym" },
 ];
+
+export const SliderFor = {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  focusOnSelect: true,
+  infinite: true,
+};
+
+export const SliderNav = {
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: false,
+  focusOnSelect: true,
+};

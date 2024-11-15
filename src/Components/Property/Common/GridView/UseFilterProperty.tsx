@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { FilterProductsType, ProductType } from "../../../../Types/ProductType";
-import { useAppSelector } from "../../../../ReduxToolkit/Hooks";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { useAppSelector } from "../../../../ReduxToolkit/Hooks";
+import { FilterProductsType, ProductType } from "../../../../Types/ProductType";
 
 const UseFilterProperty = ({ value }: FilterProductsType) => {
   const [showProduct, setShowProduct] = useState<ProductType[]>(value);
-  const { propertyType, bedsRooms, amenities, squareFeetStatus, yserBuiltStatus, priceStatus, sortBy, popular } = useAppSelector((state) => state.filter);
+  const { propertyType, bedsRooms, amenities, squareFeetStatus, yearBuiltStatus, priceStatus, sortBy, popular } = useAppSelector((state) => state.filter);
   const { pathname } = useLocation();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const router = useNavigate();
 
   useEffect(() => {
@@ -16,12 +16,12 @@ const UseFilterProperty = ({ value }: FilterProductsType) => {
         const filterPropertyType = propertyType.length === 0 || product.category === undefined || propertyType.some((prop) => product.category?.includes(prop) || propertyType.includes("all"));
         const filterBeadsRooms = bedsRooms.length === 0 || product.bhk === undefined || bedsRooms.includes(product.bhk);
         const filterAmenities = amenities.length === 0 || product.amenities === undefined || amenities.includes(product.amenities);
-        const filterSquareFeet = product.squareFeet !== undefined && product.squareFeet >= squareFeetStatus.min && product.squareFeet <= squareFeetStatus.max;
-        const filterYserBuilt = product.year !== undefined && product.year >= yserBuiltStatus.min && product.year <= yserBuiltStatus.max;
-        const filteredPrice = product.price !== undefined && product.price >= priceStatus.min && product.price <= priceStatus.max;
-        const filterMostPopular = popular ? product.productState === popular : true;
+        const filterSquareFeet = product.squareFeet !== undefined && squareFeetStatus ? squareFeetStatus[0] <= product.squareFeet && squareFeetStatus[1] >= product.squareFeet && true : true;
+        const filteryearBuilt = product.year !== undefined && yearBuiltStatus ? yearBuiltStatus[0] <= product.year && yearBuiltStatus[1] >= product.year && true : true;
+        const filteredPrice = product.price !== undefined && priceStatus ? priceStatus[0] <= product.price && priceStatus[1] >= product.price && true : true;
+        const filterMostPopular = !popular || product.productState === popular;
 
-        return filterPropertyType && filterBeadsRooms && filterAmenities && filterSquareFeet && filterYserBuilt && filteredPrice && filterMostPopular;
+        return filterPropertyType && filterBeadsRooms && filterAmenities && filterSquareFeet && filteryearBuilt && filteredPrice && filterMostPopular;
       })
       .sort((product1, product2) => {
         if (sortBy === "Price (High to Low)") return (product2.price ?? 0) - (product1.price ?? 0);
@@ -31,19 +31,17 @@ const UseFilterProperty = ({ value }: FilterProductsType) => {
     setShowProduct(filteredProducts);
 
     const params = new URLSearchParams(searchParams);
+    ["property", "beds", "price", "square", "year", "amenities"].forEach((name) => params.delete(name));
 
-    ["rate", "price", "trip", "flights", "travel"].forEach((name) => params.delete(name));
+    propertyType.forEach((price) => params.append("property", price));
+    if (priceStatus) params.set("price", `${priceStatus[0]}-${priceStatus[1]}`);
+    bedsRooms.forEach((beds) => params.append("beds", beds));
+    if (squareFeetStatus) params.set("square", `${squareFeetStatus[0]}-${squareFeetStatus[1]}`);
+    if (yearBuiltStatus) params.set("year", `${yearBuiltStatus[0]}-${yearBuiltStatus[1]}`);
+    amenities.forEach((amenities) => params.append("amenities", amenities));
 
-    propertyType.forEach((property: string) => {
-      params.append("rate", property);
-    });
-    if (!isNaN(priceStatus.min) && !isNaN(priceStatus.max)) {
-      params.set("min", `${priceStatus.min}`);
-      params.set("max", `${priceStatus.max}`);
-    }
-
-    router(pathname + "?" + params.toString());
-  }, [amenities, bedsRooms, pathname, popular, priceStatus, propertyType, router, searchParams, sortBy, squareFeetStatus, value, yserBuiltStatus]);
+    router(`${pathname}?${params}`);
+  }, [amenities, bedsRooms, pathname, popular, priceStatus, propertyType, router, searchParams, sortBy, squareFeetStatus, value, yearBuiltStatus]);
 
   return showProduct;
 };

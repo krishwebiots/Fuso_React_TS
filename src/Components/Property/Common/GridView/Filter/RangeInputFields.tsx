@@ -1,26 +1,20 @@
-import { useState } from "react";
 import { getTrackBackground, Range } from "react-range";
-import { useAppDispatch } from "../../../../../ReduxToolkit/Hooks";
+import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
 import { setPriceStatus } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { MAX, MIN, STEP } from "../../../../../Constants/Constants";
 
 const RangeInputFields = () => {
   const dispatch = useAppDispatch();
-  const [values, setValues] = useState<number[]>([20000, 500000]);
-  const MIN = 1000;
-  const MAX = 1000000;
-  const priceHandle = (value: number[]) => {
-    setValues(value);
-    dispatch(setPriceStatus({ min: value[0], max: value[1] }));
-  };
+  const { priceStatus } = useAppSelector((state) => state.filter);
 
   return (
     <Range
-      values={values}
-      step={1}
+      values={priceStatus}
+      step={STEP}
       min={MIN}
       max={MAX}
       onChange={(values) => {
-        priceHandle(values);
+        dispatch(setPriceStatus(values));
       }}
       renderTrack={({ props, children }) => (
         <div
@@ -40,8 +34,8 @@ const RangeInputFields = () => {
               width: "100%",
               borderRadius: "4px",
               background: getTrackBackground({
-                values: values,
-                colors: ["#ccc", "#ef3f3e", "#ccc"],
+                values: priceStatus,
+                colors: ["#ccc", "rgba(var(--theme-color), 1)", "#ccc"],
                 min: MIN,
                 max: MAX,
               }),
@@ -62,7 +56,7 @@ const RangeInputFields = () => {
             width: "7px",
             top: "15px",
             borderRadius: "60px",
-            backgroundColor: "#ef3f3e",
+            backgroundColor: "rgba(var(--theme-color), 1)",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -79,10 +73,10 @@ const RangeInputFields = () => {
               fontFamily: "Arial,Helvetica Neue,Helvetica,sans-serif",
               padding: "4px",
               borderRadius: "4px",
-              backgroundColor: "#ef3f3e",
+              backgroundColor: "rgba(var(--theme-color), 1)",
             }}
           >
-            {values[index]}
+            {priceStatus[index]}
           </div>
         </div>
       )}

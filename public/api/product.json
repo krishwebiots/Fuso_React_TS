@@ -447,6 +447,7 @@
     "year": 2019,
     "productState": "Most Popular",
     "rating": 3.5,
+    "video": "1.mp4",
     "label": {
       "text": "Sale"
     }
@@ -469,6 +470,7 @@
     "squareFeet": 500,
     "year": 2020,
     "rating": 4,
+    "video": "2.mp4",
     "label": {
       "text": "Sale"
     }
@@ -492,6 +494,7 @@
     "year": 2021,
     "productState": "Most Popular",
     "rating": 4.5,
+    "video": "3.mp4",
     "label": {
       "text": "Rent"
     }
@@ -514,6 +517,7 @@
     "squareFeet": 1100,
     "year": 2022,
     "rating": 5,
+    "video": "4.mp4",
     "label": {
       "text": "Sale"
     }
@@ -537,6 +541,7 @@
     "year": 2023,
     "productState": "Most Popular",
     "rating": 4.5,
+    "video": "5.mp4",
     "label": {
       "text": "Rent"
     }
@@ -559,6 +564,7 @@
     "squareFeet": 2500,
     "year": 2024,
     "rating": 4,
+    "video": "1.mp4",
     "label": {
       "text": "Rent"
     }
@@ -582,6 +588,7 @@
     "year": 2019,
     "productState": "Most Popular",
     "rating": 3,
+    "video": "2.mp4",
     "label": {
       "text": "Sale"
     }
@@ -604,6 +611,7 @@
     "squareFeet": 3500,
     "year": 2020,
     "rating": 3.5,
+    "video": "3.mp4",
     "label": {
       "text": "Sale"
     }
@@ -626,6 +634,7 @@
     "squareFeet": 600,
     "year": 2021,
     "rating": 4,
+    "video": "4.mp4",
     "label": {
       "text": "Sale"
     }
@@ -648,6 +657,7 @@
     "squareFeet": 700,
     "year": 2022,
     "rating": 4.5,
+    "video": "5.mp4",
     "label": {
       "text": "Sale"
     }
@@ -670,6 +680,7 @@
     "squareFeet": 800,
     "year": 2023,
     "rating": 5,
+    "video": "1.mp4",
     "label": {
       "text": "Rent"
     }
@@ -693,6 +704,7 @@
     "year": 2024,
     "productState": "Most Popular",
     "rating": 4.5,
+    "video": "2.mp4",
     "label": {
       "text": "Sale"
     }
@@ -715,6 +727,7 @@
     "squareFeet": 1200,
     "year": 2019,
     "rating": 3.5,
+    "video": "3.mp4",
     "price": 750000
   },
   {
@@ -735,6 +748,7 @@
     "squareFeet": 1300,
     "year": 2020,
     "rating": 2,
+    "video": "4.mp4",
     "price": 135000
   },
   {
@@ -755,6 +769,7 @@
     "squareFeet": 1400,
     "year": 2021,
     "rating": 2.5,
+    "video": "5.mp4",
     "price": 950000
   },
   {
@@ -775,6 +790,7 @@
     "squareFeet": 1600,
     "year": 2022,
     "rating": 4.5,
+    "video": "1.mp4",
     "price": 825000
   },
   {
@@ -795,6 +811,7 @@
     "squareFeet": 400,
     "year": 2023,
     "rating": 3.5,
+    "video": "2.mp4",
     "price": 115000
   },
   {
@@ -815,6 +832,7 @@
     "squareFeet": 2200,
     "year": 2024,
     "rating": 4.5,
+    "video": "3.mp4",
     "price": 180000
   }
 ]

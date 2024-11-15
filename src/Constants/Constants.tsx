@@ -7,9 +7,9 @@ export const Language: string = "Language";
 
 export const CarRental: string = "CAR RENTAL";
 export const Rental: string = "rental";
-export const MAX = 120000;
-export const STEP = 5;
-export const MIN = 20000;
+export const MAX = 1000000;
+export const STEP = 500;
+export const MIN = 1000;
 
 export const CategoriesTitle: string = "Categories";
 export const MostSearchedTitle: string = "The most searched cars";
