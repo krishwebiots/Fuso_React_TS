@@ -34,10 +34,10 @@ export const RouteList = {
       PropertyGridWithoutSlider: `/property/other/property-grid-without-slider`,
     },
     Map: {
-      MapLeft: `map-left`,
-      MapRight: `map-right`,
-      MapList: `map-list`,
-      MapModal: `map-modal`,
+      MapLeft: `/property/map/map-left`,
+      MapRight: `/property/map/map-right`,
+      MapList: `/property/map/map-list`,
+      MapModal: `/property/map/map-modal`,
     },
     Detail: {
       PropertyClassic: `property-classic`,

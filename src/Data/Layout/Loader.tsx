@@ -3,7 +3,7 @@ import { LoaderConfig } from "../../Types/LayoutType";
 
 export const Loaders: Record<string, LoaderConfig> = {
   "car-2": { src: "car2-loader.gif", text: "Loading Car rental Template. Please wait…" },
-  "job": { src: "job1-loader.gif", text: "Loading job rental Template. Please wait…" },
+  job: { src: "job1-loader.gif", text: "Loading job rental Template. Please wait…" },
   "job-2": { src: "job2-loader.gif", text: "Loading job rental Template. Please wait…" },
   "job-3": { src: "job3-loader.gif", text: "Loading job rental Template. Please wait…" },
   property: {

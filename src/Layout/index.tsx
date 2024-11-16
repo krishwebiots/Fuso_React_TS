@@ -3,7 +3,7 @@ import Aos from "aos";
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { PathSettings } from "../Types/LayoutType";
-import { setFavicon } from "../Utils/setFavicon";
+import { SetFavicon } from "../Utils/SetFavicon";
 import Customizer from "./Customizer";
 import Footer from "./Footer";
 import FooterDemo2 from "./Footer/FooterDemo2";
@@ -22,7 +22,7 @@ const Layout = () => {
 
   const pathSettings: Record<string, PathSettings> = {
     "car-2": { className: "car2-color", favicon: "favicon-4.png" },
-    "job": { className: "job-color", favicon: "favicon-5.png" },
+    job: { className: "job-color", favicon: "favicon-5.png" },
     "job-2": { className: "job2-color large-container", favicon: "favicon-6.png" },
     "job-3": { className: "job3-color large-container", favicon: "favicon-7.png" },
     property: { className: "", favicon: "favicon-1.png" },
@@ -34,10 +34,10 @@ const Layout = () => {
 
   useEffect(() => {
     document.body.className = className;
-    setFavicon(`${process.env.PUBLIC_URL}/assets/images/logo/${favicon}`);
+    SetFavicon(`${process.env.PUBLIC_URL}/assets/images/logo/${favicon}`);
     Aos.init({ once: true });
 
-    return () => setFavicon(`${process.env.PUBLIC_URL}/assets/images/logo/favicon-3.png`);
+    return () => SetFavicon(`${process.env.PUBLIC_URL}/assets/images/logo/favicon-3.png`);
   }, [className, favicon]);
   const isJobOrProperty = ["car-2", "job-3", "job-2", "property-2"].some((item) => firstPart.includes(item));
 

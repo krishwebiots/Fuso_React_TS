@@ -5,7 +5,7 @@ import { setAmenities, setBedsRooms, setPropertyType, setSquareFeetStatus, setye
 import { CommonFilterType } from "../../../../../../Types/ProductType";
 import RangeInputFields from "../RangeInputFields";
 
-const CommonFilter: React.FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values }) => {
+const CommonFilter: React.FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values, maxPrice, minPrice }) => {
   const dispatch = useAppDispatch();
   const { propertyType, bedsRooms, amenities } = useAppSelector((state) => state.filter);
 
@@ -45,7 +45,7 @@ const CommonFilter: React.FC<CommonFilterType> = ({ title, id, data, checkValue,
       <AccordionHeader targetId={id}>{title}</AccordionHeader>
       <AccordionBody accordionId={id}>
         {priceRange ? (
-          <RangeInputFields />
+          <RangeInputFields min={minPrice} max={maxPrice} />
         ) : squareFeet ? (
           <div className="main-number">
             <div className="input-number range-number">

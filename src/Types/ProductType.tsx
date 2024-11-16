@@ -68,15 +68,20 @@ export interface GridViewType {
   gridType?: string;
   view?: string;
   topFilter?: boolean;
+  offcanvasSide?: string;
+  scrollType?: string;
+  map?: boolean;
+  mapSide?: string;
 }
 
 export interface GridLayoutType {
   value: ProductType[];
   type: string;
-  setTotalProduct: (temp: number) => void;
   gridSize?: number;
   gridType?: string;
   view?: string;
+  scrollType?: string;
+  map?: boolean;
 }
 
 export interface FilterProductsType {
@@ -84,14 +89,13 @@ export interface FilterProductsType {
 }
 
 export interface TopPanelType {
-  totalProduct: number;
   side?: string;
   topFilter?: boolean;
 }
 
 export interface FilterSidebarType {
+  side?: string;
   value: ProductType[];
-  type: string;
 }
 
 export interface PriceType {
@@ -130,6 +134,8 @@ export interface CommonFilterType {
   priceRange?: boolean;
   squareFeet?: boolean;
   values?: number[];
+  minPrice?: number;
+  maxPrice?: number;
 }
 
 export interface ProductBoxType {
@@ -140,4 +146,9 @@ export interface ProductBoxType {
 export interface PropertyBoxSliderType {
   view?: string;
   data: ProductType;
+}
+
+export interface RangeInputFieldsType {
+  min?: number;
+  max?: number;
 }

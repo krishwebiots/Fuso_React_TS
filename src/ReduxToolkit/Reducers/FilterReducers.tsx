@@ -5,7 +5,7 @@ const initialState: FilterSliceType = {
   propertyType: [],
   bedsRooms: [],
   amenities: [],
-  priceStatus: [2500, 500000],
+  priceStatus: [40000, 500000],
   squareFeetStatus: [400, 4000],
   yearBuiltStatus: [2019, 2024],
   sortBy: null,

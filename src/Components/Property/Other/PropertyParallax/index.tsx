@@ -1,26 +1,23 @@
 import { Fragment, useEffect } from "react";
 import { useAppDispatch } from "../../../../ReduxToolkit/Hooks";
-import { fetchCategoryApiData, fetchProductApiData } from "../../../../ReduxToolkit/Reducers/ProductReducers";
-import { setCardToShow } from "../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { fetchProductApiData } from "../../../../ReduxToolkit/Reducers/ProductReducers";
 import PropertyBreadcrumb from "../../../CommonComponents/Breadcrumbs/PropertyBreadcrumb";
 import SortBy from "../../../CommonComponents/Sortby";
-import GridView from "../../Common/GridView";
+import Parallax from "./Parallax";
 
-const PropertyRightDrawerContainer = () => {
+const PropertyParallaxContainer = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchProductApiData());
-    dispatch(fetchCategoryApiData());
-    dispatch(setCardToShow(9));
   }, [dispatch]);
   return (
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView type={"property"} side="no" gridSize={3} />
+      <Parallax />
     </Fragment>
   );
 };
 
-export default PropertyRightDrawerContainer;
+export default PropertyParallaxContainer;

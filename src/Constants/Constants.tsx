@@ -7,9 +7,7 @@ export const Language: string = "Language";
 
 export const CarRental: string = "CAR RENTAL";
 export const Rental: string = "rental";
-export const MAX = 1000000;
 export const STEP = 500;
-export const MIN = 1000;
 
 export const CategoriesTitle: string = "Categories";
 export const MostSearchedTitle: string = "The most searched cars";
@@ -68,3 +66,6 @@ export const FeaturedProperties: string = "Featured Properties";
 export const Month: string = "month";
 export const ViewProperty: string = "View Property";
 export const RecentlyAddedProperties: string = "Recently Added Properties";
+export const Filters: string = "Filters";
+export const LoadMore: string = "Load More";
+export const SeeMore: string = "See More";

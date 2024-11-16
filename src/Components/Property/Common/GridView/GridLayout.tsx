@@ -1,36 +1,69 @@
-import React, { Fragment, useEffect, useRef, useState } from "react";
-import { Col, Row } from "reactstrap";
+import React, { useEffect, useRef, useState } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { Button, Col, Row } from "reactstrap";
 import { Swiper as SwiperType } from "swiper";
-import { useAppSelector } from "../../../../ReduxToolkit/Hooks";
-import { GridLayoutType, ProductType } from "../../../../Types/ProductType";
+import { LoadMore } from "../../../../Constants/Constants";
+import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
+import { GridLayoutType } from "../../../../Types/ProductType";
 import PaginationDynamic from "./Pagination";
 import PropertyBox from "./ProductBox/PropertyProductBox/PropertyBox";
 import UseFilterProperty from "./UseFilterProperty";
+import { setCardToShow, setTotalProduct } from "../../../../ReduxToolkit/Reducers/SidebarReducers";
 
-const GridLayout: React.FC<GridLayoutType> = ({ value, type, setTotalProduct, gridSize, gridType, view }) => {
+const GridLayout: React.FC<GridLayoutType> = ({ value, type, gridSize, gridType, view, scrollType, map }) => {
   const swiperRef = useRef<SwiperType | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const { cardToShow } = useAppSelector((state) => state.sidebar);
+  const dispatch = useAppDispatch();
 
   const Product = type === "property" ? UseFilterProperty({ value }) : [];
   const totalPages = Math.ceil(Product?.length / cardToShow);
-  const showProduct = Product?.slice(cardToShow * currentPage - cardToShow, cardToShow * currentPage);
+  const showProduct = scrollType === "infinite" ? Product.slice(0, cardToShow * currentPage) : Product?.slice(cardToShow * currentPage - cardToShow, cardToShow * currentPage);
 
   useEffect(() => {
     if (swiperRef.current) swiperRef.current.init();
   }, []);
-  useEffect(() => setTotalProduct(Product.length), [setTotalProduct, Product.length]);
+  useEffect(() => {
+    dispatch(setTotalProduct(Product.length || 0));
+  }, [Product.length, dispatch]);
+
+  const fetchMoreData = () => {
+    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+  };
+
   return (
-    <Fragment>
+    <div className={`${map ? "col-xl-6" : ""} ${scrollType === "load_more" ? "featured-wrapper" : ""}`}>
       <Row className={`gy-4 ${gridType === "list-view" || "image" ? "ratio3_2" : view === "multiple" ? "ratio_65" : "ratio_landscape"}`}>
-        {(showProduct as ProductType[])?.map((data, index) => (
-          <Col className={gridSize === 3 ? "col-lg-4" : gridSize === 4 ? "col-xxl-3 col-lg-4" : gridSize === 1 ? "col-xl-12" : "col-sm-6"} key={index}>
-            <PropertyBox data={data} view={view} />
-          </Col>
-        ))}
+        {scrollType === "infinite" ? (
+          <InfiniteScroll dataLength={showProduct.length} next={fetchMoreData} hasMore={currentPage < totalPages} className="row" loader={<h4>Loading...</h4>}>
+            {showProduct.map((data, index) => (
+              <Col className={gridSize === 3 ? "col-lg-4 col-sm-6" : gridSize === 4 ? "col-xxl-3 col-lg-4" : gridSize === 1 ? "col-xl-12" : "col-sm-6"} key={data.id || index}>
+                <PropertyBox data={data} view={view} />
+              </Col>
+            ))}
+          </InfiniteScroll>
+        ) : (
+          showProduct.map((data, index) => (
+            <Col className={gridSize === 3 ? "col-lg-4 col-sm-6" : gridSize === 4 ? "col-xxl-3 col-lg-4" : gridSize === 1 ? "col-xl-12" : "col-sm-6"} key={data.id || index}>
+              <PropertyBox data={data} view={view} />
+            </Col>
+          ))
+        )}
       </Row>
-      <PaginationDynamic totalPages1={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
-    </Fragment>
+      {scrollType === "load_more" ? (
+        showProduct.length >= cardToShow ? (
+          <Button className="btn-solid load-more" onClick={() => dispatch(setCardToShow(cardToShow + 3))}>
+            {LoadMore}
+          </Button>
+        ) : (
+          <p id="no-more-products" style={{ display: "block" }}>
+            No more products available.
+          </p>
+        )
+      ) : (
+        scrollType !== "infinite" && <PaginationDynamic totalPages1={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      )}
+    </div>
   );
 };
 

@@ -1,3 +1,4 @@
+import React from "react";
 import { Fragment, useEffect } from "react";
 import { useAppDispatch } from "../../../../ReduxToolkit/Hooks";
 import { fetchCategoryApiData, fetchProductApiData } from "../../../../ReduxToolkit/Reducers/ProductReducers";
@@ -6,21 +7,21 @@ import PropertyBreadcrumb from "../../../CommonComponents/Breadcrumbs/PropertyBr
 import SortBy from "../../../CommonComponents/Sortby";
 import GridView from "../../Common/GridView";
 
-const PropertyRightDrawerContainer = () => {
+const MapLeftContainer = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchProductApiData());
     dispatch(fetchCategoryApiData());
-    dispatch(setCardToShow(9));
+    dispatch(setCardToShow(4));
   }, [dispatch]);
   return (
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView type={"property"} side="no" gridSize={3} />
+      <GridView type={"property"} side="no" map />
     </Fragment>
   );
 };
 
-export default PropertyRightDrawerContainer;
+export default MapLeftContainer;

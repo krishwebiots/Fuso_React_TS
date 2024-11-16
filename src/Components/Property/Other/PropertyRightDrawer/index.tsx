@@ -6,7 +6,7 @@ import PropertyBreadcrumb from "../../../CommonComponents/Breadcrumbs/PropertyBr
 import SortBy from "../../../CommonComponents/Sortby";
 import GridView from "../../Common/GridView";
 
-const PropertyRightDrawerContainer = () => {
+const PropertyLeftDrawerContainer = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -18,9 +18,9 @@ const PropertyRightDrawerContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView type={"property"} side="no" gridSize={3} />
+      <GridView type={"property"} side="no" gridSize={3} offcanvasSide="right" />
     </Fragment>
   );
 };
 
-export default PropertyRightDrawerContainer;
+export default PropertyLeftDrawerContainer;

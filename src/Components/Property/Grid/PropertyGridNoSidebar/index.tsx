@@ -18,7 +18,7 @@ const PropertyGridNoSidebarContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView type={"property"} side="no" gridSize={3} />
+      <GridView type={"property"} side="no" gridSize={3} topFilter />
     </Fragment>
   );
 };

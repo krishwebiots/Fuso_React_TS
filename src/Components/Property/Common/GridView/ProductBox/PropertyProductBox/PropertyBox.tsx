@@ -13,13 +13,16 @@ const PropertyBox: React.FC<ProductBoxType> = ({ data, view }) => {
         <Link to={view === "multiple" ? Href : RouteList.Property.Detail.PropertySidebarLayout} className={view === "video" ? "featured-video" : "featured-img"}>
           <PropertyBoxSlider view={view} data={data} />
         </Link>
-        {data.label && <Label className={data.label.class ? data.label.class : "save-btn"}>{data.label.text}</Label>}
+        {data.label && <Label className="save-btn">{data.label.text}</Label>}
+        <a href={Href} className="save-btn">
+          <i className="ri-bookmark-line"></i>
+        </a>
       </div>
       <div className="featured-content">
         <Link to={RouteList.Property.Detail.PropertySidebarLayout}>{data.title}</Link>
         <p>{data.location}</p>
         <ul className="featured-list">
-          {data.features.map((item, index) => (
+          {data.features.slice(0, 3).map((item, index) => (
             <li key={index}>
               <SvgIcon iconId={`property/sprite/featured.svg#${item.icon}`} />
               <span>{item.text}</span>

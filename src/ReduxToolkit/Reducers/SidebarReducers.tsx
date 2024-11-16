@@ -4,6 +4,7 @@ const initialState = {
   sidebarOpen: false,
   openFilterSidebar: false,
   cardToShow: 6,
+  totalProduct: 0,
 };
 
 const SidebarSlice = createSlice({
@@ -19,8 +20,11 @@ const SidebarSlice = createSlice({
     setCardToShow: (state, action) => {
       state.cardToShow = action.payload;
     },
+    setTotalProduct: (state, action) => {
+      state.totalProduct = action.payload;
+    },
   },
 });
 
-export const { setSidebarOpen, setOpenFilterSidebar, setCardToShow } = SidebarSlice.actions;
+export const { setSidebarOpen, setOpenFilterSidebar, setCardToShow, setTotalProduct } = SidebarSlice.actions;
 export default SidebarSlice.reducer;

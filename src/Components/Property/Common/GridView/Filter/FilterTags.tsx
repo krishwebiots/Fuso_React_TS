@@ -6,10 +6,11 @@ import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hook
 import { setPopular, setSortBy } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
 import { setOpenFilterSidebar } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
 
-const FilterTags: React.FC<TopPanelType> = ({ totalProduct, side, topFilter }) => {
+const FilterTags: React.FC<TopPanelType> = ({ topFilter, side }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useAppDispatch();
   const { sortBy } = useAppSelector((state) => state.filter);
+  const { totalProduct } = useAppSelector((state) => state.sidebar);
 
   const handleSortBy = (sortOption: string) => {
     if (sortOption === "Most Popular") dispatch(setPopular(sortOption));
@@ -40,8 +41,8 @@ const FilterTags: React.FC<TopPanelType> = ({ totalProduct, side, topFilter }) =
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
-      {topFilter && side !== "no" && (
-        <a href={Href} className="btn-solid " onClick={() => dispatch(setOpenFilterSidebar())}>
+      {!topFilter && (
+        <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
           Filter
         </a>
       )}
