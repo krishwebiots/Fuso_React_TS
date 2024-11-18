@@ -20,6 +20,7 @@ export interface LogoSectionType {
   sectionClass?: string;
   swiperClass?: string;
   title?: string;
+  type?: string;
 }
 
 export interface DropdownMenu {
@@ -39,4 +40,8 @@ export interface FeaturedType {
   title: string;
   data: number[];
   label: string;
+}
+
+export interface PropsType {
+  type: string;
 }

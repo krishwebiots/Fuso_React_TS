@@ -4,7 +4,7 @@ import { Container, Dropdown, DropdownItem, DropdownMenu, Input, Label, TabConte
 import { Href, Search } from "../../../Constants/Constants";
 import { HomeTabData } from "../../../Data/Demo/PropertyDemo1";
 import { RouteList } from "../../../Routers/RouteList";
-import RangeInputFields from "../../Property/Common/GridView/Filter/RangeInputFields";
+import RangeInputFields from "../../Property/Common/GridView/Filter/Common/RangeInputFields";
 
 const PropertyBreadcrumb = () => {
   const [dropdownOpen, setDropdownOpen] = useState<{ [key: number]: boolean }>({});

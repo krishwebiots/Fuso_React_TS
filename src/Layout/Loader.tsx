@@ -1,11 +1,10 @@
-/* eslint-disable no-useless-escape */
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 import { Loaders } from "../Data/Layout/Loader";
 import { PathTypes } from "../Types/LayoutType";
 import { dynamicGrf, Image } from "../Utils";
 
-const Loader: React.FC<PathTypes> = ({ part }) => {
+const Loader: FC<PathTypes> = ({ part }) => {
   const [show, setShow] = useState<boolean>(true);
 
   useEffect(() => {
@@ -14,6 +13,7 @@ const Loader: React.FC<PathTypes> = ({ part }) => {
   }, [show]);
 
   const loaderKey = Object.keys(Loaders).find((key) => part?.includes(key));
+
   const loaderContent = Loaders[loaderKey || ""]?.svg || (
     <Fragment>
       <Image src={dynamicGrf(Loaders[loaderKey || ""]?.src || "car1-loader.gif")} alt="loader" className="img-fluid" />

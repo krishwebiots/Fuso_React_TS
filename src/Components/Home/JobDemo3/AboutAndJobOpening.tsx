@@ -1,14 +1,14 @@
-import { Clock, Location } from "iconsax-react";
 import { useState } from "react";
 import CountUp from "react-countup";
 import { Link } from "react-router-dom";
-import { Button, Col, Container, Label, Nav, NavItem, Row, TabContent, TabPane } from "reactstrap";
-import { LatestJobOpenings, LearnMore, ProvideJobs, ViewDetails } from "../../../Constants/Constants";
+import { Button, Col, Container, Nav, NavItem, Row, TabContent, TabPane } from "reactstrap";
+import { LatestJobOpenings, LearnMore, ProvideJobs } from "../../../Constants/Constants";
 import { LatestJobOpeningsContent, ServiceCounterListData } from "../../../Data/Demo/JobDemo2";
 import { AboutImageData, AboutList, JobAboutContent } from "../../../Data/Demo/JobDemo3";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { RouteList } from "../../../Routers/RouteList";
-import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
+import { dynamicImage, Image } from "../../../Utils";
+import JobProductBox4 from "../../CommonComponents/ProductBox/JobProductBox4";
 import CommonHeader from "../Common/CommonHeader";
 
 const AboutAndJobOpening = () => {
@@ -83,39 +83,7 @@ const AboutAndJobOpening = () => {
                       .slice(0, 6)
                       .map((item, index) => (
                         <Col xl="4" md="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
-                          <div className="job-box demo-job-box3">
-                            <div className="job-title-flex">
-                              <div className="job-title">
-                                <div className="job-icon">
-                                  {item.image.map((imgSrc, idx) => (
-                                    <Image src={dynamicSvg(imgSrc)} alt={`job-${idx}`} className="img-fluid" key={idx} />
-                                  ))}
-                                </div>
-                                <Link to={RouteList.Job.Detail.JobDetail1} className="job-detail">
-                                  <span>{item.company}</span>
-                                  <h5>{item.title}</h5>
-                                </Link>
-                              </div>
-                              <div className="post-time">
-                                <Clock />
-                                <span>{item.time}</span>
-                              </div>
-                            </div>
-                            <p>{item.description}</p>
-                            <div className="job-tag">
-                              <Label>{activeTab}</Label>
-                              <Label>{item.salary}</Label>
-                            </div>
-                            <div className="location-flex">
-                              <div className="post-time">
-                                <Location />
-                                <span>{item.location}</span>
-                              </div>
-                              <Link to={RouteList.Job.Detail.JobDetail1} className="text-btn">
-                                {ViewDetails}
-                              </Link>
-                            </div>
-                          </div>
+                          <JobProductBox4 jobData={item} />
                         </Col>
                       ))}
                   </Row>

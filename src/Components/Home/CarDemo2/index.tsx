@@ -4,13 +4,14 @@ import { fetchCategoryApiData, fetchProductApiData } from "../../../ReduxToolkit
 import AboutUs from "./AboutUs";
 import Blogs from "./Blogs";
 import CarHomeSection from "./CarHomeSection";
-import Categories from "./Category";
 import FeaturedCar from "./FeaturedCar";
 import LogoSection from "../Common/LogoSection";
 import Service from "./Service";
 import StepBooking from "./StepBooking";
 import TabSection from "./TabSection";
-import Testimonials from "./Testimonials";
+import Categories from "../Common/Categories";
+import Testimonials from "../Common/Testimonials";
+import InstagramSlider from "./InstagramSlider";
 
 const CarDemo2Container = () => {
   const dispatch = useAppDispatch();
@@ -25,12 +26,13 @@ const CarDemo2Container = () => {
       <TabSection />
       <LogoSection swiperClass="logo-car2-slider" sectionClass="section-t-lg-space" />
       <AboutUs />
-      <Categories />
+      <Categories type={"car_demo2"} />
       <FeaturedCar />
       <StepBooking />
       <Service />
       <Blogs />
-      <Testimonials />
+      <Testimonials type={"car_demo2"} />
+      <InstagramSlider />
     </Fragment>
   );
 };

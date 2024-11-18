@@ -3,13 +3,13 @@ import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
 import { fetchCategoryApiData, fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
 import About from "./About";
 import AboutSlider from "./AboutSlider";
-import Category from "./Category";
-import CompanyLogo from "./CompanyLogo";
 import JobHere from "./JobHere";
 import JobHiring from "./JobHiring";
 import JobHomeSection from "./JobHomeSection";
-import Newsletter from "./Newsletter";
+import Newsletter from "../Common/Newsletter";
 import Step from "./Step";
+import Categories from "../Common/Categories";
+import LogoSection from "../Common/LogoSection";
 
 const JobDemo1Container = () => {
   const dispatch = useAppDispatch();
@@ -21,14 +21,14 @@ const JobDemo1Container = () => {
   return (
     <Fragment>
       <JobHomeSection />
-      <CompanyLogo />
+      <LogoSection type="job_demo1" />
       <JobHere />
       <Step />
-      <Category />
+      <Categories type="job_demo1" />
       <JobHiring />
       <About />
       <AboutSlider />
-      <Newsletter />
+      <Newsletter type="job_demo1" />
     </Fragment>
   );
 };

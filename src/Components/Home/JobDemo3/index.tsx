@@ -7,7 +7,7 @@ import Company from "./Company";
 import InterviewQuestion from "./InterviewQuestion";
 import JobCities from "./JobCities";
 import JobHomeSection from "./JobHomeSection";
-import Newsletter from "./Newsletter";
+import Newsletter from "../Common/Newsletter";
 
 const JobDemo3Container = () => {
   const dispatch = useAppDispatch();
@@ -24,7 +24,7 @@ const JobDemo3Container = () => {
       <JobCities />
       <Company />
       <InterviewQuestion />
-      <Newsletter />
+      <Newsletter type="job_demo3" />
     </Fragment>
   );
 };

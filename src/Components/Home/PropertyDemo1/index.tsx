@@ -3,13 +3,13 @@ import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
 import { fetchCategoryApiData, fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
 import AboutUs from "./AboutUs";
 import Achievements from "./Achievements";
-import Categories from "./Categories";
 import Discovery from "./Discovery";
-import Newsletter from "./Newsletter";
 import PropertyFeature from "./PropertyFeature";
 import PropertyHomeSection from "./PropertyHomeSection";
 import Services from "./Services";
-import Testimonials from "./Testimonials";
+import Categories from "../Common/Categories";
+import Testimonials from "../Common/Testimonials";
+import Newsletter from "../Common/Newsletter";
 
 const PropertyDemo1Container = () => {
   const dispatch = useAppDispatch();
@@ -24,11 +24,11 @@ const PropertyDemo1Container = () => {
       <AboutUs />
       <PropertyFeature />
       <Services />
-      <Categories />
+      <Categories type="property_demo1" />
       <Discovery />
       <Achievements />
-      <Testimonials />
-      <Newsletter />
+      <Testimonials type="property_demo1" />
+      <Newsletter type="property_demo1" />
     </Fragment>
   );
 };

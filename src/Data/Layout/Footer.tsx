@@ -1,6 +1,5 @@
 import { Call, Location, Sms } from "iconsax-react";
 import { RouteList } from "../../Routers/RouteList";
-import { FooterDetailType } from "../../Types/LayoutType";
 
 export const ContactListData = [
   { icon: <Call />, title: "Call", text: "(702) 555-0122" },
@@ -15,8 +14,9 @@ export const SocialMediaData = [
   { url: "https://in.pinterest.com/", icon: "ri-pinterest-line" },
 ];
 
-export const FooterDetailData: FooterDetailType[] = [
+export const FooterDetailData = [
   {
+    id: 1,
     title: "Location",
     links: [
       { title: "New York", url: RouteList.Car.Listing.CarLeftList },
@@ -27,6 +27,7 @@ export const FooterDetailData: FooterDetailType[] = [
     ],
   },
   {
+    id: 2,
     title: "Quick Links",
     links: [
       { title: "Saved Rides", url: RouteList.Pages.Other.UserDashboard },
@@ -36,6 +37,7 @@ export const FooterDetailData: FooterDetailType[] = [
     ],
   },
   {
+    id: 3,
     title: "official info",
     contactList: true,
     links: [
@@ -45,6 +47,7 @@ export const FooterDetailData: FooterDetailType[] = [
     ],
   },
   {
+    id: 4,
     title: "Resources",
     links: [
       { title: "Portfolio", url: RouteList.Property.Grid.Property3Grid },
@@ -55,6 +58,7 @@ export const FooterDetailData: FooterDetailType[] = [
     ],
   },
   {
+    id: 5,
     title: "About",
     links: [
       { title: "About Us", url: RouteList.Pages.Other.AboutUs1 },
@@ -65,3 +69,11 @@ export const FooterDetailData: FooterDetailType[] = [
     ],
   },
 ];
+
+export const FooterDescription = ["Find your ideal career with personalized support, together.", "Let us guide you towards a fulfilling career path with our personalized recommendations and supportive community."];
+
+export const FooterClassMap: { [key: string]: string } = {
+  "car-2": "car2-footer",
+  "job-2": "dark-footer-section section-t-space",
+  "property-2": "property2-footer",
+};

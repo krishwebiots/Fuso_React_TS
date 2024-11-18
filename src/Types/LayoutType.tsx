@@ -16,6 +16,44 @@ export interface MenuListType {
   level: number;
 }
 
+export interface ChildMenuType {
+  mainMenu: MenuItemtype[];
+}
+
+export interface LoaderConfig {
+  src?: string;
+  text?: string;
+  svg?: JSX.Element;
+}
+
+export interface PathTypes {
+  part?: string;
+}
+
+export interface PathSettingsType {
+  className: string;
+  favicon: string;
+}
+
+export interface LeftHeaderType {
+  part?: string;
+  isJobOrProperty?: boolean;
+}
+
+export interface RightHeaderType {
+  part?: string;
+  isJobOrProperty?: boolean;
+}
+
+export interface LogoAndSocialMediaType {
+  description: string;
+  endPoint: number;
+}
+
+export interface SearchSectionType {
+  part?: string;
+}
+
 export interface FooterListType {
   title: string;
   url?: string;
@@ -28,17 +66,7 @@ export interface FooterDetailType {
   links: FooterListType[];
 }
 
-export interface LoaderConfig {
-  src?: string;
-  text?: string;
-  svg?: JSX.Element;
-}
-
-export interface PathTypes {
-  part?: string | any;
-}
-
-export interface PathSettings {
-  className: string;
-  favicon: string;
+export interface DetailType {
+  data: FooterDetailType[];
+  footerMenu?: boolean;
 }

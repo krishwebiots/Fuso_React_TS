@@ -1019,3 +1019,16 @@ export const SocialLinks = [
   { href: "https://www.instagram.com/", icon: "ri-instagram-line" },
   { href: "https://www.youtube.com/", icon: "ri-youtube-fill" },
 ];
+
+export const HeaderClassMap: { [key: string]: string } = {
+  "car-2": " car-top-header",
+  job: " job-header",
+  "job-2": " dark-job-header",
+  "job-3": " job3-header",
+  "property-2": " position-relative p-0",
+};
+
+export const ContainerClassMap: { [key: string]: string } = {
+  "car-2": "car2-header",
+  "property-2": "property2-header",
+};

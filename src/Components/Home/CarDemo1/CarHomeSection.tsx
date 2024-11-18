@@ -7,7 +7,7 @@ import { CarHomeSliderSettings, HomeTabData } from "../../../Data/Demo/CarDemo1"
 import { HomeNavData } from "../../../Data/Demo/PropertyDemo2";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicGrf, dynamicImage, dynamicNumber, Image } from "../../../Utils";
-import RangeInputFields from "../../Property/Common/GridView/Filter/RangeInputFields";
+import RangeInputFields from "../../Property/Common/GridView/Filter/Common/RangeInputFields";
 
 const CarHomeSection = () => {
   const [basicTab, setBasicTab] = useState(1);

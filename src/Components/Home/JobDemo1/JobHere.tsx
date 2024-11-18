@@ -3,7 +3,7 @@ import { JobHereTitle } from "../../../Constants/Constants";
 import { JobHereContentData } from "../../../Data/Demo/JobDemo1";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import CommonHeader from "../Common/CommonHeader";
-import JobCard from "../Common/JobCard";
+import JobProductBox1 from "../../CommonComponents/ProductBox/JobProductBox1";
 
 const JobHere = () => {
   const { productItem } = useAppSelector((state) => state.product);
@@ -17,7 +17,7 @@ const JobHere = () => {
             .filter((e) => [16, 17, 18, 19, 20, 21].includes(e.id))
             .map((job, index) => (
               <Col xl="4" md="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
-                <JobCard jobData={job} />
+                <JobProductBox1 jobData={job} />
               </Col>
             ))}
         </Row>

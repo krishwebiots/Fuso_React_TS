@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Button } from "reactstrap";
 import ConfigDB from "../Config/ThemeCustomizerConfig";
 import { PathTypes } from "../Types/LayoutType";
 
-const Customizer: React.FC<PathTypes> = ({ part }) => {
+const Customizer: FC<PathTypes> = ({ part }) => {
   const [isLayoutMode, setLayoutMode] = useState(false);
   const [isLayoutType, setLayoutType] = useState(false);
 

@@ -141,6 +141,8 @@ export interface CommonFilterType {
 export interface ProductBoxType {
   data: ProductType;
   view?: string;
+  label?: string;
+  index?: number;
 }
 
 export interface PropertyBoxSliderType {

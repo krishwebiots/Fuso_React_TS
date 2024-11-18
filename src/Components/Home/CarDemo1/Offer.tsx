@@ -7,8 +7,8 @@ import { OfferContentData } from "../../../Data/Demo/CarDemo1";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicSvg, Image } from "../../../Utils";
-import CarProductCard from "../Common/CarProductCard";
 import CommonHeader from "../Common/CommonHeader";
+import CarProductBox1 from "../../CommonComponents/ProductBox/CarProductBox1";
 
 const Offer = () => {
   const [activeTab, setActiveTab] = useState("honda");
@@ -43,7 +43,7 @@ const Offer = () => {
                     .filter(({ category }) => category?.includes(activeTab))
                     .map((item, index) => (
                       <SwiperSlide key={index}>
-                        <CarProductCard data={item} />
+                        <CarProductBox1 data={item} />
                       </SwiperSlide>
                     ))}
                 </Swiper>

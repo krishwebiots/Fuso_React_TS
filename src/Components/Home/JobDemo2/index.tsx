@@ -1,12 +1,12 @@
 import { Fragment, useEffect } from "react";
 import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
 import { fetchCategoryApiData, fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
-import Category from "./Category";
 import Goals from "./Goals";
 import JobHomeSection from "./JobHomeSection";
 import JobOpenings from "./JobOpenings";
 import Service from "./Service";
 import TestimonialAndNewsletter from "./TestimonialAndNewsletter";
+import Categories from "../Common/Categories";
 
 const JobDemo2Container = () => {
   const dispatch = useAppDispatch();
@@ -18,7 +18,7 @@ const JobDemo2Container = () => {
   return (
     <Fragment>
       <JobHomeSection />
-      <Category />
+      <Categories type={"job_demo2"} />
       <JobOpenings />
       <Goals />
       <Service />

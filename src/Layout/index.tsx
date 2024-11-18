@@ -1,36 +1,25 @@
-/* eslint-disable no-useless-escape */
 import Aos from "aos";
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { PathSettings } from "../Types/LayoutType";
+import { PathSettings } from "../Data/Layout/Layout";
 import { SetFavicon } from "../Utils/SetFavicon";
 import Customizer from "./Customizer";
-import Footer from "./Footer";
+import FooterDemo1 from "./Footer/FooterDemo1";
 import FooterDemo2 from "./Footer/FooterDemo2";
 import Header from "./Header";
 import Loader from "./Loader";
 import MobileMenu from "./MobileMenu";
 import TapTop from "./TapTop";
+import { SymbolRegex } from "../Constants/Constants";
 
 const Layout = () => {
   const { pathname } = useLocation();
-  const symbolRegex = /[!@#\$%\^\*\(\)_\+\{\}\[\]:;"'<>,.?/\\|`~=]/g;
   const [firstPart] = pathname
     .split("/")
     .slice(1)
-    .map((item) => item.replace(symbolRegex, " "));
+    .map((item) => item.replace(SymbolRegex, " "));
 
-  const pathSettings: Record<string, PathSettings> = {
-    "car-2": { className: "car2-color", favicon: "favicon-4.png" },
-    job: { className: "job-color", favicon: "favicon-5.png" },
-    "job-2": { className: "job2-color large-container", favicon: "favicon-6.png" },
-    "job-3": { className: "job3-color large-container", favicon: "favicon-7.png" },
-    property: { className: "", favicon: "favicon-1.png" },
-    "property-2": { className: "property2-color", favicon: "favicon-2.png" },
-    default: { className: "car-color", favicon: "favicon-3.png" },
-  };
-
-  const { className, favicon } = pathSettings[firstPart] || pathSettings.default;
+  const { className, favicon } = PathSettings[firstPart] || PathSettings.default;
 
   useEffect(() => {
     document.body.className = className;
@@ -47,7 +36,7 @@ const Layout = () => {
       <Header part={firstPart} />
       <MobileMenu />
       <Outlet />
-      {isJobOrProperty ? <FooterDemo2 part={firstPart} /> : <Footer part={firstPart} />}
+      {isJobOrProperty ? <FooterDemo2 part={firstPart} /> : <FooterDemo1 part={firstPart} />}
       <TapTop part={firstPart} />
       <Customizer part={firstPart} />
     </div>

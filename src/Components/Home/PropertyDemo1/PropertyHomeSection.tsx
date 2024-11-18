@@ -7,7 +7,7 @@ import { HomeTabData, PropertyHomeSliderSetting } from "../../../Data/Demo/Prope
 import { HomeNavData } from "../../../Data/Demo/PropertyDemo2";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
-import RangeInputFields from "../../Property/Common/GridView/Filter/RangeInputFields";
+import RangeInputFields from "../../Property/Common/GridView/Filter/Common/RangeInputFields";
 
 const PropertyHomeSection = () => {
   const [basicTab, setBasicTab] = useState(1);
@@ -31,7 +31,7 @@ const PropertyHomeSection = () => {
               <div className="property-home-tab">
                 <Nav tabs>
                   {HomeNavData.slice(0, 2).map((item, index) => (
-                    <NavItem>
+                    <NavItem key={index}>
                       <Button className={`nav-link ${basicTab === item.id ? "active" : ""}`} color="transparent" onClick={() => setBasicTab(item.id)} key={index}>
                         {item.title}
                         <i className="ri-arrow-right-line" />

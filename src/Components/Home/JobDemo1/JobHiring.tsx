@@ -1,12 +1,9 @@
-import { Link } from "react-router-dom";
-import { Col, Container, Label, Row } from "reactstrap";
-import { ApplyNow, Href, JobHiringTitle } from "../../../Constants/Constants";
+import { Col, Container, Row } from "reactstrap";
+import { JobHiringTitle } from "../../../Constants/Constants";
 import { JobHiringContentData } from "../../../Data/Demo/JobDemo1";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { RouteList } from "../../../Routers/RouteList";
-import { dynamicSvg, Image } from "../../../Utils";
+import JobProductBox2 from "../../CommonComponents/ProductBox/JobProductBox2";
 import CommonHeader from "../Common/CommonHeader";
-import SvgIcon from "../../../Utils/SvgIcon";
 
 const JobHiring = () => {
   const { productItem } = useAppSelector((state) => state.product);
@@ -19,45 +16,7 @@ const JobHiring = () => {
             .filter(({ id }) => [17, 19, 21, 22, 23, 24, 25, 26].includes(id))
             .map((job, index) => (
               <Col xl="3" lg="4" sm="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
-                <div className="hire-box">
-                  <div className="save-flex">
-                    <span>{job.time}</span>
-                    <Link to={Href} className="save-btn">
-                      <i className="ri-bookmark-line" />
-                    </Link>
-                  </div>
-                  <div className="hire-info">
-                    <div className="hire-icon">
-                      {job.image.map((imgSrc, idx) => (
-                        <Image src={dynamicSvg(imgSrc)} alt={`job-icon-${idx}`} className="img-fluid" key={idx} />
-                      ))}
-                    </div>
-                    <Link to={RouteList.Job.Grid.JobLeftSidebar}>
-                      <h6>{job.company}</h6>
-                    </Link>
-                    <div className="hire-tag">
-                      {job.jobTags.map((tag, idx) => (
-                        <Label key={idx}>{tag}</Label>
-                      ))}
-                    </div>
-                    <Link to={RouteList.Job.Grid.JobLeftSidebar}>
-                      <h5>{job.title}</h5>
-                    </Link>
-                    <ul className="hire-list">
-                      <li>{job.location}</li>
-                      <li>
-                        <SvgIcon iconId="property/sprite/star.svg#star-svg" />
-                        {job.rating}
-                      </li>
-                    </ul>
-                    <div className="applied-flex">
-                      <span>{job.applied}</span>
-                      <Link to={RouteList.Pages.Other.ContactUs1} className="arrow-btn">
-                        {ApplyNow} <i className="ri-arrow-right-up-line" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                <JobProductBox2 jobData={job} />
               </Col>
             ))}
         </Row>

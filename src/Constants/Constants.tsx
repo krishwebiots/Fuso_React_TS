@@ -1,5 +1,6 @@
+/* eslint-disable no-useless-escape */
 export const Href: string = "#JavaScript";
-export const Primary = "var(--theme-deafult)";
+export const SymbolRegex = /[!@#\$%\^\*\(\)_\+\{\}\[\]:;"'<>,.?/\\|`~=]/g;
 
 export const SignOut: string = "Sign out";
 export const MyActive: string = "my active";

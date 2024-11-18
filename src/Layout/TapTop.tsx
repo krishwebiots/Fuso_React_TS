@@ -1,10 +1,9 @@
-/* eslint-disable no-useless-escape */
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Button } from "reactstrap";
 import { PathTypes } from "../Types/LayoutType";
 import { dynamicImage, Image } from "../Utils";
 
-const TapTop: React.FC<PathTypes> = ({ part }) => {
+const TapTop: FC<PathTypes> = ({ part }) => {
   const [tapTopStyle, setTapTopStyle] = useState(false);
 
   const executeScroll = () => window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -22,7 +21,7 @@ const TapTop: React.FC<PathTypes> = ({ part }) => {
   const isJobOrProperty = ["job", "property"].some((item) => part?.includes(item));
 
   return (
-    <div className={`tap-to-tap ${isJobOrProperty ? (part?.includes("job") ? "job-color-change" : "") : "car-top"} ${tapTopStyle ? " show" : ""}`}>
+    <div className={`tap-to-tap ${isJobOrProperty ? (part?.includes("job-1") ? "job-color-change" : "") : "car-top"} ${tapTopStyle ? " show" : ""}`}>
       <Button color="transparent" onClick={executeScroll} className={isJobOrProperty ? "top-box" : ""}>
         {isJobOrProperty ? <i className="ri-arrow-up-line" /> : <Image src={dynamicImage(`${part?.includes("car-2") ? "car2" : "car"}/tap-to-top.png`)} alt="car-top" className="img-fluid" />}
       </Button>

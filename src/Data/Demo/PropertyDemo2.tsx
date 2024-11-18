@@ -54,12 +54,6 @@ export const CounterData = [
   { end: 10, label: "Win An award" },
 ];
 
-export const TestimonialData = [
-  { content: "We couldn't have asked for a better experience with Premier Estates. From the moment we set foot in Serenity Cove, we knew it was the perfect place for our family.", title: "-The Johnson Family" },
-  { content: "This fantastic staff helped us find our ideal house! Their advice proved to be useful, and the procedure went well. What a difference their experience made.", title: "-The Grimsby Family" },
-  { content: "A achievement of a dream! The house is incredible and the neighbourhood is peaceful and secure. We made the most important choice of our lives when we moved here.", title: "-The Ashford Family" },
-];
-
 export const TeamData = [
   { name: "John Miller", image: "1.jpg" },
   { name: "Mia Thomas", image: "2.jpg" },

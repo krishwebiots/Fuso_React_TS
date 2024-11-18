@@ -7,7 +7,7 @@ import { HomeTabData, JobCounterData, JobHomeSectionData } from "../../../Data/D
 import { RouteList } from "../../../Routers/RouteList";
 import { JobHomeType } from "../../../Types/HomeDemo";
 import { dynamicGrf, dynamicImage, dynamicSvg, Image } from "../../../Utils";
-import RangeInputFields from "../../Property/Common/GridView/Filter/RangeInputFields";
+import RangeInputFields from "../../Property/Common/GridView/Filter/Common/RangeInputFields";
 
 const JobHomeSection = () => {
   const [dropdownOpen, setDropdownOpen] = useState<{ [key: number]: boolean }>({});

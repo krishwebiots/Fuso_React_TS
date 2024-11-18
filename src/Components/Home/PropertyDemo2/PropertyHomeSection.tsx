@@ -6,7 +6,7 @@ import { HomeNavData, HomeTabData } from "../../../Data/Demo/PropertyDemo2";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicNumber } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
-import RangeInputFields from "../../Property/Common/GridView/Filter/RangeInputFields";
+import RangeInputFields from "../../Property/Common/GridView/Filter/Common/RangeInputFields";
 import LogoSection from "../Common/LogoSection";
 
 const PropertyHomeSection = () => {

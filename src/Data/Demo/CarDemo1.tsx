@@ -90,45 +90,6 @@ export const AboutData = [
 
 export const TestimonialsContentData = "Discover the appropriate property that is most acceptable for you, ranging from houses";
 
-export const TestimonialsData = [
-  {
-    name: "Swiden J.",
-    location: "Ontario",
-    image: "car/testimonial/1.jpg",
-    testimonial: "I had an amazing experience buying my SUV from fuso. The staff was helpful and knowing, making the process smooth and satisfying. I'm overjoyed.",
-  },
-  {
-    name: "Sarah J.",
-    location: "Toronto",
-    image: "car/testimonial/2.jpg",
-    testimonial: "The service at fuso was exceptional from start to finish. They kept me informed and satisfied throughout. Highly recommend for anyone buying a new car!",
-  },
-  {
-    name: "David K.",
-    location: "London",
-    image: "car/testimonial/3.jpg",
-    testimonial: "Excellent service at fuso. The team went above and beyond to secure a great deal on my new car. I'm very satisfied and will return.",
-  },
-  {
-    name: "Sophia L.",
-    location: "Vaughan",
-    image: "car/testimonial/4.jpg",
-    testimonial: "I was impressed by the wide vehicle selection and the team's expertise. They made finding and buying my car smooth and enjoyable. Thank you, fuso!",
-  },
-  {
-    name: "James T.",
-    location: "Hamilton",
-    image: "car/testimonial/5.jpg",
-    testimonial: "The service at fuso was top-notch from start to finish. I appreciated the transparency and honesty. I love my new sedan and will return for future buy.",
-  },
-  {
-    name: "Emily S.",
-    location: "Windsor",
-    image: "car/testimonial/6.jpg",
-    testimonial: "I had an outstanding experience with [Your Company Name]. The patient and knowledgeable team ensured I was satisfied with my new car. Thank you!",
-  },
-];
-
 export const TestimonialsSwiperSetting = {
   navigation: {
     prevEl: ".swiper-button-prev",

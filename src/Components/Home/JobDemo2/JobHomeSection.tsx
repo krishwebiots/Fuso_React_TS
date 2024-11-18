@@ -5,6 +5,7 @@ import { Href, Search } from "../../../Constants/Constants";
 import { Cities } from "../../../Data/Demo/JobDemo2";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
+import LogoSection from "../Common/LogoSection";
 
 const JobHomeSection = () => {
   const [selectedCity, setSelectedCity] = useState("Location");
@@ -94,20 +95,7 @@ const JobHomeSection = () => {
           </Row>
         </Container>
       </div>
-      <section className="dark-logo-section">
-        <h3>Top businesses in the world are recruiting on hire up</h3>
-        <div className="quote">
-          <ul className="marquee">
-            {dynamicNumber(10).map((item, index) => (
-              <li key={index}>
-                <div className="logo-size">
-                  <Image src={dynamicImage(`job/logo/${item}.png`)} alt="logo-1" className="img-fluid" />
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <LogoSection type={"job_demo2"} />
     </Fragment>
   );
 };

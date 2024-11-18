@@ -6,7 +6,7 @@ import { LoadMore } from "../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
 import { GridLayoutType } from "../../../../Types/ProductType";
 import PaginationDynamic from "./Pagination";
-import PropertyBox from "./ProductBox/PropertyProductBox/PropertyBox";
+import PropertyProductBox1 from "../../../CommonComponents/ProductBox/PropertyProductBox1";
 import UseFilterProperty from "./UseFilterProperty";
 import { setCardToShow, setTotalProduct } from "../../../../ReduxToolkit/Reducers/SidebarReducers";
 
@@ -38,14 +38,14 @@ const GridLayout: React.FC<GridLayoutType> = ({ value, type, gridSize, gridType,
           <InfiniteScroll dataLength={showProduct.length} next={fetchMoreData} hasMore={currentPage < totalPages} className="row" loader={<h4>Loading...</h4>}>
             {showProduct.map((data, index) => (
               <Col className={gridSize === 3 ? "col-lg-4 col-sm-6" : gridSize === 4 ? "col-xxl-3 col-lg-4" : gridSize === 1 ? "col-xl-12" : "col-sm-6"} key={data.id || index}>
-                <PropertyBox data={data} view={view} />
+                <PropertyProductBox1 data={data} view={view} />
               </Col>
             ))}
           </InfiniteScroll>
         ) : (
           showProduct.map((data, index) => (
             <Col className={gridSize === 3 ? "col-lg-4 col-sm-6" : gridSize === 4 ? "col-xxl-3 col-lg-4" : gridSize === 1 ? "col-xl-12" : "col-sm-6"} key={data.id || index}>
-              <PropertyBox data={data} view={view} />
+              <PropertyProductBox1 data={data} view={view} />
             </Col>
           ))
         )}

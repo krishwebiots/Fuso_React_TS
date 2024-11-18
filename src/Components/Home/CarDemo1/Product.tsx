@@ -4,8 +4,8 @@ import { Swiper as SwiperType } from "swiper";
 import { MostSearchedTitle } from "../../../Constants/Constants";
 import { MostSearchedContentData } from "../../../Data/Demo/CarDemo1";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
-import CarProductCard from "../Common/CarProductCard";
 import CommonHeader from "../Common/CommonHeader";
+import CarProductBox1 from "../../CommonComponents/ProductBox/CarProductBox1";
 
 const Product = () => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -23,7 +23,7 @@ const Product = () => {
             .filter(({ id }) => [1, 2, 3, 4, 5, 6, 7, 8].includes(id))
             .map((item, index) => (
               <Col xxl="3" lg="4" sm="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
-                <CarProductCard data={item} />
+                <CarProductBox1 data={item} />
               </Col>
             ))}
         </Row>

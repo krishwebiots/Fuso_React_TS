@@ -67,24 +67,6 @@ export const AchievementsCounterData = [
   { end: 200, label: "Win An award" },
 ];
 
-export const TestimonialsData = [
-  {
-    name: "Hannan Odeth",
-    position: "Hannan Odeth",
-    content: "“I recently purchased a home through this Realty and I had an amazing experience. My agent, John, was incredibly professional and knowledgeable about the market. His attention to detail was impressive.”",
-  },
-  {
-    name: "Esther Howard",
-    position: "Esther Howard",
-    content: "“With the most recent sale of my house, this was vital, and I couldn't be happier with the outcome! During the process, they offered dependable counsel because they were aware about the current industry trends.”",
-  },
-  {
-    name: "Jenny Wilson",
-    position: "Jenny Wilson",
-    content: "“The process of renting the apartment was very smooth and straightforward. The leasing agent, Sarah, was very professional, responsive, and helpful in answering all my questions and concerns.”",
-  },
-];
-
 export const HomeTabData: NavType[] = [
   {
     id: 1,

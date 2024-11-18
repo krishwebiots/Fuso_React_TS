@@ -17,11 +17,11 @@ const UseFilterProperty = ({ value }: FilterProductsType) => {
         const filterBeadsRooms = bedsRooms.length === 0 || product.bhk === undefined || bedsRooms.includes(product.bhk);
         const filterAmenities = amenities.length === 0 || product.amenities === undefined || amenities.includes(product.amenities);
         const filterSquareFeet = product.squareFeet !== undefined && squareFeetStatus ? squareFeetStatus[0] <= product.squareFeet && squareFeetStatus[1] >= product.squareFeet && true : true;
-        const filteryearBuilt = product.year !== undefined && yearBuiltStatus ? yearBuiltStatus[0] <= product.year && yearBuiltStatus[1] >= product.year && true : true;
+        const filterYearBuilt = product.year !== undefined && yearBuiltStatus ? yearBuiltStatus[0] <= product.year && yearBuiltStatus[1] >= product.year && true : true;
         const filteredPrice = product.price !== undefined && priceStatus ? priceStatus[0] <= product.price && priceStatus[1] >= product.price && true : true;
         const filterMostPopular = !popular || product.productState === popular;
 
-        return filterPropertyType && filterBeadsRooms && filterAmenities && filterSquareFeet && filteryearBuilt && filteredPrice && filterMostPopular;
+        return filterPropertyType && filterBeadsRooms && filterAmenities && filterSquareFeet && filterYearBuilt && filteredPrice && filterMostPopular;
       })
       .sort((product1, product2) => {
         if (sortBy === "Price (High to Low)") return (product2.price ?? 0) - (product1.price ?? 0);
