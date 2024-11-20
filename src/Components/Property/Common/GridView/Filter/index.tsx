@@ -21,17 +21,17 @@ const FilterSidebar: FC<FilterSidebarType> = ({ value, modalType }) => {
   return (
     <div className="property-sidebar">
       <UncontrolledAccordion defaultOpen={openItems} stayOpen toggle={toggle}>
-        {/* {modalType === "map-modal" && ( */}
-        <AccordionItem>
-          <AccordionHeader targetId={"7"}>Map Modal</AccordionHeader>
-          <AccordionBody accordionId={"7"}>
-            <a href={Href} className="map-image" onClick={() => dispatch(setMapModal())}>
-              <Image src={dynamicImage("property/map.png")} alt="map" className="img-fluid" />
-              <span className="btn-border">Explore on map</span>
-            </a>
-          </AccordionBody>
-        </AccordionItem>
-        {/* )} */}
+        {modalType === "map-modal" && (
+          <AccordionItem>
+            <AccordionHeader targetId={"7"}>Map Modal</AccordionHeader>
+            <AccordionBody accordionId={"7"}>
+              <a href={Href} className="map-image" onClick={() => dispatch(setMapModal())}>
+                <Image src={dynamicImage("property/map.png")} alt="map" className="img-fluid" />
+                <span className="btn-border">Explore on map</span>
+              </a>
+            </AccordionBody>
+          </AccordionItem>
+        )}
         <CommonFilter title="Property Type" id="1" data={PropertyTypeData} checkValue={propertyType} />
         <CommonFilter title="Price range" id="2" priceRange minPrice={minPrice?.price} maxPrice={maxPrice?.price} />
         <CommonFilter title="beds rooms" id="3" data={BhkOptions} checkValue={bedsRooms} />
