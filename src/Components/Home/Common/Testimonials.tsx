@@ -47,10 +47,10 @@ const Testimonials: FC<PropsType> = ({ type }) => {
               ))}
               <div className="swiper-flex car-arrow">
                 <div className="swiper-button-prev">
-                  <ArrowLeft2 />
+                  <ArrowLeft2 className="iconsax"/>
                 </div>
                 <div className="swiper-button-next">
-                  <ArrowRight2 />
+                  <ArrowRight2 className="iconsax"/>
                 </div>
               </div>
             </Swiper>

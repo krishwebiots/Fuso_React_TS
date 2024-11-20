@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { Button, Container, Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
-import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { OfferTitle } from "../../../Constants/Constants";
-import { OfferContentData } from "../../../Data/Demo/CarDemo1";
+import { OfferContentData, OfferSwiperSetting } from "../../../Data/Demo/CarDemo1";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicSvg, Image } from "../../../Utils";
-import CommonHeader from "../Common/CommonHeader";
 import CarProductBox1 from "../../CommonComponents/ProductBox/CarProductBox1";
+import CommonHeader from "../Common/CommonHeader";
 
 const Offer = () => {
   const [activeTab, setActiveTab] = useState("honda");
@@ -38,7 +37,7 @@ const Offer = () => {
             .filter(({ id }) => [1, 2, 3, 4, 5, 6, 7].includes(id))
             .map((item, index) => (
               <TabPane className={`fade ${activeTab === item.value ? "show" : ""}`} tabId={item.value} key={index}>
-                <Swiper slidesPerView={4} spaceBetween={30} autoplay={{ delay: 2500, disableOnInteraction: false }} modules={[Autoplay]} className="car-tab-slider ratio_65">
+                <Swiper {...OfferSwiperSetting} className="car-tab-slider ratio_65">
                   {productItem
                     .filter(({ category }) => category?.includes(activeTab))
                     .map((item, index) => (

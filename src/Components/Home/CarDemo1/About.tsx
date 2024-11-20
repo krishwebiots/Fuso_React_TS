@@ -23,7 +23,7 @@ const About = () => {
               <h2>{FusoCarRental}</h2>
               <Link to={RouteList.Pages.Other.AboutUs2} className="simple-btn">
                 {FollowUsForMore}
-                <ArrowRight />
+                <ArrowRight className="iconsax" />
               </Link>
             </div>
           </Col>

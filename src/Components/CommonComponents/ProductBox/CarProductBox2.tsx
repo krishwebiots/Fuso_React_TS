@@ -1,15 +1,15 @@
-import React, { useEffect, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { Rating } from "react-simple-star-rating";
 import { Swiper as SwiperType } from "swiper";
+import { EffectFade, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductCardType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
-import { Pagination } from "swiper/modules";
-import { Rating } from "react-simple-star-rating";
 
-const CarProductBox2: React.FC<ProductCardType> = ({ data }) => {
+const CarProductBox2: FC<ProductCardType> = ({ data }) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const CarProductBox2: React.FC<ProductCardType> = ({ data }) => {
   return (
     <div className="car2-featured-box">
       <Link to={RouteList.Car.Detail.CarClassic} className="car2-featured-img">
-        <Swiper pagination={true} modules={[Pagination]} className="car2-featured-slider ratio_60">
+        <Swiper pagination={{ clickable: true }} effect={"fade"} modules={[Pagination, EffectFade]} className="car2-featured-slider ratio_60">
           <div className="overlay-box" />
           {data.image.map((imgSrc, idx) => (
             <SwiperSlide key={idx} className="bg-size">

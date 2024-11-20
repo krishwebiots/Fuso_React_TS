@@ -24,7 +24,7 @@ const Service = () => {
           </Col>
           <Col xl="6">
             <div className="service-main">
-              <div className="row justify-content-between gy-lg-4 gy-3">
+              <Row className="justify-content-between gy-lg-4 gy-3">
                 {ServiceData.map((service, index) => (
                   <Col md="6" key={index}>
                     <div className="service-box">
@@ -38,7 +38,7 @@ const Service = () => {
                     </div>
                   </Col>
                 ))}
-              </div>
+              </Row>
             </div>
           </Col>
         </Row>

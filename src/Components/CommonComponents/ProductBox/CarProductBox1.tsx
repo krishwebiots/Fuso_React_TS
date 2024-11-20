@@ -1,17 +1,16 @@
-import React from "react";
-import { useEffect, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { Label } from "reactstrap";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Href, ShowMore } from "../../../Constants/Constants";
 import { ProductSwiperSetting } from "../../../Data/Demo/CarDemo1";
+import { RouteList } from "../../../Routers/RouteList";
 import { ProductCardType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
-import { RouteList } from "../../../Routers/RouteList";
 import RatioImage from "../../../Utils/RatioImage";
-import { Label } from "reactstrap";
 
-const CarProductBox1: React.FC<ProductCardType> = ({ data }) => {
+const CarProductBox1: FC<ProductCardType> = ({ data }) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {

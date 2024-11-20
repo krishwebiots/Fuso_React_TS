@@ -8,7 +8,7 @@ const LanguageSection = () => {
   return (
     <div className="login-flex onhover-dropdown">
       <a href={Href} className="login-icon">
-        <LanguageCircle />
+        <LanguageCircle className="iconsax"/>
         <span>{Language}</span>
         <i className="ri-arrow-down-wide-line" />
       </a>

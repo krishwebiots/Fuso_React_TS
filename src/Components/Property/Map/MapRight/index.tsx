@@ -1,4 +1,3 @@
-import React from "react";
 import { Fragment, useEffect } from "react";
 import { useAppDispatch } from "../../../../ReduxToolkit/Hooks";
 import { fetchCategoryApiData, fetchProductApiData } from "../../../../ReduxToolkit/Reducers/ProductReducers";

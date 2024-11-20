@@ -5,8 +5,9 @@ import { RouteList } from "../../../Routers/RouteList";
 import { JobCardType } from "../../../Types/ProductType";
 import { dynamicSvg, Image } from "../../../Utils";
 import SvgIcon from "../../../Utils/SvgIcon";
+import { FC } from "react";
 
-const JobProductBox2: React.FC<JobCardType> = ({ jobData }) => {
+const JobProductBox2: FC<JobCardType> = ({ jobData }) => {
   return (
     <div className="hire-box">
       <div className="save-flex">

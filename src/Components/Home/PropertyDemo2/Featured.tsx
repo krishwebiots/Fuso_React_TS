@@ -4,8 +4,9 @@ import { RouteList } from "../../../Routers/RouteList";
 import { FeaturedType } from "../../../Types/HomeDemo";
 import PropertyProductBox2 from "../../CommonComponents/ProductBox/PropertyProductBox2";
 import CommonHeader from "../Common/CommonHeader";
+import { FC } from "react";
 
-const Featured: React.FC<FeaturedType> = ({ title, data, label }) => {
+const Featured: FC<FeaturedType> = ({ title, data, label }) => {
   const { productItem } = useAppSelector((state) => state.product);
   return (
     <section className="section-t-lg-space property2-featured-section section-b-lg-space">

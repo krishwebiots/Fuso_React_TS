@@ -1,8 +1,10 @@
+import { Key } from "react";
+
 export interface JobHomeType {
   image: string;
   type: string;
   class?: string;
-  key?: React.Key;
+  key?: Key;
 }
 
 export interface JobHomeImageData {
@@ -34,6 +36,7 @@ export interface NavType {
   dropdownMenu?: DropdownMenu[];
   rangeSlider?: boolean;
   label?: string;
+  inputLabel: string;
 }
 
 export interface FeaturedType {
@@ -44,4 +47,18 @@ export interface FeaturedType {
 
 export interface PropsType {
   type: string;
+}
+
+export interface SearchTabListType {
+  basicTab?: string | number;
+  showTab?: number[];
+  datePicker?: boolean;
+  scrollDown?: boolean;
+  form?: boolean;
+  pills?: boolean;
+  endPoint?: number;
+  tabs?: boolean;
+  showNav?: boolean;
+  button?: boolean;
+  icon?: boolean;
 }

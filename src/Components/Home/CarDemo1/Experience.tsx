@@ -9,7 +9,7 @@ const Experience = () => {
     <section className="car-experience-section section-b-space">
       <Container>
         <CommonHeader title={ExperienceTitle} content={ExperienceContentData} headClass="title-style-2 dark-title" animation />
-        <div className="row align-items-center g-4">
+        <Row className="align-items-center g-4">
           {ExperienceData.map((column, colIndex) => (
             <div key={colIndex} className={`col-lg-${colIndex === 1 ? "6 d-lg-block d-none p-0" : "3 col-sm-6 p-lg-0"}`}>
               {column.map((item, index) =>
@@ -33,7 +33,7 @@ const Experience = () => {
               )}
             </div>
           ))}
-        </div>
+        </Row>
 
         <div className="experience-car-feature">
           <Row>

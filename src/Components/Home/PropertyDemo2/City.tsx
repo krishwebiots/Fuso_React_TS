@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Container, Row } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import { CityTitle } from "../../../Constants/Constants";
 import { CityData } from "../../../Data/Demo/PropertyDemo2";
 import { RouteList } from "../../../Routers/RouteList";
@@ -14,7 +14,7 @@ const City = () => {
         <CommonHeader title={CityTitle} headClass="title-style-1 title-style-6" subClass="horizontal-title" url={RouteList.Property.Grid.Property3Grid} view />
         <Row className="gy-xl-0 gy-md-4 g-3 justify-content-center ratio_125">
           {CityData.map((item, index) => (
-            <div key={index} className="col-lg-3 col-6">
+            <Col lg="3" xs="6" key={index}>
               <Link to={RouteList.Property.Grid.Property3Grid} className="city-box">
                 <div className="city-img">
                   <RatioImage src={dynamicImage(`property2/city/${item.img}`)} alt={`c-${index + 1}`} className="bg-img" />
@@ -24,7 +24,7 @@ const City = () => {
                   <h6>{item.properties}</h6>
                 </div>
               </Link>
-            </div>
+            </Col>
           ))}
         </Row>
       </Container>

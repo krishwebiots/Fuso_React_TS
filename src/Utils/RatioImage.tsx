@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import { RatioImageType } from "../Types/CommonComponentsType";
 
-const RatioImage: React.FC<RatioImageType> = (props) => {
+const RatioImage: FC<RatioImageType> = (props) => {
   const bgImg = useRef<HTMLImageElement>(null);
 
   useEffect(() => {

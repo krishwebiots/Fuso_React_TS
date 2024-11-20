@@ -1,11 +1,11 @@
-import React, { ChangeEvent } from "react";
+import { ChangeEvent, FC } from "react";
 import { AccordionBody, AccordionHeader, AccordionItem, Input, Label } from "reactstrap";
 import { useAppDispatch, useAppSelector } from "../../../../../../ReduxToolkit/Hooks";
 import { setAmenities, setBedsRooms, setPropertyType, setSquareFeetStatus, setyearBuiltStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
 import { CommonFilterType } from "../../../../../../Types/ProductType";
 import RangeInputFields from "./RangeInputFields";
 
-const CommonFilter: React.FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values, maxPrice, minPrice }) => {
+const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values, maxPrice, minPrice }) => {
   const dispatch = useAppDispatch();
   const { propertyType, bedsRooms, amenities } = useAppSelector((state) => state.filter);
 

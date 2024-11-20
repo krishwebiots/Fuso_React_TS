@@ -21,7 +21,7 @@ const JobApplyButton: FC<RightHeaderType> = ({ part }) => {
             ) : (
               <Fragment>
                 {UploadResume}
-                <ExportCurve />
+                <ExportCurve className="iconsax"/>
               </Fragment>
             )}
           </Link>

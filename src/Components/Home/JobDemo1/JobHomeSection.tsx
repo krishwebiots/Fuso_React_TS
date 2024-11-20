@@ -1,23 +1,13 @@
-import React, { useState } from "react";
+import { FC } from "react";
 import CountUp from "react-countup";
-import { Link } from "react-router-dom";
-import { Col, Container, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Input, Label, Row, TabContent, TabPane } from "reactstrap";
-import { Href, Search } from "../../../Constants/Constants";
-import { HomeTabData, JobCounterData, JobHomeSectionData } from "../../../Data/Demo/JobDemo1";
-import { RouteList } from "../../../Routers/RouteList";
+import { Col, Container, Row } from "reactstrap";
+import { JobCounterData, JobHomeSectionData } from "../../../Data/Demo/JobDemo1";
 import { JobHomeType } from "../../../Types/HomeDemo";
-import { dynamicGrf, dynamicImage, dynamicSvg, Image } from "../../../Utils";
-import RangeInputFields from "../../Property/Common/GridView/Filter/Common/RangeInputFields";
+import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
+import SearchTabList from "../Common/SearchTabList";
 
 const JobHomeSection = () => {
-  const [dropdownOpen, setDropdownOpen] = useState<{ [key: number]: boolean }>({});
-  const [selectedCity, setSelectedCity] = useState(["Enter Keyword...", "Enter Category Type", "Enter Job Type", "Enter Salary"]);
-
-  const toggle = (title: number) => setDropdownOpen((prevState) => ({ [title]: !prevState[title] }));
-
-  const handleSelect = (index: number, value: any) => setSelectedCity((prev) => prev.map((item, i) => (i === index ? value.title : item)));
-
-  const renderImage: React.FC<JobHomeType> = (imageData, key) => {
+  const renderImage: FC<JobHomeType> = (imageData, key) => {
     const src = imageData.type === "svg" ? dynamicSvg(imageData.image) : dynamicImage(imageData.image);
     return <Image key={key} src={src} alt={imageData.image} className={`img-fluid ${imageData.class || ""}`} />;
   };
@@ -73,47 +63,7 @@ const JobHomeSection = () => {
           </Row>
         </div>
         <div className="property-home-tab car-home-tab job-home-tab">
-          <TabContent>
-            <TabPane className="fade show active">
-              <ul className="tab-list">
-                {HomeTabData.map((item, index) => (
-                  <li className="tab-item" key={index}>
-                    <div className="label-flex">
-                      {item.icon}
-                      <Label>{item.label}</Label>
-                    </div>
-                    <Dropdown isOpen={dropdownOpen[index]} toggle={() => toggle(index)}>
-                      <DropdownToggle color="" className="select-button">
-                        <Input type="text" placeholder={selectedCity[index]} readOnly />
-                      </DropdownToggle>
-                      <DropdownMenu className={`select-menu ${item.id === 4 ? "home-range" : ""}`}>
-                        {item.dropdownMenu ? (
-                          item.dropdownMenu?.map((list, idx) => (
-                            <DropdownItem key={idx}>
-                              <a className={item.id === 1 ? "dropdown-item" : "select-item"} href={Href} onClick={() => handleSelect(index, list)}>
-                                {list.icon ? list.icon : ""}
-                                {index === 1 ? <h6>{list.title}</h6> : list.title}
-                              </a>
-                            </DropdownItem>
-                          ))
-                        ) : (
-                          <RangeInputFields />
-                        )}
-                      </DropdownMenu>
-                    </Dropdown>
-                  </li>
-                ))}
-                <li className="tab-item">
-                  <Link to={RouteList.Job.Grid.JobLeftSidebar} className="btn-solid">
-                    {Search}
-                  </Link>
-                </li>
-                <li className="scroll-down tab-item">
-                  <Image src={dynamicGrf("mouse-animation.gif")} alt="mouse-animation" className="img-fluid" />
-                </li>
-              </ul>
-            </TabPane>
-          </TabContent>
+          <SearchTabList basicTab={1} showTab={[1, 7, 8, 9]} scrollDown showNav />
         </div>
       </Container>
     </div>

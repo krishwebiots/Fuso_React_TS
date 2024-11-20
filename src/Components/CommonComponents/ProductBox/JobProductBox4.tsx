@@ -5,8 +5,9 @@ import { ViewDetails } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { JobCardType } from "../../../Types/ProductType";
 import { dynamicSvg, Image } from "../../../Utils";
+import { FC } from "react";
 
-const JobProductBox4: React.FC<JobCardType> = ({ jobData }) => {
+const JobProductBox4: FC<JobCardType> = ({ jobData }) => {
   return (
     <div className="job-box demo-job-box3">
       <div className="job-title-flex">
@@ -22,7 +23,7 @@ const JobProductBox4: React.FC<JobCardType> = ({ jobData }) => {
           </Link>
         </div>
         <div className="post-time">
-          <Clock />
+          <Clock className="iconsax" />
           <span>{jobData.time}</span>
         </div>
       </div>
@@ -33,7 +34,7 @@ const JobProductBox4: React.FC<JobCardType> = ({ jobData }) => {
       </div>
       <div className="location-flex">
         <div className="post-time">
-          <Location />
+          <Location className="iconsax" />
           <span>{jobData.location}</span>
         </div>
         <Link to={RouteList.Job.Detail.JobDetail1} className="text-btn">

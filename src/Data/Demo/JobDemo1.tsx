@@ -1,6 +1,6 @@
-import { Building, ImportCurve, Note1, Profile, SearchNormal1, Wallet } from "iconsax-react";
+import { ImportCurve, Note1, Profile, SearchNormal1 } from "iconsax-react";
 import { Navigation } from "swiper/modules";
-import { JobHomeImageData, JobHomeMeanClassData, NavType } from "../../Types/HomeDemo";
+import { JobHomeImageData, JobHomeMeanClassData } from "../../Types/HomeDemo";
 
 export const JobCounterData = [
   { end: 20, suffix: "M+", label: "Users" },
@@ -78,25 +78,25 @@ export const StepImagesData = [
 
 export const StepsData = [
   {
-    icon: <Profile />,
+    icon: <Profile className="iconsax" />,
     stepNumber: "01",
     title: "Account",
     description: "Make an account to control your application, monitor your progress, and get information for your job hunt.",
   },
   {
-    icon: <ImportCurve />,
+    icon: <ImportCurve className="iconsax" />,
     stepNumber: "02",
     title: "CV/Resume",
     description: "Upload your resume to demonstrate how your skills align with any open positions.",
   },
   {
-    icon: <SearchNormal1 />,
+    icon: <SearchNormal1 className="iconsax" />,
     stepNumber: "03",
     title: "Quick Jobs",
     description: "Your dream job is waiting for you. Find the best real estate opportunities in your country.",
   },
   {
-    icon: <Note1 />,
+    icon: <Note1 className="iconsax" />,
     stepNumber: "04",
     title: "Apply Them",
     description: "Your dream job is waiting for you. Find the best real estate opportunities in your country.",
@@ -158,33 +158,3 @@ export const JobHereContentData = "Search and connect with the right company fas
 export const JobHiringContentData = "A job that is ideal for you can be found. 20,000+ new positions are added each day.";
 
 export const StepToFollowContent = "Find the best match for your career goals.";
-
-export const HomeTabData: NavType[] = [
-  {
-    id: 1,
-    icon: <SearchNormal1 />,
-    label: "Search",
-    dropdownMenu: [
-      { title: "City,Locality", icon: <i className="ri-map-pin-line" /> },
-      { title: "Area (like a Salmina)", icon: <i className="ri-map-pin-4-line" /> },
-      { title: "Project or Builder name", icon: <i className="ri-building-4-line" /> },
-    ],
-  },
-  {
-    id: 2,
-    icon: <Building />,
-    label: "All Categories",
-    dropdownMenu: [{ title: "Education" }, { title: "Law & government" }, { title: "Arts" }, { title: "Construction" }, { title: "Finance" }, { title: "Technology" }, { title: "Communications" }, { title: "Health care" }],
-  },
-  {
-    id: 3,
-    icon: <Wallet />,
-    label: "Job Type",
-    dropdownMenu: [{ title: "Freelance" }, { title: "Full Time" }, { title: "Internship" }, { title: "Part Time" }],
-  },
-  {
-    id: 4,
-    icon: <Wallet />,
-    label: "Salary",
-  },
-];

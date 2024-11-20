@@ -19,19 +19,17 @@ const Service = () => {
           </Col>
           <Col xxl="4" xl="5">
             <Row className="g-md-5 g-4">
-              <div className="row">
-                {ServiceData.map((service, index) => (
-                  <Col sm="6" key={index}>
-                    <div className="service-box">
-                      <div className="service-icon">{service.icon}</div>
-                      <div className="service-content">
-                        <h4>{service.title}</h4>
-                        <p>{service.description}</p>
-                      </div>
+              {ServiceData.map((service, index) => (
+                <Col sm="6" key={index}>
+                  <div className="service-box">
+                    <div className="service-icon">{service.icon}</div>
+                    <div className="service-content">
+                      <h4>{service.title}</h4>
+                      <p>{service.description}</p>
                     </div>
-                  </Col>
-                ))}
-              </div>
+                  </div>
+                </Col>
+              ))}
             </Row>
           </Col>
         </Row>

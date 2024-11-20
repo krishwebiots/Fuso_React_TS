@@ -72,6 +72,7 @@ export interface GridViewType {
   scrollType?: string;
   map?: boolean;
   mapSide?: string;
+  modalType?: string;
 }
 
 export interface GridLayoutType {
@@ -94,13 +95,8 @@ export interface TopPanelType {
 }
 
 export interface FilterSidebarType {
-  side?: string;
   value: ProductType[];
-}
-
-export interface PriceType {
-  value: any;
-  price: number;
+  modalType?: string;
 }
 
 export interface FilterSliceType {

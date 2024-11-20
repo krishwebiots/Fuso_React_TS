@@ -1,16 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Button, Col, Row } from "reactstrap";
 import { Swiper as SwiperType } from "swiper";
 import { LoadMore } from "../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
-import { GridLayoutType } from "../../../../Types/ProductType";
-import PaginationDynamic from "./Pagination";
-import PropertyProductBox1 from "../../../CommonComponents/ProductBox/PropertyProductBox1";
-import UseFilterProperty from "./UseFilterProperty";
 import { setCardToShow, setTotalProduct } from "../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { GridLayoutType } from "../../../../Types/ProductType";
+import PropertyProductBox1 from "../../../CommonComponents/ProductBox/PropertyProductBox1";
+import PaginationDynamic from "./Pagination";
+import UseFilterProperty from "./UseFilterProperty";
 
-const GridLayout: React.FC<GridLayoutType> = ({ value, type, gridSize, gridType, view, scrollType, map }) => {
+const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view, scrollType, map }) => {
   const swiperRef = useRef<SwiperType | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const { cardToShow } = useAppSelector((state) => state.sidebar);

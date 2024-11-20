@@ -3,8 +3,9 @@ import { STEP } from "../../../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../../../ReduxToolkit/Hooks";
 import { setPriceStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
 import { RangeInputFieldsType } from "../../../../../../Types/ProductType";
+import { FC } from "react";
 
-const RangeInputFields: React.FC<RangeInputFieldsType> = ({ min, max }) => {
+const RangeInputFields: FC<RangeInputFieldsType> = ({ min, max }) => {
   const dispatch = useAppDispatch();
   const { priceStatus } = useAppSelector((state) => state.filter);
 

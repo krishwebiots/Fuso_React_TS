@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { TopPanelType } from "../../../../../Types/ProductType";
+import { FC, useState } from "react";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
 import { Href } from "../../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
 import { setPopular, setSortBy } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
 import { setOpenFilterSidebar } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { TopPanelType } from "../../../../../Types/ProductType";
 
-const FilterTags: React.FC<TopPanelType> = ({ topFilter, side }) => {
+const FilterTags: FC<TopPanelType> = ({ topFilter, side }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useAppDispatch();
   const { sortBy } = useAppSelector((state) => state.filter);

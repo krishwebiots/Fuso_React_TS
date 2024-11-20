@@ -22,10 +22,10 @@ const JobCities = () => {
           <h2 className="text-white">{JobCitiesTitle}</h2>
           <div className="swiper-flex car-arrow">
             <div className="swiper-button-prev job-category-prev">
-              <ArrowLeft2 />
+              <ArrowLeft2 className="iconsax"/>
             </div>
             <div className="swiper-button-next job-category-next">
-              <ArrowRight2 />
+              <ArrowRight2 className="iconsax"/>
             </div>
           </div>
         </div>

@@ -5,8 +5,9 @@ import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import SvgIcon from "../../../Utils/SvgIcon";
 import PropertyBoxSlider from "./Common/PropertyBoxSlider";
+import { FC } from "react";
 
-const PropertyProductBox1: React.FC<ProductBoxType> = ({ data, view }) => {
+const PropertyProductBox1: FC<ProductBoxType> = ({ data, view }) => {
   return (
     <div className="featured-box">
       <div className="featured-main-img">

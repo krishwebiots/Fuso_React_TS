@@ -51,7 +51,7 @@ const JobHomeSection = () => {
               <p>Discover trusted job opportunities tailored to your skills and aspirations. Join our community and let us guide you towards success.</p>
               <div className="search-input-home">
                 <div className="icon-search">
-                  <SearchNormal1 />
+                  <SearchNormal1 className="iconsax"/>
                   <Input type="text" placeholder="Enter skills / Companies" />
                 </div>
                 {dynamicNumber(2).map((item, index) => (

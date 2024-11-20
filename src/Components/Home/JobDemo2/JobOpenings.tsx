@@ -29,7 +29,7 @@ const JobOpenings = () => {
                 <h2>135+</h2>
                 <Link to={RouteList.Job.Grid.JobLeftSidebar}>
                   Browse to all Job
-                  <ArrowRight />
+                  <ArrowRight className="iconsax"/>
                 </Link>
               </div>
             </div>

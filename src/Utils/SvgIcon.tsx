@@ -1,6 +1,7 @@
+import { FC } from "react";
 import { SvgType } from "../Types/CommonComponentsType";
 
-const SvgIcon: React.FC<SvgType> = (props) => {
+const SvgIcon: FC<SvgType> = (props) => {
   return (
     <svg className={props.className} style={props.style} onClick={props.onClick}>
       <use xlinkHref={`assets/svg/${props.iconId}`}></use>

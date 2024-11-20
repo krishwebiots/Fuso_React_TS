@@ -17,9 +17,9 @@ const Header: FC<PathTypes> = ({ part }) => {
   const isTopBar = ["car-2", "property-2"].some((item) => part?.includes(item));
 
   return (
-    <header className={`px-0${HeaderClassMap[part || ""]}`} id="header">
+    <header className={`px-0${HeaderClassMap[part || ""] || ""}`} id="header">
       {isTopBar && <TopBar part={part} />}
-      <Container className={ContainerClassMap[part || ""]}>
+      <Container className={ContainerClassMap[part || ""] || ""}>
         <div className="header-flex">
           <LeftHeader part={part} isJobOrProperty={isJobOrProperty} />
           <HeaderMenu />

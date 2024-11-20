@@ -5,8 +5,9 @@ import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
 import { Fragment } from "react/jsx-runtime";
 import CommonHeader from "./CommonHeader";
 import { WorldBestCompanies } from "../../../Constants/Constants";
+import { FC } from "react";
 
-const LogoSection: React.FC<LogoSectionType> = ({ sectionClass, swiperClass, title, type }) => {
+const LogoSection: FC<LogoSectionType> = ({ sectionClass, swiperClass, title, type }) => {
   return (
     <Fragment>
       {!type && (

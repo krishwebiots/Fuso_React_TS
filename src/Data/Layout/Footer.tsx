@@ -2,9 +2,9 @@ import { Call, Location, Sms } from "iconsax-react";
 import { RouteList } from "../../Routers/RouteList";
 
 export const ContactListData = [
-  { icon: <Call />, title: "Call", text: "(702) 555-0122" },
-  { icon: <Sms />, title: "Email", text: "general.info@gmail.com" },
-  { icon: <Location />, title: "Location", text: "4517 Washington Ave. Manchester," },
+  { icon: <Call className="iconsax" />, title: "Call", text: "(702) 555-0122" },
+  { icon: <Sms className="iconsax" />, title: "Email", text: "general.info@gmail.com" },
+  { icon: <Location className="iconsax" />, title: "Location", text: "4517 Washington Ave. Manchester," },
 ];
 
 export const SocialMediaData = [

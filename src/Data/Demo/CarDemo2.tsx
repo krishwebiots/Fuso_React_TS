@@ -1,29 +1,9 @@
-import { Calendar1, Location } from "iconsax-react";
 import { Navigation } from "swiper/modules";
 
 export const CounterData = [
   { end: 135, suffix: "+", label: "Freelancer Joined" },
   { end: 8, prefix: "0", suffix: "%", label: "Years of Experience" },
   { end: 35, suffix: "K+", label: "Company Joined" },
-];
-
-export const DropdownData = [
-  {
-    id: 1,
-    icon: <Location />,
-    label: "Location",
-    dropdownMenu: [{ title: "Amsterdam" }, { title: "Kansas City" }, { title: "Santiago" }, { title: "Lisbon" }, { title: "Los Angeles" }, { title: "Sydney" }, { title: "Beijing" }],
-  },
-  {
-    id: 2,
-    icon: <Calendar1 />,
-    label: "Car Type",
-  },
-  {
-    id: 3,
-    icon: <Calendar1 />,
-    label: "Price",
-  },
 ];
 
 export const AboutListData = [

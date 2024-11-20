@@ -5,8 +5,9 @@ import { ApplyNow } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { JobCardType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
+import { FC } from "react";
 
-const JobProductBox3: React.FC<JobCardType> = ({ jobData }) => {
+const JobProductBox3: FC<JobCardType> = ({ jobData }) => {
   return (
     <div className="job-box dark-job-box">
       <span className="border-bg" />
@@ -23,7 +24,7 @@ const JobProductBox3: React.FC<JobCardType> = ({ jobData }) => {
           </Link>
         </div>
         <div className="post-time">
-          <Clock />
+          <Clock className="iconsax" />
           <span>{jobData.time}</span>
         </div>
       </div>
@@ -37,7 +38,7 @@ const JobProductBox3: React.FC<JobCardType> = ({ jobData }) => {
           ))}
         </ul>
         <div className="post-time">
-          <Location />
+          <Location className="iconsax" />
           <span>{jobData.location}</span>
         </div>
       </div>

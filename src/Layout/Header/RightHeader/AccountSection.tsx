@@ -13,7 +13,7 @@ const AccountSection: FC<RightHeaderType> = ({ part }) => {
     <div className="icon-side">
       <div className="login-flex onhover-dropdown">
         <a href={Href} className="login-icon">
-          <ProfileCircle />
+          <ProfileCircle className="iconsax"/>
           <span>Account</span>
           <i className="ri-arrow-down-wide-line" />
         </a>

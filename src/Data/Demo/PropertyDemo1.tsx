@@ -1,6 +1,4 @@
-import { Building, Location, SearchNormal1, Wallet } from "iconsax-react";
 import { Autoplay, EffectFade } from "swiper/modules";
-import { NavType } from "../../Types/HomeDemo";
 
 export const PropertyHomeSliderSetting = {
   effect: "fade",
@@ -65,34 +63,4 @@ export const AchievementsCounterData = [
   { end: 20, label: "Year of Experience" },
   { end: 800, suffix: "+", label: "Home rented last year" },
   { end: 200, label: "Win An award" },
-];
-
-export const HomeTabData: NavType[] = [
-  {
-    id: 1,
-    icon: <SearchNormal1 />,
-    label: "Search",
-    dropdownMenu: [
-      { title: "City,Locality", icon: <i className="ri-map-pin-line" /> },
-      { title: "Area (like a Salmina)", icon: <i className="ri-map-pin-4-line" /> },
-      { title: "Project or Builder name", icon: <i className="ri-building-4-line" /> },
-    ],
-  },
-  {
-    id: 2,
-    icon: <Location />,
-    label: "Location",
-    dropdownMenu: [{ title: "Apartment" }, { title: "Kansas City" }, { title: "Santiago" }, { title: "Lisbon" }, { title: "Los Angeles" }, { title: "Sydney" }, { title: "Beijing" }],
-  },
-  {
-    id: 3,
-    icon: <Building />,
-    label: "Property Type",
-    dropdownMenu: [{ title: "Apartment" }, { title: "House" }, { title: "Vila" }, { title: "Office" }, { title: "Farmhouse" }],
-  },
-  {
-    id: 4,
-    icon: <Wallet />,
-    label: "Price",
-  },
 ];

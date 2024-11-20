@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 import { RouteList } from "../../../Routers/RouteList";
 import { MenuListType } from "../../../Types/LayoutType";
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const SubMenu: React.FC<MenuListType> = ({ menu, level }) => {
+const SubMenu: FC<MenuListType> = ({ menu, level }) => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
   const { t } = useTranslation();
 

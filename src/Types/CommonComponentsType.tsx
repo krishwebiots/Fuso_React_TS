@@ -38,3 +38,7 @@ export interface RatioImageType {
   alt: string;
   style?: { height: number };
 }
+
+export interface SearchModalType {
+  type: string;
+}

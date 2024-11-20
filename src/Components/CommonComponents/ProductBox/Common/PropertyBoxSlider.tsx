@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import { FC, Fragment, useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,7 +9,7 @@ import { PropertyBoxSliderType } from "../../../../Types/ProductType";
 import { dynamicImage, dynamicVideo } from "../../../../Utils";
 import RatioImage from "../../../../Utils/RatioImage";
 
-const PropertyBoxSlider: React.FC<PropertyBoxSliderType> = ({ view, data }) => {
+const PropertyBoxSlider: FC<PropertyBoxSliderType> = ({ view, data }) => {
   const swiperRef = useRef<SwiperType | null>(null);
   const [nav1, setNav1] = useState<Slider | null>();
   const [nav2, setNav2] = useState<Slider | null>();

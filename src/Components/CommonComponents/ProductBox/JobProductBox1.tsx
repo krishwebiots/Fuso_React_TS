@@ -5,8 +5,9 @@ import { RouteList } from "../../../Routers/RouteList";
 import { JobCardType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
 import { Label } from "reactstrap";
+import { FC } from "react";
 
-const JobProductBox1: React.FC<JobCardType> = ({ jobData }) => {
+const JobProductBox1: FC<JobCardType> = ({ jobData }) => {
   return (
     <div className="job-box">
       <div className="job-title-flex">
@@ -38,11 +39,11 @@ const JobProductBox1: React.FC<JobCardType> = ({ jobData }) => {
       <p>{jobData.description}</p>
       <ul className="post-time">
         <li>
-          <Location />
+          <Location className="iconsax" />
           <span>{jobData.location}</span>
         </li>
         <li>
-          <Clock />
+          <Clock className="iconsax" />
           <span>{jobData.time}</span>
         </li>
       </ul>

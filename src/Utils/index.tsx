@@ -1,5 +1,6 @@
 import { Media } from "reactstrap";
 import { ImageProps } from "../Types/CommonComponentsType";
+import { FC } from "react";
 
 //dynamic image
 const images = require.context(`/public/assets/images`, true);
@@ -26,7 +27,7 @@ export const dynamicVideo = (image: string) => {
 };
 
 //Image Tag
-export const Image: React.FC<ImageProps> = (props) => {
+export const Image: FC<ImageProps> = (props) => {
   return <Media {...props} alt={props.alt ? props.alt : "image"} loading="lazy" />;
 };
 

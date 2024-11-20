@@ -1,32 +1,7 @@
-import { NavType } from "../../Types/HomeDemo";
-
 export const HomeNavData = [
   { id: 1, title: "Buy" },
   { id: 2, title: "Rent" },
   { id: 3, title: "Co-Living" },
-];
-
-export const HomeTabData: NavType[] = [
-  {
-    id: 1,
-    dropdownMenu: [
-      { title: "City,Locality", icon: <i className="ri-map-pin-line" /> },
-      { title: "Area (like a Salmina)", icon: <i className="ri-map-pin-4-line" /> },
-      { title: "Project or Builder name", icon: <i className="ri-building-4-line" /> },
-    ],
-  },
-  {
-    id: 2,
-    dropdownMenu: [{ title: "Apartment" }, { title: "House" }, { title: "Vila" }, { title: "Office" }, { title: "Farmhouse" }],
-  },
-  {
-    id: 3,
-    dropdownMenu: [{ title: "Amsterdam" }, { title: "Kansas City" }, { title: "Santiago" }, { title: "Lisbon" }, { title: "Los Angeles" }, { title: "Sydney" }, { title: "Beijing" }],
-  },
-  {
-    id: 4,
-    rangeSlider: true,
-  },
 ];
 
 export const ExperienceContent = ["knowledge of the local real estate market", "property trends and investment opportunities", "Clear and open communication"];

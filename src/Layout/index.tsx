@@ -11,6 +11,7 @@ import Loader from "./Loader";
 import MobileMenu from "./MobileMenu";
 import TapTop from "./TapTop";
 import { SymbolRegex } from "../Constants/Constants";
+import SearchModal from "../Components/CommonComponents/Modal/SearchModal";
 
 const Layout = () => {
   const { pathname } = useLocation();
@@ -39,6 +40,7 @@ const Layout = () => {
       {isJobOrProperty ? <FooterDemo2 part={firstPart} /> : <FooterDemo1 part={firstPart} />}
       <TapTop part={firstPart} />
       <Customizer part={firstPart} />
+      <SearchModal type="property" />
     </div>
   );
 };

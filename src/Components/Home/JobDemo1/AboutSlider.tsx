@@ -8,6 +8,7 @@ import { AboutSliderContentData, AboutSliderSetting, AboutSlidesData } from "../
 import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
 import SvgIcon from "../../../Utils/SvgIcon";
+
 const AboutSlider = () => {
   const swiperRef = useRef<SwiperType | null>(null);
 
@@ -43,10 +44,10 @@ const AboutSlider = () => {
           ))}
           <div className="swiper-flex car-arrow">
             <div className="swiper-button-prev job-about-prev">
-              <ArrowLeft2 />
+              <ArrowLeft2 className="iconsax"/>
             </div>
             <div className="swiper-button-next job-about-next">
-              <ArrowRight2 />
+              <ArrowRight2 className="iconsax"/>
             </div>
           </div>
         </Swiper>

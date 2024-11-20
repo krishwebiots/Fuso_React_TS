@@ -2,7 +2,7 @@
 import { Add } from "iconsax-react";
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Col, Container, Modal, ModalBody, Row } from "reactstrap";
+import { Button, Col, Container, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
 import { BlogsTitle, Close, ReadMore } from "../../../Constants/Constants";
 import { BlogsContentData, BlogsData } from "../../../Data/Demo/CarDemo2";
 import { RouteList } from "../../../Routers/RouteList";
@@ -13,6 +13,12 @@ import RatioImage from "../../../Utils/RatioImage";
 const Blogs = () => {
   const [videoCall, setVideoCall] = useState(false);
   const toggleClick = () => setVideoCall(!videoCall);
+
+  const closeBtn = (
+    <Button onClick={toggleClick} close>
+      {Close} <Add className="iconsax" />
+    </Button>
+  );
   return (
     <Fragment>
       <section className="car2-blog-section section-t-lg-space section-b-lg-space overflow-hidden">
@@ -51,13 +57,8 @@ const Blogs = () => {
           </Row>
         </Container>
       </section>
-      <Modal isOpen={videoCall} fade toggle={toggleClick} className="theme-modal modal-lg modal-dialog-centered">
-        <div className="modal-header">
-          <Button close onClick={toggleClick}>
-            {Close}
-            <Add />
-          </Button>
-        </div>
+      <Modal isOpen={videoCall} fade toggle={toggleClick} modalClassName="theme-modal modal-lg modal-dialog-centered">
+        <ModalHeader toggle={toggleClick} close={closeBtn} />
         <ModalBody>
           <iframe src="https://www.youtube.com/embed/y9j-BL5ocW8" allowFullScreen />
         </ModalBody>

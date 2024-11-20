@@ -19,6 +19,7 @@ import PropertyThumbList from "../Pages/Property/Listing/PropertyThumbList";
 import PropertyVideoList from "../Pages/Property/Listing/PropertyVideoList";
 import PropertyWithoutSlider from "../Pages/Property/Listing/PropertyWithoutSlider";
 import MapLeft from "../Pages/Property/Map/MapLeft";
+import MapList from "../Pages/Property/Map/MapList";
 import MapRight from "../Pages/Property/Map/MapRight";
 import PropertyGridWithoutSlider from "../Pages/Property/Other/PropertyGridWithoutSlider";
 import PropertyInfiniteScroll from "../Pages/Property/Other/PropertyInfiniteScroll";
@@ -27,7 +28,8 @@ import PropertyLoadMore from "../Pages/Property/Other/PropertyLoadMore";
 import PropertyParallax from "../Pages/Property/Other/PropertyParallax";
 import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import { RouteList } from "./RouteList";
-import MapList from "../Pages/Property/Map/MapList";
+import MapModal from "../Pages/Property/Map/MapModal";
+import PropertyClassic from "../Pages/Property/Detail/PropertyClassic";
 
 const Router = createBrowserRouter([
   {
@@ -60,6 +62,8 @@ const Router = createBrowserRouter([
       { path: RouteList.Property.Map.MapLeft, element: <MapLeft /> },
       { path: RouteList.Property.Map.MapRight, element: <MapRight /> },
       { path: RouteList.Property.Map.MapList, element: <MapList /> },
+      { path: RouteList.Property.Map.MapModal, element: <MapModal /> },
+      { path: RouteList.Property.Detail.PropertyClassic, element: <PropertyClassic /> },
     ],
   },
 ]);

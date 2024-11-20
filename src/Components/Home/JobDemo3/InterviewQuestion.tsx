@@ -32,7 +32,7 @@ const InterviewQuestion = () => {
                     <h4>{item.question}</h4>
                   </div>
                   <Link to={RouteList.Pages.Other.Faq} className="arrow-circle">
-                    <ArrowUp />
+                    <ArrowUp className="iconsax"/>
                   </Link>
                 </li>
               ))}

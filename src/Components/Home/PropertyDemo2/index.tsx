@@ -11,6 +11,7 @@ import Team from "./Team";
 import { FeaturedProperties, RecentlyAddedProperties } from "../../../Constants/Constants";
 import Categories from "../Common/Categories";
 import Testimonials from "../Common/Testimonials";
+import SearchModal from "../../CommonComponents/Modal/SearchModal";
 
 const PropertyDemo2Container = () => {
   const dispatch = useAppDispatch();
@@ -31,6 +32,7 @@ const PropertyDemo2Container = () => {
       <Counter />
       <Testimonials type="property_demo2" />
       <Team />
+      <SearchModal type="property" />
     </Fragment>
   );
 };

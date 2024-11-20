@@ -26,14 +26,14 @@ const About = () => {
                   <li key={index} className="counter-box">
                     <div className="counter-flex">
                       <CountUp end={counter.count} className="counter-count" delay={0} />
-                      <Add />
+                      <Add className="iconsax"/>
                     </div>
                     <h5>{counter.label}</h5>
                   </li>
                 ))}
               </ul>
               <Link to={RouteList.Pages.Other.AboutUs1} className="text-btn">
-                {LearnMore} <ArrowRight />
+                {LearnMore} <ArrowRight className="iconsax"/>
               </Link>
             </div>
           </Col>

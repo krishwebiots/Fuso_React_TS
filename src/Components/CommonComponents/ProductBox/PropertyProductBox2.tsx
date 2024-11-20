@@ -7,8 +7,9 @@ import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicImage } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
 import SvgIcon from "../../../Utils/SvgIcon";
+import { FC } from "react";
 
-const PropertyProductBox2: React.FC<ProductBoxType> = ({ data, label, index }) => {
+const PropertyProductBox2: FC<ProductBoxType> = ({ data, label, index }) => {
   return (
     <div className="car2-featured-box property2-featured-box">
       <Link to={RouteList.Property.Detail.PropertySidebarLayout} className="car2-featured-img">

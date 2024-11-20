@@ -1,4 +1,3 @@
-import React from "react";
 import { ContactListData } from "../../../Data/Layout/Footer";
 
 const ContactList = () => {

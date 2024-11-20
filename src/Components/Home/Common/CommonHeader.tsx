@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { ViewAll } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { CommonHeaderType } from "../../../Types/CommonComponentsType";
+import { FC } from "react";
 
-const CommonHeader: React.FC<CommonHeaderType> = ({ title, content, animation, headClass, titleClass, view, subClass, url }) => {
+const CommonHeader: FC<CommonHeaderType> = ({ title, content, animation, headClass, titleClass, view, subClass, url }) => {
   return (
     <div className={headClass}>
       <div className={subClass ? subClass : "title-flex"}>
