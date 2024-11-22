@@ -150,3 +150,7 @@ export interface RangeInputFieldsType {
   min?: number;
   max?: number;
 }
+
+export interface PropertyDetailType {
+  type?: string;
+}

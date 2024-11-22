@@ -12,7 +12,7 @@ const Loader: FC<PathTypes> = ({ part }) => {
     return () => clearTimeout(timeout);
   }, [show]);
 
-  const loaderKey = Object.keys(Loaders).find((key) => part?.includes(key));
+  const loaderKey = Object.keys(Loaders).find((key) => part === key);
 
   const loaderContent = Loaders[loaderKey || ""]?.svg || (
     <Fragment>

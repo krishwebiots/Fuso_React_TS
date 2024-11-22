@@ -1,24 +1,18 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
-import { Add } from "iconsax-react";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import { Button, Col, Container, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
-import { BlogsTitle, Close, ReadMore } from "../../../Constants/Constants";
+import { Button, Col, Container, Row } from "reactstrap";
+import { BlogsTitle, ReadMore } from "../../../Constants/Constants";
 import { BlogsContentData, BlogsData } from "../../../Data/Demo/CarDemo2";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
-import CommonHeader from "../Common/CommonHeader";
 import RatioImage from "../../../Utils/RatioImage";
+import VideoModal from "../../CommonComponents/Modal/VideoModal";
+import CommonHeader from "../Common/CommonHeader";
+import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
+import { setVideoModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
 
 const Blogs = () => {
-  const [videoCall, setVideoCall] = useState(false);
-  const toggleClick = () => setVideoCall(!videoCall);
-
-  const closeBtn = (
-    <Button onClick={toggleClick} close>
-      {Close} <Add className="iconsax" />
-    </Button>
-  );
+  const dispatch = useAppDispatch();
   return (
     <Fragment>
       <section className="car2-blog-section section-t-lg-space section-b-lg-space overflow-hidden">
@@ -29,7 +23,7 @@ const Blogs = () => {
             <Col lg="6" sm="8" className="d-lg-block d-none">
               <div className="main-blog-img position-relative">
                 <Image src={dynamicImage("car2/blog/1.jpg")} alt="b-1" className="img-fluid w-100 main-img" />
-                <Button className="btn-play" onClick={toggleClick}>
+                <Button className="btn-play" onClick={() => dispatch(setVideoModal())}>
                   <Image src={dynamicSvg("car2/play.svg")} alt="play" className="img-fluid" />
                 </Button>
               </div>
@@ -57,12 +51,7 @@ const Blogs = () => {
           </Row>
         </Container>
       </section>
-      <Modal isOpen={videoCall} fade toggle={toggleClick} modalClassName="theme-modal modal-lg modal-dialog-centered">
-        <ModalHeader toggle={toggleClick} close={closeBtn} />
-        <ModalBody>
-          <iframe src="https://www.youtube.com/embed/y9j-BL5ocW8" allowFullScreen />
-        </ModalBody>
-      </Modal>
+      <VideoModal />
     </Fragment>
   );
 };

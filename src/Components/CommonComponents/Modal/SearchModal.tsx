@@ -1,12 +1,12 @@
-import { Add } from "iconsax-react";
 import { FC, Fragment } from "react";
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
-import { Close, Search } from "../../../Constants/Constants";
+import { Search } from "../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { setAmenities, setBedsRooms, setPopular, setPriceStatus, setPropertyType, setSortBy, setSquareFeetStatus, setyearBuiltStatus } from "../../../ReduxToolkit/Reducers/FilterReducers";
 import { setSearchModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
 import { SearchModalType } from "../../../Types/CommonComponentsType";
 import FilterSidebar from "../../Property/Common/GridView/Filter";
+import CloseBtn from "../CloseBtn";
 
 const SearchModal: FC<SearchModalType> = ({ type }) => {
   const { searchModal } = useAppSelector((state) => state.sidebar);
@@ -22,17 +22,11 @@ const SearchModal: FC<SearchModalType> = ({ type }) => {
     resetActions.forEach(dispatch);
   };
 
-  const closeBtn = (
-    <Button onClick={toggle} close>
-      {Close} <Add className="iconsax" />
-    </Button>
-  );
-
   return (
     <Fragment>
       <div className="mobile-space" />
       <Modal scrollable fade modalClassName="theme-modal search-modal" isOpen={searchModal} toggle={toggle}>
-        <ModalHeader toggle={toggle} close={closeBtn} />
+        <ModalHeader toggle={toggle} close={<CloseBtn toggle={toggle} />} />
         <ModalBody>
           <div className="filter-header">
             <h3>Search</h3>

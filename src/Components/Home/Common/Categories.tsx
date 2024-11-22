@@ -107,7 +107,7 @@ const Categories: FC<PropsType> = ({ type }) => {
       )}
 
       {/* Job Demo-2 */}
-      {type === "Job_demo2" && (
+      {type === "job_demo2" && (
         <section className="category-dark-section bg-transparent job-category-section">
           <Container>
             <CommonHeader title={BrowseByCategory} content={BrowseByCategoryContent} headClass="title-style-4" />

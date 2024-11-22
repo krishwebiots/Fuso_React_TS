@@ -7,6 +7,8 @@ import JobDemo2 from "../Pages/Home/JobDemo2";
 import JobDemo3 from "../Pages/Home/JobDemo3";
 import PropertyDemo1 from "../Pages/Home/PropertyDemo1";
 import PropertyDemo2 from "../Pages/Home/PropertyDemo2";
+import PropertyClassic from "../Pages/Property/Detail/PropertyClassic";
+import PropertyScrollspy from "../Pages/Property/Detail/PropertyScrollspy";
 import Property2Grid from "../Pages/Property/Grid/Property2Grid";
 import Property2RightGrid from "../Pages/Property/Grid/Property2RightGrid";
 import Property3Grid from "../Pages/Property/Grid/Property3Grid";
@@ -20,6 +22,7 @@ import PropertyVideoList from "../Pages/Property/Listing/PropertyVideoList";
 import PropertyWithoutSlider from "../Pages/Property/Listing/PropertyWithoutSlider";
 import MapLeft from "../Pages/Property/Map/MapLeft";
 import MapList from "../Pages/Property/Map/MapList";
+import MapModal from "../Pages/Property/Map/MapModal";
 import MapRight from "../Pages/Property/Map/MapRight";
 import PropertyGridWithoutSlider from "../Pages/Property/Other/PropertyGridWithoutSlider";
 import PropertyInfiniteScroll from "../Pages/Property/Other/PropertyInfiniteScroll";
@@ -28,8 +31,6 @@ import PropertyLoadMore from "../Pages/Property/Other/PropertyLoadMore";
 import PropertyParallax from "../Pages/Property/Other/PropertyParallax";
 import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import { RouteList } from "./RouteList";
-import MapModal from "../Pages/Property/Map/MapModal";
-import PropertyClassic from "../Pages/Property/Detail/PropertyClassic";
 
 const Router = createBrowserRouter([
   {
@@ -64,6 +65,7 @@ const Router = createBrowserRouter([
       { path: RouteList.Property.Map.MapList, element: <MapList /> },
       { path: RouteList.Property.Map.MapModal, element: <MapModal /> },
       { path: RouteList.Property.Detail.PropertyClassic, element: <PropertyClassic /> },
+      { path: RouteList.Property.Detail.PropertyScrollspy, element: <PropertyScrollspy /> },
     ],
   },
 ]);

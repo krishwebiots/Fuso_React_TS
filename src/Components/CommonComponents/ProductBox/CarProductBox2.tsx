@@ -36,9 +36,9 @@ const CarProductBox2: FC<ProductCardType> = ({ data }) => {
           <Link to={RouteList.Car.Detail.CarClassic}>
             <h4>{data.title}</h4>
           </Link>
-          <ul className="rate-list">
+          <div className="rate-list">
             <Rating initialValue={5} size={17} fillColor="#232323" />
-          </ul>
+          </div>
         </div>
         <p>{data.description}</p>
         <ul className="tag-list">

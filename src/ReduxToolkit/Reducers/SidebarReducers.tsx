@@ -7,6 +7,9 @@ const initialState = {
   totalProduct: 0,
   searchModal: false,
   mapModal: false,
+  shareModal: false,
+  videoModal: false,
+  reviewModal: false,
 };
 
 const SidebarSlice = createSlice({
@@ -31,8 +34,17 @@ const SidebarSlice = createSlice({
     setMapModal: (state) => {
       state.mapModal = !state.mapModal;
     },
+    setShareModal: (state) => {
+      state.shareModal = !state.shareModal;
+    },
+    setVideoModal: (state) => {
+      state.videoModal = !state.videoModal;
+    },
+    setReviewModal: (state) => {
+      state.reviewModal = !state.reviewModal;
+    },
   },
 });
 
-export const { setSidebarOpen, setOpenFilterSidebar, setCardToShow, setTotalProduct, setSearchModal, setMapModal } = SidebarSlice.actions;
+export const { setSidebarOpen, setOpenFilterSidebar, setCardToShow, setTotalProduct, setSearchModal, setMapModal, setShareModal, setVideoModal, setReviewModal } = SidebarSlice.actions;
 export default SidebarSlice.reducer;
