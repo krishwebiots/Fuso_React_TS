@@ -2,20 +2,22 @@ import { MessageEdit } from "iconsax-react";
 import { Rating } from "react-simple-star-rating";
 import { Fragment } from "react/jsx-runtime";
 import { Button } from "reactstrap";
-import { Href, ReviewsTitle, WriteReview } from "../../../../../Constants/Constants";
-import { ReviewsData } from "../../../../../Data/Property";
-import { useAppDispatch } from "../../../../../ReduxToolkit/Hooks";
-import { setReviewModal } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
-import { dynamicImage, Image } from "../../../../../Utils";
-import ReviewModal from "../../../../CommonComponents/Modal/ReviewModal";
+import { Href, ReviewsTitle, WriteReview } from "../../../../../../Constants/Constants";
+import { ReviewsData } from "../../../../../../Data/Property";
+import { useAppDispatch } from "../../../../../../ReduxToolkit/Hooks";
+import { setReviewModal } from "../../../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { dynamicImage, Image } from "../../../../../../Utils";
+import ReviewModal from "../../../../../CommonComponents/Modal/ReviewModal";
+import { FC } from "react";
+import { DetailBodyItemType } from "../../../../../../Types/ProductType";
 
-const Reviews = () => {
+const Reviews: FC<DetailBodyItemType> = ({ label }) => {
   const dispatch = useAppDispatch();
   return (
     <Fragment>
-      <div className="detail-body">
+      <div className="detail-body" id="reviews">
         <div className="modal-btn-flex">
-          <h4 className="detail-page-title">{ReviewsTitle}</h4>
+          {label && <h4 className="detail-page-title">{ReviewsTitle}</h4>}
           <Button className="text-btn" color="transparent" onClick={() => dispatch(setReviewModal())}>
             <MessageEdit className="iconsax" /> {WriteReview}
           </Button>

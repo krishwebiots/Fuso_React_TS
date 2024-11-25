@@ -1,4 +1,13 @@
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
+import { AmenitiesTitle, FloorPlansTitle, LocationTitle, OverviewTitle, PropertyDescriptionTitle, ReviewsTitle, ScheduleTourTitle, VideoTitle } from "../Constants/Constants";
+import Overview from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Overview";
+import Description from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Description";
+import FloorPlans from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/FloorPlans";
+import Video from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Video";
+import Location from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Location";
+import Reviews from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Reviews";
+import ScheduleTour from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/ScheduleTour";
+import Amenities from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Amenities";
 
 export const PropertyTypeData = [
   { id: "status-one", label: "All", type: "all" },
@@ -17,7 +26,7 @@ export const BhkOptions = [
   { id: "bed-5", label: "5 BHK", type: "5 BHK" },
 ];
 
-export const Amenities = [
+export const AmenitiesFilterData = [
   { id: "amenity-1", label: "Air Conditioning", type: "Air Conditioning" },
   { id: "amenity-2", label: "Doorman", type: "Doorman" },
   { id: "amenity-3", label: "Family Room", type: "Family Room" },
@@ -86,12 +95,12 @@ export const ModalShareListData = [
 ];
 
 export const OverviewData = [
-  { svg: "house", title: "Property Type", text: "House" },
-  { svg: "bed", title: "Bedroom", text: "2" },
-  { svg: "shower", title: "Bathroom", text: "2" },
-  { svg: "garage", title: "Garage", text: "1" },
-  { svg: "expand-arrows", title: "Sqft", text: "1400" },
-  { svg: "calendar", title: "Year Built", text: "2020" },
+  { svg: "house", title: "Property Type", text: "House", gif: "building.gif" },
+  { svg: "bed", title: "Bedroom", text: "2", gif: "bed.gif" },
+  { svg: "shower", title: "Bathroom", text: "2", gif: "shower.gif" },
+  { svg: "garage", title: "Garage", text: "1", gif: "garage.gif" },
+  { svg: "expand-arrows", title: "Sqft", text: "1400", gif: "dimensions.gif" },
+  { svg: "calendar", title: "Year Built", text: "2020", gif: "appointment.gif" },
 ];
 
 export const AmenitiesData = [
@@ -119,6 +128,7 @@ export const AmenitiesSlider = {
     delay: 1500,
     disableOnInteraction: false,
   },
+  modules: [Autoplay],
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -228,3 +238,88 @@ export const Time = Array.from({ length: 15 }, (_, i) => {
     minute: minute,
   };
 });
+
+export const Sections = [
+  { id: "overview", label: OverviewTitle, component: <Overview />, labelComponent: <Overview label /> },
+  { id: "amenities", label: AmenitiesTitle, component: <Amenities />, labelComponent: <Amenities label /> },
+  { id: "description", label: PropertyDescriptionTitle, component: <Description />, labelComponent: <Description label /> },
+  { id: "floor", label: FloorPlansTitle, component: <FloorPlans />, labelComponent: <FloorPlans label /> },
+  { id: "video", label: VideoTitle, component: <Video />, labelComponent: <Video label /> },
+  { id: "location", label: LocationTitle, component: <Location />, labelComponent: <Location label /> },
+  { id: "reviews", label: ReviewsTitle, component: <Reviews />, labelComponent: <Reviews label /> },
+  { id: "schedule", label: ScheduleTourTitle, component: <ScheduleTour />, labelComponent: <ScheduleTour label /> },
+];
+
+export const DetailBreadcrumbsSlider = {
+  slidesPerView: 4,
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+    },
+    576: {
+      slidesPerView: 3,
+    },
+    768: {
+      slidesPerView: 4,
+    },
+  },
+};
+
+export const StickySliderFor = {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  vertical: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        vertical: true,
+      },
+    },
+    {
+      breakpoint: 0,
+      settings: {
+        vertical: false,
+      },
+    },
+  ],
+};
+
+export const StickySliderNav = {
+  slidesToShow: 6,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: false,
+  focusOnSelect: true,
+  vertical: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+        vertical: false,
+      },
+    },
+    {
+      breakpoint: 0,
+      settings: {
+        slidesToShow: 6,
+      },
+    },
+  ],
+};
+
+export const ThumbSliderFor = {
+  slidesToShow: 1,
+  slidesToScroll: 0,
+  arrows: false,
+};
+
+export const ThumbSliderNav = {
+  slidesToShow: 7,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: false,
+  focusOnSelect: true,
+};

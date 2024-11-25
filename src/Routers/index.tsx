@@ -31,6 +31,14 @@ import PropertyLoadMore from "../Pages/Property/Other/PropertyLoadMore";
 import PropertyParallax from "../Pages/Property/Other/PropertyParallax";
 import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import { RouteList } from "./RouteList";
+import PropertyTab from "../Pages/Property/Detail/PropertyTab";
+import PropertyAccordion from "../Pages/Property/Detail/PropertyAccordion";
+import PropertyImageSlider from "../Pages/Property/Detail/PropertyImageSlider";
+import PropertyVideo from "../Pages/Property/Detail/PropertyVideo";
+import PropertyAnimatedIcon from "../Pages/Property/Detail/PropertyAnimatedIcon";
+import PropertySidebarLayout from "../Pages/Property/Detail/PropertySidebarLayout";
+import PropertySticky from "../Pages/Property/Detail/PropertySticky";
+import PropertyThumbSlider from "../Pages/Property/Detail/PropertyThumbSlider";
 
 const Router = createBrowserRouter([
   {
@@ -66,6 +74,14 @@ const Router = createBrowserRouter([
       { path: RouteList.Property.Map.MapModal, element: <MapModal /> },
       { path: RouteList.Property.Detail.PropertyClassic, element: <PropertyClassic /> },
       { path: RouteList.Property.Detail.PropertyScrollspy, element: <PropertyScrollspy /> },
+      { path: RouteList.Property.Detail.PropertyTab, element: <PropertyTab /> },
+      { path: RouteList.Property.Detail.PropertyAccordion, element: <PropertyAccordion /> },
+      { path: RouteList.Property.Detail.PropertyImageSlider, element: <PropertyImageSlider /> },
+      { path: RouteList.Property.Detail.PropertySticky, element: <PropertySticky /> },
+      { path: RouteList.Property.Detail.PropertySidebarLayout, element: <PropertySidebarLayout /> },
+      { path: RouteList.Property.Detail.PropertyVideo, element: <PropertyVideo /> },
+      { path: RouteList.Property.Detail.PropertyThumbSlider, element: <PropertyThumbSlider /> },
+      { path: RouteList.Property.Detail.PropertyAnimatedIcon, element: <PropertyAnimatedIcon /> },
     ],
   },
 ]);

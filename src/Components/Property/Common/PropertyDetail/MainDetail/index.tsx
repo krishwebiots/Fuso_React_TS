@@ -34,7 +34,7 @@ const MainDetail = () => {
                 </a>
               </li>
               <li>
-                <a href={Href} className="print-button">
+                <a href={Href} className="print-button" onClick={() => window.print()}>
                   <i className="ri-printer-line" />
                   Print
                 </a>

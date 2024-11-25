@@ -8,6 +8,7 @@ import { JobCategoriesScrollData, JobHomeIcon, SelectExperienceData } from "../.
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
+import CitySelectMenu from "../../CommonComponents/CitySelectMenu";
 
 const JobHomeSection = () => {
   const [selectedCity, setSelectedCity] = useState(["Select Experience", "Select Location"]);
@@ -51,7 +52,7 @@ const JobHomeSection = () => {
               <p>Discover trusted job opportunities tailored to your skills and aspirations. Join our community and let us guide you towards success.</p>
               <div className="search-input-home">
                 <div className="icon-search">
-                  <SearchNormal1 className="iconsax"/>
+                  <SearchNormal1 className="iconsax" />
                   <Input type="text" placeholder="Enter skills / Companies" />
                 </div>
                 {dynamicNumber(2).map((item, index) => (
@@ -72,18 +73,8 @@ const JobHomeSection = () => {
                         </ul>
                       ) : (
                         <Row>
-                          {Cities.map((cityGroup, idx) => (
-                            <Col xl="4" sm="6" key={idx}>
-                              <ul className="select-menu">
-                                {cityGroup.map((city, idx) => (
-                                  <li key={idx}>
-                                    <Link className={`select-item ${city === selectedCity[index] ? "active" : ""}`} to={Href} onClick={() => handleSelect(index, city)}>
-                                      {city}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </Col>
+                          {Cities.map((cityList, i) => (
+                            <CitySelectMenu key={i} multiColumn cityList={cityList} selectedCity={selectedCity[index]} onSelectCity={(city) => handleSelect(index, city)} href={Href} />
                           ))}
                         </Row>
                       )}

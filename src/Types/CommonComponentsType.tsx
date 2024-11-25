@@ -42,3 +42,17 @@ export interface RatioImageType {
 export interface SearchModalType {
   type: string;
 }
+
+export interface CitySelectMenuType {
+  cityList: string[];
+  selectedCity: string | null;
+  onSelectCity: (city: string) => void;
+  href: string;
+  multiColumn?: boolean;
+}
+
+export interface BreadcrumbsType {
+  title: string;
+  subTitle: string;
+  url: string;
+}

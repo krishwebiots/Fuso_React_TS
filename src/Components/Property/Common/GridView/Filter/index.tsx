@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { AccordionBody, AccordionHeader, AccordionItem, UncontrolledAccordion } from "reactstrap";
-import { Amenities, BhkOptions, PropertyTypeData } from "../../../../../Data/Property";
+import { AmenitiesFilterData, BhkOptions, PropertyTypeData } from "../../../../../Data/Property";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
 import { FilterSidebarType } from "../../../../../Types/ProductType";
 import CommonFilter from "./Common/CommonFilter";
@@ -37,7 +37,7 @@ const FilterSidebar: FC<FilterSidebarType> = ({ value, modalType }) => {
         <CommonFilter title="beds rooms" id="3" data={BhkOptions} checkValue={bedsRooms} />
         <CommonFilter title="Square Feet" id="4" values={squareFeetStatus} squareFeet />
         <CommonFilter title="Year Built" id="5" values={yearBuiltStatus} squareFeet />
-        <CommonFilter title="Amenities" id="6" data={Amenities} checkValue={amenities} />
+        <CommonFilter title="Amenities" id="6" data={AmenitiesFilterData} checkValue={amenities} />
       </UncontrolledAccordion>
     </div>
   );

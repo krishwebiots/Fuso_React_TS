@@ -1,11 +1,12 @@
-import { useEffect, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Href, ScheduleTourTitle, SubmitReview } from "../../../../../Constants/Constants";
-import { Days, ScheduleSlider, Time } from "../../../../../Data/Property";
+import { Href, ScheduleTourTitle, SubmitReview } from "../../../../../../Constants/Constants";
+import { Days, ScheduleSlider, Time } from "../../../../../../Data/Property";
 import { Col, Input, Row } from "reactstrap";
+import { DetailBodyItemType } from "../../../../../../Types/ProductType";
 
-const ScheduleTour = () => {
+const ScheduleTour: FC<DetailBodyItemType> = ({ label }) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {
@@ -13,8 +14,8 @@ const ScheduleTour = () => {
   }, []);
 
   return (
-    <div className="detail-body">
-      <h4 className="detail-page-title">{ScheduleTourTitle}</h4>
+    <div className="detail-body" id="schedule">
+      {label && <h4 className="detail-page-title">{ScheduleTourTitle}</h4>}
       <Swiper {...ScheduleSlider} className="schedule-slider" onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
         {Days.map(({ day, date, month }) => (
           <SwiperSlide key={date}>
@@ -43,11 +44,11 @@ const ScheduleTour = () => {
           <Col lg="6">
             <div className="review-input">
               <Input type="select" className="form-control" required>
-                <option value="" disabled selected>
+                <option defaultValue="--Select Your Time--" disabled>
                   --Select Your Time--
                 </option>
                 {Time.map(({ hour, minute }, index) => (
-                  <option key={index} value={index}>
+                  <option key={index} defaultValue={index}>
                     {hour}:{minute}
                   </option>
                 ))}

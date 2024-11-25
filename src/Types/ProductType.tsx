@@ -153,4 +153,10 @@ export interface RangeInputFieldsType {
 
 export interface PropertyDetailType {
   type?: string;
+  mainClass?: string;
+  thumb?: boolean;
+}
+
+export interface DetailBodyItemType {
+  label?: boolean;
 }

@@ -1,13 +1,15 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { AmenitiesTitle } from "../../../../../Constants/Constants";
-import { AmenitiesData, AmenitiesSlider } from "../../../../../Data/Property";
-import { dynamicImage } from "../../../../../Utils";
-import RatioImage from "../../../../../Utils/RatioImage";
+import { AmenitiesTitle } from "../../../../../../Constants/Constants";
+import { AmenitiesData, AmenitiesSlider } from "../../../../../../Data/Property";
+import { dynamicImage } from "../../../../../../Utils";
+import RatioImage from "../../../../../../Utils/RatioImage";
+import { FC } from "react";
+import { DetailBodyItemType } from "../../../../../../Types/ProductType";
 
-const Amenities = () => {
+const Amenities: FC<DetailBodyItemType> = ({ label }) => {
   return (
-    <div className="detail-body">
-      <h4 className="detail-page-title">{AmenitiesTitle}</h4>
+    <div className="detail-body" id="amenities">
+      {label && <h4 className="detail-page-title">{AmenitiesTitle}</h4>}
       <Swiper {...AmenitiesSlider} className="amenities-slider ratio_landscape">
         {AmenitiesData.map((item, index) => (
           <SwiperSlide key={index}>

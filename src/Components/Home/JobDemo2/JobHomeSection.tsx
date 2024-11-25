@@ -2,10 +2,11 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Dropdown, DropdownMenu, DropdownToggle, Input, Row } from "reactstrap";
 import { Href, Search } from "../../../Constants/Constants";
-import { Cities } from "../../../Data/Demo/JobDemo2";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
 import LogoSection from "../Common/LogoSection";
+import CitySelectMenu from "../../CommonComponents/CitySelectMenu";
+import { Cities } from "../../../Data/Demo/JobDemo2";
 
 const JobHomeSection = () => {
   const [selectedCity, setSelectedCity] = useState("Location");
@@ -63,23 +64,13 @@ const JobHomeSection = () => {
                       <span className="animated-line" />
                     </div>
                     <Dropdown isOpen={dropdownOpen} toggle={toggle} className="select-dropdown">
-                      <DropdownToggle caret className="select-button">
+                      <DropdownToggle caret color="transparent" className="select-button">
                         {selectedCity}
                       </DropdownToggle>
                       <DropdownMenu>
                         <Row>
-                          {Cities.map((city, index) => (
-                            <Col xl="4" sm="6" key={index}>
-                              <ul className="select-menu">
-                                {city.map((city, index) => (
-                                  <li key={index}>
-                                    <Link className={`select-item ${city === selectedCity ? "active" : ""}`} to={Href} onClick={() => setSelectedCity(city)}>
-                                      {city}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </Col>
+                          {Cities.map((cityList, i) => (
+                            <CitySelectMenu key={i} multiColumn cityList={cityList} selectedCity={selectedCity} onSelectCity={(city) => setSelectedCity(city)} href={Href} />
                           ))}
                         </Row>
                       </DropdownMenu>
