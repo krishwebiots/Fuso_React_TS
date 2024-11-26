@@ -2,11 +2,11 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { PostProperty } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
-import { RightHeaderType } from "../../../Types/LayoutType";
+import { HeaderType } from "../../../Types/LayoutType";
 import AccountSection from "./AccountSection";
 import JobApplyButton from "./JobApplyButton";
 
-const RightHeader: FC<RightHeaderType> = ({ part, isJobOrProperty }) => {
+const RightHeader: FC<HeaderType> = ({ part, isJobOrProperty }) => {
   return (
     <div className="right-side-header">
       <JobApplyButton part={part} />

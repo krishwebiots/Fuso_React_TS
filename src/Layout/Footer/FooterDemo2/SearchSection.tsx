@@ -1,9 +1,8 @@
 import { FC } from "react";
 import { Button, Col, Input, Row } from "reactstrap";
 import { Subscribe } from "../../../Constants/Constants";
-import { SearchSectionType } from "../../../Types/LayoutType";
 
-const SearchSection: FC<SearchSectionType> = ({ part }) => {
+const SearchSection: FC<{ part?: string }> = ({ part }) => {
   return (
     <Row className="justify-content-between align-items-center footer-head gy-md-0 gy-3">
       <Col lg="5" md="6">

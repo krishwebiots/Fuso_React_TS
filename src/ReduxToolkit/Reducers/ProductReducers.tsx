@@ -21,7 +21,11 @@ export const fetchCategoryApiData = createAsyncThunk<CategoryType[], void, {}>("
 const ProductSlice = createSlice({
   name: "Product",
   initialState,
-  reducers: {},
+  reducers: {
+    setPropertyItem: (state, action) => {
+      state.productItem = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchProductApiData.fulfilled, (state, action) => {
       state.productItem = action.payload;
@@ -32,5 +36,5 @@ const ProductSlice = createSlice({
   },
 });
 
-export const {} = ProductSlice.actions;
+export const { setPropertyItem } = ProductSlice.actions;
 export default ProductSlice.reducer;

@@ -4,11 +4,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Href } from "../../../../Constants/Constants";
 import { ProductSwiperSetting } from "../../../../Data/Demo/CarDemo1";
 import { SliderFor, SliderNav } from "../../../../Data/Property";
-import { PropertyBoxSliderType } from "../../../../Types/ProductType";
+import { ProductBoxType } from "../../../../Types/ProductType";
 import { dynamicImage, dynamicVideo } from "../../../../Utils";
 import RatioImage from "../../../../Utils/RatioImage";
 
-const PropertyBoxSlider: FC<PropertyBoxSliderType> = ({ view, data }) => {
+const PropertyBoxSlider: FC<ProductBoxType> = ({ view, data }) => {
   const swiperRef = useRef<SwiperType | null>(null);
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 

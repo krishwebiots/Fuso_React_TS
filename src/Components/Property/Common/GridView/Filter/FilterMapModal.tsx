@@ -21,7 +21,7 @@ const FilterMapModal: FC<PropsType> = ({ type }) => {
       <ModalBody>
         <Row>
           <Col lg="3" className="d-lg-inline-block d-none">
-            <FilterSidebar value={showProduct} />
+            <FilterSidebar value={showProduct} type={"property"} />
           </Col>
           <Col lg="9" className="map-section">
             <div id="map">

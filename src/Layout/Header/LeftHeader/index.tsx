@@ -4,11 +4,11 @@ import { Href } from "../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { setSidebarOpen } from "../../../ReduxToolkit/Reducers/SidebarReducers";
 import { RouteList } from "../../../Routers/RouteList";
-import { LeftHeaderType } from "../../../Types/LayoutType";
+import { HeaderType } from "../../../Types/LayoutType";
 import { dynamicImage, Image } from "../../../Utils";
 import CitiesDropdown from "./CitiesDropdown";
 
-const LeftHeader: FC<LeftHeaderType> = ({ part, isJobOrProperty }) => {
+const LeftHeader: FC<HeaderType> = ({ part, isJobOrProperty }) => {
   const dispatch = useAppDispatch();
   const { sidebarOpen } = useAppSelector((state) => state.sidebar);
 

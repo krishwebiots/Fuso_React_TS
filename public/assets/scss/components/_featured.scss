@@ -23,6 +23,11 @@
                 visibility: visible;
             }
 
+            .wishlist-btn {
+                opacity: 1;
+                visibility: visible;
+            }
+
             .swiper-pagination {
                 bottom: 30px;
             }
@@ -86,6 +91,28 @@
             [dir="rtl"] & {
                 left: unset;
                 right: 12px;
+            }
+        }
+
+        .wishlist-btn {
+            padding: 4px 10px;
+            color: rgba(var(--title-color), 1);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: normal;
+            background: rgba(var(--white), 1);
+            box-shadow: 0px 4px 8px 0px rgba(var(--black), 0.05);
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.7s ease;
+            border-radius: 3px;
+
+            [dir="rtl"] & {
+                right: unset;
+                left: 12px;
             }
         }
 

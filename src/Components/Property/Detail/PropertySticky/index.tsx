@@ -13,7 +13,7 @@ const PropertyStickyContainer = () => {
   }, [dispatch]);
   return (
     <Fragment>
-      <Breadcrumbs title="Property Details" subTitle="Property Details" url={RouteList.Home.PropertyDemo1} />
+      <Breadcrumbs title="Property Details" url={RouteList.Home.PropertyDemo1} />
       <PropertyDetail type="sticky" mainClass="detail-sticky-section" />
     </Fragment>
   );

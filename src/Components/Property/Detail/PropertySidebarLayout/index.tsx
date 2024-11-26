@@ -13,7 +13,7 @@ const PropertySidebarLayoutContainer = () => {
   }, [dispatch]);
   return (
     <Fragment>
-      <Breadcrumbs title="Property Details" subTitle="Property Details" url={RouteList.Home.PropertyDemo1} />
+      <Breadcrumbs title="Property Details" url={RouteList.Home.PropertyDemo1} />
       <PropertyDetail type="sidebar-layout" mainClass="property-sidebar-section section-t-space ratio_30" />
     </Fragment>
   );

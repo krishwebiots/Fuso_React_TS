@@ -39,10 +39,6 @@ export interface RatioImageType {
   style?: { height: number };
 }
 
-export interface SearchModalType {
-  type: string;
-}
-
 export interface CitySelectMenuType {
   cityList: string[];
   selectedCity: string | null;
@@ -53,6 +49,13 @@ export interface CitySelectMenuType {
 
 export interface BreadcrumbsType {
   title: string;
-  subTitle: string;
+  subTitle?: string;
   url: string;
+  mainClass?: string;
+}
+
+export interface FilterOffcanvasType {
+  type: string;
+  offcanvasSide?: string;
+  modalType?: string;
 }

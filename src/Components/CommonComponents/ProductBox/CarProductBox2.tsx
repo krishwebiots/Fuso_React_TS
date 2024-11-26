@@ -5,11 +5,11 @@ import { Swiper as SwiperType } from "swiper";
 import { EffectFade, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { RouteList } from "../../../Routers/RouteList";
-import { ProductCardType } from "../../../Types/ProductType";
+import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
 
-const CarProductBox2: FC<ProductCardType> = ({ data }) => {
+const CarProductBox2: FC<ProductBoxType> = ({ data }) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {

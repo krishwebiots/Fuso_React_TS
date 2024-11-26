@@ -51,16 +51,16 @@ export const RouteList = {
       PropertyThumbSlider: `/property/detail/property-thumb-slider`,
       PropertyAnimatedIcon: `/property/detail/property-animated-icon`,
     },
-    PropertyWishlist: `property-wishlist`,
+    PropertyWishlist: `/property/property-wishlist`,
   },
 
   Car: {
     Grid: {
-      Car2Grid: `car-2-grid`,
-      Car2RightGrid: `car-2-right-grid`,
-      Car3Grid: `car-3-grid`,
-      Car3RightGrid: `car-3-right-grid`,
-      CarNoSidebar: `car-no-sidebar`,
+      Car2Grid: `/car/grid/car-2-grid`,
+      Car2RightGrid: `/car/grid/car-2-right-grid`,
+      Car3Grid: `/car/grid/car-3-grid`,
+      Car3RightGrid: `/car/grid/car-3-right-grid`,
+      CarNoSidebar: `/car/grid/car-no-sidebar`,
     },
     Listing: {
       CarLeftList: `car-left-list`,

@@ -2,6 +2,7 @@
   {
     "id": 1,
     "type": "car",
+    "wishlist": false,
     "image": ["car/featured/1.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Speedster GT-X",
     "emi": "EMI starts 1,61,613/mo",
@@ -20,6 +21,7 @@
   {
     "id": 2,
     "type": "car",
+    "wishlist": false,
     "image": ["car/featured/2.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Velocity Racer Pro",
     "emi": "EMI starts 1,54,646/mo",
@@ -34,6 +36,7 @@
   {
     "id": 3,
     "type": "car",
+    "wishlist": false,
     "image": ["car/featured/3.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Infinity Roadster",
     "emi": "EMI starts 1,23,463/mo",
@@ -53,6 +56,7 @@
   {
     "id": 4,
     "type": "car",
+    "wishlist": false,
     "image": ["car/featured/4.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Titan X-Force",
     "emi": "EMI starts 1,20,225/mo",
@@ -67,6 +71,7 @@
   {
     "id": 5,
     "type": "car",
+    "wishlist": false,
     "image": ["car/featured/5.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Aero Commander",
     "emi": "EMI starts @ 1,46,234/mo",
@@ -86,6 +91,7 @@
   {
     "id": 6,
     "type": "car",
+    "wishlist": false,
     "image": ["car/featured/6.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Cyclone Spinner",
     "emi": "EMI starts @ 12,000/mo",
@@ -100,6 +106,7 @@
   {
     "id": 7,
     "type": "car",
+    "wishlist": false,
     "image": ["car/featured/7.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Fusion Fury",
     "emi": "EMI starts @ 1,73,742/mo",
@@ -119,6 +126,7 @@
   {
     "id": 8,
     "type": "car",
+    "wishlist": false,
     "image": ["car/featured/8.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Galaxy Striker",
     "emi": "EMI starts @ 1,40,872/mo",
@@ -133,6 +141,7 @@
   {
     "id": 9,
     "type": "car",
+    "wishlist": false,
     "image": ["car/featured/9.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Dynamo Flash",
     "emi": "EMI starts @ 1,46,234/mo",
@@ -147,6 +156,7 @@
   {
     "id": 10,
     "type": "car",
+    "wishlist": false,
     "image": ["car/featured/10.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Apex Trailblazer",
     "emi": "EMI starts @ 15,000/mo",
@@ -161,6 +171,7 @@
   {
     "id": 11,
     "type": "car",
+    "wishlist": false,
     "image": ["car/featured/11.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Raptor Turbo",
     "emi": "EMI starts @ 1,30,742/mo",
@@ -175,6 +186,7 @@
   {
     "id": 12,
     "type": "car",
+    "wishlist": false,
     "image": ["car/featured/12.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Maverick Turbo",
     "emi": "EMI starts @ 1,25,812/mo",
@@ -189,6 +201,7 @@
   {
     "id": 13,
     "type": "car",
+    "wishlist": false,
     "title": "Velocity Racer Pro",
     "description": "The Velocity Racer Pro is a marvel of modern engineering, designed for the ultimate driving experience.",
     "price": 625.0,
@@ -203,6 +216,7 @@
   {
     "id": 14,
     "type": "car",
+    "wishlist": false,
     "title": "Aero Commander",
     "description": "The Titan X-Force features a 600-hp twin-turbo V8 and advanced all-wheel drive, blending luxury with top performance.",
     "price": 465.0,
@@ -217,6 +231,7 @@
   {
     "id": 15,
     "type": "car",
+    "wishlist": false,
     "title": "Velocity Racer Pro",
     "description": "The Velocity Racer Pro is a marvel of modern engineering, designed for the ultimate driving experience.",
     "price": 625.0,
@@ -231,6 +246,7 @@
   {
     "id": 16,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/1.svg"],
     "title": "Product UI Designer",
     "company": "Figgo Inc",
@@ -245,6 +261,7 @@
   {
     "id": 17,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/2.svg"],
     "title": "Business Development",
     "company": "Allies Infotech",
@@ -261,6 +278,7 @@
   {
     "id": 18,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/3.svg"],
     "title": "BDM for Waste Management",
     "company": "ARS Recycling pvt.",
@@ -274,6 +292,7 @@
   {
     "id": 19,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/4.svg"],
     "title": "Full Stack .Net MVC Developer",
     "company": "Omega PVT LTD",
@@ -290,6 +309,7 @@
   {
     "id": 20,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/5.svg"],
     "title": "Sales & Marketing",
     "company": "Atica Inc",
@@ -303,6 +323,7 @@
   {
     "id": 21,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/6.svg"],
     "title": "Fashion Designer",
     "company": "Allies Business",
@@ -319,6 +340,7 @@
   {
     "id": 22,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/7.svg"],
     "title": "Fashion Designer",
     "company": "Google.com",
@@ -335,6 +357,7 @@
   {
     "id": 23,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/8.svg"],
     "title": "Web Designer/Developer",
     "company": "Airbnab",
@@ -351,6 +374,7 @@
   {
     "id": 24,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/9.svg"],
     "title": "UI Product Designer",
     "company": "Airtasker",
@@ -367,6 +391,7 @@
   {
     "id": 25,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/10.svg"],
     "title": "UX Designer",
     "company": "Amazon",
@@ -383,6 +408,7 @@
   {
     "id": 26,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/11.svg"],
     "title": "BDM for Waste Management",
     "company": "Asana",
@@ -399,6 +425,7 @@
   {
     "id": 27,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/12.svg"],
     "title": "Product UI Designer",
     "company": "Atica Inc",
@@ -415,6 +442,7 @@
   {
     "id": 28,
     "type": "job",
+    "wishlist": false,
     "image": ["job/job-box/14.svg"],
     "title": "Full Stack .Net MVC Developer",
     "company": "ARS Recycling pvt.",
@@ -431,6 +459,7 @@
   {
     "id": 29,
     "type": "property",
+    "wishlist": false,
     "image": ["property/featured/1.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Vintage House Miniature",
     "location": "83562 Van Isle, Minot, Maryland - 73040, Guatemala",
@@ -455,6 +484,7 @@
   {
     "id": 30,
     "type": "property",
+    "wishlist": false,
     "image": ["property/featured/2.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Modern Building House",
     "location": "883 Lourdes Gateway, Rocky Mount, Arkansas - 98771, Singapore",
@@ -478,6 +508,7 @@
   {
     "id": 31,
     "type": "property",
+    "wishlist": false,
     "image": ["property/featured/3.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Unveiling Your Dream Home",
     "location": "51107 London Road, West Lialand, Iowa - 23046, Slovakia",
@@ -502,6 +533,7 @@
   {
     "id": 32,
     "type": "property",
+    "wishlist": false,
     "image": ["property/featured/4.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Forest Escape Cottage",
     "location": "5962 Eliezer Vista, Pollichside, Connecticut - 41465, Belize",
@@ -525,6 +557,7 @@
   {
     "id": 33,
     "type": "property",
+    "wishlist": false,
     "image": ["property/featured/5.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Luxury 3-Bedroom Mansion with Pool",
     "location": "6256 Pine Grove, Haltom City, Virginia - 51171, Maldives",
@@ -549,6 +582,7 @@
   {
     "id": 34,
     "type": "property",
+    "wishlist": false,
     "image": ["property/featured/6.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Charming Garden House",
     "location": "5781 Geovany Light, Daisyfield, Wyoming - 74526, Iraq",
@@ -572,6 +606,7 @@
   {
     "id": 35,
     "type": "property",
+    "wishlist": false,
     "image": ["property/featured/7.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Dream Home Delights",
     "location": "212 Gage Park, Lavinafield, Kentucky - 69076, Ecuador",
@@ -596,6 +631,7 @@
   {
     "id": 36,
     "type": "property",
+    "wishlist": false,
     "image": ["property/featured/8.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Modern Architectural Marvel",
     "location": "706 Okuneva Drive, Titusville, Indiana - 21258, Japan",
@@ -619,6 +655,7 @@
   {
     "id": 37,
     "type": "property",
+    "wishlist": false,
     "image": ["property/featured/9.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Elegant Estate in Prime Location",
     "location": "12792 Nigel Locks, Hanford, Oregon - 18665, Egypt",
@@ -642,6 +679,7 @@
   {
     "id": 38,
     "type": "property",
+    "wishlist": false,
     "image": ["property/featured/10.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Magnificent Villa with Luxurious Furnishings",
     "location": "678 Angelina Park, Dublin, Idaho - 22291, Hungary",
@@ -665,6 +703,7 @@
   {
     "id": 39,
     "type": "property",
+    "wishlist": false,
     "image": ["property/featured/11.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Extremely Attractive Classic Colonies",
     "location": "8400 Dannie Rest, Albamouth, Montana - 69072, Guam",
@@ -688,6 +727,7 @@
   {
     "id": 40,
     "type": "property",
+    "wishlist": false,
     "image": ["property/featured/12.jpg", "property/detail-main/2.jpg", "property/detail-main/3.jpg", "property/detail-main/4.jpg", "property/detail-main/5.jpg", "property/detail-main/6.jpg"],
     "title": "Lovely Family House in a Calm Neighbourhood",
     "location": "80752 Wolf Park, North Sydni, Illinois - 39070, Iran",
@@ -712,6 +752,7 @@
   {
     "id": 41,
     "type": "property",
+    "wishlist": false,
     "image": ["property2/featured/1.jpg", "property2/featured/2.jpg", "property2/featured/3.jpg"],
     "title": "Sunset Haven",
     "location": "123 Maple Avenue, Willow Creek, CA",
@@ -733,6 +774,7 @@
   {
     "id": 42,
     "type": "property",
+    "wishlist": false,
     "image": ["property2/featured/2.jpg", "property2/featured/1.jpg", "property2/featured/3.jpg"],
     "title": "Sunset Villa",
     "location": "321 Beachfront Avenue, Seaview, FL",
@@ -754,6 +796,7 @@
   {
     "id": 43,
     "type": "property",
+    "wishlist": false,
     "image": ["property2/featured/3.jpg", "property2/featured/2.jpg", "property2/featured/1.jpg"],
     "title": "Tranquil Heights",
     "location": "789 Oakwood Lane, Riverdale, CA",
@@ -775,6 +818,7 @@
   {
     "id": 44,
     "type": "property",
+    "wishlist": false,
     "image": ["property2/featured/4.jpg", "property2/featured/5.jpg", "property2/featured/6.jpg"],
     "title": "Evergreen Retreat",
     "location": "456 Pinecrest Drive, Mountain Valley, CO",
@@ -796,6 +840,7 @@
   {
     "id": 45,
     "type": "property",
+    "wishlist": false,
     "image": ["property2/featured/5.jpg", "property2/featured/6.jpg", "property2/featured/4.jpg"],
     "title": "Serenity Cove",
     "location": "101 Lakeview Terrace, Lakeside, WA",
@@ -817,6 +862,7 @@
   {
     "id": 46,
     "type": "property",
+    "wishlist": false,
     "image": ["property2/featured/6.jpg", "property2/featured/4.jpg", "property2/featured/5.jpg"],
     "title": "Whispering Pines Estate",
     "location": "555 Forest Way, Woodland Hills, CA",

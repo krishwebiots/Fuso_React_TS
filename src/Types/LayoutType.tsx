@@ -35,12 +35,7 @@ export interface PathSettingsType {
   favicon: string;
 }
 
-export interface LeftHeaderType {
-  part?: string;
-  isJobOrProperty?: boolean;
-}
-
-export interface RightHeaderType {
+export interface HeaderType {
   part?: string;
   isJobOrProperty?: boolean;
 }
@@ -48,10 +43,6 @@ export interface RightHeaderType {
 export interface LogoAndSocialMediaType {
   description: string;
   endPoint: number;
-}
-
-export interface SearchSectionType {
-  part?: string;
 }
 
 export interface FooterListType {

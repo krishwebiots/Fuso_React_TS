@@ -3,9 +3,9 @@ import { FC, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { ApplyNow, Login, Signin, UploadResume } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
-import { RightHeaderType } from "../../../Types/LayoutType";
+import { HeaderType } from "../../../Types/LayoutType";
 
-const JobApplyButton: FC<RightHeaderType> = ({ part }) => {
+const JobApplyButton: FC<HeaderType> = ({ part }) => {
   const isLogin = ["job-2", "job-3"].some((item) => part?.includes(item));
 
   return (
@@ -21,7 +21,7 @@ const JobApplyButton: FC<RightHeaderType> = ({ part }) => {
             ) : (
               <Fragment>
                 {UploadResume}
-                <ExportCurve className="iconsax"/>
+                <ExportCurve className="iconsax" />
               </Fragment>
             )}
           </Link>

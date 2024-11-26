@@ -4,11 +4,10 @@ import { Search } from "../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { setAmenities, setBedsRooms, setPopular, setPriceStatus, setPropertyType, setSortBy, setSquareFeetStatus, setyearBuiltStatus } from "../../../ReduxToolkit/Reducers/FilterReducers";
 import { setSearchModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
-import { SearchModalType } from "../../../Types/CommonComponentsType";
 import FilterSidebar from "../../Property/Common/GridView/Filter";
 import CloseBtn from "../CloseBtn";
 
-const SearchModal: FC<SearchModalType> = ({ type }) => {
+const SearchModal: FC<{ type: string }> = ({ type }) => {
   const { searchModal } = useAppSelector((state) => state.sidebar);
   const { productItem } = useAppSelector((state) => state.product);
   const dispatch = useAppDispatch();
@@ -32,7 +31,7 @@ const SearchModal: FC<SearchModalType> = ({ type }) => {
             <h3>Search</h3>
             <span onClick={handleReset}>Reset</span>
           </div>
-          <FilterSidebar value={showProduct} />
+          <FilterSidebar value={showProduct} type={"property"} />
         </ModalBody>
         <ModalFooter>
           <Button className="btn-solid">{Search}</Button>

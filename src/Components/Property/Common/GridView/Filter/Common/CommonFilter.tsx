@@ -4,8 +4,11 @@ import { useAppDispatch, useAppSelector } from "../../../../../../ReduxToolkit/H
 import { setAmenities, setBedsRooms, setPropertyType, setSquareFeetStatus, setyearBuiltStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
 import { CommonFilterType } from "../../../../../../Types/ProductType";
 import RangeInputFields from "./RangeInputFields";
+import { Href } from "../../../../../../Constants/Constants";
+import { dynamicImage, Image } from "../../../../../../Utils";
+import { setMapModal } from "../../../../../../ReduxToolkit/Reducers/SidebarReducers";
 
-const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values, maxPrice, minPrice }) => {
+const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values, maxPrice, minPrice, modalType }) => {
   const dispatch = useAppDispatch();
   const { propertyType, bedsRooms, amenities } = useAppSelector((state) => state.filter);
 
@@ -56,6 +59,11 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
               <Input type="number" placeholder="Max" value={values ? values[1] : 0} onChange={(event) => handleCheckboxChange(event, title, "max")} />
             </div>
           </div>
+        ) : modalType === "map-modal" ? (
+          <a href={Href} className="map-image" onClick={() => dispatch(setMapModal())}>
+            <Image src={dynamicImage("property/map.png")} alt="map" className="img-fluid" />
+            <span className="btn-border">Explore on map</span>
+          </a>
         ) : (
           <ul className={`most-rating ${id !== "1" && "scroll-box"}`}>
             {data?.map((item, index) => (

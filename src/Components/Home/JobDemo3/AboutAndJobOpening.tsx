@@ -83,7 +83,7 @@ const AboutAndJobOpening = () => {
                       .slice(0, 6)
                       .map((item, index) => (
                         <Col xl="4" md="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
-                          <JobProductBox4 jobData={item} />
+                          <JobProductBox4 data={item} />
                         </Col>
                       ))}
                   </Row>

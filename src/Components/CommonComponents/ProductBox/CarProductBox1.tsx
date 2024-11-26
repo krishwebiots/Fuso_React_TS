@@ -6,11 +6,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Href, ShowMore } from "../../../Constants/Constants";
 import { ProductSwiperSetting } from "../../../Data/Demo/CarDemo1";
 import { RouteList } from "../../../Routers/RouteList";
-import { ProductCardType } from "../../../Types/ProductType";
+import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
 
-const CarProductBox1: FC<ProductCardType> = ({ data }) => {
+const CarProductBox1: FC<ProductBoxType> = ({ data }) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {

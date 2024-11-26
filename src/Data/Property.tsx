@@ -318,3 +318,5 @@ export const breadcrumbThumbs = {
   spaceBetween: 10,
   modules: [Thumbs],
 };
+
+export const FilterTabsListData = ["Most Popular", "User Rating (High to Low)", "Price (High to Low)", "$ High To Low", "Alphabetical A-Z", "Alphabetical Z-A", "Most Popular", "24 Product par page"];

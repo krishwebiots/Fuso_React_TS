@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
-import { Href } from "../../../../Constants/Constants";
-import { PaginationType } from "../../../../Types/ProductType";
+import { Href } from "../../Constants/Constants";
+import { PaginationType } from "../../Types/ProductType";
 
 const PaginationDynamic: FC<PaginationType> = ({ totalPages1, currentPage, setCurrentPage }) => {
   const handlePageChange = (page: number) => setCurrentPage(page);

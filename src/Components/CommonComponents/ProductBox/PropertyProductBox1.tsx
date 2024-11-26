@@ -1,3 +1,5 @@
+import { Trash } from "iconsax-react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Label } from "reactstrap";
 import { Href, ShowMore } from "../../../Constants/Constants";
@@ -5,9 +7,22 @@ import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import SvgIcon from "../../../Utils/SvgIcon";
 import PropertyBoxSlider from "./Common/PropertyBoxSlider";
-import { FC } from "react";
+import { toast } from "react-toastify";
+import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
+import { setPropertyItem } from "../../../ReduxToolkit/Reducers/ProductReducers";
 
-const PropertyProductBox1: FC<ProductBoxType> = ({ data, view }) => {
+const PropertyProductBox1: FC<ProductBoxType> = ({ data, view, wishlist }) => {
+  const { productItem } = useAppSelector((state) => state.product);
+  const dispatch = useAppDispatch();
+
+  const handleWishlist = () => toast.success("Added to Wishlist successfully");
+
+  const handleRemove = (id: number) => {
+    const updatedProductItem = productItem.filter((item) => item.id !== id);
+    dispatch(setPropertyItem(updatedProductItem));
+    toast.success("Remove to Wishlist successfully");
+  };
+
   return (
     <div className="featured-box">
       <div className="featured-main-img">
@@ -15,9 +30,15 @@ const PropertyProductBox1: FC<ProductBoxType> = ({ data, view }) => {
           <PropertyBoxSlider view={view} data={data} />
         </Link>
         {data.label && <Label className="save-btn">{data.label.text}</Label>}
-        <a href={Href} className="save-btn">
-          <i className="ri-bookmark-line"></i>
-        </a>
+        {wishlist ? (
+          <Link to={Href} className="remove-button" onClick={() => handleRemove(data.id)}>
+            <Trash className="iconsax" />
+          </Link>
+        ) : (
+          <Link to={Href} className="wishlist-btn" onClick={() => handleWishlist()}>
+            <i className="ri-bookmark-line"></i>
+          </Link>
+        )}
       </div>
       <div className="featured-content">
         <Link to={RouteList.Property.Detail.PropertySidebarLayout}>{data.title}</Link>

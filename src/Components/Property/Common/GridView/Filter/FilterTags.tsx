@@ -5,8 +5,9 @@ import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hook
 import { setPopular, setSortBy } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
 import { setOpenFilterSidebar } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
 import { TopPanelType } from "../../../../../Types/ProductType";
+import { FilterTabsListData } from "../../../../../Data/Property";
 
-const FilterTags: FC<TopPanelType> = ({ topFilter, side }) => {
+const FilterTags: FC<TopPanelType> = ({ topFilter, side, mainClass, type }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useAppDispatch();
   const { sortBy } = useAppSelector((state) => state.filter);
@@ -19,28 +20,46 @@ const FilterTags: FC<TopPanelType> = ({ topFilter, side }) => {
   };
 
   return (
-    <div className="top-panel">
-      <h4>{totalProduct} properties in Amsterdam</h4>
-      <Dropdown className="select-dropdown" isOpen={dropdownOpen} toggle={() => setDropdownOpen(!dropdownOpen)}>
-        <DropdownToggle className="select-button">{sortBy || "Sort By"}</DropdownToggle>
-        <DropdownMenu className="select-menu" end>
-          <DropdownItem onClick={() => handleSortBy("Most Popular")}>
-            <a href={Href} className="select-item">
-              Most Popular
-            </a>
-          </DropdownItem>
-          <DropdownItem onClick={() => handleSortBy("User Rating (High to Low)")}>
-            <a href={Href} className="select-item">
-              User Rating (High to Low)
-            </a>
-          </DropdownItem>
-          <DropdownItem onClick={() => handleSortBy("Price (High to Low)")}>
-            <a href={Href} className="select-item">
-              Price (High to Low)
-            </a>
-          </DropdownItem>
-        </DropdownMenu>
-      </Dropdown>
+    <div className={mainClass ? mainClass : "top-panel"}>
+      <h4>
+        {totalProduct} {type === "property" ? "properties in Amsterdam" : "Cars To Explore"}
+      </h4>
+
+      {type === "property" ? (
+        <Dropdown className="select-dropdown" isOpen={dropdownOpen} toggle={() => setDropdownOpen(!dropdownOpen)}>
+          <DropdownToggle className="select-button">{sortBy || "Sort By"}</DropdownToggle>
+          <DropdownMenu className="select-menu" end>
+            {FilterTabsListData.slice(0, 3).map((item, index) => (
+              <DropdownItem onClick={() => handleSortBy(item)} key={index}>
+                <a href={Href} className="select-item">
+                  {item}
+                </a>
+              </DropdownItem>
+            ))}
+          </DropdownMenu>
+        </Dropdown>
+      ) : (
+        <div className="category-filter">
+          <div className="car-sortby-flex">
+            <span>Sort By :</span>
+            <Dropdown className="select-dropdown" isOpen={dropdownOpen} toggle={() => setDropdownOpen(!dropdownOpen)}>
+              <DropdownToggle className="select-button">{sortBy || "Sort By"}</DropdownToggle>
+              <DropdownMenu className="select-menu" end>
+                {FilterTabsListData.slice(3).map((item, index) => (
+                  <DropdownItem onClick={() => handleSortBy(item)} key={index}>
+                    <a href={Href} className="select-item">
+                      {item}
+                    </a>
+                  </DropdownItem>
+                ))}
+              </DropdownMenu>
+            </Dropdown>
+          </div>
+          <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
+            Filter
+          </a>
+        </div>
+      )}
       {!topFilter && (
         <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
           Filter

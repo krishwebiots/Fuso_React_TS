@@ -1,18 +1,17 @@
 import { FC, Fragment } from "react";
-import { Col, Offcanvas, OffcanvasBody, OffcanvasHeader, Row } from "reactstrap";
-import { Filters } from "../../../../Constants/Constants";
-import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
-import { setOpenFilterSidebar } from "../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { Col, Row } from "reactstrap";
+import { useAppSelector } from "../../../../ReduxToolkit/Hooks";
 import { GridViewType } from "../../../../Types/ProductType";
+import FilterOffcanvas from "../../../CommonComponents/FilterOffcanvas";
 import FilterSidebar from "./Filter";
 import FilterTags from "./Filter/FilterTags";
 import GridLayout from "./GridLayout";
 
-const GridView: FC<GridViewType> = ({ type, side, gridSize, sectionClass, gridType, view, topFilter, offcanvasSide, scrollType, map, mapSide, modalType }) => {
+const GridView: FC<GridViewType> = ({ type, side, gridSize, sectionClass, gridType, view, topFilter, offcanvasSide, scrollType, map, mapSide, modalType, filterTagsClass }) => {
   const { productItem } = useAppSelector((state) => state.product);
-  const { openFilterSidebar } = useAppSelector((state) => state.sidebar);
+
   const showProduct = productItem.filter((item) => item.type === type);
-  const dispatch = useAppDispatch();
+
   return (
     <Fragment>
       <section className={`section-t-md-space section-b-md-space ${sectionClass ? sectionClass : ""}`}>
@@ -20,11 +19,11 @@ const GridView: FC<GridViewType> = ({ type, side, gridSize, sectionClass, gridTy
           <Row>
             {side !== "no" && (
               <Col xl="3" className={`filter-sidebar${side === "right" ? " order-1" : ""}`}>
-                <FilterSidebar value={showProduct} modalType={modalType} />
+                <FilterSidebar value={showProduct} modalType={modalType} type={type} />
               </Col>
             )}
             <div className={side === "no" ? "col-lg-12" : "col-xl-9"}>
-              <FilterTags side={side} topFilter={topFilter} />
+              <FilterTags side={side} topFilter={topFilter} mainClass={filterTagsClass} type={type} />
               {map ? (
                 <Row className="gy-4">
                   <Col xl="6" className={`map-section ${mapSide === "right" ? "order-1" : ""}`}>
@@ -41,12 +40,7 @@ const GridView: FC<GridViewType> = ({ type, side, gridSize, sectionClass, gridTy
           </Row>
         </div>
       </section>
-      <Offcanvas fade direction={offcanvasSide === "right" ? "end" : "start"} isOpen={openFilterSidebar} toggle={() => dispatch(setOpenFilterSidebar())}>
-        <OffcanvasHeader toggle={() => dispatch(setOpenFilterSidebar())}>{Filters}</OffcanvasHeader>
-        <OffcanvasBody>
-          <FilterSidebar value={showProduct} modalType={modalType} />
-        </OffcanvasBody>
-      </Offcanvas>
+      <FilterOffcanvas modalType={modalType} type={type} offcanvasSide={offcanvasSide} />
     </Fragment>
   );
 };

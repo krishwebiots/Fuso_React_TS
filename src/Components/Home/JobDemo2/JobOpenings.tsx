@@ -19,7 +19,7 @@ const JobOpenings = () => {
             .filter((e) => [17, 20, 25, 27, 28].includes(e.id))
             .map((job, index) => (
               <Col xxl="4" lg="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
-                <JobProductBox3 jobData={job} />
+                <JobProductBox3 data={job} />
               </Col>
             ))}
           <Col xxl="4" lg="6" data-aos="fade-up" data-aos-duration={1200}>
@@ -29,7 +29,7 @@ const JobOpenings = () => {
                 <h2>135+</h2>
                 <Link to={RouteList.Job.Grid.JobLeftSidebar}>
                   Browse to all Job
-                  <ArrowRight className="iconsax"/>
+                  <ArrowRight className="iconsax" />
                 </Link>
               </div>
             </div>

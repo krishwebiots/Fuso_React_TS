@@ -16,7 +16,7 @@ const JobHiring = () => {
             .filter(({ id }) => [17, 19, 21, 22, 23, 24, 25, 26].includes(id))
             .map((job, index) => (
               <Col xl="3" lg="4" sm="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
-                <JobProductBox2 jobData={job} />
+                <JobProductBox2 data={job} />
               </Col>
             ))}
         </Row>

@@ -17,7 +17,7 @@ const JobHere = () => {
             .filter((e) => [16, 17, 18, 19, 20, 21].includes(e.id))
             .map((job, index) => (
               <Col xl="4" md="6" data-aos="fade-up" data-aos-duration={200 * (index + 1)} key={index}>
-                <JobProductBox1 jobData={job} />
+                <JobProductBox1 data={job} />
               </Col>
             ))}
         </Row>

@@ -7,8 +7,10 @@ import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
 import { setCardToShow, setTotalProduct } from "../../../../ReduxToolkit/Reducers/SidebarReducers";
 import { GridLayoutType } from "../../../../Types/ProductType";
 import PropertyProductBox1 from "../../../CommonComponents/ProductBox/PropertyProductBox1";
-import PaginationDynamic from "./Pagination";
+import PaginationDynamic from "../../../CommonComponents/Pagination";
 import UseFilterProperty from "./UseFilterProperty";
+import NotFound from "../../../CommonComponents/NotFound";
+import CarProductBox1 from "../../../CommonComponents/ProductBox/CarProductBox1";
 
 const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view, scrollType, map }) => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -34,7 +36,7 @@ const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view,
   return (
     <div className={`${map ? "col-xl-6" : ""} ${scrollType === "load_more" ? "featured-wrapper" : ""}`}>
       <Row className={`gy-4 ${gridType === "list-view" || "image" ? "ratio3_2" : view === "multiple" ? "ratio_65" : "ratio_landscape"}`}>
-        {scrollType === "infinite" ? (
+        {type === "property" && scrollType === "infinite" ? (
           <InfiniteScroll dataLength={showProduct.length} next={fetchMoreData} hasMore={currentPage < totalPages} className="row" loader={<h4>Loading...</h4>}>
             {showProduct.map((data, index) => (
               <Col className={gridSize === 3 ? "col-lg-4 col-sm-6" : gridSize === 4 ? "col-xxl-3 col-lg-4" : gridSize === 1 ? "col-xl-12" : "col-sm-6"} key={data.id || index}>
@@ -49,7 +51,17 @@ const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view,
             </Col>
           ))
         )}
+
+        {type === "car" &&
+          showProduct.map((data, index) => (
+            <Col className={gridSize === 3 ? "col-lg-4 col-sm-6" : gridSize === 4 ? "col-xxl-3 col-lg-4" : gridSize === 1 ? "col-xl-12" : "col-sm-6"} key={data.id || index}>
+              <CarProductBox1 data={data} view={view} />
+            </Col>
+          ))}
       </Row>
+
+      {showProduct.length === 0 && <NotFound word="No items found in Product" />}
+
       {scrollType === "load_more" ? (
         showProduct.length >= cardToShow ? (
           <Button className="btn-solid load-more" onClick={() => dispatch(setCardToShow(cardToShow + 3))}>

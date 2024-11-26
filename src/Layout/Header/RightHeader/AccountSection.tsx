@@ -5,15 +5,15 @@ import { Label } from "reactstrap";
 import { Href, MyActive, SignOut } from "../../../Constants/Constants";
 import { AccountData } from "../../../Data/Layout/Header";
 import { RouteList } from "../../../Routers/RouteList";
-import { RightHeaderType } from "../../../Types/LayoutType";
+import { HeaderType } from "../../../Types/LayoutType";
 import LanguageSection from "./LanguageSection";
 
-const AccountSection: FC<RightHeaderType> = ({ part }) => {
+const AccountSection: FC<HeaderType> = ({ part }) => {
   return (
     <div className="icon-side">
       <div className="login-flex onhover-dropdown">
         <a href={Href} className="login-icon">
-          <ProfileCircle className="iconsax"/>
+          <ProfileCircle className="iconsax" />
           <span>Account</span>
           <i className="ri-arrow-down-wide-line" />
         </a>

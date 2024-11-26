@@ -86,3 +86,4 @@ export const ReviewsTitle: string = "Reviews";
 export const WriteReview: string = "Write a Review";
 export const SubmitReview: string = "Submit Review";
 export const ScheduleTourTitle: string = "Schedule a Tour";
+export const Wishlist: string = "Wishlist";

@@ -34,14 +34,7 @@ export interface ProductType {
   year?: number;
   productState?: string;
   video?: string;
-}
-
-export interface ProductCardType {
-  data: ProductType;
-}
-
-export interface JobCardType {
-  jobData: ProductType;
+  wishlist: boolean;
 }
 
 export interface ProductSliceProp {
@@ -73,6 +66,7 @@ export interface GridViewType {
   map?: boolean;
   mapSide?: string;
   modalType?: string;
+  filterTagsClass?: string;
 }
 
 export interface GridLayoutType {
@@ -92,11 +86,14 @@ export interface FilterProductsType {
 export interface TopPanelType {
   side?: string;
   topFilter?: boolean;
+  mainClass?: string;
+  type: string;
 }
 
 export interface FilterSidebarType {
   value: ProductType[];
   modalType?: string;
+  type: string;
 }
 
 export interface FilterSliceType {
@@ -132,6 +129,7 @@ export interface CommonFilterType {
   values?: number[];
   minPrice?: number;
   maxPrice?: number;
+  modalType?: string;
 }
 
 export interface ProductBoxType {
@@ -139,11 +137,7 @@ export interface ProductBoxType {
   view?: string;
   label?: string;
   index?: number;
-}
-
-export interface PropertyBoxSliderType {
-  view?: string;
-  data: ProductType;
+  wishlist?: boolean;
 }
 
 export interface RangeInputFieldsType {
