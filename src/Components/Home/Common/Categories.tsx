@@ -10,7 +10,7 @@ import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
 import { PropsType } from "../../../Types/HomeDemo";
 import RatioImage from "../../../Utils/RatioImage";
-import { Swiper as SwiperType } from "swiper"; // Import Swiper type
+import { Swiper as SwiperType } from "swiper";
 import { JobCategoryContentData } from "../../../Data/Demo/JobDemo1";
 import { BrowseByCategoryContent, Job2CategorySetting } from "../../../Data/Demo/JobDemo2";
 

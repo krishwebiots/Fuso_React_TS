@@ -1,5 +1,4 @@
 import { FC, Fragment, useEffect, useRef, useState } from "react";
-import Slider from "react-slick";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Href } from "../../../../Constants/Constants";
@@ -11,8 +10,7 @@ import RatioImage from "../../../../Utils/RatioImage";
 
 const PropertyBoxSlider: FC<PropertyBoxSliderType> = ({ view, data }) => {
   const swiperRef = useRef<SwiperType | null>(null);
-  const [nav1, setNav1] = useState<Slider | null>();
-  const [nav2, setNav2] = useState<Slider | null>();
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   useEffect(() => {
     if (swiperRef.current) swiperRef.current.init();
@@ -26,18 +24,24 @@ const PropertyBoxSlider: FC<PropertyBoxSliderType> = ({ view, data }) => {
         </video>
       ) : view === "multiple" ? (
         <Fragment>
-          <Slider className="thumb-main-slider ratio_65" {...SliderFor} asNavFor={nav2!} ref={(slider1) => setNav1(slider1)}>
+          <Swiper className="thumb-main-slider ratio_65" {...SliderFor} thumbs={{ swiper: thumbsSwiper }}>
             {data.image.map((testimonial, index) => (
-              <RatioImage src={dynamicImage(testimonial)} alt="featured-img" className="bg-img" key={index} />
+              <SwiperSlide key={index} className="bg-size">
+                <RatioImage src={dynamicImage(testimonial)} alt="featured-img" className="bg-img" />
+              </SwiperSlide>
             ))}
-          </Slider>
-          <Slider className="thumb-sub-slider" {...SliderNav} asNavFor={nav1!} ref={(slider2) => setNav2(slider2)}>
+            <div className="swiper-button-next" />
+            <div className="swiper-button-prev" />
+          </Swiper>
+          <Swiper className="thumb-sub-slider" {...SliderNav} onSwiper={setThumbsSwiper} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
             {data.image.map((testimonial, i) => (
-              <a href={Href} key={i}>
-                <RatioImage src={dynamicImage(testimonial)} alt="featured-img" className="img-fluid" />
-              </a>
+              <SwiperSlide key={i}>
+                <a href={Href}>
+                  <RatioImage src={dynamicImage(testimonial)} alt="featured-img" className="img-fluid" />
+                </a>
+              </SwiperSlide>
             ))}
-          </Slider>
+          </Swiper>
         </Fragment>
       ) : view === "image" ? (
         <RatioImage src={dynamicImage(data.image[0])} alt="featured-img" className="img-fluid bg-img" />

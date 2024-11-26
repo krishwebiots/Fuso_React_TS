@@ -1,4 +1,4 @@
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Thumbs } from "swiper/modules";
 import { AmenitiesTitle, FloorPlansTitle, LocationTitle, OverviewTitle, PropertyDescriptionTitle, ReviewsTitle, ScheduleTourTitle, VideoTitle } from "../Constants/Constants";
 import Overview from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Overview";
 import Description from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Description";
@@ -48,19 +48,22 @@ export const AmenitiesFilterData = [
 ];
 
 export const SliderFor = {
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: true,
-  focusOnSelect: true,
-  infinite: true,
+  loop: true,
+  spaceBetween: 10,
+  modules: [Thumbs, Navigation],
+  navigation: {
+    prevEl: ".swiper-button-prev",
+    nextEl: ".swiper-button-next",
+  },
 };
 
 export const SliderNav = {
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  arrows: false,
-  dots: false,
-  focusOnSelect: true,
+  loop: true,
+  slidesPerView: 4,
+  spaceBetween: 5,
+  freeMode: true,
+  watchSlidesProgress: true,
+  modules: [Thumbs],
 };
 
 export const DetailPropertySlider = {
@@ -266,60 +269,52 @@ export const DetailBreadcrumbsSlider = {
 };
 
 export const StickySliderFor = {
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  vertical: true,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        vertical: true,
-      },
-    },
-    {
-      breakpoint: 0,
-      settings: {
-        vertical: false,
-      },
-    },
-  ],
+  loop: true,
+  modules: [Thumbs],
 };
 
 export const StickySliderNav = {
-  slidesToShow: 6,
-  slidesToScroll: 1,
-  arrows: false,
-  dots: false,
-  focusOnSelect: true,
-  vertical: true,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 3,
-        vertical: false,
-      },
+  loop: true,
+  slidesPerView: 6,
+  spaceBetween: 20,
+  modules: [Thumbs],
+  breakpoints: {
+    0: {
+      slidesPerView: 3,
+      spaceBetween: 15,
     },
-    {
-      breakpoint: 0,
-      settings: {
-        slidesToShow: 6,
-      },
+    768: {
+      slidesPerView: 6,
     },
-  ],
+  },
 };
 
-export const ThumbSliderFor = {
-  slidesToShow: 1,
-  slidesToScroll: 0,
-  arrows: false,
+export const breadcrumbThumbNav = {
+  slidesPerView: 7,
+  spaceBetween: 10,
+  loop: true,
+  modules: [Thumbs],
+  breakpoints: {
+    0: {
+      slidesPerView: 3,
+      spaceBetween: 5,
+    },
+    470: {
+      slidesPerView: 5,
+      spaceBetween: 10,
+    },
+    768: {
+      slidesPerView: 6,
+      spaceBetween: 15,
+    },
+    1200: {
+      slidesPerView: 7,
+      spaceBetween: 20,
+    },
+  },
 };
 
-export const ThumbSliderNav = {
-  slidesToShow: 7,
-  slidesToScroll: 1,
-  arrows: false,
-  dots: false,
-  focusOnSelect: true,
+export const breadcrumbThumbs = {
+  spaceBetween: 10,
+  modules: [Thumbs],
 };

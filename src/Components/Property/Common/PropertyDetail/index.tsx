@@ -1,8 +1,8 @@
 import { FC, Fragment, useState } from "react";
-import Slider from "react-slick";
 import ScrollSpy from "react-ui-scrollspy";
 import { Col, Container, Nav, NavItem, NavLink, Row } from "reactstrap";
-import { Href } from "../../../../Constants/Constants";
+import { Swiper as SwiperType } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Sections, StickySliderFor, StickySliderNav } from "../../../../Data/Property";
 import { PropertyDetailType } from "../../../../Types/ProductType";
 import { dynamicImage, dynamicNumber } from "../../../../Utils";
@@ -15,8 +15,8 @@ import MainDetail from "./MainDetail";
 import RelatedProperties from "./RelatedProperties";
 
 const PropertyDetail: FC<PropertyDetailType> = ({ type, mainClass, thumb }) => {
-  const [nav1, setNav1] = useState();
-  const [nav2, setNav2] = useState();
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+
   const fix = UseStickyBar(300);
 
   return (
@@ -55,22 +55,22 @@ const PropertyDetail: FC<PropertyDetailType> = ({ type, mainClass, thumb }) => {
               <div className="detail-images">
                 <Row>
                   <Col md="2" className="order-md-0 order-1">
-                    <Slider className="sub-vertical-image ratio_asos" {...StickySliderNav} asNavFor={nav2} ref={(slider1: any) => setNav1(slider1)}>
+                    <Swiper {...StickySliderNav} direction={"vertical"} onSwiper={setThumbsSwiper} className="sub-vertical-image ratio_asos">
                       {dynamicNumber(9).map((data, i) => (
-                        <a href={Href} className="detail-sub-image" key={i}>
+                        <SwiperSlide tag="a" className="detail-sub-image bg-size" key={i}>
                           <RatioImage src={dynamicImage(`property/detail-main/${data}.jpg`)} className="img-fluid bg-img" alt="image" />
-                        </a>
+                        </SwiperSlide>
                       ))}
-                    </Slider>
+                    </Swiper>
                   </Col>
                   <Col md="10">
-                    <Slider className="main-vertical-image ratio_asos" {...StickySliderFor} asNavFor={nav1} ref={(slider2: any) => setNav2(slider2)}>
+                    <Swiper {...StickySliderFor} direction={"vertical"} thumbs={{ swiper: thumbsSwiper }} className="main-vertical-image ratio_asos">
                       {dynamicNumber(9).map((data, i) => (
-                        <div className="detail-main-image" key={i}>
+                        <SwiperSlide className="detail-main-image bg-size" key={i}>
                           <RatioImage src={dynamicImage(`property/detail-main/${data}.jpg`)} className="img-fluid bg-img" alt="image" />
-                        </div>
+                        </SwiperSlide>
                       ))}
-                    </Slider>
+                    </Swiper>
                   </Col>
                 </Row>
               </div>

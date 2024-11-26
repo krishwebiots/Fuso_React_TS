@@ -1,18 +1,17 @@
 import { FC, Fragment, useState } from "react";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
 import { Col, Container, Row } from "reactstrap";
+import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Href } from "../../../../Constants/Constants";
-import { DetailBreadcrumbsSlider, ThumbSliderFor, ThumbSliderNav } from "../../../../Data/Property";
+import { breadcrumbThumbNav, breadcrumbThumbs, DetailBreadcrumbsSlider } from "../../../../Data/Property";
 import { PropertyDetailType } from "../../../../Types/ProductType";
 import { dynamicImage, dynamicNumber, dynamicVideo, Image } from "../../../../Utils";
 import RatioImage from "../../../../Utils/RatioImage";
 
 const DetailImages: FC<PropertyDetailType> = ({ type, thumb }) => {
-  const [nav1, setNav1] = useState();
-  const [nav2, setNav2] = useState();
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   const RenderImageItem = (item: number) => {
     const imageSrc = dynamicImage(`property/detail-main/${item}.jpg`);
@@ -50,22 +49,22 @@ const DetailImages: FC<PropertyDetailType> = ({ type, thumb }) => {
         </div>
       ) : thumb ? (
         <Fragment>
-          <Slider className="breadcrumb-thumbs ratio_40 ratio_media_landscape" asNavFor={nav2} {...ThumbSliderFor} ref={(slider1: any) => setNav1(slider1)}>
+          <Swiper {...breadcrumbThumbs} thumbs={{ swiper: thumbsSwiper }} className="breadcrumb-thumbs ratio_40 ratio_media_landscape">
             {dynamicNumber(9).map((item) => (
-              <div key={item}>
+              <SwiperSlide key={item} className="bg-size">
                 <RatioImage src={dynamicImage(`property/detail-main/${item}.jpg`)} className="img-fluid bg-img" alt={`bd-${item}`} />
-              </div>
+              </SwiperSlide>
             ))}
-          </Slider>
+          </Swiper>
           <div className="thumb-set">
             <Container>
-              <Slider className="breadcrumb-thumb" {...ThumbSliderNav} asNavFor={nav1} ref={(slider2: any) => setNav2(slider2)}>
+              <Swiper {...breadcrumbThumbNav} onSwiper={setThumbsSwiper} className="breadcrumb-thumb">
                 {dynamicNumber(9).map((item) => (
-                  <div className="small-breadcrumb-img" key={item}>
+                  <SwiperSlide className="small-breadcrumb-img" key={item}>
                     <Image src={dynamicImage(`property/detail-main/${item}.jpg`)} className="img-fluid" alt={`bd-${item}`} />
-                  </div>
+                  </SwiperSlide>
                 ))}
-              </Slider>
+              </Swiper>
             </Container>
           </div>
         </Fragment>
