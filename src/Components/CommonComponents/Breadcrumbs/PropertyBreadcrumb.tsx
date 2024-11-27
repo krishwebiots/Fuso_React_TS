@@ -1,5 +1,6 @@
 import { Container } from "reactstrap";
 import SearchTabList from "../../Home/Common/SearchTabList";
+import ParticlesBg from "particles-bg";
 
 const PropertyBreadcrumb = () => {
   return (
@@ -11,7 +12,9 @@ const PropertyBreadcrumb = () => {
           </div>
         </div>
       </Container>
-      <div id="particles-js" className="breadcrumbs-particles" />
+      <div className="breadcrumbs-particles">
+        <ParticlesBg type="cobweb" bg={true} color="#ffffff" />
+      </div>
     </div>
   );
 };

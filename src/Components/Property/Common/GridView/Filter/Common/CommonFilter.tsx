@@ -16,6 +16,7 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
     const value = event.target.value;
     const isChecked = event.target.checked;
 
+    // Property Type
     if (title === "Property Type") {
       let updatedPropertyType: string[] = [];
       if (isChecked) {
@@ -28,16 +29,28 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
       if (updatedPropertyType.length >= 5 && !updatedPropertyType.includes("all")) updatedPropertyType = ["all", "apartment", "house", "villa", "office", "farmhouse"];
 
       dispatch(setPropertyType(updatedPropertyType));
-    } else if (title === "beds rooms") {
+    }
+
+    // Beds Rooms
+    else if (title === "beds rooms") {
       if (isChecked) dispatch(setBedsRooms([...bedsRooms, value]));
       else dispatch(setBedsRooms(bedsRooms.filter((selectedValue) => selectedValue !== value)));
-    } else if (title === "Amenities") {
+    }
+
+    // Amenities
+    else if (title === "Amenities") {
       if (isChecked) dispatch(setAmenities([...amenities, value]));
       else dispatch(setAmenities(amenities.filter((selectedValue) => selectedValue !== value)));
-    } else if (title === "Square Feet") {
+    }
+
+    // Square Feet
+    else if (title === "Square Feet") {
       const value = parseInt(event.target.value, 10) || 0;
       dispatch(setSquareFeetStatus([field === "min" ? value : values && values[0], field === "max" ? value : values && values[1]]));
-    } else if (title === "Year Built") {
+    }
+
+    // Year Built
+    else if (title === "Year Built") {
       const value = parseInt(event.target.value, 10) || 0;
       dispatch(setyearBuiltStatus([field === "min" ? value : values && values[0], field === "max" ? value : values && values[1]]));
     }

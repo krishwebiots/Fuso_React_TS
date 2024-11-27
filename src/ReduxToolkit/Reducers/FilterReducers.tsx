@@ -10,6 +10,7 @@ const initialState: FilterSliceType = {
   yearBuiltStatus: [2019, 2024],
   sortBy: null,
   popular: null,
+  carBrandModel: [],
 };
 
 const FilterSlice = createSlice({
@@ -40,8 +41,11 @@ const FilterSlice = createSlice({
     setPopular: (state, action) => {
       state.popular = action.payload;
     },
+    setCarBrandModel: (state, action) => {
+      state.carBrandModel = action.payload;
+    },
   },
 });
 
-export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setyearBuiltStatus, setPriceStatus, setSortBy, setPopular } = FilterSlice.actions;
+export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setyearBuiltStatus, setPriceStatus, setSortBy, setPopular, setCarBrandModel } = FilterSlice.actions;
 export default FilterSlice.reducer;

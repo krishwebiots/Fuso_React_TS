@@ -6,7 +6,7 @@
     "image": ["car/featured/1.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Speedster GT-X",
     "emi": "EMI starts 1,61,613/mo",
-    "category": ["honda", "renault", "audi", "lexus"],
+    "category": ["honda", "renault", "audi", "lexus", "phantom", "vantage", "centodieci", "cadillac_ct5"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
@@ -25,7 +25,7 @@
     "image": ["car/featured/2.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Velocity Racer Pro",
     "emi": "EMI starts 1,54,646/mo",
-    "category": ["mercedes", "citroen", "bmw", "renault"],
+    "category": ["mercedes", "citroen", "bmw", "renault", "ghost", "db11", "bolide", "cadillac_ct6"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
@@ -40,7 +40,7 @@
     "image": ["car/featured/3.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Infinity Roadster",
     "emi": "EMI starts 1,23,463/mo",
-    "category": ["honda", "mercedes", "bmw", "lexus"],
+    "category": ["honda", "mercedes", "bmw", "lexus", "wraith", "db12", "aventador", "cadillac_xt4"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
@@ -60,7 +60,7 @@
     "image": ["car/featured/4.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Titan X-Force",
     "emi": "EMI starts 1,20,225/mo",
-    "category": ["honda", "renault", "audi", "mercedes"],
+    "category": ["honda", "renault", "audi", "mercedes", "dawn", "valhalla", "huracan", "cadillac_escalade"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
@@ -75,7 +75,7 @@
     "image": ["car/featured/5.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Aero Commander",
     "emi": "EMI starts @ 1,46,234/mo",
-    "category": ["mercedes", "citroen", "bmw", "lexus"],
+    "category": ["mercedes", "citroen", "bmw", "lexus", "cullinan", "valkyrie", "urus", "cadillac_lyriq"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "6 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
@@ -95,7 +95,7 @@
     "image": ["car/featured/6.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Cyclone Spinner",
     "emi": "EMI starts @ 12,000/mo",
-    "category": ["honda", "audi", "bmw", "renault"],
+    "category": ["honda", "audi", "bmw", "renault", "spectre", "db9", "sian", "lexus_is"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
@@ -110,7 +110,7 @@
     "image": ["car/featured/7.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Fusion Fury",
     "emi": "EMI starts @ 1,73,742/mo",
-    "category": ["renault", "audi", "bmw", "lexus"],
+    "category": ["renault", "audi", "bmw", "lexus", "silver_ghost", "cygnet", "revuelto", "lexus_es"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
@@ -130,7 +130,7 @@
     "image": ["car/featured/8.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Galaxy Striker",
     "emi": "EMI starts @ 1,40,872/mo",
-    "category": ["honda", "audi", "citroen", "lexus"],
+    "category": ["honda", "audi", "citroen", "lexus", "silver_wraith", "alfieri", "huracan_tecnica", "lexus_gs"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
@@ -145,7 +145,7 @@
     "image": ["car/featured/9.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Dynamo Flash",
     "emi": "EMI starts @ 1,46,234/mo",
-    "category": ["renault", "audi", "bmw", "lexus"],
+    "category": ["renault", "audi", "bmw", "lexus", "bentayga", "ghibli", "ferrari_296_gtb", "bmw_ix1"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "6 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
@@ -160,7 +160,7 @@
     "image": ["car/featured/10.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Apex Trailblazer",
     "emi": "EMI starts @ 15,000/mo",
-    "category": ["honda", "audi", "bmw", "renault"],
+    "category": ["honda", "audi", "bmw", "renault", "continental_gt", "quattroporte", "ferrari_sf90_stradale", "bmw_ix"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
@@ -175,7 +175,7 @@
     "image": ["car/featured/11.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Raptor Turbo",
     "emi": "EMI starts @ 1,30,742/mo",
-    "category": ["mercedes", "citroen", "bmw", "lexus"],
+    "category": ["mercedes", "citroen", "bmw", "lexus", "flying_spur", "levante", "ferrari_f8_tributo", "bmw_i4"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "6 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
@@ -190,7 +190,7 @@
     "image": ["car/featured/12.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Maverick Turbo",
     "emi": "EMI starts @ 1,25,812/mo",
-    "category": ["mercedes", "citroen", "bmw", "lexus"],
+    "category": ["mercedes", "citroen", "bmw", "lexus", "mulsanne", "mc20", "ferrari_roma", "bmw_sedan"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
@@ -204,7 +204,9 @@
     "wishlist": false,
     "title": "Velocity Racer Pro",
     "description": "The Velocity Racer Pro is a marvel of modern engineering, designed for the ultimate driving experience.",
+    "emi": "EMI starts @ 1,30,742/mo",
     "price": 625.0,
+    "category": ["bacalar", "veyron", "ferrari_portofino_m", "bmw_gran_turismo", "mercedes_benz_c_class"],
     "features": [
       { "icon": "car2/featured/1.svg", "text": "6 Seater" },
       { "icon": "car2/featured/2.svg", "text": "Petrol" },
@@ -219,7 +221,9 @@
     "wishlist": false,
     "title": "Aero Commander",
     "description": "The Titan X-Force features a 600-hp twin-turbo V8 and advanced all-wheel drive, blending luxury with top performance.",
+    "emi": "EMI starts @ 15,000/mo",
     "price": 465.0,
+    "category": ["arnage", "chiron", "ferrari_812_gts", "mercedes_benz_gla", "mercedes_benz_eqb"],
     "features": [
       { "icon": "car2/featured/1.svg", "text": "5 Seater" },
       { "icon": "car2/featured/2.svg", "text": "Petrol" },
@@ -234,7 +238,9 @@
     "wishlist": false,
     "title": "Velocity Racer Pro",
     "description": "The Velocity Racer Pro is a marvel of modern engineering, designed for the ultimate driving experience.",
+    "emi": "EMI starts @ 15,000/mo",
     "price": 625.0,
+    "category": ["dbx", "divo", "cadillac_ct4", "mercedes_benz_amg"],
     "features": [
       { "icon": "car2/featured/1.svg", "text": "6 Seater" },
       { "icon": "car2/featured/2.svg", "text": "Petrol" },

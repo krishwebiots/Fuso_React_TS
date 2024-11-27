@@ -4,6 +4,7 @@ import { AmenitiesFilterData, BhkOptions, PropertyTypeData } from "../../../../.
 import { useAppSelector } from "../../../../../ReduxToolkit/Hooks";
 import { FilterSidebarType } from "../../../../../Types/ProductType";
 import CommonFilter from "./Common/CommonFilter";
+import BrandModelFilter from "./BrandModelFilter";
 
 const FilterSidebar: FC<FilterSidebarType> = ({ value, modalType, type }) => {
   const { propertyType, bedsRooms, amenities, squareFeetStatus, yearBuiltStatus } = useAppSelector((state) => state.filter);
@@ -16,7 +17,7 @@ const FilterSidebar: FC<FilterSidebarType> = ({ value, modalType, type }) => {
 
   return (
     <div className="property-sidebar">
-      <UncontrolledAccordion defaultOpen={openItems} stayOpen toggle={toggle}>
+      <UncontrolledAccordion defaultOpen={openItems} stayOpen toggle={toggle} className="car-accordion">
         {type === "property" ? (
           <Fragment>
             {modalType === "map-modal" && <CommonFilter title="Map Modal" id="7" modalType={modalType} />}
@@ -29,7 +30,8 @@ const FilterSidebar: FC<FilterSidebarType> = ({ value, modalType, type }) => {
           </Fragment>
         ) : (
           <Fragment>
-            <CommonFilter title="Brand + Model" id="1" />
+            <BrandModelFilter id="1" />
+            <CommonFilter title="BUDGET" id="2" priceRange minPrice={minPrice?.price} maxPrice={maxPrice?.price} />
           </Fragment>
         )}
       </UncontrolledAccordion>

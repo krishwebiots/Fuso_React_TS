@@ -33,7 +33,7 @@ const UseFilterProperty = ({ value }: FilterProductsType) => {
     const params = new URLSearchParams(searchParams);
     ["property", "beds", "price", "square", "year", "amenities"].forEach((name) => params.delete(name));
 
-    propertyType.forEach((price) => params.append("property", price));
+    propertyType.forEach((property) => params.append("property", property));
     if (priceStatus) params.set("price", `${priceStatus[0]}-${priceStatus[1]}`);
     bedsRooms.forEach((beds) => params.append("beds", beds));
     if (squareFeetStatus) params.set("square", `${squareFeetStatus[0]}-${squareFeetStatus[1]}`);

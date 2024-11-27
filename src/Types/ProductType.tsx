@@ -67,6 +67,7 @@ export interface GridViewType {
   mapSide?: string;
   modalType?: string;
   filterTagsClass?: string;
+  carShow?: number;
 }
 
 export interface GridLayoutType {
@@ -105,6 +106,7 @@ export interface FilterSliceType {
   priceStatus: number[];
   sortBy: null;
   popular: null;
+  carBrandModel: string[];
 }
 
 export interface PaginationType {

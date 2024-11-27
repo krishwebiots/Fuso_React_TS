@@ -44,7 +44,7 @@ const CarProductBox1: FC<ProductBoxType> = ({ data }) => {
         <Link to={RouteList.Car.Detail.CarClassic}>{data.title}</Link>
         <p>{data.emi}</p>
         <ul className="featured-list">
-          {data.features.map((item, index) => (
+          {data.features.slice(0, 3).map((item, index) => (
             <li key={index}>
               <Image src={dynamicSvg(item.icon)} alt="profile-2user" className="img-fluid" />
               <span>{item.text}</span>

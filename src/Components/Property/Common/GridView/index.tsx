@@ -1,17 +1,24 @@
-import { FC, Fragment } from "react";
+import { FC, Fragment, useEffect } from "react";
 import { Col, Row } from "reactstrap";
-import { useAppSelector } from "../../../../ReduxToolkit/Hooks";
+import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
+import { fetchProductApiData } from "../../../../ReduxToolkit/Reducers/ProductReducers";
+import { setCardToShow } from "../../../../ReduxToolkit/Reducers/SidebarReducers";
 import { GridViewType } from "../../../../Types/ProductType";
 import FilterOffcanvas from "../../../CommonComponents/FilterOffcanvas";
 import FilterSidebar from "./Filter";
 import FilterTags from "./Filter/FilterTags";
 import GridLayout from "./GridLayout";
 
-const GridView: FC<GridViewType> = ({ type, side, gridSize, sectionClass, gridType, view, topFilter, offcanvasSide, scrollType, map, mapSide, modalType, filterTagsClass }) => {
+const GridView: FC<GridViewType> = ({ type, side, gridSize, sectionClass, gridType, view, topFilter, offcanvasSide, scrollType, map, mapSide, modalType, filterTagsClass, carShow }) => {
   const { productItem } = useAppSelector((state) => state.product);
+  const dispatch = useAppDispatch();
 
   const showProduct = productItem.filter((item) => item.type === type);
 
+  useEffect(() => {
+    dispatch(fetchProductApiData());
+    dispatch(setCardToShow(carShow || 6));
+  }, [carShow, dispatch]);
   return (
     <Fragment>
       <section className={`section-t-md-space section-b-md-space ${sectionClass ? sectionClass : ""}`}>
