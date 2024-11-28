@@ -450,13 +450,19 @@
 
                         &:nth-child(3) {
                             input {
-                                background: #E2577F;
+                                background: #f5f5f4;
                             }
                         }
 
                         &:nth-child(4) {
                             input {
-                                background: #A6184F;
+                                background: #27272a;
+                            }
+                        }
+
+                        &:nth-child(5) {
+                            input {
+                                background: #dc2626;
                             }
                         }
                     }

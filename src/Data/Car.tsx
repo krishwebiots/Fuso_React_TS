@@ -1,4 +1,4 @@
-export const brands = [
+export const Brands = [
   {
     id: "1",
     name: "Rolls Royce",
@@ -138,4 +138,54 @@ export const brands = [
       { name: "Mercedes-Benz EQB", value: "mercedes_benz_eqb" },
     ],
   },
+];
+
+export const CategoriesData = [
+  { id: "categories-1", label: "All Cars", type: "all" },
+  { id: "categories-2", label: "Certified Cars", type: "certified_cars" },
+  { id: "categories-3", label: "Direct Owner Cars", type: "direct_owner_cars" },
+  { id: "categories-4", label: "Partner Cars", type: "partner_cars" },
+  { id: "categories-5", label: "Hot Deal", type: "hot_deal" },
+];
+
+export const FuelTypeData = [
+  { id: "FuelType-1", label: "Petrol", type: "petrol" },
+  { id: "FuelType-2", label: "Diesel", type: "diesel" },
+  { id: "FuelType-3", label: "CNG", type: "CNG" },
+  { id: "FuelType-4", label: "Electric", type: "electric" },
+];
+
+export const ModalYearData = [
+  { id: "ModalYear-1", label: "2020 & above", type: "2020" },
+  { id: "ModalYear-2", label: "2016 & above", type: "2016" },
+  { id: "ModalYear-3", label: "2012 & above", type: "2012" },
+  { id: "ModalYear-4", label: "2008 & above", type: "2008" },
+];
+
+export const SeatsData = [
+  { id: "Seats-1", label: "4 Seats", type: "4" },
+  { id: "Seats-2", label: "5 Seats", type: "5" },
+  { id: "Seats-3", label: "6 Seats", type: "6" },
+  { id: "Seats-4", label: "7 Seats", type: "7" },
+];
+
+export const CarColorData = [
+  { id: "Color-1", label: "Blue", type: "blue" },
+  { id: "Color-2", label: "Silver", type: "silver" },
+  { id: "Color-3", label: "white", type: "white" },
+  { id: "Color-4", label: "Black", type: "black" },
+  { id: "Color-5", label: "Red", type: "red" },
+];
+
+export const TransmissionData = [
+  { id: "Transmission-1", label: "Manual", type: "manual" },
+  { id: "Transmission-2", label: "Automatic", type: "automatic" },
+  { id: "Transmission-3", label: "Semi Automatic", type: "semi_automatic" },
+];
+
+export const OwnerData = [
+  { id: "Owner-1", label: "1st Owner", type: "1" },
+  { id: "Owner-2", label: "2st Owner", type: "2" },
+  { id: "Owner-3", label: "3st Owner", type: "3" },
+  { id: "Owner-4", label: "4st Owner", type: "4" },
 ];

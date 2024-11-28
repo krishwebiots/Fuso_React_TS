@@ -35,6 +35,12 @@ export interface ProductType {
   productState?: string;
   video?: string;
   wishlist: boolean;
+  fuel?: string;
+  seats?: string;
+  color?: string;
+  transmission?: string;
+  owner?: string;
+  kilometers?: number;
 }
 
 export interface ProductSliceProp {
@@ -107,7 +113,17 @@ export interface FilterSliceType {
   sortBy: null;
   popular: null;
   carBrandModel: string[];
+  minAndMaxPrice: number[];
   budgetStatus: number[];
+  carCategories: string;
+  carFuelType: string[];
+  carModalYear: any;
+  carSeats: string[];
+  carColor: string[];
+  carTransmission: string[];
+  carOwner: string[];
+  carKilometers: number[];
+  minAndMaxKilometers: number[];
 }
 
 export interface PaginationType {
@@ -126,14 +142,14 @@ export interface CommonFilterType {
   title: string;
   id: string;
   data?: FilterDataType[];
-  checkValue?: string | string[];
+  checkValue?: any;
   priceRange?: boolean;
   squareFeet?: boolean;
   values?: number[];
-  minPrice?: number;
-  maxPrice?: number;
   modalType?: string;
   type?: string;
+  radio?: boolean;
+  subClass?: string;
 }
 
 export interface ProductBoxType {
@@ -145,8 +161,6 @@ export interface ProductBoxType {
 }
 
 export interface RangeInputFieldsType {
-  min?: number;
-  max?: number;
   type?: string;
 }
 

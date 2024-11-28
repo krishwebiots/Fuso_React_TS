@@ -5,10 +5,10 @@ import { setBudgetStatus, setPriceStatus } from "../../../../../../ReduxToolkit/
 import { RangeInputFieldsType } from "../../../../../../Types/ProductType";
 import { FC, useEffect, useState } from "react";
 
-const RangeInputFields: FC<RangeInputFieldsType> = ({ min, max, type }) => {
+const RangeInputFields: FC<RangeInputFieldsType> = ({ type }) => {
   const dispatch = useAppDispatch();
-  const { priceStatus, budgetStatus } = useAppSelector((state) => state.filter);
-  const [rangePrice, setRangePrice] = useState<number[]>([40000, 100000]);
+  const { priceStatus, budgetStatus, minAndMaxPrice } = useAppSelector((state) => state.filter);
+  const [rangePrice, setRangePrice] = useState<number[]>([40000, 500000]);
 
   const handlePriceChange = (values: number[]) => {
     if (type === "car") dispatch(setBudgetStatus(values));
@@ -18,14 +18,14 @@ const RangeInputFields: FC<RangeInputFieldsType> = ({ min, max, type }) => {
   useEffect(() => {
     if (type === "car") setRangePrice(budgetStatus);
     else setRangePrice(priceStatus);
-  }, [budgetStatus, priceStatus, type, min, max]);
+  }, [budgetStatus, priceStatus, type, minAndMaxPrice]);
 
   return (
     <Range
       values={rangePrice}
       step={STEP}
-      min={min || 1000}
-      max={max || 1000000}
+      min={minAndMaxPrice[0] || 1000}
+      max={minAndMaxPrice[1] || 1000000}
       onChange={(values) => handlePriceChange(values)}
       renderTrack={({ props, children }) => (
         <div onTouchStart={props.onTouchStart} onMouseDown={props.onMouseDown} style={{ ...props.style, height: "36px", display: "flex", width: "100%" }}>
@@ -38,8 +38,8 @@ const RangeInputFields: FC<RangeInputFieldsType> = ({ min, max, type }) => {
               background: getTrackBackground({
                 values: rangePrice,
                 colors: ["#ccc", "rgba(var(--theme-color), 1)", "#ccc"],
-                min: min || 1000,
-                max: max || 1000000,
+                min: minAndMaxPrice[0] || 1000,
+                max: minAndMaxPrice[1] || 1000000,
               }),
               alignSelf: "center",
             }}

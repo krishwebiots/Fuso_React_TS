@@ -6,13 +6,20 @@
     "image": ["car/featured/1.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Speedster GT-X",
     "emi": "EMI starts 1,61,613/mo",
-    "category": ["honda", "renault", "audi", "lexus", "phantom", "vantage", "centodieci", "cadillac_ct5"],
+    "category": ["honda", "renault", "audi", "lexus", "phantom", "vantage", "centodieci", "cadillac_ct5", "certified_cars"],
     "features": [
-      { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
+      { "icon": "car/product/profile-2user.svg", "text": "7 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "20,000 km" }
     ],
     "price": 416464,
+    "fuel": "petrol",
+    "year": 2017,
+    "seats": "7",
+    "color": "black",
+    "transmission": "manual",
+    "owner": "1",
+    "kilometers": 10000,
     "label": {
       "text": "Certified",
       "icon": "ri-verified-badge-line"
@@ -25,13 +32,20 @@
     "image": ["car/featured/2.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Velocity Racer Pro",
     "emi": "EMI starts 1,54,646/mo",
-    "category": ["mercedes", "citroen", "bmw", "renault", "ghost", "db11", "bolide", "cadillac_ct6"],
+    "category": ["mercedes", "citroen", "bmw", "renault", "ghost", "db11", "bolide", "cadillac_ct6", "direct_owner_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "46,000 km" }
     ],
-    "price": 240000
+    "price": 240000,
+    "year": 2015,
+    "seats": "4",
+    "color": "black",
+    "transmission": "automatic",
+    "owner": "2",
+    "kilometers": 20000,
+    "fuel": "diesel"
   },
   {
     "id": 3,
@@ -40,13 +54,20 @@
     "image": ["car/featured/3.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Infinity Roadster",
     "emi": "EMI starts 1,23,463/mo",
-    "category": ["honda", "mercedes", "bmw", "lexus", "wraith", "db12", "aventador", "cadillac_xt4"],
+    "category": ["honda", "mercedes", "bmw", "lexus", "wraith", "db12", "aventador", "cadillac_xt4", "partner_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "46,700 km" }
     ],
     "price": 515629,
+    "year": 2013,
+    "seats": "5",
+    "color": "red",
+    "fuel": "CNG",
+    "transmission": "semi_automatic",
+    "owner": "3",
+    "kilometers": 30000,
     "label": {
       "text": "Direct Owner",
       "icon": "ri-send-plane-line",
@@ -60,13 +81,20 @@
     "image": ["car/featured/4.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Titan X-Force",
     "emi": "EMI starts 1,20,225/mo",
-    "category": ["honda", "renault", "audi", "mercedes", "dawn", "valhalla", "huracan", "cadillac_escalade"],
+    "category": ["honda", "renault", "audi", "mercedes", "dawn", "valhalla", "huracan", "cadillac_escalade", "hot_deal"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "20,000 km" }
     ],
-    "price": 269900
+    "price": 269900,
+    "year": 20011,
+    "seats": "5",
+    "color": "silver",
+    "transmission": "manual",
+    "owner": "4",
+    "kilometers": 40000,
+    "fuel": "electric"
   },
   {
     "id": 5,
@@ -75,13 +103,20 @@
     "image": ["car/featured/5.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Aero Commander",
     "emi": "EMI starts @ 1,46,234/mo",
-    "category": ["mercedes", "citroen", "bmw", "lexus", "cullinan", "valkyrie", "urus", "cadillac_lyriq"],
+    "category": ["mercedes", "citroen", "bmw", "lexus", "cullinan", "valkyrie", "urus", "cadillac_lyriq", "certified_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "6 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "18,500 km" }
     ],
     "price": 350300,
+    "year": 2009,
+    "seats": "6",
+    "color": "blue",
+    "fuel": "petrol",
+    "transmission": "automatic",
+    "owner": "1",
+    "kilometers": 50000,
     "label": {
       "text": "Partner",
       "icon": "ri-team-line",
@@ -95,13 +130,20 @@
     "image": ["car/featured/6.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Cyclone Spinner",
     "emi": "EMI starts @ 12,000/mo",
-    "category": ["honda", "audi", "bmw", "renault", "spectre", "db9", "sian", "lexus_is"],
+    "category": ["honda", "audi", "bmw", "renault", "spectre", "db9", "sian", "lexus_is", "direct_owner_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "30,000 km" }
     ],
-    "price": 44622
+    "price": 44622,
+    "year": 2019,
+    "seats": "4",
+    "color": "white",
+    "transmission": "semi_automatic",
+    "owner": "2",
+    "kilometers": 5000,
+    "fuel": "diesel"
   },
   {
     "id": 7,
@@ -110,13 +152,20 @@
     "image": ["car/featured/7.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Fusion Fury",
     "emi": "EMI starts @ 1,73,742/mo",
-    "category": ["renault", "audi", "bmw", "lexus", "silver_ghost", "cygnet", "revuelto", "lexus_es"],
+    "category": ["renault", "audi", "bmw", "lexus", "silver_ghost", "cygnet", "revuelto", "lexus_es", "partner_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "25,000 km" }
     ],
     "price": 380000,
+    "year": 2024,
+    "seats": "5",
+    "color": "blue",
+    "fuel": "CNG",
+    "transmission": "manual",
+    "owner": "3",
+    "kilometers": 15000,
     "label": {
       "text": "Hot Deal",
       "icon": "ri-fire-line",
@@ -130,13 +179,20 @@
     "image": ["car/featured/8.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Galaxy Striker",
     "emi": "EMI starts @ 1,40,872/mo",
-    "category": ["honda", "audi", "citroen", "lexus", "silver_wraith", "alfieri", "huracan_tecnica", "lexus_gs"],
+    "category": ["honda", "audi", "citroen", "lexus", "silver_wraith", "alfieri", "huracan_tecnica", "lexus_gs", "hot_deal"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "30,000 km" }
     ],
-    "price": 289000
+    "price": 289000,
+    "year": 2022,
+    "seats": "5",
+    "color": "black",
+    "transmission": "automatic",
+    "owner": "4",
+    "kilometers": 25000,
+    "fuel": "electric"
   },
   {
     "id": 9,
@@ -145,13 +201,20 @@
     "image": ["car/featured/9.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Dynamo Flash",
     "emi": "EMI starts @ 1,46,234/mo",
-    "category": ["renault", "audi", "bmw", "lexus", "bentayga", "ghibli", "ferrari_296_gtb", "bmw_ix1"],
+    "category": ["renault", "audi", "bmw", "lexus", "bentayga", "ghibli", "ferrari_296_gtb", "bmw_ix1", "certified_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "6 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "18,500 km" }
     ],
-    "price": 350300
+    "price": 350300,
+    "year": 2020,
+    "seats": "6",
+    "color": "black",
+    "transmission": "semi_automatic",
+    "owner": "1",
+    "kilometers": 35000,
+    "fuel": "petrol"
   },
   {
     "id": 10,
@@ -160,13 +223,20 @@
     "image": ["car/featured/10.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Apex Trailblazer",
     "emi": "EMI starts @ 15,000/mo",
-    "category": ["honda", "audi", "bmw", "renault", "continental_gt", "quattroporte", "ferrari_sf90_stradale", "bmw_ix"],
+    "category": ["honda", "audi", "bmw", "renault", "continental_gt", "quattroporte", "ferrari_sf90_stradale", "bmw_ix", "direct_owner_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "30,000 km" }
     ],
-    "price": 60666
+    "price": 60666,
+    "year": 2018,
+    "seats": "4",
+    "color": "blue",
+    "transmission": "manual",
+    "owner": "2",
+    "kilometers": 45000,
+    "fuel": "diesel"
   },
   {
     "id": 11,
@@ -175,13 +245,20 @@
     "image": ["car/featured/11.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Raptor Turbo",
     "emi": "EMI starts @ 1,30,742/mo",
-    "category": ["mercedes", "citroen", "bmw", "lexus", "flying_spur", "levante", "ferrari_f8_tributo", "bmw_i4"],
+    "category": ["mercedes", "citroen", "bmw", "lexus", "flying_spur", "levante", "ferrari_f8_tributo", "bmw_i4", "partner_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "6 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "25,000 km" }
     ],
-    "price": 278000
+    "price": 278000,
+    "year": 2016,
+    "seats": "6",
+    "color": "silver",
+    "transmission": "automatic",
+    "owner": "3",
+    "kilometers": 8000,
+    "fuel": "CNG"
   },
   {
     "id": 12,
@@ -190,13 +267,20 @@
     "image": ["car/featured/12.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg", "car/featured/i-3.jpg", "car/featured/i-4.jpg", "car/featured/i-5.jpg"],
     "title": "Maverick Turbo",
     "emi": "EMI starts @ 1,25,812/mo",
-    "category": ["mercedes", "citroen", "bmw", "lexus", "mulsanne", "mc20", "ferrari_roma", "bmw_sedan"],
+    "category": ["mercedes", "citroen", "bmw", "lexus", "mulsanne", "mc20", "ferrari_roma", "bmw_sedan", "hot_deal"],
     "features": [
-      { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
+      { "icon": "car/product/profile-2user.svg", "text": "7 Person" },
       { "icon": "car/product/gas-station.svg", "text": "Petrol" },
       { "icon": "car/product/km.svg", "text": "30,000 km" }
     ],
-    "price": 189000
+    "price": 189000,
+    "year": 2014,
+    "seats": "7",
+    "color": "white",
+    "transmission": "semi_automatic",
+    "owner": "4",
+    "kilometers": 13000,
+    "fuel": "electric"
   },
   {
     "id": 13,
@@ -206,14 +290,21 @@
     "description": "The Velocity Racer Pro is a marvel of modern engineering, designed for the ultimate driving experience.",
     "emi": "EMI starts @ 1,30,742/mo",
     "price": 625.0,
-    "category": ["bacalar", "veyron", "ferrari_portofino_m", "bmw_gran_turismo", "mercedes_benz_c_class"],
+    "category": ["bacalar", "veyron", "ferrari_portofino_m", "bmw_gran_turismo", "mercedes_benz_c_class", "certified_cars"],
     "features": [
       { "icon": "car2/featured/1.svg", "text": "6 Seater" },
       { "icon": "car2/featured/2.svg", "text": "Petrol" },
       { "icon": "car2/featured/3.svg", "text": "Auto" },
       { "icon": "car2/featured/4.svg", "text": "50,000KM" }
     ],
-    "image": ["car2/featured/1.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"]
+    "image": ["car2/featured/1.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"],
+    "year": 2012,
+    "seats": "6",
+    "color": "white",
+    "transmission": "manual",
+    "owner": "1",
+    "kilometers": 31000,
+    "fuel": "petrol"
   },
   {
     "id": 14,
@@ -223,14 +314,21 @@
     "description": "The Titan X-Force features a 600-hp twin-turbo V8 and advanced all-wheel drive, blending luxury with top performance.",
     "emi": "EMI starts @ 15,000/mo",
     "price": 465.0,
-    "category": ["arnage", "chiron", "ferrari_812_gts", "mercedes_benz_gla", "mercedes_benz_eqb"],
+    "category": ["arnage", "chiron", "ferrari_812_gts", "mercedes_benz_gla", "mercedes_benz_eqb", "direct_owner_cars"],
     "features": [
       { "icon": "car2/featured/1.svg", "text": "5 Seater" },
       { "icon": "car2/featured/2.svg", "text": "Petrol" },
       { "icon": "car2/featured/3.svg", "text": "Auto" },
       { "icon": "car2/featured/4.svg", "text": "50,000KM" }
     ],
-    "image": ["car2/featured/3.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"]
+    "image": ["car2/featured/3.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"],
+    "year": 2010,
+    "seats": "5",
+    "color": "blue",
+    "transmission": "automatic",
+    "owner": "2",
+    "kilometers": 39000,
+    "fuel": "diesel"
   },
   {
     "id": 15,
@@ -240,14 +338,21 @@
     "description": "The Velocity Racer Pro is a marvel of modern engineering, designed for the ultimate driving experience.",
     "emi": "EMI starts @ 15,000/mo",
     "price": 625.0,
-    "category": ["dbx", "divo", "cadillac_ct4", "mercedes_benz_amg"],
+    "category": ["dbx", "divo", "cadillac_ct4", "mercedes_benz_amg", "partner_cars", "hot_deal"],
     "features": [
       { "icon": "car2/featured/1.svg", "text": "6 Seater" },
       { "icon": "car2/featured/2.svg", "text": "Petrol" },
       { "icon": "car2/featured/3.svg", "text": "Auto" },
       { "icon": "car2/featured/4.svg", "text": "50,000KM" }
     ],
-    "image": ["car2/featured/2.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"]
+    "image": ["car2/featured/2.jpg", "car/featured/i-1.jpg", "car/featured/i-2.jpg"],
+    "year": 2008,
+    "seats": "6",
+    "color": "black",
+    "transmission": "semi_automatic",
+    "owner": "3",
+    "kilometers": 22000,
+    "fuel": "CNG"
   },
   {
     "id": 16,

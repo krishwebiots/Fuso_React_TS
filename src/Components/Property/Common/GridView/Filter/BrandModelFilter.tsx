@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem, Button } from "reactstrap";
 import { Href } from "../../../../../Constants/Constants";
-import { brands } from "../../../../../Data/Car";
+import { Brands } from "../../../../../Data/Car";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
 import { setCarBrandModel } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
 
@@ -20,7 +20,7 @@ const BrandModelFilter: FC<{ id: string }> = ({ id }) => {
     else dispatch(setCarBrandModel(carBrandModel.filter((selectedValue) => selectedValue !== value)));
   };
 
-  const renderBrands = (brandsToRender: typeof brands) =>
+  const renderBrands = (brandsToRender: typeof Brands) =>
     brandsToRender.map((brand, index) => (
       <div className="main-choose-item" key={index}>
         <div className="choose-item">
@@ -59,9 +59,9 @@ const BrandModelFilter: FC<{ id: string }> = ({ id }) => {
             <input type="search" className="form-control" placeholder="Search Brand or Model" />
           </div>
           <span className="inner-title">Popular</span>
-          <div className="sidebar-choose-list">{renderBrands(brands.slice(0, 4))}</div>
+          <div className="sidebar-choose-list">{renderBrands(Brands.slice(0, 4))}</div>
           <span className="inner-title">Others</span>
-          <div className="sidebar-choose-list">{renderBrands(brands.slice(4))}</div>
+          <div className="sidebar-choose-list">{renderBrands(Brands.slice(4))}</div>
         </div>
         <a href={Href} className={`text-btn ${showMore ? "less-btn d-inline-block" : "more-btn"}`} onClick={() => setShowMore(!showMore)}>
           {showMore ? "Show Less" : "Show More"}
