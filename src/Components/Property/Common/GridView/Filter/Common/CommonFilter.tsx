@@ -8,7 +8,7 @@ import { Href } from "../../../../../../Constants/Constants";
 import { dynamicImage, Image } from "../../../../../../Utils";
 import { setMapModal } from "../../../../../../ReduxToolkit/Reducers/SidebarReducers";
 
-const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values, maxPrice, minPrice, modalType }) => {
+const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values, maxPrice, minPrice, modalType, type }) => {
   const dispatch = useAppDispatch();
   const { propertyType, bedsRooms, amenities } = useAppSelector((state) => state.filter);
 
@@ -61,7 +61,7 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
       <AccordionHeader targetId={id}>{title}</AccordionHeader>
       <AccordionBody accordionId={id}>
         {priceRange ? (
-          <RangeInputFields min={minPrice} max={maxPrice} />
+          <RangeInputFields min={minPrice} max={maxPrice} type={type} />
         ) : squareFeet ? (
           <div className="main-number">
             <div className="input-number range-number">

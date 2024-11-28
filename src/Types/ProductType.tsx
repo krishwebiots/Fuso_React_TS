@@ -107,6 +107,7 @@ export interface FilterSliceType {
   sortBy: null;
   popular: null;
   carBrandModel: string[];
+  budgetStatus: number[];
 }
 
 export interface PaginationType {
@@ -132,6 +133,7 @@ export interface CommonFilterType {
   minPrice?: number;
   maxPrice?: number;
   modalType?: string;
+  type?: string;
 }
 
 export interface ProductBoxType {
@@ -145,6 +147,7 @@ export interface ProductBoxType {
 export interface RangeInputFieldsType {
   min?: number;
   max?: number;
+  type?: string;
 }
 
 export interface PropertyDetailType {

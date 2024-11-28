@@ -22,7 +22,7 @@ const FilterSidebar: FC<FilterSidebarType> = ({ value, modalType, type }) => {
           <Fragment>
             {modalType === "map-modal" && <CommonFilter title="Map Modal" id="7" modalType={modalType} />}
             <CommonFilter title="Property Type" id="1" data={PropertyTypeData} checkValue={propertyType} />
-            <CommonFilter title="Price range" id="2" priceRange minPrice={minPrice?.price} maxPrice={maxPrice?.price} />
+            <CommonFilter title="Price range" id="2" priceRange minPrice={minPrice?.price} maxPrice={maxPrice?.price} type="property" />
             <CommonFilter title="beds rooms" id="3" data={BhkOptions} checkValue={bedsRooms} />
             <CommonFilter title="Square Feet" id="4" values={squareFeetStatus} squareFeet />
             <CommonFilter title="Year Built" id="5" values={yearBuiltStatus} squareFeet />
@@ -31,7 +31,7 @@ const FilterSidebar: FC<FilterSidebarType> = ({ value, modalType, type }) => {
         ) : (
           <Fragment>
             <BrandModelFilter id="1" />
-            <CommonFilter title="BUDGET" id="2" priceRange minPrice={minPrice?.price} maxPrice={maxPrice?.price} />
+            <CommonFilter title="Budget" id="2" priceRange minPrice={minPrice?.price} maxPrice={maxPrice?.price} type="car" />
           </Fragment>
         )}
       </UncontrolledAccordion>

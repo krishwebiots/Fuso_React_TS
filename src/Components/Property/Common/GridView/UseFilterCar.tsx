@@ -5,7 +5,7 @@ import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 const UseFilterCar = ({ value }: FilterProductsType) => {
   const [showProduct, setShowProduct] = useState<ProductType[]>(value);
-  const { carBrandModel, priceStatus } = useAppSelector((state) => state.filter);
+  const { carBrandModel, budgetStatus } = useAppSelector((state) => state.filter);
   const { pathname } = useLocation();
   const [searchParams] = useSearchParams();
   const router = useNavigate();
@@ -13,7 +13,7 @@ const UseFilterCar = ({ value }: FilterProductsType) => {
   useEffect(() => {
     const filteredProducts = value?.filter((product) => {
       const brandModel = carBrandModel.length === 0 || product.category === undefined || carBrandModel.some((prop) => product.category?.includes(prop));
-      const filteredPrice = product.price !== undefined && priceStatus ? priceStatus[0] <= product.price && priceStatus[1] >= product.price && true : true;
+      const filteredPrice = product.price !== undefined && budgetStatus ? budgetStatus[0] <= product.price && budgetStatus[1] >= product.price && true : true;
 
       return brandModel && filteredPrice;
     });
@@ -25,10 +25,10 @@ const UseFilterCar = ({ value }: FilterProductsType) => {
     ["brand-model", "budget"].forEach((name) => params.delete(name));
 
     carBrandModel.forEach((brand) => params.append("brand-model", brand));
-    if (priceStatus) params.set("budget", `${priceStatus[0]}-${priceStatus[1]}`);
+    if (budgetStatus) params.set("budget", `${budgetStatus[0]}-${budgetStatus[1]}`);
 
     router(`${pathname}?${params}`);
-  }, [carBrandModel, pathname, priceStatus, router, searchParams, value]);
+  }, [carBrandModel, pathname, budgetStatus, router, searchParams, value]);
 
   return showProduct;
 };

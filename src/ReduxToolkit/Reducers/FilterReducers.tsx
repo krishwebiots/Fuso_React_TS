@@ -11,6 +11,7 @@ const initialState: FilterSliceType = {
   sortBy: null,
   popular: null,
   carBrandModel: [],
+  budgetStatus: [40000, 300000],
 };
 
 const FilterSlice = createSlice({
@@ -44,8 +45,11 @@ const FilterSlice = createSlice({
     setCarBrandModel: (state, action) => {
       state.carBrandModel = action.payload;
     },
+    setBudgetStatus: (state, action) => {
+      action.payload ? (state.budgetStatus = [...action.payload]) : state.budgetStatus.splice(0, state.budgetStatus.length);
+    },
   },
 });
 
-export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setyearBuiltStatus, setPriceStatus, setSortBy, setPopular, setCarBrandModel } = FilterSlice.actions;
+export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setyearBuiltStatus, setPriceStatus, setSortBy, setPopular, setCarBrandModel, setBudgetStatus } = FilterSlice.actions;
 export default FilterSlice.reducer;

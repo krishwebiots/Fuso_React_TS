@@ -1,21 +1,32 @@
 import { getTrackBackground, Range } from "react-range";
 import { STEP } from "../../../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../../../ReduxToolkit/Hooks";
-import { setPriceStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { setBudgetStatus, setPriceStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
 import { RangeInputFieldsType } from "../../../../../../Types/ProductType";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 
-const RangeInputFields: FC<RangeInputFieldsType> = ({ min, max }) => {
+const RangeInputFields: FC<RangeInputFieldsType> = ({ min, max, type }) => {
   const dispatch = useAppDispatch();
-  const { priceStatus } = useAppSelector((state) => state.filter);
+  const { priceStatus, budgetStatus } = useAppSelector((state) => state.filter);
+  const [rangePrice, setRangePrice] = useState<number[]>([40000, 100000]);
+
+  const handlePriceChange = (values: number[]) => {
+    if (type === "car") dispatch(setBudgetStatus(values));
+    else dispatch(setPriceStatus(values));
+  };
+
+  useEffect(() => {
+    if (type === "car") setRangePrice(budgetStatus);
+    else setRangePrice(priceStatus);
+  }, [budgetStatus, priceStatus, type, min, max]);
 
   return (
     <Range
-      values={priceStatus}
+      values={rangePrice}
       step={STEP}
       min={min || 1000}
       max={max || 1000000}
-      onChange={(values) => dispatch(setPriceStatus(values))}
+      onChange={(values) => handlePriceChange(values)}
       renderTrack={({ props, children }) => (
         <div onTouchStart={props.onTouchStart} onMouseDown={props.onMouseDown} style={{ ...props.style, height: "36px", display: "flex", width: "100%" }}>
           <div
@@ -25,7 +36,7 @@ const RangeInputFields: FC<RangeInputFieldsType> = ({ min, max }) => {
               width: "100%",
               borderRadius: "4px",
               background: getTrackBackground({
-                values: priceStatus,
+                values: rangePrice,
                 colors: ["#ccc", "rgba(var(--theme-color), 1)", "#ccc"],
                 min: min || 1000,
                 max: max || 1000000,
@@ -39,7 +50,7 @@ const RangeInputFields: FC<RangeInputFieldsType> = ({ min, max }) => {
       )}
       renderThumb={({ index, props }) => (
         <div {...props} key={index} style={{ ...props.style, height: "12px", width: "7px", top: "15px", borderRadius: "60px", backgroundColor: "rgba(var(--theme-color), 1)", display: "flex", justifyContent: "center", alignItems: "center", boxShadow: "0px 2px 6px #AAA" }}>
-          <div style={{ position: "absolute", top: "-30px", color: "#fff", fontWeight: "bold", fontSize: "12px", fontFamily: "Arial,Helvetica Neue,Helvetica,sans-serif", padding: "4px", borderRadius: "4px", backgroundColor: "rgba(var(--theme-color), 1)" }}>{priceStatus[index]}</div>
+          <div style={{ position: "absolute", top: "-30px", color: "#fff", fontWeight: "bold", fontSize: "12px", fontFamily: "Arial,Helvetica Neue,Helvetica,sans-serif", padding: "4px", borderRadius: "4px", backgroundColor: "rgba(var(--theme-color), 1)" }}>{rangePrice[index]}</div>
         </div>
       )}
     />
