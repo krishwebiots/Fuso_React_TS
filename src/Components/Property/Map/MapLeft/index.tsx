@@ -8,7 +8,7 @@ const MapLeftContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView side="no" carShow={4} map />
+      <GridView type={"property"} side="no" carShow={4} map />
     </Fragment>
   );
 };

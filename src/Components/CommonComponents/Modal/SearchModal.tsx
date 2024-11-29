@@ -17,7 +17,7 @@ const SearchModal: FC<{ type: string }> = ({ type }) => {
   const toggle = () => dispatch(setSearchModal());
 
   const handleReset = () => {
-    const resetActions = [setPropertyType([]), setBedsRooms([]), setAmenities([]), setSortBy(null), setPopular(null), setPriceStatus([40000, 500000]), setSquareFeetStatus([400, 4000]), setyearBuiltStatus([2019, 2024]), setCarBrandModel([]), setBudgetStatus([40000, 300000]), setCarCategories(""), setCarFuelType([]), setCarModalYear(null), setCarSeats([]), setCarColor([]), setCarTransmission([]), setCarOwner([]), setCarKilometers([10000, 40000])];
+    const resetActions = [setPropertyType([]), setBedsRooms([]), setAmenities([]), setSortBy(null), setPopular(null), setPriceStatus([40000, 500000]), setSquareFeetStatus([400, 4000]), setyearBuiltStatus([2019, 2024]), setCarBrandModel([]), setBudgetStatus([40000, 300000]), setCarCategories(""), setCarFuelType([]), setCarModalYear(""), setCarSeats([]), setCarColor([]), setCarTransmission([]), setCarOwner([]), setCarKilometers([10000, 40000])];
     resetActions.forEach(dispatch);
   };
 

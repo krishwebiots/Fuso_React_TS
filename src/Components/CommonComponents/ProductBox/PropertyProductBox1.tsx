@@ -10,6 +10,7 @@ import PropertyBoxSlider from "./Common/PropertyBoxSlider";
 import { toast } from "react-toastify";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { setPropertyItem } from "../../../ReduxToolkit/Reducers/ProductReducers";
+import { dynamicVideo } from "../../../Utils";
 
 const PropertyProductBox1: FC<ProductBoxType> = ({ data, view, wishlist }) => {
   const { productItem } = useAppSelector((state) => state.product);
@@ -25,21 +26,30 @@ const PropertyProductBox1: FC<ProductBoxType> = ({ data, view, wishlist }) => {
 
   return (
     <div className="featured-box">
-      <div className="featured-main-img">
-        <Link to={view === "multiple" ? Href : RouteList.Property.Detail.PropertySidebarLayout} className={view === "video" ? "featured-video" : "featured-img"}>
-          <PropertyBoxSlider view={view} data={data} />
-        </Link>
-        {data.label && <Label className="save-btn">{data.label.text}</Label>}
-        {wishlist ? (
-          <Link to={Href} className="remove-button" onClick={() => handleRemove(data.id)}>
-            <Trash className="iconsax" />
+      {view === "video" ? (
+        <div className="featured-video">
+          <video autoPlay muted loop>
+            <source src={dynamicVideo(data.video ? data.video : "1.mp4")} type="video/mp4" />
+            <source src={dynamicVideo(data.video ? data.video : "1.mp4")} type="video/ogg" />
+          </video>
+        </div>
+      ) : (
+        <div className="featured-main-img">
+          <Link to={view === "multiple" ? Href : RouteList.Property.Detail.PropertySidebarLayout} className="featured-img">
+            <PropertyBoxSlider view={view} data={data} />
           </Link>
-        ) : (
-          <Link to={Href} className="wishlist-btn" onClick={() => handleWishlist()}>
-            <i className="ri-bookmark-line"></i>
-          </Link>
-        )}
-      </div>
+          {data.label && <Label className="save-btn">{data.label.text}</Label>}
+          {wishlist ? (
+            <Link to={Href} className="remove-button" onClick={() => handleRemove(data.id)}>
+              <Trash className="iconsax" />
+            </Link>
+          ) : (
+            <Link to={Href} className="wishlist-btn" onClick={() => handleWishlist()}>
+              <i className="ri-bookmark-line"></i>
+            </Link>
+          )}
+        </div>
+      )}
       <div className="featured-content">
         <Link to={RouteList.Property.Detail.PropertySidebarLayout}>{data.title}</Link>
         <p>{data.location}</p>

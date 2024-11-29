@@ -33,12 +33,12 @@ const UseFilterProperty = ({ value }: FilterProductsType) => {
     const params = new URLSearchParams(searchParams);
     ["property", "beds", "price", "square", "year", "amenities"].forEach((name) => params.delete(name));
 
-    propertyType.forEach((property) => params.append("property", property));
+    if (propertyType.length !== 0) params.set("property", propertyType.join(","));
     if (priceStatus) params.set("price", `${priceStatus[0]}-${priceStatus[1]}`);
-    bedsRooms.forEach((beds) => params.append("beds", beds));
+    if (bedsRooms.length !== 0) params.set("beds", bedsRooms.join(","));
     if (squareFeetStatus) params.set("square", `${squareFeetStatus[0]}-${squareFeetStatus[1]}`);
     if (yearBuiltStatus) params.set("year", `${yearBuiltStatus[0]}-${yearBuiltStatus[1]}`);
-    amenities.forEach((amenities) => params.append("amenities", amenities));
+    if (amenities.length !== 0) params.set("amenities", amenities.join(","));
 
     router(`${pathname}?${params}`);
   }, [amenities, bedsRooms, pathname, popular, priceStatus, propertyType, router, searchParams, sortBy, squareFeetStatus, value, yearBuiltStatus]);

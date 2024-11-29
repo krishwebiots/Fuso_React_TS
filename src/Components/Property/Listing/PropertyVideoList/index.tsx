@@ -8,7 +8,7 @@ const PropertyVideoListContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView sectionClass="property-list property-list-video property-inner-section" gridType="list-view" gridSize={1} view="video" />
+      <GridView type="property" sectionClass="property-list property-list-video property-inner-section" gridType="list-view" gridSize={1} view="video" />
     </Fragment>
   );
 };

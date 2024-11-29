@@ -7,7 +7,7 @@ const Car3GridContainer = () => {
   return (
     <Fragment>
       <Breadcrumbs title="Car Shop" url={RouteList.Home.CarDemo1} mainClass="car-breadcrumbs-section" />
-      <GridView sectionClass="car-shop-section car-product-section" filterTagsClass="car-list-header" gridSize={3} carShow={9} />
+      <GridView type="car" sectionClass="car-shop-section car-product-section" filterTagsClass="car-list-header" gridSize={3} carShow={9} />
     </Fragment>
   );
 };

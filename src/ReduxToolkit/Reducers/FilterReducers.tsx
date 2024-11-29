@@ -15,7 +15,7 @@ const initialState: FilterSliceType = {
   budgetStatus: [50000, 400000],
   carCategories: "",
   carFuelType: [],
-  carModalYear: null,
+  carModalYear: "",
   carSeats: [],
   carColor: [],
   carTransmission: [],

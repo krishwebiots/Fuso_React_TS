@@ -60,6 +60,7 @@ export interface CategoryType {
 }
 
 export interface GridViewType {
+  type: string;
   side?: string;
   gridSize?: number;
   sectionClass?: string;

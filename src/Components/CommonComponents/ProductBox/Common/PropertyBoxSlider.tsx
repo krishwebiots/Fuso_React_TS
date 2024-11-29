@@ -5,7 +5,7 @@ import { Href } from "../../../../Constants/Constants";
 import { ProductSwiperSetting } from "../../../../Data/Demo/CarDemo1";
 import { SliderFor, SliderNav } from "../../../../Data/Property";
 import { ProductBoxType } from "../../../../Types/ProductType";
-import { dynamicImage, dynamicVideo } from "../../../../Utils";
+import { dynamicImage } from "../../../../Utils";
 import RatioImage from "../../../../Utils/RatioImage";
 
 const PropertyBoxSlider: FC<ProductBoxType> = ({ view, data }) => {
@@ -17,12 +17,7 @@ const PropertyBoxSlider: FC<ProductBoxType> = ({ view, data }) => {
   }, []);
   return (
     <Fragment>
-      {view === "video" ? (
-        <video autoPlay muted loop>
-          <source src={dynamicVideo(data.video ? data.video : "1.mp4")} type="video/mp4" />
-          <source src={dynamicVideo(data.video ? data.video : "1.mp4")} type="video/ogg" />
-        </video>
-      ) : view === "multiple" ? (
+      {view === "multiple" ? (
         <Fragment>
           <Swiper className="thumb-main-slider ratio_65" {...SliderFor} thumbs={{ swiper: thumbsSwiper }}>
             {data.image.map((testimonial, index) => (

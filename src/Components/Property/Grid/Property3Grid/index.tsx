@@ -8,7 +8,7 @@ const Property3GridContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView gridSize={3} carShow={9} />
+      <GridView type={"property"} gridSize={3} carShow={9} />
     </Fragment>
   );
 };

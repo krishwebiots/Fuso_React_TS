@@ -8,7 +8,7 @@ const Property2RightGridContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView side="right" gridSize={3} carShow={9} />
+      <GridView type="property" side="right" gridSize={3} carShow={9} />
     </Fragment>
   );
 };

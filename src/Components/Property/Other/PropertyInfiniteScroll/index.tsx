@@ -8,7 +8,7 @@ const PropertyInfiniteScrollContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView gridSize={3} scrollType="infinite" carShow={9} />
+      <GridView type={"property"} gridSize={3} scrollType="infinite" carShow={9} />
     </Fragment>
   );
 };

@@ -24,9 +24,21 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
 
     const updateState = {
       "Property Type": () => {
-        let updated = isChecked ? (value === "all" ? ["all", "apartment", "house", "villa", "office", "farmhouse"] : propertyType.includes("all") ? [value] : [...propertyType, value]) : value === "all" ? [] : propertyType.filter((v) => v !== value);
-        if (updated.length >= 5 && !updated.includes("all")) updated = ["all", "apartment", "house", "villa", "office", "farmhouse"];
-        dispatch(setPropertyType(updated));
+        let updatedPropertyType: string[] = [];
+        if (isChecked) {
+          if (value === "all") updatedPropertyType = ["all", "apartment", "house", "villa", "office", "farmhouse"];
+          else updatedPropertyType = propertyType.includes("all") ? [value] : [...propertyType, value];
+        } else {
+          if (value === "all") updatedPropertyType = [];
+          else {
+            updatedPropertyType = propertyType.filter((selectedValue) => selectedValue !== value);
+            if (updatedPropertyType.includes("all")) {
+              updatedPropertyType = updatedPropertyType.filter((type) => type !== "all");
+            }
+          }
+        }
+        if (updatedPropertyType.length >= 5 && !updatedPropertyType.includes("all")) updatedPropertyType = ["all", "apartment", "house", "villa", "office", "farmhouse"];
+        dispatch(setPropertyType(updatedPropertyType));
       },
       "Beds rooms": () => dispatch(setBedsRooms(actionCreator(bedsRooms))),
       Amenities: () => dispatch(setAmenities(actionCreator(amenities))),

@@ -40,15 +40,15 @@ const UseFilterCar = ({ value }: FilterProductsType) => {
 
     ["brand-model", "budget", "categories", "fuel", "modal", "seats", "color", "transmission", "owner", "kilometers"].forEach((name) => params.delete(name));
 
-    carBrandModel.forEach((brand) => params.append("brand-model", brand));
+    if (carBrandModel.length !== 0) params.set("brand-model", carBrandModel.join(","));
     if (budgetStatus) params.set("budget", `${budgetStatus[0]}-${budgetStatus[1]}`);
-    if (carCategories.length !== 0) params.append("categories", carCategories);
-    carFuelType.forEach((fuel) => params.append("fuel", fuel));
-    if (carModalYear) params.append("modal", carModalYear);
-    carSeats.forEach((seats) => params.append("seats", seats));
-    carColor.forEach((color) => params.append("color", color));
-    carTransmission.forEach((Transmission) => params.append("transmission", Transmission));
-    carOwner.forEach((owner) => params.append("owner", owner));
+    if (carCategories.length !== 0) params.set("categories", carCategories);
+    if (carFuelType.length !== 0) params.set("fuel", carFuelType.join(","));
+    if (carModalYear) params.set("modal", carModalYear);
+    if (carSeats.length !== 0) params.set("seats", carSeats.join(","));
+    if (carColor.length !== 0) params.set("color", carColor.join(","));
+    if (carTransmission.length !== 0) params.set("transmission", carTransmission.join(","));
+    if (carOwner.length !== 0) params.set("owner", carOwner.join(","));
     if (carKilometers) params.set("kilometers", `${carKilometers[0]}-${carKilometers[1]}`);
 
     router(`${pathname}?${params}`);
