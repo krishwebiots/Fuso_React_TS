@@ -3,13 +3,13 @@ import { RouteList } from "../../../../Routers/RouteList";
 import Breadcrumbs from "../../../CommonComponents/Breadcrumbs";
 import GridView from "../../../Property/Common/GridView";
 
-const Car2GridContainer = () => {
+const Car3RightGridContainer = () => {
   return (
     <Fragment>
       <Breadcrumbs title="Car Shop" url={RouteList.Home.CarDemo1} mainClass="car-breadcrumbs-section" />
-      <GridView sectionClass="car-shop-section car-product-section" filterTagsClass="car-list-header" />
+      <GridView side="right" sectionClass="car-shop-section car-product-section" filterTagsClass="car-list-header" gridSize={3} carShow={9} />
     </Fragment>
   );
 };
 
-export default Car2GridContainer;
+export default Car3RightGridContainer;

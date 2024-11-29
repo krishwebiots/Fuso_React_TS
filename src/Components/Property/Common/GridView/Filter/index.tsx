@@ -48,7 +48,7 @@ const FilterSidebar: FC<FilterSidebarType> = ({ value, modalType, type }) => {
             <CommonFilter title="Modal Year" id="9" data={ModalYearData} checkValue={carModalYear} radio type="car" />
             <CommonFilter title="Seats" id="10" data={SeatsData} checkValue={carSeats} type="car" />
             <CommonFilter title="Color" id="11" data={CarColorData} checkValue={carColor} type="car" subClass="filter-color" />
-            <CommonFilter title="KMS Driven" id="12" priceRange type="car" />
+            <CommonFilter title="KMS Driven" id="12" priceRange type="kilometers" />
             <CommonFilter title="Transmission" id="13" data={TransmissionData} checkValue={carTransmission} type="car" />
             <CommonFilter title="Owner" id="14" data={OwnerData} checkValue={carOwner} type="car" />
           </Fragment>

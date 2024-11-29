@@ -2,7 +2,7 @@ import { FC, Fragment } from "react";
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import { Search } from "../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { setAmenities, setBedsRooms, setPopular, setPriceStatus, setPropertyType, setSortBy, setSquareFeetStatus, setyearBuiltStatus } from "../../../ReduxToolkit/Reducers/FilterReducers";
+import { setAmenities, setBedsRooms, setBudgetStatus, setCarBrandModel, setCarCategories, setCarColor, setCarFuelType, setCarKilometers, setCarModalYear, setCarOwner, setCarSeats, setCarTransmission, setPopular, setPriceStatus, setPropertyType, setSortBy, setSquareFeetStatus, setyearBuiltStatus } from "../../../ReduxToolkit/Reducers/FilterReducers";
 import { setSearchModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
 import FilterSidebar from "../../Property/Common/GridView/Filter";
 import CloseBtn from "../CloseBtn";
@@ -17,7 +17,7 @@ const SearchModal: FC<{ type: string }> = ({ type }) => {
   const toggle = () => dispatch(setSearchModal());
 
   const handleReset = () => {
-    const resetActions = [setPropertyType([]), setBedsRooms([]), setAmenities([]), setSortBy(null), setPopular(null), setPriceStatus([40000, 500000]), setSquareFeetStatus([400, 4000]), setyearBuiltStatus([2019, 2024])];
+    const resetActions = [setPropertyType([]), setBedsRooms([]), setAmenities([]), setSortBy(null), setPopular(null), setPriceStatus([40000, 500000]), setSquareFeetStatus([400, 4000]), setyearBuiltStatus([2019, 2024]), setCarBrandModel([]), setBudgetStatus([40000, 300000]), setCarCategories(""), setCarFuelType([]), setCarModalYear(null), setCarSeats([]), setCarColor([]), setCarTransmission([]), setCarOwner([]), setCarKilometers([10000, 40000])];
     resetActions.forEach(dispatch);
   };
 
@@ -31,7 +31,8 @@ const SearchModal: FC<{ type: string }> = ({ type }) => {
             <h3>Search</h3>
             <span onClick={handleReset}>Reset</span>
           </div>
-          <FilterSidebar value={showProduct} type={"property"} />
+
+          <FilterSidebar value={showProduct} type={type} />
         </ModalBody>
         <ModalFooter>
           <Button className="btn-solid">{Search}</Button>

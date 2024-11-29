@@ -9,3 +9,12 @@ export const PathSettings: Record<string, PathSettingsType> = {
   "property-2": { className: "property2-color", favicon: "favicon-2.png" },
   default: { className: "car-color", favicon: "favicon-3.png" },
 };
+
+export const SearchModalData: { [key: string]: string } = {
+  car: "car",
+  property: "property",
+  "property-2": "property",
+  job: "job",
+  "job-2": "job",
+  "job-3": "job",
+};

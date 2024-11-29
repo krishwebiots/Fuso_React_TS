@@ -16,7 +16,9 @@ const FilterOffcanvas: FC<FilterOffcanvasType> = ({ type, offcanvasSide, modalTy
 
   return (
     <Offcanvas fade direction={offcanvasSide === "right" ? "end" : "start"} isOpen={openFilterSidebar} toggle={toggle}>
-      <OffcanvasHeader toggle={() => toggle}>{Filters}</OffcanvasHeader>
+      <OffcanvasHeader toggle={toggle} tag="h5">
+        {Filters}
+      </OffcanvasHeader>
       <OffcanvasBody>
         <FilterSidebar value={showProduct} modalType={modalType} type={type} />
       </OffcanvasBody>

@@ -20,6 +20,7 @@
     "transmission": "manual",
     "owner": "1",
     "kilometers": 10000,
+    "productState": "Most Popular",
     "label": {
       "text": "Certified",
       "icon": "ri-verified-badge-line"
@@ -94,6 +95,7 @@
     "transmission": "manual",
     "owner": "4",
     "kilometers": 40000,
+    "productState": "Most Popular",
     "fuel": "electric"
   },
   {
@@ -143,6 +145,7 @@
     "transmission": "semi_automatic",
     "owner": "2",
     "kilometers": 5000,
+    "productState": "Most Popular",
     "fuel": "diesel"
   },
   {
@@ -192,6 +195,7 @@
     "transmission": "automatic",
     "owner": "4",
     "kilometers": 25000,
+    "productState": "Most Popular",
     "fuel": "electric"
   },
   {
@@ -236,6 +240,7 @@
     "transmission": "manual",
     "owner": "2",
     "kilometers": 45000,
+    "productState": "Most Popular",
     "fuel": "diesel"
   },
   {
@@ -280,6 +285,7 @@
     "transmission": "semi_automatic",
     "owner": "4",
     "kilometers": 13000,
+    "productState": "Most Popular",
     "fuel": "electric"
   },
   {
@@ -328,6 +334,7 @@
     "transmission": "automatic",
     "owner": "2",
     "kilometers": 39000,
+    "productState": "Most Popular",
     "fuel": "diesel"
   },
   {

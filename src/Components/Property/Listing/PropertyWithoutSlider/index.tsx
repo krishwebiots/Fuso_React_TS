@@ -8,7 +8,7 @@ const PropertyWithoutSliderContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView type="property" sectionClass="property-inner-section property-list" gridType="list-view" gridSize={1} view="image" />
+      <GridView sectionClass="property-inner-section property-list" gridType="list-view" gridSize={1} view="image" />
     </Fragment>
   );
 };

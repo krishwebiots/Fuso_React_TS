@@ -8,11 +8,13 @@ import FilterOffcanvas from "../../../CommonComponents/FilterOffcanvas";
 import FilterSidebar from "./Filter";
 import FilterTags from "./Filter/FilterTags";
 import GridLayout from "./GridLayout";
+import { useLocation } from "react-router-dom";
 
-const GridView: FC<GridViewType> = ({ type, side, gridSize, sectionClass, gridType, view, topFilter, offcanvasSide, scrollType, map, mapSide, modalType, filterTagsClass, carShow }) => {
+const GridView: FC<GridViewType> = ({ side, gridSize, sectionClass, gridType, view, topFilter, offcanvasSide, scrollType, map, mapSide, modalType, filterTagsClass, carShow }) => {
   const { productItem } = useAppSelector((state) => state.product);
   const dispatch = useAppDispatch();
-
+  const { pathname } = useLocation();
+  const [type] = pathname.split("/").slice(1, 2);
   const showProduct = productItem.filter((item) => item.type === type);
 
   useEffect(() => {

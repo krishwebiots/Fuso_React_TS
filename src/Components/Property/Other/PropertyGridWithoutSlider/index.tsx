@@ -8,7 +8,7 @@ const PropertyGridWithoutSliderContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView type={"property"} gridSize={3} view="image" carShow={9} />
+      <GridView gridSize={3} view="image" carShow={9} />
     </Fragment>
   );
 };

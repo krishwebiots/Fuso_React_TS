@@ -6,12 +6,12 @@ import { LoadMore } from "../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
 import { setCardToShow, setTotalProduct } from "../../../../ReduxToolkit/Reducers/SidebarReducers";
 import { GridLayoutType } from "../../../../Types/ProductType";
-import PropertyProductBox1 from "../../../CommonComponents/ProductBox/PropertyProductBox1";
-import PaginationDynamic from "../../../CommonComponents/Pagination";
-import UseFilterProperty from "./UseFilterProperty";
 import NotFound from "../../../CommonComponents/NotFound";
+import PaginationDynamic from "../../../CommonComponents/Pagination";
 import CarProductBox1 from "../../../CommonComponents/ProductBox/CarProductBox1";
+import PropertyProductBox1 from "../../../CommonComponents/ProductBox/PropertyProductBox1";
 import UseFilterCar from "./UseFilterCar";
+import UseFilterProperty from "./UseFilterProperty";
 
 const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view, scrollType, map }) => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -62,20 +62,22 @@ const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view,
           ))}
       </Row>
 
-      {showProduct.length === 0 && <NotFound word="No items found in Product" />}
-
-      {scrollType === "load_more" ? (
-        showProduct.length >= cardToShow ? (
-          <Button className="btn-solid load-more" onClick={() => dispatch(setCardToShow(cardToShow + 3))}>
-            {LoadMore}
-          </Button>
+      {showProduct.length !== 0 ? (
+        scrollType === "load_more" ? (
+          showProduct.length >= cardToShow ? (
+            <Button className="btn-solid load-more" onClick={() => dispatch(setCardToShow(cardToShow + 3))}>
+              {LoadMore}
+            </Button>
+          ) : (
+            <p id="no-more-products" style={{ display: "block" }}>
+              No more products available.
+            </p>
+          )
         ) : (
-          <p id="no-more-products" style={{ display: "block" }}>
-            No more products available.
-          </p>
+          scrollType !== "infinite" && <PaginationDynamic totalPages1={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
         )
       ) : (
-        scrollType !== "infinite" && <PaginationDynamic totalPages1={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        <NotFound word="No items found in Product" />
       )}
     </div>
   );

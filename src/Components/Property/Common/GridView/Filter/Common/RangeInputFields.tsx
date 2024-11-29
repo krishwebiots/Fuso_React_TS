@@ -1,31 +1,32 @@
 import { getTrackBackground, Range } from "react-range";
 import { STEP } from "../../../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../../../ReduxToolkit/Hooks";
-import { setBudgetStatus, setPriceStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { setBudgetStatus, setCarKilometers, setPriceStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
 import { RangeInputFieldsType } from "../../../../../../Types/ProductType";
 import { FC, useEffect, useState } from "react";
 
 const RangeInputFields: FC<RangeInputFieldsType> = ({ type }) => {
   const dispatch = useAppDispatch();
-  const { priceStatus, budgetStatus, minAndMaxPrice } = useAppSelector((state) => state.filter);
+  const { priceStatus, budgetStatus, minAndMaxPrice, minAndMaxKilometers, carKilometers } = useAppSelector((state) => state.filter);
   const [rangePrice, setRangePrice] = useState<number[]>([40000, 500000]);
+  const [value, setValue] = useState<number[]>(minAndMaxPrice || minAndMaxKilometers);
 
   const handlePriceChange = (values: number[]) => {
-    if (type === "car") dispatch(setBudgetStatus(values));
-    else dispatch(setPriceStatus(values));
+    const action = type === "car" ? setBudgetStatus : type === "kilometers" ? setCarKilometers : setPriceStatus;
+    dispatch(action(values));
   };
 
   useEffect(() => {
-    if (type === "car") setRangePrice(budgetStatus);
-    else setRangePrice(priceStatus);
-  }, [budgetStatus, priceStatus, type, minAndMaxPrice]);
+    setRangePrice(type === "car" ? budgetStatus : type === "kilometers" ? carKilometers : priceStatus);
+    setValue(type === "kilometers" ? minAndMaxKilometers : minAndMaxPrice);
+  }, [budgetStatus, priceStatus, type, minAndMaxPrice, minAndMaxKilometers, carKilometers]);
 
   return (
     <Range
       values={rangePrice}
       step={STEP}
-      min={minAndMaxPrice[0] || 1000}
-      max={minAndMaxPrice[1] || 1000000}
+      min={value[0] || 1000}
+      max={value[1] || 1000000}
       onChange={(values) => handlePriceChange(values)}
       renderTrack={({ props, children }) => (
         <div onTouchStart={props.onTouchStart} onMouseDown={props.onMouseDown} style={{ ...props.style, height: "36px", display: "flex", width: "100%" }}>
@@ -38,8 +39,8 @@ const RangeInputFields: FC<RangeInputFieldsType> = ({ type }) => {
               background: getTrackBackground({
                 values: rangePrice,
                 colors: ["#ccc", "rgba(var(--theme-color), 1)", "#ccc"],
-                min: minAndMaxPrice[0] || 1000,
-                max: minAndMaxPrice[1] || 1000000,
+                min: value[0] || 1000,
+                max: value[1] || 1000000,
               }),
               alignSelf: "center",
             }}

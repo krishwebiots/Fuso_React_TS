@@ -1,12 +1,12 @@
 import { ChangeEvent, FC } from "react";
 import { AccordionBody, AccordionHeader, AccordionItem, Input, Label } from "reactstrap";
+import { Href } from "../../../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../../../ReduxToolkit/Hooks";
 import { setAmenities, setBedsRooms, setCarCategories, setCarColor, setCarFuelType, setCarModalYear, setCarOwner, setCarSeats, setCarTransmission, setPropertyType, setSquareFeetStatus, setyearBuiltStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
-import { CommonFilterType } from "../../../../../../Types/ProductType";
-import RangeInputFields from "./RangeInputFields";
-import { Href } from "../../../../../../Constants/Constants";
-import { dynamicImage, Image } from "../../../../../../Utils";
 import { setMapModal } from "../../../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { CommonFilterType } from "../../../../../../Types/ProductType";
+import { dynamicImage, Image } from "../../../../../../Utils";
+import RangeInputFields from "./RangeInputFields";
 
 const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values, modalType, type, radio, subClass }) => {
   const dispatch = useAppDispatch();
@@ -16,86 +16,32 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
     const value = event.target.value;
     const isChecked = event.target.checked;
 
-    // Property Type
-    if (title === "Property Type") {
-      let updatedPropertyType: string[] = [];
-      if (isChecked) {
-        if (value === "all") updatedPropertyType = ["all", "apartment", "house", "villa", "office", "farmhouse"];
-        else updatedPropertyType = propertyType.includes("all") ? [value] : [...propertyType, value];
-      } else {
-        if (value === "all") updatedPropertyType = [];
-        else updatedPropertyType = propertyType.filter((selectedValue) => selectedValue !== value);
-      }
-      if (updatedPropertyType.length >= 5 && !updatedPropertyType.includes("all")) updatedPropertyType = ["all", "apartment", "house", "villa", "office", "farmhouse"];
+    const actionCreator = (option?: string[] | string) => {
+      if (Array.isArray(option)) return isChecked ? [...option, value] : option.filter((v) => v !== value);
+      else if (typeof option === "string") return isChecked ? value : carModalYear !== value;
+      else return [field === "min" ? +value : values?.[0], field === "max" ? +value : values?.[1]];
+    };
 
-      dispatch(setPropertyType(updatedPropertyType));
-    }
+    const updateState = {
+      "Property Type": () => {
+        let updated = isChecked ? (value === "all" ? ["all", "apartment", "house", "villa", "office", "farmhouse"] : propertyType.includes("all") ? [value] : [...propertyType, value]) : value === "all" ? [] : propertyType.filter((v) => v !== value);
+        if (updated.length >= 5 && !updated.includes("all")) updated = ["all", "apartment", "house", "villa", "office", "farmhouse"];
+        dispatch(setPropertyType(updated));
+      },
+      "Beds rooms": () => dispatch(setBedsRooms(actionCreator(bedsRooms))),
+      Amenities: () => dispatch(setAmenities(actionCreator(amenities))),
+      "Square Feet": () => dispatch(setSquareFeetStatus(actionCreator())),
+      "Year Built": () => dispatch(setyearBuiltStatus(actionCreator())),
+      Categories: () => dispatch(setCarCategories(actionCreator(carCategories))),
+      "Fuel Type": () => dispatch(setCarFuelType(actionCreator(carFuelType))),
+      "Modal Year": () => dispatch(setCarModalYear(actionCreator(carModalYear))),
+      Seats: () => dispatch(setCarSeats(actionCreator(carSeats))),
+      Color: () => dispatch(setCarColor(actionCreator(carColor))),
+      Transmission: () => dispatch(setCarTransmission(actionCreator(carTransmission))),
+      Owner: () => dispatch(setCarOwner(actionCreator(carOwner))),
+    };
 
-    // Beds Rooms
-    else if (title === "Beds rooms") {
-      if (isChecked) dispatch(setBedsRooms([...bedsRooms, value]));
-      else dispatch(setBedsRooms(bedsRooms.filter((selectedValue) => selectedValue !== value)));
-    }
-
-    // Amenities
-    else if (title === "Amenities") {
-      if (isChecked) dispatch(setAmenities([...amenities, value]));
-      else dispatch(setAmenities(amenities.filter((selectedValue) => selectedValue !== value)));
-    }
-
-    // Square Feet
-    else if (title === "Square Feet") {
-      const value = parseInt(event.target.value, 10) || 0;
-      dispatch(setSquareFeetStatus([field === "min" ? value : values && values[0], field === "max" ? value : values && values[1]]));
-    }
-
-    // Year Built
-    else if (title === "Year Built") {
-      const value = parseInt(event.target.value, 10) || 0;
-      dispatch(setyearBuiltStatus([field === "min" ? value : values && values[0], field === "max" ? value : values && values[1]]));
-    }
-
-    // Car Categories
-    else if (title === "Categories") {
-      if (isChecked) dispatch(setCarCategories(value));
-      else dispatch(setCarCategories(carCategories !== value));
-    }
-
-    // Car Fuel Type
-    else if (title === "Fuel Type") {
-      if (isChecked) dispatch(setCarFuelType([...carFuelType, value]));
-      else dispatch(setCarFuelType(carFuelType.filter((selectedValue) => selectedValue !== value)));
-    }
-
-    // Car Modal Year
-    else if (title === "Modal Year") {
-      if (isChecked) dispatch(setCarModalYear(value));
-      else dispatch(setCarModalYear(carModalYear !== value));
-    }
-
-    // Car Seats
-    else if (title === "Seats") {
-      if (isChecked) dispatch(setCarSeats([...carSeats, value]));
-      else dispatch(setCarSeats(carSeats.filter((selectedValue) => selectedValue !== value)));
-    }
-
-    // Car Color
-    else if (title === "Color") {
-      if (isChecked) dispatch(setCarColor([...carColor, value]));
-      else dispatch(setCarColor(carColor.filter((selectedValue) => selectedValue !== value)));
-    }
-
-    // Car Transmission
-    else if (title === "Transmission") {
-      if (isChecked) dispatch(setCarTransmission([...carTransmission, value]));
-      else dispatch(setCarTransmission(carTransmission.filter((selectedValue) => selectedValue !== value)));
-    }
-
-    // Car Transmission
-    else if (title === "Owner") {
-      if (isChecked) dispatch(setCarOwner([...carOwner, value]));
-      else dispatch(setCarOwner(carOwner.filter((selectedValue) => selectedValue !== value)));
-    }
+    updateState[title as keyof typeof updateState]?.();
   };
 
   return (

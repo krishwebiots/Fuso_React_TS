@@ -8,7 +8,7 @@ const PropertyThumbListContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView type="property" sectionClass="property-list property-thumb-section property-inner-section" gridType="list-view" gridSize={1} view="multiple" />
+      <GridView sectionClass="property-list property-thumb-section property-inner-section" gridType="list-view" gridSize={1} view="multiple" />
     </Fragment>
   );
 };

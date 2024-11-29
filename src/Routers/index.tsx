@@ -41,6 +41,10 @@ import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import PropertyWishlist from "../Pages/Property/Wishlist";
 import { RouteList } from "./RouteList";
 import Car2Grid from "../Pages/Car/Grid/Car2Grid";
+import Car2RightGrid from "../Pages/Car/Grid/Car2RightGrid";
+import Car3Grid from "../Pages/Car/Grid/Car3Grid";
+import Car3RightGrid from "../Pages/Car/Grid/Car3RightGrid";
+import CarNoSidebar from "../Pages/Car/Grid/CarNoSidebar";
 
 const Router = createBrowserRouter([
   {
@@ -101,6 +105,10 @@ const Router = createBrowserRouter([
 
       //Property-Grid
       { path: RouteList.Car.Grid.Car2Grid, element: <Car2Grid /> },
+      { path: RouteList.Car.Grid.Car2RightGrid, element: <Car2RightGrid /> },
+      { path: RouteList.Car.Grid.Car3Grid, element: <Car3Grid /> },
+      { path: RouteList.Car.Grid.Car3RightGrid, element: <Car3RightGrid /> },
+      { path: RouteList.Car.Grid.CarNoSidebar, element: <CarNoSidebar /> },
     ],
   },
 ]);

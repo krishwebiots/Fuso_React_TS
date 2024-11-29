@@ -8,7 +8,7 @@ const PropertyLoadMoreContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView type={"property"} gridSize={3} scrollType="load_more" carShow={9} />
+      <GridView gridSize={3} scrollType="load_more" carShow={9} />
     </Fragment>
   );
 };

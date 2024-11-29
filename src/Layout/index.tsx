@@ -1,7 +1,7 @@
 import Aos from "aos";
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { PathSettings } from "../Data/Layout/Layout";
+import { PathSettings, SearchModalData } from "../Data/Layout/Layout";
 import { SetFavicon } from "../Utils/SetFavicon";
 import Customizer from "./Customizer";
 import FooterDemo1 from "./Footer/FooterDemo1";
@@ -40,7 +40,7 @@ const Layout = () => {
       {isJobOrProperty ? <FooterDemo2 part={firstPart} /> : <FooterDemo1 part={firstPart} />}
       <TapTop part={firstPart} />
       <Customizer part={firstPart} />
-      <SearchModal type="property" />
+      <SearchModal type={SearchModalData[firstPart] || SearchModalData.car} />
     </div>
   );
 };

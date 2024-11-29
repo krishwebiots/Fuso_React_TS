@@ -12,7 +12,7 @@ const initialState: FilterSliceType = {
   popular: null,
   minAndMaxPrice: [],
   carBrandModel: [],
-  budgetStatus: [40000, 300000],
+  budgetStatus: [50000, 400000],
   carCategories: "",
   carFuelType: [],
   carModalYear: null,
@@ -20,7 +20,7 @@ const initialState: FilterSliceType = {
   carColor: [],
   carTransmission: [],
   carOwner: [],
-  carKilometers: [10000, 30000],
+  carKilometers: [10000, 45000],
   minAndMaxKilometers: [],
 };
 
@@ -38,13 +38,13 @@ const FilterSlice = createSlice({
       state.amenities = action.payload;
     },
     setSquareFeetStatus: (state, action) => {
-      action.payload ? (state.squareFeetStatus = [...action.payload]) : state.squareFeetStatus.splice(0, state.squareFeetStatus.length);
+      state.squareFeetStatus = action.payload;
     },
     setyearBuiltStatus: (state, action) => {
-      action.payload ? (state.yearBuiltStatus = [...action.payload]) : state.yearBuiltStatus.splice(0, state.yearBuiltStatus.length);
+      state.yearBuiltStatus = action.payload;
     },
     setPriceStatus: (state, action) => {
-      action.payload ? (state.priceStatus = [...action.payload]) : state.priceStatus.splice(0, state.priceStatus.length);
+      state.priceStatus = action.payload;
     },
     setSortBy: (state, action) => {
       state.sortBy = action.payload;
@@ -52,14 +52,14 @@ const FilterSlice = createSlice({
     setPopular: (state, action) => {
       state.popular = action.payload;
     },
+    setMinAndMaxPrice: (state, action) => {
+      state.minAndMaxPrice = action.payload;
+    },
     setCarBrandModel: (state, action) => {
       state.carBrandModel = action.payload;
     },
-    setMinAndMaxPrice: (state, action) => {
-      action.payload ? (state.minAndMaxPrice = [...action.payload]) : state.minAndMaxPrice.splice(0, state.minAndMaxPrice.length);
-    },
     setBudgetStatus: (state, action) => {
-      action.payload ? (state.budgetStatus = [...action.payload]) : state.budgetStatus.splice(0, state.budgetStatus.length);
+      state.budgetStatus = action.payload;
     },
     setCarCategories: (state, action) => {
       state.carCategories = action.payload;
@@ -83,10 +83,10 @@ const FilterSlice = createSlice({
       state.carOwner = action.payload;
     },
     setCarKilometers: (state, action) => {
-      action.payload ? (state.carKilometers = [...action.payload]) : state.carKilometers.splice(0, state.carKilometers.length);
+      state.carKilometers = action.payload;
     },
     setMinAndMaxKilometers: (state, action) => {
-      action.payload ? (state.minAndMaxKilometers = [...action.payload]) : state.minAndMaxKilometers.splice(0, state.minAndMaxKilometers.length);
+      state.minAndMaxKilometers = action.payload;
     },
   },
 });

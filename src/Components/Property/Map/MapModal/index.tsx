@@ -9,7 +9,7 @@ const MapModalContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView type={"property"} gridSize={3} modalType="map-modal" carShow={9} />
+      <GridView gridSize={3} modalType="map-modal" carShow={9} />
       <FilterMapModal type="property" />
     </Fragment>
   );

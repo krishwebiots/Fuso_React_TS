@@ -8,7 +8,7 @@ const PropertyLeftListContainer = () => {
     <Fragment>
       <PropertyBreadcrumb />
       <SortBy />
-      <GridView type="property" sectionClass="property-list property-inner-section" gridType="list-view" gridSize={1} />
+      <GridView sectionClass="property-list property-inner-section" gridType="list-view" gridSize={1} />
     </Fragment>
   );
 };
