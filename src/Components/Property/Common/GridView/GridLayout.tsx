@@ -22,6 +22,14 @@ const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view,
   const Product = type === "property" ? UseFilterProperty({ value }) : type === "car" ? UseFilterCar({ value }) : [];
   const totalPages = Math.ceil(Product?.length / cardToShow);
   const showProduct = scrollType === "infinite" ? Product.slice(0, cardToShow * currentPage) : Product?.slice(cardToShow * currentPage - cardToShow, cardToShow * currentPage);
+  const RowBoxClass = gridType === "list-view" ? (type === "car" ? "car-list-section ratio_65" : "ratio3_2") : view === "multiple" ? "ratio_65" : "ratio_landscape";
+  const ColBoxClass = gridSize === 3 ? "col-lg-4 col-sm-6" : gridSize === 4 ? "col-xxl-3 col-lg-4" : gridSize === 1 ? "col-xl-12" : "col-sm-6";
+
+  const fetchMoreData = () => {
+    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+  };
+
+  const InfiniteScrollClass = { dataLength: showProduct.length, next: fetchMoreData, hasMore: currentPage < totalPages, className: "row", loader: <h4>Loading...</h4> };
 
   useEffect(() => {
     if (swiperRef.current) swiperRef.current.init();
@@ -30,41 +38,47 @@ const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view,
     dispatch(setTotalProduct(Product.length || 0));
   }, [Product.length, dispatch]);
 
-  const fetchMoreData = () => {
-    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
-  };
-
   return (
     <div className={`${map ? "col-xl-6" : ""} ${scrollType === "load_more" ? "featured-wrapper" : ""}`}>
-      <Row className={`gy-4 ${gridType === "list-view" || "image" ? "ratio3_2" : view === "multiple" ? "ratio_65" : "ratio_landscape"}`}>
+      <Row className={`gy-4 ${RowBoxClass}`}>
         {type === "property" &&
           (scrollType === "infinite" ? (
-            <InfiniteScroll dataLength={showProduct.length} next={fetchMoreData} hasMore={currentPage < totalPages} className="row" loader={<h4>Loading...</h4>}>
+            <InfiniteScroll {...InfiniteScrollClass}>
               {showProduct.map((data, index) => (
-                <Col className={gridSize === 3 ? "col-lg-4 col-sm-6" : gridSize === 4 ? "col-xxl-3 col-lg-4" : gridSize === 1 ? "col-xl-12" : "col-sm-6"} key={data.id || index}>
+                <Col className={ColBoxClass} key={data.id || index}>
                   <PropertyProductBox1 data={data} view={view} />
                 </Col>
               ))}
             </InfiniteScroll>
           ) : (
             showProduct.map((data, index) => (
-              <Col className={gridSize === 3 ? "col-lg-4 col-sm-6" : gridSize === 4 ? "col-xxl-3 col-lg-4" : gridSize === 1 ? "col-xl-12" : "col-sm-6"} key={data.id || index}>
+              <Col className={ColBoxClass} key={data.id || index}>
                 <PropertyProductBox1 data={data} view={view} />
               </Col>
             ))
           ))}
 
         {type === "car" &&
-          showProduct.map((data, index) => (
-            <Col className={gridSize === 3 ? "col-lg-4 col-sm-6" : gridSize === 4 ? "col-xxl-3 col-lg-4" : gridSize === 1 ? "col-xl-12" : "col-sm-6"} key={data.id || index}>
-              <CarProductBox1 data={data} view={view} />
-            </Col>
+          (scrollType === "infinite" ? (
+            <InfiniteScroll {...InfiniteScrollClass}>
+              {showProduct.map((data, index) => (
+                <Col className={ColBoxClass} key={data.id || index}>
+                  <CarProductBox1 data={data} view={view} />
+                </Col>
+              ))}
+            </InfiniteScroll>
+          ) : (
+            showProduct.map((data, index) => (
+              <Col className={ColBoxClass} key={data.id || index}>
+                <CarProductBox1 data={data} view={view} />
+              </Col>
+            ))
           ))}
       </Row>
 
       {showProduct.length !== 0 ? (
         scrollType === "load_more" ? (
-          showProduct.length >= cardToShow ? (
+          currentPage < totalPages ? (
             <Button className="btn-solid load-more" onClick={() => dispatch(setCardToShow(cardToShow + 3))}>
               {LoadMore}
             </Button>

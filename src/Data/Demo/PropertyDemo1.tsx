@@ -1,8 +1,8 @@
-import { Autoplay, EffectFade } from "swiper/modules";
+import { Autoplay, EffectFade, FreeMode } from "swiper/modules";
 
 export const PropertyHomeSliderSetting = {
   effect: "fade",
-  modules: [EffectFade, Autoplay],
+  modules: [EffectFade, Autoplay, FreeMode],
   freeMode: true,
   speed: 2000,
   autoplay: { delay: 1500, disableOnInteraction: false },

@@ -1,5 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout";
+import Car2Grid from "../Pages/Car/Grid/Car2Grid";
+import Car2RightGrid from "../Pages/Car/Grid/Car2RightGrid";
+import Car3Grid from "../Pages/Car/Grid/Car3Grid";
+import Car3RightGrid from "../Pages/Car/Grid/Car3RightGrid";
+import CarNoSidebar from "../Pages/Car/Grid/CarNoSidebar";
+import CarLeftList from "../Pages/Car/Listing/CarLeftList";
+import CarRightList from "../Pages/Car/Listing/CarRightList";
+import CarInfiniteScroll from "../Pages/Car/Other/CarInfiniteScroll";
+import CarLeftDrawer from "../Pages/Car/Other/CarLeftDrawer";
+import CarLoadMore from "../Pages/Car/Other/CarLoadMore";
+import CarRightDrawer from "../Pages/Car/Other/CarRightDrawer";
+import CarTopCategory from "../Pages/Car/Other/CarTopCategory";
+import CarWithoutSlider from "../Pages/Car/Other/CarWithoutSlider";
 import CarDemo1 from "../Pages/Home/CarDemo1";
 import CarDemo2 from "../Pages/Home/CarDemo2";
 import JobDemo1 from "../Pages/Home/JobDemo1";
@@ -40,11 +53,11 @@ import PropertyParallax from "../Pages/Property/Other/PropertyParallax";
 import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import PropertyWishlist from "../Pages/Property/Wishlist";
 import { RouteList } from "./RouteList";
-import Car2Grid from "../Pages/Car/Grid/Car2Grid";
-import Car2RightGrid from "../Pages/Car/Grid/Car2RightGrid";
-import Car3Grid from "../Pages/Car/Grid/Car3Grid";
-import Car3RightGrid from "../Pages/Car/Grid/Car3RightGrid";
-import CarNoSidebar from "../Pages/Car/Grid/CarNoSidebar";
+import CarTopFilter from "../Pages/Car/Other/CarTopFilter";
+import CarClassic from "../Pages/Car/Detail/CarClassic";
+import CarLayout1 from "../Pages/Car/Detail/CarLayout1";
+import CarLayout2 from "../Pages/Car/Detail/CarLayout2";
+import CarSlider from "../Pages/Car/Detail/CarSlider";
 
 const Router = createBrowserRouter([
   {
@@ -103,12 +116,31 @@ const Router = createBrowserRouter([
       //Property-Wishlist
       { path: RouteList.Property.PropertyWishlist, element: <PropertyWishlist /> },
 
-      //Property-Grid
+      //Car-Grid
       { path: RouteList.Car.Grid.Car2Grid, element: <Car2Grid /> },
       { path: RouteList.Car.Grid.Car2RightGrid, element: <Car2RightGrid /> },
       { path: RouteList.Car.Grid.Car3Grid, element: <Car3Grid /> },
       { path: RouteList.Car.Grid.Car3RightGrid, element: <Car3RightGrid /> },
       { path: RouteList.Car.Grid.CarNoSidebar, element: <CarNoSidebar /> },
+
+      //Car-Listing
+      { path: RouteList.Car.Listing.CarLeftList, element: <CarLeftList /> },
+      { path: RouteList.Car.Listing.CarRightList, element: <CarRightList /> },
+
+      //Car-Other
+      { path: RouteList.Car.Other.CarLeftDrawer, element: <CarLeftDrawer /> },
+      { path: RouteList.Car.Other.CarRightDrawer, element: <CarRightDrawer /> },
+      { path: RouteList.Car.Other.CarInfiniteScroll, element: <CarInfiniteScroll /> },
+      { path: RouteList.Car.Other.CarLoadMore, element: <CarLoadMore /> },
+      { path: RouteList.Car.Other.CarTopCategory, element: <CarTopCategory /> },
+      { path: RouteList.Car.Other.CarTopFilter, element: <CarTopFilter /> },
+      { path: RouteList.Car.Other.CarWithoutSlider, element: <CarWithoutSlider /> },
+
+      //Car-Detail
+      { path: RouteList.Car.Detail.CarClassic, element: <CarClassic /> },
+      { path: RouteList.Car.Detail.CarLayout1, element: <CarLayout1 /> },
+      { path: RouteList.Car.Detail.CarLayout2, element: <CarLayout2 /> },
+      { path: RouteList.Car.Detail.CarSlider, element: <CarSlider /> },
     ],
   },
 ]);

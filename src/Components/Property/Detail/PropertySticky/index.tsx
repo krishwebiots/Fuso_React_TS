@@ -1,16 +1,9 @@
-import { Fragment, useEffect } from "react";
-import { useAppDispatch } from "../../../../ReduxToolkit/Hooks";
-import { fetchProductApiData } from "../../../../ReduxToolkit/Reducers/ProductReducers";
+import { Fragment } from "react";
 import { RouteList } from "../../../../Routers/RouteList";
 import Breadcrumbs from "../../../CommonComponents/Breadcrumbs";
-import PropertyDetail from "../../Common/PropertyDetail";
+import PropertyDetail from "../../Common/ProductDetail/PropertyDetail";
 
 const PropertyStickyContainer = () => {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(fetchProductApiData());
-  }, [dispatch]);
   return (
     <Fragment>
       <Breadcrumbs title="Property Details" url={RouteList.Home.PropertyDemo1} />

@@ -1,6 +1,8 @@
+import { FreeMode } from "swiper/modules";
+
 export const Brands = [
   {
-    id: "1",
+    id: 1,
     name: "Rolls Royce",
     value: "rolls_royce",
     models: [
@@ -15,7 +17,7 @@ export const Brands = [
     ],
   },
   {
-    id: "2",
+    id: 2,
     name: "Bentley",
     value: "bentley",
     models: [
@@ -28,7 +30,7 @@ export const Brands = [
     ],
   },
   {
-    id: "3",
+    id: 3,
     name: "Aston Martin",
     value: "aston_martin",
     models: [
@@ -43,7 +45,7 @@ export const Brands = [
     ],
   },
   {
-    id: "4",
+    id: 4,
     name: "Maserati",
     value: "maserati",
     models: [
@@ -55,7 +57,7 @@ export const Brands = [
     ],
   },
   {
-    id: "5",
+    id: 5,
     name: "Bugatti",
     value: "bugatti",
     models: [
@@ -67,7 +69,7 @@ export const Brands = [
     ],
   },
   {
-    id: "6",
+    id: 6,
     name: "Lamborghini",
     value: "lamborghini",
     models: [
@@ -80,7 +82,7 @@ export const Brands = [
     ],
   },
   {
-    id: "7",
+    id: 7,
     name: "Ferrari",
     value: "ferrari",
     models: [
@@ -93,7 +95,7 @@ export const Brands = [
     ],
   },
   {
-    id: "8",
+    id: 8,
     name: "Cadillac",
     value: "cadillac",
     models: [
@@ -106,7 +108,7 @@ export const Brands = [
     ],
   },
   {
-    id: "9",
+    id: 9,
     name: "Lexus",
     value: "lexus",
     models: [
@@ -116,7 +118,7 @@ export const Brands = [
     ],
   },
   {
-    id: "10",
+    id: 10,
     name: "BMW",
     value: "bmw",
     models: [
@@ -128,7 +130,7 @@ export const Brands = [
     ],
   },
   {
-    id: "11",
+    id: 11,
     name: "Mercedes",
     value: "mercedes",
     models: [
@@ -189,3 +191,101 @@ export const OwnerData = [
   { id: "Owner-3", label: "3st Owner", type: "3" },
   { id: "Owner-4", label: "4st Owner", type: "4" },
 ];
+
+export const CarCategoryData = ["Sedan", "Jeep", "SUV", "Hatchback", "Truck", "Electric", "Convertible", "Coupe"];
+
+export const CategoryInnerSlider = {
+  slidesPerView: 6,
+  freeMode: true,
+  modules: [FreeMode],
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+    },
+    576: {
+      slidesPerView: 3,
+    },
+    768: {
+      slidesPerView: 4,
+    },
+    992: {
+      slidesPerView: 5,
+    },
+    1200: {
+      slidesPerView: 6,
+    },
+  },
+};
+
+export const CarTitleListData = [
+  { icon: "calendar", text: "2021" },
+  { icon: "gas", text: "250 miles" },
+  { icon: "plan", text: "Manual" },
+  { icon: "tachometer", text: "Petrol" },
+];
+
+export const CarOverviewData = [
+  { id: "1", label: "Register Year", value: "Jun 2018" },
+  { id: "2", label: "Body", value: "Kia" },
+  { id: "3", label: "Production Year", value: "2020" },
+  { id: "4", label: "Transmission", value: "Manual" },
+  { id: "5", label: "Engine Size", value: "6" },
+  { id: "6", label: "Fuel Type", value: "Petrol" },
+  { id: "7", label: "Color", value: "White, Blue, Red" },
+  { id: "8", label: "VIN", value: "FCB123792" },
+  { id: "9", label: "Seats", value: "7 Seats" },
+  { id: "10", label: "Insurance Validity", value: "Third Party" },
+  { id: "11", label: "Drive Type", value: "RWD – Rear-wheel drive" },
+  { id: "12", label: "Mileage", value: "52201" },
+  { id: "13", label: "Ownership", value: "Second Owner" },
+  { id: "14", label: "Spare Key", value: "Yes" },
+];
+
+export const CarFeatureData = [
+  {
+    title: "Interior",
+    features: ["Air Conditioner", "Fabric Upholstery", "Heater", "Leather Seats", "Digital Clock", "Tachometer", "Touchscreen Display"],
+  },
+  {
+    title: "Exterior",
+    features: ["Rain Sensing Wiper", "Tinted Glass", "Integrated Antenna", "Sun Roof", "Moon Roof", "Chrome Grille", "Alloy Wheels"],
+  },
+  {
+    title: "Safety",
+    features: ["Child Safety Locks", "Centeral Locking", "Power Door Locks", "Driver Air Bag", "Keyless Entry", "Crash Sensor", "Rear Camera"],
+  },
+];
+
+export const FaqItemsData = [
+  {
+    id: "1",
+    question: "How often should I get my car serviced?",
+    answer: "Experiences might differ even within the same dealership chain, so it's always a good idea to do your homework and read reviews pertaining to the dealership you're interested in.",
+  },
+  {
+    id: "2",
+    question: "How often should I change my car's oil?",
+    answer: "Experiences might differ even within the same dealership chain, so it's always a good idea to do your homework and read reviews pertaining to the dealership you're interested in.",
+  },
+  {
+    id: "3",
+    question: "What type of fuel should I use for my car?",
+    answer: "Experiences might differ even within the same dealership chain, so it's always a good idea to do your homework and read reviews pertaining to the dealership you're interested in.",
+  },
+  {
+    id: "4I",
+    question: "What is the recommended tire pressure for my car?",
+    answer: "Experiences might differ even within the same dealership chain, so it's always a good idea to do your homework and read reviews pertaining to the dealership you're interested in.",
+  },
+];
+
+export const ReviewProgressData = [
+  { title: "Comfort", rating: "Perfect", progress: 75 },
+  { title: "Exterior Styling", rating: "Perfect", progress: 75 },
+  { title: "Interior Design", rating: "Good", progress: 50 },
+  { title: "Performance", rating: "Excellent", progress: 100 },
+  { title: "Value For The Money", rating: "Perfect", progress: 75 },
+  { title: "Reliability", rating: "Good", progress: 50 },
+];
+
+export const AddReviewListData = ["Comfort", "Interior Design", "Value For The Money", "Exterior Styling", "Performance", "Reliability"];

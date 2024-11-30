@@ -3,11 +3,11 @@ import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap
 import { Href } from "../../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
 import { setPopular, setSortBy } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
-import { setOpenFilterSidebar } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setCardToShow, setOpenFilterSidebar } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
 import { TopPanelType } from "../../../../../Types/ProductType";
 import { FilterTabsListData } from "../../../../../Data/Property";
 
-const FilterTags: FC<TopPanelType> = ({ topFilter, side, mainClass, type }) => {
+const FilterTags: FC<TopPanelType> = ({ topFilterSidebar, side, mainClass, type }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useAppDispatch();
   const { sortBy } = useAppSelector((state) => state.filter);
@@ -15,6 +15,7 @@ const FilterTags: FC<TopPanelType> = ({ topFilter, side, mainClass, type }) => {
 
   const handleSortBy = (sortOption: string) => {
     if (sortOption === "Most Popular") dispatch(setPopular(sortOption));
+    if (sortOption === "24 Product par page") dispatch(setCardToShow(24));
     dispatch(setSortBy(sortOption));
     setDropdownOpen(false);
   };
@@ -42,7 +43,7 @@ const FilterTags: FC<TopPanelType> = ({ topFilter, side, mainClass, type }) => {
       {type === "property" ? (
         <Fragment>
           {renderDropdown(0, 3)}
-          {!topFilter && (
+          {!topFilterSidebar && (
             <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
               Filter
             </a>
@@ -52,9 +53,9 @@ const FilterTags: FC<TopPanelType> = ({ topFilter, side, mainClass, type }) => {
         <div className="category-filter">
           <div className="car-sortby-flex">
             <span>Sort By :</span>
-            {renderDropdown(3, 7)}
+            {renderDropdown(3, 8)}
           </div>
-          {!topFilter && (
+          {!topFilterSidebar && (
             <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
               Filter
             </a>

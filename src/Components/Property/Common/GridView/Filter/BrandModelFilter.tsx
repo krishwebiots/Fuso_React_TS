@@ -1,3 +1,4 @@
+import { SearchNormal1 } from "iconsax-react";
 import { FC, useState } from "react";
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem, Button } from "reactstrap";
 import { Href } from "../../../../../Constants/Constants";
@@ -14,25 +15,38 @@ const BrandModelFilter: FC<{ id: string }> = ({ id }) => {
   const toggle = (id: string) => setOpenItems((openItems) => (openItems === id ? "" : id));
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    const isChecked = event.target.checked;
-    if (isChecked) dispatch(setCarBrandModel([...carBrandModel, value]));
-    else dispatch(setCarBrandModel(carBrandModel.filter((selectedValue) => selectedValue !== value)));
+    const { value, checked } = event.target;
+    let updatedPropertyType = [...carBrandModel];
+    const brand = Brands.find((item) => item.value === value);
+
+    if (brand) {
+      if (checked) updatedPropertyType = [...carBrandModel, brand.value, ...brand.models.map((model) => model.value)];
+      else updatedPropertyType = updatedPropertyType.filter((selectedValue) => selectedValue !== brand.value && !brand.models.some((model) => model.value === selectedValue));
+    } else {
+      if (checked) updatedPropertyType.push(value);
+      else updatedPropertyType = updatedPropertyType.filter((selectedValue) => selectedValue !== value);
+      Brands.forEach((item) => {
+        const allModelsSelected = item.models.every((model) => updatedPropertyType.includes(model.value));
+        if (allModelsSelected && !updatedPropertyType.includes(item.value)) updatedPropertyType.push(item.value);
+        else if (!allModelsSelected && updatedPropertyType.includes(item.value)) updatedPropertyType = updatedPropertyType.filter((selectedValue) => selectedValue !== item.value);
+      });
+    }
+    dispatch(setCarBrandModel(updatedPropertyType));
   };
 
   const renderBrands = (brandsToRender: typeof Brands) =>
     brandsToRender.map((brand, index) => (
       <div className="main-choose-item" key={index}>
         <div className="choose-item">
-          <input type="checkbox" className="main-check" id={`main-check-${brand.id}`} />
-          <label className="label-flex" htmlFor={`main-check-${brand.id}`}>
+          <input type="checkbox" className="main-check" id={brand.name} value={brand.value} checked={carBrandModel?.includes(brand.value)} onChange={handleCheckboxChange} />
+          <label className="label-flex" htmlFor={brand.name}>
             <span>{brand.name}</span>
           </label>
-          <Button className={`accordion-button ${openItems !== brand.id ? "collapsed" : ""}`} id={`toggler${brand.id}`} onClick={() => toggle(brand.id)} />
+          <Button className={`accordion-button ${openItems !== brand.id.toString() ? "collapsed" : ""}`} id={`toggler${brand.id}`} onClick={() => toggle(brand.id.toString())} />
         </div>
         <Accordion toggle={toggle} open={openItems}>
           <AccordionItem>
-            <AccordionBody accordionId={brand.id}>
+            <AccordionBody accordionId={brand.id.toString()}>
               <ul className="model-list">
                 {brand.models.map((model, index) => (
                   <li key={index}>
@@ -55,7 +69,7 @@ const BrandModelFilter: FC<{ id: string }> = ({ id }) => {
       <AccordionBody accordionId={id}>
         <div className="more-list" style={showMore ? { maxHeight: "none" } : {}}>
           <div className="search-input">
-            <i className="iconsax" data-icon="search-normal-2" />
+            <SearchNormal1 className="iconsax" />
             <input type="search" className="form-control" placeholder="Search Brand or Model" />
           </div>
           <span className="inner-title">Popular</span>

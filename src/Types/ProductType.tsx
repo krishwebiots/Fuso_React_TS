@@ -67,6 +67,7 @@ export interface GridViewType {
   gridType?: string;
   view?: string;
   topFilter?: boolean;
+  topFilterSidebar?: boolean;
   offcanvasSide?: string;
   scrollType?: string;
   map?: boolean;
@@ -74,6 +75,7 @@ export interface GridViewType {
   modalType?: string;
   filterTagsClass?: string;
   carShow?: number;
+  topCategory?: boolean;
 }
 
 export interface GridLayoutType {
@@ -93,6 +95,7 @@ export interface FilterProductsType {
 export interface TopPanelType {
   side?: string;
   topFilter?: boolean;
+  topFilterSidebar?: boolean;
   mainClass?: string;
   type: string;
 }
@@ -168,8 +171,22 @@ export interface PropertyDetailType {
   type?: string;
   mainClass?: string;
   thumb?: boolean;
+  multiple?: boolean;
 }
 
 export interface DetailBodyItemType {
   label?: boolean;
+  type?: string;
+}
+
+export interface CarDetailType {
+  detailImages?: boolean;
+  type?: string;
+}
+
+export interface CarBreadcrumbType {
+  mailClass?: string;
+  multiple?: boolean;
+  type?: string;
+  detailImages?: boolean;
 }

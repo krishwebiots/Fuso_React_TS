@@ -38,7 +38,7 @@ const UseFilterCar = ({ value }: FilterProductsType) => {
 
     const params = new URLSearchParams(searchParams);
 
-    ["brand-model", "budget", "categories", "fuel", "modal", "seats", "color", "transmission", "owner", "kilometers"].forEach((name) => params.delete(name));
+    ["brand-model", "categories", "fuel", "modal", "seats", "color", "transmission", "owner"].forEach((name) => params.delete(name));
 
     if (carBrandModel.length !== 0) params.set("brand-model", carBrandModel.join(","));
     if (budgetStatus) params.set("budget", `${budgetStatus[0]}-${budgetStatus[1]}`);

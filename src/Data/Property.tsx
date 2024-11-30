@@ -1,13 +1,13 @@
-import { Autoplay, Navigation, Thumbs } from "swiper/modules";
+import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { AmenitiesTitle, FloorPlansTitle, LocationTitle, OverviewTitle, PropertyDescriptionTitle, ReviewsTitle, ScheduleTourTitle, VideoTitle } from "../Constants/Constants";
-import Overview from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Overview";
-import Description from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Description";
-import FloorPlans from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/FloorPlans";
-import Video from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Video";
-import Location from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Location";
-import Reviews from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Reviews";
-import ScheduleTour from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/ScheduleTour";
-import Amenities from "../Components/Property/Common/PropertyDetail/DetailBody/DetailBodyItem/Amenities";
+import Overview from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Overview";
+import Description from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Description";
+import FloorPlans from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/FloorPlans";
+import Video from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Video";
+import Location from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Location";
+import Reviews from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Reviews";
+import ScheduleTour from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/ScheduleTour";
+import Amenities from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Amenities";
 
 export const PropertyTypeData = [
   { id: "status-one", label: "All", type: "all" },
@@ -63,7 +63,7 @@ export const SliderNav = {
   spaceBetween: 5,
   freeMode: true,
   watchSlidesProgress: true,
-  modules: [Thumbs],
+  modules: [Thumbs, FreeMode],
 };
 
 export const DetailPropertySlider = {
@@ -83,6 +83,38 @@ export const DetailPropertySlider = {
       spaceBetween: 20,
     },
     1200: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
+};
+
+export const DetailCarSlider = {
+  slidesPerView: 4,
+  spaceBetween: 30,
+  modules: [Navigation],
+  navigation: {
+    nextEl: ".car-related-next",
+    prevEl: ".car-related-prev",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 5,
+    },
+    368: {
+      slidesPerView: 1.5,
+      spaceBetween: 5,
+    },
+    470: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    991: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1400: {
       slidesPerView: 4,
       spaceBetween: 30,
     },
@@ -193,6 +225,20 @@ export const ReviewsData = [
     likes: 8,
     stars: 4,
     text: "Vasant Kunj Farms is a super prime Farm house community located closest to South Delhi. Many industrialists have their farm houses here. Located close to Gurgaon and other prime areas of South Delhi and Airport.",
+  },
+  {
+    img: "car/person/1.jpg",
+    name: "Sarah J.",
+    date: "2 Months Ago",
+    stars: 4.5,
+    text: "I had an amazing experience buying my SUV from fuso. The staff was helpful and knowing, making the process smooth and satisfying. I'm overjoyed.",
+  },
+  {
+    img: "car/person/2.jpg",
+    name: "David K.",
+    date: "4 Months Ago",
+    stars: 4.5,
+    text: "The service at fuso was top-notch from start to finish. I appreciated the transparency and honesty. I love my new sedan and will return for future buy.",
   },
 ];
 
@@ -319,4 +365,4 @@ export const breadcrumbThumbs = {
   modules: [Thumbs],
 };
 
-export const FilterTabsListData = ["Most Popular", "User Rating (High to Low)", "Price (High to Low)", "$ High To Low", "Alphabetical A-Z", "Alphabetical Z-A", "Most Popular"];
+export const FilterTabsListData = ["Most Popular", "User Rating (High to Low)", "Price (High to Low)", "$ High To Low", "Alphabetical A-Z", "Alphabetical Z-A", "Most Popular", "24 Product par page"];

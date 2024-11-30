@@ -7,7 +7,7 @@ const CarNoSidebarContainer = () => {
   return (
     <Fragment>
       <Breadcrumbs title="Car Shop" url={RouteList.Home.CarDemo1} mainClass="car-breadcrumbs-section" />
-      <GridView type="car" sectionClass="car-shop-section car-product-section" filterTagsClass="car-list-header" side="no" gridSize={3} carShow={9} topFilter />
+      <GridView type="car" sectionClass="car-shop-section car-product-section" filterTagsClass="car-list-header" side="no" gridSize={3} carShow={9} topFilterSidebar />
     </Fragment>
   );
 };

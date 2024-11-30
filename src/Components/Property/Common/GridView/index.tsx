@@ -8,20 +8,24 @@ import FilterOffcanvas from "../../../CommonComponents/FilterOffcanvas";
 import FilterSidebar from "./Filter";
 import FilterTags from "./Filter/FilterTags";
 import GridLayout from "./GridLayout";
+import Category from "./Category";
+import TopFilter from "./Filter/TopFilter";
 
-const GridView: FC<GridViewType> = ({ type, side, gridSize, sectionClass, gridType, view, topFilter, offcanvasSide, scrollType, map, mapSide, modalType, filterTagsClass, carShow }) => {
+const GridView: FC<GridViewType> = ({ type, side, gridSize, sectionClass, gridType, view, topFilterSidebar, offcanvasSide, scrollType, map, mapSide, modalType, filterTagsClass, carShow, topCategory, topFilter }) => {
   const { productItem } = useAppSelector((state) => state.product);
+  const { cardToShow } = useAppSelector((state) => state.sidebar);
   const dispatch = useAppDispatch();
 
   const showProduct = productItem.filter((item) => item.type === type);
 
   useEffect(() => {
     dispatch(fetchProductApiData());
-    dispatch(setCardToShow(carShow || 6));
-  }, [carShow, dispatch]);
+    dispatch(setCardToShow(carShow || cardToShow));
+  }, [carShow, cardToShow, dispatch]);
   return (
     <Fragment>
       <section className={`section-t-md-space section-b-md-space ${sectionClass ? sectionClass : ""}`}>
+        {topCategory && <Category />}
         <div className={gridSize === 4 ? "custom-container" : "container"}>
           <Row>
             {side !== "no" && (
@@ -30,7 +34,8 @@ const GridView: FC<GridViewType> = ({ type, side, gridSize, sectionClass, gridTy
               </Col>
             )}
             <div className={side === "no" ? "col-lg-12" : "col-xl-9"}>
-              <FilterTags side={side} topFilter={topFilter} mainClass={filterTagsClass} type={type} />
+              {topFilter && type === "car" && <TopFilter />}
+              <FilterTags side={side} topFilterSidebar={topFilterSidebar} mainClass={filterTagsClass} type={type} />
               {map ? (
                 <Row className="gy-4">
                   <Col xl="6" className={`map-section ${mapSide === "right" ? "order-1" : ""}`}>
