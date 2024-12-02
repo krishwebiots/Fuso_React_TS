@@ -12,7 +12,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="detail-box">
+    <div className="detail-box" id="faq">
       <h3 className="car-title">{CarFAQTitle}</h3>
       <div className="faq-box">
         <Accordion open={openItems} toggle={toggle}>

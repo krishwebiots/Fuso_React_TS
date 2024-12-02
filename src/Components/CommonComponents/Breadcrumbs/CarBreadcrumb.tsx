@@ -1,67 +1,57 @@
-import { Container } from "reactstrap";
-import { Href } from "../../../Constants/Constants";
-import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
 import { FC, Fragment, useState } from "react";
-import { setShareModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
-import ShareModal from "../../Property/Common/ProductDetail/MainDetail/ShareModal";
-import { CarTitleListData } from "../../../Data/Car";
-import SvgIcon from "../../../Utils/SvgIcon";
-import DetailImages from "../../Property/Common/ProductDetail/DetailImages";
+import { Container } from "reactstrap";
+import { Swiper as SwiperType } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Href } from "../../../Constants/Constants";
+import { BackSlider, FrontSlider } from "../../../Data/Car";
 import { CarBreadcrumbType } from "../../../Types/ProductType";
+import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
+import RatioImage from "../../../Utils/RatioImage";
+import CarImageSlider from "../../Home/Common/CarImageSlider";
+import DetailImages from "../../Property/Common/ProductDetail/DetailImages";
+import MainDetail from "../../Property/Common/ProductDetail/MainDetail";
 
-const CarBreadcrumb: FC<CarBreadcrumbType> = ({ detailImages, mailClass, multiple, type }) => {
-  const dispatch = useAppDispatch();
-  const [isSave, setSave] = useState(false);
+const CarBreadcrumb: FC<CarBreadcrumbType> = ({ detailImages, mailClass, multiple, type, modernSlider }) => {
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+
   return (
     <Fragment>
-      <div className={`car-breadcrumbs-section ${mailClass ? mailClass : ""}`}>
-        <Container>
-          {!detailImages && (
-            <div className="car-detail-image">
-              <DetailImages type={type} multiple={multiple} />
-            </div>
-          )}
-          <div className="car-top-title">
-            <div className="car-title-flex">
-              <div className="car-title mb-0">
-                <h3>Velocity Racer Pro</h3>
-                <p>Shifts gears automatically based on the car's speed and acceleration.</p>
-                <ul className="car-title-list">
-                  {CarTitleListData.map((item, index) => (
-                    <li key={index}>
-                      <SvgIcon iconId={`car/sprite/detail.svg#${item.icon}`} />
-                      <span>{item.text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="price-box">
-                <ul className="detail-social-list">
-                  <li>
-                    <a href={Href} onClick={() => dispatch(setShareModal())}>
-                      <i className="ri-share-line" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href={Href} className="print-button" onClick={() => window.print()}>
-                      <i className="ri-printer-line" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href={Href} className={`add-to-fav ${isSave ? "clicked" : ""}`} onClick={() => setSave(!isSave)}>
-                      <i className={`ri-bookmark-${isSave ? "fill" : "line"} save-${isSave ? "icon" : "outline"}`} />
-                    </a>
-                  </li>
-                </ul>
-                <h4>
-                  $25,200 <span>/ EMI - ₹ 1.58L</span>
-                </h4>
-              </div>
-            </div>
+      {type === "car_thumbnail_slider" ? (
+        <div className="style-breadcrumbs-4">
+          <div className="car-detail-image">
+            <Swiper className="back-slider ratio_45" {...BackSlider} thumbs={{ swiper: thumbsSwiper }}>
+              {dynamicNumber(8).map((item, index) => (
+                <SwiperSlide key={index}>
+                  <a href={Href} className="back-img">
+                    <RatioImage src={dynamicImage(`car/black-images/${item}.jpg`)} alt="dm-1" className="img-fluid bg-img" />
+                  </a>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <Swiper className="front-slider" {...FrontSlider} direction="vertical" onSwiper={setThumbsSwiper}>
+              {dynamicNumber(8).map((item, index) => (
+                <SwiperSlide key={index}>
+                  <a href={Href} className="front-img">
+                    <Image src={dynamicImage(`car/black-images/${item}.jpg`)} alt="dm-1" className="img-fluid" />
+                  </a>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
-        </Container>
-      </div>
-      <ShareModal />
+        </div>
+      ) : (
+        <div className={`car-breadcrumbs-section ${mailClass ? mailClass : ""}`}>
+          <Container>
+            {!detailImages && (
+              <div className="car-detail-image">
+                <DetailImages type={type} multiple={multiple} />
+              </div>
+            )}
+            {modernSlider && <CarImageSlider />}
+            <MainDetail type="car" />
+          </Container>
+        </div>
+      )}
     </Fragment>
   );
 };

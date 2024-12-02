@@ -17,7 +17,7 @@ const Reviews: FC<DetailBodyItemType> = ({ label, type }) => {
   return (
     <Fragment>
       {type === "car" ? (
-        <div className="detail-box">
+        <div className="detail-box" id="reviews">
           <div className="modal-btn-flex">
             <h3 className="car-title">{ReviewsTitle}</h3>
             <Button className="text-btn" color="transparent" onClick={() => dispatch(setReviewModal())}>

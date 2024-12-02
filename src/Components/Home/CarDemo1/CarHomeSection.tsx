@@ -1,7 +1,6 @@
-import Slider from "react-slick";
 import { CarRental, Href, Rental } from "../../../Constants/Constants";
-import { CarHomeSliderSettings } from "../../../Data/Demo/CarDemo1";
-import { dynamicGrf, dynamicImage, dynamicNumber, Image } from "../../../Utils";
+import { dynamicGrf, Image } from "../../../Utils";
+import CarImageSlider from "../Common/CarImageSlider";
 import SearchTabList from "../Common/SearchTabList";
 
 const CarHomeSection = () => {
@@ -12,15 +11,7 @@ const CarHomeSection = () => {
           <h3>{CarRental}</h3>
           <h1>{Rental}</h1>
         </div>
-        <div className="home-img-slider">
-          <Slider {...CarHomeSliderSettings} className="car-slider-main">
-            {dynamicNumber(3).map((item, index) => (
-              <div className="main-car-img" key={index}>
-                <Image src={dynamicImage(`car/home-img/${item}.png`)} className="img-fluid" />
-              </div>
-            ))}
-          </Slider>
-        </div>
+        <CarImageSlider />
       </div>
       <div className="property-home-tab car-home-tab">
         <div className="car-tab-flex">

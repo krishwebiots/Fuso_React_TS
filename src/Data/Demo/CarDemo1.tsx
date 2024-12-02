@@ -1,7 +1,5 @@
 import { Award, Building, Calendar1, Call, Car, Coin1, Driving, Location, SearchNormal1, Tag2, Verify, Wallet, Wallet3 } from "iconsax-react";
-import { Autoplay, Navigation } from "swiper/modules";
-import { Href } from "../../Constants/Constants";
-import { dynamicImage, Image } from "../../Utils";
+import { Autoplay, Navigation, Thumbs } from "swiper/modules";
 import { NavType } from "../../Types/HomeDemo";
 
 export const HomeTabData: NavType[] = [
@@ -185,23 +183,6 @@ export const ProductSwiperSetting = {
 
 export const OfferContentData = "Get exclusive offers on high-end residences and coveted cars! Our incredible deals will help you save a tonne of money and improve your lifestyle.";
 
-export const CarHomeSliderSettings = {
-  customPaging: (i: number) => {
-    return (
-      <a href={Href} className="car-active">
-        <Image src={dynamicImage(`car/home-img/${i + 1}.png`)} className="img-fluid" />
-      </a>
-    );
-  },
-  dots: true,
-  dotsClass: "slick-dots slick-thumb car-slider",
-  infinite: false,
-  arrows: false,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
-
 export const OfferSwiperSetting = {
   slidesPerView: 4,
   spaceBetween: 30,
@@ -236,6 +217,26 @@ export const OfferSwiperSetting = {
     1700: {
       slidesPerView: 4,
       spaceBetween: 30,
+    },
+  },
+};
+
+export const CarSlider = {
+  speed: 2000,
+  spaceBetween: 10,
+  freeMode: true,
+  modules: [Thumbs],
+};
+
+export const CarSliderNav = {
+  slidesPerView: 3,
+  watchSlidesProgress: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+    },
+    640: {
+      slidesPerView: 3,
     },
   },
 };

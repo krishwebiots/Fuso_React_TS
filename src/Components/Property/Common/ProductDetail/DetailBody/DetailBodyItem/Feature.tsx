@@ -4,7 +4,7 @@ import { FeatureTitle } from "../../../../../../Constants/Constants";
 
 const Feature = () => {
   return (
-    <div className="detail-box">
+    <div className="detail-box" id="feature">
       <h3 className="car-title">{FeatureTitle}</h3>
       <Row className="g-md-4 g-3">
         {CarFeatureData.map((category, index) => (

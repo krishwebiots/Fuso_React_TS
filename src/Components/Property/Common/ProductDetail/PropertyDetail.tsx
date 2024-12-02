@@ -35,7 +35,7 @@ const PropertyDetail: FC<PropertyDetailType> = ({ type, mainClass, thumb }) => {
           <Container>
             <Row>
               <Col xl="9" lg="8">
-                <MainDetail />
+                <MainDetail type="property" />
                 <DetailBody type={type} />
               </Col>
               <DetailSidebar />
@@ -97,7 +97,7 @@ const PropertyDetail: FC<PropertyDetailType> = ({ type, mainClass, thumb }) => {
             </Container>
           </div>
           <Container>
-            <MainDetail />
+            <MainDetail type="property" />
             <Row>
               <Col xl="9" lg="8">
                 <DetailBody type={type} />

@@ -94,3 +94,4 @@ export const CarFAQTitle: string = "Car FAQ";
 export const AddReviewTitle: string = "Add a Review";
 export const MakeOfferPriceTitle: string = "Make an Offer Price";
 export const ScheduleTestDriverTitle: string = "Schedule Test Driver";
+export const CarOverviewTitle: string = "Car Overview";

@@ -87,7 +87,7 @@ export const RouteList = {
       CarClassicSlider: `/car/detail/car-classic-slider`,
       CarThumbnailSlider: `/car/detail/car-thumbnail-slider`,
     },
-    CarWishlist: `car-wishlist`,
+    CarWishlist: `/car/car-wishlist`,
   },
 
   Job: {

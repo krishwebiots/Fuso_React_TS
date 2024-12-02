@@ -9,9 +9,23 @@ import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
+import { Trash } from "iconsax-react";
+import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
+import { toast } from "react-toastify";
+import { setPropertyItem } from "../../../ReduxToolkit/Reducers/ProductReducers";
 
-const CarProductBox1: FC<ProductBoxType> = ({ data }) => {
+const CarProductBox1: FC<ProductBoxType> = ({ data, wishlist }) => {
   const swiperRef = useRef<SwiperType | null>(null);
+  const dispatch = useAppDispatch();
+  const { productItem } = useAppSelector((state) => state.product);
+
+  const handleWishlist = () => toast.success("Added to Wishlist successfully");
+
+  const handleRemove = (id: number) => {
+    const updatedProductItem = productItem.filter((item) => item.id !== id);
+    dispatch(setPropertyItem(updatedProductItem));
+    toast.success("Remove to Wishlist successfully");
+  };
 
   useEffect(() => {
     if (swiperRef.current) swiperRef.current.init();
@@ -30,9 +44,15 @@ const CarProductBox1: FC<ProductBoxType> = ({ data }) => {
             <div className="swiper-button-prev" />
           </Swiper>
         </Link>
-        <a href={Href} className="save-btn">
-          <i className="ri-bookmark-line" />
-        </a>
+        {wishlist ? (
+          <Link to={Href} className="remove-button" onClick={() => handleRemove(data.id)}>
+            <Trash className="iconsax" />
+          </Link>
+        ) : (
+          <Link to={Href} className="save-btn" onClick={() => handleWishlist()}>
+            <i className="ri-bookmark-line" />
+          </Link>
+        )}
         {data.label && (
           <Label className={data.label.class}>
             <i className={data.label.icon} />

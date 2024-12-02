@@ -1,11 +1,11 @@
 import { FC, Fragment } from "react";
 import { useLocation } from "react-router-dom";
-import { OverviewTitle, SymbolRegex } from "../../../../../../Constants/Constants";
+import { CarOverviewTitle, OverviewTitle, SymbolRegex } from "../../../../../../Constants/Constants";
+import { CarOverviewData } from "../../../../../../Data/Car";
 import { OverviewData } from "../../../../../../Data/Property";
 import { DetailBodyItemType } from "../../../../../../Types/ProductType";
 import { dynamicGrf, Image } from "../../../../../../Utils";
 import SvgIcon from "../../../../../../Utils/SvgIcon";
-import { CarOverviewData } from "../../../../../../Data/Car";
 
 const Overview: FC<DetailBodyItemType> = ({ label, type }) => {
   const { pathname } = useLocation();
@@ -14,8 +14,8 @@ const Overview: FC<DetailBodyItemType> = ({ label, type }) => {
   return (
     <Fragment>
       {type === "car" ? (
-        <div className="detail-box">
-          <h3 className="car-title">Car Overview</h3>
+        <div className="detail-box" id="overview">
+          <h3 className="car-title">{CarOverviewTitle}</h3>
           <ul className="overview-list">
             {CarOverviewData.map((item) => (
               <li key={item.id}>

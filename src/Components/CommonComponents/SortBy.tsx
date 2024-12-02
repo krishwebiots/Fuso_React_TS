@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Container } from "reactstrap";
-import { RouteList } from "../../../Routers/RouteList";
+import { RouteList } from "../../Routers/RouteList";
 
 const SortBy = () => {
   return (

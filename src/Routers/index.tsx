@@ -1,5 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout";
+import CarClassic from "../Pages/Car/Detail/CarClassic";
+import CarClassicSlider from "../Pages/Car/Detail/CarClassicSlider";
+import CarExpandSlider from "../Pages/Car/Detail/CarExpandSlider";
+import CarLayout1 from "../Pages/Car/Detail/CarLayout1";
+import CarLayout2 from "../Pages/Car/Detail/CarLayout2";
+import CarModernSlider from "../Pages/Car/Detail/CarModernSlider";
+import CarScrollspy from "../Pages/Car/Detail/CarScrollspy";
+import CarSlider from "../Pages/Car/Detail/CarSlider";
+import CarThumbnailSlider from "../Pages/Car/Detail/CarThumbnailSlider";
+import CarVideo from "../Pages/Car/Detail/CarVideo";
 import Car2Grid from "../Pages/Car/Grid/Car2Grid";
 import Car2RightGrid from "../Pages/Car/Grid/Car2RightGrid";
 import Car3Grid from "../Pages/Car/Grid/Car3Grid";
@@ -12,7 +22,9 @@ import CarLeftDrawer from "../Pages/Car/Other/CarLeftDrawer";
 import CarLoadMore from "../Pages/Car/Other/CarLoadMore";
 import CarRightDrawer from "../Pages/Car/Other/CarRightDrawer";
 import CarTopCategory from "../Pages/Car/Other/CarTopCategory";
+import CarTopFilter from "../Pages/Car/Other/CarTopFilter";
 import CarWithoutSlider from "../Pages/Car/Other/CarWithoutSlider";
+import CarWishlist from "../Pages/Car/Wishlist";
 import CarDemo1 from "../Pages/Home/CarDemo1";
 import CarDemo2 from "../Pages/Home/CarDemo2";
 import JobDemo1 from "../Pages/Home/JobDemo1";
@@ -53,11 +65,6 @@ import PropertyParallax from "../Pages/Property/Other/PropertyParallax";
 import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import PropertyWishlist from "../Pages/Property/Wishlist";
 import { RouteList } from "./RouteList";
-import CarTopFilter from "../Pages/Car/Other/CarTopFilter";
-import CarClassic from "../Pages/Car/Detail/CarClassic";
-import CarLayout1 from "../Pages/Car/Detail/CarLayout1";
-import CarLayout2 from "../Pages/Car/Detail/CarLayout2";
-import CarSlider from "../Pages/Car/Detail/CarSlider";
 
 const Router = createBrowserRouter([
   {
@@ -141,6 +148,15 @@ const Router = createBrowserRouter([
       { path: RouteList.Car.Detail.CarLayout1, element: <CarLayout1 /> },
       { path: RouteList.Car.Detail.CarLayout2, element: <CarLayout2 /> },
       { path: RouteList.Car.Detail.CarSlider, element: <CarSlider /> },
+      { path: RouteList.Car.Detail.CarExpandSlider, element: <CarExpandSlider /> },
+      { path: RouteList.Car.Detail.CarModernSlider, element: <CarModernSlider /> },
+      { path: RouteList.Car.Detail.CarScrollspy, element: <CarScrollspy /> },
+      { path: RouteList.Car.Detail.CarVideo, element: <CarVideo /> },
+      { path: RouteList.Car.Detail.CarClassicSlider, element: <CarClassicSlider /> },
+      { path: RouteList.Car.Detail.CarThumbnailSlider, element: <CarThumbnailSlider /> },
+
+      //Car-Wishlist
+      { path: RouteList.Car.CarWishlist, element: <CarWishlist /> },
     ],
   },
 ]);

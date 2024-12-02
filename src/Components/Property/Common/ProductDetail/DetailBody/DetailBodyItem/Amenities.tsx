@@ -1,10 +1,10 @@
+import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { AmenitiesTitle } from "../../../../../../Constants/Constants";
 import { AmenitiesData, AmenitiesSlider } from "../../../../../../Data/Property";
+import { DetailBodyItemType } from "../../../../../../Types/ProductType";
 import { dynamicImage } from "../../../../../../Utils";
 import RatioImage from "../../../../../../Utils/RatioImage";
-import { FC } from "react";
-import { DetailBodyItemType } from "../../../../../../Types/ProductType";
 
 const Amenities: FC<DetailBodyItemType> = ({ label }) => {
   return (

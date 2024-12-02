@@ -5,7 +5,7 @@ import CarDetail from "../../../Property/Common/ProductDetail/CarDetail";
 const CarSliderContainer = () => {
   return (
     <Fragment>
-      <CarBreadcrumb type="car-image-slider" />
+      <CarBreadcrumb type="car_image_slider" />
       <CarDetail type="car" />
     </Fragment>
   );

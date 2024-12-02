@@ -1,14 +1,14 @@
 import { FC, Fragment } from "react";
 import { Button, Col } from "reactstrap";
+import { MakeOfferPriceTitle, ScheduleTestDriverTitle } from "../../../../../Constants/Constants";
+import { useAppDispatch } from "../../../../../ReduxToolkit/Hooks";
+import { setDriverModal, setOfferModal } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
 import { CarDetailType } from "../../../../../Types/ProductType";
+import DriverModal from "../../../../CommonComponents/Modal/DriverModal";
+import OfferModal from "../../../../CommonComponents/Modal/OfferModal";
 import ContactInfo from "./ContactInfo";
 import Exploration from "./Exploration";
 import FeaturedProperty from "./FeaturedProperty";
-import OfferModal from "../../../../CommonComponents/Modal/OfferModal";
-import { useAppDispatch } from "../../../../../ReduxToolkit/Hooks";
-import { setDriverModal, setOfferModal } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
-import { MakeOfferPriceTitle, ScheduleTestDriverTitle } from "../../../../../Constants/Constants";
-import DriverModal from "../../../../CommonComponents/Modal/DriverModal";
 
 const DetailSidebar: FC<CarDetailType> = ({ type }) => {
   const dispatch = useAppDispatch();

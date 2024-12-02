@@ -1,5 +1,5 @@
 import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { AmenitiesTitle, FloorPlansTitle, LocationTitle, OverviewTitle, PropertyDescriptionTitle, ReviewsTitle, ScheduleTourTitle, VideoTitle } from "../Constants/Constants";
+import { AmenitiesTitle, CarFAQTitle, DescriptionTitle, FeatureTitle, FloorPlansTitle, LocationTitle, OverviewTitle, PropertyDescriptionTitle, ReviewsTitle, ScheduleTourTitle, VideoTitle } from "../Constants/Constants";
 import Overview from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Overview";
 import Description from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Description";
 import FloorPlans from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/FloorPlans";
@@ -314,6 +314,30 @@ export const DetailBreadcrumbsSlider = {
   },
 };
 
+export const CarExpandSlider = {
+  slidesPerView: 5,
+  centeredSlides: true,
+  grabCursor: true,
+  loop: true,
+  spaceBetween: 30,
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    470: {
+      slidesPerView: 2.5,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1400: {
+      slidesPerView: 5,
+      spaceBetween: 30,
+    },
+  },
+};
+
 export const StickySliderFor = {
   loop: true,
   modules: [Thumbs],
@@ -366,3 +390,19 @@ export const breadcrumbThumbs = {
 };
 
 export const FilterTabsListData = ["Most Popular", "User Rating (High to Low)", "Price (High to Low)", "$ High To Low", "Alphabetical A-Z", "Alphabetical Z-A", "Most Popular", "24 Product par page"];
+
+export const CraNavDetailsData = [
+  { id: "overview", label: OverviewTitle },
+  { id: "description", label: DescriptionTitle },
+  { id: "feature", label: FeatureTitle },
+  { id: "faq", label: CarFAQTitle },
+  { id: "reviews", label: ReviewsTitle },
+];
+
+export const DetailSimpleSlider = {
+  navigation: {
+    prevEl: ".swiper-button-prev",
+    nextEl: ".swiper-button-next",
+  },
+  modules: [Navigation],
+};

@@ -4,13 +4,13 @@ import { Fragment } from "react/jsx-runtime";
 import { AccordionBody, AccordionHeader, AccordionItem, Container, Nav, NavItem, NavLink, TabContent, TabPane, UncontrolledAccordion } from "reactstrap";
 import { Sections } from "../../../../../Data/Property";
 import { PropertyDetailType } from "../../../../../Types/ProductType";
+import UseStickyBar from "../../../../../Utils/UseStickyBar";
+import Description from "./DetailBodyItem/Description";
+import Faq from "./DetailBodyItem/Faq";
+import Feature from "./DetailBodyItem/Feature";
+import Overview from "./DetailBodyItem/Overview";
 import Reviews from "./DetailBodyItem/Reviews";
 import ScheduleTour from "./DetailBodyItem/ScheduleTour";
-import UseStickyBar from "../../../../../Utils/UseStickyBar";
-import Overview from "./DetailBodyItem/Overview";
-import Description from "./DetailBodyItem/Description";
-import Feature from "./DetailBodyItem/Feature";
-import Faq from "./DetailBodyItem/Faq";
 
 const DetailBody: FC<PropertyDetailType> = ({ type }) => {
   const [activeTab, setActiveTab] = useState("overview");

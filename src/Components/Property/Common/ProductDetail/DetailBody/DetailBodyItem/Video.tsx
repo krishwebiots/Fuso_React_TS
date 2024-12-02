@@ -3,9 +3,9 @@ import { FC, Fragment } from "react";
 import { Href, VideoTitle } from "../../../../../../Constants/Constants";
 import { useAppDispatch } from "../../../../../../ReduxToolkit/Hooks";
 import { setVideoModal } from "../../../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { DetailBodyItemType } from "../../../../../../Types/ProductType";
 import { dynamicImage, Image } from "../../../../../../Utils";
 import VideoModal from "../../../../../CommonComponents/Modal/VideoModal";
-import { DetailBodyItemType } from "../../../../../../Types/ProductType";
 
 const Video: FC<DetailBodyItemType> = ({ label }) => {
   const dispatch = useAppDispatch();

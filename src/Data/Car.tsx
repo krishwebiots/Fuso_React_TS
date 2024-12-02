@@ -1,4 +1,4 @@
-import { FreeMode } from "swiper/modules";
+import { Autoplay, EffectFade, FreeMode, Thumbs } from "swiper/modules";
 
 export const Brands = [
   {
@@ -289,3 +289,37 @@ export const ReviewProgressData = [
 ];
 
 export const AddReviewListData = ["Comfort", "Interior Design", "Value For The Money", "Exterior Styling", "Performance", "Reliability"];
+
+export const BackSlider = {
+  spaceBetween: 10,
+  effect: "fade",
+  speed: 2000,
+  grabCursor: true,
+  autoplay: {
+    delay: 1500,
+    disableOnInteraction: false,
+  },
+  modules: [Thumbs, EffectFade, Autoplay],
+};
+
+export const FrontSlider = {
+  spaceBetween: 20,
+  slidesPerView: 4,
+  freeMode: true,
+  modules: [FreeMode],
+  watchSlidesProgress: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 2.5,
+      spaceBetween: 10,
+    },
+    470: {
+      slidesPerView: 3,
+      spaceBetween: 15,
+    },
+    991: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+  },
+};

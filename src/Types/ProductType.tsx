@@ -182,6 +182,8 @@ export interface DetailBodyItemType {
 export interface CarDetailType {
   detailImages?: boolean;
   type?: string;
+  scrollspy?: boolean;
+  classicSlider?: boolean;
 }
 
 export interface CarBreadcrumbType {
@@ -189,4 +191,12 @@ export interface CarBreadcrumbType {
   multiple?: boolean;
   type?: string;
   detailImages?: boolean;
+  modernSlider?: boolean;
+}
+
+export interface RenderImageType {
+  item: number;
+  type?: string;
+  multiple?: boolean;
+  key?: number;
 }
