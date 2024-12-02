@@ -2,7 +2,7 @@ import { ChangeEvent, FC } from "react";
 import { AccordionBody, AccordionHeader, AccordionItem, Input, Label } from "reactstrap";
 import { Href } from "../../../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../../../ReduxToolkit/Hooks";
-import { setAmenities, setBedsRooms, setCarCategories, setCarColor, setCarFuelType, setCarModalYear, setCarOwner, setCarSeats, setCarTransmission, setPropertyType, setSquareFeetStatus, setyearBuiltStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { setAmenities, setBedsRooms, setCarCategories, setCarColor, setCarFuelType, setCarModalYear, setCarOwner, setCarSeats, setCarTransmission, setJobCategories, setPropertyType, setSquareFeetStatus, setyearBuiltStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
 import { setMapModal } from "../../../../../../ReduxToolkit/Reducers/SidebarReducers";
 import { CommonFilterType } from "../../../../../../Types/ProductType";
 import { dynamicImage, Image } from "../../../../../../Utils";
@@ -10,7 +10,7 @@ import RangeInputFields from "./RangeInputFields";
 
 const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values, modalType, type, radio, subClass }) => {
   const dispatch = useAppDispatch();
-  const { propertyType, bedsRooms, amenities, carCategories, carFuelType, carModalYear, carSeats, carColor, carTransmission, carOwner } = useAppSelector((state) => state.filter);
+  const { propertyType, bedsRooms, amenities, carCategories, carFuelType, carModalYear, carSeats, carColor, carTransmission, carOwner, jobCategories } = useAppSelector((state) => state.filter);
 
   const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>, title: string, field?: string) => {
     const value = event.target.value;
@@ -51,6 +51,7 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
       Color: () => dispatch(setCarColor(actionCreator(carColor))),
       Transmission: () => dispatch(setCarTransmission(actionCreator(carTransmission))),
       Owner: () => dispatch(setCarOwner(actionCreator(carOwner))),
+      "All Categories": () => dispatch(setJobCategories(actionCreator(jobCategories))),
     };
 
     updateState[title as keyof typeof updateState]?.();
@@ -77,13 +78,13 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
             <Image src={dynamicImage("property/map.png")} alt="map" className="img-fluid" />
             <span className="btn-border">Explore on map</span>
           </a>
-        ) : type === "car" ? (
+        ) : type === "car" || type === "job" ? (
           <div className={`sidebar-choose-list categories-list ${subClass ? subClass : ""}`}>
             {data?.map((item, index) => (
               <div className="main-choose-item" key={index}>
                 <div className="choose-item">
                   <Input type={radio ? "radio" : "checkbox"} name={radio ? `category-${id}` : ""} id={item.id} value={item.type} checked={checkValue?.includes(item.type)} onChange={(event) => handleCheckboxChange(event, title)} />
-                  <Label htmlFor={item.id}>
+                  <Label htmlFor={item.id} className="label-flex">
                     <span>{item.label}</span>
                   </Label>
                 </div>

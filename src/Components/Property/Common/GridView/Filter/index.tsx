@@ -7,9 +7,10 @@ import CommonFilter from "./Common/CommonFilter";
 import BrandModelFilter from "./BrandModelFilter";
 import { CarColorData, CategoriesData, FuelTypeData, ModalYearData, OwnerData, SeatsData, TransmissionData } from "../../../../../Data/Car";
 import { setMinAndMaxKilometers, setMinAndMaxPrice } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { JobAllCategoriesData } from "../../../../../Data/Job";
 
 const FilterSidebar: FC<FilterSidebarType> = ({ value, modalType, type }) => {
-  const { propertyType, bedsRooms, amenities, squareFeetStatus, yearBuiltStatus, carCategories, carFuelType, carModalYear, carSeats, carColor, carTransmission, carOwner } = useAppSelector((state) => state.filter);
+  const { propertyType, bedsRooms, amenities, squareFeetStatus, yearBuiltStatus, carCategories, carFuelType, carModalYear, carSeats, carColor, carTransmission, carOwner, jobCategories } = useAppSelector((state) => state.filter);
   const [openItems, setOpenItems] = useState<string[]>(["1", "2", "3", "4", "5", "6", "7"]);
   const dispatch = useAppDispatch();
 
@@ -27,8 +28,8 @@ const FilterSidebar: FC<FilterSidebarType> = ({ value, modalType, type }) => {
   }, [dispatch, maxKilometers, maxPrice, minKilometers, minPrice]);
 
   return (
-    <div className="property-sidebar">
-      <UncontrolledAccordion defaultOpen={openItems} stayOpen toggle={toggle} className={type === "car" ? "car-accordion" : ""}>
+    <div className={`property-sidebar ${type === "job" ? "job-sidebar" : ""}`}>
+      <UncontrolledAccordion defaultOpen={openItems} stayOpen toggle={toggle} className={`${type === "car" ? "car" : type === "job" ? "car-accordion job" : ""}-accordion`}>
         {type === "property" ? (
           <Fragment>
             {modalType === "map-modal" && <CommonFilter title="Map Modal" id="7" modalType={modalType} />}
@@ -38,6 +39,10 @@ const FilterSidebar: FC<FilterSidebarType> = ({ value, modalType, type }) => {
             <CommonFilter title="Square Feet" id="4" values={squareFeetStatus} squareFeet />
             <CommonFilter title="Year Built" id="5" values={yearBuiltStatus} squareFeet />
             <CommonFilter title="Amenities" id="6" data={AmenitiesFilterData} checkValue={amenities} />
+          </Fragment>
+        ) : type === "job" ? (
+          <Fragment>
+            <CommonFilter title="All Categories" id="2" data={JobAllCategoriesData} checkValue={jobCategories} type="job" />
           </Fragment>
         ) : (
           <Fragment>

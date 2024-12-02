@@ -92,12 +92,12 @@ export const RouteList = {
 
   Job: {
     Grid: {
-      JobGridProgress: `job-grid-progress`,
-      JobGridType2: `job-grid-type-2`,
-      JobGridType3: `job-grid-type-3`,
-      JobLeftSidebar: `job-left-sidebar`,
-      JobRightSidebar: `job-right-sidebar`,
-      JobGridNoSidebar: `job-grid-no-sidebar`,
+      JobGridProgress: `/job/grid/job-grid-progress`,
+      JobGridType2: `/job/grid/job-grid-type-2`,
+      JobGridType3: `/job/grid/job-grid-type-3`,
+      JobLeftSidebar: `/job/grid/job-left-sidebar`,
+      JobRightSidebar: `/job/grid/job-right-sidebar`,
+      JobGridNoSidebar: `/job/grid/job-grid-no-sidebar`,
     },
     Listing: {
       JobLeftList: `job-left-list`,

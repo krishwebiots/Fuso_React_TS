@@ -127,6 +127,7 @@ export interface FilterSliceType {
   carOwner: string[];
   carKilometers: number[];
   minAndMaxKilometers: number[];
+  jobCategories: string[];
 }
 
 export interface PaginationType {

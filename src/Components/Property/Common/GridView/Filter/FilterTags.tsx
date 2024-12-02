@@ -37,30 +37,49 @@ const FilterTags: FC<TopPanelType> = ({ topFilterSidebar, side, mainClass, type 
 
   return (
     <div className={mainClass ? mainClass : "top-panel"}>
-      <h4>
-        {totalProduct} {type === "property" ? "properties in Amsterdam" : "Cars To Explore"}
-      </h4>
-      {type === "property" ? (
+      {type === "job" ? (
+        <div className="category-filter-flex">
+          <h5>All {totalProduct} jobs got found</h5>
+          <div className="category-filter">
+            {!topFilterSidebar && (
+              <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
+                Filter
+              </a>
+            )}
+            <div className="category-filter">
+              <span>Sort By :</span>
+              {renderDropdown(3, 8)}
+            </div>
+          </div>
+        </div>
+      ) : (
         <Fragment>
-          {renderDropdown(0, 3)}
-          {!topFilterSidebar && (
-            <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
-              Filter
-            </a>
+          <h4>
+            {totalProduct} {type === "property" ? "properties in Amsterdam" : "Cars To Explore"}
+          </h4>
+          {type === "property" ? (
+            <Fragment>
+              {renderDropdown(0, 3)}
+              {!topFilterSidebar && (
+                <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
+                  Filter
+                </a>
+              )}
+            </Fragment>
+          ) : (
+            <div className="category-filter">
+              <div className="car-sortby-flex">
+                <span>Sort By :</span>
+                {renderDropdown(3, 8)}
+              </div>
+              {!topFilterSidebar && (
+                <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
+                  Filter
+                </a>
+              )}
+            </div>
           )}
         </Fragment>
-      ) : (
-        <div className="category-filter">
-          <div className="car-sortby-flex">
-            <span>Sort By :</span>
-            {renderDropdown(3, 8)}
-          </div>
-          {!topFilterSidebar && (
-            <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
-              Filter
-            </a>
-          )}
-        </div>
       )}
     </div>
   );

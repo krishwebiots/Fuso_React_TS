@@ -22,6 +22,7 @@ const initialState: FilterSliceType = {
   carOwner: [],
   carKilometers: [10000, 45000],
   minAndMaxKilometers: [],
+  jobCategories: [],
 };
 
 const FilterSlice = createSlice({
@@ -88,8 +89,11 @@ const FilterSlice = createSlice({
     setMinAndMaxKilometers: (state, action) => {
       state.minAndMaxKilometers = action.payload;
     },
+    setJobCategories: (state, action) => {
+      state.jobCategories = action.payload;
+    },
   },
 });
 
-export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setyearBuiltStatus, setPriceStatus, setSortBy, setPopular, setCarBrandModel, setBudgetStatus, setCarCategories, setCarFuelType, setCarModalYear, setCarSeats, setCarColor, setCarTransmission, setCarOwner, setCarKilometers, setMinAndMaxPrice, setMinAndMaxKilometers } = FilterSlice.actions;
+export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setyearBuiltStatus, setPriceStatus, setSortBy, setPopular, setCarBrandModel, setBudgetStatus, setCarCategories, setCarFuelType, setCarModalYear, setCarSeats, setCarColor, setCarTransmission, setCarOwner, setCarKilometers, setMinAndMaxPrice, setMinAndMaxKilometers, setJobCategories } = FilterSlice.actions;
 export default FilterSlice.reducer;

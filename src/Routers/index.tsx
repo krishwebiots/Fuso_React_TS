@@ -65,6 +65,7 @@ import PropertyParallax from "../Pages/Property/Other/PropertyParallax";
 import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import PropertyWishlist from "../Pages/Property/Wishlist";
 import { RouteList } from "./RouteList";
+import JobGridProgress from "../Pages/Job/Grid/JobGridProgress";
 
 const Router = createBrowserRouter([
   {
@@ -157,6 +158,9 @@ const Router = createBrowserRouter([
 
       //Car-Wishlist
       { path: RouteList.Car.CarWishlist, element: <CarWishlist /> },
+
+      //Job-Grid
+      { path: RouteList.Job.Grid.JobGridProgress, element: <JobGridProgress /> },
     ],
   },
 ]);
