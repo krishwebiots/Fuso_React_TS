@@ -3,13 +3,13 @@ import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 import { Href } from "../../Constants/Constants";
 import { PaginationType } from "../../Types/ProductType";
 
-const PaginationDynamic: FC<PaginationType> = ({ totalPages1, currentPage, setCurrentPage }) => {
+const PaginationDynamic: FC<PaginationType> = ({ totalPages1, currentPage, setCurrentPage, type }) => {
   const handlePageChange = (page: number) => setCurrentPage(page);
   const handlePreviousButton = () => currentPage !== 1 && handlePageChange(currentPage - 1);
   const handleNextButton = () => currentPage !== totalPages1 && handlePageChange(currentPage + 1);
 
   return (
-    <Pagination>
+    <Pagination className={type === "job" ? "pagination-style-1 justify-content-center" : ""}>
       <PaginationItem onClick={handlePreviousButton} disabled={currentPage === 1}>
         <PaginationLink href={Href} aria-label="Previous">
           <i className="ri-arrow-left-double-fill" />

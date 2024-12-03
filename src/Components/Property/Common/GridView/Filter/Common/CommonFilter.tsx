@@ -2,7 +2,7 @@ import { ChangeEvent, FC } from "react";
 import { AccordionBody, AccordionHeader, AccordionItem, Input, Label } from "reactstrap";
 import { Href } from "../../../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../../../ReduxToolkit/Hooks";
-import { setAmenities, setBedsRooms, setCarCategories, setCarColor, setCarFuelType, setCarModalYear, setCarOwner, setCarSeats, setCarTransmission, setJobCategories, setPropertyType, setSquareFeetStatus, setyearBuiltStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { setAmenities, setBedsRooms, setCarCategories, setCarColor, setCarFuelType, setCarModalYear, setCarOwner, setCarSeats, setCarTransmission, setJobBy, setJobCategories, setJobCompanyType, setJobEducation, setJobTopCompanies, setJobType, setJobWorkMode, setJonLocation, setPropertyType, setSquareFeetStatus, setyearBuiltStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
 import { setMapModal } from "../../../../../../ReduxToolkit/Reducers/SidebarReducers";
 import { CommonFilterType } from "../../../../../../Types/ProductType";
 import { dynamicImage, Image } from "../../../../../../Utils";
@@ -10,7 +10,7 @@ import RangeInputFields from "./RangeInputFields";
 
 const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values, modalType, type, radio, subClass }) => {
   const dispatch = useAppDispatch();
-  const { propertyType, bedsRooms, amenities, carCategories, carFuelType, carModalYear, carSeats, carColor, carTransmission, carOwner, jobCategories } = useAppSelector((state) => state.filter);
+  const { propertyType, bedsRooms, amenities, carCategories, carFuelType, carModalYear, carSeats, carColor, carTransmission, carOwner, jobCategories, jobWorkMode, jobCompanyType, jobEducation, jobBy, jonLocation, jobTopCompanies, jobType } = useAppSelector((state) => state.filter);
 
   const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>, title: string, field?: string) => {
     const value = event.target.value;
@@ -52,6 +52,13 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
       Transmission: () => dispatch(setCarTransmission(actionCreator(carTransmission))),
       Owner: () => dispatch(setCarOwner(actionCreator(carOwner))),
       "All Categories": () => dispatch(setJobCategories(actionCreator(jobCategories))),
+      "Work Mode": () => dispatch(setJobWorkMode(actionCreator(jobWorkMode))),
+      "Company Type": () => dispatch(setJobCompanyType(actionCreator(jobCompanyType))),
+      Education: () => dispatch(setJobEducation(actionCreator(jobEducation))),
+      By: () => dispatch(setJobBy(actionCreator(jobBy))),
+      Location: () => dispatch(setJonLocation(actionCreator(jonLocation))),
+      "Top CompaniesData": () => dispatch(setJobTopCompanies(actionCreator(jobTopCompanies))),
+      "Job Type": () => dispatch(setJobType(actionCreator(jobType))),
     };
 
     updateState[title as keyof typeof updateState]?.();

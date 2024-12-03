@@ -9,17 +9,22 @@ import { GridLayoutType } from "../../../../Types/ProductType";
 import NotFound from "../../../CommonComponents/NotFound";
 import PaginationDynamic from "../../../CommonComponents/Pagination";
 import CarProductBox1 from "../../../CommonComponents/ProductBox/CarProductBox1";
+import JobProductBox1 from "../../../CommonComponents/ProductBox/JobProductBox1";
+import JobProductBox5 from "../../../CommonComponents/ProductBox/JobProductBox5";
+import JobProductBox6 from "../../../CommonComponents/ProductBox/JobProductBox6";
 import PropertyProductBox1 from "../../../CommonComponents/ProductBox/PropertyProductBox1";
 import UseFilterCar from "./UseFilterCar";
+import UseFilterJob from "./UseFilterJob";
 import UseFilterProperty from "./UseFilterProperty";
+import JobProductBox2 from "../../../CommonComponents/ProductBox/JobProductBox2";
 
-const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view, scrollType, map }) => {
+const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view, scrollType, map, jobBoxStyle }) => {
   const swiperRef = useRef<SwiperType | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const { cardToShow } = useAppSelector((state) => state.sidebar);
   const dispatch = useAppDispatch();
 
-  const Product = type === "property" ? UseFilterProperty({ value }) : type === "car" ? UseFilterCar({ value }) : [];
+  const Product = type === "property" ? UseFilterProperty({ value }) : type === "car" ? UseFilterCar({ value }) : type === "job" ? UseFilterJob({ value }) : [];
   const totalPages = Math.ceil(Product?.length / cardToShow);
   const showProduct = scrollType === "infinite" ? Product.slice(0, cardToShow * currentPage) : Product?.slice(cardToShow * currentPage - cardToShow, cardToShow * currentPage);
   const RowBoxClass = gridType === "list-view" ? (type === "car" ? "car-list-section ratio_65" : "ratio3_2") : view === "multiple" ? "ratio_65" : "ratio_landscape";
@@ -74,6 +79,13 @@ const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view,
               </Col>
             ))
           ))}
+
+        {type === "job" &&
+          showProduct.map((data, index) => (
+            <Col className={ColBoxClass} key={data.id || index}>
+              {jobBoxStyle === "progress" ? <JobProductBox5 data={data} /> : jobBoxStyle === "type-2" ? <JobProductBox6 data={data} /> : jobBoxStyle === "type-3" ? <JobProductBox2 data={data} /> : <JobProductBox1 data={data} />}
+            </Col>
+          ))}
       </Row>
 
       {showProduct.length !== 0 ? (
@@ -88,7 +100,7 @@ const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view,
             </p>
           )
         ) : (
-          scrollType !== "infinite" && <PaginationDynamic totalPages1={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          scrollType !== "infinite" && <PaginationDynamic totalPages1={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage} type={type} />
         )
       ) : (
         <NotFound word="No items found in Product" />

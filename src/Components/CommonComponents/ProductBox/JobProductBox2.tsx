@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Label } from "reactstrap";
-import { ApplyNow, Href } from "../../../Constants/Constants";
+import { ApplyNow, Href, SymbolRegex } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicSvg, Image } from "../../../Utils";
@@ -8,10 +8,12 @@ import SvgIcon from "../../../Utils/SvgIcon";
 import { FC } from "react";
 
 const JobProductBox2: FC<ProductBoxType> = ({ data }) => {
+  const { pathname } = useLocation();
+  const firstPart = pathname.split("/").map((item) => item.replace(SymbolRegex, " "));
   return (
     <div className="hire-box">
-      <div className="save-flex">
-        <span>{data.time}</span>
+      <div className={`save-flex ${firstPart[3] === "job-grid-type-3" ? "justify-content-end" : ""}`}>
+        {firstPart[3] !== "job-grid-type-3" ? <span>{data.time}</span> : ""}
         <Link to={Href} className="save-btn">
           <i className="ri-bookmark-line" />
         </Link>
@@ -26,7 +28,7 @@ const JobProductBox2: FC<ProductBoxType> = ({ data }) => {
           <h6>{data.company}</h6>
         </Link>
         <div className="hire-tag">
-          {data.jobTags.map((tag, idx) => (
+          {data.jobTags?.map((tag, idx) => (
             <Label key={idx}>{tag}</Label>
           ))}
         </div>

@@ -66,6 +66,12 @@ import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import PropertyWishlist from "../Pages/Property/Wishlist";
 import { RouteList } from "./RouteList";
 import JobGridProgress from "../Pages/Job/Grid/JobGridProgress";
+import JobGridType2 from "../Pages/Job/Grid/JobGridType2";
+import JobGridType3 from "../Pages/Job/Grid/JobGridType3";
+import JobLeftSidebar from "../Pages/Job/Grid/JobLeftSidebar";
+import JobRightSidebar from "../Pages/Job/Grid/JobRightSidebar";
+import JobGridNoSidebar from "../Pages/Job/Grid/JobGridNoSidebar";
+import JobLeftList from "../Pages/Job/Listing/JobLeftList";
 
 const Router = createBrowserRouter([
   {
@@ -161,6 +167,14 @@ const Router = createBrowserRouter([
 
       //Job-Grid
       { path: RouteList.Job.Grid.JobGridProgress, element: <JobGridProgress /> },
+      { path: RouteList.Job.Grid.JobGridType2, element: <JobGridType2 /> },
+      { path: RouteList.Job.Grid.JobGridType3, element: <JobGridType3 /> },
+      { path: RouteList.Job.Grid.JobLeftSidebar, element: <JobLeftSidebar /> },
+      { path: RouteList.Job.Grid.JobRightSidebar, element: <JobRightSidebar /> },
+      { path: RouteList.Job.Grid.JobGridNoSidebar, element: <JobGridNoSidebar /> },
+
+      //Job-Listing
+      { path: RouteList.Job.Listing.JobLeftList, element: <JobLeftList /> },
     ],
   },
 ]);

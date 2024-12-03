@@ -12,7 +12,7 @@ import JobProductBox4 from "../../CommonComponents/ProductBox/JobProductBox4";
 import CommonHeader from "../Common/CommonHeader";
 
 const AboutAndJobOpening = () => {
-  const [activeTab, setActiveTab] = useState("part time");
+  const [activeTab, setActiveTab] = useState("part_time");
   const { productItem, categoryItem } = useAppSelector((state) => state.product);
   return (
     <div className="overflow-x-hidden">

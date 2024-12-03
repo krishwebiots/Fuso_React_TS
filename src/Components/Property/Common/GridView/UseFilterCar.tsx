@@ -15,13 +15,13 @@ const UseFilterCar = ({ value }: FilterProductsType) => {
       ?.filter((product) => {
         const BrandModel = carBrandModel.length === 0 || product.category === undefined || carBrandModel.some((prop) => product.category?.includes(prop));
         const PriceBudget = product.price !== undefined && budgetStatus ? budgetStatus[0] <= product.price && budgetStatus[1] >= product.price && true : true;
-        const Categories = carCategories.length === 0 || product.category === undefined || product.category?.includes(carCategories) || carCategories.includes("all");
-        const FuelType = carFuelType.length === 0 || product.fuel === undefined || carFuelType.some((prop) => product.fuel?.includes(prop));
+        const Categories = carCategories.length === 0 || product.category === undefined || product.category?.includes(carCategories);
+        const FuelType = carFuelType.length === 0 || product.fuel === undefined || carFuelType.includes(product.fuel);
         const ModalTear = product.year === undefined || carModalYear <= product.year;
-        const Seats = carSeats.length === 0 || product.seats === undefined || carSeats.some((prop) => product.seats?.includes(prop));
-        const Color = carColor.length === 0 || product.color === undefined || carColor.some((prop) => product.color?.includes(prop));
-        const Transmission = carTransmission.length === 0 || product.transmission === undefined || carTransmission.some((prop) => product.transmission === prop);
-        const Owner = carOwner.length === 0 || product.owner === undefined || carOwner.some((prop) => product.owner === prop);
+        const Seats = carSeats.length === 0 || product.seats === undefined || carSeats.includes(product.seats);
+        const Color = carColor.length === 0 || product.color === undefined || carColor.includes(product.color);
+        const Transmission = carTransmission.length === 0 || product.transmission === undefined || carTransmission.includes(product.transmission);
+        const Owner = carOwner.length === 0 || product.owner === undefined || carOwner.includes(product.owner);
         const Kilometers = product.kilometers !== undefined && carKilometers ? carKilometers[0] <= product.kilometers && carKilometers[1] >= product.kilometers && true : true;
         const MostPopular = !popular || product.productState === popular;
 

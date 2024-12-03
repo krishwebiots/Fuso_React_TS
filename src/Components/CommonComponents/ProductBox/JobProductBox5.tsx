@@ -1,13 +1,13 @@
 import { Clock, Location } from "iconsax-react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
+import { Label, Progress } from "reactstrap";
 import { ApplyNow, Href } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
-import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
-import { Label } from "reactstrap";
-import { FC } from "react";
+import { dynamicSvg, Image } from "../../../Utils";
 
-const JobProductBox1: FC<ProductBoxType> = ({ data }) => {
+const JobProductBox5: FC<ProductBoxType> = ({ data }) => {
   return (
     <div className="job-box">
       <div className="job-title-flex">
@@ -18,8 +18,11 @@ const JobProductBox1: FC<ProductBoxType> = ({ data }) => {
             ))}
           </div>
           <Link to={RouteList.Job.Detail.JobDetail1} className="job-detail">
-            <span>{data.company}</span>
             <h5>{data.title}</h5>
+            <div className="d-flex align-items-center gap-1 mt-1">
+              <Location className="iconsax" />
+              <span className="border-0 p-0 mb-0">{data.location}</span>
+            </div>
           </Link>
         </div>
         <Link to={Href} className="save-btn">
@@ -37,24 +40,15 @@ const JobProductBox1: FC<ProductBoxType> = ({ data }) => {
         </Label>
       </div>
       <p>{data.description}</p>
-      <ul className="post-time">
-        <li>
-          <Location className="iconsax" />
-          <span>{data.location}</span>
-        </li>
-        <li>
+      <h6>
+        20 applied of <span>{data.progress} vacancy</span>
+      </h6>
+      <Progress animated color="warning" striped value={data.progress} />
+      <div className="btn-flex">
+        <div className="d-flex align-items-center gap-1 mt-1">
           <Clock className="iconsax" />
           <span>{data.time}</span>
-        </li>
-      </ul>
-      <div className="btn-flex">
-        <ul className="round-photo">
-          {dynamicNumber(4).map((photo, idx) => (
-            <li key={idx}>
-              <Image src={dynamicImage(`job/job-box/${photo}.jpg`)} alt={`job-${data.id}-${idx}`} className="img-fluid" />
-            </li>
-          ))}
-        </ul>
+        </div>
         <Link to={RouteList.Pages.Other.ContactUs1} className="arrow-btn">
           {ApplyNow} <i className="ri-arrow-right-up-line" />
         </Link>
@@ -63,4 +57,4 @@ const JobProductBox1: FC<ProductBoxType> = ({ data }) => {
   );
 };
 
-export default JobProductBox1;
+export default JobProductBox5;

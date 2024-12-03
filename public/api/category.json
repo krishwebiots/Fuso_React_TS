@@ -164,13 +164,13 @@
   {
     "id": 22,
     "type": "job",
-    "value": "part time",
+    "value": "part_time",
     "label": "Part time"
   },
   {
     "id": 23,
     "type": "job",
-    "value": "full time",
+    "value": "full_time",
     "label": "Full time"
   },
   {

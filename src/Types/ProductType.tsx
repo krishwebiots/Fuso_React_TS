@@ -24,7 +24,7 @@ export interface ProductType {
   jobType?: string[];
   location?: string;
   time?: string;
-  salary?: string;
+  salary?: number;
   applied?: string;
   rating?: number;
   jobTags: string[];
@@ -41,6 +41,13 @@ export interface ProductType {
   transmission?: string;
   owner?: string;
   kilometers?: number;
+  progress?: number;
+  workType?: string;
+  companyType?: string;
+  education?: string;
+  byJob?: string;
+  jobLocation?: string;
+  topCompanies?: string;
 }
 
 export interface ProductSliceProp {
@@ -76,6 +83,7 @@ export interface GridViewType {
   filterTagsClass?: string;
   carShow?: number;
   topCategory?: boolean;
+  jobBoxStyle?: string;
 }
 
 export interface GridLayoutType {
@@ -86,6 +94,7 @@ export interface GridLayoutType {
   view?: string;
   scrollType?: string;
   map?: boolean;
+  jobBoxStyle?: string;
 }
 
 export interface FilterProductsType {
@@ -128,12 +137,22 @@ export interface FilterSliceType {
   carKilometers: number[];
   minAndMaxKilometers: number[];
   jobCategories: string[];
+  jobSalary: number[];
+  minAndMaxSalary: number[];
+  jobWorkMode: string;
+  jobCompanyType: string[];
+  jobEducation: string[];
+  jobBy: string[];
+  jonLocation: string[];
+  jobTopCompanies: string[];
+  jobType: string[];
 }
 
 export interface PaginationType {
   totalPages1: number;
   currentPage: number;
   setCurrentPage: (page: number) => void;
+  type?: string;
 }
 
 export interface FilterDataType {

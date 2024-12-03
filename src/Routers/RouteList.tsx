@@ -100,9 +100,9 @@ export const RouteList = {
       JobGridNoSidebar: `/job/grid/job-grid-no-sidebar`,
     },
     Listing: {
-      JobLeftList: `job-left-list`,
-      JobRightList: `job-right-list`,
-      JobListNoSidebar: `job-list-no-sidebar`,
+      JobLeftList: `/job/listing/job-left-list`,
+      JobRightList: `/job/listing/job-right-list`,
+      JobListNoSidebar: `/job/listing/job-list-no-sidebar`,
     },
     Other: {
       jobLeftDrawer: `job-left-drawer`,

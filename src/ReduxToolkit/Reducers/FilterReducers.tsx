@@ -23,6 +23,15 @@ const initialState: FilterSliceType = {
   carKilometers: [10000, 45000],
   minAndMaxKilometers: [],
   jobCategories: [],
+  jobSalary: [25, 60],
+  minAndMaxSalary: [],
+  jobWorkMode: "",
+  jobCompanyType: [],
+  jobEducation: [],
+  jobBy: [],
+  jonLocation: [],
+  jobTopCompanies: [],
+  jobType: [],
 };
 
 const FilterSlice = createSlice({
@@ -92,8 +101,35 @@ const FilterSlice = createSlice({
     setJobCategories: (state, action) => {
       state.jobCategories = action.payload;
     },
+    setJobSalary: (state, action) => {
+      state.jobSalary = action.payload;
+    },
+    setMinAndMaxSalary: (state, action) => {
+      state.minAndMaxSalary = action.payload;
+    },
+    setJobWorkMode: (state, action) => {
+      state.jobWorkMode = action.payload;
+    },
+    setJobCompanyType: (state, action) => {
+      state.jobCompanyType = action.payload;
+    },
+    setJobEducation: (state, action) => {
+      state.jobEducation = action.payload;
+    },
+    setJobBy: (state, action) => {
+      state.jobBy = action.payload;
+    },
+    setJonLocation: (state, action) => {
+      state.jonLocation = action.payload;
+    },
+    setJobTopCompanies: (state, action) => {
+      state.jobTopCompanies = action.payload;
+    },
+    setJobType: (state, action) => {
+      state.jobType = action.payload;
+    },
   },
 });
 
-export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setyearBuiltStatus, setPriceStatus, setSortBy, setPopular, setCarBrandModel, setBudgetStatus, setCarCategories, setCarFuelType, setCarModalYear, setCarSeats, setCarColor, setCarTransmission, setCarOwner, setCarKilometers, setMinAndMaxPrice, setMinAndMaxKilometers, setJobCategories } = FilterSlice.actions;
+export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setyearBuiltStatus, setPriceStatus, setSortBy, setPopular, setCarBrandModel, setBudgetStatus, setCarCategories, setCarFuelType, setCarModalYear, setCarSeats, setCarColor, setCarTransmission, setCarOwner, setCarKilometers, setMinAndMaxPrice, setMinAndMaxKilometers, setJobCategories, setJobSalary, setMinAndMaxSalary, setJobWorkMode, setJobCompanyType, setJobEducation, setJobBy, setJonLocation, setJobTopCompanies, setJobType } = FilterSlice.actions;
 export default FilterSlice.reducer;
