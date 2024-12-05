@@ -128,8 +128,25 @@ const FilterSlice = createSlice({
     setJobType: (state, action) => {
       state.jobType = action.payload;
     },
+    removeFilter: (state: any, action) => {
+      const { key, value } = action.payload;
+      if (Array.isArray(state[key])) {
+        state[key] = state[key].filter((item: any) => item !== value);
+      } else if (typeof state[key] === "string" || typeof state[key] === "number") {
+        state[key] = "";
+      }
+    },
+    clearAllFilters: (state: any) => {
+      Object.keys(state).forEach((key) => {
+        if (Array.isArray(state[key])) {
+          state[key] = [];
+        } else {
+          state[key] = "";
+        }
+      });
+    },
   },
 });
 
-export const { setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setyearBuiltStatus, setPriceStatus, setSortBy, setPopular, setCarBrandModel, setBudgetStatus, setCarCategories, setCarFuelType, setCarModalYear, setCarSeats, setCarColor, setCarTransmission, setCarOwner, setCarKilometers, setMinAndMaxPrice, setMinAndMaxKilometers, setJobCategories, setJobSalary, setMinAndMaxSalary, setJobWorkMode, setJobCompanyType, setJobEducation, setJobBy, setJonLocation, setJobTopCompanies, setJobType } = FilterSlice.actions;
+export const { removeFilter, clearAllFilters, setPropertyType, setBedsRooms, setAmenities, setSquareFeetStatus, setyearBuiltStatus, setPriceStatus, setSortBy, setPopular, setCarBrandModel, setBudgetStatus, setCarCategories, setCarFuelType, setCarModalYear, setCarSeats, setCarColor, setCarTransmission, setCarOwner, setCarKilometers, setMinAndMaxPrice, setMinAndMaxKilometers, setJobCategories, setJobSalary, setMinAndMaxSalary, setJobWorkMode, setJobCompanyType, setJobEducation, setJobBy, setJonLocation, setJobTopCompanies, setJobType } = FilterSlice.actions;
 export default FilterSlice.reducer;
