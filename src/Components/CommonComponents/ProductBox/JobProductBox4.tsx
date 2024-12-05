@@ -29,7 +29,7 @@ const JobProductBox4: FC<ProductBoxType> = ({ data }) => {
       </div>
       <p>{data.description}</p>
       <div className="job-tag">
-        <Label>{data.jobType?.slice(0, 1)}</Label>
+        <Label>{data.jobType?.slice(0, 1).map((job) => job.replace("_", " "))}</Label>
         <Label>{data.salary}K USD</Label>
       </div>
       <div className="location-flex">

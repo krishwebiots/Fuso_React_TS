@@ -19,7 +19,7 @@ const JobProductBox6: FC<ProductBoxType> = ({ data }) => {
       </div>
       <h5 className="price-style-2">${data.salary}K USD</h5>
       <div className="job-tag job-tag-style-2">
-        <label>Full Time</label>
+        <label>{data.jobType?.slice(0, 1).map((job) => job.replace("_", " "))}</label>
         <label>Mid Level</label>
       </div>
       <div className="post-style-2">

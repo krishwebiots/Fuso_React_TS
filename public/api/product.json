@@ -384,7 +384,9 @@
     "progress": 40,
     "jobTags": ["Private", "Foreign MNC", "Public", "B2C"],
     "applied": "20 Applied",
-    "description": "We are seeking a talented Product UI Designer to join our dynamic team. The ideal candidate will have a strong interest in creating visually appealing, straightforward, and easy-to-use user interfaces."
+    "description": "We are seeking a talented Product UI Designer to join our dynamic team. The ideal candidate will have a strong interest in creating visually appealing, straightforward, and easy-to-use user interfaces.",
+    "moreDescription": "WSeeking to add an Oracle EPM Consultant to our team. For clients, you'll optimise EPM systems, offer solutions, and offer technical know-how.We would love to speak with you if you are a problem solver, have an attention to detail, and love technology.",
+    "skills": ["Oracle Epbcs", "Oracle Epm", "Fccs", "Oracle", "Arcs"]
   },
   {
     "id": 17,
@@ -408,7 +410,9 @@
     "jobLocation": "kansas_city",
     "topCompanies": "soylent",
     "progress": 20,
-    "jobTags": ["Oil & Gas", "Foreign MNC", "B2B", "Public", "B2C"]
+    "jobTags": ["Oil & Gas", "Foreign MNC", "B2B", "Public", "B2C"],
+    "moreDescription": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience.If you want to increase the profile of your company, you will also need to analyse competition activity, carry out market research, and create marketing strategies. To generate engaging content for conventional and digital marketing initiatives, you will also work with the marketing team.",
+    "skills": ["Adaptability", "UX Research Skills", "Sketch", "Adobe XD"]
   },
   {
     "id": 18,
@@ -422,6 +426,7 @@
     "jobType": ["part_time", "wfo", "wfh"],
     "location": "Richu, UK",
     "time": "20 min ago",
+    "rating": 4.5,
     "workType": "remote",
     "companyType": "startup",
     "education": "mca",
@@ -432,7 +437,9 @@
     "progress": 30,
     "jobTags": ["Foreign MNC", "Private", "B2C", "Foreign MNC"],
     "applied": "10 Applied",
-    "description": "Work on-site at project locations as needed in support of the field services teams. Minimum experience required 3 Years."
+    "description": "Work on-site at project locations as needed in support of the field services teams. Minimum experience required 3 Years.",
+    "moreDescription": "Work on-site at project locations as needed in support of the field services teams. Minimum experience required 3 Years.It will be your responsibility to seek and capture opportunities for new businesses, maintain links with current clients, and guarantee client pleasure.",
+    "skills": ["Sales and Negotiation", "Industry Knowledge", "Relationship Management"]
   },
   {
     "id": 19,
@@ -456,7 +463,9 @@
     "jobLocation": "munich",
     "topCompanies": "flashed_craft",
     "progress": 50,
-    "jobTags": ["Engineering & Construction", "Private"]
+    "jobTags": ["Engineering & Construction", "Private"],
+    "moreDescription": "We are looking for highly motivated and skilled Full Stack .NET Developers to join our dynamic team.and explore a career in Full Stack.NET Development.You will collaborate closely with our team to provide original answers to challenging issues and add to the overall accomplishment of our projects.",
+    "skills": ["HTML/CSS", "JavaScript", "Net Framework", "C# Programming", "SQL Databases"]
   },
   {
     "id": 20,
@@ -473,6 +482,7 @@
     "workType": "work_from_office",
     "companyType": "government",
     "education": "graduation_not_required",
+    "rating": 4.5,
     "byJob": "company_jobs",
     "jobLocation": "ottawa",
     "topCompanies": "tech_rayan",
@@ -480,7 +490,9 @@
     "progress": 33,
     "jobTags": ["Private", "Foreign MNC", "Public", "B2C"],
     "applied": "20 Applied",
-    "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience."
+    "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience.",
+    "moreDescription": "Collaborating with the marketing team, & internal and external designers to ensure the creation and delivery of tailored.You will be essential in finding new business prospects, developing connections with possible customers, and eventually advancing our company's expansion in your job as a Business Development Associate.",
+    "skills": ["Strategic Planning", "Communication", "Analytical Skills", "Project Management"]
   },
   {
     "id": 21,
@@ -505,7 +517,9 @@
     "topCompanies": "future_infotech",
     "productState": "Most Popular",
     "progress": 55,
-    "jobTags": ["IT Services & Consulting", "Electronic Components"]
+    "jobTags": ["IT Services & Consulting", "Electronic Components"],
+    "moreDescription": "We are looking for highly motivated and skilled Full Stack .NET Developers to join our dynamic team.and explore a career in Full Stack.NET Development.You will collaborate closely with our team to provide original answers to challenging issues and add to the overall accomplishment of our projects.",
+    "skills": ["HTML/CSS", "JavaScript", "Net Framework", "C# Programming", "SQL Databases"]
   },
   {
     "id": 22,
@@ -530,7 +544,9 @@
     "topCompanies": "soylent",
     "productState": "Most Popular",
     "progress": 88,
-    "description": "Collaborating with the marketing team, & internal and external designers to ensure the creation and delivery of tailored."
+    "description": "Collaborating with the marketing team, & internal and external designers to ensure the creation and delivery of tailored.",
+    "moreDescription": "We are seeking a talented Product UI Designer to join our dynamic team. The ideal candidate will have a strong interest in creating visually appealing, straightforward, and easy-to-use user interfaces.In order to develop, create, and implement creative solutions that improve user experiences, you will work with cross-functional teams.",
+    "skills": ["Figma", "UX Research Skills", "Sketch", "Adobe XD"]
   },
   {
     "id": 23,
@@ -554,7 +570,9 @@
     "jobLocation": "kansas_city",
     "topCompanies": "deal_design",
     "progress": 79,
-    "description": "We are seeking a talented Knitted Fashion Designer to join our team. As a Knitted Fashion Designer."
+    "description": "We are seeking a talented Knitted Fashion Designer to join our team. As a Knitted Fashion Designer.",
+    "moreDescription": "Join us where your skills and creative thinking fuel our expansion and success in a fast-paced, dynamic workplace!You will be fundamental in developing our strategy for mobile automation and promoting the use of best practices in test automation.",
+    "skills": ["Automation", "Coding", "Web testing", "Underwriting", "Mobile testing"]
   },
   {
     "id": 24,
@@ -578,7 +596,9 @@
     "jobLocation": "london",
     "topCompanies": "flashed_craft",
     "progress": 80,
-    "description": "Work on-site at project locations as needed in support of the field services teams. Minimum experience required 3 Years."
+    "description": "Work on-site at project locations as needed in support of the field services teams. Minimum experience required 3 Years.",
+    "moreDescription": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience.If you want to increase the profile of your company, you will also need to analyse competition activity, carry out market research, and create marketing strategies. To generate engaging content for conventional and digital marketing initiatives, you will also work with the marketing team.",
+    "skills": ["Adaptability", "UX Research Skills", "Sketch", "Adobe XD"]
   },
   {
     "id": 25,
@@ -602,7 +622,9 @@
     "jobLocation": "munich",
     "topCompanies": "tech_rayan",
     "progress": 60,
-    "description": "We are seeking a talented Knitted Fashion Designer to join our team. As a Knitted Fashion Designer."
+    "description": "We are seeking a talented Knitted Fashion Designer to join our team. As a Knitted Fashion Designer.",
+    "moreDescription": "We are seeking a talented Knitted Fashion Designer to join our team. As a Knitted Fashion Designer.You will be in charge of coming up with creative and fashionable designs for our clients as a fashion designer. To make your ideas a reality, you will work directly with our production team, design team, and clients. This is a special chance for you to express your creativity and help our business flourish.",
+    "skills": ["Innovation", "Sketching", "Sewing", "Garment Construction", "Communication"]
   },
   {
     "id": 26,
@@ -626,7 +648,9 @@
     "jobLocation": "ottawa",
     "topCompanies": "future_infotech",
     "progress": 66,
-    "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience."
+    "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience.",
+    "moreDescription": "Join us where your skills and creative thinking fuel our expansion and success in a fast-paced, dynamic workplace!You will be fundamental in developing our strategy for mobile automation and promoting the use of best practices in test automation.",
+    "skills": ["Automation", "Coding", "Web testing", "Underwriting", "Mobile testing"]
   },
   {
     "id": 27,
@@ -650,7 +674,9 @@
     "jobLocation": "prague",
     "topCompanies": "soylent",
     "progress": 46,
-    "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience."
+    "description": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience.",
+    "moreDescription": "Orchid Lifesciences is looking for a Marketing Manager with 1-4 years of relevant work experience.If you want to increase the profile of your company, you will also need to analyse competition activity, carry out market research, and create marketing strategies. To generate engaging content for conventional and digital marketing initiatives, you will also work with the marketing team.",
+    "skills": ["Adaptability", "UX Research Skills", "Sketch", "Adobe XD"]
   },
   {
     "id": 28,
@@ -674,7 +700,9 @@
     "jobLocation": "honolulu",
     "topCompanies": "deal_design",
     "progress": 87,
-    "description": "We are looking for highly motivated and skilled Full Stack .NET Developers to join our dynamic team.and explore a career in Full Stack.NET Development."
+    "description": "We are looking for highly motivated and skilled Full Stack .NET Developers to join our dynamic team.and explore a career in Full Stack.NET Development.",
+    "moreDescription": "WSeeking to add an Oracle EPM Consultant to our team. For clients, you'll optimise EPM systems, offer solutions, and offer technical know-how.We would love to speak with you if you are a problem solver, have an attention to detail, and love technology.",
+    "skills": ["Oracle Epbcs", "Oracle Epm", "Fccs", "Oracle", "Arcs"]
   },
   {
     "id": 29,

@@ -72,6 +72,17 @@ import JobLeftSidebar from "../Pages/Job/Grid/JobLeftSidebar";
 import JobRightSidebar from "../Pages/Job/Grid/JobRightSidebar";
 import JobGridNoSidebar from "../Pages/Job/Grid/JobGridNoSidebar";
 import JobLeftList from "../Pages/Job/Listing/JobLeftList";
+import JobRightList from "../Pages/Job/Listing/JobRightList";
+import JobListNoSidebar from "../Pages/Job/Listing/JobListNoSidebar";
+import JobLeftDrawer from "../Pages/Job/Other/JobLeftDrawer";
+import JobRightDrawer from "../Pages/Job/Other/JobRightDrawer";
+import JobInfiniteScroll from "../Pages/Job/Other/JobInfiniteScroll";
+import JobLoadMore from "../Pages/Job/Other/JobLoadMore";
+import JobFullList from "../Pages/Job/Other/JobFullList";
+import JobListStyle2 from "../Pages/Job/Other/JobListStyle2";
+import JobBothSidebar from "../Pages/Job/Other/JobBothSidebar";
+import JobAd from "../Pages/Job/Other/JobAd";
+import JobFilter from "../Pages/Job/Other/JobFilter";
 
 const Router = createBrowserRouter([
   {
@@ -175,6 +186,19 @@ const Router = createBrowserRouter([
 
       //Job-Listing
       { path: RouteList.Job.Listing.JobLeftList, element: <JobLeftList /> },
+      { path: RouteList.Job.Listing.JobRightList, element: <JobRightList /> },
+      { path: RouteList.Job.Listing.JobListNoSidebar, element: <JobListNoSidebar /> },
+
+      //Job-Other
+      { path: RouteList.Job.Other.JobLeftDrawer, element: <JobLeftDrawer /> },
+      { path: RouteList.Job.Other.JobRightDrawer, element: <JobRightDrawer /> },
+      { path: RouteList.Job.Other.JobInfiniteScroll, element: <JobInfiniteScroll /> },
+      { path: RouteList.Job.Other.JobLoadMore, element: <JobLoadMore /> },
+      { path: RouteList.Job.Other.JobAd, element: <JobAd /> },
+      { path: RouteList.Job.Other.JobFilter, element: <JobFilter /> },
+      { path: RouteList.Job.Other.JobFullList, element: <JobFullList /> },
+      { path: RouteList.Job.Other.JobBothSidebar, element: <JobBothSidebar /> },
+      { path: RouteList.Job.Other.JobListStyle2, element: <JobListStyle2 /> },
     ],
   },
 ]);

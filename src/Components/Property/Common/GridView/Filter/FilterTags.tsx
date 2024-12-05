@@ -1,13 +1,14 @@
 import { FC, Fragment, useState } from "react";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
 import { Href } from "../../../../../Constants/Constants";
+import { FilterTabsListData } from "../../../../../Data/Property";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
 import { setPopular, setSortBy } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
 import { setCardToShow, setOpenFilterSidebar } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
 import { TopPanelType } from "../../../../../Types/ProductType";
-import { FilterTabsListData } from "../../../../../Data/Property";
+import HeaderFilter from "./HeaderFilter";
 
-const FilterTags: FC<TopPanelType> = ({ topFilterSidebar, side, mainClass, type }) => {
+const FilterTags: FC<TopPanelType> = ({ topFilterSidebar, side, mainClass, type, jobBoxStyle }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useAppDispatch();
   const { sortBy } = useAppSelector((state) => state.filter);
@@ -37,6 +38,7 @@ const FilterTags: FC<TopPanelType> = ({ topFilterSidebar, side, mainClass, type 
 
   return (
     <div className={mainClass ? mainClass : "top-panel"}>
+      {jobBoxStyle === "header-filter" && <HeaderFilter />}
       {type === "job" ? (
         <div className="category-filter-flex">
           <h5>All {totalProduct} jobs got found</h5>

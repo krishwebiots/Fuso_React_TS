@@ -65,3 +65,20 @@ export const JobTypeData = [
   { id: "JobType-4", label: "Part Time", type: "part_time" },
   { id: "JobType-5", label: "Temporary", type: "temporary" },
 ];
+
+export const AdListData = ["Fresher", "Less than 1 Month", "Less than 2 Month", "Less than 3 Month", "Less than 4 Month"];
+
+export const AdPriceListData = [
+  { price: "$1800", value: "35865" },
+  { price: "$2400", value: "21604" },
+  { price: "$3000", value: "58147" },
+  { price: "$3500", value: "65015" },
+  { price: "$3800", value: "51416" },
+  { price: "$4500", value: "78627" },
+];
+
+export const AdIconListData = [
+  { icon: "😔", text: "Not Useful" },
+  { icon: "😌", text: "Neutral" },
+  { icon: "🙂", text: "Very Useful" },
+];

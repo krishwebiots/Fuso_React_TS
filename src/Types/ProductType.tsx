@@ -48,6 +48,8 @@ export interface ProductType {
   byJob?: string;
   jobLocation?: string;
   topCompanies?: string;
+  moreDescription?: string;
+  skills?: string[];
 }
 
 export interface ProductSliceProp {
@@ -84,6 +86,7 @@ export interface GridViewType {
   carShow?: number;
   topCategory?: boolean;
   jobBoxStyle?: string;
+  fullList?: boolean;
 }
 
 export interface GridLayoutType {
@@ -95,6 +98,7 @@ export interface GridLayoutType {
   scrollType?: string;
   map?: boolean;
   jobBoxStyle?: string;
+  side?: string;
 }
 
 export interface FilterProductsType {
@@ -107,6 +111,7 @@ export interface TopPanelType {
   topFilterSidebar?: boolean;
   mainClass?: string;
   type: string;
+  jobBoxStyle?: string;
 }
 
 export interface FilterSidebarType {
@@ -219,4 +224,8 @@ export interface RenderImageType {
   type?: string;
   multiple?: boolean;
   key?: number;
+}
+
+export interface RightSidebarType {
+  value: ProductType[];
 }

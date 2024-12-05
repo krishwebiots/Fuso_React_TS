@@ -36,7 +36,7 @@ const JobProductBox5: FC<ProductBoxType> = ({ data }) => {
         </Label>
         <Label>
           <Image src={dynamicSvg("job/job-box/briefcase.svg")} alt="briefcase" className="img-fluid" />
-          {data.jobType?.slice(0, 1).map((job) => job)}
+          {data.jobType?.slice(0, 1).map((job) => job.replace("_", " "))}
         </Label>
       </div>
       <p>{data.description}</p>

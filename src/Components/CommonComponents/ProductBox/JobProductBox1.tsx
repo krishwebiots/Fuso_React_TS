@@ -1,11 +1,11 @@
 import { Clock, Location } from "iconsax-react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
+import { Label } from "reactstrap";
 import { ApplyNow, Href } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
-import { Label } from "reactstrap";
-import { FC } from "react";
 
 const JobProductBox1: FC<ProductBoxType> = ({ data }) => {
   return (
@@ -33,7 +33,7 @@ const JobProductBox1: FC<ProductBoxType> = ({ data }) => {
         </Label>
         <Label>
           <Image src={dynamicSvg("job/job-box/briefcase.svg")} alt="briefcase" className="img-fluid" />
-          {data.jobType?.slice(0, 1).map((job) => job)}
+          {data.jobType?.slice(0, 1).map((job) => job.replace("_", " "))}
         </Label>
       </div>
       <p>{data.description}</p>
