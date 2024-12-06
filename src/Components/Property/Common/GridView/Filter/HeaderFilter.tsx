@@ -1,61 +1,60 @@
+import { useSearchParams } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 import { Filters, Href, SymbolRegex } from "../../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
+import { clearAllFilters } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
 
 const HeaderFilter = () => {
   const filterTags: Record<string, any> = useAppSelector((state) => state.filter);
   const dispatch = useAppDispatch();
 
-  const StringConvert = (str: string): string => str.replace(/([A-Z])/g, " $1").trim();
+  const [searchParams] = useSearchParams();
+
+  const parseQueryParams = (): Record<string, string> => {
+    const parsedData: Record<string, string> = {};
+    searchParams.forEach((value, key) => {
+      parsedData[key] = value;
+    });
+    return parsedData;
+  };
+
+  const oldData = parseQueryParams();
 
   const removeFilter = (key: string, value: any) => dispatch({ type: "filter/removeFilter", payload: { key, value } });
 
-  const clearAllFilters = () => dispatch({ type: "filter/clearAllFilters" });
+  const clearAll = () => dispatch(clearAllFilters());
+
+  const StringConvert = (str: string) => {
+    return str.charAt(0).toUpperCase() + str.slice(1).replace(SymbolRegex, " ");
+  };
 
   const renderTag = (key: string, value: any, index: number = 0): JSX.Element | JSX.Element[] | null => {
-    const updatedKey = StringConvert(key);
-    const displayKey = updatedKey.replace("job", "").trim();
-
-    if (!value || (Array.isArray(value) && value.length === 0)) {
-      return null;
-    }
-
-    if (Array.isArray(value) && ["priceStatus", "squareFeetStatus", "yearBuiltStatus", "budgetStatus", "carKilometers", "jobSalary", "minAndMaxSalary"].includes(key)) {
-      const [min, max] = value;
-      const displayValue = `${min}-${max}`;
+    if ("jobSalary" === key) {
       return (
         <li key={`${key}-${index}`}>
-          <a href={Href}>{`${displayKey}: ${displayValue}`}</a>
+          <a href={Href}>{`${StringConvert(key)}: ${filterTags[key][0]} - ${filterTags[key][1]}`}</a>
         </li>
       );
     }
-
     if (Array.isArray(value)) {
       return value.map((item, subIndex) => renderTag(key, item, subIndex)).filter((child): child is JSX.Element => child !== null);
     }
-
     return (
       <li key={`${key}-${index}`}>
         <a href={Href}>
-          {`${displayKey}: ${value.replace(SymbolRegex, " ")}`}
+          {StringConvert(value)}
           <i className="ri-close-line" onClick={() => removeFilter(key, value)} />
         </a>
       </li>
     );
   };
 
-  const allTags = Object.entries(filterTags);
-
   return (
     <div className="filter-header">
       <h4>{Filters}</h4>
       <div className="job-header-box">
-        <ul className="job-filter-list">
-          {allTags.map(([key, value]) => (
-            <Fragment key={key}>{renderTag(key, value)}</Fragment>
-          ))}
-        </ul>
-        <a href="#!" className="text-btn" onClick={clearAllFilters}>
+        <ul className="job-filter-list">{filterTags && Object.entries(filterTags).map(([key, value], i) => <Fragment key={i}>{filterTags[key] && oldData[key] && renderTag(key, value)}</Fragment>)}</ul>
+        <a href="#!" className="text-btn" onClick={clearAll}>
           Clear All
         </a>
       </div>

@@ -139,6 +139,12 @@ const FilterSlice = createSlice({
     clearAllFilters: (state: any) => {
       Object.keys(state).forEach((key) => {
         if (Array.isArray(state[key])) {
+          if (key === "jobSalary") {
+            return (state[key] = state.jobSalary);
+          }
+          if (key === "minAndMaxSalary") {
+            return (state[key] = state.minAndMaxSalary);
+          }
           state[key] = [];
         } else {
           state[key] = "";

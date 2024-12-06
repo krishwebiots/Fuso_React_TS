@@ -35,17 +35,17 @@ const UseFilterJob = ({ value }: FilterProductsType) => {
     setShowProduct(filteredProducts);
 
     const params = new URLSearchParams(searchParams);
-    ["categories", "salary", "work", "company", "education", "by", "location", "top-companies", "type"].forEach((name) => params.delete(name));
+    ["jobCategories", "jobSalary", "jobWorkMode", "jobCompanyType", "jobEducation", "jobBy", "jonLocation", "jobTopCompanies", "jobType"].forEach((name) => params.delete(name));
 
-    if (jobCategories.length !== 0) params.set("categories", jobCategories.join(","));
-    if (jobSalary) params.set("salary", `${jobSalary[0]}-${jobSalary[1]}`);
-    if (jobWorkMode.length !== 0) params.set("work", jobWorkMode);
-    if (jobCompanyType.length !== 0) params.set("company", jobCompanyType.join(","));
-    if (jobEducation.length !== 0) params.set("education", jobEducation.join(","));
-    if (jobBy.length !== 0) params.set("by", jobBy.join(","));
-    if (jonLocation.length !== 0) params.set("location", jonLocation.join(","));
-    if (jobTopCompanies.length !== 0) params.set("top-companies", jobTopCompanies.join(","));
-    if (jobType.length !== 0) params.set("type", jobType.join(","));
+    if (jobCategories.length !== 0) params.set("jobCategories", jobCategories.join(","));
+    if (jobSalary) params.set("jobSalary", `${jobSalary[0]}-${jobSalary[1]}`);
+    if (jobWorkMode.length !== 0) params.set("jobWorkMode", jobWorkMode);
+    if (jobCompanyType.length !== 0) params.set("jobCompanyType", jobCompanyType.join(","));
+    if (jobEducation.length !== 0) params.set("jobEducation", jobEducation.join(","));
+    if (jobBy.length !== 0) params.set("jobBy", jobBy.join(","));
+    if (jonLocation.length !== 0) params.set("jonLocation", jonLocation.join(","));
+    if (jobTopCompanies.length !== 0) params.set("jobTopCompanies", jobTopCompanies.join(","));
+    if (jobType.length !== 0) params.set("jobType", jobType.join(","));
 
     router(`${pathname}?${params}`);
   }, [pathname, jobCategories, router, searchParams, value, jobSalary, jobWorkMode, jobCompanyType, jobEducation, jobBy, jonLocation, jobTopCompanies, jobType, popular, sortBy]);
