@@ -82,3 +82,26 @@ export const AdIconListData = [
   { icon: "😌", text: "Neutral" },
   { icon: "🙂", text: "Very Useful" },
 ];
+
+export const InfoListData = [
+  { image: "develop", title: "Department", text: "Development" },
+  { image: "location", title: "Location", text: "Puerta 830 Grupo" },
+  { image: "dollar", title: "Salary", text: "$18-20K USD" },
+];
+
+export const AboutTheRoleData = ["Allies Infotech is seeking a highly motivated and results-driven Business Development Executive to join our growing team. The successful candidate will play a crucial role in identifying new business opportunities, building relationships, and driving revenue growth. The Business Development Executive will be responsible for creating and implementing effective strategies to expand our customer base and achieve sales targets."];
+
+export const JobLikeData = ["Gain knowledge about all the services and products that our business has to offer.", "Acquiring new customers through direct contact, by word-of-mouth, or by implementing new marketing strategies", "Exceptional networking and public relations abilities to attract potential clients", "Negotiate terms and close deals to achieve revenue targets while ensuring customer satisfaction.", "Preserving close connections with current clients to make sure their expectations are fulfilled in a timely and efficient manner"];
+
+export const CanApplyData = ["Diploma/Bachelors’/Masters’ in Software Development, Computer Science, Information Technology or a related field.", "Fundamental knowledge in IT sales and marketing", "Knowledge of bidding on freelancing portals such as Freelancer, Upwork, Guru, Fiverr, etc.", "Outstanding networking abilities", "Strong verbal and written communication", "Resourceful and possesses remarkable research abilities", "Capability to communicate ideas and explain concepts to a range of audiences", "Impressive client service abilities", "Talent to sell value and maintain a good reputation"];
+
+export const SkillListData = ["Figma", "UX Research Skills", "Sketch", "Adobe XD"];
+
+export const BenefitsListData = ["Positive Work Environment", "5-Days Working", "Paid Leaves", "Complimentary Health Insurance", "Fun Activities", "Overtime Pay", "Personal Loan", "Employee Training", "Professional Developments", "Annual Picnic"];
+
+export const ApplyForJobListData = [
+  { title: "Position:", text: "3" },
+  { title: "Experience:", text: "0 to 1.5 years of experience" },
+  { title: "Location:", text: "Amsterdam - Hollowland" },
+  { title: "Work Mode:", text: "Full Time" },
+];

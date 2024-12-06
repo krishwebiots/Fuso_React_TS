@@ -18,7 +18,7 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
 
     const actionCreator = (option?: string[] | string) => {
       if (Array.isArray(option)) return isChecked ? [...option, value] : option.filter((v) => v !== value);
-      else if (typeof option === "string") return isChecked ? value : carModalYear !== value;
+      else if (typeof option === "string") return isChecked ? value : option !== value;
       else return [field === "min" ? +value : values?.[0], field === "max" ? +value : values?.[1]];
     };
 

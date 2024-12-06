@@ -1,12 +1,13 @@
 import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
 import { FC, Fragment, useEffect, useRef } from "react";
+import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { RecommendedUsedCarsTitle, RelatedPropertiesTitle } from "../../../../Constants/Constants";
-import { DetailCarSlider, DetailPropertySlider } from "../../../../Data/Property";
+import { RecommendedUsedCarsTitle, RelatedPropertiesTitle, SimilarJobOpportunities } from "../../../../Constants/Constants";
+import { DetailCarSlider, DetailJobSlider, DetailPropertySlider } from "../../../../Data/Property";
 import { useAppSelector } from "../../../../ReduxToolkit/Hooks";
 import CarProductBox1 from "../../../CommonComponents/ProductBox/CarProductBox1";
+import JobProductBox1 from "../../../CommonComponents/ProductBox/JobProductBox1";
 import PropertyProductBox1 from "../../../CommonComponents/ProductBox/PropertyProductBox1";
-import { Swiper as SwiperType } from "swiper";
 
 const RelatedProduct: FC<{ type?: string }> = ({ type }) => {
   const { productItem } = useAppSelector((state) => state.product);
@@ -17,7 +18,7 @@ const RelatedProduct: FC<{ type?: string }> = ({ type }) => {
     if (swiperRef.current) swiperRef.current.init();
   }, []);
   return (
-    <div className={`section-t-space ${type === "car" ? "car-product-section" : ""}`}>
+    <div className={`${type === "job" ? "related-space" : "section-t-space"} ${type === "car" ? "car-product-section" : ""}`}>
       {type === "car" ? (
         <Fragment>
           <div className="detail-flex-title">
@@ -38,6 +39,25 @@ const RelatedProduct: FC<{ type?: string }> = ({ type }) => {
               </SwiperSlide>
             ))}
           </Swiper>
+        </Fragment>
+      ) : type === "job" ? (
+        <Fragment>
+          <h5 className="description-title">{SimilarJobOpportunities}</h5>
+          <div className="detail-swiper-section">
+            <Swiper {...DetailJobSlider} className="detail-swiper-slider" onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
+              {PropertyData.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <JobProductBox1 data={item} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className="swiper-button-prev detail-prev">
+              <i className="ri-arrow-left-wide-line" />
+            </div>
+            <div className="swiper-button-next detail-next">
+              <i className="ri-arrow-right-wide-line" />
+            </div>
+          </div>
         </Fragment>
       ) : (
         <Fragment>

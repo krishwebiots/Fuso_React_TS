@@ -1,13 +1,15 @@
+import { FC, useState } from "react";
 import { Rating } from "react-simple-star-rating";
+import { Fragment } from "react/jsx-runtime";
 import { Label } from "reactstrap";
 import { Href } from "../../../../../Constants/Constants";
+import { CarTitleListData } from "../../../../../Data/Car";
 import { useAppDispatch } from "../../../../../ReduxToolkit/Hooks";
 import { setShareModal } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
-import { Fragment } from "react/jsx-runtime";
-import ShareModal from "./ShareModal";
-import { FC, useState } from "react";
-import { CarTitleListData } from "../../../../../Data/Car";
 import SvgIcon from "../../../../../Utils/SvgIcon";
+import ShareModal from "./ShareModal";
+import { dynamicSvg, Image } from "../../../../../Utils";
+import { SkillListData } from "../../../../../Data/Job";
 
 const MainDetail: FC<{ type?: string }> = ({ type }) => {
   const dispatch = useAppDispatch();
@@ -89,6 +91,49 @@ const MainDetail: FC<{ type?: string }> = ({ type }) => {
               <h4>
                 $25,200 <span>/ EMI - ₹ 1.58L</span>
               </h4>
+            </div>
+          </div>
+        </div>
+      )}
+      {type === "job" && (
+        <div className="top-detail top-detail-style-2">
+          <div className="detail-title-flex">
+            <div className="job-icon">
+              <Image src={dynamicSvg("job/job-box/1.svg")} alt="j-1" className="img-fluid" />
+            </div>
+            <div className="top-title">
+              <div className="review-title-flex">
+                <div>
+                  <h5>Allies Infotech</h5>
+                  <span className="review-rating">
+                    <span>
+                      <i className="ri-star-fill" />
+                      4.3
+                    </span>
+                    85 Review
+                  </span>
+                </div>
+              </div>
+              <ul className="review-list">
+                <li>
+                  <i className="ri-time-line" /> : <span>30+ days ago</span>
+                </li>
+                <li>
+                  <i className="ri-team-line" /> Applicants:
+                  <span>20 people View</span>
+                </li>
+              </ul>
+              <div className="flex-address">
+                <i className="ri-map-pin-line" />
+                <p>Puerta 830 Grupo Norma Munguía 50 Puerta 890, San Sebastían de los Reyes, Man 74332</p>
+              </div>
+              <ul className="skill-list">
+                {SkillListData.map((item, index) => (
+                  <li key={index}>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

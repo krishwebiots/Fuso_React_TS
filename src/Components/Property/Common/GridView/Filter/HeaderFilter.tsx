@@ -2,37 +2,32 @@ import { useSearchParams } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 import { Filters, Href, SymbolRegex } from "../../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
-import { clearAllFilters } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { clearAllFilters, removeFilter } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
 
 const HeaderFilter = () => {
   const filterTags: Record<string, any> = useAppSelector((state) => state.filter);
   const dispatch = useAppDispatch();
-
   const [searchParams] = useSearchParams();
 
   const parseQueryParams = (): Record<string, string> => {
     const parsedData: Record<string, string> = {};
-    searchParams.forEach((value, key) => {
-      parsedData[key] = value;
-    });
+    searchParams.forEach((value, key) => (parsedData[key] = value));
     return parsedData;
   };
 
   const oldData = parseQueryParams();
 
-  const removeFilter = (key: string, value: any) => dispatch({ type: "filter/removeFilter", payload: { key, value } });
+  const remove = (key: string, value: any) => dispatch(removeFilter({ key, value }));
 
   const clearAll = () => dispatch(clearAllFilters());
 
-  const StringConvert = (str: string) => {
-    return str.charAt(0).toUpperCase() + str.slice(1).replace(SymbolRegex, " ");
-  };
+  const stringConvert = (str: string) => str.charAt(0).toUpperCase() + str.slice(1).replace(SymbolRegex, " ");
 
   const renderTag = (key: string, value: any, index: number = 0): JSX.Element | JSX.Element[] | null => {
     if ("jobSalary" === key) {
       return (
         <li key={`${key}-${index}`}>
-          <a href={Href}>{`${StringConvert(key)}: ${filterTags[key][0]} - ${filterTags[key][1]}`}</a>
+          <a href={Href}>{`${stringConvert(key)}: ${filterTags[key][0]} - ${filterTags[key][1]}`}</a>
         </li>
       );
     }
@@ -42,8 +37,8 @@ const HeaderFilter = () => {
     return (
       <li key={`${key}-${index}`}>
         <a href={Href}>
-          {StringConvert(value)}
-          <i className="ri-close-line" onClick={() => removeFilter(key, value)} />
+          {stringConvert(value)}
+          <i className="ri-close-line" onClick={() => remove(key, value)} />
         </a>
       </li>
     );

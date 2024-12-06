@@ -9,8 +9,12 @@ import OfferModal from "../../../../CommonComponents/Modal/OfferModal";
 import ContactInfo from "./ContactInfo";
 import Exploration from "./Exploration";
 import FeaturedProperty from "./FeaturedProperty";
+import Apply from "./Apply";
+import OtherOpportunities from "./OtherOpportunities";
+import ApplyForJob from "./ApplyForJob";
+import ShareFriends from "../../GridView/RightSidebar/ShareFriends";
 
-const DetailSidebar: FC<CarDetailType> = ({ type }) => {
+const DetailSidebar: FC<CarDetailType> = ({ type, sliderStyle }) => {
   const dispatch = useAppDispatch();
 
   return (
@@ -41,6 +45,23 @@ const DetailSidebar: FC<CarDetailType> = ({ type }) => {
           <DriverModal />
           <OfferModal />
         </Fragment>
+      ) : type === "job" ? (
+        <Col lg="4" className={sliderStyle === "style_2" ? "col-xl-3" : ""}>
+          <div className="detail-right-sidebar">
+            {sliderStyle === "style_2" ? (
+              <Fragment>
+                <ApplyForJob />
+                <OtherOpportunities />
+                <ShareFriends />
+              </Fragment>
+            ) : (
+              <Fragment>
+                <Apply />
+                <OtherOpportunities />
+              </Fragment>
+            )}
+          </div>
+        </Col>
       ) : (
         <Col xl="3" lg="4">
           <div className="detail-sidebar">

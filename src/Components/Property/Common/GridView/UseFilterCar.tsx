@@ -15,7 +15,7 @@ const UseFilterCar = ({ value }: FilterProductsType) => {
       ?.filter((product) => {
         const BrandModel = carBrandModel.length === 0 || product.category === undefined || carBrandModel.some((prop) => product.category?.includes(prop));
         const PriceBudget = product.price !== undefined && budgetStatus ? budgetStatus[0] <= product.price && budgetStatus[1] >= product.price && true : true;
-        const Categories = carCategories.length === 0 || product.category === undefined || product.category?.includes(carCategories);
+        const Categories = carCategories.length === 0 || product.category === undefined || product.category?.includes(carCategories) || carCategories.includes("all");
         const FuelType = carFuelType.length === 0 || product.fuel === undefined || carFuelType.includes(product.fuel);
         const ModalTear = product.year === undefined || carModalYear <= product.year;
         const Seats = carSeats.length === 0 || product.seats === undefined || carSeats.includes(product.seats);

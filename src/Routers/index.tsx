@@ -83,6 +83,8 @@ import JobListStyle2 from "../Pages/Job/Other/JobListStyle2";
 import JobBothSidebar from "../Pages/Job/Other/JobBothSidebar";
 import JobAd from "../Pages/Job/Other/JobAd";
 import JobFilter from "../Pages/Job/Other/JobFilter";
+import JobDetail1 from "../Pages/Job/Detail/JobDetail1";
+import JobDetail2 from "../Pages/Job/Detail/JobDetail2";
 
 const Router = createBrowserRouter([
   {
@@ -199,6 +201,10 @@ const Router = createBrowserRouter([
       { path: RouteList.Job.Other.JobFullList, element: <JobFullList /> },
       { path: RouteList.Job.Other.JobBothSidebar, element: <JobBothSidebar /> },
       { path: RouteList.Job.Other.JobListStyle2, element: <JobListStyle2 /> },
+
+      //Job-Detail
+      { path: RouteList.Job.Detail.JobDetail1, element: <JobDetail1 /> },
+      { path: RouteList.Job.Detail.JobDetail2, element: <JobDetail2 /> },
     ],
   },
 ]);

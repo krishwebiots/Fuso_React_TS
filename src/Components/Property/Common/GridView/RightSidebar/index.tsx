@@ -4,6 +4,7 @@ import { Button, Col } from "reactstrap";
 import { RouteList } from "../../../../../Routers/RouteList";
 import { RightSidebarType } from "../../../../../Types/ProductType";
 import { dynamicSvg, Image } from "../../../../../Utils";
+import ShareFriends from "./ShareFriends";
 
 const RightSidebar: FC<RightSidebarType> = ({ value }) => {
   return (
@@ -25,13 +26,7 @@ const RightSidebar: FC<RightSidebarType> = ({ value }) => {
             </div>
           ))}
         </div>
-        <div className="share-friends">
-          <h6>Have a friend who’ll be good for this job?</h6>
-          <Link to="https://web.whatsapp.com/" target="_blank" className="btn-solid">
-            <i className="ri-whatsapp-line" />
-            Share with a Friend
-          </Link>
-        </div>
+        <ShareFriends />
         <div className="sidebar-banner">
           <h2>10M+ Users are on the Fuso app</h2>
           <Button className="btn-solid">Download Now</Button>

@@ -209,6 +209,7 @@ export interface CarDetailType {
   type?: string;
   scrollspy?: boolean;
   classicSlider?: boolean;
+  sliderStyle?: string;
 }
 
 export interface CarBreadcrumbType {
@@ -228,4 +229,14 @@ export interface RenderImageType {
 
 export interface RightSidebarType {
   value: ProductType[];
+}
+
+export interface JobDescriptionBoxType {
+  title: string;
+  data: string[];
+  list?: boolean;
+}
+
+export interface JobDetailType {
+  type?: string;
 }
