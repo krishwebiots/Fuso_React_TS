@@ -36,7 +36,7 @@
     "category": ["mercedes", "citroen", "bmw", "renault", "ghost", "db11", "bolide", "cadillac_ct6", "direct_owner_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
-      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/gas-station.svg", "text": "Diesel" },
       { "icon": "car/product/km.svg", "text": "46,000 km" }
     ],
     "price": 240000,
@@ -45,7 +45,7 @@
     "color": "black",
     "transmission": "automatic",
     "owner": "2",
-    "kilometers": 20000,
+    "kilometers": 46000,
     "fuel": "diesel"
   },
   {
@@ -58,7 +58,7 @@
     "category": ["honda", "mercedes", "bmw", "lexus", "wraith", "db12", "aventador", "cadillac_xt4", "partner_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
-      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/gas-station.svg", "text": "CNG" },
       { "icon": "car/product/km.svg", "text": "46,700 km" }
     ],
     "price": 515629,
@@ -68,7 +68,7 @@
     "fuel": "CNG",
     "transmission": "semi_automatic",
     "owner": "3",
-    "kilometers": 30000,
+    "kilometers": 46700,
     "label": {
       "text": "Direct Owner",
       "icon": "ri-send-plane-line",
@@ -85,7 +85,7 @@
     "category": ["honda", "renault", "audi", "mercedes", "dawn", "valhalla", "huracan", "cadillac_escalade", "hot_deal"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
-      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/gas-station.svg", "text": "Electric" },
       { "icon": "car/product/km.svg", "text": "20,000 km" }
     ],
     "price": 269900,
@@ -94,7 +94,7 @@
     "color": "silver",
     "transmission": "manual",
     "owner": "4",
-    "kilometers": 40000,
+    "kilometers": 20000,
     "productState": "Most Popular",
     "fuel": "electric"
   },
@@ -118,7 +118,7 @@
     "fuel": "petrol",
     "transmission": "automatic",
     "owner": "1",
-    "kilometers": 50000,
+    "kilometers": 18500,
     "label": {
       "text": "Partner",
       "icon": "ri-team-line",
@@ -135,7 +135,7 @@
     "category": ["honda", "audi", "bmw", "renault", "spectre", "db9", "sian", "lexus_is", "direct_owner_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
-      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/gas-station.svg", "text": "Diesel" },
       { "icon": "car/product/km.svg", "text": "30,000 km" }
     ],
     "price": 44622,
@@ -144,7 +144,7 @@
     "color": "white",
     "transmission": "semi_automatic",
     "owner": "2",
-    "kilometers": 5000,
+    "kilometers": 30000,
     "productState": "Most Popular",
     "fuel": "diesel"
   },
@@ -158,7 +158,7 @@
     "category": ["renault", "audi", "bmw", "lexus", "silver_ghost", "cygnet", "revuelto", "lexus_es", "partner_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
-      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/gas-station.svg", "text": "CNG" },
       { "icon": "car/product/km.svg", "text": "25,000 km" }
     ],
     "price": 380000,
@@ -168,7 +168,7 @@
     "fuel": "CNG",
     "transmission": "manual",
     "owner": "3",
-    "kilometers": 15000,
+    "kilometers": 25000,
     "label": {
       "text": "Hot Deal",
       "icon": "ri-fire-line",
@@ -185,7 +185,7 @@
     "category": ["honda", "audi", "citroen", "lexus", "silver_wraith", "alfieri", "huracan_tecnica", "lexus_gs", "hot_deal"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "5 Person" },
-      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/gas-station.svg", "text": "Electric" },
       { "icon": "car/product/km.svg", "text": "30,000 km" }
     ],
     "price": 289000,
@@ -194,7 +194,7 @@
     "color": "black",
     "transmission": "automatic",
     "owner": "4",
-    "kilometers": 25000,
+    "kilometers": 30000,
     "productState": "Most Popular",
     "fuel": "electric"
   },
@@ -217,7 +217,7 @@
     "color": "black",
     "transmission": "semi_automatic",
     "owner": "1",
-    "kilometers": 35000,
+    "kilometers": 18500,
     "fuel": "petrol"
   },
   {
@@ -230,7 +230,7 @@
     "category": ["honda", "audi", "bmw", "renault", "continental_gt", "quattroporte", "ferrari_sf90_stradale", "bmw_ix", "direct_owner_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "4 Person" },
-      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/gas-station.svg", "text": "Diesel" },
       { "icon": "car/product/km.svg", "text": "30,000 km" }
     ],
     "price": 60666,
@@ -239,7 +239,7 @@
     "color": "blue",
     "transmission": "manual",
     "owner": "2",
-    "kilometers": 45000,
+    "kilometers": 30000,
     "productState": "Most Popular",
     "fuel": "diesel"
   },
@@ -253,7 +253,7 @@
     "category": ["mercedes", "citroen", "bmw", "lexus", "flying_spur", "levante", "ferrari_f8_tributo", "bmw_i4", "partner_cars"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "6 Person" },
-      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/gas-station.svg", "text": "CNG" },
       { "icon": "car/product/km.svg", "text": "25,000 km" }
     ],
     "price": 278000,
@@ -262,7 +262,7 @@
     "color": "silver",
     "transmission": "automatic",
     "owner": "3",
-    "kilometers": 8000,
+    "kilometers": 25000,
     "fuel": "CNG"
   },
   {
@@ -275,7 +275,7 @@
     "category": ["mercedes", "citroen", "bmw", "lexus", "mulsanne", "mc20", "ferrari_roma", "bmw_sedan", "hot_deal"],
     "features": [
       { "icon": "car/product/profile-2user.svg", "text": "7 Person" },
-      { "icon": "car/product/gas-station.svg", "text": "Petrol" },
+      { "icon": "car/product/gas-station.svg", "text": "Electric" },
       { "icon": "car/product/km.svg", "text": "30,000 km" }
     ],
     "price": 189000,
@@ -284,7 +284,7 @@
     "color": "white",
     "transmission": "semi_automatic",
     "owner": "4",
-    "kilometers": 13000,
+    "kilometers": 30000,
     "productState": "Most Popular",
     "fuel": "electric"
   },
@@ -309,7 +309,7 @@
     "color": "white",
     "transmission": "manual",
     "owner": "1",
-    "kilometers": 31000,
+    "kilometers": 50000,
     "fuel": "petrol"
   },
   {
@@ -323,7 +323,7 @@
     "category": ["arnage", "chiron", "ferrari_812_gts", "mercedes_benz_gla", "mercedes_benz_eqb", "direct_owner_cars"],
     "features": [
       { "icon": "car2/featured/1.svg", "text": "5 Seater" },
-      { "icon": "car2/featured/2.svg", "text": "Petrol" },
+      { "icon": "car2/featured/2.svg", "text": "Diesel" },
       { "icon": "car2/featured/3.svg", "text": "Auto" },
       { "icon": "car2/featured/4.svg", "text": "50,000KM" }
     ],
@@ -333,7 +333,7 @@
     "color": "blue",
     "transmission": "automatic",
     "owner": "2",
-    "kilometers": 39000,
+    "kilometers": 50000,
     "productState": "Most Popular",
     "fuel": "diesel"
   },
@@ -348,7 +348,7 @@
     "category": ["dbx", "divo", "cadillac_ct4", "mercedes_benz_amg", "partner_cars", "hot_deal"],
     "features": [
       { "icon": "car2/featured/1.svg", "text": "6 Seater" },
-      { "icon": "car2/featured/2.svg", "text": "Petrol" },
+      { "icon": "car2/featured/2.svg", "text": "CNG" },
       { "icon": "car2/featured/3.svg", "text": "Auto" },
       { "icon": "car2/featured/4.svg", "text": "50,000KM" }
     ],
@@ -358,7 +358,7 @@
     "color": "black",
     "transmission": "semi_automatic",
     "owner": "3",
-    "kilometers": 22000,
+    "kilometers": 50000,
     "fuel": "CNG"
   },
   {

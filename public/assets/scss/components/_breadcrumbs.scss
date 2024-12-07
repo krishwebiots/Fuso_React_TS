@@ -292,7 +292,8 @@
 }
 
 .car-breadcrumbs-section,
-.job-breadcrumbs-section {
+.job-breadcrumbs-section,
+.page-breadcrumbs-section {
     background: url(../../images/car/car-breadcrumbs.jpg);
     background-repeat: no-repeat;
     background-position: center center;
@@ -390,6 +391,14 @@
             }
         }
     }
+}
+
+.page-breadcrumbs-section {
+    background: url(../../images/other/breadcrumbs-img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
 }
 
 .style-breadcrumbs-4 {

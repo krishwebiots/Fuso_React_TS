@@ -111,3 +111,5 @@ export const Introduction: string = "Introduction";
 export const KeyJobDetailsTitle: string = "Key Job Details";
 export const BusinessDevelopment: string = "Business Development";
 export const SimilarJobsTitle: string = "Similar Jobs";
+export const LatestArticleTitle: string = "Latest Article";
+export const SocialContactTitle: string = "Social Contact";

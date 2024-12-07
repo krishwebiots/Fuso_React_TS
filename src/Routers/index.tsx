@@ -89,6 +89,8 @@ import JobDetail3 from "../Pages/Job/Detail/JobDetail3";
 import JobDetail4 from "../Pages/Job/Detail/JobDetail4";
 import JobDetail5 from "../Pages/Job/Detail/JobDetail5";
 import JobWishlist from "../Pages/Job/Wishlist";
+import BlogLeftSidebar from "../Pages/Pages/Blog/BlogPage/BlogLeftSidebar";
+import BlogRightSidebar from "../Pages/Pages/Blog/BlogPage/BlogRightSidebar";
 
 const Router = createBrowserRouter([
   {
@@ -215,6 +217,10 @@ const Router = createBrowserRouter([
 
       //Job-Wishlist
       { path: RouteList.Job.JobWishlist, element: <JobWishlist /> },
+
+      //Blog-Pages
+      { path: RouteList.Pages.Blog.BlogLeftSidebar, element: <BlogLeftSidebar /> },
+      { path: RouteList.Pages.Blog.BlogRightSidebar, element: <BlogRightSidebar /> },
     ],
   },
 ]);
