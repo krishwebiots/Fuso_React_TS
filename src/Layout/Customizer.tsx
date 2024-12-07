@@ -23,7 +23,7 @@ const Customizer: FC<PathTypes> = ({ part }) => {
   };
 
   return (
-    <div className="theme-btn-flex">
+    <div className={`theme-btn-flex ${part === "job" ? "job-color-change" : part === "car-2" ? "car2-color-change" : ""}`}>
       {part !== "job-2" && (
         <Button className="mode-button mode-change-button" onClick={toggleLayoutMode}>
           <i className={`ri-${isLayoutMode ? "sun" : "moon"}-line`} />

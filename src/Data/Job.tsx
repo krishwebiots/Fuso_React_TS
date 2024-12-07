@@ -105,3 +105,23 @@ export const ApplyForJobListData = [
   { title: "Location:", text: "Amsterdam - Hollowland" },
   { title: "Work Mode:", text: "Full Time" },
 ];
+
+export const SocialListData = [
+  { icon: "ri-linkedin-line", url: "https://in.linkedin.com/" },
+  { icon: "ri-mail-line", url: "https://mail.google.com/" },
+  { icon: "ri-twitter-line", url: "https://x.com/" },
+  { icon: "ri-whatsapp-line", url: "https://web.whatsapp.com/" },
+];
+
+export const IntroductionData = ["Game designers create the concepts and worlds of Mobile games. They are involved with the use to design of the 3DS Max, Maya, Zbrush, Software and create the user experience of Mobile games. Game designers create the concepts and worlds of Mobile games."];
+
+export const KeyJobDetailsData = [
+  { image: "17", title: "Vacancy", text: "3" },
+  { image: "15", title: "Employment Type", text: "Full Time" },
+  { image: "12", title: "Role", text: "Bussiness Development" },
+  { image: "14", title: "Experience", text: "0-1.5 Years" },
+  { image: "13", title: "Contract Type", text: "Regular" },
+  { image: "16", title: "Location", text: "Hollowland" },
+];
+
+export const SimilarJobsData = ["Similar Jobs", "Other Jobs Form Allies Infotech"];

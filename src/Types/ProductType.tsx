@@ -238,5 +238,10 @@ export interface JobDescriptionBoxType {
 }
 
 export interface JobDetailType {
+  detailType?: string;
+}
+
+export interface MainDetailType {
   type?: string;
+  detailType?: string;
 }

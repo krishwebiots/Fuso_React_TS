@@ -1,4 +1,4 @@
-import { Clock, Location } from "iconsax-react";
+import { Clock, Location, Trash } from "iconsax-react";
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Label } from "reactstrap";
@@ -6,8 +6,22 @@ import { ApplyNow, Href } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
+import { toast } from "react-toastify";
+import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
+import { setPropertyItem } from "../../../ReduxToolkit/Reducers/ProductReducers";
 
-const JobProductBox1: FC<ProductBoxType> = ({ data }) => {
+const JobProductBox1: FC<ProductBoxType> = ({ data, wishlist }) => {
+  const { productItem } = useAppSelector((state) => state.product);
+  const dispatch = useAppDispatch();
+
+  const handleWishlist = () => toast.success("Added to Wishlist successfully");
+
+  const handleRemove = (id: number) => {
+    const updatedProductItem = productItem.filter((item) => item.id !== id);
+    dispatch(setPropertyItem(updatedProductItem));
+    toast.success("Remove to Wishlist successfully");
+  };
+
   return (
     <div className="job-box">
       <div className="job-title-flex">
@@ -22,9 +36,15 @@ const JobProductBox1: FC<ProductBoxType> = ({ data }) => {
             <h5>{data.title}</h5>
           </Link>
         </div>
-        <Link to={Href} className="save-btn">
-          <i className="ri-bookmark-line" />
-        </Link>
+        {wishlist ? (
+          <Link to={Href} className="remove-button" onClick={() => handleRemove(data.id)}>
+            <Trash className="iconsax" />
+          </Link>
+        ) : (
+          <Link to={Href} className="save-btn" onClick={() => handleWishlist()}>
+            <i className="ri-bookmark-line" />
+          </Link>
+        )}
       </div>
       <div className="job-tag">
         <Label>

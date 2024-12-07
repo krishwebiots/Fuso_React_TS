@@ -1,10 +1,10 @@
 import { FC, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
+import { ApplyNow, BusinessDevelopment } from "../../../Constants/Constants";
+import { InfoListData, SocialListData } from "../../../Data/Job";
 import { RouteList } from "../../../Routers/RouteList";
-import { ApplyNow } from "../../../Constants/Constants";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
-import { InfoListData } from "../../../Data/Job";
 import RatioImage from "../../../Utils/RatioImage";
 
 const JobBreadcrumb: FC<{ type?: string }> = ({ type }) => {
@@ -13,6 +13,29 @@ const JobBreadcrumb: FC<{ type?: string }> = ({ type }) => {
       {type === "style_2" ? (
         <div className="job-breadcrumbs-section">
           <RatioImage src={dynamicImage("job/bg-effect/detail-breadcrumbs.jpeg")} alt="detail-breadcrumbs" className="bg-img" />
+        </div>
+      ) : type === "style_3" || type === "style_4" ? (
+        <div className={`job-breadcrumbs-section ${type === "style_3" ? "breadcrumbs-style-1" : ""}`}>
+          <Container>
+            <h2>{BusinessDevelopment}</h2>
+            <ul className="breadcrumb-list">
+              <li>Vacancy: 3</li>
+              <li>Full Time</li>
+              <li>Experience: 0-1.5 Years</li>
+              <li>Location: Hollowland</li>
+            </ul>
+            {type === "style_3" && (
+              <ul className="social-list">
+                {SocialListData.map((item, index) => (
+                  <li key={index}>
+                    <Link to={item.url} target="_blank">
+                      <i className={item.icon} />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </Container>
         </div>
       ) : (
         <div className="breadcrumbs-style-2">

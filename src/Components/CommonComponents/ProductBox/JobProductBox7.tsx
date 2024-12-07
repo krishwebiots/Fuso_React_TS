@@ -6,10 +6,14 @@ import { ApplyNow, Href, SymbolRegex } from "../../../Constants/Constants";
 import { dynamicSvg, Image } from "../../../Utils";
 import { Clock, Location } from "iconsax-react";
 import { Rating } from "react-simple-star-rating";
+import { toast } from "react-toastify";
 
 const JobProductBox7: FC<ProductBoxType> = ({ data }) => {
   const { pathname } = useLocation();
   const firstPart = pathname.split("/").map((item) => item.replace(SymbolRegex, " "));
+
+  const handleWishlist = () => toast.success("Added to Wishlist successfully");
+
   return (
     <div className="job-box">
       <div className="job-title-flex">
@@ -24,7 +28,7 @@ const JobProductBox7: FC<ProductBoxType> = ({ data }) => {
             <h5>{data.title}</h5>
           </Link>
         </div>
-        <a href={Href} className="save-btn">
+        <a href={Href} className="save-btn" onClick={() => handleWishlist()}>
           <i className="ri-bookmark-line" />
         </a>
       </div>

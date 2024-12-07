@@ -45,7 +45,7 @@ const PropertyProductBox1: FC<ProductBoxType> = ({ data, view, wishlist }) => {
             </Link>
           ) : (
             <Link to={Href} className="wishlist-btn" onClick={() => handleWishlist()}>
-              <i className="ri-bookmark-line"></i>
+              <i className="ri-bookmark-line" />
             </Link>
           )}
         </div>

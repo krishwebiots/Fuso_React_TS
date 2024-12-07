@@ -5,15 +5,18 @@ import { RouteList } from "../../../Routers/RouteList";
 import { Href } from "../../../Constants/Constants";
 import { dynamicSvg, Image } from "../../../Utils";
 import { Location } from "iconsax-react";
+import { toast } from "react-toastify";
 
 const JobProductBox6: FC<ProductBoxType> = ({ data }) => {
+  const handleWishlist = () => toast.success("Added to Wishlist successfully");
+
   return (
     <div className="job-box job-box-style-2">
       <div className="job-title-flex align-items-center">
         <Link to={RouteList.Job.Detail.JobDetail1} className="job-detail">
           <h5>{data.title}</h5>
         </Link>
-        <a href={Href} className="save-btn">
+        <a href={Href} className="save-btn" onClick={() => handleWishlist()}>
           <i className="ri-bookmark-line" />
         </a>
       </div>

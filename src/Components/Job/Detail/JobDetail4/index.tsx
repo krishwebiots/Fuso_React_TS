@@ -2,13 +2,13 @@ import { Fragment } from "react";
 import JobBreadcrumb from "../../../CommonComponents/Breadcrumbs/JobBreadcrumb";
 import JobDetail from "../../../Property/Common/ProductDetail/JobDetail";
 
-const JobDetail2Container = () => {
+const JobDetail4Container = () => {
   return (
     <Fragment>
-      <JobBreadcrumb type="style_2" />
-      <JobDetail detailType="style_2" />
+      <JobBreadcrumb type="style_4" />
+      <JobDetail detailType="style_4" />
     </Fragment>
   );
 };
 
-export default JobDetail2Container;
+export default JobDetail4Container;

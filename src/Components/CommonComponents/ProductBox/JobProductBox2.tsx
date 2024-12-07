@@ -6,15 +6,19 @@ import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicSvg, Image } from "../../../Utils";
 import SvgIcon from "../../../Utils/SvgIcon";
 import { FC } from "react";
+import { toast } from "react-toastify";
 
 const JobProductBox2: FC<ProductBoxType> = ({ data }) => {
   const { pathname } = useLocation();
   const firstPart = pathname.split("/").map((item) => item.replace(SymbolRegex, " "));
+
+  const handleWishlist = () => toast.success("Added to Wishlist successfully");
+
   return (
     <div className="hire-box">
       <div className={`save-flex ${firstPart[3] === "job-grid-type-3" ? "justify-content-end" : ""}`}>
         {firstPart[3] !== "job-grid-type-3" ? <span>{data.time}</span> : ""}
-        <Link to={Href} className="save-btn">
+        <Link to={Href} className="save-btn" onClick={() => handleWishlist()}>
           <i className="ri-bookmark-line" />
         </Link>
       </div>

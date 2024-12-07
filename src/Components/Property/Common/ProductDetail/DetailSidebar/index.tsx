@@ -13,6 +13,8 @@ import Apply from "./Apply";
 import OtherOpportunities from "./OtherOpportunities";
 import ApplyForJob from "./ApplyForJob";
 import ShareFriends from "../../GridView/RightSidebar/ShareFriends";
+import KeyJobDetails from "./KeyJobDetails";
+import SimilarJobs from "./SimilarJobs";
 
 const DetailSidebar: FC<CarDetailType> = ({ type, sliderStyle }) => {
   const dispatch = useAppDispatch();
@@ -46,13 +48,21 @@ const DetailSidebar: FC<CarDetailType> = ({ type, sliderStyle }) => {
           <OfferModal />
         </Fragment>
       ) : type === "job" ? (
-        <Col lg="4" className={sliderStyle === "style_2" ? "col-xl-3" : ""}>
-          <div className="detail-right-sidebar">
-            {sliderStyle === "style_2" ? (
+        <Col lg={sliderStyle === "style_3" ? "5" : "4"} className={sliderStyle === "style_2" || sliderStyle === "style_5" ? "col-xl-3" : ""}>
+          <div className={`detail-right-sidebar ${sliderStyle === "style_4" ? "similar-sidebar" : ""}`}>
+            {sliderStyle === "style_2" || sliderStyle === "style_5" ? (
               <Fragment>
                 <ApplyForJob />
                 <OtherOpportunities />
                 <ShareFriends />
+              </Fragment>
+            ) : sliderStyle === "style_3" ? (
+              <Fragment>
+                <KeyJobDetails />
+              </Fragment>
+            ) : sliderStyle === "style_4" ? (
+              <Fragment>
+                <SimilarJobs />
               </Fragment>
             ) : (
               <Fragment>

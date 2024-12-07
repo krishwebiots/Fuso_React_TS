@@ -10,8 +10,9 @@ import SvgIcon from "../../../../../Utils/SvgIcon";
 import ShareModal from "./ShareModal";
 import { dynamicSvg, Image } from "../../../../../Utils";
 import { SkillListData } from "../../../../../Data/Job";
+import { MainDetailType } from "../../../../../Types/ProductType";
 
-const MainDetail: FC<{ type?: string }> = ({ type }) => {
+const MainDetail: FC<MainDetailType> = ({ type, detailType }) => {
   const dispatch = useAppDispatch();
   const [isSave, setSave] = useState(false);
   return (
@@ -96,7 +97,7 @@ const MainDetail: FC<{ type?: string }> = ({ type }) => {
         </div>
       )}
       {type === "job" && (
-        <div className="top-detail top-detail-style-2">
+        <div className={`top-detail ${detailType === "style_2" ? "top-detail-style-2" : ""}`}>
           <div className="detail-title-flex">
             <div className="job-icon">
               <Image src={dynamicSvg("job/job-box/1.svg")} alt="j-1" className="img-fluid" />

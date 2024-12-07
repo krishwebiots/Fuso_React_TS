@@ -6,8 +6,11 @@ import { ApplyNow, Href } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicSvg, Image } from "../../../Utils";
+import { toast } from "react-toastify";
 
 const JobProductBox5: FC<ProductBoxType> = ({ data }) => {
+  const handleWishlist = () => toast.success("Added to Wishlist successfully");
+
   return (
     <div className="job-box">
       <div className="job-title-flex">
@@ -25,7 +28,7 @@ const JobProductBox5: FC<ProductBoxType> = ({ data }) => {
             </div>
           </Link>
         </div>
-        <Link to={Href} className="save-btn">
+        <Link to={Href} className="save-btn" onClick={() => handleWishlist()}>
           <i className="ri-bookmark-line" />
         </Link>
       </div>

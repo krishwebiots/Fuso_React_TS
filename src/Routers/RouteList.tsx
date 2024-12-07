@@ -122,7 +122,7 @@ export const RouteList = {
       JobDetail4: `/job/detail/job-detail-4`,
       JobDetail5: `/job/detail/job-detail-5`,
     },
-    JobWishlist: `job-wishlist`,
+    JobWishlist: `/job/job-wishlist`,
   },
 
   Pages: {

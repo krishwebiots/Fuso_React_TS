@@ -107,3 +107,7 @@ export const JobLike: string = "What is the Job like?";
 export const CanApply: string = "Who can apply?";
 export const BenefitsTitle: string = "Benefits:";
 export const ApplyForJobTitle: string = "Apply For This Job";
+export const Introduction: string = "Introduction";
+export const KeyJobDetailsTitle: string = "Key Job Details";
+export const BusinessDevelopment: string = "Business Development";
+export const SimilarJobsTitle: string = "Similar Jobs";
