@@ -1,5 +1,5 @@
 import { Button, Col, Input, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
-import { AddReviewTitle, SubmitReview, WriteReview } from "../../../Constants/Constants";
+import { AddReviewTitle, LeaveCommentTitle, SubmitReview, WriteReview } from "../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { setReviewModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
 import CloseBtn from "../CloseBtn";
@@ -12,16 +12,16 @@ const ReviewModal = () => {
   const { reviewModal } = useAppSelector((state) => state.sidebar);
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
-  const [firstPart] = pathname.split("/").slice(1);
+  const firstPart = pathname.split("/").slice(1);
 
   const toggle = () => dispatch(setReviewModal());
   return (
     <Modal fade size="lg" centered modalClassName="theme-modal review-modal" isOpen={reviewModal} toggle={toggle}>
       <ModalHeader toggle={toggle} close={<CloseBtn toggle={toggle} />} />
       <ModalBody>
-        <h4 className="detail-page-title">{firstPart === "car" ? AddReviewTitle : WriteReview}</h4>
+        <h4 className="detail-page-title">{firstPart[0] === "car" ? AddReviewTitle : firstPart[3] === "blog-left-classic" ? LeaveCommentTitle : WriteReview}</h4>
         <Row className="gy-sm-4 gy-3">
-          {firstPart === "car" && (
+          {firstPart[0] === "car" && (
             <Fragment>
               <Col lg="6">
                 <ul className="add-review-list">

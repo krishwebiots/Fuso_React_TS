@@ -14,15 +14,14 @@ import RightSidebar from "./RightSidebar";
 
 const GridView: FC<GridViewType> = ({ type, side, gridSize, sectionClass, gridType, view, topFilterSidebar, offcanvasSide, scrollType, map, mapSide, modalType, filterTagsClass, carShow, topCategory, topFilter, jobBoxStyle, fullList }) => {
   const { productItem } = useAppSelector((state) => state.product);
-  const { cardToShow } = useAppSelector((state) => state.sidebar);
   const dispatch = useAppDispatch();
 
   const showProduct = productItem.filter((item) => item.type === type);
 
   useEffect(() => {
     dispatch(fetchProductApiData());
-    dispatch(setCardToShow(carShow || cardToShow));
-  }, [carShow, cardToShow, dispatch]);
+    dispatch(setCardToShow(carShow || 6));
+  }, [carShow, dispatch]);
   return (
     <Fragment>
       <section className={`section-t-md-space section-b-md-space ${sectionClass ? sectionClass : ""}`}>

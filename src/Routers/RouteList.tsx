@@ -141,12 +141,12 @@ export const RouteList = {
       BlogRightList: `/pages/blog/blog-right-list`,
       BlogInfiniteScroll: `/pages/blog/blog-infinite-scroll`,
       Detail: {
-        BlogLeftClassic: `blog-left-classic`,
-        BlogRightClassic: `blog-right-classic`,
-        BlogVideoLayout: `blog-video-layout`,
-        BlogAudioLayout: `blog-audio-layout`,
-        BlogSliderLayout: `blog-slider-layout`,
-        BlogQuoteLayout: `blog-Quote-layout`,
+        BlogLeftClassic: `/pages/blog/detail/blog-left-classic`,
+        BlogRightClassic: `/pages/blog/detail/blog-right-classic`,
+        BlogVideoLayout: `/pages/blog/detail/blog-video-layout`,
+        BlogAudioLayout: `/pages/blog/detail/blog-audio-layout`,
+        BlogSliderLayout: `/pages/blog/detail/blog-slider-layout`,
+        BlogQuoteLayout: `/pages/blog/detail/blog-Quote-layout`,
       },
     },
     Portfolio: {

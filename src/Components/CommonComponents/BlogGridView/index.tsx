@@ -1,31 +1,45 @@
+import { FC, Fragment, useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
-import BlogSidebar from "./BlogSidebar";
-import BlogBox from "./BolgBox";
-import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { FC, useEffect } from "react";
+import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
 import { setCardToShow } from "../../../ReduxToolkit/Reducers/SidebarReducers";
 import { BlogGridViewType } from "../../../Types/BlogType";
+import BlogSidebar from "./BlogSidebar";
+import BlogBox from "./BolgBox";
+import TopSlider from "./TopSlider";
+import Breadcrumbs from "../Breadcrumbs";
+import { RouteList } from "../../../Routers/RouteList";
 
-const BlogGridView: FC<BlogGridViewType> = ({ carShow, side }) => {
+const BlogGridView: FC<BlogGridViewType> = ({ carShow, side, gridSize, type, sectionClass }) => {
   const dispatch = useAppDispatch();
-  const { cardToShow } = useAppSelector((state) => state.sidebar);
 
   useEffect(() => {
-    dispatch(setCardToShow(carShow || cardToShow));
-  }, [carShow, cardToShow, dispatch]);
+    dispatch(setCardToShow(carShow || 9));
+  }, [carShow, dispatch]);
   return (
-    <section className="blog-grid-section section-b-space">
-      <Container>
-        <Row className="custom-row gy-lg-0 gy-4">
-          <Col lg="3" className={`${side !== "right" ? "order-lg-0" : ""} order-1`}>
-            <BlogSidebar />
-          </Col>
-          <Col lg="9">
-            <BlogBox />
-          </Col>
-        </Row>
-      </Container>
-    </section>
+    <Fragment>
+      <Breadcrumbs title="Blog" url={RouteList.Home.CarDemo1} mainClass="page-breadcrumbs-section" />
+      <section className={`blog-grid-section section-b-space ${sectionClass ? sectionClass : ""}`}>
+        <Container>
+          {type === "top_slider" && <TopSlider />}
+          <Row className="custom-row gy-lg-0 gy-4">
+            {side !== "no" && (
+              <Col lg="3" className={`${side !== "right" ? "order-lg-0" : ""} order-1`}>
+                <BlogSidebar socialContact />
+              </Col>
+            )}
+            <div className={side === "no" ? "col-lg-12" : "col-lg-9"}>
+              {type === "load_more" ? (
+                <div className="featured-wrapper">
+                  <BlogBox gridSize={gridSize} type={type} />
+                </div>
+              ) : (
+                <BlogBox gridSize={gridSize} type={type} />
+              )}
+            </div>
+          </Row>
+        </Container>
+      </section>
+    </Fragment>
   );
 };
 

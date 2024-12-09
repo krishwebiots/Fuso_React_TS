@@ -245,3 +245,12 @@ export interface MainDetailType {
   type?: string;
   detailType?: string;
 }
+
+export interface BlogDescriptionBoxType {
+  title: string;
+  data: {
+    title?: string;
+    description: string;
+  }[];
+  list?: boolean;
+}

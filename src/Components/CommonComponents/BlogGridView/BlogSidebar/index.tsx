@@ -1,13 +1,14 @@
+import { FC } from "react";
 import Categories from "./Categories";
 import LatestArticle from "./LatestArticle";
 import SocialContact from "./SocialContact";
 
-const BlogSidebar = () => {
+const BlogSidebar: FC<{ socialContact?: boolean }> = ({ socialContact }) => {
   return (
     <div className="blog-sidebar">
       <LatestArticle />
       <Categories />
-      <SocialContact />
+      {socialContact && <SocialContact />}
     </div>
   );
 };

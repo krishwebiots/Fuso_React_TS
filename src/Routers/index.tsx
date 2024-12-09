@@ -32,6 +32,47 @@ import JobDemo2 from "../Pages/Home/JobDemo2";
 import JobDemo3 from "../Pages/Home/JobDemo3";
 import PropertyDemo1 from "../Pages/Home/PropertyDemo1";
 import PropertyDemo2 from "../Pages/Home/PropertyDemo2";
+import JobDetail1 from "../Pages/Job/Detail/JobDetail1";
+import JobDetail2 from "../Pages/Job/Detail/JobDetail2";
+import JobDetail3 from "../Pages/Job/Detail/JobDetail3";
+import JobDetail4 from "../Pages/Job/Detail/JobDetail4";
+import JobDetail5 from "../Pages/Job/Detail/JobDetail5";
+import JobGridNoSidebar from "../Pages/Job/Grid/JobGridNoSidebar";
+import JobGridProgress from "../Pages/Job/Grid/JobGridProgress";
+import JobGridType2 from "../Pages/Job/Grid/JobGridType2";
+import JobGridType3 from "../Pages/Job/Grid/JobGridType3";
+import JobLeftSidebar from "../Pages/Job/Grid/JobLeftSidebar";
+import JobRightSidebar from "../Pages/Job/Grid/JobRightSidebar";
+import JobLeftList from "../Pages/Job/Listing/JobLeftList";
+import JobListNoSidebar from "../Pages/Job/Listing/JobListNoSidebar";
+import JobRightList from "../Pages/Job/Listing/JobRightList";
+import JobAd from "../Pages/Job/Other/JobAd";
+import JobBothSidebar from "../Pages/Job/Other/JobBothSidebar";
+import JobFilter from "../Pages/Job/Other/JobFilter";
+import JobFullList from "../Pages/Job/Other/JobFullList";
+import JobInfiniteScroll from "../Pages/Job/Other/JobInfiniteScroll";
+import JobLeftDrawer from "../Pages/Job/Other/JobLeftDrawer";
+import JobListStyle2 from "../Pages/Job/Other/JobListStyle2";
+import JobLoadMore from "../Pages/Job/Other/JobLoadMore";
+import JobRightDrawer from "../Pages/Job/Other/JobRightDrawer";
+import JobWishlist from "../Pages/Job/Wishlist";
+import BlogAudioLayout from "../Pages/Pages/Blog/BlogDetail/BlogAudioLayout";
+import BlogLeftClassic from "../Pages/Pages/Blog/BlogDetail/BlogLeftClassic";
+import BlogRightClassic from "../Pages/Pages/Blog/BlogDetail/BlogRightClassic";
+import BlogVideoLayout from "../Pages/Pages/Blog/BlogDetail/BlogVideoLayout";
+import Blog2Grid from "../Pages/Pages/Blog/BlogPage/Blog2Grid";
+import Blog2GridRight from "../Pages/Pages/Blog/BlogPage/Blog2GridRight";
+import Blog3Masonry from "../Pages/Pages/Blog/BlogPage/Blog3Masonry";
+import BlogInfiniteScroll from "../Pages/Pages/Blog/BlogPage/BlogInfiniteScroll";
+import BlogLayout1 from "../Pages/Pages/Blog/BlogPage/BlogLayout1";
+import BlogLeftList from "../Pages/Pages/Blog/BlogPage/BlogLeftList";
+import BlogLeftSidebar from "../Pages/Pages/Blog/BlogPage/BlogLeftSidebar";
+import BlogLoadMore from "../Pages/Pages/Blog/BlogPage/BlogLoadMore";
+import BlogNoSidebar from "../Pages/Pages/Blog/BlogPage/BlogNoSidebar";
+import BlogRightList from "../Pages/Pages/Blog/BlogPage/BlogRightList";
+import BlogRightSidebar from "../Pages/Pages/Blog/BlogPage/BlogRightSidebar";
+import BlogTitle from "../Pages/Pages/Blog/BlogPage/BlogTitle";
+import BlogToSlider from "../Pages/Pages/Blog/BlogPage/BlogToSlider";
 import PropertyAccordion from "../Pages/Property/Detail/PropertyAccordion";
 import PropertyAnimatedIcon from "../Pages/Property/Detail/PropertyAnimatedIcon";
 import PropertyClassic from "../Pages/Property/Detail/PropertyClassic";
@@ -65,32 +106,8 @@ import PropertyParallax from "../Pages/Property/Other/PropertyParallax";
 import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import PropertyWishlist from "../Pages/Property/Wishlist";
 import { RouteList } from "./RouteList";
-import JobGridProgress from "../Pages/Job/Grid/JobGridProgress";
-import JobGridType2 from "../Pages/Job/Grid/JobGridType2";
-import JobGridType3 from "../Pages/Job/Grid/JobGridType3";
-import JobLeftSidebar from "../Pages/Job/Grid/JobLeftSidebar";
-import JobRightSidebar from "../Pages/Job/Grid/JobRightSidebar";
-import JobGridNoSidebar from "../Pages/Job/Grid/JobGridNoSidebar";
-import JobLeftList from "../Pages/Job/Listing/JobLeftList";
-import JobRightList from "../Pages/Job/Listing/JobRightList";
-import JobListNoSidebar from "../Pages/Job/Listing/JobListNoSidebar";
-import JobLeftDrawer from "../Pages/Job/Other/JobLeftDrawer";
-import JobRightDrawer from "../Pages/Job/Other/JobRightDrawer";
-import JobInfiniteScroll from "../Pages/Job/Other/JobInfiniteScroll";
-import JobLoadMore from "../Pages/Job/Other/JobLoadMore";
-import JobFullList from "../Pages/Job/Other/JobFullList";
-import JobListStyle2 from "../Pages/Job/Other/JobListStyle2";
-import JobBothSidebar from "../Pages/Job/Other/JobBothSidebar";
-import JobAd from "../Pages/Job/Other/JobAd";
-import JobFilter from "../Pages/Job/Other/JobFilter";
-import JobDetail1 from "../Pages/Job/Detail/JobDetail1";
-import JobDetail2 from "../Pages/Job/Detail/JobDetail2";
-import JobDetail3 from "../Pages/Job/Detail/JobDetail3";
-import JobDetail4 from "../Pages/Job/Detail/JobDetail4";
-import JobDetail5 from "../Pages/Job/Detail/JobDetail5";
-import JobWishlist from "../Pages/Job/Wishlist";
-import BlogLeftSidebar from "../Pages/Pages/Blog/BlogPage/BlogLeftSidebar";
-import BlogRightSidebar from "../Pages/Pages/Blog/BlogPage/BlogRightSidebar";
+import BlogSliderLayout from "../Pages/Pages/Blog/BlogDetail/BlogSliderLayout";
+import BlogQuoteLayout from "../Pages/Pages/Blog/BlogDetail/BlogQuoteLayout";
 
 const Router = createBrowserRouter([
   {
@@ -221,6 +238,25 @@ const Router = createBrowserRouter([
       //Blog-Pages
       { path: RouteList.Pages.Blog.BlogLeftSidebar, element: <BlogLeftSidebar /> },
       { path: RouteList.Pages.Blog.BlogRightSidebar, element: <BlogRightSidebar /> },
+      { path: RouteList.Pages.Blog.Blog2Grid, element: <Blog2Grid /> },
+      { path: RouteList.Pages.Blog.Blog2GridRight, element: <Blog2GridRight /> },
+      { path: RouteList.Pages.Blog.BlogTitle, element: <BlogTitle /> },
+      { path: RouteList.Pages.Blog.BlogLayout1, element: <BlogLayout1 /> },
+      { path: RouteList.Pages.Blog.BlogNoSidebar, element: <BlogNoSidebar /> },
+      { path: RouteList.Pages.Blog.BlogToSlider, element: <BlogToSlider /> },
+      { path: RouteList.Pages.Blog.Blog3Masonry, element: <Blog3Masonry /> },
+      { path: RouteList.Pages.Blog.BlogLoadMore, element: <BlogLoadMore /> },
+      { path: RouteList.Pages.Blog.BlogLeftList, element: <BlogLeftList /> },
+      { path: RouteList.Pages.Blog.BlogRightList, element: <BlogRightList /> },
+      { path: RouteList.Pages.Blog.BlogInfiniteScroll, element: <BlogInfiniteScroll /> },
+
+      //Blog-Detail
+      { path: RouteList.Pages.Blog.Detail.BlogLeftClassic, element: <BlogLeftClassic /> },
+      { path: RouteList.Pages.Blog.Detail.BlogRightClassic, element: <BlogRightClassic /> },
+      { path: RouteList.Pages.Blog.Detail.BlogVideoLayout, element: <BlogVideoLayout /> },
+      { path: RouteList.Pages.Blog.Detail.BlogAudioLayout, element: <BlogAudioLayout /> },
+      { path: RouteList.Pages.Blog.Detail.BlogSliderLayout, element: <BlogSliderLayout /> },
+      { path: RouteList.Pages.Blog.Detail.BlogQuoteLayout, element: <BlogQuoteLayout /> },
     ],
   },
 ]);
