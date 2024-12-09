@@ -23,30 +23,30 @@ const BlogBox: FC<BlogGridViewType> = ({ gridSize, type }) => {
 
   const BreakpointColumnsObj = { default: 3, 1199: 3, 700: 2, 500: 1 };
   const totalPages = Math.ceil(BlogData?.length / cardToShow);
-  const showProduct = type === "infinite" ? BlogData?.slice(0, cardToShow * currentPage) : BlogData?.slice(cardToShow * currentPage - cardToShow, cardToShow * currentPage);
+  const showBlog = type === "infinite" ? BlogData?.slice(0, cardToShow * currentPage) : BlogData?.slice(cardToShow * currentPage - cardToShow, cardToShow * currentPage);
   const ColBoxClass = gridSize === 1 ? "col-12" : gridSize === 2 ? "col-6" : gridSize === 3 ? "col-6 col-xl-4" : gridSize === 4 ? "col-6 col-xl-3" : type === "title_box" ? "col-md-6 col-12" : "";
-  const InfiniteScrollClass = { dataLength: showProduct.length, next: fetchMoreData, hasMore: currentPage < totalPages, className: "row", loader: <h4>Loading...</h4> };
+  const InfiniteScrollClass = { dataLength: showBlog.length, next: fetchMoreData, hasMore: currentPage < totalPages, className: "row", loader: <h4>Loading...</h4> };
 
   return (
     <div className={type !== "masonry" ? "g-sm-4 g-3 ratio3_2 row" : ""}>
       {type === "masonry" ? (
         <Gallery>
           <Masonry breakpointCols={BreakpointColumnsObj} className="row grid g-3 g-xl-4" columnClassName={`grid-item ${ColBoxClass} w-sm-100`}>
-            {showProduct.map((data, index) => (
+            {showBlog.map((data, index) => (
               <BlogGridBox data={data} type={type} index={index} key={index} />
             ))}
           </Masonry>
         </Gallery>
       ) : type === "infinite" ? (
         <InfiniteScroll {...InfiniteScrollClass}>
-          {showProduct.map((data, index) => (
+          {showBlog.map((data, index) => (
             <div className={ColBoxClass} key={index}>
               <BlogGridBox data={data} type={type} index={index} />
             </div>
           ))}
         </InfiniteScroll>
       ) : (
-        showProduct.map((data, index) => (
+        showBlog.map((data, index) => (
           <div className={`w-sm-100 ${ColBoxClass} ${type === "layout_1" ? (index === 0 ? "col-xxl-3 col-lg-4 col-6 order-lg-0 order-1" : index === 1 ? "col-xxl-9 col-lg-8" : "col-xxl-3 col-lg-4 col-6") : ""}`} key={index}>
             {type === "title_box" ? <BlogTitleBox data={data} /> : <BlogGridBox data={data} type={type} index={index} />}
           </div>

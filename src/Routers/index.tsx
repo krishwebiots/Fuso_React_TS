@@ -108,6 +108,7 @@ import PropertyWishlist from "../Pages/Property/Wishlist";
 import { RouteList } from "./RouteList";
 import BlogSliderLayout from "../Pages/Pages/Blog/BlogDetail/BlogSliderLayout";
 import BlogQuoteLayout from "../Pages/Pages/Blog/BlogDetail/BlogQuoteLayout";
+import Portfolio2Grid from "../Pages/Pages/Portfolio/PortfolioPage/Portfolio2Grid";
 
 const Router = createBrowserRouter([
   {
@@ -257,6 +258,9 @@ const Router = createBrowserRouter([
       { path: RouteList.Pages.Blog.Detail.BlogAudioLayout, element: <BlogAudioLayout /> },
       { path: RouteList.Pages.Blog.Detail.BlogSliderLayout, element: <BlogSliderLayout /> },
       { path: RouteList.Pages.Blog.Detail.BlogQuoteLayout, element: <BlogQuoteLayout /> },
+
+      //Portfolio-Page
+      { path: RouteList.Pages.Portfolio.Portfolio2Grid, element: <Portfolio2Grid /> },
     ],
   },
 ]);

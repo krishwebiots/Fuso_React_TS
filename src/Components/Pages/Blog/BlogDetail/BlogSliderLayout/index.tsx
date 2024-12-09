@@ -1,7 +1,7 @@
 import BlogDetail from "../../../../CommonComponents/BlogDetail";
 
-const BlogQuoteLayoutContainer = () => {
-  return <BlogDetail type="quote_box" />;
+const BlogSliderLayoutContainer = () => {
+  return <BlogDetail type="slider" />;
 };
 
-export default BlogQuoteLayoutContainer;
+export default BlogSliderLayoutContainer;
