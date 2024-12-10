@@ -75,6 +75,9 @@ import BlogRightList from "../Pages/Pages/Blog/BlogPage/BlogRightList";
 import BlogRightSidebar from "../Pages/Pages/Blog/BlogPage/BlogRightSidebar";
 import BlogTitle from "../Pages/Pages/Blog/BlogPage/BlogTitle";
 import BlogToSlider from "../Pages/Pages/Blog/BlogPage/BlogToSlider";
+import AboutUs1 from "../Pages/Pages/Other/AboutUs1";
+import PortfolioDetail1 from "../Pages/Pages/Portfolio/Detail/PortfolioDetail1";
+import PortfolioDetail2 from "../Pages/Pages/Portfolio/Detail/PortfolioDetail2";
 import Portfolio2Grid from "../Pages/Pages/Portfolio/PortfolioPage/Portfolio2Grid";
 import Portfolio3Grid from "../Pages/Pages/Portfolio/PortfolioPage/Portfolio3Grid";
 import Portfolio4Grid from "../Pages/Pages/Portfolio/PortfolioPage/Portfolio4Grid";
@@ -120,8 +123,6 @@ import PropertyParallax from "../Pages/Property/Other/PropertyParallax";
 import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import PropertyWishlist from "../Pages/Property/Wishlist";
 import { RouteList } from "./RouteList";
-import PortfolioDetail1 from "../Pages/Pages/Portfolio/Detail/PortfolioDetail1";
-import PortfolioDetail2 from "../Pages/Pages/Portfolio/Detail/PortfolioDetail2";
 
 const Router = createBrowserRouter([
   {
@@ -289,6 +290,9 @@ const Router = createBrowserRouter([
       //Portfolio-Detail
       { path: RouteList.Pages.Portfolio.Detail.PortfolioDetail1, element: <PortfolioDetail1 /> },
       { path: RouteList.Pages.Portfolio.Detail.PortfolioDetail2, element: <PortfolioDetail2 /> },
+
+      //Other-Pages
+      { path: RouteList.Pages.Other.AboutUs1, element: <AboutUs1 /> },
     ],
   },
 ]);

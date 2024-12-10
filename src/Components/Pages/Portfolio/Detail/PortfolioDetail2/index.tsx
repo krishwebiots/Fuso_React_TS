@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 import { Col, Container, Row } from "reactstrap";
+import { LuxuryCars } from "../../../../../Constants/Constants";
 import { BrandFlexData, ChallengeContent, LuxuryCarsContent, OurApproachContent, ResultsAndImpactContent, SolutionContent } from "../../../../../Data/Pages/Portfolio";
 import { RouteList } from "../../../../../Routers/RouteList";
 import { dynamicImage } from "../../../../../Utils";
 import RatioImage from "../../../../../Utils/RatioImage";
 import Breadcrumbs from "../../../../CommonComponents/Breadcrumbs";
-import PortfolioDetailContent from "./PortfolioDetailContent";
-import { LuxuryCars } from "../../../../../Constants/Constants";
+import PortfolioDetailContent from "../Common/PortfolioDetailContent";
 
 const PortfolioDetail2Container = () => {
   return (

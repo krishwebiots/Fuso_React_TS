@@ -6,12 +6,13 @@ import { AboutContentData, AboutData, LuxuryCarContentData } from "../../../Data
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
+import { FC } from "react";
 
-const About = () => {
+const About: FC<{ header?: boolean }> = ({ header }) => {
   return (
     <section className="car-about-section section-b-space">
       <Container>
-        <CommonHeader title={AboutTitle} content={AboutContentData} headClass="title-style-2" animation />
+        {header && <CommonHeader title={AboutTitle} content={AboutContentData} headClass="title-style-2" animation />}
         <Row className="align-items-center gy-xl-0 gy-3">
           <Col xl="9" lg="8">
             <div className="about-top-img">

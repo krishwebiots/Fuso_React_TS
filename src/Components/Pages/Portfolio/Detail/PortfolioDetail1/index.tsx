@@ -5,7 +5,7 @@ import { RouteList } from "../../../../../Routers/RouteList";
 import { dynamicImage } from "../../../../../Utils";
 import RatioImage from "../../../../../Utils/RatioImage";
 import Breadcrumbs from "../../../../CommonComponents/Breadcrumbs";
-import PortfolioDetailContent from "./PortfolioDetailContent";
+import PortfolioDetailContent from "../Common/PortfolioDetailContent";
 
 const PortfolioDetail1Container = () => {
   return (
