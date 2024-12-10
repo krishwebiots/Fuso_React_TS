@@ -1,5 +1,5 @@
 import { Award, Building, Calendar1, Call, Car, Coin1, Driving, Location, SearchNormal1, Tag2, Verify, Wallet, Wallet3 } from "iconsax-react";
-import { Autoplay, Navigation, Thumbs } from "swiper/modules";
+import { Autoplay, EffectFade, FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { NavType } from "../../Types/HomeDemo";
 
 export const HomeTabData: NavType[] = [
@@ -176,7 +176,9 @@ export const ProductSwiperSetting = {
     prevEl: ".swiper-button-prev",
     nextEl: ".swiper-button-next",
   },
-  modules: [Navigation],
+  freeMode: true,
+  effect: "fade",
+  modules: [Navigation, EffectFade, FreeMode],
   loop: true,
   className: "property-image-slider",
 };

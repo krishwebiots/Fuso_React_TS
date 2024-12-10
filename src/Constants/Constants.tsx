@@ -115,3 +115,4 @@ export const LatestArticleTitle: string = "Latest Article";
 export const SocialContactTitle: string = "Social Contact";
 export const LeaveCommentTitle: string = "Leave a Comment";
 export const CommentTitle: string = "Comment";
+export const LuxuryCars: string = "Luxury Cars";

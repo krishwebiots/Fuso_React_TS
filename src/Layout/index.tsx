@@ -15,12 +15,12 @@ import SearchModal from "../Components/CommonComponents/Modal/SearchModal";
 
 const Layout = () => {
   const { pathname } = useLocation();
-  const [firstPart] = pathname
+  const Path = pathname
     .split("/")
     .slice(1)
     .map((item) => item.replace(SymbolRegex, " "));
 
-  const { className, favicon } = PathSettings[firstPart] || PathSettings.default;
+  const { className, favicon } = PathSettings[Path[0]] || PathSettings.default;
 
   useEffect(() => {
     document.body.className = className;
@@ -29,18 +29,18 @@ const Layout = () => {
 
     return () => SetFavicon(`${process.env.PUBLIC_URL}/assets/images/logo/favicon-3.png`);
   }, [className, favicon]);
-  const isJobOrProperty = ["car-2", "job-3", "job-2", "property-2"].some((item) => firstPart.includes(item));
+  const isJobOrProperty = ["car-2", "job-3", "job-2", "property-2"].some((item) => Path[0].includes(item));
 
   return (
     <div>
-      <Loader part={firstPart} />
-      <Header part={firstPart} />
+      <Loader part={Path[0]} />
+      <Header part={Path[0]} />
       <MobileMenu />
       <Outlet />
-      {isJobOrProperty ? <FooterDemo2 part={firstPart} /> : <FooterDemo1 part={firstPart} />}
-      <TapTop part={firstPart} />
-      <Customizer part={firstPart} />
-      <SearchModal type={SearchModalData[firstPart] || SearchModalData.car} />
+      {Path[2] !== "portfolio-vertical-slider" && (isJobOrProperty ? <FooterDemo2 part={Path[0]} /> : <FooterDemo1 part={Path[0]} />)}
+      <TapTop part={Path[0]} />
+      <Customizer part={Path[0]} />
+      <SearchModal type={SearchModalData[Path[0]] || SearchModalData.car} />
     </div>
   );
 };

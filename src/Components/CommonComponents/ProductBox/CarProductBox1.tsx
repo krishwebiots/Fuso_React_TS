@@ -1,21 +1,17 @@
-import { FC, useEffect, useRef } from "react";
+import { Trash } from "iconsax-react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Label } from "reactstrap";
-import { Swiper as SwiperType } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Href, ShowMore } from "../../../Constants/Constants";
-import { ProductSwiperSetting } from "../../../Data/Demo/CarDemo1";
+import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
+import { setPropertyItem } from "../../../ReduxToolkit/Reducers/ProductReducers";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
-import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
-import RatioImage from "../../../Utils/RatioImage";
-import { Trash } from "iconsax-react";
-import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { toast } from "react-toastify";
-import { setPropertyItem } from "../../../ReduxToolkit/Reducers/ProductReducers";
+import { dynamicSvg, Image } from "../../../Utils";
+import PropertyBoxSlider from "./Common/PropertyBoxSlider";
 
-const CarProductBox1: FC<ProductBoxType> = ({ data, wishlist }) => {
-  const swiperRef = useRef<SwiperType | null>(null);
+const CarProductBox1: FC<ProductBoxType> = ({ data, wishlist, view }) => {
   const dispatch = useAppDispatch();
   const { productItem } = useAppSelector((state) => state.product);
 
@@ -27,22 +23,11 @@ const CarProductBox1: FC<ProductBoxType> = ({ data, wishlist }) => {
     toast.success("Remove to Wishlist successfully");
   };
 
-  useEffect(() => {
-    if (swiperRef.current) swiperRef.current.init();
-  }, []);
   return (
     <div className="featured-box">
       <div className="featured-main-img">
         <Link to={RouteList.Car.Detail.CarClassic} className="featured-img">
-          <Swiper {...ProductSwiperSetting} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
-            {data.image.map((testimonial, index) => (
-              <SwiperSlide key={index} className="bg-size">
-                <RatioImage src={dynamicImage(testimonial)} alt="featured-img" className="img-fluid bg-img" />
-              </SwiperSlide>
-            ))}
-            <div className="swiper-button-next" />
-            <div className="swiper-button-prev" />
-          </Swiper>
+          <PropertyBoxSlider view={view} data={data} />
         </Link>
         {wishlist ? (
           <Link to={Href} className="remove-button" onClick={() => handleRemove(data.id)}>

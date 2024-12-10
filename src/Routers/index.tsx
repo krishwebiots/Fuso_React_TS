@@ -58,7 +58,9 @@ import JobRightDrawer from "../Pages/Job/Other/JobRightDrawer";
 import JobWishlist from "../Pages/Job/Wishlist";
 import BlogAudioLayout from "../Pages/Pages/Blog/BlogDetail/BlogAudioLayout";
 import BlogLeftClassic from "../Pages/Pages/Blog/BlogDetail/BlogLeftClassic";
+import BlogQuoteLayout from "../Pages/Pages/Blog/BlogDetail/BlogQuoteLayout";
 import BlogRightClassic from "../Pages/Pages/Blog/BlogDetail/BlogRightClassic";
+import BlogSliderLayout from "../Pages/Pages/Blog/BlogDetail/BlogSliderLayout";
 import BlogVideoLayout from "../Pages/Pages/Blog/BlogDetail/BlogVideoLayout";
 import Blog2Grid from "../Pages/Pages/Blog/BlogPage/Blog2Grid";
 import Blog2GridRight from "../Pages/Pages/Blog/BlogPage/Blog2GridRight";
@@ -73,6 +75,18 @@ import BlogRightList from "../Pages/Pages/Blog/BlogPage/BlogRightList";
 import BlogRightSidebar from "../Pages/Pages/Blog/BlogPage/BlogRightSidebar";
 import BlogTitle from "../Pages/Pages/Blog/BlogPage/BlogTitle";
 import BlogToSlider from "../Pages/Pages/Blog/BlogPage/BlogToSlider";
+import Portfolio2Grid from "../Pages/Pages/Portfolio/PortfolioPage/Portfolio2Grid";
+import Portfolio3Grid from "../Pages/Pages/Portfolio/PortfolioPage/Portfolio3Grid";
+import Portfolio4Grid from "../Pages/Pages/Portfolio/PortfolioPage/Portfolio4Grid";
+import PortfolioBoxSlider from "../Pages/Pages/Portfolio/PortfolioPage/PortfolioBoxSlider";
+import PortfolioCreativeFull from "../Pages/Pages/Portfolio/PortfolioPage/PortfolioCreativeFull";
+import PortfolioGalleryIcon from "../Pages/Pages/Portfolio/PortfolioPage/PortfolioGalleryIcon";
+import PortfolioImageChange from "../Pages/Pages/Portfolio/PortfolioPage/PortfolioImageChange";
+import PortfolioModern from "../Pages/Pages/Portfolio/PortfolioPage/PortfolioModern";
+import PortfolioParallax from "../Pages/Pages/Portfolio/PortfolioPage/PortfolioParallax";
+import PortfolioTransform from "../Pages/Pages/Portfolio/PortfolioPage/PortfolioTransform";
+import PortfolioVerticalSlider from "../Pages/Pages/Portfolio/PortfolioPage/PortfolioVerticalSlider";
+import PortfolioVideoModal from "../Pages/Pages/Portfolio/PortfolioPage/PortfolioVideoModal";
 import PropertyAccordion from "../Pages/Property/Detail/PropertyAccordion";
 import PropertyAnimatedIcon from "../Pages/Property/Detail/PropertyAnimatedIcon";
 import PropertyClassic from "../Pages/Property/Detail/PropertyClassic";
@@ -106,9 +120,8 @@ import PropertyParallax from "../Pages/Property/Other/PropertyParallax";
 import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import PropertyWishlist from "../Pages/Property/Wishlist";
 import { RouteList } from "./RouteList";
-import BlogSliderLayout from "../Pages/Pages/Blog/BlogDetail/BlogSliderLayout";
-import BlogQuoteLayout from "../Pages/Pages/Blog/BlogDetail/BlogQuoteLayout";
-import Portfolio2Grid from "../Pages/Pages/Portfolio/PortfolioPage/Portfolio2Grid";
+import PortfolioDetail1 from "../Pages/Pages/Portfolio/Detail/PortfolioDetail1";
+import PortfolioDetail2 from "../Pages/Pages/Portfolio/Detail/PortfolioDetail2";
 
 const Router = createBrowserRouter([
   {
@@ -261,6 +274,21 @@ const Router = createBrowserRouter([
 
       //Portfolio-Page
       { path: RouteList.Pages.Portfolio.Portfolio2Grid, element: <Portfolio2Grid /> },
+      { path: RouteList.Pages.Portfolio.Portfolio3Grid, element: <Portfolio3Grid /> },
+      { path: RouteList.Pages.Portfolio.Portfolio4Grid, element: <Portfolio4Grid /> },
+      { path: RouteList.Pages.Portfolio.PortfolioTransform, element: <PortfolioTransform /> },
+      { path: RouteList.Pages.Portfolio.PortfolioVideoModal, element: <PortfolioVideoModal /> },
+      { path: RouteList.Pages.Portfolio.PortfolioGalleryIcon, element: <PortfolioGalleryIcon /> },
+      { path: RouteList.Pages.Portfolio.PortfolioImageChange, element: <PortfolioImageChange /> },
+      { path: RouteList.Pages.Portfolio.PortfolioBoxSlider, element: <PortfolioBoxSlider /> },
+      { path: RouteList.Pages.Portfolio.PortfolioParallax, element: <PortfolioParallax /> },
+      { path: RouteList.Pages.Portfolio.PortfolioVerticalSlider, element: <PortfolioVerticalSlider /> },
+      { path: RouteList.Pages.Portfolio.PortfolioCreativeFull, element: <PortfolioCreativeFull /> },
+      { path: RouteList.Pages.Portfolio.PortfolioModern, element: <PortfolioModern /> },
+
+      //Portfolio-Detail
+      { path: RouteList.Pages.Portfolio.Detail.PortfolioDetail1, element: <PortfolioDetail1 /> },
+      { path: RouteList.Pages.Portfolio.Detail.PortfolioDetail2, element: <PortfolioDetail2 /> },
     ],
   },
 ]);
