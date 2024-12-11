@@ -28,7 +28,7 @@ const CarDemo1Container = () => {
       <Work />
       <Experience />
       <About header />
-      <Testimonials type={"car_demo1"} />
+      <Testimonials type={"car_demo1"} animation />
     </Fragment>
   );
 };

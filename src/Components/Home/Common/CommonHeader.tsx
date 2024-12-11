@@ -4,7 +4,7 @@ import { RouteList } from "../../../Routers/RouteList";
 import { CommonHeaderType } from "../../../Types/CommonComponentsType";
 import { FC } from "react";
 
-const CommonHeader: FC<CommonHeaderType> = ({ title, content, animation, headClass, titleClass, view, subClass, url }) => {
+const CommonHeader: FC<CommonHeaderType> = ({ title, content, animation, headClass, titleClass, view, subClass, url, contentClass }) => {
   return (
     <div className={headClass}>
       <div className={subClass ? subClass : "title-flex"}>
@@ -23,7 +23,7 @@ const CommonHeader: FC<CommonHeaderType> = ({ title, content, animation, headCla
         )}
         {view && <Link to={url || RouteList.Home.CarDemo1}>{ViewAll}</Link>}
       </div>
-      <p>{content}</p>
+      <p className={contentClass ? contentClass : ""}>{content}</p>
     </div>
   );
 };

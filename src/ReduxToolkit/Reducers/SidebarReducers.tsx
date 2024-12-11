@@ -12,6 +12,7 @@ const initialState = {
   reviewModal: false,
   offerModal: false,
   driverModal: false,
+  activeTab: "dashboard",
 };
 
 const SidebarSlice = createSlice({
@@ -51,8 +52,11 @@ const SidebarSlice = createSlice({
     setDriverModal: (state) => {
       state.driverModal = !state.driverModal;
     },
+    setActiveTab: (state, action) => {
+      state.activeTab = action.payload;
+    },
   },
 });
 
-export const { setSidebarOpen, setOpenFilterSidebar, setCardToShow, setTotalProduct, setSearchModal, setMapModal, setShareModal, setVideoModal, setReviewModal, setOfferModal, setDriverModal } = SidebarSlice.actions;
+export const { setSidebarOpen, setOpenFilterSidebar, setCardToShow, setTotalProduct, setSearchModal, setMapModal, setShareModal, setVideoModal, setReviewModal, setOfferModal, setDriverModal, setActiveTab } = SidebarSlice.actions;
 export default SidebarSlice.reducer;

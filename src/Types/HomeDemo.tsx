@@ -49,6 +49,12 @@ export interface PropsType {
   type: string;
 }
 
+export interface TestimonialsType {
+  type: string;
+  animation?: boolean;
+  title?: string;
+}
+
 export interface SearchTabListType {
   basicTab?: string | number;
   showTab?: number[];

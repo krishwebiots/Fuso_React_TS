@@ -7,7 +7,7 @@ import Experience from "./Experience";
 import Featured from "./Featured";
 import PropertyHomeSection from "./PropertyHomeSection";
 import Service from "./Service";
-import Team from "./Team";
+import Team from "../Common/Team";
 import { FeaturedProperties, RecentlyAddedProperties } from "../../../Constants/Constants";
 import Categories from "../Common/Categories";
 import Testimonials from "../Common/Testimonials";
@@ -31,7 +31,7 @@ const PropertyDemo2Container = () => {
       <City />
       <Counter />
       <Testimonials type="property_demo2" />
-      <Team />
+      <Team type="property_demo2" />
       <SearchModal type="property" />
     </Fragment>
   );

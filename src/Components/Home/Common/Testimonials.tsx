@@ -10,11 +10,11 @@ import { TestimonialsContentData, TestimonialsSwiperSetting } from "../../../Dat
 import { TestimonialsContent } from "../../../Data/Demo/JobDemo2";
 import { TestimonialsData } from "../../../Data/Demo/Testimonials";
 import { RouteList } from "../../../Routers/RouteList";
-import { PropsType } from "../../../Types/HomeDemo";
+import { TestimonialsType } from "../../../Types/HomeDemo";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "./CommonHeader";
 
-const Testimonials: FC<PropsType> = ({ type }) => {
+const Testimonials: FC<TestimonialsType> = ({ type, animation, title }) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const Testimonials: FC<PropsType> = ({ type }) => {
       {type === "car_demo1" && (
         <section className="car-testimonials-section section-b-space">
           <Container>
-            <CommonHeader title={TestimonialsTitle} content={TestimonialsContentData} headClass="title-style-2" animation />
+            <CommonHeader title={title || TestimonialsTitle} content={TestimonialsContentData} headClass="title-style-2" animation={animation} />
             <Swiper {...TestimonialsSwiperSetting} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
               {TestimonialsData.CarDemo1.map((testimonial, index) => (
                 <SwiperSlide key={index}>
@@ -47,10 +47,10 @@ const Testimonials: FC<PropsType> = ({ type }) => {
               ))}
               <div className="swiper-flex car-arrow">
                 <div className="swiper-button-prev">
-                  <ArrowLeft2 className="iconsax"/>
+                  <ArrowLeft2 className="iconsax" />
                 </div>
                 <div className="swiper-button-next">
-                  <ArrowRight2 className="iconsax"/>
+                  <ArrowRight2 className="iconsax" />
                 </div>
               </div>
             </Swiper>
@@ -171,6 +171,33 @@ const Testimonials: FC<PropsType> = ({ type }) => {
                         </li>
                         <li>4.5</li>
                       </ul>
+                    </div>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </section>
+      )}
+
+      {/* Testimonials */}
+      {type === "testimonials" && (
+        <section className="car-testimonials-section testimonials-page-section section-b-space">
+          <Container>
+            <CommonHeader title={TestimonialsTitle} content={TestimonialsContentData} headClass="content-title" />
+            <Row className="gy-4">
+              {TestimonialsData.CarDemo1.map((testimonial, index) => (
+                <Col xl="4" md="6" key={index}>
+                  <div className="testimonials-box">
+                    <div className="testimonials-image">
+                      <div className="gradient-box" />
+                      <div className="white-box" />
+                      <Image src={dynamicImage(testimonial.image)} alt={`t-${index + 1}`} className="img-fluid" />
+                    </div>
+                    <div className="testimonials-content">
+                      <h4>{testimonial.name}</h4>
+                      <h6>- {testimonial.location}</h6>
+                      <p>"{testimonial.testimonial}"</p>
                     </div>
                   </div>
                 </Col>

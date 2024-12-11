@@ -30,10 +30,29 @@ export const CounterData = [
 ];
 
 export const TeamData = [
-  { name: "John Miller", image: "1.jpg" },
-  { name: "Mia Thomas", image: "2.jpg" },
-  { name: "Daniel Lewis", image: "3.jpg" },
-  { name: "Robert Taylor", image: "4.jpg" },
+  { name: "Daniel Thompson", image: "other/about/p-1.jpg" },
+  { name: "James Miller", image: "other/about/p-2.jpg" },
+  { name: "Ryan Clark", image: "other/about/p-3.jpg" },
+  { name: "Amanda Rodriguez", image: "other/about/p-4.jpg" },
+  { name: "Justin Martin", image: "other/about/p-5.jpg" },
+  { name: "John Miller", image: "property2/team/1.jpg" },
+  { name: "Mia Thomas", image: "property2/team/2.jpg" },
+  { name: "Daniel Lewis", image: "property2/team/3.jpg" },
+  { name: "Robert Taylor", image: "property2/team/4.jpg" },
+  { name: "Alice Johnson", type: "Project Manager", image: "other/team/t-1.jpg" },
+  { name: "Bob Smith", type: "Senior Developer", image: "other/team/t-2.jpg" },
+  { name: "Cathy Brown", type: "UX/UI Designer", image: "other/team/t-3.jpg" },
+  { name: "David Lee", type: "QA Engineer", image: "other/team/t-4.jpg" },
+  { name: "Jack Taylor", type: "Sales Executive", image: "other/team/t-5.jpg" },
+  { name: "Emma Davis", type: "Product Owner", image: "other/team/t-6.jpg" },
+  { name: "John Deo", type: "Web Design", image: "other/team/t-7.jpg" },
+  { name: "Liam Harris", type: "Data Analyst", image: "other/team/t-8.jpg" },
 ];
 
 export const SocialData = ["facebook", "skype", "instagram", "mail"];
+
+export const SocialListData = [
+  { url: "https://www.facebook.com/", icon: "ri-facebook-line" },
+  { url: "https://x.com/", icon: "ri-twitter-line" },
+  { url: "https://in.linkedin.com/", icon: "ri-linkedin-line" },
+];

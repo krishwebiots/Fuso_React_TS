@@ -1,4 +1,5 @@
 import { ArrowRight } from "iconsax-react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import { AboutTitle, FollowUsForMore, FusoCarRental, LuxuryCar } from "../../../Constants/Constants";
@@ -6,7 +7,6 @@ import { AboutContentData, AboutData, LuxuryCarContentData } from "../../../Data
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
-import { FC } from "react";
 
 const About: FC<{ header?: boolean }> = ({ header }) => {
   return (

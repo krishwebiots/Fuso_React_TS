@@ -12,8 +12,8 @@ const Newsletter: FC<PropsType> = ({ type }) => {
   return (
     <Fragment>
       {/* Job Demo-1 */}
-      {type === "job_demo1" && (
-        <section className="job-newsletter-section section-b-space">
+      {["job_demo1", "pricing"].includes(type) && (
+        <section className={`job-newsletter-section section-b-space ${type === "pricing" ? "car-newsletter" : ""}`}>
           <Container>
             <div className="job-newsletter-box">
               <div className="newsletter-content">

@@ -123,6 +123,17 @@ import PropertyParallax from "../Pages/Property/Other/PropertyParallax";
 import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import PropertyWishlist from "../Pages/Property/Wishlist";
 import { RouteList } from "./RouteList";
+import AboutUs2 from "../Pages/Pages/Other/AboutUs2";
+import AboutUs3 from "../Pages/Pages/Other/AboutUs3";
+import ContactUs1 from "../Pages/Pages/Other/ContactUs1";
+import ContactUs2 from "../Pages/Pages/Other/ContactUs2";
+import ContactUs3 from "../Pages/Pages/Other/ContactUs3";
+import Services from "../Pages/Pages/Other/Services";
+import Team from "../Pages/Pages/Other/Team";
+import Pricing from "../Pages/Pages/Other/Pricing";
+import Testimonial from "../Pages/Pages/Other/Testimonial";
+import Faq from "../Pages/Pages/Other/Faq";
+import UserDashboard from "../Pages/Pages/Other/UserDashboard";
 
 const Router = createBrowserRouter([
   {
@@ -293,6 +304,17 @@ const Router = createBrowserRouter([
 
       //Other-Pages
       { path: RouteList.Pages.Other.AboutUs1, element: <AboutUs1 /> },
+      { path: RouteList.Pages.Other.AboutUs2, element: <AboutUs2 /> },
+      { path: RouteList.Pages.Other.AboutUs3, element: <AboutUs3 /> },
+      { path: RouteList.Pages.Other.ContactUs1, element: <ContactUs1 /> },
+      { path: RouteList.Pages.Other.ContactUs2, element: <ContactUs2 /> },
+      { path: RouteList.Pages.Other.ContactUs3, element: <ContactUs3 /> },
+      { path: RouteList.Pages.Other.Services, element: <Services /> },
+      { path: RouteList.Pages.Other.Team, element: <Team /> },
+      { path: RouteList.Pages.Other.Pricing, element: <Pricing /> },
+      { path: RouteList.Pages.Other.Testimonial, element: <Testimonial /> },
+      { path: RouteList.Pages.Other.Faq, element: <Faq /> },
+      { path: RouteList.Pages.Other.UserDashboard, element: <UserDashboard /> },
     ],
   },
 ]);

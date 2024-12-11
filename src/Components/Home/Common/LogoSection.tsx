@@ -28,10 +28,10 @@ const LogoSection: FC<LogoSectionType> = ({ sectionClass, swiperClass, title, ty
       )}
 
       {/* Job Demo-1 */}
-      {type === "job_demo1" && (
-        <section className="job-logo-section section-b-space">
+      {(type === "job_demo1" || type === "testimonial_logo") && (
+        <section className={`section-b-space ${type === "testimonial_logo" ? "job-logo-section bg-color" : "job-logo-section"}`}>
           <Container>
-            <CommonHeader title={WorldBestCompanies} headClass="title-style-3 text-center" />
+            <CommonHeader title={title || WorldBestCompanies} headClass="title-style-3 text-center" />
             <div className="experience-car-feature">
               <Row className="row-cols-lg-5 row-cols-2">
                 {dynamicNumber(10).map((item, index) => (
