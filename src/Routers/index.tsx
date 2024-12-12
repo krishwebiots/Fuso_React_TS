@@ -134,6 +134,7 @@ import Pricing from "../Pages/Pages/Other/Pricing";
 import Testimonial from "../Pages/Pages/Other/Testimonial";
 import Faq from "../Pages/Pages/Other/Faq";
 import UserDashboard from "../Pages/Pages/Other/UserDashboard";
+import Privacy from "../Pages/Pages/Other/Privacy";
 
 const Router = createBrowserRouter([
   {
@@ -315,6 +316,7 @@ const Router = createBrowserRouter([
       { path: RouteList.Pages.Other.Testimonial, element: <Testimonial /> },
       { path: RouteList.Pages.Other.Faq, element: <Faq /> },
       { path: RouteList.Pages.Other.UserDashboard, element: <UserDashboard /> },
+      { path: RouteList.Pages.Other.Privacy, element: <Privacy /> },
     ],
   },
 ]);

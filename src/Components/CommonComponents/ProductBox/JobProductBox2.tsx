@@ -31,11 +31,15 @@ const JobProductBox2: FC<ProductBoxType> = ({ data }) => {
         <Link to={RouteList.Job.Grid.JobLeftSidebar}>
           <h6>{data.company}</h6>
         </Link>
-        <div className="hire-tag">
-          {data.jobTags?.map((tag, idx) => (
-            <Label key={idx}>{tag}</Label>
-          ))}
-        </div>
+        {firstPart[3] !== "user-dashboard" ? (
+          <div className="hire-tag">
+            {data.jobTags?.map((tag, idx) => (
+              <Label key={idx}>{tag}</Label>
+            ))}
+          </div>
+        ) : (
+          ""
+        )}
         <Link to={RouteList.Job.Grid.JobLeftSidebar}>
           <h5>{data.title}</h5>
         </Link>

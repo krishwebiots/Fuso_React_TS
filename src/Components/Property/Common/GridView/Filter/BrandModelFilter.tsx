@@ -1,6 +1,6 @@
 import { SearchNormal1 } from "iconsax-react";
 import { FC, useState } from "react";
-import { Accordion, AccordionBody, AccordionHeader, AccordionItem, Button } from "reactstrap";
+import { Accordion, AccordionBody, AccordionHeader, AccordionItem, Button, Label } from "reactstrap";
 import { Href } from "../../../../../Constants/Constants";
 import { Brands } from "../../../../../Data/Car";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
@@ -39,9 +39,9 @@ const BrandModelFilter: FC<{ id: string }> = ({ id }) => {
       <div className="main-choose-item" key={index}>
         <div className="choose-item">
           <input type="checkbox" className="main-check" id={brand.name} value={brand.value} checked={carBrandModel?.includes(brand.value)} onChange={handleCheckboxChange} />
-          <label className="label-flex" htmlFor={brand.name}>
+          <Label className="label-flex" htmlFor={brand.name}>
             <span>{brand.name}</span>
-          </label>
+          </Label>
           <Button className={`accordion-button ${openItems !== brand.id.toString() ? "collapsed" : ""}`} id={`toggler${brand.id}`} onClick={() => toggle(brand.id.toString())} />
         </div>
         <Accordion toggle={toggle} open={openItems}>
@@ -51,9 +51,9 @@ const BrandModelFilter: FC<{ id: string }> = ({ id }) => {
                 {brand.models.map((model, index) => (
                   <li key={index}>
                     <input type="checkbox" id={model.name} value={model.value} checked={carBrandModel?.includes(model.value)} onChange={handleCheckboxChange} />
-                    <label className="label-flex" htmlFor={model.name}>
+                    <Label className="label-flex" htmlFor={model.name}>
                       <span>{model.name}</span>
-                    </label>
+                    </Label>
                   </li>
                 ))}
               </ul>

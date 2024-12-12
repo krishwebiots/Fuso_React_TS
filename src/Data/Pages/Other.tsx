@@ -1,8 +1,8 @@
 //About-Us
-
 import { CallCalling, Global, Location, Message, MessageQuestion, ReceiptText, Sms } from "iconsax-react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { RouteList } from "../../Routers/RouteList";
+import { ApexOptions } from "apexcharts";
 
 export const PrimeCarRentalsContent = "At Prime Car Rentals, we pride ourselves on delivering top-tier car rental services that cater to a wide range of needs, from business trips to family vacations.";
 
@@ -41,7 +41,6 @@ export const AboutTeamSlider = {
 };
 
 //Contact-Us
-
 export const TouchContent = "For any questions or feedback, reach out to us via phone, email, or the form below. Your satisfaction is our priority. We look forward to hearing from you!";
 
 export const ContactBoxData = [
@@ -109,7 +108,6 @@ export const FounderData = [
 ];
 
 //Pricing
-
 export const PricingPlanContent = "Discover the perfect solution for all your needs with our range of pricing packages designed to exceed your expectations.";
 
 export const PricingPlanData = [
@@ -362,4 +360,583 @@ export const DashboardList = [
   { title: "My Profile", type: "profile" },
   { title: "Favorites", type: "favorites" },
   { title: "Privacy", type: "privacy" },
+];
+
+export const SalesLayoutData = [
+  {
+    name: "Sports Car",
+    price: "$31,415",
+    trend: "25% From Last Week",
+    trendImg: "other/plus-trend.svg",
+    salesImg: "other/user-dashboard/1.svg",
+    trendAlt: "plus-trend",
+  },
+  {
+    name: "Electric Car",
+    price: "$78,812",
+    trend: "-15% From Last Week",
+    trendImg: "other/minus-trend.svg",
+    salesImg: "other/user-dashboard/2.svg",
+    trendAlt: "minus-trend",
+  },
+  {
+    name: "Luxury Car",
+    price: "$67,810",
+    trend: "36% From Last Week",
+    trendImg: "other/plus-trend.svg",
+    salesImg: "other/user-dashboard/3.svg",
+    trendAlt: "plus-trend",
+  },
+];
+
+export const DealChart: ApexOptions = {
+  series: [
+    {
+      name: "Sell",
+      data: [18, 10, 70, 18, 28, 10],
+    },
+    {
+      name: "Rent",
+      data: [25, 50, 30, 30, 25, 45],
+    },
+  ],
+  chart: {
+    type: "bar",
+    height: 250,
+    toolbar: {
+      show: false,
+    },
+  },
+  plotOptions: {
+    bar: {
+      horizontal: false,
+      columnWidth: "50%",
+    },
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  stroke: {
+    show: true,
+    width: 6,
+    colors: ["transparent"],
+  },
+  grid: {
+    show: true,
+    borderColor: "var(--chart-border)",
+    xaxis: {
+      lines: {
+        show: true,
+      },
+    },
+  },
+  colors: ["#FFA941", "var(--chart-theme)"],
+  xaxis: {
+    categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    tickAmount: 4,
+    tickPlacement: "between",
+    labels: {
+      style: {
+        fontFamily: "Rubik, sans-serif",
+      },
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+  },
+  yaxis: {
+    min: 0,
+    max: 100,
+    tickAmount: 5,
+    labels: {
+      style: {
+        fontFamily: "outfit, sans-serif",
+      },
+    },
+  },
+  fill: {
+    opacity: 1,
+  },
+  legend: {
+    position: "top",
+    horizontalAlign: "left",
+    fontFamily: "outfit, sans-serif",
+    fontSize: "14px",
+    fontWeight: 400,
+    markers: {
+      size: 6, // Use size instead of width/height
+    },
+    itemMargin: {
+      horizontal: 10,
+    },
+  },
+  responsive: [
+    {
+      breakpoint: 1639,
+      options: {
+        chart: {
+          height: 250,
+        },
+      },
+    },
+    {
+      breakpoint: 1400,
+      options: {
+        chart: {
+          height: 235,
+        },
+      },
+    },
+    {
+      breakpoint: 1366,
+      options: {
+        plotOptions: {
+          bar: {
+            columnWidth: "80%",
+          },
+        },
+      },
+    },
+    {
+      breakpoint: 992,
+      options: {
+        plotOptions: {
+          bar: {
+            columnWidth: "70%",
+          },
+        },
+      },
+    },
+    {
+      breakpoint: 768,
+      options: {
+        plotOptions: {
+          bar: {
+            columnWidth: "70%",
+          },
+        },
+      },
+    },
+    {
+      breakpoint: 576,
+      options: {
+        plotOptions: {
+          bar: {
+            columnWidth: "60%",
+          },
+        },
+        grid: {
+          padding: {
+            right: 5,
+          },
+        },
+      },
+    },
+  ],
+};
+
+export const CarOrdersNavList = [
+  { image: "car/category/1.svg", type: "sedan" },
+  { image: "car/category/2.svg", type: "jeep" },
+  { image: "car/category/4.svg", type: "hatchback" },
+  { image: "car/category/7.svg", type: "convertible" },
+  { image: "car/category/3.svg", type: "suv" },
+];
+
+export const OrdersData = [
+  {
+    type: "sedan",
+    order: [
+      {
+        id: 1,
+        image: "other/user-dashboard/order/1.jpg",
+      },
+      {
+        id: 2,
+        image: "other/user-dashboard/order/2.jpg",
+      },
+    ],
+  },
+  {
+    type: "jeep",
+    order: [
+      {
+        id: 1,
+        image: "other/user-dashboard/order/3.jpg",
+      },
+      {
+        id: 2,
+        image: "other/user-dashboard/order/4.jpg",
+      },
+    ],
+  },
+  {
+    type: "hatchback",
+    order: [
+      {
+        id: 1,
+        image: "other/user-dashboard/order/5.jpg",
+      },
+      {
+        id: 2,
+        image: "other/user-dashboard/order/6.jpg",
+      },
+    ],
+  },
+  {
+    type: "convertible",
+    order: [
+      {
+        id: 1,
+        image: "other/user-dashboard/order/7.jpg",
+      },
+      {
+        id: 2,
+        image: "other/user-dashboard/order/8.jpg",
+      },
+    ],
+  },
+  {
+    type: "suv",
+    order: [
+      {
+        id: 1,
+        image: "other/user-dashboard/order/9.jpg",
+      },
+      {
+        id: 2,
+        image: "other/user-dashboard/order/10.jpg",
+      },
+    ],
+  },
+];
+
+export const JobAppliedList = ["1d", "10d", "1m", "6m", "1y"];
+
+export const OptionsEarning: ApexOptions = {
+  series: [
+    {
+      data: [20, 40, 60, 20, 100, 60, 20, 80, 40, 10, 80, 100, 100],
+    },
+  ],
+  chart: {
+    type: "line",
+    height: 158,
+    toolbar: {
+      show: false,
+    },
+    dropShadow: {
+      enabled: true,
+      top: 0,
+      left: 0,
+      blur: 20,
+      color: "var(--chart-theme)",
+      opacity: 0.5,
+    },
+  },
+  grid: {
+    show: true,
+    borderColor: "var(--chart-border)",
+    strokeDashArray: 6,
+    position: "back",
+    xaxis: {
+      lines: {
+        show: true,
+      },
+    },
+    padding: {
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+    },
+  },
+  stroke: {
+    curve: "stepline",
+    width: 2,
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  xaxis: {
+    labels: {
+      show: false,
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+    tooltip: {
+      enabled: false,
+    },
+  },
+  yaxis: {
+    labels: {
+      show: false,
+    },
+    min: 0,
+    tickAmount: 5,
+  },
+  markers: {
+    size: 3,
+    colors: "var(--chart-white)",
+    strokeColors: "#188aec",
+    strokeWidth: 2,
+    strokeOpacity: 0.9,
+    strokeDashArray: 0,
+    fillOpacity: 1,
+    shape: "circle",
+    offsetX: 2,
+    offsetY: 2,
+    hover: {
+      size: 3,
+    },
+  },
+  colors: ["#188aec"],
+  responsive: [
+    {
+      breakpoint: 1200,
+      options: {
+        chart: {
+          height: 122,
+        },
+      },
+    },
+    {
+      breakpoint: 768,
+      options: {
+        chart: {
+          height: 160,
+        },
+      },
+    },
+  ],
+};
+
+export const UserJobSwiper = {
+  slidesPerView: 2,
+  spaceBetween: 10,
+  loop: true,
+  autoplay: {
+    delay: 1500,
+    disableOnInteraction: false,
+  },
+  modules: [Autoplay],
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    575: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    1200: {
+      slidesPerView: 1,
+    },
+    1460: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+  },
+};
+
+export const ModalSwiperSlider = {
+  slidesPerView: 3,
+  spaceBetween: 15,
+  loop: true,
+  autoplay: {
+    delay: 1500,
+    disableOnInteraction: false,
+  },
+  modules: [Autoplay],
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    375: {
+      slidesPerView: 2,
+      spaceBetween: 5,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 15,
+    },
+  },
+};
+
+export const PropertiesData = [
+  {
+    id: 1,
+    name: "Xatalya Land Residence",
+    image: "property/detail-main/1.jpg",
+    views: 25,
+    response: 15,
+  },
+  {
+    id: 2,
+    name: "Dream Garden Jakarta",
+    image: "property/detail-main/2.jpg",
+    views: 45,
+    response: 23,
+  },
+  {
+    id: 3,
+    name: "Mahogany Neighborhood",
+    image: "property/detail-main/3.jpg",
+    views: 58,
+    response: 25,
+  },
+  {
+    id: 4,
+    name: "Xatalya Land Residence",
+    image: "property/detail-main/1.jpg",
+    views: 25,
+    response: 15,
+  },
+  {
+    id: 5,
+    name: "Dream Garden Jakarta",
+    image: "property/detail-main/2.jpg",
+    views: 45,
+    response: 23,
+  },
+  {
+    id: 6,
+    name: "Mahogany Neighborhood",
+    image: "property/detail-main/3.jpg",
+    views: 58,
+    response: 25,
+  },
+];
+
+export const FurnishingDetailListData = ["Beds", "AC", "Study Table", "Wifi", "Washing Machine", "Fridge", "Cooler", "TV", "Chandelier", "Carpet", "Microwave", "Carpet"];
+
+export const PriceIncludeListData = ["PLC", "Car Parking", "Club Membership"];
+
+export const PersonalInformationListData = [
+  { label: "First Name", value: "Larry" },
+  { label: "Last Name", value: "Bishop" },
+  { label: "Email Address", value: "LarryMBishop@rhyta.com" },
+  { label: "Phone No.", value: "773-531-4157" },
+];
+
+export const AddressListData = [
+  { label: "Country", value: "United Kingdom" },
+  { label: "City / State", value: "Leeds, West London" },
+  { label: "Postal Code", value: "ERT 2345" },
+  { label: "TAX ID", value: "AB57464578" },
+];
+
+export const PrivacyData = [
+  {
+    title: "Privacy",
+    btnLabel: "Save Changes",
+    switchItem: [
+      { title: "Allows others to see my profile", description: "All peoples will be able to see my profile.", checked: true },
+      { title: "Who has saved this profile only that people see my profile", description: "All peoples will not be able to see my profile.", checked: false },
+    ],
+  },
+  {
+    title: "Account settings",
+    btnLabel: "Delete Account",
+    switchItem: [
+      { title: "Deleting Your Account Will Permanently", description: "Once your account is deleted, you will be logged out and you will need to create a new account.", checked: true },
+      { title: "Deleting Your Account Will Temporary", description: "Once your account is deleted, you will be logged out and will be unable to log back in.", checked: false },
+    ],
+  },
+];
+
+//Privacy
+export const PrivacyPolicyData = [
+  {
+    id: "item-1",
+    title: "1. Introduction",
+    content: "Welcome to Fuso. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website [insert website URL] and use our services related to classified car and job bookings.",
+  },
+  {
+    id: "item-2",
+    title: "2. Information We Collect",
+  },
+  {
+    id: "item-2-1",
+    title: "2.1 Personal Information",
+    content: "When you use our website, we may collect personal information that you voluntarily provide, including but not limited to:",
+    subsections: true,
+    subList: [
+      { title: "Contact Information", content: "Name, email address, phone number, and address." },
+      { title: "Booking Information", content: "Details about car or job bookings, including preferences, dates, and locations." },
+      { title: "Account Information", content: "User credentials, including usernames and passwords, if you create an account." },
+    ],
+  },
+  {
+    id: "item-2-2",
+    title: "2.2 Non-Personal Information",
+    content: "We also collect non-personal information automatically when you visit our website, such as:",
+    subsections: true,
+    subList: [
+      { title: "Usage Data", content: "Information about your interactions with our website, including IP addresses, browser types, and pages viewed." },
+      { title: "Cookies and Tracking Technologies", content: "We use cookies and similar technologies to enhance your user experience and analyze website traffic." },
+    ],
+  },
+  {
+    id: "item-3",
+    title: "3. How We Use Your Information",
+    content: "We use your information for the following purposes:",
+    subList: [
+      { title: "To Provide Services", content: "To process and manage your bookings and provide customer support." },
+      { title: "To Improve Our Website", content: "To analyze usage patterns and improve website functionality." },
+      { title: "To Communicate With You", content: "To send updates, notifications, and promotional materials related to our services." },
+      { title: "To Comply with Legal Obligations", content: "To comply with applicable laws and regulations." },
+    ],
+  },
+  {
+    id: "item-4",
+    title: "4. How We Share Your Information",
+    content: "We may share your information with:",
+    subList: [
+      { title: "Service Providers", content: "Third-party vendors who perform services on our behalf, such as payment processors and IT support." },
+      { title: "Business Partners", content: "Partners who offer related services and may provide you with information relevant to your interests." },
+      { title: "Legal Authorities", content: "When required by law or to protect our rights and the rights of others." },
+    ],
+  },
+  {
+    id: "item-5",
+    title: "5. Data Security",
+    content: "We implement reasonable security measures to protect your personal information from unauthorized access, disclosure, alteration, and destruction. However, no online transmission or storage system is completely secure, so we cannot guarantee absolute security.",
+  },
+  {
+    id: "item-6",
+    title: "6. Your Rights and Choices",
+    content: "You have the following rights regarding your personal information:",
+    subList: [
+      { title: "Access and Correction", content: "You can access and update your personal information through your account or by contacting us." },
+      { title: "Opt-Out", content: "You may opt out of receiving promotional communications by following the unsubscribe instructions provided in those communications." },
+      { title: "Deletion", content: "You can request the deletion of your personal information, subject to legal and contractual obligations." },
+    ],
+  },
+  {
+    id: "item-7",
+    title: "7. Cookies and Tracking Technologies",
+    content: "We use cookies and similar technologies to collect information about your browsing activities. You can control cookie settings through your browser preferences, but disabling cookies may affect the functionality of our website.",
+  },
+  {
+    id: "item-8",
+    title: "8. Third-Party Links",
+    content: "Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit.",
+  },
+  {
+    id: "item-9",
+    title: "9. Changes to This Privacy Policy",
+    content: "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. Your continued use of our website after changes are made constitutes your acceptance of the revised policy.",
+  },
+  {
+    id: "item-10",
+    title: "10. Contact Us",
+    content: "If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:",
+  },
 ];

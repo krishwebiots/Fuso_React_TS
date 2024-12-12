@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { AboutData, SocialContactData } from "../../../Data/Pages/Blog";
 import { dynamicImage, Image } from "../../../Utils";
+import { Label } from "reactstrap";
 
 const About = () => {
   return (
@@ -14,7 +15,7 @@ const About = () => {
           <div className="author-flex">
             <div className="tag-flex">
               <h4>Rose Roberts</h4>
-              <label>Founder &amp; Writer</label>
+              <Label>Founder &amp; Writer</Label>
             </div>
             <ul className="social-list">
               {SocialContactData.slice(0, 3).map((item, index) => (

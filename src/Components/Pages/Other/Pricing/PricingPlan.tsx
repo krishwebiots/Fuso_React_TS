@@ -1,3 +1,4 @@
+import { Col, Label, Row } from "reactstrap";
 import { PricingPlanTitle } from "../../../../Constants/Constants";
 import { PricingPlanContent, PricingPlanData } from "../../../../Data/Pages/Other";
 import CommonHeader from "../../../Home/Common/CommonHeader";
@@ -7,13 +8,13 @@ const PricingPlan = () => {
     <section className="pricing-section">
       <div className="container">
         <CommonHeader title={PricingPlanTitle} content={PricingPlanContent} headClass="content-title" />
-        <div className="row gy-xl-0 gy-4 justify-content-center">
+        <Row className="gy-xl-0 gy-4 justify-content-center">
           {PricingPlanData.map((plan, index) => (
-            <div className="col-xl-4 col-md-6" key={index}>
+            <Col xl="4" md="6" key={index}>
               <div className={`pricing-box ${plan.isActive ? "active" : ""}`}>
                 <div className="d-flex align-items-center gap-2 justify-content-between">
                   <h4>{plan.name}</h4>
-                  {plan.badge && <label>{plan.badge}</label>}
+                  {plan.badge && <Label>{plan.badge}</Label>}
                 </div>
                 <p>To discover our product and its features</p>
                 <h2>
@@ -31,9 +32,9 @@ const PricingPlan = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </Col>
           ))}
-        </div>
+        </Row>
       </div>
     </section>
   );

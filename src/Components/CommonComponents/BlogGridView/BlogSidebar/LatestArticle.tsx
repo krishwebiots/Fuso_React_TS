@@ -3,6 +3,7 @@ import { LatestArticleTitle } from "../../../../Constants/Constants";
 import { LatestArticleData } from "../../../../Data/Pages/Blog";
 import { RouteList } from "../../../../Routers/RouteList";
 import { dynamicImage, Image } from "../../../../Utils";
+import { Label } from "reactstrap";
 
 const LatestArticle = () => {
   return (
@@ -18,7 +19,7 @@ const LatestArticle = () => {
             </Link>
             <div className="article-list-content">
               <div className="post-flex">
-                <label>{item.type}</label>
+                <Label>{item.type}</Label>
                 <span>{item.date}</span>
               </div>
               <Link to={RouteList.Pages.Blog.Detail.BlogLeftClassic}>{item.title}</Link>

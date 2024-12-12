@@ -1,4 +1,4 @@
-import { Container, Row } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import { dynamicImage } from "../../../../Utils";
 import RatioImage from "../../../../Utils/RatioImage";
 import CountUp from "react-countup";
@@ -12,7 +12,7 @@ const Counter = () => {
           <RatioImage src={dynamicImage("car/bg-effect/service-bg.png")} alt="counter-bg" className="img-fluid bg-img" />
           <Row className="justify-content-center gy-4 gy-lg-0">
             {CounterData.map((item, index) => (
-              <div className="col-lg-3 col-sm-6" key={index}>
+              <Col lg="3" sm="6" key={index}>
                 <div className="counter-box">
                   <div>
                     <h2>
@@ -22,7 +22,7 @@ const Counter = () => {
                     <h4>{item.label}</h4>
                   </div>
                 </div>
-              </div>
+              </Col>
             ))}
           </Row>
         </div>

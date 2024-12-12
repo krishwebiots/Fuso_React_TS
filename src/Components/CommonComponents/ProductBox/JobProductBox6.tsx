@@ -6,6 +6,7 @@ import { Href } from "../../../Constants/Constants";
 import { dynamicSvg, Image } from "../../../Utils";
 import { Location } from "iconsax-react";
 import { toast } from "react-toastify";
+import { Label } from "reactstrap";
 
 const JobProductBox6: FC<ProductBoxType> = ({ data }) => {
   const handleWishlist = () => toast.success("Added to Wishlist successfully");
@@ -22,8 +23,8 @@ const JobProductBox6: FC<ProductBoxType> = ({ data }) => {
       </div>
       <h5 className="price-style-2">${data.salary}K USD</h5>
       <div className="job-tag job-tag-style-2">
-        <label>{data.jobType?.slice(0, 1).map((job) => job.replace("_", " "))}</label>
-        <label>Mid Level</label>
+        <Label>{data.jobType?.slice(0, 1).map((job) => job.replace("_", " "))}</Label>
+        <Label>Mid Level</Label>
       </div>
       <div className="post-style-2">
         <span>{data.time}</span>

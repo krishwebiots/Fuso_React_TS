@@ -31,8 +31,8 @@ const Overview: FC<DetailBodyItemType> = ({ label, type }) => {
           </ul>
         </div>
       ) : (
-        <div className="detail-body" id="overview">
-          {label && <h4 className="detail-page-title">{OverviewTitle}</h4>}
+        <div className={type !== "use_dashboard" ? "detail-body" : ""} id="overview">
+          {label && <h4 className={type === "use_dashboard" ? "modal-title" : "detail-page-title"}>{OverviewTitle}</h4>}
           <ul className="overview-list">
             {OverviewData.map((item, index) => (
               <li className="overview-box" key={index}>

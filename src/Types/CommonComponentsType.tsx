@@ -60,3 +60,8 @@ export interface FilterOffcanvasType {
   offcanvasSide?: string;
   modalType?: string;
 }
+
+export interface TooltipsType {
+  title: string;
+  target: string;
+}
