@@ -1,23 +1,23 @@
-import { Link, useLocation } from "react-router-dom";
+import { FC } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Label } from "reactstrap";
-import { ApplyNow, Href, SymbolRegex } from "../../../Constants/Constants";
+import { ApplyNow, Href } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicSvg, Image } from "../../../Utils";
 import SvgIcon from "../../../Utils/SvgIcon";
-import { FC } from "react";
-import { toast } from "react-toastify";
+import UsePathName from "../../../Utils/UsePathName";
 
 const JobProductBox2: FC<ProductBoxType> = ({ data }) => {
-  const { pathname } = useLocation();
-  const firstPart = pathname.split("/").map((item) => item.replace(SymbolRegex, " "));
+  const Path = UsePathName();
 
   const handleWishlist = () => toast.success("Added to Wishlist successfully");
 
   return (
     <div className="hire-box">
-      <div className={`save-flex ${firstPart[3] === "job-grid-type-3" ? "justify-content-end" : ""}`}>
-        {firstPart[3] !== "job-grid-type-3" ? <span>{data.time}</span> : ""}
+      <div className={`save-flex ${Path.includes("job-grid-type-3") ? "justify-content-end" : ""}`}>
+        {Path[2] !== "job-grid-type-3" ? <span>{data.time}</span> : ""}
         <Link to={Href} className="save-btn" onClick={() => handleWishlist()}>
           <i className="ri-bookmark-line" />
         </Link>
@@ -31,7 +31,7 @@ const JobProductBox2: FC<ProductBoxType> = ({ data }) => {
         <Link to={RouteList.Job.Grid.JobLeftSidebar}>
           <h6>{data.company}</h6>
         </Link>
-        {firstPart[3] !== "user-dashboard" ? (
+        {Path[2] !== "user-dashboard" ? (
           <div className="hire-tag">
             {data.jobTags?.map((tag, idx) => (
               <Label key={idx}>{tag}</Label>

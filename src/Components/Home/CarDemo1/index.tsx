@@ -1,15 +1,15 @@
 import { Fragment, useEffect } from "react";
+import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
+import { fetchCategoryApiData, fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
+import Categories from "../Common/Categories";
+import Testimonials from "../Common/Testimonials";
 import About from "./About";
 import CarHomeSection from "./CarHomeSection";
 import Experience from "./Experience";
 import Offer from "./Offer";
 import Product from "./Product";
 import Service from "./Service";
-import Testimonials from "../Common/Testimonials";
 import Work from "./Work";
-import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
-import { fetchCategoryApiData, fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
-import Categories from "../Common/Categories";
 
 const CarDemo1Container = () => {
   const dispatch = useAppDispatch();

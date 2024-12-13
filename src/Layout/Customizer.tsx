@@ -1,9 +1,8 @@
 import { FC, useState } from "react";
 import { Button } from "reactstrap";
 import ConfigDB from "../Config/ThemeCustomizerConfig";
-import { PathTypes } from "../Types/LayoutType";
 
-const Customizer: FC<PathTypes> = ({ part }) => {
+const Customizer: FC<{ part: string[] }> = ({ part }) => {
   const [isLayoutMode, setLayoutMode] = useState(false);
   const [isLayoutType, setLayoutType] = useState(false);
 
@@ -23,8 +22,8 @@ const Customizer: FC<PathTypes> = ({ part }) => {
   };
 
   return (
-    <div className={`theme-btn-flex ${part === "job" ? "job-color-change" : part === "car-2" ? "car2-color-change" : ""}`}>
-      {part !== "job-2" && (
+    <div className={`theme-btn-flex ${part[1] === "job" ? "job-color-change" : part[1] === "car-2" ? "car2-color-change" : ""}`}>
+      {part[1] !== "job-2" && part[2] !== "login-2" && part[2] !== "login-3" && part[2] !== "signup-2" && part[2] !== "signup-3" && (
         <Button className="mode-button mode-change-button" onClick={toggleLayoutMode}>
           <i className={`ri-${isLayoutMode ? "sun" : "moon"}-line`} />
           <span>{isLayoutMode ? "Light" : "Dark"}</span>

@@ -18,6 +18,7 @@ const initialState = {
   addressModal: false,
   logoutModal: false,
   dashboardSidebar: false,
+  loginModal: true,
 };
 
 const SidebarSlice = createSlice({
@@ -75,8 +76,11 @@ const SidebarSlice = createSlice({
     setDashboardSidebar: (state) => {
       state.dashboardSidebar = !state.dashboardSidebar;
     },
+    setLoginModal: (state) => {
+      state.loginModal = !state.loginModal;
+    },
   },
 });
 
-export const { setDashboardSidebar, setLogoutModal, setAddressModal, setPersonalModal, setMoreDetailsModal, setSidebarOpen, setOpenFilterSidebar, setCardToShow, setTotalProduct, setSearchModal, setMapModal, setShareModal, setVideoModal, setReviewModal, setOfferModal, setDriverModal, setActiveTab } = SidebarSlice.actions;
+export const { setLoginModal, setDashboardSidebar, setLogoutModal, setAddressModal, setPersonalModal, setMoreDetailsModal, setSidebarOpen, setOpenFilterSidebar, setCardToShow, setTotalProduct, setSearchModal, setMapModal, setShareModal, setVideoModal, setReviewModal, setOfferModal, setDriverModal, setActiveTab } = SidebarSlice.actions;
 export default SidebarSlice.reducer;

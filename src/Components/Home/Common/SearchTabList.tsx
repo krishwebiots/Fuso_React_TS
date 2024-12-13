@@ -60,7 +60,7 @@ const SearchTabList: FC<SearchTabListType> = ({ showTab, datePicker, scrollDown,
         </Nav>
       )}
       <TabContent activeTab={basicTab}>
-        <TabPane className={`fade ${basicTab === basicTab ? "show" : ""}`} tabId={basicTab}>
+        <TabPane className={`fade ${basicTab ? "show" : ""}`} tabId={basicTab}>
           <ul className={form ? "home-form" : "tab-list"}>
             {selected.map((item, index) => (
               <li className={form ? "input-box" : "tab-item"} key={item.id}>

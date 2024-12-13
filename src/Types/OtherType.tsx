@@ -35,3 +35,28 @@ export interface SwitchItemProps {
   description: string;
   checked?: boolean;
 }
+
+export interface PrivacyPolicySubItem {
+  title?: string;
+  content: string;
+}
+
+export interface PrivacyPolicyItem {
+  id: string;
+  title: string;
+  content?: string;
+  subsections?: boolean;
+  subList?: PrivacyPolicySubItem[];
+}
+
+export interface PrivacyNavItem {
+  id?: string;
+  title?: string;
+  subList?: PrivacyNavItem[];
+}
+
+export interface ScrollspyType {
+  title?: string;
+  list?: PrivacyNavItem[];
+  content?: PrivacyPolicyItem[];
+}

@@ -854,89 +854,251 @@ export const PrivacyData = [
 //Privacy
 export const PrivacyPolicyData = [
   {
-    id: "item-1",
+    id: "privacy-1",
     title: "1. Introduction",
     content: "Welcome to Fuso. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website [insert website URL] and use our services related to classified car and job bookings.",
   },
   {
-    id: "item-2",
+    id: "privacy-2",
     title: "2. Information We Collect",
   },
   {
-    id: "item-2-1",
+    id: "privacy-2-1",
     title: "2.1 Personal Information",
     content: "When you use our website, we may collect personal information that you voluntarily provide, including but not limited to:",
     subsections: true,
     subList: [
-      { title: "Contact Information", content: "Name, email address, phone number, and address." },
-      { title: "Booking Information", content: "Details about car or job bookings, including preferences, dates, and locations." },
-      { title: "Account Information", content: "User credentials, including usernames and passwords, if you create an account." },
+      { title: "Contact Information: ", content: "Name, email address, phone number, and address." },
+      { title: "Booking Information: ", content: "Details about car or job bookings, including preferences, dates, and locations." },
+      { title: "Account Information: ", content: "User credentials, including usernames and passwords, if you create an account." },
     ],
   },
   {
-    id: "item-2-2",
+    id: "privacy-2-2",
     title: "2.2 Non-Personal Information",
     content: "We also collect non-personal information automatically when you visit our website, such as:",
     subsections: true,
     subList: [
-      { title: "Usage Data", content: "Information about your interactions with our website, including IP addresses, browser types, and pages viewed." },
-      { title: "Cookies and Tracking Technologies", content: "We use cookies and similar technologies to enhance your user experience and analyze website traffic." },
+      { title: "Usage Data: ", content: "Information about your interactions with our website, including IP addresses, browser types, and pages viewed." },
+      { title: "Cookies and Tracking Technologies: ", content: "We use cookies and similar technologies to enhance your user experience and analyze website traffic." },
     ],
   },
   {
-    id: "item-3",
+    id: "privacy-3",
     title: "3. How We Use Your Information",
     content: "We use your information for the following purposes:",
     subList: [
-      { title: "To Provide Services", content: "To process and manage your bookings and provide customer support." },
-      { title: "To Improve Our Website", content: "To analyze usage patterns and improve website functionality." },
-      { title: "To Communicate With You", content: "To send updates, notifications, and promotional materials related to our services." },
-      { title: "To Comply with Legal Obligations", content: "To comply with applicable laws and regulations." },
+      { title: "To Provide Services: ", content: "To process and manage your bookings and provide customer support." },
+      { title: "To Improve Our Website: ", content: "To analyze usage patterns and improve website functionality." },
+      { title: "To Communicate With You: ", content: "To send updates, notifications, and promotional materials related to our services." },
+      { title: "To Comply with Legal Obligations: ", content: "To comply with applicable laws and regulations." },
     ],
   },
   {
-    id: "item-4",
+    id: "privacy-4",
     title: "4. How We Share Your Information",
     content: "We may share your information with:",
     subList: [
-      { title: "Service Providers", content: "Third-party vendors who perform services on our behalf, such as payment processors and IT support." },
-      { title: "Business Partners", content: "Partners who offer related services and may provide you with information relevant to your interests." },
-      { title: "Legal Authorities", content: "When required by law or to protect our rights and the rights of others." },
+      { title: "Service Providers: ", content: "Third-party vendors who perform services on our behalf, such as payment processors and IT support." },
+      { title: "Business Partners: ", content: "Partners who offer related services and may provide you with information relevant to your interests." },
+      { title: "Legal Authorities: ", content: "When required by law or to protect our rights and the rights of others." },
     ],
   },
   {
-    id: "item-5",
+    id: "privacy-5",
     title: "5. Data Security",
     content: "We implement reasonable security measures to protect your personal information from unauthorized access, disclosure, alteration, and destruction. However, no online transmission or storage system is completely secure, so we cannot guarantee absolute security.",
   },
   {
-    id: "item-6",
+    id: "privacy-6",
     title: "6. Your Rights and Choices",
     content: "You have the following rights regarding your personal information:",
     subList: [
-      { title: "Access and Correction", content: "You can access and update your personal information through your account or by contacting us." },
-      { title: "Opt-Out", content: "You may opt out of receiving promotional communications by following the unsubscribe instructions provided in those communications." },
-      { title: "Deletion", content: "You can request the deletion of your personal information, subject to legal and contractual obligations." },
+      { title: "Access and Correction: ", content: "You can access and update your personal information through your account or by contacting us." },
+      { title: "Opt-Out: ", content: "You may opt out of receiving promotional communications by following the unsubscribe instructions provided in those communications." },
+      { title: "Deletion: ", content: "You can request the deletion of your personal information, subject to legal and contractual obligations." },
     ],
   },
   {
-    id: "item-7",
+    id: "privacy-7",
     title: "7. Cookies and Tracking Technologies",
     content: "We use cookies and similar technologies to collect information about your browsing activities. You can control cookie settings through your browser preferences, but disabling cookies may affect the functionality of our website.",
   },
   {
-    id: "item-8",
+    id: "privacy-8",
     title: "8. Third-Party Links",
     content: "Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit.",
   },
   {
-    id: "item-9",
+    id: "privacy-9",
     title: "9. Changes to This Privacy Policy",
     content: "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. Your continued use of our website after changes are made constitutes your acceptance of the revised policy.",
   },
   {
-    id: "item-10",
+    id: "privacy-10",
     title: "10. Contact Us",
     content: "If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:",
   },
+];
+
+export const PrivacyNavListData = [
+  { id: "privacy-1", title: "Introduction" },
+  { id: "privacy-2", title: "Info We Collect" },
+  {
+    subList: [
+      { id: "privacy-2-1", title: "Personal Info" },
+      { id: "privacy-2-2", title: "Non-Personal Info" },
+    ],
+  },
+  { id: "privacy-3", title: "Use of Info" },
+  { id: "privacy-4", title: "Info Sharing" },
+  { id: "privacy-5", title: "Data Security" },
+  { id: "privacy-6", title: "Your Rights & Choices" },
+  { id: "privacy-7", title: "Cookies & Tracking" },
+  { id: "privacy-8", title: "Third-Party Links" },
+  { id: "privacy-9", title: "Policy Changes" },
+  { id: "privacy-10", title: "Contact Us" },
+];
+
+export const BottomInfo = [
+  { label: "Fuso", isHeader: true },
+  { label: "Email:", value: "contact@gmail.com" },
+  { label: "Address:", value: "Meester Westerhofdijk" },
+  { label: "Phone:", value: "(401) 531-6404" },
+];
+
+export const ConditionData = [
+  {
+    id: "condition-1",
+    title: "1. Introduction",
+    content: "Welcome to Fuso. By accessing or using our website fuso.com and services related to classified car and job bookings, you agree to comply with and be bound by the following Terms and Conditions. Please read them carefully.",
+  },
+  {
+    id: "condition-2",
+    title: "2. Acceptance of Terms",
+    content: "By using our Site and Services, you agree to these Terms and Conditions and our Privacy Policy. If you do not agree with any part of these Terms, you should not use our Site or Services",
+  },
+  {
+    id: "condition-3",
+    title: "3. Services Provided",
+    content: "Fuso provides a platform for users to post and browse classified ads related to car bookings and job opportunities. We do not guarantee the accuracy or completeness of any listings and are not responsible for the transactions or interactions between users.",
+  },
+  {
+    id: "condition-4",
+    title: "4. User Responsibilities",
+  },
+  {
+    id: "condition-4-1",
+    title: "4.1 Account Registration",
+    content: "To use certain features of our Site, you may need to create an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.",
+    subsections: true,
+  },
+  {
+    id: "condition-4-2",
+    title: "4.2 User Conduct",
+    content: "You agree to use our Site and Services only for lawful purposes and in accordance with these Terms. You shall not:",
+    subsections: true,
+    subList: [{ content: "Post any content that is false, misleading, defamatory, or illegal." }, { content: "Use our Site for any fraudulent or unauthorized purpose." }, { content: "Interfere with or disrupt the functioning of our Site or servers." }, { content: "Engage in any activity that could harm or exploit others." }],
+  },
+  {
+    id: "condition-5",
+    title: "5. Content",
+  },
+  {
+    id: "condition-5-1",
+    title: "5.1 User-Generated Content",
+    content: "You retain ownership of any content you post on our Site, but by posting, you grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, and display such content in connection with our Services.",
+    subsections: true,
+  },
+  {
+    id: "condition-5-2",
+    title: "5.2 Content Moderation",
+    content: "We reserve the right to remove or modify any content that violates these Terms or is otherwise objectionable at our sole discretion.",
+    subsections: true,
+  },
+  {
+    id: "condition-6",
+    title: "6. Transactions",
+  },
+  {
+    id: "condition-6-1",
+    title: "6.1 Listings",
+    content: "Users may post classified ads for cars and job opportunities. All transactions and interactions are solely between the parties involved, and Fuso is not a party to these transactions.",
+    subsections: true,
+  },
+  {
+    id: "condition-6-2",
+    title: "6.2 Payment",
+    content: "Fuso may offer payment processing services for certain transactions. You agree to use any payment methods provided in a lawful manner and comply with any applicable payment terms.",
+    subsections: true,
+  },
+  {
+    id: "condition-7",
+    title: "7. Intellectual Property",
+    content: "All content and materials on our Site, including text, graphics, logos, and software, are the property of Fuso or its licensors and are protected by intellectual property laws. You may not reproduce, distribute, or otherwise use any content from our Site without our express written permission.",
+  },
+  {
+    id: "condition-8",
+    title: "8. Limitation of Liability",
+    content: "To the maximum extent permitted by law, Fuso and its affiliates shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of our Site or Services, including but not limited to loss of data, revenue, or profits.",
+  },
+  {
+    id: "condition-9",
+    title: "9. Indemnification",
+    content: "You agree to indemnify and hold harmless Fuso and its affiliates from any claims, liabilities, damages, losses, or expenses (including reasonable attorneys' fees) arising out of or in connection with your use of our Site or Services or your violation of these Terms.",
+  },
+  {
+    id: "condition-10",
+    title: "10. Termination",
+    content: "We reserve the right to suspend or terminate your access to our Site and Services at our sole discretion, without notice, for any reason, including but not limited to violations of these Terms.",
+  },
+  {
+    id: "condition-11",
+    title: "11. Changes to Terms",
+    content: "We may update these Terms from time to time. Any changes will be posted on this page with an updated effective date. Your continued use of our Site after changes are made constitutes your acceptance of the revised Terms.",
+  },
+  {
+    id: "condition-12",
+    title: "12. Contact Us",
+    content: "If you have any questions or concerns about these Terms and Conditions, please contact us at:",
+  },
+];
+
+export const ConditionNavListData = [
+  { id: "condition-1", title: "Introduction" },
+  { id: "condition-2", title: "Acceptance of Terms" },
+  { id: "condition-3", title: "Services Provided" },
+  { id: "condition-4", title: "User Responsibilities" },
+  {
+    subList: [
+      { id: "condition-4-1", title: "Account Registration" },
+      { id: "condition-4-2", title: "User Conduct" },
+    ],
+  },
+  { id: "condition-5", title: "Content" },
+  {
+    subList: [
+      { id: "condition-5-1", title: "User-Generated Content" },
+      { id: "condition-5-2", title: "Content Moderation" },
+    ],
+  },
+  { id: "condition-6", title: "Transactions" },
+  {
+    subList: [
+      { id: "condition-6-1", title: "Listings" },
+      { id: "condition-6-2", title: "Payment" },
+    ],
+  },
+  { id: "condition-7", title: "Intellectual Property" },
+  { id: "condition-8", title: "Limitation of Liability" },
+  { id: "condition-9", title: "Indemnification" },
+  { id: "condition-10", title: "Termination" },
+  { id: "condition-11", title: "Changes to Terms" },
+  { id: "condition-12", title: "Contact Us" },
+];
+
+//Login
+export const LoginSocialData = [
+  { url: "https://www.google.com/", image: "other/google.png", title: "Log In With Google" },
+  { url: "https://www.facebook.com/", image: "other/facebook.png", title: "Log In With Facebook" },
 ];

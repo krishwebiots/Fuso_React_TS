@@ -1,17 +1,17 @@
-import { FC } from "react";
-import { ProductBoxType } from "../../../Types/ProductType";
-import { Link, useLocation } from "react-router-dom";
-import { RouteList } from "../../../Routers/RouteList";
-import { ApplyNow, Href, SymbolRegex } from "../../../Constants/Constants";
-import { dynamicSvg, Image } from "../../../Utils";
 import { Clock, Location } from "iconsax-react";
+import { FC } from "react";
+import { Link } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 import { toast } from "react-toastify";
 import { Label } from "reactstrap";
+import { ApplyNow, Href } from "../../../Constants/Constants";
+import { RouteList } from "../../../Routers/RouteList";
+import { ProductBoxType } from "../../../Types/ProductType";
+import { dynamicSvg, Image } from "../../../Utils";
+import UsePathName from "../../../Utils/UsePathName";
 
 const JobProductBox7: FC<ProductBoxType> = ({ data }) => {
-  const { pathname } = useLocation();
-  const firstPart = pathname.split("/").map((item) => item.replace(SymbolRegex, " "));
+  const Path = UsePathName();
 
   const handleWishlist = () => toast.success("Added to Wishlist successfully");
 
@@ -43,7 +43,7 @@ const JobProductBox7: FC<ProductBoxType> = ({ data }) => {
             <Image src={dynamicSvg("job/job-box/briefcase.svg")} alt="briefcase" className="img-fluid" />
             {data.jobType?.slice(0, 1).map((job) => job.replace("_", " "))}
           </Label>
-          {(firstPart[2] === "listing" || firstPart[3] === "job-ad") && (
+          {(Path[1] === "listing" || Path[2] === "job-ad") && (
             <Label>
               <Image src={dynamicSvg("job/job-box/eye-line.svg")} alt="eye-line" className="img-fluid" />
               25 People View

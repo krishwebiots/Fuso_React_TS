@@ -76,6 +76,27 @@ import BlogRightSidebar from "../Pages/Pages/Blog/BlogPage/BlogRightSidebar";
 import BlogTitle from "../Pages/Pages/Blog/BlogPage/BlogTitle";
 import BlogToSlider from "../Pages/Pages/Blog/BlogPage/BlogToSlider";
 import AboutUs1 from "../Pages/Pages/Other/AboutUs1";
+import AboutUs2 from "../Pages/Pages/Other/AboutUs2";
+import AboutUs3 from "../Pages/Pages/Other/AboutUs3";
+import Condition from "../Pages/Pages/Other/Condition";
+import ContactUs1 from "../Pages/Pages/Other/ContactUs1";
+import ContactUs2 from "../Pages/Pages/Other/ContactUs2";
+import ContactUs3 from "../Pages/Pages/Other/ContactUs3";
+import Error404 from "../Pages/Pages/Other/Error404";
+import Faq from "../Pages/Pages/Other/Faq";
+import Login1 from "../Pages/Pages/Other/Login1";
+import Login2 from "../Pages/Pages/Other/Login2";
+import Login3 from "../Pages/Pages/Other/Login3";
+import Login4 from "../Pages/Pages/Other/Login4";
+import Pricing from "../Pages/Pages/Other/Pricing";
+import Privacy from "../Pages/Pages/Other/Privacy";
+import Services from "../Pages/Pages/Other/Services";
+import SignUp1 from "../Pages/Pages/Other/SignUp1";
+import SignUp2 from "../Pages/Pages/Other/SignUp2";
+import SignUp3 from "../Pages/Pages/Other/SignUp3";
+import Team from "../Pages/Pages/Other/Team";
+import Testimonial from "../Pages/Pages/Other/Testimonial";
+import UserDashboard from "../Pages/Pages/Other/UserDashboard";
 import PortfolioDetail1 from "../Pages/Pages/Portfolio/Detail/PortfolioDetail1";
 import PortfolioDetail2 from "../Pages/Pages/Portfolio/Detail/PortfolioDetail2";
 import Portfolio2Grid from "../Pages/Pages/Portfolio/PortfolioPage/Portfolio2Grid";
@@ -123,23 +144,13 @@ import PropertyParallax from "../Pages/Property/Other/PropertyParallax";
 import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import PropertyWishlist from "../Pages/Property/Wishlist";
 import { RouteList } from "./RouteList";
-import AboutUs2 from "../Pages/Pages/Other/AboutUs2";
-import AboutUs3 from "../Pages/Pages/Other/AboutUs3";
-import ContactUs1 from "../Pages/Pages/Other/ContactUs1";
-import ContactUs2 from "../Pages/Pages/Other/ContactUs2";
-import ContactUs3 from "../Pages/Pages/Other/ContactUs3";
-import Services from "../Pages/Pages/Other/Services";
-import Team from "../Pages/Pages/Other/Team";
-import Pricing from "../Pages/Pages/Other/Pricing";
-import Testimonial from "../Pages/Pages/Other/Testimonial";
-import Faq from "../Pages/Pages/Other/Faq";
-import UserDashboard from "../Pages/Pages/Other/UserDashboard";
-import Privacy from "../Pages/Pages/Other/Privacy";
 
 const Router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
+      { path: "*", element: <Error404 /> },
+
       //Home
       { path: RouteList.Home.CarDemo1, element: <CarDemo1 />, index: true },
       { path: RouteList.Home.CarDemo2, element: <CarDemo2 /> },
@@ -317,6 +328,15 @@ const Router = createBrowserRouter([
       { path: RouteList.Pages.Other.Faq, element: <Faq /> },
       { path: RouteList.Pages.Other.UserDashboard, element: <UserDashboard /> },
       { path: RouteList.Pages.Other.Privacy, element: <Privacy /> },
+      { path: RouteList.Pages.Other.Condition, element: <Condition /> },
+      { path: RouteList.Pages.Other.Error404, element: <Error404 /> },
+      { path: RouteList.Pages.Other.Login1, element: <Login1 /> },
+      { path: RouteList.Pages.Other.Login2, element: <Login2 /> },
+      { path: RouteList.Pages.Other.Login3, element: <Login3 /> },
+      { path: RouteList.Pages.Other.Login4, element: <Login4 /> },
+      { path: RouteList.Pages.Other.SignUp1, element: <SignUp1 /> },
+      { path: RouteList.Pages.Other.SignUp2, element: <SignUp2 /> },
+      { path: RouteList.Pages.Other.SignUp3, element: <SignUp3 /> },
     ],
   },
 ]);
