@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Button, Col } from "reactstrap";
+import { DownloadNow, JobsYouMightBeInterested, UsersAreOnTheFusoApp } from "../../../../../Constants/Constants";
 import { RouteList } from "../../../../../Routers/RouteList";
 import { RightSidebarType } from "../../../../../Types/ProductType";
 import { dynamicSvg, Image } from "../../../../../Utils";
@@ -11,7 +12,7 @@ const RightSidebar: FC<RightSidebarType> = ({ value }) => {
     <Col xl="3" lg="4">
       <div className="job-right-sidebar">
         <div className="right-sidebar">
-          <h6 className="sidebar-title">Jobs you might be interested in</h6>
+          <h6 className="sidebar-title">{JobsYouMightBeInterested}</h6>
           {value.slice(0, 3).map((item, index) => (
             <div className="sidebar-job-box" key={index}>
               <div className="job-icon">
@@ -28,8 +29,8 @@ const RightSidebar: FC<RightSidebarType> = ({ value }) => {
         </div>
         <ShareFriends />
         <div className="sidebar-banner">
-          <h2>10M+ Users are on the Fuso app</h2>
-          <Button className="btn-solid">Download Now</Button>
+          <h2>{UsersAreOnTheFusoApp}</h2>
+          <Button className="btn-solid">{DownloadNow}</Button>
         </div>
       </div>
     </Col>

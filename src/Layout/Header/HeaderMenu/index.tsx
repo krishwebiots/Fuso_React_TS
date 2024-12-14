@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { Href } from "../../../Constants/Constants";
 import { MenuItem } from "../../../Data/Layout/Header";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { setSidebarOpen } from "../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setSidebarOpen } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 import MegaMenu from "./MegaMenu";
 import MenuImage from "./MenuImage";
 import SubMenu from "./SubMenu";
 
 const Sidebar = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
-  const { sidebarOpen } = useAppSelector((state) => state.sidebar);
+  const { sidebarOpen } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 

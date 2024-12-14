@@ -1,20 +1,15 @@
-import { FC, useEffect, useRef } from "react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
-import { Swiper as SwiperType } from "swiper";
 import { EffectFade, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { BookNow, ClassicDesign, ComfortableInterior, Featured, PerDay, Rent } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
 
 const CarProductBox2: FC<ProductBoxType> = ({ data }) => {
-  const swiperRef = useRef<SwiperType | null>(null);
-
-  useEffect(() => {
-    if (swiperRef.current) swiperRef.current.init();
-  }, []);
   return (
     <div className="car2-featured-box">
       <Link to={RouteList.Car.Detail.CarClassic} className="car2-featured-img">
@@ -27,8 +22,8 @@ const CarProductBox2: FC<ProductBoxType> = ({ data }) => {
           ))}
         </Swiper>
         <div className="car2-label-flex">
-          <span>Featured</span>
-          <span>Rent</span>
+          <span>{Featured}</span>
+          <span>{Rent}</span>
         </div>
       </Link>
       <div className="car2-featured-content">
@@ -42,8 +37,8 @@ const CarProductBox2: FC<ProductBoxType> = ({ data }) => {
         </div>
         <p>{data.description}</p>
         <ul className="tag-list">
-          <li>Classic design</li>
-          <li>Comfortable interior</li>
+          <li>{ClassicDesign}</li>
+          <li>{ComfortableInterior}</li>
         </ul>
         <ul className="featured-list">
           {data.features.map((item, index) => (
@@ -55,10 +50,10 @@ const CarProductBox2: FC<ProductBoxType> = ({ data }) => {
         </ul>
         <div className="price-flex">
           <h4>
-            ${data.price}/<span>Per day</span>
+            ${data.price}/<span>{PerDay}</span>
           </h4>
           <Link to={RouteList.Car.Detail.CarClassic} className="btn-pills">
-            Book Now
+            {BookNow}
           </Link>
         </div>
       </div>

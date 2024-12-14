@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "reactstrap";
-import { StepsGoalData } from "../../../Data/Demo/JobDemo2";
+import { GoalsContent, StepsGoalData } from "../../../Data/Demo/JobDemo2";
+import { DreamJob, GetYour, MakeYourOwnGoals } from "../../../Constants/Constants";
 
 const Goals = () => {
   return (
@@ -7,9 +8,9 @@ const Goals = () => {
       <Container>
         <div className="horizontal-title">
           <h2>
-            Get your <span>Dream Job</span> and Make your Own Goals.
+            {GetYour} <span>{DreamJob}</span> {MakeYourOwnGoals}
           </h2>
-          <p>To obtain the job you desire, follow these procedures. We'll assist you in locating a career that aligns with your interests.</p>
+          <p>{GoalsContent}</p>
         </div>
         <div className="base-color-box">
           <Row className="g-xl-4 gy-sm-5 gy-4 justify-content-center">

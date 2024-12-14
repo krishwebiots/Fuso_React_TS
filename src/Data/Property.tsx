@@ -1,13 +1,13 @@
 import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { AmenitiesTitle, CarFAQTitle, DescriptionTitle, FeatureTitle, FloorPlansTitle, LocationTitle, OverviewTitle, PropertyDescriptionTitle, ReviewsTitle, ScheduleTourTitle, VideoTitle } from "../Constants/Constants";
-import Overview from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Overview";
-import Description from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Description";
-import FloorPlans from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/FloorPlans";
-import Video from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Video";
-import Location from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Location";
-import Reviews from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Reviews";
-import ScheduleTour from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/ScheduleTour";
-import Amenities from "../Components/Property/Common/ProductDetail/DetailBody/DetailBodyItem/Amenities";
+import Overview from "../Components/CommonComponents/ProductDetail/DetailBody/DetailBodyItem/Overview";
+import Description from "../Components/CommonComponents/ProductDetail/DetailBody/DetailBodyItem/Description";
+import FloorPlans from "../Components/CommonComponents/ProductDetail/DetailBody/DetailBodyItem/FloorPlans";
+import Video from "../Components/CommonComponents/ProductDetail/DetailBody/DetailBodyItem/Video";
+import Location from "../Components/CommonComponents/ProductDetail/DetailBody/DetailBodyItem/Location";
+import Reviews from "../Components/CommonComponents/ProductDetail/DetailBody/DetailBodyItem/Reviews";
+import ScheduleTour from "../Components/CommonComponents/ProductDetail/DetailBody/DetailBodyItem/ScheduleTour";
+import Amenities from "../Components/CommonComponents/ProductDetail/DetailBody/DetailBodyItem/Amenities";
 
 export const PropertyTypeData = [
   { id: "status-one", label: "All", type: "all" },
@@ -51,10 +51,7 @@ export const SliderFor = {
   loop: true,
   spaceBetween: 10,
   modules: [Thumbs, Navigation],
-  navigation: {
-    prevEl: ".swiper-button-prev",
-    nextEl: ".swiper-button-next",
-  },
+  navigation: true,
 };
 
 export const SliderNav = {
@@ -245,10 +242,7 @@ export const ReviewsData = [
 export const ScheduleSlider = {
   slidesPerView: 7,
   spaceBetween: 20,
-  navigation: {
-    prevEl: ".swiper-button-prev",
-    nextEl: ".swiper-button-next",
-  },
+  navigation: true,
   modules: [Navigation],
   breakpoints: {
     0: {

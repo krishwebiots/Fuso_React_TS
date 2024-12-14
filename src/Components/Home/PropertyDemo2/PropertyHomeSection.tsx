@@ -3,6 +3,8 @@ import { dynamicImage } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
 import LogoSection from "../Common/LogoSection";
 import SearchTabList from "../Common/SearchTabList";
+import { DiscoverSuitable, RealEstate, YourFamily } from "../../../Constants/Constants";
+import { PropertyHomeContent } from "../../../Data/Demo/PropertyDemo2";
 
 const PropertyHomeSection = () => {
   return (
@@ -13,14 +15,14 @@ const PropertyHomeSection = () => {
           <Col lg="7">
             <div className="home-content">
               <h1>
-                Discover suitable <span>real estate</span> for your family
+                {DiscoverSuitable} <span>{RealEstate}</span> {YourFamily}
               </h1>
-              <p>This is where you may locate a dream place for you of any sort anywhere in the world at an inexpensive price.</p>
+              <p>{PropertyHomeContent}</p>
             </div>
           </Col>
           <Col xxl="4" lg="5">
             <div className="home-form-box">
-              <SearchTabList showTab={[1, 2, 10, 11]} pills button form icon />
+              <SearchTabList showTab={[1, 2, 10, 11]} pills button form />
             </div>
           </Col>
         </Row>

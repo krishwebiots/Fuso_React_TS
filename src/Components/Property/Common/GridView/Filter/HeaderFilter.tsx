@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
-import { Filters, Href, SymbolRegex } from "../../../../../Constants/Constants";
+import { ClearAll, Filters, Href, SymbolRegex } from "../../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
 import { clearAllFilters, removeFilter } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
 
@@ -50,7 +50,7 @@ const HeaderFilter = () => {
       <div className="job-header-box">
         <ul className="job-filter-list">{filterTags && Object.entries(filterTags).map(([key, value], i) => <Fragment key={i}>{filterTags[key] && oldData[key] && renderTag(key, value)}</Fragment>)}</ul>
         <a href="#!" className="text-btn" onClick={clearAll}>
-          Clear All
+          {ClearAll}
         </a>
       </div>
     </div>

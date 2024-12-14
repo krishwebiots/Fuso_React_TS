@@ -1,14 +1,14 @@
 import { FC, Fragment } from "react";
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
-import { Search } from "../../../Constants/Constants";
+import { Reset, Search } from "../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { setAmenities, setBedsRooms, setBudgetStatus, setCarBrandModel, setCarCategories, setCarColor, setCarFuelType, setCarKilometers, setCarModalYear, setCarOwner, setCarSeats, setCarTransmission, setPopular, setPriceStatus, setPropertyType, setSortBy, setSquareFeetStatus, setyearBuiltStatus } from "../../../ReduxToolkit/Reducers/FilterReducers";
-import { setSearchModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setSearchModal } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 import FilterSidebar from "../../Property/Common/GridView/Filter";
 import CloseBtn from "../CloseBtn";
 
 const SearchModal: FC<{ type: string }> = ({ type }) => {
-  const { searchModal } = useAppSelector((state) => state.sidebar);
+  const { searchModal } = useAppSelector((state) => state.layout);
   const { productItem } = useAppSelector((state) => state.product);
   const dispatch = useAppDispatch();
 
@@ -28,10 +28,9 @@ const SearchModal: FC<{ type: string }> = ({ type }) => {
         <ModalHeader toggle={toggle} close={<CloseBtn toggle={toggle} />} />
         <ModalBody>
           <div className="filter-header">
-            <h3>Search</h3>
-            <span onClick={handleReset}>Reset</span>
+            <h3>{Search}</h3>
+            <span onClick={handleReset}>{Reset}</span>
           </div>
-
           <FilterSidebar value={showProduct} type={type} />
         </ModalBody>
         <ModalFooter>

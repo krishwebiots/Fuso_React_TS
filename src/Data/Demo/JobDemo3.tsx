@@ -1,4 +1,4 @@
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 export const JobHomeIcon = ["1", "2", "3", "6"];
 
@@ -51,11 +51,29 @@ export const JobCitiesSwiperSetting = {
     prevEl: ".job-category-prev",
     nextEl: ".job-category-next",
   },
-  modules: [Navigation],
   slidesPerView: 4,
   spaceBetween: 30,
   loop: true,
   className: "job3-category-slider",
+  modules: [Navigation, Autoplay],
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
+    },
+    991: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1199: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
 };
 
 export const InterviewQuestionContent = "where users can find sample interview questions tailored to specific industries or job roles. Here's how you might describe it:";
@@ -84,3 +102,32 @@ export const RatedJobData = [
 export const TopRatedCompanyContent = "Are you ready to take the next step in your career with a top-rated employer? . We're committed to excellence in every aspect of our business, and that starts with our talented team.";
 
 export const JobAboutContent = "We will help you to find a job with your interests and help build your project more elegant.";
+
+export const Job3BoxSlider = {
+  slidesPerView: 4,
+  spaceBetween: 30,
+  modules: [Pagination],
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    575: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    991: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1399: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
+  pagination: {
+    clickable: true,
+  },
+};
+
+export const Job3NewsletterContent = "Whether you're a recent graduate, seasoned professional, or exploring new career paths, our app has you covered.";

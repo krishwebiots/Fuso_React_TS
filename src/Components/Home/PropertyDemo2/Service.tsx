@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "reactstrap";
-import { CheckListData, ServiceData } from "../../../Data/Demo/PropertyDemo2";
+import { CheckListData, PropertyServicesContent, ServiceData } from "../../../Data/Demo/PropertyDemo2";
 import { OurServiceTitle } from "../../../Constants/Constants";
 import { dynamicSvg, Image } from "../../../Utils";
 
@@ -11,7 +11,7 @@ const Service = () => {
           <Col xl="6">
             <div className="service-content">
               <h2>{OurServiceTitle}</h2>
-              <p>We understand that real estate transactions are more than just buying or selling properties – they are about realizing dreams, making investments, and embracing new beginnings.</p>
+              <p>{PropertyServicesContent}</p>
               <ul className="check-list">
                 {CheckListData.map((item, index) => (
                   <li key={index}>

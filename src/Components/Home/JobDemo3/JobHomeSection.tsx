@@ -2,8 +2,8 @@ import { SearchNormal1 } from "iconsax-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Dropdown, DropdownMenu, DropdownToggle, Input, Row } from "reactstrap";
-import { Href, Search } from "../../../Constants/Constants";
-import { Cities } from "../../../Data/Demo/JobDemo2";
+import { Href, NextJob, Search } from "../../../Constants/Constants";
+import { Cities, NextJobContent } from "../../../Data/Demo/JobDemo2";
 import { JobCategoriesScrollData, JobHomeIcon, SelectExperienceData } from "../../../Data/Demo/JobDemo3";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
@@ -48,8 +48,8 @@ const JobHomeSection = () => {
         <Row className="justify-content-center">
           <Col xll="8" xl="9" lg="10">
             <div className="home-content">
-              <h1 className="text-white">Find your Next Job and Make your Own Goal</h1>
-              <p>Discover trusted job opportunities tailored to your skills and aspirations. Join our community and let us guide you towards success.</p>
+              <h1 className="text-white">{NextJob}</h1>
+              <p>{NextJobContent}</p>
               <div className="search-input-home">
                 <div className="icon-search">
                   <SearchNormal1 className="iconsax" />

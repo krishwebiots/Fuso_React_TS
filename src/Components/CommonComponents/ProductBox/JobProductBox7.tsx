@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 import { toast } from "react-toastify";
 import { Label } from "reactstrap";
-import { ApplyNow, Href } from "../../../Constants/Constants";
+import { ApplyNow, Href, PeopleView } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicSvg, Image } from "../../../Utils";
@@ -46,7 +46,7 @@ const JobProductBox7: FC<ProductBoxType> = ({ data }) => {
           {(Path[1] === "listing" || Path[2] === "job-ad") && (
             <Label>
               <Image src={dynamicSvg("job/job-box/eye-line.svg")} alt="eye-line" className="img-fluid" />
-              25 People View
+              {PeopleView}
             </Label>
           )}
         </div>

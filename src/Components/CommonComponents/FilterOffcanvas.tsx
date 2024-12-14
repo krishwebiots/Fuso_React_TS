@@ -2,13 +2,13 @@ import { FC } from "react";
 import { Offcanvas, OffcanvasBody, OffcanvasHeader } from "reactstrap";
 import { Filters } from "../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../ReduxToolkit/Hooks";
-import { setOpenFilterSidebar } from "../../ReduxToolkit/Reducers/SidebarReducers";
+import { setOpenFilterSidebar } from "../../ReduxToolkit/Reducers/LayoutReducers";
 import { FilterOffcanvasType } from "../../Types/CommonComponentsType";
 import FilterSidebar from "../Property/Common/GridView/Filter";
 
 const FilterOffcanvas: FC<FilterOffcanvasType> = ({ type, offcanvasSide, modalType }) => {
   const { productItem } = useAppSelector((state) => state.product);
-  const { openFilterSidebar } = useAppSelector((state) => state.sidebar);
+  const { openFilterSidebar } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
 
   const showProduct = productItem.filter((item) => item.type === type);

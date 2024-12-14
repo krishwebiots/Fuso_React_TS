@@ -1,7 +1,7 @@
 import { FC, Fragment } from "react";
 import { Col, Row } from "reactstrap";
 import { ContactBoxData } from "../../../../Data/Pages/Other";
-import { PropsType } from "../../../../Types/HomeDemo";
+import { PropsType } from "../../../../Types/HomeDemoType";
 
 const ContactBox: FC<PropsType> = ({ type }) => {
   return (

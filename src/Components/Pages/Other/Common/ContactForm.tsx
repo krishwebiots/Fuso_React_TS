@@ -1,40 +1,17 @@
-import { Col, Form, Input, Row } from "reactstrap";
-import { Href, SendMessage } from "../../../../Constants/Constants";
+import { Form, Row } from "reactstrap";
+import { SendMessage } from "../../../../Constants/Constants";
+import RenderInput from "../../../CommonComponents/RenderInput";
 
 const ContactForm = () => {
   return (
     <Form className="login-form contact-form">
       <Row>
-        <Col lg="6">
-          <div className="form-input">
-            <Input type="text" placeholder="First Name" />
-          </div>
-        </Col>
-        <Col lg="6">
-          <div className="form-input">
-            <Input type="text" placeholder="Last Name" />
-          </div>
-        </Col>
-        <Col lg="6">
-          <div className="form-input">
-            <Input type="number" placeholder="Phone Number" />
-          </div>
-        </Col>
-        <Col lg="6">
-          <div className="form-input">
-            <Input type="email" placeholder="Email" />
-          </div>
-        </Col>
-        <Col xs="12">
-          <div className="form-input">
-            <Input type="textarea" placeholder="Message" className="form-control mb-0" />
-          </div>
-        </Col>
-        <Col xl="4" lg="5" xs="8">
-          <a href={Href} className="btn-solid">
-            {SendMessage}
-          </a>
-        </Col>
+        <RenderInput placeholder="First Name" ColClass="col-lg-6" mainClass="form-input" review />
+        <RenderInput placeholder="Last Name" ColClass="col-lg-6" mainClass="form-input" review />
+        <RenderInput placeholder="Phone Number" ColClass="col-lg-6" mainClass="form-input" inputType="number" review />
+        <RenderInput placeholder="Email" ColClass="col-lg-6" mainClass="form-input" inputType="email" review />
+        <RenderInput placeholder="Message" ColClass="col-xs-12" mainClass="form-input" inputType="textarea" inputClass="mb-0" review />
+        <RenderInput button={SendMessage} ColClass="col-xl-4 col-lg-5 col-xs-8" review />
       </Row>
     </Form>
   );

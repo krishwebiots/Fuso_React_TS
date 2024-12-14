@@ -2,7 +2,7 @@ import { FC, Fragment, useEffect } from "react";
 import { Col, Row } from "reactstrap";
 import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
 import { fetchProductApiData } from "../../../../ReduxToolkit/Reducers/ProductReducers";
-import { setCardToShow } from "../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setCardToShow } from "../../../../ReduxToolkit/Reducers/LayoutReducers";
 import { GridViewType } from "../../../../Types/ProductType";
 import FilterOffcanvas from "../../../CommonComponents/FilterOffcanvas";
 import FilterSidebar from "./Filter";
@@ -24,7 +24,7 @@ const GridView: FC<GridViewType> = ({ type, side, gridSize, sectionClass, gridTy
   }, [carShow, dispatch]);
   return (
     <Fragment>
-      <section className={`section-t-md-space section-b-md-space ${sectionClass ? sectionClass : ""}`}>
+      <section className={`${type !== "job" ? "section-t-md-space section-b-md-space" : "section-b-space"} ${sectionClass ? sectionClass : ""}`}>
         {topCategory && <Category />}
         <div className={fullList ? "container-fluid" : gridSize === 4 ? "custom-container" : "container"}>
           <Row>

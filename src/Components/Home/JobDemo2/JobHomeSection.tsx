@@ -1,12 +1,12 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Dropdown, DropdownMenu, DropdownToggle, Input, Row } from "reactstrap";
-import { Href, Search } from "../../../Constants/Constants";
+import { Href, NextJob, Search } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
 import LogoSection from "../Common/LogoSection";
 import CitySelectMenu from "../../CommonComponents/CitySelectMenu";
-import { Cities } from "../../../Data/Demo/JobDemo2";
+import { Cities, NextJobContent } from "../../../Data/Demo/JobDemo2";
 
 const JobHomeSection = () => {
   const [selectedCity, setSelectedCity] = useState("Location");
@@ -56,8 +56,8 @@ const JobHomeSection = () => {
             <Col lg="8">
               <div className="home-content">
                 <div>
-                  <h1>Find your Next Job and Make your Own Goal</h1>
-                  <p>Discover trusted job opportunities tailored to your skills and aspirations. Join our community and let us guide you towards success.</p>
+                  <h1>{NextJob}</h1>
+                  <p>{NextJobContent}</p>
                   <div className="search-input-home">
                     <div className="animated-line-section">
                       <span className="animated-line" />

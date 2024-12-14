@@ -1,9 +1,9 @@
 import { ChangeEvent, FC } from "react";
 import { AccordionBody, AccordionHeader, AccordionItem, Input, Label } from "reactstrap";
-import { Href } from "../../../../../../Constants/Constants";
+import { ExploreOnMap, Href } from "../../../../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../../../../ReduxToolkit/Hooks";
 import { setAmenities, setBedsRooms, setCarCategories, setCarColor, setCarFuelType, setCarModalYear, setCarOwner, setCarSeats, setCarTransmission, setJobBy, setJobCategories, setJobCompanyType, setJobEducation, setJobTopCompanies, setJobType, setJobWorkMode, setJonLocation, setPropertyType, setSquareFeetStatus, setyearBuiltStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
-import { setMapModal } from "../../../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setMapModal } from "../../../../../../ReduxToolkit/Reducers/LayoutReducers";
 import { CommonFilterType } from "../../../../../../Types/ProductType";
 import { dynamicImage, Image } from "../../../../../../Utils";
 import RangeInputFields from "./RangeInputFields";
@@ -83,7 +83,7 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
         ) : modalType === "map-modal" ? (
           <a href={Href} className="map-image" onClick={() => dispatch(setMapModal())}>
             <Image src={dynamicImage("property/map.png")} alt="map" className="img-fluid" />
-            <span className="btn-border">Explore on map</span>
+            <span className="btn-border">{ExploreOnMap}</span>
           </a>
         ) : type === "car" || type === "job" ? (
           <div className={`sidebar-choose-list categories-list ${subClass ? subClass : ""}`}>

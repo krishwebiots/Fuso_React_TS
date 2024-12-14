@@ -1,17 +1,11 @@
 import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
-import { FC, Fragment, useEffect, useRef } from "react";
-import { Swiper as SwiperType } from "swiper";
+import { FC, Fragment } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BlogDetailSlider, BlogSliderData, QuoteBoxContent } from "../../../Data/Pages/Blog";
 import { dynamicImage } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
 
 const BannerImg: FC<{ type?: string }> = ({ type }) => {
-  const swiperRef = useRef<SwiperType | null>(null);
-
-  useEffect(() => {
-    if (swiperRef.current) swiperRef.current.init();
-  }, []);
   return (
     <Fragment>
       {type === "video" ? (
@@ -24,7 +18,7 @@ const BannerImg: FC<{ type?: string }> = ({ type }) => {
         </div>
       ) : type === "slider" ? (
         <div className="position-relative">
-          <Swiper className="blog-detail-slider" {...BlogDetailSlider} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
+          <Swiper className="blog-detail-slider" {...BlogDetailSlider}>
             {BlogSliderData.map((item, index) => (
               <SwiperSlide key={index}>
                 <div className="banner-img">

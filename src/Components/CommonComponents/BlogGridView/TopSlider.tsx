@@ -1,20 +1,15 @@
 import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
-import { Fragment, useEffect, useRef } from "react";
-import { Swiper as SwiperType } from "swiper";
+import { Fragment } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BlogData, BlogTopSlider } from "../../../Data/Pages/Blog";
 import BlogGridBox from "./BolgBox/BlogGridBox";
+import { BestTopArticles } from "../../../Constants/Constants";
 
 const TopSlider = () => {
-  const swiperRef = useRef<SwiperType | null>(null);
-
-  useEffect(() => {
-    if (swiperRef.current) swiperRef.current.init();
-  }, []);
   return (
     <Fragment>
       <div className="detail-flex-title">
-        <h3>Best Top Articles</h3>
+        <h3>{BestTopArticles}</h3>
         <div className="swiper-flex car-arrow">
           <div className="swiper-button-prev blog-prev-swiper">
             <ArrowLeft2 className="iconsax" />
@@ -24,7 +19,7 @@ const TopSlider = () => {
           </div>
         </div>
       </div>
-      <Swiper className="blog-breadcrumbs-slider ratio3_2" {...BlogTopSlider} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
+      <Swiper className="blog-breadcrumbs-slider ratio3_2" {...BlogTopSlider}>
         {BlogData.map((data, index) => (
           <SwiperSlide className={`w-sm-100 `} key={index}>
             <BlogGridBox data={data} />

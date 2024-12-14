@@ -4,6 +4,7 @@ import { DonTHaveAnAccount, LogIn, LogInYourAccount, OR, Remember, SignUp, Welco
 import { RouteList } from "../../../../Routers/RouteList";
 import { dynamicImage, Image } from "../../../../Utils";
 import { LoginSocialData } from "../../../../Data/Pages/Other";
+import RenderInput from "../../../CommonComponents/RenderInput";
 
 const LoginForm = () => {
   return (
@@ -13,12 +14,8 @@ const LoginForm = () => {
         <h5>{LogInYourAccount}</h5>
       </div>
       <Form className="login-form">
-        <div className="form-input">
-          <Input type="email" placeholder="Enter Your Email" />
-        </div>
-        <div className="form-input">
-          <Input type="password" placeholder="Enter Your Password" autoComplete="off" />
-        </div>
+        <RenderInput placeholder="Enter Your Email" mainClass="form-input" review />
+        <RenderInput placeholder="Enter Your Password" mainClass="form-input" review />
         <div className="form-check-box">
           <Input type="checkbox" id="Remember" />
           <Label htmlFor="Remember">{Remember}</Label>

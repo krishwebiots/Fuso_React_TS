@@ -1,10 +1,11 @@
 import { Col, Row } from "reactstrap";
-import { BlogContent1, BlogContent2, ConclusionData, ProfessionalData, SocialContactData, UnveilingContent1, UnveilingContent2 } from "../../../../Data/Pages/Blog";
+import { BlogContent1, BlogContent2, BlogInfo, ConclusionData, ProfessionalData, SocialContactData, UnveilingContent1, UnveilingContent2 } from "../../../../Data/Pages/Blog";
 import { dynamicImage } from "../../../../Utils";
 import RatioImage from "../../../../Utils/RatioImage";
 import BlogDescriptionBox from "./BlogDescriptionBox";
 import { Link } from "react-router-dom";
 import { RouteList } from "../../../../Routers/RouteList";
+import { CategorizedIn, LastUpdate, UnveilingTheWondersOfKnowledge } from "../../../../Constants/Constants";
 
 const BlogContent = () => {
   return (
@@ -15,7 +16,7 @@ const BlogContent = () => {
           <p className="mt-12">{BlogContent2}</p>
         </div>
         <div className="blog-info">
-          <h4>Unveiling the Wonders of Knowledge</h4>
+          <h4>{UnveilingTheWondersOfKnowledge}</h4>
           <Row className="ratio_60 gy-3">
             {[1, 13].map((item, index) => (
               <Col xs="6" className="w-sm-100" key={index}>
@@ -32,7 +33,7 @@ const BlogContent = () => {
         <div className="blog-info">
           <h2>
             <i className="ri-double-quotes-l" />
-            Life Is a Journey, Not a Destination: Choose the Ride That Makes Every Mile an Adventure
+            {BlogInfo}
             <i className="ri-double-quotes-r" />
           </h2>
         </div>
@@ -40,12 +41,12 @@ const BlogContent = () => {
         <div className="blog-info">
           <ul className="update-list">
             <li>
-              <span>Categorized in:</span>
+              <span>{CategorizedIn}</span>
               <Link to={RouteList.Pages.Blog.BlogLeftSidebar}>Property, Job, Community</Link>
             </li>
             <li>
               <i className="ri-time-line" />
-              <strong>Last Update:</strong>
+              <strong>{LastUpdate}</strong>
               15 March 2022
             </li>
           </ul>

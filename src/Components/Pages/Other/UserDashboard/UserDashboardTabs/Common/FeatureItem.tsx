@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { FeatureItemType } from "../../../../../../Types/OtherType";
 import { Input, Label } from "reactstrap";
+import { No, Yes } from "../../../../../../Constants/Constants";
 
 const FeatureItem: FC<FeatureItemType> = ({ label, name }) => {
   return (
@@ -8,11 +9,11 @@ const FeatureItem: FC<FeatureItemType> = ({ label, name }) => {
       <span>{label}</span>
       <div className="flex-radio">
         <Input type="radio" name={name} id={`${name}-yes`} />
-        <Label htmlFor={`${name}-yes`}>Yes</Label>
+        <Label htmlFor={`${name}-yes`}>{Yes}</Label>
       </div>
       <div className="flex-radio">
         <Input type="radio" name={name} id={`${name}-no`} />
-        <Label htmlFor={`${name}-no`}>No</Label>
+        <Label htmlFor={`${name}-no`}>{No}</Label>
       </div>
     </li>
   );

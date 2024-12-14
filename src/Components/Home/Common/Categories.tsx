@@ -1,26 +1,20 @@
-import { FC, Fragment, useEffect, useRef } from "react";
+import { FC, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BrowseByCategory, CategoriesTitle, ExploreByCategory, JobCategoryTitle } from "../../../Constants/Constants";
 import { CategoriesContentData, CategoriesSettingData } from "../../../Data/Demo/CarDemo1";
-import { useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { RouteList } from "../../../Routers/RouteList";
-import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
-import CommonHeader from "../Common/CommonHeader";
-import { PropsType } from "../../../Types/HomeDemo";
-import RatioImage from "../../../Utils/RatioImage";
-import { Swiper as SwiperType } from "swiper";
 import { JobCategoryContentData } from "../../../Data/Demo/JobDemo1";
 import { BrowseByCategoryContent, Job2CategorySetting } from "../../../Data/Demo/JobDemo2";
+import { useAppSelector } from "../../../ReduxToolkit/Hooks";
+import { RouteList } from "../../../Routers/RouteList";
+import { PropsType } from "../../../Types/HomeDemoType";
+import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
+import RatioImage from "../../../Utils/RatioImage";
+import CommonHeader from "../Common/CommonHeader";
 
 const Categories: FC<PropsType> = ({ type }) => {
   const { categoryItem } = useAppSelector((state) => state.product);
-  const swiperRef = useRef<SwiperType | null>(null);
-
-  useEffect(() => {
-    if (swiperRef.current) swiperRef.current.init();
-  }, []);
   return (
     <Fragment>
       {/* Car Demo-1 */}
@@ -54,7 +48,7 @@ const Categories: FC<PropsType> = ({ type }) => {
           <Container>
             <CommonHeader title={ExploreByCategory} content={CategoriesContentData} headClass="title-style-2" />
             <div className="arrow-style-2 position-relative">
-              <Swiper {...CategoriesSettingData} className="car2-category-slider ratio3_2" onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
+              <Swiper {...CategoriesSettingData} className="car2-category-slider ratio3_2">
                 {categoryItem
                   .filter((e) => [8, 9, 10, 11, 12, 13].includes(e.id))
                   .map((car, index) => (
@@ -112,7 +106,7 @@ const Categories: FC<PropsType> = ({ type }) => {
           <Container>
             <CommonHeader title={BrowseByCategory} content={BrowseByCategoryContent} headClass="title-style-4" />
             <div className="job-arrow position-relative">
-              <Swiper {...Job2CategorySetting} className="dark-category-slider" onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
+              <Swiper {...Job2CategorySetting} className="dark-category-slider">
                 {categoryItem
                   .filter((e) => [14, 15, 16, 17, 18, 19, 20, 21].includes(e.id))
                   .map((item, index) => (

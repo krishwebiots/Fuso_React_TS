@@ -3,7 +3,7 @@ import { Col, Container, Label, Row } from "reactstrap";
 import { CounterData } from "../../../Data/Demo/CarDemo2";
 import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
-import { RentalCar } from "../../../Constants/Constants";
+import { CarHomeContentLabel, CarHomeLabel, CarHomeSubLabel, RentalCar } from "../../../Constants/Constants";
 
 const CarHomeSection = () => {
   return (
@@ -23,9 +23,9 @@ const CarHomeSection = () => {
           <Row className="justify-content-between">
             <Col lg="7">
               <div className="home-content">
-                <Label>#DriveYourDreamAdventure</Label>
-                <h1>Discover your Next Adventure on Wheels</h1>
-                <p>Discover a world of possibilities and start your next unforgettable journey today.</p>
+                <Label>{CarHomeLabel}</Label>
+                <h1>{CarHomeSubLabel}</h1>
+                <p>{CarHomeContentLabel}</p>
                 <ul className="car-home-counter">
                   {CounterData.map((item, index) => (
                     <li className="counter-box" key={index}>

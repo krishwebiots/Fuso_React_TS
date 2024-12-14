@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Href } from "../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { setSidebarOpen } from "../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setSidebarOpen } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 import { RouteList } from "../../../Routers/RouteList";
 import { HeaderType } from "../../../Types/LayoutType";
 import { dynamicImage, Image } from "../../../Utils";
@@ -10,7 +10,7 @@ import CitiesDropdown from "./CitiesDropdown";
 
 const LeftHeader: FC<HeaderType> = ({ part, isJobOrProperty }) => {
   const dispatch = useAppDispatch();
-  const { sidebarOpen } = useAppSelector((state) => state.sidebar);
+  const { sidebarOpen } = useAppSelector((state) => state.layout);
 
   return (
     <div className="left-side-header">

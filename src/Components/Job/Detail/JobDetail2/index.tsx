@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import JobBreadcrumb from "../../../CommonComponents/Breadcrumbs/JobBreadcrumb";
-import JobDetail from "../../../Property/Common/ProductDetail/JobDetail";
+import JobDetail from "../../../CommonComponents/ProductDetail/JobDetail";
 
 const JobDetail2Container = () => {
   return (

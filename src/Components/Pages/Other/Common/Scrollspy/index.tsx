@@ -4,6 +4,7 @@ import { BottomInfo } from "../../../../../Data/Pages/Other";
 import { ScrollspyType } from "../../../../../Types/OtherType";
 import ScrollSpyContent from "./ScrollSpyContent";
 import ScrollSpyNav from "./ScrollSpyNav";
+import { EffectiveDate } from "../../../../../Constants/Constants";
 
 const Scrollspy: FC<ScrollspyType> = ({ title, list, content }) => {
   return (
@@ -11,7 +12,7 @@ const Scrollspy: FC<ScrollspyType> = ({ title, list, content }) => {
       <Container>
         <h3 className="text-center">{title}</h3>
         <span className="privacy-date">
-          <strong>Effective Date:</strong> 25/05/2024
+          <strong>{EffectiveDate}</strong> 25/05/2024
         </span>
         <Row>
           <ScrollSpyContent content={content} />

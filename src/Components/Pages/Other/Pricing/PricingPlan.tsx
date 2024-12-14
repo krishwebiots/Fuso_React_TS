@@ -1,5 +1,5 @@
 import { Col, Label, Row } from "reactstrap";
-import { PricingPlanTitle } from "../../../../Constants/Constants";
+import { DiscoverOurProduct, PricingPlanTitle } from "../../../../Constants/Constants";
 import { PricingPlanContent, PricingPlanData } from "../../../../Data/Pages/Other";
 import CommonHeader from "../../../Home/Common/CommonHeader";
 
@@ -16,7 +16,7 @@ const PricingPlan = () => {
                   <h4>{plan.name}</h4>
                   {plan.badge && <Label>{plan.badge}</Label>}
                 </div>
-                <p>To discover our product and its features</p>
+                <p>{DiscoverOurProduct}</p>
                 <h2>
                   {plan.price} <span>{plan.subtext}</span>
                 </h2>

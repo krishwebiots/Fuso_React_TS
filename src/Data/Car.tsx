@@ -323,3 +323,44 @@ export const FrontSlider = {
     },
   },
 };
+
+export const CarDescription = ["The streamlined design of a Lamborghini elicits an instinctive reaction, as though speed itself has been condensed into its shape. These doors rise up like the wings of some mythological beast.", "Owning a Ferrari is one of the most apparent moves when it comes to marketing your riches. Naturally, some people cannot afford the million-dollar plus offers from Ferrari's Icona series, and even the more affordable variants would cost you half a million dollars. The 2022 Ferrari Portofino M is available for less expensive budgets."];
+
+export const DropdownOptions = [
+  {
+    label: "Condition",
+    options: [
+      { value: 1, text: "New" },
+      { value: 1, text: "Used" },
+    ],
+  },
+  {
+    label: "Category",
+    options: [
+      { value: 1, text: "Bus" },
+      { value: 1, text: "Car" },
+      { value: 1, text: "Truck" },
+      { value: 1, text: "Trailers" },
+    ],
+  },
+  {
+    label: "Car Type",
+    options: [
+      { value: 1, text: "Diesel" },
+      { value: 2, text: "Electric" },
+      { value: 3, text: "Petrol" },
+      { value: 4, text: "CNG" },
+      { value: 5, text: "Hybrid" },
+      { value: 6, text: "Convertible" },
+    ],
+  },
+  {
+    label: "Any Models",
+    options: [
+      { value: 1, text: "2020 & above" },
+      { value: 2, text: "2016 & above" },
+      { value: 3, text: "2012 & above" },
+      { value: 4, text: "2008 & above" },
+    ],
+  },
+];

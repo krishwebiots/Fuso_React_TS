@@ -1,11 +1,12 @@
 import { Col, Container, Row } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { LogoSectionType } from "../../../Types/HomeDemo";
+import { LogoSectionType } from "../../../Types/HomeDemoType";
 import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
 import { Fragment } from "react/jsx-runtime";
 import CommonHeader from "./CommonHeader";
-import { WorldBestCompanies } from "../../../Constants/Constants";
+import { TopBusiness, WorldBestCompanies } from "../../../Constants/Constants";
 import { FC } from "react";
+import { LogoCar2Slider } from "../../../Data/Demo/CarDemo2";
 
 const LogoSection: FC<LogoSectionType> = ({ sectionClass, swiperClass, title, type }) => {
   return (
@@ -14,7 +15,7 @@ const LogoSection: FC<LogoSectionType> = ({ sectionClass, swiperClass, title, ty
         <section className={`logo-section ${sectionClass ? sectionClass : ""}`}>
           <Container>
             {title && <h3 className="text-center">{title}</h3>}
-            <Swiper slidesPerView={5} spaceBetween={30} loop={true} className={swiperClass}>
+            <Swiper className={swiperClass} {...LogoCar2Slider}>
               {dynamicNumber(6).map((item, index) => (
                 <SwiperSlide key={index}>
                   <div className="logo-img">
@@ -50,7 +51,7 @@ const LogoSection: FC<LogoSectionType> = ({ sectionClass, swiperClass, title, ty
       {/* Job Demo-2 */}
       {type === "job_demo2" && (
         <section className="dark-logo-section">
-          <h3>Top businesses in the world are recruiting on hire up</h3>
+          <h3>{TopBusiness}</h3>
           <div className="quote">
             <ul className="marquee">
               {dynamicNumber(10).map((item, index) => (

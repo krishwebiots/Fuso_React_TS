@@ -1,4 +1,4 @@
-import { FC, Fragment, useEffect, useRef, useState } from "react";
+import { FC, Fragment, useState } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Href } from "../../../../Constants/Constants";
@@ -9,12 +9,8 @@ import { dynamicImage } from "../../../../Utils";
 import RatioImage from "../../../../Utils/RatioImage";
 
 const PropertyBoxSlider: FC<ProductBoxType> = ({ view, data }) => {
-  const swiperRef = useRef<SwiperType | null>(null);
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
-  useEffect(() => {
-    if (swiperRef.current) swiperRef.current.init();
-  }, []);
   return (
     <Fragment>
       {view === "multiple" ? (
@@ -25,10 +21,8 @@ const PropertyBoxSlider: FC<ProductBoxType> = ({ view, data }) => {
                 <RatioImage src={dynamicImage(testimonial)} alt="featured-img" className="bg-img" />
               </SwiperSlide>
             ))}
-            <div className="swiper-button-next" />
-            <div className="swiper-button-prev" />
           </Swiper>
-          <Swiper className="thumb-sub-slider" {...SliderNav} onSwiper={setThumbsSwiper} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
+          <Swiper className="thumb-sub-slider" {...SliderNav} onSwiper={setThumbsSwiper}>
             {data.image.map((testimonial, i) => (
               <SwiperSlide key={i}>
                 <a href={Href}>
@@ -41,14 +35,12 @@ const PropertyBoxSlider: FC<ProductBoxType> = ({ view, data }) => {
       ) : view === "image" ? (
         <RatioImage src={dynamicImage(data.image[0])} alt="featured-img" className="img-fluid bg-img" />
       ) : (
-        <Swiper {...ProductSwiperSetting} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
+        <Swiper {...ProductSwiperSetting}>
           {data.image.map((testimonial, index) => (
             <SwiperSlide key={index} className="bg-size">
               <RatioImage src={dynamicImage(testimonial)} alt="featured-img" className="img-fluid bg-img" />
             </SwiperSlide>
           ))}
-          <div className="swiper-button-next" />
-          <div className="swiper-button-prev" />
         </Swiper>
       )}
     </Fragment>

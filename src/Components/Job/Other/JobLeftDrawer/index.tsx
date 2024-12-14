@@ -7,7 +7,7 @@ const JobLeftDrawerContainer = () => {
   return (
     <Fragment>
       <Breadcrumbs title="Job Listing" url={RouteList.Home.JobDemo1} mainClass="job-breadcrumbs-section" />
-      <GridView type="job" sectionClass="job-grid-section section-b-space" filterTagsClass="job-list-header" side="no" gridSize={3} carShow={9} />
+      <GridView type="job" sectionClass="job-grid-section" filterTagsClass="job-list-header" side="no" gridSize={3} carShow={9} />
     </Fragment>
   );
 };

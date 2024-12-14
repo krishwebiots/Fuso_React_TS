@@ -1,15 +1,16 @@
 import { Rating } from "react-simple-star-rating";
 import { Fragment } from "react/jsx-runtime";
-import { Button, Col, Input, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
+import { Col, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
 import { AddReviewTitle, LeaveCommentTitle, SubmitReview, WriteReview } from "../../../Constants/Constants";
 import { AddReviewListData } from "../../../Data/Car";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { setReviewModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setReviewModal } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 import UsePathName from "../../../Utils/UsePathName";
 import CloseBtn from "../CloseBtn";
+import RenderInput from "../RenderInput";
 
 const ReviewModal = () => {
-  const { reviewModal } = useAppSelector((state) => state.sidebar);
+  const { reviewModal } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
   const Path = UsePathName();
 
@@ -44,26 +45,10 @@ const ReviewModal = () => {
               </Col>
             </Fragment>
           )}
-          <Col sm="6">
-            <div className="review-input">
-              <Input type="text" placeholder="Enter Your Name" />
-            </div>
-          </Col>
-          <Col sm="6">
-            <div className="review-input">
-              <Input type="text" placeholder="Enter Your E-mail" />
-            </div>
-          </Col>
-          <Col xs="12">
-            <div className="review-input">
-              <Input type="textarea" placeholder="Message" />
-            </div>
-          </Col>
-          <Col xs="12">
-            <div className="review-input">
-              <Button className="btn-solid">{SubmitReview}</Button>
-            </div>
-          </Col>
+          <RenderInput placeholder="Enter Your Name" ColClass="col-sm-6" review />
+          <RenderInput placeholder="Enter Your E-mail" ColClass="col-sm-6" review />
+          <RenderInput placeholder="Message" ColClass="col-xs-12" inputType="textarea" review />
+          <RenderInput button={SubmitReview} ColClass="col-xs-12" review />
         </Row>
       </ModalBody>
     </Modal>

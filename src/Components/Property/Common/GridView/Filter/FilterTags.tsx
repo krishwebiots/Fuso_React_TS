@@ -1,10 +1,10 @@
 import { FC, Fragment, useState } from "react";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
-import { Href } from "../../../../../Constants/Constants";
+import { Filter, Href, SortBy } from "../../../../../Constants/Constants";
 import { FilterTabsListData } from "../../../../../Data/Property";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
 import { setPopular, setSortBy } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
-import { setCardToShow, setOpenFilterSidebar } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setCardToShow, setOpenFilterSidebar } from "../../../../../ReduxToolkit/Reducers/LayoutReducers";
 import { TopPanelType } from "../../../../../Types/ProductType";
 import HeaderFilter from "./HeaderFilter";
 
@@ -12,7 +12,7 @@ const FilterTags: FC<TopPanelType> = ({ topFilterSidebar, side, mainClass, type,
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useAppDispatch();
   const { sortBy } = useAppSelector((state) => state.filter);
-  const { totalProduct } = useAppSelector((state) => state.sidebar);
+  const { totalProduct } = useAppSelector((state) => state.layout);
 
   const handleSortBy = (sortOption: string) => {
     if (sortOption === "Most Popular") dispatch(setPopular(sortOption));
@@ -45,11 +45,11 @@ const FilterTags: FC<TopPanelType> = ({ topFilterSidebar, side, mainClass, type,
           <div className="category-filter">
             {!topFilterSidebar && (
               <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
-                Filter
+                {Filter}
               </a>
             )}
             <div className="category-filter">
-              <span>Sort By :</span>
+              <span>{SortBy}</span>
               {renderDropdown(3, 8)}
             </div>
           </div>
@@ -64,19 +64,19 @@ const FilterTags: FC<TopPanelType> = ({ topFilterSidebar, side, mainClass, type,
               {renderDropdown(0, 3)}
               {!topFilterSidebar && (
                 <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
-                  Filter
+                  {Filter}
                 </a>
               )}
             </Fragment>
           ) : (
             <div className="category-filter">
               <div className="car-sortby-flex">
-                <span>Sort By :</span>
+                <span>{SortBy}</span>
                 {renderDropdown(3, 8)}
               </div>
               {!topFilterSidebar && (
                 <a href={Href} className={`btn-solid ${side !== "no" && "filter-btn"}`} onClick={() => dispatch(setOpenFilterSidebar())}>
-                  Filter
+                  {Filter}
                 </a>
               )}
             </div>

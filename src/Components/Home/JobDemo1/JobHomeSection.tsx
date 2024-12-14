@@ -1,10 +1,11 @@
 import { FC } from "react";
 import CountUp from "react-countup";
 import { Col, Container, Row } from "reactstrap";
-import { JobCounterData, JobHomeSectionData } from "../../../Data/Demo/JobDemo1";
-import { JobHomeType } from "../../../Types/HomeDemo";
+import { JobCounterData, JobHomeSectionData, JonHomeContent } from "../../../Data/Demo/JobDemo1";
+import { JobHomeType } from "../../../Types/HomeDemoType";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import SearchTabList from "../Common/SearchTabList";
+import { BuildYourFuture, FindYourJob } from "../../../Constants/Constants";
 
 const JobHomeSection = () => {
   const renderImage: FC<JobHomeType> = (imageData, key) => {
@@ -19,9 +20,9 @@ const JobHomeSection = () => {
           <Row className="align-items-center">
             <Col xl="7" lg="6">
               <div className="home-content">
-                <h3>Build your future with us</h3>
-                <h1>Find your job &amp; make sure goal.</h1>
-                <p>Your dream job is waiting for you Find the best real estate on your country Your dream job is waiting for you Find the best real estate on your country</p>
+                <h3>{BuildYourFuture}</h3>
+                <h1>{FindYourJob}</h1>
+                <p>{JonHomeContent}</p>
                 <ul className="counter-list">
                   {JobCounterData.map((item, index) => (
                     <li className="counter-box" key={index}>

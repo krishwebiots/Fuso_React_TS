@@ -1,8 +1,9 @@
 import { FC } from "react";
 import { Table } from "reactstrap";
-import { PropsType } from "../../../../../../../Types/HomeDemo";
-import { OrdersData } from "../../../../../../../Data/Pages/Other";
+import { PropsType } from "../../../../../../../Types/HomeDemoType";
+import { OrdersData, OrdersHeadData } from "../../../../../../../Data/Pages/Other";
 import { dynamicImage, Image } from "../../../../../../../Utils";
+import { ComfortableInterior, Phantom } from "../../../../../../../Constants/Constants";
 
 const OrdersTable: FC<PropsType> = ({ type }) => {
   const filteredData = OrdersData.find((data) => data.type === type)?.order || [];
@@ -10,9 +11,9 @@ const OrdersTable: FC<PropsType> = ({ type }) => {
     <Table responsive>
       <thead className="table-header">
         <tr>
-          <th>Item</th>
-          <th>Model</th>
-          <th>Price</th>
+          {OrdersHeadData.map((item, index) => (
+            <th key={index}>{item}</th>
+          ))}
         </tr>
       </thead>
       <tbody>
@@ -22,12 +23,12 @@ const OrdersTable: FC<PropsType> = ({ type }) => {
               <div className="item-flex">
                 <Image src={dynamicImage(item.image)} alt="img" className="img-fluid" />
                 <div className="item-details">
-                  <h6>Comfortable Interior</h6>
+                  <h6>{ComfortableInterior}</h6>
                   <span>#EFGH-4156</span>
                 </div>
               </div>
             </td>
-            <td>Phantom</td>
+            <td>{Phantom}</td>
             <td>$67,810</td>
           </tr>
         ))}

@@ -1,25 +1,18 @@
 import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
-import { useEffect, useRef } from "react";
 import { Container } from "reactstrap";
-import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { AboutSliderTitle } from "../../../Constants/Constants";
 import { AboutSliderContentData, AboutSliderSetting, AboutSlidesData } from "../../../Data/Demo/JobDemo1";
 import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
-import CommonHeader from "../Common/CommonHeader";
 import SvgIcon from "../../../Utils/SvgIcon";
+import CommonHeader from "../Common/CommonHeader";
 
 const AboutSlider = () => {
-  const swiperRef = useRef<SwiperType | null>(null);
-
-  useEffect(() => {
-    if (swiperRef.current) swiperRef.current.init();
-  }, []);
   return (
     <section className="about-slider-section section-b-space">
       <Container>
         <CommonHeader title={AboutSliderTitle} content={AboutSliderContentData} headClass="title-style-3 text-center" />
-        <Swiper {...AboutSliderSetting} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
+        <Swiper {...AboutSliderSetting}>
           {AboutSlidesData.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="about-slider-content">
@@ -44,10 +37,10 @@ const AboutSlider = () => {
           ))}
           <div className="swiper-flex car-arrow">
             <div className="swiper-button-prev job-about-prev">
-              <ArrowLeft2 className="iconsax"/>
+              <ArrowLeft2 className="iconsax" />
             </div>
             <div className="swiper-button-next job-about-next">
-              <ArrowRight2 className="iconsax"/>
+              <ArrowRight2 className="iconsax" />
             </div>
           </div>
         </Swiper>

@@ -1,4 +1,4 @@
-import PropertyDetail from "../../Common/ProductDetail/PropertyDetail";
+import PropertyDetail from "../../../CommonComponents/ProductDetail/PropertyDetail";
 
 const PropertyImageSliderContainer = () => {
   return <PropertyDetail type="image-slider" />;

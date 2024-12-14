@@ -1,10 +1,15 @@
 import { InputType } from "reactstrap/types/lib/Input";
 
 export interface InputBoxType {
-  label: string;
-  placeholder: string;
+  label?: string;
+  placeholder?: string;
   inputType?: InputType;
   review?: boolean;
+  button?: string;
+  input?: boolean;
+  ColClass?: string;
+  mainClass?: string;
+  inputClass?: string;
 }
 
 export interface DropdownType {

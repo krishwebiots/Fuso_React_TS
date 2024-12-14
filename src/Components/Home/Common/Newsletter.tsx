@@ -1,12 +1,13 @@
 import { FC, Fragment } from "react";
 import { Button, Col, Container, Input, InputGroup, Row } from "reactstrap";
-import { NewsletterTitle, Subscribe } from "../../../Constants/Constants";
+import { DreamJobEasily, NewsletterTitle, Subscribe, TrustedReal } from "../../../Constants/Constants";
 import { NewsletterContentData } from "../../../Data/Demo/JobDemo1";
-import { PropsType } from "../../../Types/HomeDemo";
+import { PropsType } from "../../../Types/HomeDemoType";
 import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
 import CommonHeader from "./CommonHeader";
-import { PaymentData } from "../../../Data/Demo/JobDemo3";
+import { Job3NewsletterContent, PaymentData } from "../../../Data/Demo/JobDemo3";
 import { Link } from "react-router-dom";
+import { PropertyNewsletterContent } from "../../../Data/Demo/PropertyDemo1";
 
 const Newsletter: FC<PropsType> = ({ type }) => {
   return (
@@ -39,8 +40,8 @@ const Newsletter: FC<PropsType> = ({ type }) => {
               <Row className="justify-content-between">
                 <Col lg="6">
                   <div className="newsletter-content">
-                    <h2>Get your Dream Job Easily</h2>
-                    <p>Whether you're a recent graduate, seasoned professional, or exploring new career paths, our app has you covered.</p>
+                    <h2>{DreamJobEasily}</h2>
+                    <p>{Job3NewsletterContent}</p>
                     <div className="pay-flex-btn">
                       {PaymentData.map((item, index) => (
                         <Link to={item.utl} key={index}>
@@ -75,8 +76,8 @@ const Newsletter: FC<PropsType> = ({ type }) => {
                   </Col>
                   <Col lg="7">
                     <div className="newsletter-content">
-                      <h2>Trusted real estate properties for you</h2>
-                      <p>There are just two things that are crucial. Family is most important, followed by comfort, so let's get started with those two.</p>
+                      <h2>{TrustedReal}</h2>
+                      <p>{PropertyNewsletterContent}</p>
                       <InputGroup>
                         <Input type="email" placeholder="Your mail address" />
                         <Button className="btn-solid">{Subscribe}</Button>

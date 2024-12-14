@@ -11,7 +11,7 @@ import RightHeader from "./RightHeader";
 import TopBar from "./TopBar";
 
 const Header: FC<PathTypes> = ({ part }) => {
-  const { sidebarOpen } = useAppSelector((state) => state.sidebar);
+  const { sidebarOpen } = useAppSelector((state) => state.layout);
 
   const isJobOrProperty = ["job-2", "job-3", "property-2"].some((item) => part?.includes(item));
   const isTopBar = ["car-2", "property-2"].some((item) => part?.includes(item));

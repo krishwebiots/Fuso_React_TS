@@ -1,7 +1,7 @@
 import { SearchNormal1 } from "iconsax-react";
 import { FC, useState } from "react";
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem, Button, Label } from "reactstrap";
-import { Href } from "../../../../../Constants/Constants";
+import { BrandAndModel, Href, Others, Popular } from "../../../../../Constants/Constants";
 import { Brands } from "../../../../../Data/Car";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
 import { setCarBrandModel } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
@@ -65,16 +65,16 @@ const BrandModelFilter: FC<{ id: string }> = ({ id }) => {
 
   return (
     <AccordionItem>
-      <AccordionHeader targetId={id}>Brand + Model</AccordionHeader>
+      <AccordionHeader targetId={id}>{BrandAndModel}</AccordionHeader>
       <AccordionBody accordionId={id}>
         <div className="more-list" style={showMore ? { maxHeight: "none" } : {}}>
           <div className="search-input">
             <SearchNormal1 className="iconsax" />
             <input type="search" className="form-control" placeholder="Search Brand or Model" />
           </div>
-          <span className="inner-title">Popular</span>
+          <span className="inner-title">{Popular}</span>
           <div className="sidebar-choose-list">{renderBrands(Brands.slice(0, 4))}</div>
-          <span className="inner-title">Others</span>
+          <span className="inner-title">{Others}</span>
           <div className="sidebar-choose-list">{renderBrands(Brands.slice(4))}</div>
         </div>
         <a href={Href} className={`text-btn ${showMore ? "less-btn d-inline-block" : "more-btn"}`} onClick={() => setShowMore(!showMore)}>

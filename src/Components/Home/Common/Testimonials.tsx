@@ -1,26 +1,19 @@
 import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
-import { FC, Fragment, useEffect, useRef } from "react";
+import { FC, Fragment } from "react";
 import { Rating } from "react-simple-star-rating";
 import { Col, Container, Row } from "reactstrap";
-import { Swiper as SwiperType } from "swiper";
-import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ExploreByTestimonials, OurTestimonial, PeopleSays, TestimonialsTitle } from "../../../Constants/Constants";
 import { TestimonialsContentData, TestimonialsSwiperSetting } from "../../../Data/Demo/CarDemo1";
-import { TestimonialsContent } from "../../../Data/Demo/JobDemo2";
+import { Job3BoxSlider } from "../../../Data/Demo/CarDemo2";
+import { DarkTestimonialSlider, TestimonialsContent } from "../../../Data/Demo/JobDemo2";
 import { TestimonialsData } from "../../../Data/Demo/Testimonials";
 import { RouteList } from "../../../Routers/RouteList";
-import { TestimonialsType } from "../../../Types/HomeDemo";
+import { TestimonialsType } from "../../../Types/HomeDemoType";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "./CommonHeader";
 
 const Testimonials: FC<TestimonialsType> = ({ type, animation, title }) => {
-  const swiperRef = useRef<SwiperType | null>(null);
-
-  useEffect(() => {
-    if (swiperRef.current) swiperRef.current.init();
-  }, []);
-
   return (
     <Fragment>
       {/* Car Demo-1 */}
@@ -28,7 +21,7 @@ const Testimonials: FC<TestimonialsType> = ({ type, animation, title }) => {
         <section className="car-testimonials-section section-b-space">
           <Container>
             <CommonHeader title={title || TestimonialsTitle} content={TestimonialsContentData} headClass="title-style-2" animation={animation} />
-            <Swiper {...TestimonialsSwiperSetting} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
+            <Swiper {...TestimonialsSwiperSetting}>
               {TestimonialsData.CarDemo1.map((testimonial, index) => (
                 <SwiperSlide key={index}>
                   <div className="testimonials-box">
@@ -63,7 +56,7 @@ const Testimonials: FC<TestimonialsType> = ({ type, animation, title }) => {
         <section className="car2-testimonial-section section-t-lg-space">
           <Container>
             <CommonHeader title={TestimonialsTitle} content={TestimonialsContentData} headClass="title-style-5" />
-            <Swiper pagination={true} slidesPerView={3} spaceBetween={30} modules={[Pagination]} className="car2-testimonial-slider">
+            <Swiper {...Job3BoxSlider} className="car2-testimonial-slider">
               {TestimonialsData.CarDemo2.map((testimonial, index) => (
                 <SwiperSlide key={index}>
                   <div className="testimonial-box">
@@ -94,7 +87,7 @@ const Testimonials: FC<TestimonialsType> = ({ type, animation, title }) => {
         <section className="dark-testimonial-section">
           <Container>
             <CommonHeader title={PeopleSays} content={TestimonialsContent} headClass="title-style-4" />
-            <Swiper pagination={true} slidesPerView={3} spaceBetween={30} modules={[Pagination]} className="dark-testimonial-slider">
+            <Swiper {...DarkTestimonialSlider} className="dark-testimonial-slider">
               {TestimonialsData.JobDemo2.map((testimonial, index) => (
                 <SwiperSlide key={index}>
                   <div className="testimonial-box">

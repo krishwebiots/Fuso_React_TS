@@ -1,7 +1,7 @@
 import { Edit, Trash } from "iconsax-react";
 import { Button, Table } from "reactstrap";
 import { MyPropertiesTitle } from "../../../../../Constants/Constants";
-import { PropertiesData } from "../../../../../Data/Pages/Other";
+import { PropertiesData, PropertiesHeadData } from "../../../../../Data/Pages/Other";
 import { dynamicImage, Image } from "../../../../../Utils";
 
 const MyProperties = () => {
@@ -11,11 +11,9 @@ const MyProperties = () => {
       <Table responsive className="property-table">
         <thead className="table-white">
           <tr>
-            <th>Id</th>
-            <th>Property Name</th>
-            <th>Views</th>
-            <th>Response</th>
-            <th>Option</th>
+            {PropertiesHeadData.map((item, index) => (
+              <th key={index}>{item}</th>
+            ))}
           </tr>
         </thead>
         <tbody>

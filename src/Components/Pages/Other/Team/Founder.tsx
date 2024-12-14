@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "reactstrap";
 import { OurFounder } from "../../../../Constants/Constants";
-import { FounderData } from "../../../../Data/Pages/Other";
+import { FounderContent, FounderData } from "../../../../Data/Pages/Other";
 import { dynamicImage, Image } from "../../../../Utils";
 
 const Founder = () => {
@@ -22,7 +22,7 @@ const Founder = () => {
                   {item.title}
                   <i className="ri-double-quotes-r" />
                 </h2>
-                <p>Welcome to Fuso, where quality meets creativity. We're proud to provide tailored solutions designed to meet a wide range of client needs. Our business was founded with a mission to redefine industry standards, blending insight with innovative design to deliver exceptional results.</p>
+                <p>{FounderContent}</p>
                 <div className="person-title">
                   <h5>{item.name}</h5>
                   <h6>{item.text}</h6>

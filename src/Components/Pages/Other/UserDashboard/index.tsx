@@ -11,7 +11,7 @@ import UserDashboardTabs from "./UserDashboardTabs";
 
 const UserDashboardContainer = () => {
   const dispatch = useAppDispatch();
-  const { dashboardSidebar } = useAppSelector((state) => state.sidebar);
+  const { dashboardSidebar } = useAppSelector((state) => state.layout);
 
   useEffect(() => {
     dispatch(fetchProductApiData());

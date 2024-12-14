@@ -202,7 +202,7 @@ export const SocialContactData = [
 ];
 
 export const BlogTopSlider = {
-  modules: [Navigation],
+  modules: [Navigation, Autoplay],
   slidesPerView: 4,
   speed: 2000,
   spaceBetween: 30,
@@ -342,3 +342,7 @@ export const BlogDetailSlider = {
 };
 
 export const QuoteBoxContent = "As a beginner in the world of cooking, this blog has been my saving grace. The recipes are easy to follow, and the tips have truly elevated my culinary skills";
+
+export const JobBreadcrumbsContent = "We’re excited to announce that we’re looking for a talented Business Development to join our fun, transparent, and collaborative team!";
+
+export const BlogInfo = "Life Is a Journey, Not a Destination: Choose the Ride That Makes Every Mile an Adventure"

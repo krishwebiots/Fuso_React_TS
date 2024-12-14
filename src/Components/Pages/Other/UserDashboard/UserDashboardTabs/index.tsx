@@ -7,10 +7,10 @@ import CreateProperty from "./CreateProperty";
 import MyProfile from "./MyProfile";
 import MyFavorites from "./MyFavorites";
 import Privacy from "./Privacy";
-import { setDashboardSidebar } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setDashboardSidebar } from "../../../../../ReduxToolkit/Reducers/LayoutReducers";
 
 const UserDashboardTabs = () => {
-  const { activeTab } = useAppSelector((state) => state.sidebar);
+  const { activeTab } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
   return (
     <Col lg="9">

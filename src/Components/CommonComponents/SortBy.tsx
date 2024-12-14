@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Container } from "reactstrap";
+import { Home, HouseInAmsterdam } from "../../Constants/Constants";
 import { RouteList } from "../../Routers/RouteList";
 
 const SortBy = () => {
@@ -9,9 +10,9 @@ const SortBy = () => {
         <div className="breadcrumb-content">
           <ul className="breadcrumbs-list">
             <li>
-              <Link to={RouteList.Home.PropertyDemo1}>Home</Link>
+              <Link to={RouteList.Home.PropertyDemo1}>{Home}</Link>
             </li>
-            <li>House in Amsterdam</li>
+            <li>{HouseInAmsterdam}</li>
           </ul>
         </div>
       </Container>

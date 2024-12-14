@@ -1,5 +1,6 @@
 import { Edit2 } from "iconsax-react";
 import { dynamicImage, Image } from "../../../../../Utils";
+import { ProfileEmail, ProfileName, ProfileNumber } from "../../../../../Constants/Constants";
 
 const Profile = () => {
   return (
@@ -9,9 +10,9 @@ const Profile = () => {
         <Edit2 className="iconsax" />
       </div>
       <div className="profile-content">
-        <h4>Larry Bishop</h4>
-        <h6>LarryMBishop@rhyta.com</h6>
-        <h6>773-531-4157</h6>
+        <h4>{ProfileName}</h4>
+        <h6>{ProfileEmail}</h6>
+        <h6>{ProfileNumber}</h6>
       </div>
     </div>
   );

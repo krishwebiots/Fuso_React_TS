@@ -8,8 +8,8 @@ import { CarBreadcrumbType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicNumber, Image } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
 import CarImageSlider from "../../Home/Common/CarImageSlider";
-import DetailImages from "../../Property/Common/ProductDetail/DetailImages";
-import MainDetail from "../../Property/Common/ProductDetail/MainDetail";
+import DetailImages from "../ProductDetail/DetailImages";
+import MainDetail from "../ProductDetail/MainDetail";
 
 const CarBreadcrumb: FC<CarBreadcrumbType> = ({ detailImages, mailClass, multiple, type, modernSlider }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);

@@ -4,14 +4,14 @@ import { Cancel, FloorPlansTitle, Href, InteriorInspirations } from "../../../..
 import { ModalSwiperSlider } from "../../../../../../../Data/Pages/Other";
 import { AmenitiesData } from "../../../../../../../Data/Property";
 import { useAppDispatch, useAppSelector } from "../../../../../../../ReduxToolkit/Hooks";
-import { setMoreDetailsModal } from "../../../../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setMoreDetailsModal } from "../../../../../../../ReduxToolkit/Reducers/LayoutReducers";
 import { dynamicImage, Image } from "../../../../../../../Utils";
 import RatioImage from "../../../../../../../Utils/RatioImage";
 import CloseBtn from "../../../../../../CommonComponents/CloseBtn";
-import Overview from "../../../../../../Property/Common/ProductDetail/DetailBody/DetailBodyItem/Overview";
+import Overview from "../../../../../../CommonComponents/ProductDetail/DetailBody/DetailBodyItem/Overview";
 
 const MoreDetailsModal = () => {
-  const { moreDetailsModal } = useAppSelector((state) => state.sidebar);
+  const { moreDetailsModal } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
 
   const toggle = () => dispatch(setMoreDetailsModal());

@@ -2,12 +2,12 @@ import { Fragment, useEffect } from "react";
 import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
 import { fetchCategoryApiData, fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
 import LogoSection from "../Common/LogoSection";
+import Newsletter from "../Common/Newsletter";
 import AboutAndJobOpening from "./AboutAndJobOpening";
 import Company from "./Company";
 import InterviewQuestion from "./InterviewQuestion";
 import JobCities from "./JobCities";
 import JobHomeSection from "./JobHomeSection";
-import Newsletter from "../Common/Newsletter";
 
 const JobDemo3Container = () => {
   const dispatch = useAppDispatch();

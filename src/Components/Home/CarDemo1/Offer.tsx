@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Container, Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { OfferTitle } from "../../../Constants/Constants";
+import { More, OfferTitle } from "../../../Constants/Constants";
 import { OfferContentData, OfferSwiperSetting } from "../../../Data/Demo/CarDemo1";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { RouteList } from "../../../Routers/RouteList";
@@ -29,7 +29,7 @@ const Offer = () => {
               </NavItem>
             ))}
           <NavItem>
-            <NavLink href={RouteList.Car.Grid.Car3Grid}>More 10+</NavLink>
+            <NavLink href={RouteList.Car.Grid.Car3Grid}>{More}</NavLink>
           </NavItem>
         </Nav>
         <TabContent activeTab={activeTab}>

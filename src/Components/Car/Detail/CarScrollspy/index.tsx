@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import CarBreadcrumb from "../../../CommonComponents/Breadcrumbs/CarBreadcrumb";
-import CarDetail from "../../../Property/Common/ProductDetail/CarDetail";
+import CarDetail from "../../../CommonComponents/ProductDetail/CarDetail";
 
 const CarScrollspyContainer = () => {
   return (

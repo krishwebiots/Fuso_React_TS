@@ -546,6 +546,8 @@ export const CarOrdersNavList = [
   { image: "car/category/3.svg", type: "suv" },
 ];
 
+export const OrdersHeadData = ["Item", "Model", "Price"];
+  
 export const OrdersData = [
   {
     type: "sedan",
@@ -768,6 +770,8 @@ export const ModalSwiperSlider = {
     },
   },
 };
+
+export const PropertiesHeadData = ["Id", "Property Name", "Views", "Response", "Option"];
 
 export const PropertiesData = [
   {
@@ -1102,3 +1106,18 @@ export const LoginSocialData = [
   { url: "https://www.google.com/", image: "other/google.png", title: "Log In With Google" },
   { url: "https://www.facebook.com/", image: "other/facebook.png", title: "Log In With Facebook" },
 ];
+
+//Error
+export const Error404Content = "We couldn't find the page you're looking for. It's possible that the link you clicked on is broken or the page has been moved.";
+
+//Login
+export const LoginContent = "Discover your perfect place with ease. Whether you’re searching for a dream home, a cozy vacation rental, or a workspace, we connect you with locations that fit your lifestyle.";
+
+//Founder
+export const FounderContent = "Welcome to Fuso, where quality meets creativity. We're proud to provide tailored solutions designed to meet a wide range of client needs. Our business was founded with a mission to redefine industry standards, blending insight with innovative design to deliver exceptional results.";
+
+//Logout
+export const LogoutModalContent = "you are about to logout. are you sure this is what you want?";
+
+//Not Found
+export const NotFoundContent = "There are no products that meet your criteria. It's possible they're unavailable, too specific, or out of stock. To improve your search, please try again later. Get assistance by contacting support.";

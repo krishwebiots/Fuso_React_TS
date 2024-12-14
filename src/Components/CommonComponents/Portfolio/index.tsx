@@ -1,12 +1,13 @@
 import { FC, Fragment, useEffect, useState } from "react";
 import { Button, Container, Nav, NavItem } from "reactstrap";
+import { ShowcaseOfSuccess } from "../../../Constants/Constants";
 import { PortfolioListData } from "../../../Data/Pages/Portfolio";
+import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
+import { setCardToShow } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 import { RouteList } from "../../../Routers/RouteList";
+import { PortfolioType } from "../../../Types/PortfolioType";
 import Breadcrumbs from "../Breadcrumbs";
 import PortfolioBox from "./PortfolioBox";
-import { PortfolioType } from "../../../Types/PortfolioType";
-import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
-import { setCardToShow } from "../../../ReduxToolkit/Reducers/SidebarReducers";
 
 const Portfolio: FC<PortfolioType> = ({ gridSize, carShow, type, sectionClass }) => {
   const [activeTab, setActiveTab] = useState("all");
@@ -20,7 +21,7 @@ const Portfolio: FC<PortfolioType> = ({ gridSize, carShow, type, sectionClass })
       <Breadcrumbs title="Portfolio" url={RouteList.Home.CarDemo1} mainClass="page-breadcrumbs-section" />
       <section className={`portfolio-section section-b-space ${sectionClass ? sectionClass : ""}`}>
         <Container>
-          <h3>Showcase of Success</h3>
+          <h3>{ShowcaseOfSuccess}</h3>
           {type !== "box_slider" && (
             <div className="nav-tabs-portfolio">
               <Nav pills>

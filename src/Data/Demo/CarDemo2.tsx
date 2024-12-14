@@ -1,4 +1,4 @@
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 export const CounterData = [
   { end: 135, suffix: "+", label: "Freelancer Joined" },
@@ -86,3 +86,90 @@ export const FeaturedCarContentData = "As one of the best-selling midsize sedans
 export const ChooseUsContent = "We understand that you have options when it comes to renting a car for your travels. Here's why we believe we stand out from the rest.";
 
 export const OurDedicationContent = "We are committed to ensuring that every aspect of your rental experience is designed to bring you pleasure and contentment.";
+
+export const LogoCar2Slider = {
+  slidesPerView: 5,
+  spaceBetween: 120,
+  loop: true,
+  autoplay: {
+    delay: 1500,
+    disableOnInteraction: false,
+  },
+  modules: [Autoplay],
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    400: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    767: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
+    991: {
+      slidesPerView: 5,
+      spaceBetween: 50,
+    },
+    1399: {
+      slidesPerView: 5,
+      spaceBetween: 120,
+    },
+  },
+};
+
+export const Job3BoxSlider = {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    1199: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  },
+  pagination: {
+    clickable: true,
+  },
+  modules: [Pagination],
+};
+
+export const car2InstagramSlider = {
+  slidesPerView: 9,
+  loop: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+    },
+    445: {
+      slidesPerView: 3,
+    },
+    600: {
+      slidesPerView: 4,
+    },
+    767: {
+      slidesPerView: 5,
+    },
+    991: {
+      slidesPerView: 6,
+    },
+    1299: {
+      slidesPerView: 7,
+    },
+    1500: {
+      slidesPerView: 8,
+    },
+    1650: {
+      slidesPerView: 9,
+    },
+  },
+};

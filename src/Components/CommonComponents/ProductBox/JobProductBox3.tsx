@@ -1,11 +1,11 @@
 import { Clock, Location } from "iconsax-react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Label } from "reactstrap";
-import { ApplyNow } from "../../../Constants/Constants";
+import { ApplyNow, FullTime, PartTime } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicNumber, dynamicSvg, Image } from "../../../Utils";
-import { FC } from "react";
 
 const JobProductBox3: FC<ProductBoxType> = ({ data }) => {
   return (
@@ -43,8 +43,8 @@ const JobProductBox3: FC<ProductBoxType> = ({ data }) => {
         </div>
       </div>
       <div className="job-tag">
-        <Label>Part Time</Label>
-        <Label>Full Time</Label>
+        <Label>{PartTime}</Label>
+        <Label>{FullTime}</Label>
         <Link to={RouteList.Pages.Other.ContactUs1} className="border-pills">
           {ApplyNow}
         </Link>

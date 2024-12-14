@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
+import { ForThisJob, ShareWithAFriend } from "../../../../../Constants/Constants";
 
 const ShareFriends = () => {
   return (
     <div className="share-friends">
-      <h6>Have a friend who’ll be good for this job?</h6>
+      <h6>{ForThisJob}</h6>
       <Link to="https://web.whatsapp.com/" target="_blank" className="btn-solid">
         <i className="ri-whatsapp-line" />
-        Share with a Friend
+        {ShareWithAFriend}
       </Link>
     </div>
   );

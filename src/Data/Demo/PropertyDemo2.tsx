@@ -6,6 +6,12 @@ export const HomeNavData = [
 
 export const ExperienceContent = ["knowledge of the local real estate market", "property trends and investment opportunities", "Clear and open communication"];
 
+export const ExperienceSubContent = "we redefine the essence of real estate. With a legacy of trust and excellence, we present to you the pinnacle of luxury living.";
+
+export const PropertyHomeContent = "This is where you may locate a dream place for you of any sort anywhere in the world at an inexpensive price.";
+
+export const PropertyServicesContent = "We understand that real estate transactions are more than just buying or selling properties – they are about realizing dreams, making investments, and embracing new beginnings.";
+
 export const CheckListData = ["Comprehensive Services", "Innovative Marketing", "Expert Guidance", "Investment Expertise", "Personalized Approach", "Trusted Partner"];
 
 export const ServiceData = [

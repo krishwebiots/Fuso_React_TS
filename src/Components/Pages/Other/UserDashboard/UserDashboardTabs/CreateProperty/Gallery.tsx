@@ -1,7 +1,7 @@
 import { Dropzone, ExtFile, FileMosaic } from "@dropzone-ui/react";
 import { GalleryExport } from "iconsax-react";
 import { Fragment, useState } from "react";
-import { AddProperty, GalleryTitle, Href } from "../../../../../../Constants/Constants";
+import { AddProperty, ClickToUpload, GalleryTitle, Href } from "../../../../../../Constants/Constants";
 
 const Gallery = () => {
   const [files, setFiles] = useState<ExtFile[]>([]);
@@ -19,7 +19,7 @@ const Gallery = () => {
             <Fragment>
               <div className="upload-hidden">
                 <GalleryExport className="iconsax" />
-                <h5>Click to upload, or drop files here.</h5>
+                <h5>{ClickToUpload}</h5>
               </div>
               <div className="upload-files-result" />
             </Fragment>

@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "reactstrap";
 import { ExperienceTitle } from "../../../Constants/Constants";
-import { ExperienceCarData, ExperienceContentData, ExperienceData } from "../../../Data/Demo/CarDemo1";
+import { ExperienceCarData, ExperienceContentData, ExperienceData, ServiceContent } from "../../../Data/Demo/CarDemo1";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import CommonHeader from "../Common/CommonHeader";
 
@@ -26,7 +26,7 @@ const Experience = () => {
                   <div className="service-box" key={index}>
                     <div className="service-icon">{item.icon}</div>
                     <div className="service-content">
-                      <p>We provide free consultation to help you find a tenant for your new house.</p>
+                      <p>{ServiceContent}</p>
                     </div>
                   </div>
                 )

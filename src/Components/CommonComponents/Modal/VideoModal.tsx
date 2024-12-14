@@ -1,10 +1,10 @@
 import { Modal, ModalBody, ModalHeader } from "reactstrap";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { setVideoModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setVideoModal } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 import CloseBtn from "../CloseBtn";
 
 const VideoModal = () => {
-  const { videoModal } = useAppSelector((state) => state.sidebar);
+  const { videoModal } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
   const toggle = () => dispatch(setVideoModal());
 

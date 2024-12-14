@@ -7,7 +7,7 @@ const JobGridType2Container = () => {
   return (
     <Fragment>
       <Breadcrumbs title="Job Listing" url={RouteList.Home.JobDemo1} mainClass="job-breadcrumbs-section" />
-      <GridView type="job" sectionClass="job-grid-section section-b-space" filterTagsClass="job-list-header" jobBoxStyle="type-2" gridSize={3} carShow={12} />
+      <GridView type="job" sectionClass="job-grid-section" filterTagsClass="job-list-header" jobBoxStyle="type-2" gridSize={3} carShow={12} />
     </Fragment>
   );
 };

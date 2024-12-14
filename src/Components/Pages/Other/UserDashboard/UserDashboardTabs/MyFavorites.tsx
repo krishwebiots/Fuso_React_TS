@@ -8,7 +8,7 @@ import PaginationDynamic from "../../../../CommonComponents/Pagination";
 const MyFavorites = () => {
   const { productItem } = useAppSelector((state) => state.product);
   const [currentPage, setCurrentPage] = useState(1);
-  const { cardToShow } = useAppSelector((state) => state.sidebar);
+  const { cardToShow } = useAppSelector((state) => state.layout);
 
   const Product = productItem.filter((item) => item.type === "property");
   const totalPages = Math.ceil(Product?.length / cardToShow);

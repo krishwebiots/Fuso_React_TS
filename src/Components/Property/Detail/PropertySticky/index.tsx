@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { RouteList } from "../../../../Routers/RouteList";
 import Breadcrumbs from "../../../CommonComponents/Breadcrumbs";
-import PropertyDetail from "../../Common/ProductDetail/PropertyDetail";
+import PropertyDetail from "../../../CommonComponents/ProductDetail/PropertyDetail";
 
 const PropertyStickyContainer = () => {
   return (

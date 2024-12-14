@@ -2,10 +2,10 @@ import { FC, useState } from "react";
 import Masonry from "react-masonry-css";
 import { Gallery } from "react-photoswipe-gallery";
 import { Button } from "reactstrap";
-import { LoadMore } from "../../../../Constants/Constants";
+import { LoadMore, NoMoreBlogAvailable } from "../../../../Constants/Constants";
 import { BlogData } from "../../../../Data/Pages/Blog";
 import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
-import { setCardToShow } from "../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setCardToShow } from "../../../../ReduxToolkit/Reducers/LayoutReducers";
 import { BlogGridViewType } from "../../../../Types/BlogType";
 import PaginationDynamic from "../../Pagination";
 import BlogGridBox from "./BlogGridBox";
@@ -14,7 +14,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 const BlogBox: FC<BlogGridViewType> = ({ gridSize, type }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const { cardToShow } = useAppSelector((state) => state.sidebar);
+  const { cardToShow } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
 
   const fetchMoreData = () => {
@@ -59,7 +59,7 @@ const BlogBox: FC<BlogGridViewType> = ({ gridSize, type }) => {
           </Button>
         ) : (
           <p id="no-more-products" style={{ display: "block" }}>
-            No more Blog available.
+            {NoMoreBlogAvailable}
           </p>
         )
       ) : (

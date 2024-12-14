@@ -7,18 +7,20 @@ import { Search } from "../../../Constants/Constants";
 import { HomeTabData } from "../../../Data/Demo/CarDemo1";
 import { HomeNavData } from "../../../Data/Demo/PropertyDemo2";
 import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
-import { setSearchModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setSearchModal } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 import { RouteList } from "../../../Routers/RouteList";
-import { SearchTabListType } from "../../../Types/HomeDemo";
+import { SearchTabListType } from "../../../Types/HomeDemoType";
 import { dynamicGrf, Image } from "../../../Utils";
 import UseOutsideDropdown from "../../../Utils/UseOutsideDropdown";
 import RangeInputFields from "../../Property/Common/GridView/Filter/Common/RangeInputFields";
+import UsePathName from "../../../Utils/UsePathName";
 
 const SearchTabList: FC<SearchTabListType> = ({ showTab, datePicker, scrollDown, form, pills, endPoint, tabs, showNav, button, icon }) => {
   const [startDate, setStartDate] = useState<Date | null>(new Date());
   const [selected, setSelected] = useState(HomeTabData.filter(({ id }) => showTab?.includes(id)));
   const [basicTab, setBasicTab] = useState(1);
   const dispatch = useAppDispatch();
+  const Path = UsePathName();
 
   const dropdownRefs = selected.map(() => UseOutsideDropdown(false));
 
@@ -40,20 +42,20 @@ const SearchTabList: FC<SearchTabListType> = ({ showTab, datePicker, scrollDown,
               <NavItem key={index}>
                 <NavLink className={basicTab === item.id ? "active" : ""} color="transparent" onClick={() => setBasicTab(item.id)} key={index}>
                   {item.title}
-                  {!icon && <i className="ri-arrow-right-line" />}
+                  {icon && <i className="ri-arrow-right-line" />}
                 </NavLink>
               </NavItem>
             ) : button ? (
               <NavItem key={index}>
                 <Button className={`nav-link ${basicTab === item.id ? "active" : ""}`} color="transparent" onClick={() => setBasicTab(item.id)} key={index}>
                   {item.title}
-                  {!icon && <i className="ri-arrow-right-line" />}
+                  {icon && <i className="ri-arrow-right-line" />}
                 </Button>
               </NavItem>
             ) : (
               <NavLink className={basicTab === item.id ? "active" : ""} color="transparent" onClick={() => setBasicTab(item.id)} key={index}>
                 {item.title}
-                {!icon && <i className="ri-arrow-right-line" />}
+                {icon && <i className="ri-arrow-right-line" />}
               </NavLink>
             )
           )}
@@ -105,7 +107,7 @@ const SearchTabList: FC<SearchTabListType> = ({ showTab, datePicker, scrollDown,
               </li>
             )}
             <li className="tab-item">
-              <Link to={RouteList.Car.Grid.Car3Grid} className={`btn-solid ${form ? "property2-change" : ""}`}>
+              <Link to={RouteList.Car.Grid.Car3Grid} className={`btn-solid ${form ? "property2-change" : Path[0] === "car-2" ? "btn-pills" : ""}`}>
                 {Search}
               </Link>
             </li>

@@ -1,6 +1,6 @@
 import { ImportCurve, Note1, Profile, SearchNormal1 } from "iconsax-react";
 import { Navigation } from "swiper/modules";
-import { JobHomeImageData, JobHomeMeanClassData } from "../../Types/HomeDemo";
+import { JobHomeImageData, JobHomeMeanClassData } from "../../Types/HomeDemoType";
 
 export const JobCounterData = [
   { end: 20, suffix: "M+", label: "Users" },
@@ -64,6 +64,8 @@ export const JobHomeSectionData: (JobHomeImageData | JobHomeMeanClassData)[] = [
     ],
   },
 ];
+
+export const JonHomeContent = "Your dream job is waiting for you Find the best real estate on your country Your dream job is waiting for you Find the best real estate on your country";
 
 export const StepImagesData = [
   [
@@ -158,3 +160,7 @@ export const JobHereContentData = "Search and connect with the right company fas
 export const JobHiringContentData = "A job that is ideal for you can be found. 20,000+ new positions are added each day.";
 
 export const StepToFollowContent = "Find the best match for your career goals.";
+
+export const AboutContent = "We will help you to find a job with your interests and help build your project more elegant.";
+
+export const AboutList = ["Say goodbye to endless scrolling through unreliable job postings.", "Receive personalized job suggestions that match your criteria.", "We're more than just a job board."];

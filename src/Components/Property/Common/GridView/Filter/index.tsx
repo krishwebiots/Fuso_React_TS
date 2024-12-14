@@ -1,13 +1,13 @@
 import { FC, Fragment, useEffect, useState } from "react";
 import { UncontrolledAccordion } from "reactstrap";
+import { CarColorData, CategoriesData, FuelTypeData, ModalYearData, OwnerData, SeatsData, TransmissionData } from "../../../../../Data/Car";
+import { JobAllCategoriesData, JobByData, JobCompanyTypeData, JobEducationData, JobLocationData, JobTopCompaniesData, JobTypeData, JobWorkModeData } from "../../../../../Data/Job";
 import { AmenitiesFilterData, BhkOptions, PropertyTypeData } from "../../../../../Data/Property";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
-import { FilterSidebarType } from "../../../../../Types/ProductType";
-import CommonFilter from "./Common/CommonFilter";
-import BrandModelFilter from "./BrandModelFilter";
-import { CarColorData, CategoriesData, FuelTypeData, ModalYearData, OwnerData, SeatsData, TransmissionData } from "../../../../../Data/Car";
 import { setMinAndMaxKilometers, setMinAndMaxPrice, setMinAndMaxSalary } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
-import { JobAllCategoriesData, JobByData, JobCompanyTypeData, JobEducationData, JobLocationData, JobTopCompaniesData, JobTypeData, JobWorkModeData } from "../../../../../Data/Job";
+import { FilterSidebarType } from "../../../../../Types/ProductType";
+import BrandModelFilter from "./BrandModelFilter";
+import CommonFilter from "./Common/CommonFilter";
 
 const FilterSidebar: FC<FilterSidebarType> = ({ value, modalType, type }) => {
   const { propertyType, bedsRooms, amenities, squareFeetStatus, yearBuiltStatus, carCategories, carFuelType, carModalYear, carSeats, carColor, carTransmission, carOwner, jobCategories, jobWorkMode, jobCompanyType, jobEducation, jobBy, jonLocation, jobTopCompanies, jobType } = useAppSelector((state) => state.filter);

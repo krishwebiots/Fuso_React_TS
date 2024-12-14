@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import SidebarReducers from "./Reducers/SidebarReducers";
+import LayoutReducers from "./Reducers/LayoutReducers";
 import ProductReducers from "./Reducers/ProductReducers";
 import FilterSlice from "./Reducers/FilterReducers";
 
 export const store = configureStore({
   reducer: {
-    sidebar: SidebarReducers,
+    layout: LayoutReducers,
     product: ProductReducers,
     filter: FilterSlice,
   },

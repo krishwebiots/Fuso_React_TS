@@ -3,7 +3,7 @@ import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
 import { fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
 import { RouteList } from "../../../Routers/RouteList";
 import Breadcrumbs from "../../CommonComponents/Breadcrumbs";
-import WishlistBox from "../../Property/Common/WishlistBox";
+import WishlistBox from "../../CommonComponents/WishlistBox";
 
 const JobWishlistContainer = () => {
   const dispatch = useAppDispatch();

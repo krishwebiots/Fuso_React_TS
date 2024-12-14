@@ -3,12 +3,12 @@ import { Button, Col, Nav, NavItem, NavLink } from "reactstrap";
 import { Href, LogOut } from "../../../../../Constants/Constants";
 import { DashboardList } from "../../../../../Data/Pages/Other";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
-import { setActiveTab, setDashboardSidebar, setLogoutModal } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setActiveTab, setDashboardSidebar, setLogoutModal } from "../../../../../ReduxToolkit/Reducers/LayoutReducers";
 import LogoutModal from "./LogoutModal";
 import Profile from "./Profile";
 
 const Sidebar = () => {
-  const { activeTab, dashboardSidebar } = useAppSelector((state) => state.sidebar);
+  const { activeTab, dashboardSidebar } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
 
   return (

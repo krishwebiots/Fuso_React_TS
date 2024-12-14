@@ -1,4 +1,4 @@
-import PropertyDetail from "../../Common/ProductDetail/PropertyDetail";
+import PropertyDetail from "../../../CommonComponents/ProductDetail/PropertyDetail";
 
 const PropertyVideoContainer = () => {
   return <PropertyDetail type="video" />;

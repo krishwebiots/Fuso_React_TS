@@ -1,7 +1,7 @@
 import { Col, Row } from "reactstrap";
 import { PropertyDetailsTitle, PropertyType } from "../../../../../../Constants/Constants";
+import RenderInput from "../../../../../CommonComponents/RenderInput";
 import RenderDropdown from "../Common/RenderDropdown";
-import RenderInput from "../Common/RenderInput";
 
 const PropertyDetails: React.FC = () => {
   return (
@@ -14,15 +14,9 @@ const PropertyDetails: React.FC = () => {
         <Col md="4" sm="6">
           <RenderDropdown label={"Property Status"} placeholder="Enter Property Status" items={["Sale", "Rent", "PG"]} />
         </Col>
-        <Col md="4" sm="6">
-          <RenderInput label="Any City" placeholder="Enter Your City" />
-        </Col>
-        <Col md="8" sm="6">
-          <RenderInput label="Address" placeholder="Enter Your Address" />
-        </Col>
-        <Col md="4" sm="6">
-          <RenderInput label="Any Country" placeholder="Enter Your Country" />
-        </Col>
+        <RenderInput label="Any City" placeholder="Enter Your City" ColClass="col-md-4 col-sm-6" />
+        <RenderInput label="Address" placeholder="Enter Your Address" ColClass="col-md-8 col-sm-6" />
+        <RenderInput label="Any Country" placeholder="Enter Your Country" ColClass="col-md-4 col-sm-6" />
       </Row>
     </div>
   );

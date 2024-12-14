@@ -9,6 +9,8 @@ export const PropertyHomeSliderSetting = {
   loop: true,
 };
 
+export const PropertyContent = "This is where you may locate a dream place for you of any sort anywhere in the world at an inexpensive price.";
+
 export const AboutContent = "Discover the appropriate property that is most acceptable for you, ranging from houses for purpose that are minimalist to premium apartments for sale and rent with the greatest staff of our organization.";
 
 export const AboutListData = ["45k partner has worked with us", "Professional & experienced humans resource", "Provide the best service for users", "We have more than 10 years of experience"];
@@ -64,3 +66,24 @@ export const AchievementsCounterData = [
   { end: 800, suffix: "+", label: "Home rented last year" },
   { end: 200, label: "Win An award" },
 ];
+
+export const DiscoverySlider = {
+  slidesPerView: 5,
+  spaceBetween: 30,
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    575: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    991: {
+      slidesPerView: 5,
+      spaceBetween: 30,
+    },
+  },
+};
+
+export const PropertyNewsletterContent = "There are just two things that are crucial. Family is most important, followed by comfort, so let's get started with those two.";

@@ -1,16 +1,16 @@
 import { Trash } from "iconsax-react";
 import { FC } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Label } from "reactstrap";
 import { Href, ShowMore } from "../../../Constants/Constants";
-import { RouteList } from "../../../Routers/RouteList";
-import { ProductBoxType } from "../../../Types/ProductType";
-import SvgIcon from "../../../Utils/SvgIcon";
-import PropertyBoxSlider from "./Common/PropertyBoxSlider";
-import { toast } from "react-toastify";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { setPropertyItem } from "../../../ReduxToolkit/Reducers/ProductReducers";
+import { RouteList } from "../../../Routers/RouteList";
+import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicVideo } from "../../../Utils";
+import SvgIcon from "../../../Utils/SvgIcon";
+import PropertyBoxSlider from "./Common/PropertyBoxSlider";
 
 const PropertyProductBox1: FC<ProductBoxType> = ({ data, view, wishlist }) => {
   const { productItem } = useAppSelector((state) => state.product);

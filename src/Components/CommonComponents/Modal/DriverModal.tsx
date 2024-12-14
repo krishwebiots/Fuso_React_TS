@@ -1,11 +1,12 @@
-import { Button, Col, Input, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
+import { Modal, ModalBody, ModalHeader, Row } from "reactstrap";
 import { ScheduleTestDriverTitle, SubmitReview } from "../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { setDriverModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setDriverModal } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 import CloseBtn from "../CloseBtn";
+import RenderInput from "../RenderInput";
 
 const DriverModal = () => {
-  const { driverModal } = useAppSelector((state) => state.sidebar);
+  const { driverModal } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
 
   const toggle = () => dispatch(setDriverModal());
@@ -15,31 +16,11 @@ const DriverModal = () => {
       <ModalBody>
         <h3 className="car-title">{ScheduleTestDriverTitle}</h3>
         <Row className="gy-3">
-          <Col xs="12">
-            <div className="review-input">
-              <Input type="text" placeholder="Enter Your Name" />
-            </div>
-          </Col>
-          <Col xs="12">
-            <div className="review-input">
-              <Input type="text" placeholder="Enter Your E-mail" />
-            </div>
-          </Col>
-          <Col xs="12">
-            <div className="review-input">
-              <Input type="date" placeholder="Select Date" />
-            </div>
-          </Col>
-          <Col xs="12">
-            <div className="review-input">
-              <Input type="time" placeholder="Select Time" />
-            </div>
-          </Col>
-          <Col xs="12">
-            <div className="review-input">
-              <Button className="btn-solid">{SubmitReview}</Button>
-            </div>
-          </Col>
+          <RenderInput placeholder="Enter Your Name" ColClass="col-xs-12" review />
+          <RenderInput placeholder="Enter Your E-mail" ColClass="col-xs-12" review />
+          <RenderInput placeholder="Select Date" ColClass="col-xs-12" inputType="date" review />
+          <RenderInput placeholder="Select Time" ColClass="col-xs-12" review />
+          <RenderInput button={SubmitReview} ColClass="col-xs-12" review />
         </Row>
       </ModalBody>
     </Modal>

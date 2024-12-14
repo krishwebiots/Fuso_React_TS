@@ -7,7 +7,7 @@ import { CommentTitle, LeaveCommentTitle } from "../../../Constants/Constants";
 import { Fragment } from "react/jsx-runtime";
 import ReviewModal from "../Modal/ReviewModal";
 import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
-import { setReviewModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setReviewModal } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 
 const Comment = () => {
   const dispatch = useAppDispatch();

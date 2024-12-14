@@ -2,7 +2,7 @@ import { Heart, House, Profile, SearchNormal1 } from "iconsax-react";
 import { Link } from "react-router-dom";
 import { Href } from "../Constants/Constants";
 import { RouteList } from "../Routers/RouteList";
-import { setSearchModal } from "../ReduxToolkit/Reducers/SidebarReducers";
+import { setSearchModal } from "../ReduxToolkit/Reducers/LayoutReducers";
 import { useAppDispatch } from "../ReduxToolkit/Hooks";
 
 const MobileMenu = () => {

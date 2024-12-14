@@ -2,8 +2,8 @@ import { Add, ArrowRight } from "iconsax-react";
 import CountUp from "react-countup";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import { LearnMore } from "../../../Constants/Constants";
-import { AboutImagesData, JobAboutCounterData } from "../../../Data/Demo/JobDemo1";
+import { LearnMore, TrustedJobs } from "../../../Constants/Constants";
+import { AboutContent, AboutImagesData, AboutList, JobAboutCounterData } from "../../../Data/Demo/JobDemo1";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 
@@ -14,26 +14,26 @@ const About = () => {
         <Row className="justify-content-center gy-4 align-items-center">
           <Col xl="7" lg="6" className="order-lg-0 order-1">
             <div className="about-content">
-              <h2>We Provide a Place to Find Trusted Jobs</h2>
-              <p>We will help you to find a job with your interests and help build your project more elegant.</p>
+              <h2>{TrustedJobs}</h2>
+              <p>{AboutContent}</p>
               <ul className="about-list">
-                <li>Say goodbye to endless scrolling through unreliable job postings.</li>
-                <li>Receive personalized job suggestions that match your criteria.</li>
-                <li>We're more than just a job board.</li>
+                {AboutList.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
               <ul className="job-counter-box">
                 {JobAboutCounterData.map((counter, index) => (
                   <li key={index} className="counter-box">
                     <div className="counter-flex">
                       <CountUp end={counter.count} className="counter-count" delay={0} />
-                      <Add className="iconsax"/>
+                      <Add className="iconsax" />
                     </div>
                     <h5>{counter.label}</h5>
                   </li>
                 ))}
               </ul>
               <Link to={RouteList.Pages.Other.AboutUs1} className="text-btn">
-                {LearnMore} <ArrowRight className="iconsax"/>
+                {LearnMore} <ArrowRight className="iconsax" />
               </Link>
             </div>
           </Col>

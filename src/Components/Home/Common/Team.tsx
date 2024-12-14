@@ -3,11 +3,11 @@ import { FC, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { MeetOurBrokers, TeamTitle } from "../../../Constants/Constants";
+import { MeetOurBrokers, MeetOurTeam, TeamTitle } from "../../../Constants/Constants";
 import { SocialData, SocialListData, TeamData } from "../../../Data/Demo/PropertyDemo2";
 import { AboutTeamSlider, TeamContent } from "../../../Data/Pages/Other";
 import { RouteList } from "../../../Routers/RouteList";
-import { PropsType } from "../../../Types/HomeDemo";
+import { PropsType } from "../../../Types/HomeDemoType";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
 import CommonHeader from "./CommonHeader";
@@ -50,7 +50,7 @@ const Team: FC<PropsType> = ({ type }) => {
         <section className="property2-team-section car-about-team section-b-space">
           <Container>
             <div className="detail-flex-title">
-              <h2>Meet Our Team</h2>
+              <h2>{MeetOurTeam}</h2>
               <div className="swiper-flex car-arrow">
                 <div className="swiper-button-prev about-team-prev">
                   <ArrowLeft2 className="iconsax" />

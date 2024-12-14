@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from "reactstrap";
-import { PropsType } from "../../../../Types/HomeDemo";
+import { PropsType } from "../../../../Types/HomeDemoType";
 import { AccordionData } from "../../../../Data/Pages/Other";
 
 const FaqBox: FC<PropsType> = ({ type }) => {

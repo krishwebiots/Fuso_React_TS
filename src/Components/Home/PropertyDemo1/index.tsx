@@ -21,10 +21,10 @@ const PropertyDemo1Container = () => {
   return (
     <Fragment>
       <PropertyHomeSection />
-      <AboutUs />
       <PropertyFeature />
-      <Services />
+      <AboutUs />
       <Categories type="property_demo1" />
+      <Services />
       <Discovery />
       <Achievements />
       <Testimonials type="property_demo1" />

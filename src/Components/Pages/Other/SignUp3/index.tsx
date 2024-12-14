@@ -4,6 +4,8 @@ import { RouteList } from "../../../../Routers/RouteList";
 import { dynamicImage, Image } from "../../../../Utils";
 import RatioImage from "../../../../Utils/RatioImage";
 import SignUpForm from "../Common/SignUpForm";
+import { FindAPlaceYouWillLove } from "../../../../Constants/Constants";
+import { LoginContent } from "../../../../Data/Pages/Other";
 
 const SignUp3Container = () => {
   return (
@@ -22,8 +24,8 @@ const SignUp3Container = () => {
                 <Link to={RouteList.Home.CarDemo1} className="login-logo">
                   <Image src={dynamicImage("logo/1.png")} alt="logo" />
                 </Link>
-                <h2>Find a Place you will Love.</h2>
-                <p>Discover your perfect place with ease. Whether you’re searching for a dream home, a cozy vacation rental, or a workspace, we connect you with locations that fit your lifestyle.</p>
+                <h2>{FindAPlaceYouWillLove}</h2>
+                <p>{LoginContent}</p>
               </div>
             </div>
           </Col>

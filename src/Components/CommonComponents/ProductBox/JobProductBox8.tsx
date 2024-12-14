@@ -1,12 +1,12 @@
 import { Clock, Location } from "iconsax-react";
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { ApplyNow, Href } from "../../../Constants/Constants";
+import { toast } from "react-toastify";
+import { Label } from "reactstrap";
+import { ApplyNow, Href, PeopleView } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicSvg, Image } from "../../../Utils";
-import { toast } from "react-toastify";
-import { Label } from "reactstrap";
 
 const JobProductBox8: FC<ProductBoxType> = ({ data }) => {
   const handleWishlist = () => toast.success("Added to Wishlist successfully");
@@ -56,7 +56,7 @@ const JobProductBox8: FC<ProductBoxType> = ({ data }) => {
             </Label>
             <Label>
               <Image src={dynamicSvg("job/job-box/eye-line.svg")} alt="eye-line" className="img-fluid" />
-              25 People View
+              {PeopleView}
             </Label>
           </div>
         </div>

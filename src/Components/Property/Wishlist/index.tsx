@@ -1,10 +1,10 @@
 import { Fragment, useEffect } from "react";
 import { Wishlist } from "../../../Constants/Constants";
-import { RouteList } from "../../../Routers/RouteList";
-import Breadcrumbs from "../../CommonComponents/Breadcrumbs";
-import WishlistBox from "../Common/WishlistBox";
 import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
 import { fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
+import { RouteList } from "../../../Routers/RouteList";
+import Breadcrumbs from "../../CommonComponents/Breadcrumbs";
+import WishlistBox from "../../CommonComponents/WishlistBox";
 
 const PropertyWishlistContainer = () => {
   const dispatch = useAppDispatch();

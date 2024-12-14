@@ -3,6 +3,8 @@ import { Fragment } from "react/jsx-runtime";
 import { RouteList } from "../../../../Routers/RouteList";
 import { dynamicImage, Image } from "../../../../Utils";
 import Breadcrumbs from "../../../CommonComponents/Breadcrumbs";
+import { GoToHomePage, WhoopsPageNotFound } from "../../../../Constants/Constants";
+import { Error404Content } from "../../../../Data/Pages/Other";
 
 const Error404Container = () => {
   return (
@@ -13,10 +15,10 @@ const Error404Container = () => {
           <div className="error-box">
             <div className="error-content">
               <Image src={dynamicImage("other/404.svg")} className="img-fluid" />
-              <h2>Whoops ! Page Not Found</h2>
-              <p>We couldn't find the page you're looking for. It's possible that the link you clicked on is broken or the page has been moved.</p>
+              <h2>{WhoopsPageNotFound}</h2>
+              <p>{Error404Content}</p>
               <Link to={RouteList.Home.CarDemo1} className="btn-solid">
-                Go To Home Page
+                {GoToHomePage}
               </Link>
             </div>
           </div>

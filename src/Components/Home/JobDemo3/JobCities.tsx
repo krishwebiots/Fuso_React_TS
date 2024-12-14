@@ -1,8 +1,6 @@
 import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Container } from "reactstrap";
-import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { JobCitiesTitle } from "../../../Constants/Constants";
 import { JobCitiesData, JobCitiesSwiperSetting } from "../../../Data/Demo/JobDemo3";
@@ -10,11 +8,6 @@ import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, Image } from "../../../Utils";
 
 const JobCities = () => {
-  const swiperRef = useRef<SwiperType | null>(null);
-
-  useEffect(() => {
-    if (swiperRef.current) swiperRef.current.init();
-  }, []);
   return (
     <section className="job3-category section-b-space">
       <Container>
@@ -22,14 +15,14 @@ const JobCities = () => {
           <h2 className="text-white">{JobCitiesTitle}</h2>
           <div className="swiper-flex car-arrow">
             <div className="swiper-button-prev job-category-prev">
-              <ArrowLeft2 className="iconsax"/>
+              <ArrowLeft2 className="iconsax" />
             </div>
             <div className="swiper-button-next job-category-next">
-              <ArrowRight2 className="iconsax"/>
+              <ArrowRight2 className="iconsax" />
             </div>
           </div>
         </div>
-        <Swiper {...JobCitiesSwiperSetting} onInit={(swiper: SwiperType) => (swiperRef.current = swiper)}>
+        <Swiper {...JobCitiesSwiperSetting}>
           {JobCitiesData.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="category-box">

@@ -9,7 +9,7 @@ import RatioImage from "../../../Utils/RatioImage";
 import VideoModal from "../../CommonComponents/Modal/VideoModal";
 import CommonHeader from "../Common/CommonHeader";
 import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
-import { setVideoModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setVideoModal } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 
 const Blogs = () => {
   const dispatch = useAppDispatch();

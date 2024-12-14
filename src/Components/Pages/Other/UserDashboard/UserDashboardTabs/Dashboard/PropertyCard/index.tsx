@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { Button, Col } from "reactstrap";
-import { MoreDetails } from "../../../../../../../Constants/Constants";
+import { MoreDetails, Unbeatable } from "../../../../../../../Constants/Constants";
 import { useAppDispatch } from "../../../../../../../ReduxToolkit/Hooks";
-import { setMoreDetailsModal } from "../../../../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setMoreDetailsModal } from "../../../../../../../ReduxToolkit/Reducers/LayoutReducers";
 import { dynamicImage, Image } from "../../../../../../../Utils";
 import MoreDetailsModal from "./MoreDetailsModal";
 
@@ -13,7 +13,7 @@ const PropertyCard = () => {
       <Col md="8">
         <div className="white-card property-card">
           <div className="card-title">
-            <h5>Make a Big Splash with Unbeatable Sale Prices!</h5>
+            <h5>{Unbeatable}</h5>
             <Button className="btn-solid" onClick={() => dispatch(setMoreDetailsModal())}>
               {MoreDetails}
             </Button>

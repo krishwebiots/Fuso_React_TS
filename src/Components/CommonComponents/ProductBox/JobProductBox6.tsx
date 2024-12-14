@@ -1,12 +1,12 @@
-import { FC } from "react";
-import { ProductBoxType } from "../../../Types/ProductType";
-import { Link } from "react-router-dom";
-import { RouteList } from "../../../Routers/RouteList";
-import { Href } from "../../../Constants/Constants";
-import { dynamicSvg, Image } from "../../../Utils";
 import { Location } from "iconsax-react";
+import { FC } from "react";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Label } from "reactstrap";
+import { Href, MidLevel } from "../../../Constants/Constants";
+import { RouteList } from "../../../Routers/RouteList";
+import { ProductBoxType } from "../../../Types/ProductType";
+import { dynamicSvg, Image } from "../../../Utils";
 
 const JobProductBox6: FC<ProductBoxType> = ({ data }) => {
   const handleWishlist = () => toast.success("Added to Wishlist successfully");
@@ -24,7 +24,7 @@ const JobProductBox6: FC<ProductBoxType> = ({ data }) => {
       <h5 className="price-style-2">${data.salary}K USD</h5>
       <div className="job-tag job-tag-style-2">
         <Label>{data.jobType?.slice(0, 1).map((job) => job.replace("_", " "))}</Label>
-        <Label>Mid Level</Label>
+        <Label>{MidLevel}</Label>
       </div>
       <div className="post-style-2">
         <span>{data.time}</span>

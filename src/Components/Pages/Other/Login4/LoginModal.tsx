@@ -1,11 +1,11 @@
 import { Modal, ModalBody, ModalHeader } from "reactstrap";
 import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
-import { setLoginModal } from "../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setLoginModal } from "../../../../ReduxToolkit/Reducers/LayoutReducers";
 import CloseBtn from "../../../CommonComponents/CloseBtn";
 import LoginForm from "../Common/LoginForm";
 
 const LoginModal = () => {
-  const { loginModal } = useAppSelector((state) => state.sidebar);
+  const { loginModal } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
 
   const toggle = () => dispatch(setLoginModal());

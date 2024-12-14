@@ -1,7 +1,7 @@
 import { ArrowRight } from "iconsax-react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import { LatestJobOpenings } from "../../../Constants/Constants";
+import { BrowseToAllJob, LatestJobOpenings } from "../../../Constants/Constants";
 import { LatestJobOpeningsContent } from "../../../Data/Demo/JobDemo2";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { RouteList } from "../../../Routers/RouteList";
@@ -28,7 +28,7 @@ const JobOpenings = () => {
               <div className="see-all-box">
                 <h2>135+</h2>
                 <Link to={RouteList.Job.Grid.JobLeftSidebar}>
-                  Browse to all Job
+                  {BrowseToAllJob}
                   <ArrowRight className="iconsax" />
                 </Link>
               </div>

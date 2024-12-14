@@ -1,7 +1,7 @@
 import { FC, Fragment, useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
 import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
-import { setCardToShow } from "../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setCardToShow } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 import { BlogGridViewType } from "../../../Types/BlogType";
 import BlogSidebar from "./BlogSidebar";
 import BlogBox from "./BolgBox";

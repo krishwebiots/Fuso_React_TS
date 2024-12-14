@@ -1,21 +1,17 @@
-import { Col, Input, Label, Row } from "reactstrap";
-import { PriceDetailsTitle } from "../../../../../../Constants/Constants";
+import { Input, Label, Row } from "reactstrap";
+import { PriceDetailsTitle, PriceInclude, Registration } from "../../../../../../Constants/Constants";
 import { PriceIncludeListData } from "../../../../../../Data/Pages/Other";
-import RenderInput from "../Common/RenderInput";
+import RenderInput from "../../../../../CommonComponents/RenderInput";
 
 const PriceDetails = () => {
   return (
     <div className="user-form-box">
       <h4 className="dashboard-title">{PriceDetailsTitle}</h4>
       <Row className="g-4">
-        <Col sm="6">
-          <RenderInput label="Price" inputType="number" placeholder="Enter Your Price" />
-        </Col>
-        <Col sm="6">
-          <RenderInput label="Show Price As" inputType="number" placeholder="Enter price As" />
-        </Col>
+        <RenderInput label="Price" inputType="number" placeholder="Enter Your Price" ColClass="col-sm-6" />
+        <RenderInput label="Show Price As" inputType="number" placeholder="Enter price As" ColClass="col-sm-6" />
         <div className="include-price-list">
-          <span>Price Include</span>
+          <span>{PriceInclude}</span>
           <ul className="user-choose-list">
             {PriceIncludeListData.map((item, index) => (
               <li className="main-choose-item" key={index}>
@@ -31,14 +27,10 @@ const PriceDetails = () => {
         </div>
         <div className="text-checkbox">
           <Input type="checkbox" id="stamp" />
-          <Label htmlFor="stamp">Stamp Duty &amp; Registration charges excluded.</Label>
+          <Label htmlFor="stamp">{Registration}</Label>
         </div>
-        <Col sm="6">
-          <RenderInput label="Booking / Token" inputType="number" placeholder="Enter Booking Amount" />
-        </Col>
-        <Col sm="6">
-          <RenderInput label="Maintenance Charge" inputType="number" placeholder="Enter Maintenance Charge" />
-        </Col>
+        <RenderInput label="Booking / Token" inputType="number" placeholder="Enter Booking Amount" ColClass="col-sm-6" />
+        <RenderInput label="Maintenance Charge" inputType="number" placeholder="Enter Maintenance Charge" ColClass="col-sm-6" />
       </Row>
     </div>
   );

@@ -1,14 +1,15 @@
 import { Button, Modal, ModalBody, ModalHeader } from "reactstrap";
 import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
-import { setLogoutModal } from "../../../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setLogoutModal } from "../../../../../ReduxToolkit/Reducers/LayoutReducers";
 import CloseBtn from "../../../../CommonComponents/CloseBtn";
 import { dynamicSvg, Image } from "../../../../../Utils";
-import { Cancel, LogOut } from "../../../../../Constants/Constants";
+import { AreYouLoggingOut, Cancel, LogOut } from "../../../../../Constants/Constants";
 import { Link } from "react-router-dom";
 import { RouteList } from "../../../../../Routers/RouteList";
+import { LogoutModalContent } from "../../../../../Data/Pages/Other";
 
 const LogoutModal = () => {
-  const { logoutModal } = useAppSelector((state) => state.sidebar);
+  const { logoutModal } = useAppSelector((state) => state.layout);
   const dispatch = useAppDispatch();
 
   const toggle = () => dispatch(setLogoutModal());
@@ -20,8 +21,8 @@ const LogoutModal = () => {
           <Image src={dynamicSvg("other/logout.svg")} alt="logout" className="img-fluid d-block mx-auto" />
         </div>
         <div className="logout-content">
-          <h4 className="text-center">Are You Logging Out?</h4>
-          <p className="text-center">you are about to logout. are you sure this is what you want?</p>
+          <h4 className="text-center">{AreYouLoggingOut}</h4>
+          <p className="text-center">{LogoutModalContent}</p>
           <div className="d-flex align-items-center justify-content-center gap-2">
             <Button className="btn-border" onClick={toggle}>
               {Cancel}

@@ -1,8 +1,8 @@
 import CountUp from "react-countup";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import { LearnMore } from "../../../Constants/Constants";
-import { ServiceCounterListData, ServiceIconData, ServiceListData } from "../../../Data/Demo/JobDemo2";
+import { FindTrustedJobs, LearnMore } from "../../../Constants/Constants";
+import { ServiceContent, ServiceCounterListData, ServiceIconData, ServiceListData } from "../../../Data/Demo/JobDemo2";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 
@@ -25,8 +25,8 @@ const Service = () => {
           </Col>
           <Col xl="6" lg="5">
             <div className="service-content">
-              <h2>We Provide a Place to Find Trusted Jobs</h2>
-              <p>We will help you to find a job with your interests and help build your project more elegant.</p>
+              <h2>{FindTrustedJobs}</h2>
+              <p>{ServiceContent}</p>
               <ul className="service-list">
                 {ServiceListData.map((item, index) => (
                   <li key={index}>

@@ -3,19 +3,19 @@ import { FC, Fragment, MutableRefObject, useEffect, useState } from "react";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import { Link } from "react-router-dom";
 import { Button, Col, Row } from "reactstrap";
-import { Href } from "../../../Constants/Constants";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Href, PortfolioTitle } from "../../../Constants/Constants";
 import { PortfolioData, PortfolioImagesSlider } from "../../../Data/Pages/Portfolio";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
-import { setVideoModal } from "../../../ReduxToolkit/Reducers/SidebarReducers";
+import { setVideoModal } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 import { RouteList } from "../../../Routers/RouteList";
 import { PortfolioBoxType } from "../../../Types/PortfolioType";
 import { dynamicImage } from "../../../Utils";
-import PaginationDynamic from "../Pagination";
 import RatioImage from "../../../Utils/RatioImage";
-import { Swiper, SwiperSlide } from "swiper/react";
+import PaginationDynamic from "../Pagination";
 
 const PortfolioBox: FC<PortfolioBoxType> = ({ activeTab, gridSize, type }) => {
-  const { cardToShow } = useAppSelector((state) => state.sidebar);
+  const { cardToShow } = useAppSelector((state) => state.layout);
   const [currentPage, setCurrentPage] = useState(1);
   const dispatch = useAppDispatch();
 
@@ -46,8 +46,8 @@ const PortfolioBox: FC<PortfolioBoxType> = ({ activeTab, gridSize, type }) => {
                     </div>
                   </div>
                   <div className="portfolio-info">
-                    <h4>Portfolio</h4>
-                    <span>Portfolio</span>
+                    <h4>{PortfolioTitle}</h4>
+                    <span>{PortfolioTitle}</span>
                   </div>
                 </div>
               </Col>

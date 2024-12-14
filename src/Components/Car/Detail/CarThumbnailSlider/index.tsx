@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { Container } from "reactstrap";
 import CarBreadcrumb from "../../../CommonComponents/Breadcrumbs/CarBreadcrumb";
-import CarDetail from "../../../Property/Common/ProductDetail/CarDetail";
-import MainDetail from "../../../Property/Common/ProductDetail/MainDetail";
+import CarDetail from "../../../CommonComponents/ProductDetail/CarDetail";
+import MainDetail from "../../../CommonComponents/ProductDetail/MainDetail";
 
 const CarThumbnailSliderContainer = () => {
   return (

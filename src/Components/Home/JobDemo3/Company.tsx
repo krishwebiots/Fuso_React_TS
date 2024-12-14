@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { Container } from "reactstrap";
-import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ApplyNow, TopRatedCompany } from "../../../Constants/Constants";
-import { RatedJobData, TopRatedCompanyContent } from "../../../Data/Demo/JobDemo3";
+import { Job3BoxSlider, RatedJobData, TopRatedCompanyContent } from "../../../Data/Demo/JobDemo3";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
-import CommonHeader from "../Common/CommonHeader";
 import SvgIcon from "../../../Utils/SvgIcon";
+import CommonHeader from "../Common/CommonHeader";
 
 const Company = () => {
   const { productItem } = useAppSelector((state) => state.product);
@@ -17,7 +16,7 @@ const Company = () => {
       {RatedJobData.map((item, index) => (item.type === "png" ? <Image src={dynamicImage(item.image)} alt="o-1" className={`img-fluid ${item.class}`} key={index} /> : <Image src={dynamicSvg(item.image)} alt="o-1" className={`img-fluid ${item.class}`} key={index} />))}
       <Container>
         <CommonHeader title={TopRatedCompany} content={TopRatedCompanyContent} headClass="title-style-5" />
-        <Swiper pagination={true} slidesPerView={4} spaceBetween={30} modules={[Pagination]} className="job3-box-slider">
+        <Swiper {...Job3BoxSlider} className="job3-box-slider">
           {productItem
             .filter(({ id }) => [16, 17, 18, 19, 20, 21, 22].includes(id))
             .map((item, index) => (

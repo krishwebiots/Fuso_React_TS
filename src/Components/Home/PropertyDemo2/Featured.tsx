@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "reactstrap";
 import { useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { RouteList } from "../../../Routers/RouteList";
-import { FeaturedType } from "../../../Types/HomeDemo";
+import { FeaturedType } from "../../../Types/HomeDemoType";
 import PropertyProductBox2 from "../../CommonComponents/ProductBox/PropertyProductBox2";
 import CommonHeader from "../Common/CommonHeader";
 import { FC } from "react";

@@ -1,12 +1,12 @@
 import { Clock, Location } from "iconsax-react";
 import { FC } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Label, Progress } from "reactstrap";
 import { ApplyNow, Href } from "../../../Constants/Constants";
 import { RouteList } from "../../../Routers/RouteList";
 import { ProductBoxType } from "../../../Types/ProductType";
 import { dynamicSvg, Image } from "../../../Utils";
-import { toast } from "react-toastify";
 
 const JobProductBox5: FC<ProductBoxType> = ({ data }) => {
   const handleWishlist = () => toast.success("Added to Wishlist successfully");

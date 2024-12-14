@@ -1,6 +1,6 @@
 import { Award, Building, Calendar1, Call, Car, Coin1, Driving, Location, SearchNormal1, Tag2, Verify, Wallet, Wallet3 } from "iconsax-react";
 import { Autoplay, EffectFade, FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { NavType } from "../../Types/HomeDemo";
+import { NavType } from "../../Types/HomeDemoType";
 
 export const HomeTabData: NavType[] = [
   {
@@ -135,6 +135,8 @@ export const WorkData = [
 
 export const ExperienceContentData = "Discover why our customers trust us to make their car buying journey smooth and enjoyable.";
 
+export const ServiceContent = "We provide free consultation to help you find a tenant for your new house.";
+
 export const ExperienceData = [[{ icon: <Tag2 className="iconsax" /> }, { icon: <Wallet3 className="iconsax" /> }, { icon: <Call className="iconsax" /> }], [{ image: true }], [{ icon: <Award className="iconsax" /> }, { icon: <Coin1 className="iconsax" /> }, { icon: <Car className="iconsax" /> }]];
 
 export const ExperienceCarData = [
@@ -167,15 +169,22 @@ export const TestimonialsSwiperSetting = {
   },
   modules: [Navigation],
   slidesPerView: 3,
-  spaceBetween: 30,
   className: "car-testimonials-slider",
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1200: {
+      slidesPerView: 3,
+    },
+  },
 };
 
 export const ProductSwiperSetting = {
-  navigation: {
-    prevEl: ".swiper-button-prev",
-    nextEl: ".swiper-button-next",
-  },
+  navigation: true,
   freeMode: true,
   effect: "fade",
   modules: [Navigation, EffectFade, FreeMode],

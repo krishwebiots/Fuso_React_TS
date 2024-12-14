@@ -1,11 +1,12 @@
 import { FC, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import { ApplyNow, BusinessDevelopment } from "../../../Constants/Constants";
+import { ApplyNow, BusinessDevelopment, Collection, Home, SingleJob } from "../../../Constants/Constants";
 import { InfoListData, SocialListData } from "../../../Data/Job";
 import { RouteList } from "../../../Routers/RouteList";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import RatioImage from "../../../Utils/RatioImage";
+import { JobBreadcrumbsContent } from "../../../Data/Pages/Blog";
 
 const JobBreadcrumb: FC<{ type?: string }> = ({ type }) => {
   return (
@@ -44,18 +45,18 @@ const JobBreadcrumb: FC<{ type?: string }> = ({ type }) => {
               <Col xl="7" lg="6" className="p-0">
                 <div className="breadcrumbs-content">
                   <ul className="breadcrumb-type-list">
-                    <li>Home</li>
+                    <li>{Home}</li>
                     <li>
                       <i className="ri-arrow-right-double-fill" />
                     </li>
-                    <li>Collection</li>
+                    <li>{Collection}</li>
                     <li>
                       <i className="ri-arrow-right-double-fill" />
                     </li>
-                    <li>Single-job</li>
+                    <li>{SingleJob}</li>
                   </ul>
-                  <h2>Business Development</h2>
-                  <p>We’re excited to announce that we’re looking for a talented Business Development to join our fun, transparent, and collaborative team!</p>
+                  <h2>{BusinessDevelopment}</h2>
+                  <p>{JobBreadcrumbsContent}</p>
                   <Link to={RouteList.Pages.Other.ContactUs1} className="btn-solid">
                     {ApplyNow}
                   </Link>
