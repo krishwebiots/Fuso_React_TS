@@ -1,11 +1,11 @@
 import { FC, Fragment, useState } from "react";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
-import { Filter, Href, SortBy } from "../../../../../Constants/Constants";
-import { FilterTabsListData } from "../../../../../Data/Property";
-import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
-import { setPopular, setSortBy } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
-import { setCardToShow, setOpenFilterSidebar } from "../../../../../ReduxToolkit/Reducers/LayoutReducers";
-import { TopPanelType } from "../../../../../Types/ProductType";
+import { Filter, Href, SortBy } from "../../../../Constants/Constants";
+import { FilterTabsListData } from "../../../../Data/Property";
+import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
+import { setPopular, setSortBy } from "../../../../ReduxToolkit/Reducers/FilterReducers";
+import { setCardToShow, setOpenFilterSidebar } from "../../../../ReduxToolkit/Reducers/LayoutReducers";
+import { TopPanelType } from "../../../../Types/ProductType";
 import HeaderFilter from "./HeaderFilter";
 
 const FilterTags: FC<TopPanelType> = ({ topFilterSidebar, side, mainClass, type, jobBoxStyle }) => {

@@ -1,7 +1,7 @@
 import { Fragment } from "react/jsx-runtime";
 import Breadcrumbs from "../../../CommonComponents/Breadcrumbs";
 import { RouteList } from "../../../../Routers/RouteList";
-import GridView from "../../../Property/Common/GridView";
+import GridView from "../../../CommonComponents/GridView";
 
 const JobListNoSidebarContainer = () => {
   return (

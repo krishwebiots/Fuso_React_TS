@@ -1,8 +1,8 @@
 import { getTrackBackground, Range } from "react-range";
-import { STEP } from "../../../../../../Constants/Constants";
-import { useAppDispatch, useAppSelector } from "../../../../../../ReduxToolkit/Hooks";
-import { setBudgetStatus, setCarKilometers, setJobSalary, setPriceStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
-import { RangeInputFieldsType } from "../../../../../../Types/ProductType";
+import { STEP } from "../../../../../Constants/Constants";
+import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
+import { setBudgetStatus, setCarKilometers, setJobSalary, setPriceStatus } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { RangeInputFieldsType } from "../../../../../Types/ProductType";
 import { FC, useEffect, useState } from "react";
 
 const RangeInputFields: FC<RangeInputFieldsType> = ({ type }) => {

@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { Col, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
 import FilterSidebar from ".";
-import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
-import { setMapModal } from "../../../../../ReduxToolkit/Reducers/LayoutReducers";
-import { PropsType } from "../../../../../Types/HomeDemoType";
-import CloseBtn from "../../../../CommonComponents/CloseBtn";
+import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
+import { setMapModal } from "../../../../ReduxToolkit/Reducers/LayoutReducers";
+import { PropsType } from "../../../../Types/HomeDemoType";
+import CloseBtn from "../../../CommonComponents/CloseBtn";
 
 const FilterMapModal: FC<PropsType> = ({ type }) => {
   const { mapModal } = useAppSelector((state) => state.layout);

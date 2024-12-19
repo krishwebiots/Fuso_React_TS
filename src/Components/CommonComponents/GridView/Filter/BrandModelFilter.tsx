@@ -1,10 +1,10 @@
 import { SearchNormal1 } from "iconsax-react";
 import { FC, useState } from "react";
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem, Button, Label } from "reactstrap";
-import { BrandAndModel, Href, Others, Popular } from "../../../../../Constants/Constants";
-import { Brands } from "../../../../../Data/Car";
-import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
-import { setCarBrandModel } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { BrandAndModel, Href, Others, Popular } from "../../../../Constants/Constants";
+import { Brands } from "../../../../Data/Car";
+import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
+import { setCarBrandModel } from "../../../../ReduxToolkit/Reducers/FilterReducers";
 
 const BrandModelFilter: FC<{ id: string }> = ({ id }) => {
   const [showMore, setShowMore] = useState(false);

@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Button, Col } from "reactstrap";
-import { DownloadNow, JobsYouMightBeInterested, UsersAreOnTheFusoApp } from "../../../../../Constants/Constants";
-import { RouteList } from "../../../../../Routers/RouteList";
-import { RightSidebarType } from "../../../../../Types/ProductType";
-import { dynamicSvg, Image } from "../../../../../Utils";
+import { DownloadNow, JobsYouMightBeInterested, UsersAreOnTheFusoApp } from "../../../../Constants/Constants";
+import { RouteList } from "../../../../Routers/RouteList";
+import { RightSidebarType } from "../../../../Types/ProductType";
+import { dynamicSvg, Image } from "../../../../Utils";
 import ShareFriends from "./ShareFriends";
 
 const RightSidebar: FC<RightSidebarType> = ({ value }) => {

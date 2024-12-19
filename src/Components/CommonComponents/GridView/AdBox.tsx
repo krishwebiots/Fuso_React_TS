@@ -1,8 +1,8 @@
 import { FC, Fragment } from "react";
 import { Link } from "react-router-dom";
-import { ExperienceDoYouHave, FilterJobsBySalary, FindTheseJobs, Href } from "../../../../Constants/Constants";
-import { AdIconListData, AdListData, AdPriceListData } from "../../../../Data/Job";
-import { RouteList } from "../../../../Routers/RouteList";
+import { ExperienceDoYouHave, FilterJobsBySalary, FindTheseJobs, Href } from "../../../Constants/Constants";
+import { AdIconListData, AdListData, AdPriceListData } from "../../../Data/Job";
+import { RouteList } from "../../../Routers/RouteList";
 
 const AdBox: FC<{ id: number }> = ({ id }) => {
   return (

@@ -1,5 +1,5 @@
-import { Filter } from "../../../../../Constants/Constants";
-import { DropdownOptions } from "../../../../../Data/Car";
+import { Filter } from "../../../../Constants/Constants";
+import { DropdownOptions } from "../../../../Data/Car";
 
 const TopFilter = () => {
   return (

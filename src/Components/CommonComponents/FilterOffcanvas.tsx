@@ -4,7 +4,7 @@ import { Filters } from "../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../ReduxToolkit/Hooks";
 import { setOpenFilterSidebar } from "../../ReduxToolkit/Reducers/LayoutReducers";
 import { FilterOffcanvasType } from "../../Types/CommonComponentsType";
-import FilterSidebar from "../Property/Common/GridView/Filter";
+import FilterSidebar from "./GridView/Filter";
 
 const FilterOffcanvas: FC<FilterOffcanvasType> = ({ type, offcanvasSide, modalType }) => {
   const { productItem } = useAppSelector((state) => state.product);

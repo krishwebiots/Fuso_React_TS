@@ -4,8 +4,8 @@ import { Reset, Search } from "../../../Constants/Constants";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { setAmenities, setBedsRooms, setBudgetStatus, setCarBrandModel, setCarCategories, setCarColor, setCarFuelType, setCarKilometers, setCarModalYear, setCarOwner, setCarSeats, setCarTransmission, setPopular, setPriceStatus, setPropertyType, setSortBy, setSquareFeetStatus, setyearBuiltStatus } from "../../../ReduxToolkit/Reducers/FilterReducers";
 import { setSearchModal } from "../../../ReduxToolkit/Reducers/LayoutReducers";
-import FilterSidebar from "../../Property/Common/GridView/Filter";
 import CloseBtn from "../CloseBtn";
+import FilterSidebar from "../GridView/Filter";
 
 const SearchModal: FC<{ type: string }> = ({ type }) => {
   const { searchModal } = useAppSelector((state) => state.layout);

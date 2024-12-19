@@ -1,11 +1,11 @@
 import { FC, Fragment, useEffect, useState } from "react";
 import { UncontrolledAccordion } from "reactstrap";
-import { CarColorData, CategoriesData, FuelTypeData, ModalYearData, OwnerData, SeatsData, TransmissionData } from "../../../../../Data/Car";
-import { JobAllCategoriesData, JobByData, JobCompanyTypeData, JobEducationData, JobLocationData, JobTopCompaniesData, JobTypeData, JobWorkModeData } from "../../../../../Data/Job";
-import { AmenitiesFilterData, BhkOptions, PropertyTypeData } from "../../../../../Data/Property";
-import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
-import { setMinAndMaxKilometers, setMinAndMaxPrice, setMinAndMaxSalary } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
-import { FilterSidebarType } from "../../../../../Types/ProductType";
+import { CarColorData, CategoriesData, FuelTypeData, ModalYearData, OwnerData, SeatsData, TransmissionData } from "../../../../Data/Car";
+import { JobAllCategoriesData, JobByData, JobCompanyTypeData, JobEducationData, JobLocationData, JobTopCompaniesData, JobTypeData, JobWorkModeData } from "../../../../Data/Job";
+import { AmenitiesFilterData, BhkOptions, PropertyTypeData } from "../../../../Data/Property";
+import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
+import { setMinAndMaxKilometers, setMinAndMaxPrice, setMinAndMaxSalary } from "../../../../ReduxToolkit/Reducers/FilterReducers";
+import { FilterSidebarType } from "../../../../Types/ProductType";
 import BrandModelFilter from "./BrandModelFilter";
 import CommonFilter from "./Common/CommonFilter";
 

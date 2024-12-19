@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ForThisJob, ShareWithAFriend } from "../../../../../Constants/Constants";
+import { ForThisJob, ShareWithAFriend } from "../../../../Constants/Constants";
 
 const ShareFriends = () => {
   return (

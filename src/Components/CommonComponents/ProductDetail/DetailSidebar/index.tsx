@@ -14,7 +14,7 @@ import OtherOpportunities from "./OtherOpportunities";
 import ApplyForJob from "./ApplyForJob";
 import KeyJobDetails from "./KeyJobDetails";
 import SimilarJobs from "./SimilarJobs";
-import ShareFriends from "../../../Property/Common/GridView/RightSidebar/ShareFriends";
+import ShareFriends from "../../GridView/RightSidebar/ShareFriends";
 
 const DetailSidebar: FC<CarDetailType> = ({ type, sliderStyle }) => {
   const dispatch = useAppDispatch();

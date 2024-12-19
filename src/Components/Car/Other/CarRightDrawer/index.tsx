@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { RouteList } from "../../../../Routers/RouteList";
 import Breadcrumbs from "../../../CommonComponents/Breadcrumbs";
-import GridView from "../../../Property/Common/GridView";
+import GridView from "../../../CommonComponents/GridView";
 
 const CarRightDrawerContainer = () => {
   return (

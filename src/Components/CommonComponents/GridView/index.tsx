@@ -1,10 +1,10 @@
 import { FC, Fragment, useEffect } from "react";
 import { Col, Row } from "reactstrap";
-import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
-import { fetchProductApiData } from "../../../../ReduxToolkit/Reducers/ProductReducers";
-import { setCardToShow } from "../../../../ReduxToolkit/Reducers/LayoutReducers";
-import { GridViewType } from "../../../../Types/ProductType";
-import FilterOffcanvas from "../../../CommonComponents/FilterOffcanvas";
+import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
+import { fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
+import { setCardToShow } from "../../../ReduxToolkit/Reducers/LayoutReducers";
+import { GridViewType } from "../../../Types/ProductType";
+import FilterOffcanvas from "../../CommonComponents/FilterOffcanvas";
 import FilterSidebar from "./Filter";
 import FilterTags from "./Filter/FilterTags";
 import GridLayout from "./GridLayout";

@@ -12,8 +12,8 @@ import { RouteList } from "../../../Routers/RouteList";
 import { SearchTabListType } from "../../../Types/HomeDemoType";
 import { dynamicGrf, Image } from "../../../Utils";
 import UseOutsideDropdown from "../../../Utils/UseOutsideDropdown";
-import RangeInputFields from "../../Property/Common/GridView/Filter/Common/RangeInputFields";
 import UsePathName from "../../../Utils/UsePathName";
+import RangeInputFields from "../../CommonComponents/GridView/Filter/Common/RangeInputFields";
 
 const SearchTabList: FC<SearchTabListType> = ({ showTab, datePicker, scrollDown, form, pills, endPoint, tabs, showNav, button, icon }) => {
   const [startDate, setStartDate] = useState<Date | null>(new Date());

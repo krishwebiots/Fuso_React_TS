@@ -1,11 +1,11 @@
 import { ChangeEvent, FC } from "react";
 import { AccordionBody, AccordionHeader, AccordionItem, Input, Label } from "reactstrap";
-import { ExploreOnMap, Href } from "../../../../../../Constants/Constants";
-import { useAppDispatch, useAppSelector } from "../../../../../../ReduxToolkit/Hooks";
-import { setAmenities, setBedsRooms, setCarCategories, setCarColor, setCarFuelType, setCarModalYear, setCarOwner, setCarSeats, setCarTransmission, setJobBy, setJobCategories, setJobCompanyType, setJobEducation, setJobTopCompanies, setJobType, setJobWorkMode, setJonLocation, setPropertyType, setSquareFeetStatus, setyearBuiltStatus } from "../../../../../../ReduxToolkit/Reducers/FilterReducers";
-import { setMapModal } from "../../../../../../ReduxToolkit/Reducers/LayoutReducers";
-import { CommonFilterType } from "../../../../../../Types/ProductType";
-import { dynamicImage, Image } from "../../../../../../Utils";
+import { ExploreOnMap, Href } from "../../../../../Constants/Constants";
+import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
+import { setAmenities, setBedsRooms, setCarCategories, setCarColor, setCarFuelType, setCarModalYear, setCarOwner, setCarSeats, setCarTransmission, setJobBy, setJobCategories, setJobCompanyType, setJobEducation, setJobTopCompanies, setJobType, setJobWorkMode, setJonLocation, setPropertyType, setSquareFeetStatus, setyearBuiltStatus } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { setMapModal } from "../../../../../ReduxToolkit/Reducers/LayoutReducers";
+import { CommonFilterType } from "../../../../../Types/ProductType";
+import { dynamicImage, Image } from "../../../../../Utils";
 import RangeInputFields from "./RangeInputFields";
 
 const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, priceRange, squareFeet, values, modalType, type, radio, subClass }) => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { useAppSelector } from "../../../../ReduxToolkit/Hooks";
-import { FilterProductsType, ProductType } from "../../../../Types/ProductType";
+import { useAppSelector } from "../../../ReduxToolkit/Hooks";
+import { FilterProductsType, ProductType } from "../../../Types/ProductType";
 
 const UseFilterProperty = ({ value }: FilterProductsType) => {
   const [showProduct, setShowProduct] = useState<ProductType[]>(value);

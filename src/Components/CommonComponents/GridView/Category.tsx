@@ -1,8 +1,8 @@
 import { Container } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Href } from "../../../../Constants/Constants";
-import { CarCategoryData, CategoryInnerSlider } from "../../../../Data/Car";
-import { dynamicSvg, Image } from "../../../../Utils";
+import { Href } from "../../../Constants/Constants";
+import { CarCategoryData, CategoryInnerSlider } from "../../../Data/Car";
+import { dynamicSvg, Image } from "../../../Utils";
 
 const Category = () => {
   return (

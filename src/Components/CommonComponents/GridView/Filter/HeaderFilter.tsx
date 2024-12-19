@@ -1,8 +1,8 @@
 import { useSearchParams } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
-import { ClearAll, Filters, Href, SymbolRegex } from "../../../../../Constants/Constants";
-import { useAppDispatch, useAppSelector } from "../../../../../ReduxToolkit/Hooks";
-import { clearAllFilters, removeFilter } from "../../../../../ReduxToolkit/Reducers/FilterReducers";
+import { ClearAll, Filters, Href, SymbolRegex } from "../../../../Constants/Constants";
+import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
+import { clearAllFilters, removeFilter } from "../../../../ReduxToolkit/Reducers/FilterReducers";
 
 const HeaderFilter = () => {
   const filterTags: Record<string, any> = useAppSelector((state) => state.filter);

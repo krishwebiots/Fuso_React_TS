@@ -274,7 +274,3 @@ export const FounderAndWriter: string = "Founder & Writer";
 export const LastUpdate: string = "Last Update:";
 export const CategorizedIn: string = "Categorized in:";
 export const UnveilingTheWondersOfKnowledge: string = "Unveiling the Wonders of Knowledge";
-// export const : string = "";
-// export const : string = "";
-// export const : string = "";
-// export const : string = "";

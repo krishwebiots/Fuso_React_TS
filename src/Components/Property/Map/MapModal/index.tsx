@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import PropertyBreadcrumb from "../../../CommonComponents/Breadcrumbs/PropertyBreadcrumb";
 import SortBy from "../../../CommonComponents/SortBy";
-import GridView from "../../Common/GridView";
-import FilterMapModal from "../../Common/GridView/Filter/FilterMapModal";
+import GridView from "../../../CommonComponents/GridView";
+import FilterMapModal from "../../../CommonComponents/GridView/Filter/FilterMapModal";
 
 const MapModalContainer = () => {
   return (
