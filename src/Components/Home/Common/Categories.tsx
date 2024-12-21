@@ -63,9 +63,9 @@ const Categories: FC<PropsType> = ({ type }) => {
                       </div>
                     </SwiperSlide>
                   ))}
-                <div className="swiper-button-next car2-category-next" />
-                <div className="swiper-button-prev car2-category-prev" />
               </Swiper>
+              <div className="swiper-button-next car2-category-next" />
+              <div className="swiper-button-prev car2-category-prev" />
             </div>
           </Container>
         </section>

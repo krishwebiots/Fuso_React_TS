@@ -85,9 +85,13 @@ export const CategoriesSettingData = {
   slidesPerView: 5,
   spaceBetween: 40,
   autoplay: { delay: 2000, disableOnInteraction: false },
-  modules: [Autoplay],
+  modules: [Autoplay, Navigation],
   loop: true,
   speed: 2000,
+  navigation: {
+    nextEl: ".car2-category-next",
+    prevEl: ".car2-category-prev",
+  },
   breakpoints: {
     0: {
       slidesPerView: 1,
