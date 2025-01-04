@@ -1,17 +1,15 @@
-//@ts-nocheck
-import { FC } from "react";
 import CountUp from "react-countup";
 import { Col, Container, Row } from "reactstrap";
+import { BuildYourFuture, FindYourJob } from "../../../Constants/Constants";
 import { JobCounterData, JobHomeSectionData, JonHomeContent } from "../../../Data/Demo/JobDemo1";
 import { JobHomeType } from "../../../Types/HomeDemoType";
 import { dynamicImage, dynamicSvg, Image } from "../../../Utils";
 import SearchTabList from "../Common/SearchTabList";
-import { BuildYourFuture, FindYourJob } from "../../../Constants/Constants";
 
 const JobHomeSection = () => {
-  const renderImage: FC<JobHomeType> = ({ imageData, key }) => {
+  const renderImage = (imageData: JobHomeType) => {
     const src = imageData.type === "svg" ? dynamicSvg(imageData.image) : dynamicImage(imageData.image);
-    return <Image key={key} src={src} alt={imageData.image} className={`img-fluid ${imageData.class || ""}`} />;
+    return <Image src={src} alt={imageData.image} className={`img-fluid ${imageData.class || ""}`} />;
   };
 
   return (
@@ -49,16 +47,16 @@ const JobHomeSection = () => {
                           if ("childrenClass" in imgData) {
                             return (
                               <div key={imgIndex} className={imgData.childrenClass}>
-                                {imgData.childrenImage.map((childImg, childIndex) => renderImage(childImg, childIndex))}
+                                {imgData.childrenImage.map((childImg, childIndex) => renderImage(childImg))}
                               </div>
                             );
                           }
-                          return renderImage(imgData, imgIndex);
+                          return renderImage(imgData);
                         })}
                       </div>
                     );
                   }
-                  return renderImage(item, index);
+                  return renderImage(item);
                 })}
               </div>
             </Col>
