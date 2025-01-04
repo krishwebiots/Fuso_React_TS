@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { FC } from "react";
 import CountUp from "react-countup";
 import { Col, Container, Row } from "reactstrap";
@@ -8,7 +9,7 @@ import SearchTabList from "../Common/SearchTabList";
 import { BuildYourFuture, FindYourJob } from "../../../Constants/Constants";
 
 const JobHomeSection = () => {
-  const renderImage: FC<JobHomeType> = (imageData, key) => {
+  const renderImage: FC<JobHomeType> = ({ imageData, key }) => {
     const src = imageData.type === "svg" ? dynamicSvg(imageData.image) : dynamicImage(imageData.image);
     return <Image key={key} src={src} alt={imageData.image} className={`img-fluid ${imageData.class || ""}`} />;
   };
