@@ -1,12 +1,12 @@
 import { FC } from "react";
-import ScrollSpy from "react-ui-scrollspy";
+// import ScrollSpy from "react-ui-scrollspy";
 import { Col } from "reactstrap";
 import { ScrollspyType } from "../../../../../Types/OtherType";
 
 const ScrollSpyContent: FC<ScrollspyType> = ({ content }) => {
   return (
     <Col xxl="10" lg="9">
-      <ScrollSpy activeClass="active" updateHistoryStack={false}>
+      {/* <ScrollSpy activeClass="active" updateHistoryStack={false}> */}
         {content?.map((item, index) => (
           <div id={item.id} key={index}>
             {item.subsections ? <h5 className="sub-title mt-lg-4 mt-3">{item.title}</h5> : <h4 className="privacy-title">{item.title}</h4>}
@@ -23,7 +23,7 @@ const ScrollSpyContent: FC<ScrollspyType> = ({ content }) => {
             )}
           </div>
         ))}
-      </ScrollSpy>
+      {/* </ScrollSpy> */}
     </Col>
   );
 };
