@@ -2,11 +2,8 @@ svg {
     display: inline-block;
     width: var(--Iconsax-Size);
     height: var(--Iconsax-Size);
-
-    [stroke] {
-        stroke: var(--Iconsax-Color);
-    }
-
+    stroke: var(--Iconsax-Color);
+    
     [fill] {
         fill: var(--Iconsax-Color);
     }

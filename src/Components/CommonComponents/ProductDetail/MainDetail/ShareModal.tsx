@@ -1,5 +1,4 @@
 import { useState } from "react";
-import CopyToClipboard from "react-copy-to-clipboard";
 import { Link } from "react-router-dom";
 import { Button, Input, Modal, ModalBody, ModalHeader } from "reactstrap";
 import { ModalShareListData } from "../../../../Data/Property";
@@ -14,6 +13,15 @@ const ShareModal = () => {
   const [inputValue, setInputValue] = useState("");
 
   const toggle = () => dispatch(setShareModal());
+
+    const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(inputValue);
+      setInputValue(inputValue);
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+    }
+  };
 
   return (
     <Modal fade centered modalClassName="theme-modal" isOpen={shareModal} toggle={toggle}>
@@ -31,9 +39,7 @@ const ShareModal = () => {
         </ul>
         <div className="d-flex align-items-center position-relative copy-input">
           <Input type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
-          <CopyToClipboard text={inputValue}>
-            <Button className="btn-solid position-absolute top-0 end-0">Copy Link</Button>
-          </CopyToClipboard>
+            <Button className="btn-solid position-absolute top-0 end-0" onClick={handleCopy}>Copy Link</Button>
         </div>
       </ModalBody>
     </Modal>
