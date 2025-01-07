@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-// import ScrollSpy from "react-ui-scrollspy";
+import ScrollSpy from "react-ui-scrollspy";
 import { Fragment } from "react/jsx-runtime";
 import { AccordionBody, AccordionHeader, AccordionItem, Container, Nav, NavItem, NavLink, TabContent, TabPane, UncontrolledAccordion } from "reactstrap";
 import { Sections } from "../../../../Data/Property";
@@ -36,11 +36,11 @@ const DetailBody: FC<PropertyDetailType> = ({ type }) => {
               </Nav>
             </Container>
           </div>
-          {/* <ScrollSpy activeClass="active" updateHistoryStack={false} scrollThrottle={100}> */}
+          <ScrollSpy activeClass="active" updateHistoryStack={false} scrollThrottle={100}>
             {Sections.map(({ labelComponent }, index) => (
               <Fragment key={index}>{labelComponent}</Fragment>
             ))}
-          {/* </ScrollSpy> */}
+          </ScrollSpy>
         </Fragment>
       ) : type === "tabs" ? (
         <Fragment>

@@ -1,6 +1,6 @@
 import { ArrowLeft2, ArrowRight2, Play } from "iconsax-react";
 import { FC, useEffect } from "react";
-// import ScrollSpy from "react-ui-scrollspy";
+import ScrollSpy from "react-ui-scrollspy";
 import { Button, Col, Container, Nav, NavItem, NavLink, Row } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Href, VideoTitle } from "../../../Constants/Constants";
@@ -72,9 +72,9 @@ const CarDetail: FC<CarDetailType> = ({ detailImages, type, scrollspy, classicSl
             )}
             <div className="car-detail-right">
               {scrollspy ? (
-                // <ScrollSpy activeClass="active" updateHistoryStack={false} scrollThrottle={100}>
+                <ScrollSpy activeClass="active" updateHistoryStack={false} scrollThrottle={100}>
                   <DetailBody type={type} />
-                // </ScrollSpy>
+                </ScrollSpy>
               ) : (
                 <DetailBody type={type} />
               )}

@@ -1,8 +1,8 @@
 ------------------------
     Version List
 ------------------------
-    Node   :- v20.17.0
-    React  :- ^18.3.1
+    Node   :- v20.18.1
+    React  :- ^19.0.0
 ------------------------
 
 # Getting Started with Create React App

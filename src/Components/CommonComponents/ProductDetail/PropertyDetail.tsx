@@ -1,5 +1,5 @@
 import { FC, Fragment, useEffect, useState } from "react";
-// import ScrollSpy from "react-ui-scrollspy";
+import ScrollSpy from "react-ui-scrollspy";
 import { Col, Container, Nav, NavItem, NavLink, Row } from "reactstrap";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -82,9 +82,9 @@ const PropertyDetail: FC<PropertyDetailType> = ({ type, mainClass, thumb }) => {
               </div>
             </Col>
             <Col xl="6">
-              {/* <ScrollSpy activeClass="active" updateHistoryStack={false} scrollThrottle={100}> */}
+              <ScrollSpy activeClass="active" updateHistoryStack={false} scrollThrottle={100}>
                 <DetailBody type={type} />
-              {/* </ScrollSpy> */}
+              </ScrollSpy>
             </Col>
             <RelatedProduct type="property" />
           </Row>

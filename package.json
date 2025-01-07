@@ -38,6 +38,7 @@
     "react-scripts": "5.0.1",
     "react-simple-star-rating": "^5.1.7",
     "react-toastify": "^11.0.2",
+    "react-ui-scrollspy": "^2.3.0",
     "react-uploader": "^3.43.0",
     "reactstrap": "^9.2.3",
     "remixicon": "^4.6.0",
@@ -70,5 +71,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "resolutions": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   }
 }
