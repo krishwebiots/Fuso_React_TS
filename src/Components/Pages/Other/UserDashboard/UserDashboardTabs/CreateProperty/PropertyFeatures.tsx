@@ -1,11 +1,10 @@
-import React from "react";
 import { Col, Row } from "reactstrap";
 import { PropertyFeaturesTitle } from "../../../../../../Constants/Constants";
 import RenderInput from "../../../../../CommonComponents/RenderInput";
 import FeatureItem from "../Common/FeatureItem";
 import RadioGroup from "../Common/RadioGroup";
 
-const PropertyFeatures: React.FC = () => {
+const PropertyFeatures = () => {
   return (
     <div className="user-form-box">
       <h4 className="dashboard-title">{PropertyFeaturesTitle}</h4>

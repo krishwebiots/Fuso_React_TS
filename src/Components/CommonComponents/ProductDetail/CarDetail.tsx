@@ -1,6 +1,5 @@
 import { ArrowLeft2, ArrowRight2, Play } from "iconsax-react";
-import { FC, useEffect } from "react";
-import ScrollSpy from "react-ui-scrollspy";
+import { FC, useEffect, useState } from "react";
 import { Button, Col, Container, Nav, NavItem, NavLink, Row } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Href, VideoTitle } from "../../../Constants/Constants";
@@ -18,12 +17,41 @@ import DetailSidebar from "./DetailSidebar";
 import RelatedProduct from "./RelatedProduct";
 
 const CarDetail: FC<CarDetailType> = ({ detailImages, type, scrollspy, classicSlider }) => {
+  const [activeTab, setActiveTab] = useState(CraNavDetailsData[0].id);
   const dispatch = useAppDispatch();
   const fix = UseStickyBar(300);
+
+  const toggle = (id: string) => {
+    setActiveTab(id);
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   useEffect(() => {
     dispatch(fetchProductApiData());
   }, [dispatch]);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 20;
+
+      CraNavDetailsData.forEach(({ id }) => {
+        const section = document.getElementById(id);
+        if (section) {
+          const { offsetTop, offsetHeight } = section;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveTab(id);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div className="section-b-space car-detail-section">
       <Container>
@@ -38,8 +66,8 @@ const CarDetail: FC<CarDetailType> = ({ detailImages, type, scrollspy, classicSl
               <div className={`sticky-nav ${fix ? "sticky" : ""}`}>
                 <Nav pills>
                   {CraNavDetailsData.map(({ id, label }) => (
-                    <NavItem key={id}>
-                      <NavLink data-to-scrollspy-id={id} href={`#${id}`}>
+                    <NavItem key={id} onClick={() => toggle(id)}>
+                      <NavLink className={`${activeTab === id ? "active" : ""}`} href={`#${id}`}>
                         {label}
                       </NavLink>
                     </NavItem>
@@ -70,15 +98,7 @@ const CarDetail: FC<CarDetailType> = ({ detailImages, type, scrollspy, classicSl
                 </Button>
               </div>
             )}
-            <div className="car-detail-right">
-              {scrollspy ? (
-                <ScrollSpy activeClass="active" updateHistoryStack={false} scrollThrottle={100}>
-                  <DetailBody type={type} />
-                </ScrollSpy>
-              ) : (
-                <DetailBody type={type} />
-              )}
-            </div>
+            <div className="car-detail-right">{scrollspy ? <DetailBody type={type} /> : <DetailBody type={type} />}</div>
           </Col>
           <DetailSidebar type={type} />
         </Row>

@@ -1,5 +1,5 @@
-import { FC, useState } from "react";
-import ScrollSpy from "react-ui-scrollspy";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { FC, useEffect, useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 import { AccordionBody, AccordionHeader, AccordionItem, Container, Nav, NavItem, NavLink, TabContent, TabPane, UncontrolledAccordion } from "reactstrap";
 import { Sections } from "../../../../Data/Property";
@@ -11,13 +11,35 @@ import Feature from "./DetailBodyItem/Feature";
 import Overview from "./DetailBodyItem/Overview";
 import Reviews from "./DetailBodyItem/Reviews";
 import ScheduleTour from "./DetailBodyItem/ScheduleTour";
+import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
+import { setScrollActive } from "../../../../ReduxToolkit/Reducers/LayoutReducers";
 
 const DetailBody: FC<PropertyDetailType> = ({ type }) => {
-  const [activeTab, setActiveTab] = useState("overview");
+  const { scrollActive } = useAppSelector((state) => state.layout);
+  const dispatch = useAppDispatch();
   const [openItems, setOpenItems] = useState<string[]>(["overview", "amenities"]);
   const fix = UseStickyBar(300);
 
   const toggleAccordion = (id: string) => setOpenItems((items) => (items.includes(id) ? items.filter((item) => item !== id) : [...items, id]));
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      Sections.forEach(({ id }) => {
+        const section = document.getElementById(id);
+        if (section) {
+          const { offsetTop, offsetHeight } = section;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            dispatch(setScrollActive(id));
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <Fragment>
@@ -27,8 +49,8 @@ const DetailBody: FC<PropertyDetailType> = ({ type }) => {
             <Container>
               <Nav tabs>
                 {Sections.slice(0, 6).map(({ id, label }) => (
-                  <NavItem key={id}>
-                    <NavLink data-to-scrollspy-id={id} href={`#${id}`}>
+                  <NavItem key={id} onClick={() => dispatch(setScrollActive(id))}>
+                    <NavLink className={`${scrollActive === id ? "active" : ""}`} href={`#${id}`}>
                       {label}
                     </NavLink>
                   </NavItem>
@@ -36,26 +58,24 @@ const DetailBody: FC<PropertyDetailType> = ({ type }) => {
               </Nav>
             </Container>
           </div>
-          <ScrollSpy activeClass="active" updateHistoryStack={false} scrollThrottle={100}>
-            {Sections.map(({ labelComponent }, index) => (
-              <Fragment key={index}>{labelComponent}</Fragment>
-            ))}
-          </ScrollSpy>
+          {Sections.map(({ labelComponent }, index) => (
+            <Fragment key={index}>{labelComponent}</Fragment>
+          ))}
         </Fragment>
       ) : type === "tabs" ? (
         <Fragment>
           <Nav tabs>
             {Sections.slice(0, 6).map(({ id, label }) => (
-              <NavItem key={id} onClick={() => setActiveTab(id)}>
-                <NavLink tag="button" className={id === activeTab ? "active" : ""} href={`#${id}`}>
+              <NavItem key={id} onClick={() => dispatch(setScrollActive(id))}>
+                <NavLink tag="button" className={id === scrollActive ? "active" : ""} href={`#${id}`}>
                   {label}
                 </NavLink>
               </NavItem>
             ))}
           </Nav>
-          <TabContent activeTab={activeTab}>
+          <TabContent activeTab={scrollActive}>
             {Sections.slice(0, 6).map(({ id, component }) => (
-              <TabPane key={id} tabId={id} className={`fade ${id === activeTab ? "show" : ""}`}>
+              <TabPane key={id} tabId={id} className={`fade ${id === scrollActive ? "show" : ""}`}>
                 {component}
               </TabPane>
             ))}

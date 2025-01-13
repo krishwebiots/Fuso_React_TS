@@ -3,7 +3,7 @@ import { PropertyDetailsTitle, PropertyType } from "../../../../../../Constants/
 import RenderInput from "../../../../../CommonComponents/RenderInput";
 import RenderDropdown from "../Common/RenderDropdown";
 
-const PropertyDetails: React.FC = () => {
+const PropertyDetails = () => {
   return (
     <div className="user-form-box">
       <h4 className="dashboard-title">{PropertyDetailsTitle}</h4>

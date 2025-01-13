@@ -1,10 +1,9 @@
 import { FC, Fragment, useEffect, useState } from "react";
-import ScrollSpy from "react-ui-scrollspy";
 import { Col, Container, Nav, NavItem, NavLink, Row } from "reactstrap";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Sections, StickySliderFor, StickySliderNav } from "../../../Data/Property";
-import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
+import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { fetchProductApiData } from "../../../ReduxToolkit/Reducers/ProductReducers";
 import { PropertyDetailType } from "../../../Types/ProductType";
 import { dynamicImage, dynamicNumber } from "../../../Utils";
@@ -18,6 +17,8 @@ import RelatedProduct from "./RelatedProduct";
 
 const PropertyDetail: FC<PropertyDetailType> = ({ type, mainClass, thumb }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+  const { scrollActive } = useAppSelector((state) => state.layout);
+
   const dispatch = useAppDispatch();
 
   const fix = UseStickyBar(300);
@@ -49,7 +50,7 @@ const PropertyDetail: FC<PropertyDetailType> = ({ type, mainClass, thumb }) => {
             <Nav tabs>
               {Sections.map(({ id, label }) => (
                 <NavItem key={id}>
-                  <NavLink data-to-scrollspy-id={id} href={`#${id}`}>
+                  <NavLink className={`${scrollActive === id ? "active" : ""}`} href={`#${id}`}>
                     {label}
                   </NavLink>
                 </NavItem>
@@ -82,9 +83,7 @@ const PropertyDetail: FC<PropertyDetailType> = ({ type, mainClass, thumb }) => {
               </div>
             </Col>
             <Col xl="6">
-              <ScrollSpy activeClass="active" updateHistoryStack={false} scrollThrottle={100}>
-                <DetailBody type={type} />
-              </ScrollSpy>
+              <DetailBody type={type} />
             </Col>
             <RelatedProduct type="property" />
           </Row>

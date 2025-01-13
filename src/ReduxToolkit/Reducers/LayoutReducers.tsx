@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Sections } from "../../Data/Property";
 
 const initialState = {
   sidebarOpen: false,
@@ -19,6 +20,7 @@ const initialState = {
   logoutModal: false,
   dashboardSidebar: false,
   loginModal: true,
+  scrollActive: Sections[0].id,
 };
 
 const LayoutSlice = createSlice({
@@ -79,8 +81,11 @@ const LayoutSlice = createSlice({
     setLoginModal: (state) => {
       state.loginModal = !state.loginModal;
     },
+    setScrollActive: (state, action) => {
+      state.scrollActive = action.payload;
+    },
   },
 });
 
-export const { setLoginModal, setDashboardSidebar, setLogoutModal, setAddressModal, setPersonalModal, setMoreDetailsModal, setSidebarOpen, setOpenFilterSidebar, setCardToShow, setTotalProduct, setSearchModal, setMapModal, setShareModal, setVideoModal, setReviewModal, setOfferModal, setDriverModal, setActiveTab } = LayoutSlice.actions;
+export const { setScrollActive, setLoginModal, setDashboardSidebar, setLogoutModal, setAddressModal, setPersonalModal, setMoreDetailsModal, setSidebarOpen, setOpenFilterSidebar, setCardToShow, setTotalProduct, setSearchModal, setMapModal, setShareModal, setVideoModal, setReviewModal, setOfferModal, setDriverModal, setActiveTab } = LayoutSlice.actions;
 export default LayoutSlice.reducer;

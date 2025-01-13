@@ -21,6 +21,10 @@
 //photoswipe
 @import 'photoswipe/dist/photoswipe.css';
 
-@import "iconsax.scss";
+//iconsax-icon
+@import "./plugins/iconsax.scss";
+
+//dropzone
+@import"./plugins/dropzone.scss";
 
 @import "style.scss";
