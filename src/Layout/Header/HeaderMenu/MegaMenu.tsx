@@ -5,7 +5,7 @@ import { Col, Row } from "reactstrap";
 import { RouteList } from "../../../Routers/RouteList";
 import { ChildMenuType } from "../../../Types/LayoutType";
 
-const MegaMenu: FC<ChildMenuType> = ({ mainMenu }) => {
+const MegaMenu: FC<ChildMenuType> = ({ mainMenu, toggleMenu }) => {
   const { t } = useTranslation();
   return (
     <div className="mega-menu sample">
@@ -20,7 +20,7 @@ const MegaMenu: FC<ChildMenuType> = ({ mainMenu }) => {
                     {item.children &&
                       item.children.map((subChild, subIndex) => (
                         <li key={subIndex}>
-                          <Link className="menu-link" to={subChild.path ? subChild.path : RouteList.Home.CarDemo1}>
+                          <Link className="menu-link" to={subChild.path ? subChild.path : RouteList.Home.CarDemo1} onClick={toggleMenu}>
                             {t(subChild.title ? subChild.title : "")}
                           </Link>
                         </li>

@@ -26,10 +26,8 @@ const FilterTags: FC<TopPanelType> = ({ topFilterSidebar, side, mainClass, type,
       <DropdownToggle className="select-button">{sortBy || "Sort By"}</DropdownToggle>
       <DropdownMenu className="select-menu" end>
         {FilterTabsListData.slice(startPoint, endPoint).map((item, index) => (
-          <DropdownItem onClick={() => handleSortBy(item)} key={index}>
-            <a href={Href} className="select-item">
-              {item}
-            </a>
+          <DropdownItem tag="a" onClick={() => handleSortBy(item)} key={index} className="select-item" active={sortBy === item}>
+            {item}
           </DropdownItem>
         ))}
       </DropdownMenu>

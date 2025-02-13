@@ -164,6 +164,7 @@ export interface FilterDataType {
   id: string;
   label: string;
   type: string;
+  count?: number;
 }
 
 export interface CommonFilterType {

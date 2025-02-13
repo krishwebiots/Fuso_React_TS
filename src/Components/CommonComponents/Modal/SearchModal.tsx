@@ -23,7 +23,7 @@ const SearchModal: FC<{ type: string }> = ({ type }) => {
 
   return (
     <Fragment>
-      <div className="mobile-space" />
+      <div className="mobile-space car-detail-space" />
       <Modal scrollable fade modalClassName="theme-modal search-modal" isOpen={searchModal} toggle={toggle}>
         <ModalHeader toggle={toggle} close={<CloseBtn toggle={toggle} />} />
         <ModalBody>

@@ -41,6 +41,7 @@ const BrandModelFilter: FC<{ id: string }> = ({ id }) => {
           <input type="checkbox" className="main-check" id={brand.name} value={brand.value} checked={carBrandModel?.includes(brand.value)} onChange={handleCheckboxChange} />
           <Label className="label-flex" htmlFor={brand.name}>
             <span>{brand.name}</span>
+            {brand.count && <span>({brand.count})</span>}
           </Label>
           <Button className={`accordion-button ${openItems !== brand.id.toString() ? "collapsed" : ""}`} id={`toggler${brand.id}`} onClick={() => toggle(brand.id.toString())} />
         </div>
@@ -53,6 +54,7 @@ const BrandModelFilter: FC<{ id: string }> = ({ id }) => {
                     <input type="checkbox" id={model.name} value={model.value} checked={carBrandModel?.includes(model.value)} onChange={handleCheckboxChange} />
                     <Label className="label-flex" htmlFor={model.name}>
                       <span>{model.name}</span>
+                      {model.count && <span>({model.count})</span>}
                     </Label>
                   </li>
                 ))}

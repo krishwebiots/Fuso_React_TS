@@ -35,7 +35,7 @@ const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view,
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
   };
 
-  const InfiniteScrollClass = { dataLength: showProduct.length, next: fetchMoreData, hasMore: currentPage < totalPages, className: "row", loader: <h4>Loading...</h4> };
+  const InfiniteScrollClass = { dataLength: showProduct.length, next: fetchMoreData, hasMore: currentPage < totalPages, className: "row gy-4", loader: <h4>Loading...</h4> };
 
   const JobBox = (data: ProductType) => (jobBoxStyle === "progress" ? <JobProductBox5 data={data} /> : jobBoxStyle === "type-2" ? <JobProductBox6 data={data} /> : jobBoxStyle === "type-3" ? <JobProductBox2 data={data} /> : jobBoxStyle === "listing" || jobBoxStyle === "job-ad" ? <JobProductBox7 data={data} /> : side === "both" ? <JobProductBox8 data={data} /> : <JobProductBox1 data={data} />);
 

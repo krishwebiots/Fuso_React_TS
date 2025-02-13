@@ -21,17 +21,17 @@ const BlogBox: FC<BlogGridViewType> = ({ gridSize, type }) => {
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
   };
 
-  const BreakpointColumnsObj = { default: 3, 1199: 3, 700: 2, 500: 1 };
+  const BreakpointColumnsObj = { default: 3, 1199: 2, 470: 1 };
   const totalPages = Math.ceil(BlogData?.length / cardToShow);
   const showBlog = type === "infinite" ? BlogData?.slice(0, cardToShow * currentPage) : BlogData?.slice(cardToShow * currentPage - cardToShow, cardToShow * currentPage);
   const ColBoxClass = gridSize === 1 ? "col-12" : gridSize === 2 ? "col-6" : gridSize === 3 ? "col-6 col-xl-4" : gridSize === 4 ? "col-6 col-xl-3" : type === "title_box" ? "col-md-6 col-12" : "";
-  const InfiniteScrollClass = { dataLength: showBlog.length, next: fetchMoreData, hasMore: currentPage < totalPages, className: "row", loader: <h4>Loading...</h4> };
+  const InfiniteScrollClass = { dataLength: showBlog.length, next: fetchMoreData, hasMore: currentPage < totalPages, className: "row g-sm-4 g-3", loader: <h4>Loading...</h4> };
 
   return (
     <div className={type !== "masonry" ? "g-sm-4 g-3 ratio3_2 row" : ""}>
       {type === "masonry" ? (
         <Gallery>
-          <Masonry breakpointCols={BreakpointColumnsObj} className="row grid g-3 g-xl-4" columnClassName={`grid-item ${ColBoxClass} w-sm-100`}>
+          <Masonry breakpointCols={BreakpointColumnsObj} className="row grid g-3 g-xl-4" columnClassName={`grid-item ${ColBoxClass} w-sm-100 masonry-grid`}>
             {showBlog.map((data, index) => (
               <BlogGridBox data={data} type={type} index={index} key={index} />
             ))}

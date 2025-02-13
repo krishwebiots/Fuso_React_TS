@@ -1,10 +1,13 @@
-import { FC, useState } from "react";
+import { Fragment, useState } from "react";
 import { Button } from "reactstrap";
 import ConfigDB from "../Config/ThemeCustomizerConfig";
+import UsePathName from "../Utils/UsePathName";
+import { ModeButtonHidden } from "../Data/Pages/Other";
 
-const Customizer: FC<{ part: string[] }> = ({ part }) => {
+const Customizer = () => {
   const [isLayoutMode, setLayoutMode] = useState(false);
   const [isLayoutType, setLayoutType] = useState(false);
+  const Path = UsePathName();
 
   const toggleLayoutMode = () => {
     const mode = isLayoutMode ? "light" : "dark";
@@ -21,19 +24,25 @@ const Customizer: FC<{ part: string[] }> = ({ part }) => {
     setLayoutType(!isLayoutType);
   };
 
+  const shouldRender = !ModeButtonHidden.includes(Path[2]) && !ModeButtonHidden.includes(Path[0]) && !ModeButtonHidden.includes(Path[3]);
+
   return (
-    <div className={`theme-btn-flex ${part[1] === "job" ? "job-color-change" : part[1] === "car-2" ? "car2-color-change" : ""}`}>
-      {part[1] !== "job-2" && part[2] !== "login-2" && part[2] !== "login-3" && part[2] !== "signup-2" && part[2] !== "signup-3" && (
-        <Button className="mode-button mode-change-button" onClick={toggleLayoutMode}>
-          <i className={`ri-${isLayoutMode ? "sun" : "moon"}-line`} />
-          <span>{isLayoutMode ? "Light" : "Dark"}</span>
-        </Button>
+    <Fragment>
+      {Path[2] !== "portfolio-vertical-slider" && (
+        <div className={`theme-btn-flex ${Path[0] === "job" ? "job-color-change" : Path[0] === "car-2" ? "car2-color-change" : ""}`}>
+          {shouldRender && (
+            <Button className="mode-button mode-change-button" onClick={toggleLayoutMode}>
+              <i className={`ri-${isLayoutMode ? "sun" : "moon"}-line`} />
+              <span>{isLayoutMode ? "Light" : "Dark"}</span>
+            </Button>
+          )}
+          <Button className="mode-button rtlBtnEl" onClick={toggleLayoutType}>
+            <i className="ri-repeat-line" />
+            <span>{isLayoutType ? "LTR" : "RTL"}</span>
+          </Button>
+        </div>
       )}
-      <Button className="mode-button rtlBtnEl" onClick={toggleLayoutType}>
-        <i className="ri-repeat-line" />
-        <span>{isLayoutType ? "LTR" : "RTL"}</span>
-      </Button>
-    </div>
+    </Fragment>
   );
 };
 

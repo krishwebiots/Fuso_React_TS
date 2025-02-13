@@ -45,6 +45,8 @@
 
                 @media (max-width:470px) {
                     width: 100%;
+                    padding: 0;
+                    padding-top: 10px;
                 }
 
                 .blog-title {
@@ -197,8 +199,25 @@
                 }
             }
         }
+        div{
+            &:has(.pagination){
+                margin-top: 0;
+                order: 1;
+            }
+        }
     }
-
+    .grid{
+        .masonry-grid{
+            .blog-grid-box {
+                +.blog-grid-box {
+                    margin-top: 24px;
+                    @media (max-width:575px) {
+                        margin-top: 16px;
+                    }
+                }
+            }
+        }
+    }
     .blog-sidebar {
         position: sticky;
         top: 10px;

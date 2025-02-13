@@ -8,6 +8,7 @@ import CommonHeader from "../../../Home/Common/CommonHeader";
 import ContactBox from "../Common/ContactBox";
 import ContactForm from "../Common/ContactForm";
 import Follow from "../Common/Follow";
+import { dynamicGrf, Image } from "../../../../Utils";
 
 const ContactUs2Container = () => {
   return (
@@ -20,7 +21,9 @@ const ContactUs2Container = () => {
             {ContactCards.map((card, index) => (
               <Col sm="6" className={index > 1 ? "col-lg-4" : ""} key={index}>
                 <div className="contact-card">
-                  <div className="icon-contact text-end">{card.icon}</div>
+                  <div className="icon-contact text-end">
+                    <Image src={dynamicGrf(card.icon)} className="img-fluid lord-icon" />
+                  </div>
                   <div className="info-contact">
                     <h3>{card.title}</h3>
                     <p>{card.description}</p>

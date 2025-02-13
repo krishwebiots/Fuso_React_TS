@@ -20,6 +20,7 @@ const initialState = {
   logoutModal: false,
   dashboardSidebar: false,
   loginModal: true,
+  signUpModal: false,
   scrollActive: Sections[0].id,
 };
 
@@ -27,8 +28,8 @@ const LayoutSlice = createSlice({
   name: "layout",
   initialState,
   reducers: {
-    setSidebarOpen: (state) => {
-      state.sidebarOpen = !state.sidebarOpen;
+    setSidebarOpen: (state, action) => {
+      state.sidebarOpen = action.payload;
     },
     setOpenFilterSidebar: (state) => {
       state.openFilterSidebar = !state.openFilterSidebar;
@@ -81,11 +82,14 @@ const LayoutSlice = createSlice({
     setLoginModal: (state) => {
       state.loginModal = !state.loginModal;
     },
+    setSignUpModal: (state) => {
+      state.signUpModal = !state.signUpModal;
+    },
     setScrollActive: (state, action) => {
       state.scrollActive = action.payload;
     },
   },
 });
 
-export const { setScrollActive, setLoginModal, setDashboardSidebar, setLogoutModal, setAddressModal, setPersonalModal, setMoreDetailsModal, setSidebarOpen, setOpenFilterSidebar, setCardToShow, setTotalProduct, setSearchModal, setMapModal, setShareModal, setVideoModal, setReviewModal, setOfferModal, setDriverModal, setActiveTab } = LayoutSlice.actions;
+export const { setScrollActive, setLoginModal, setSignUpModal, setDashboardSidebar, setLogoutModal, setAddressModal, setPersonalModal, setMoreDetailsModal, setSidebarOpen, setOpenFilterSidebar, setCardToShow, setTotalProduct, setSearchModal, setMapModal, setShareModal, setVideoModal, setReviewModal, setOfferModal, setDriverModal, setActiveTab } = LayoutSlice.actions;
 export default LayoutSlice.reducer;

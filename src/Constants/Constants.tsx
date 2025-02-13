@@ -261,7 +261,6 @@ export const FullTime: string = "Full Time";
 export const MidLevel: string = "Mid Level";
 export const PeopleView: string = "25 People View";
 export const ShowcaseOfSuccess: string = "Showcase of Success";
-export const PortfolioTitle: string = "Portfolio";
 export const Reset: string = "Reset";
 export const Collection: string = "Collection";
 export const SingleJob: string = "Single-job";

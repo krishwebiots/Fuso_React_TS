@@ -89,6 +89,12 @@
         color: #fff;
         border-radius: 20px 20px 0 0;
         padding: 0;
+        border: none;
+        &:active {
+            color: rgba(var(--theme-color), 1);
+            background-color: rgba(var(--theme-color), 1);
+            color: #fff;
+        }
 
         i {
             font-size: calc(20px + (25 - 20) * ((100vw - 320px) / (1920 - 320)));

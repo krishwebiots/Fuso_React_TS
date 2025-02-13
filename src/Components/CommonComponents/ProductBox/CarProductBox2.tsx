@@ -32,7 +32,7 @@ const CarProductBox2: FC<ProductBoxType> = ({ data }) => {
             <h4>{data.title}</h4>
           </Link>
           <div className="rate-list">
-            <Rating initialValue={5} size={17} fillColor="#232323" />
+            <Rating initialValue={5} size={17} fillColor="rgba(var(--title-color), 1)" />
           </div>
         </div>
         <p>{data.description}</p>

@@ -10,12 +10,12 @@ import ScheduleTour from "../Components/CommonComponents/ProductDetail/DetailBod
 import Amenities from "../Components/CommonComponents/ProductDetail/DetailBody/DetailBodyItem/Amenities";
 
 export const PropertyTypeData = [
-  { id: "status-one", label: "All", type: "all" },
-  { id: "status-two", label: "Apartment", type: "apartment" },
-  { id: "status-three", label: "House", type: "house" },
-  { id: "status-four", label: "Villa", type: "villa" },
-  { id: "status-five", label: "Office", type: "office" },
-  { id: "status-six", label: "Farmhouse", type: "farmhouse" },
+  { id: "status-one", label: "All", type: "all", count: 930 },
+  { id: "status-two", label: "Apartment", type: "apartment", count: 450 },
+  { id: "status-three", label: "House", type: "house", count: 100 },
+  { id: "status-four", label: "Villa", type: "villa", count: 429 },
+  { id: "status-five", label: "Office", type: "office", count: 230 },
+  { id: "status-six", label: "Farmhouse", type: "farmhouse", count: 55 },
 ];
 
 export const BhkOptions = [
@@ -132,7 +132,12 @@ export const OverviewData = [
   { svg: "shower", title: "Bathroom", text: "2", gif: "shower.gif" },
   { svg: "garage", title: "Garage", text: "1", gif: "garage.gif" },
   { svg: "expand-arrows", title: "Sqft", text: "1400", gif: "dimensions.gif" },
-  { svg: "calendar", title: "Year Built", text: "2020", gif: "appointment.gif" },
+  {
+    svg: "calendar",
+    title: "Year Built",
+    text: "2020",
+    gif: "appointment.gif",
+  },
 ];
 
 export const AmenitiesData = [
@@ -283,14 +288,54 @@ export const Time = Array.from({ length: 15 }, (_, i) => {
 });
 
 export const Sections = [
-  { id: "overview", label: OverviewTitle, component: <Overview />, labelComponent: <Overview label /> },
-  { id: "amenities", label: AmenitiesTitle, component: <Amenities />, labelComponent: <Amenities label /> },
-  { id: "description", label: PropertyDescriptionTitle, component: <Description />, labelComponent: <Description label /> },
-  { id: "floor", label: FloorPlansTitle, component: <FloorPlans />, labelComponent: <FloorPlans label /> },
-  { id: "video", label: VideoTitle, component: <Video />, labelComponent: <Video label /> },
-  { id: "location", label: LocationTitle, component: <Location />, labelComponent: <Location label /> },
-  { id: "reviews", label: ReviewsTitle, component: <Reviews />, labelComponent: <Reviews label /> },
-  { id: "schedule", label: ScheduleTourTitle, component: <ScheduleTour />, labelComponent: <ScheduleTour label /> },
+  {
+    id: "overview",
+    label: OverviewTitle,
+    component: <Overview />,
+    labelComponent: <Overview label />,
+  },
+  {
+    id: "amenities",
+    label: AmenitiesTitle,
+    component: <Amenities />,
+    labelComponent: <Amenities label />,
+  },
+  {
+    id: "description",
+    label: PropertyDescriptionTitle,
+    component: <Description />,
+    labelComponent: <Description label />,
+  },
+  {
+    id: "floor",
+    label: FloorPlansTitle,
+    component: <FloorPlans />,
+    labelComponent: <FloorPlans label />,
+  },
+  {
+    id: "video",
+    label: VideoTitle,
+    component: <Video />,
+    labelComponent: <Video label />,
+  },
+  {
+    id: "location",
+    label: LocationTitle,
+    component: <Location />,
+    labelComponent: <Location label />,
+  },
+  {
+    id: "reviews",
+    label: ReviewsTitle,
+    component: <Reviews />,
+    labelComponent: <Reviews label />,
+  },
+  {
+    id: "schedule",
+    label: ScheduleTourTitle,
+    component: <ScheduleTour />,
+    labelComponent: <ScheduleTour label />,
+  },
 ];
 
 export const DetailBreadcrumbsSlider = {
@@ -342,15 +387,6 @@ export const StickySliderNav = {
   slidesPerView: 6,
   spaceBetween: 20,
   modules: [Thumbs],
-  breakpoints: {
-    0: {
-      slidesPerView: 3,
-      spaceBetween: 15,
-    },
-    768: {
-      slidesPerView: 6,
-    },
-  },
 };
 
 export const breadcrumbThumbNav = {

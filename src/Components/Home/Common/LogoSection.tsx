@@ -7,6 +7,7 @@ import CommonHeader from "./CommonHeader";
 import { TopBusiness, WorldBestCompanies } from "../../../Constants/Constants";
 import { FC } from "react";
 import { LogoCar2Slider } from "../../../Data/Demo/CarDemo2";
+import { JobMarqueeData } from "../../../Data/Demo/JobDemo2";
 
 const LogoSection: FC<LogoSectionType> = ({ sectionClass, swiperClass, title, type }) => {
   return (
@@ -54,7 +55,7 @@ const LogoSection: FC<LogoSectionType> = ({ sectionClass, swiperClass, title, ty
           <h3>{TopBusiness}</h3>
           <div className="quote">
             <ul className="marquee">
-              {dynamicNumber(10).map((item, index) => (
+              {JobMarqueeData.map((item, index) => (
                 <li key={index}>
                   <div className="logo-size">
                     <Image src={dynamicImage(`job/logo/${item}.png`)} alt="logo-1" className="img-fluid" />

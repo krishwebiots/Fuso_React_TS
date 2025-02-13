@@ -332,6 +332,14 @@
          }
      }
  }
+ .car-about-section{
+    &:has(+ .car-about-category){
+    background-color: rgba(var(--white), 1);
+   }
+   ~.about-slider-section{
+    background-color: rgba(var(--white), 1);
+   }
+ }
 
  .category-inner-section {
      padding-bottom: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
@@ -481,7 +489,7 @@
                  height: calc(35px + (40 - 35) * ((100vw - 320px) / (1920 - 320)));
 
                  .iconsax {
-                     --Iconsax-Color: rgba(var(--bg-color), 1);
+                     stroke: rgba(var(--title-color), 1);
                  }
              }
          }

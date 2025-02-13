@@ -13,7 +13,7 @@ const PropertyBreadcrumb = () => {
         </div>
       </Container>
       <div className="breadcrumbs-particles">
-        <ParticlesBg type="cobweb" bg={true} color="#ffffff" />
+        <ParticlesBg type="cobweb" bg={true} color="#ffffff" num={30}/>
       </div>
     </div>
   );

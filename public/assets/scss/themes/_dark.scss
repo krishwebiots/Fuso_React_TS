@@ -7,7 +7,11 @@ body {
         .bg-white {
             background: rgba(var(--bg-color), 1) !important;
         }
-
+        .car-about-section{
+           ~.about-slider-section{
+            background: rgba(var(--bg-color), 1) !important;
+           }
+         }
         .car-arrow {
 
             .swiper-button-prev,
@@ -97,22 +101,18 @@ body {
                 .tab-list {
                     .tab-item {
                         .select-menu {
-                            li {
-                                .select-item {
-                                    img {
-                                        filter: invert(1);
-                                    }
+                            .select-item {
+                                img {
+                                    filter: invert(1);
                                 }
                             }
                         }
 
                         .dropdown {
                             .dropdown-menu {
-                                li {
-                                    .dropdown-item {
-                                        i {
-                                            background: #222730;
-                                        }
+                                .dropdown-item {
+                                    i {
+                                        background: #222730;
                                     }
                                 }
                             }
@@ -576,5 +576,16 @@ body {
                 }
             }
         }
+        .theme-modal{
+            .property-detail-section{
+                .detail-body{
+                    .floor-plan{
+                        img{
+                            filter: invert(0.7);
+                        }
+                    }
+                }
+            }
+        }    
     }
 }

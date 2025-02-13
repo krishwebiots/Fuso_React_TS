@@ -18,12 +18,12 @@
                 transform: scale(1.1);
             }
 
-            .save-btn {
+            .save-btn-label {
                 opacity: 1;
                 visibility: visible;
             }
 
-            .wishlist-btn {
+            .save-btn {
                 opacity: 1;
                 visibility: visible;
             }
@@ -71,7 +71,7 @@
             display: block;
         }
 
-        .save-btn {
+        .save-btn-label {
             padding: 4px 10px;
             color: rgba(var(--title-color), 1);
             font-size: 16px;
@@ -94,25 +94,31 @@
             }
         }
 
-        .wishlist-btn {
-            padding: 4px 10px;
-            color: rgba(var(--title-color), 1);
-            font-size: 16px;
-            font-weight: 400;
-            line-height: normal;
-            background: rgba(var(--white), 1);
-            box-shadow: 0px 4px 8px 0px rgba(var(--black), 0.05);
+        .save-btn {
+            right: 12px;
+            left: unset;
+            width: 35px;
+            height: 35px;
+            padding: 0;
+            border-radius: 100%;
+            @include flex_center;
+            z-index: 0;
             position: absolute;
             top: 12px;
-            right: 12px;
+            background: rgba(var(--white), 1);
             opacity: 0;
             visibility: hidden;
-            transition: 0.7s ease;
-            border-radius: 3px;
+            transition: 0.4s ease;
 
             [dir="rtl"] & {
                 right: unset;
                 left: 12px;
+            }
+
+            i {
+                color: rgba(var(--theme-color), 1);
+                font-size: 16px;
+                line-height: 1;
             }
         }
 
@@ -127,6 +133,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0;
+    transform: none;
 
             [dir="rtl"] & {
                 right: unset;
@@ -1148,6 +1156,8 @@
         align-items: center;
         justify-content: center;
         border-radius: 100%;
+        padding: 0;
+        transform: none;
 
         .iconsax {
             --Iconsax-Size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
@@ -1233,9 +1243,13 @@
 }
 
 .job-box-section {
+    .title-style-5 {
+        margin-bottom: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+    }
+
     .nav-pills {
         gap: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320)));
-        margin-top: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+        margin-bottom: calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320)));
         flex-wrap: nowrap;
         overflow: auto;
 
@@ -1374,6 +1388,11 @@
                 border-radius: 6px;
                 margin-top: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
                 padding-inline: calc(15px + (22 - 15) * ((100vw - 320px) / (1920 - 320)));
+                border: none;
+                &:hover, &:active{
+                    background: rgba(var(--theme-color), 1) !important;
+                    color: #fff !important;
+                }
             }
         }
     }

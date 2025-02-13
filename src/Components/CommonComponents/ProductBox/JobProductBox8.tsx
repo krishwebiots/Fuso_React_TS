@@ -74,7 +74,7 @@ const JobProductBox8: FC<ProductBoxType> = ({ data }) => {
             </div>
           </div>
         </div>
-        <Link to={RouteList.Pages.Other.ContactUs1} className="btn-solid">
+        <Link to={RouteList.Pages.Other.ContactUs1} className="arrow-btn">
           {ApplyNow} <i className="ri-arrow-right-up-line" />
         </Link>
       </div>

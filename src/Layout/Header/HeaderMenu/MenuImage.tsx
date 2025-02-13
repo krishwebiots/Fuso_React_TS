@@ -6,7 +6,7 @@ import { RouteList } from "../../../Routers/RouteList";
 import { ChildMenuType } from "../../../Types/LayoutType";
 import { dynamicImage, Image } from "../../../Utils";
 
-const MenuImage: FC<ChildMenuType> = ({ mainMenu }) => {
+const MenuImage: FC<ChildMenuType> = ({ mainMenu, toggleMenu }) => {
   const { t } = useTranslation();
 
   return (
@@ -14,7 +14,7 @@ const MenuImage: FC<ChildMenuType> = ({ mainMenu }) => {
       <Row className="row-cols-xl-4 row-cols-1 gy-4">
         {mainMenu.map((child, index) => (
           <Col key={index}>
-            <Link to={child.path ? child.path : RouteList.Home.CarDemo1} className="demo-box">
+            <Link to={child.path ? child.path : RouteList.Home.CarDemo1} className="demo-box" onClick={toggleMenu}>
               <div className="demo-img">
                 <div className="overflow-hidden">
                   <Image src={dynamicImage(child.image ? child.image : "other/menu/1.jpg")} alt="demo-1" />

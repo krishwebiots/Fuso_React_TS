@@ -33,16 +33,16 @@ const Layout = () => {
         <Outlet />
       ) : (
         <Fragment>
-          <Loader part={Path[0]} />
-          <Header part={Path[0]} />
+          <Loader />
+          <Header />
           <MobileMenu />
           <Outlet />
-          {Path[2] !== "portfolio-vertical-slider" && (isJobOrProperty ? <FooterDemo2 part={Path[0]} /> : <FooterDemo1 part={Path[0]} />)}
-          <TapTop part={Path[0]} />
+          {Path[2] !== "portfolio-vertical-slider" && (isJobOrProperty ? <FooterDemo2 /> : <FooterDemo1 />)}
+          <TapTop />
           <SearchModal type={SearchModalData[Path[0]] || SearchModalData.car} />
         </Fragment>
       )}
-      <Customizer part={Path} />
+      <Customizer />
     </Fragment>
   );
 };

@@ -69,7 +69,9 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
       <AccordionHeader targetId={id}>{title}</AccordionHeader>
       <AccordionBody accordionId={id}>
         {priceRange ? (
-          <RangeInputFields type={type} />
+          <div className="range-slider">
+            <RangeInputFields type={type} />
+          </div>
         ) : squareFeet ? (
           <div className="main-number">
             <div className="input-number range-number">
@@ -93,6 +95,7 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
                   <Input type={radio ? "radio" : "checkbox"} name={radio ? `category-${id}` : ""} id={item.id} value={item.type} checked={checkValue?.includes(item.type)} onChange={(event) => handleCheckboxChange(event, title)} />
                   <Label htmlFor={item.id} className="label-flex">
                     <span>{item.label}</span>
+                    {item.count && <span>({item.count})</span>}
                   </Label>
                 </div>
               </div>
@@ -105,6 +108,7 @@ const CommonFilter: FC<CommonFilterType> = ({ title, id, data, checkValue, price
                 <Input type="checkbox" id={item.id} value={item.type} checked={checkValue?.includes(item.type)} onChange={(event) => handleCheckboxChange(event, title)} />
                 <Label htmlFor={item.id}>
                   <span>{item.label}</span>
+                  {item.count && <span>{item.count}</span>}
                 </Label>
               </li>
             ))}

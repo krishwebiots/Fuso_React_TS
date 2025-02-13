@@ -145,200 +145,205 @@ import PropertyRightDrawer from "../Pages/Property/Other/PropertyRightDrawer";
 import PropertyWishlist from "../Pages/Property/Wishlist";
 import { RouteList } from "./RouteList";
 
-const Router = createBrowserRouter([
-  {
-    element: <Layout />,
-    children: [
-      { path: "*", element: <Error404 /> },
+const Router = createBrowserRouter(
+  [
+    {
+      element: <Layout />,
+      children: [
+        { path: "*", element: <Error404 /> },
 
-      //Home
-      { path: RouteList.Home.CarDemo1, element: <CarDemo1 />, index: true },
-      { path: RouteList.Home.CarDemo2, element: <CarDemo2 /> },
-      { path: RouteList.Home.JobDemo1, element: <JobDemo1 /> },
-      { path: RouteList.Home.JobDemo2, element: <JobDemo2 /> },
-      { path: RouteList.Home.JobDemo3, element: <JobDemo3 /> },
-      { path: RouteList.Home.PropertyDemo1, element: <PropertyDemo1 /> },
-      { path: RouteList.Home.PropertyDemo2, element: <PropertyDemo2 /> },
+        //Home
+        { path: RouteList.Home.CarDemo1, element: <CarDemo1 />, index: true },
+        { path: RouteList.Home.CarDemo2, element: <CarDemo2 /> },
+        { path: RouteList.Home.JobDemo1, element: <JobDemo1 /> },
+        { path: RouteList.Home.JobDemo2, element: <JobDemo2 /> },
+        { path: RouteList.Home.JobDemo3, element: <JobDemo3 /> },
+        { path: RouteList.Home.PropertyDemo1, element: <PropertyDemo1 /> },
+        { path: RouteList.Home.PropertyDemo2, element: <PropertyDemo2 /> },
 
-      //Property-Grid
-      { path: RouteList.Property.Grid.Property2Grid, element: <Property2Grid /> },
-      { path: RouteList.Property.Grid.Property2RightGrid, element: <Property2RightGrid /> },
-      { path: RouteList.Property.Grid.Property3Grid, element: <Property3Grid /> },
-      { path: RouteList.Property.Grid.Property3RightGrid, element: <Property3RightGrid /> },
-      { path: RouteList.Property.Grid.Property4Grid, element: <Property4Grid /> },
-      { path: RouteList.Property.Grid.PropertyGridNoSidebar, element: <PropertyGridNoSidebar /> },
+        //Property-Grid
+        { path: RouteList.Property.Grid.Property2Grid, element: <Property2Grid /> },
+        { path: RouteList.Property.Grid.Property2RightGrid, element: <Property2RightGrid /> },
+        { path: RouteList.Property.Grid.Property3Grid, element: <Property3Grid /> },
+        { path: RouteList.Property.Grid.Property3RightGrid, element: <Property3RightGrid /> },
+        { path: RouteList.Property.Grid.Property4Grid, element: <Property4Grid /> },
+        { path: RouteList.Property.Grid.PropertyGridNoSidebar, element: <PropertyGridNoSidebar /> },
 
-      //Property-Listing
-      { path: RouteList.Property.Listing.PropertyLeftList, element: <PropertyLeftList /> },
-      { path: RouteList.Property.Listing.PropertyRightList, element: <PropertyRightList /> },
-      { path: RouteList.Property.Listing.PropertyVideoList, element: <PropertyVideoList /> },
-      { path: RouteList.Property.Listing.PropertyThumbList, element: <PropertyThumbList /> },
-      { path: RouteList.Property.Listing.PropertyWithoutSlider, element: <PropertyWithoutSlider /> },
+        //Property-Listing
+        { path: RouteList.Property.Listing.PropertyLeftList, element: <PropertyLeftList /> },
+        { path: RouteList.Property.Listing.PropertyRightList, element: <PropertyRightList /> },
+        { path: RouteList.Property.Listing.PropertyVideoList, element: <PropertyVideoList /> },
+        { path: RouteList.Property.Listing.PropertyThumbList, element: <PropertyThumbList /> },
+        { path: RouteList.Property.Listing.PropertyWithoutSlider, element: <PropertyWithoutSlider /> },
 
-      //Property-Other
-      { path: RouteList.Property.Other.PropertyLeftDrawer, element: <PropertyLeftDrawer /> },
-      { path: RouteList.Property.Other.PropertyRightDrawer, element: <PropertyRightDrawer /> },
-      { path: RouteList.Property.Other.PropertyInfiniteScroll, element: <PropertyInfiniteScroll /> },
-      { path: RouteList.Property.Other.PropertyLoadMore, element: <PropertyLoadMore /> },
-      { path: RouteList.Property.Other.PropertyParallax, element: <PropertyParallax /> },
-      { path: RouteList.Property.Other.PropertyGridWithoutSlider, element: <PropertyGridWithoutSlider /> },
+        //Property-Other
+        { path: RouteList.Property.Other.PropertyLeftDrawer, element: <PropertyLeftDrawer /> },
+        { path: RouteList.Property.Other.PropertyRightDrawer, element: <PropertyRightDrawer /> },
+        { path: RouteList.Property.Other.PropertyInfiniteScroll, element: <PropertyInfiniteScroll /> },
+        { path: RouteList.Property.Other.PropertyLoadMore, element: <PropertyLoadMore /> },
+        { path: RouteList.Property.Other.PropertyParallax, element: <PropertyParallax /> },
+        { path: RouteList.Property.Other.PropertyGridWithoutSlider, element: <PropertyGridWithoutSlider /> },
 
-      //Property-Map
-      { path: RouteList.Property.Map.MapLeft, element: <MapLeft /> },
-      { path: RouteList.Property.Map.MapRight, element: <MapRight /> },
-      { path: RouteList.Property.Map.MapList, element: <MapList /> },
-      { path: RouteList.Property.Map.MapModal, element: <MapModal /> },
+        //Property-Map
+        { path: RouteList.Property.Map.MapLeft, element: <MapLeft /> },
+        { path: RouteList.Property.Map.MapRight, element: <MapRight /> },
+        { path: RouteList.Property.Map.MapList, element: <MapList /> },
+        { path: RouteList.Property.Map.MapModal, element: <MapModal /> },
 
-      //Property-Detail
-      { path: RouteList.Property.Detail.PropertyClassic, element: <PropertyClassic /> },
-      { path: RouteList.Property.Detail.PropertyScrollspy, element: <PropertyScrollspy /> },
-      { path: RouteList.Property.Detail.PropertyTab, element: <PropertyTab /> },
-      { path: RouteList.Property.Detail.PropertyAccordion, element: <PropertyAccordion /> },
-      { path: RouteList.Property.Detail.PropertyImageSlider, element: <PropertyImageSlider /> },
-      { path: RouteList.Property.Detail.PropertySticky, element: <PropertySticky /> },
-      { path: RouteList.Property.Detail.PropertySidebarLayout, element: <PropertySidebarLayout /> },
-      { path: RouteList.Property.Detail.PropertyVideo, element: <PropertyVideo /> },
-      { path: RouteList.Property.Detail.PropertyThumbSlider, element: <PropertyThumbSlider /> },
-      { path: RouteList.Property.Detail.PropertyAnimatedIcon, element: <PropertyAnimatedIcon /> },
+        //Property-Detail
+        { path: RouteList.Property.Detail.PropertyClassic, element: <PropertyClassic /> },
+        { path: RouteList.Property.Detail.PropertyScrollspy, element: <PropertyScrollspy /> },
+        { path: RouteList.Property.Detail.PropertyTab, element: <PropertyTab /> },
+        { path: RouteList.Property.Detail.PropertyAccordion, element: <PropertyAccordion /> },
+        { path: RouteList.Property.Detail.PropertyImageSlider, element: <PropertyImageSlider /> },
+        { path: RouteList.Property.Detail.PropertySticky, element: <PropertySticky /> },
+        { path: RouteList.Property.Detail.PropertySidebarLayout, element: <PropertySidebarLayout /> },
+        { path: RouteList.Property.Detail.PropertyVideo, element: <PropertyVideo /> },
+        { path: RouteList.Property.Detail.PropertyThumbSlider, element: <PropertyThumbSlider /> },
+        { path: RouteList.Property.Detail.PropertyAnimatedIcon, element: <PropertyAnimatedIcon /> },
 
-      //Property-Wishlist
-      { path: RouteList.Property.PropertyWishlist, element: <PropertyWishlist /> },
+        //Property-Wishlist
+        { path: RouteList.Property.PropertyWishlist, element: <PropertyWishlist /> },
 
-      //Car-Grid
-      { path: RouteList.Car.Grid.Car2Grid, element: <Car2Grid /> },
-      { path: RouteList.Car.Grid.Car2RightGrid, element: <Car2RightGrid /> },
-      { path: RouteList.Car.Grid.Car3Grid, element: <Car3Grid /> },
-      { path: RouteList.Car.Grid.Car3RightGrid, element: <Car3RightGrid /> },
-      { path: RouteList.Car.Grid.CarNoSidebar, element: <CarNoSidebar /> },
+        //Car-Grid
+        { path: RouteList.Car.Grid.Car2Grid, element: <Car2Grid /> },
+        { path: RouteList.Car.Grid.Car2RightGrid, element: <Car2RightGrid /> },
+        { path: RouteList.Car.Grid.Car3Grid, element: <Car3Grid /> },
+        { path: RouteList.Car.Grid.Car3RightGrid, element: <Car3RightGrid /> },
+        { path: RouteList.Car.Grid.CarNoSidebar, element: <CarNoSidebar /> },
 
-      //Car-Listing
-      { path: RouteList.Car.Listing.CarLeftList, element: <CarLeftList /> },
-      { path: RouteList.Car.Listing.CarRightList, element: <CarRightList /> },
+        //Car-Listing
+        { path: RouteList.Car.Listing.CarLeftList, element: <CarLeftList /> },
+        { path: RouteList.Car.Listing.CarRightList, element: <CarRightList /> },
 
-      //Car-Other
-      { path: RouteList.Car.Other.CarLeftDrawer, element: <CarLeftDrawer /> },
-      { path: RouteList.Car.Other.CarRightDrawer, element: <CarRightDrawer /> },
-      { path: RouteList.Car.Other.CarInfiniteScroll, element: <CarInfiniteScroll /> },
-      { path: RouteList.Car.Other.CarLoadMore, element: <CarLoadMore /> },
-      { path: RouteList.Car.Other.CarTopCategory, element: <CarTopCategory /> },
-      { path: RouteList.Car.Other.CarTopFilter, element: <CarTopFilter /> },
-      { path: RouteList.Car.Other.CarWithoutSlider, element: <CarWithoutSlider /> },
+        //Car-Other
+        { path: RouteList.Car.Other.CarLeftDrawer, element: <CarLeftDrawer /> },
+        { path: RouteList.Car.Other.CarRightDrawer, element: <CarRightDrawer /> },
+        { path: RouteList.Car.Other.CarInfiniteScroll, element: <CarInfiniteScroll /> },
+        { path: RouteList.Car.Other.CarLoadMore, element: <CarLoadMore /> },
+        { path: RouteList.Car.Other.CarTopCategory, element: <CarTopCategory /> },
+        { path: RouteList.Car.Other.CarTopFilter, element: <CarTopFilter /> },
+        { path: RouteList.Car.Other.CarWithoutSlider, element: <CarWithoutSlider /> },
 
-      //Car-Detail
-      { path: RouteList.Car.Detail.CarClassic, element: <CarClassic /> },
-      { path: RouteList.Car.Detail.CarLayout1, element: <CarLayout1 /> },
-      { path: RouteList.Car.Detail.CarLayout2, element: <CarLayout2 /> },
-      { path: RouteList.Car.Detail.CarSlider, element: <CarSlider /> },
-      { path: RouteList.Car.Detail.CarExpandSlider, element: <CarExpandSlider /> },
-      { path: RouteList.Car.Detail.CarModernSlider, element: <CarModernSlider /> },
-      { path: RouteList.Car.Detail.CarScrollspy, element: <CarScrollspy /> },
-      { path: RouteList.Car.Detail.CarVideo, element: <CarVideo /> },
-      { path: RouteList.Car.Detail.CarClassicSlider, element: <CarClassicSlider /> },
-      { path: RouteList.Car.Detail.CarThumbnailSlider, element: <CarThumbnailSlider /> },
+        //Car-Detail
+        { path: RouteList.Car.Detail.CarClassic, element: <CarClassic /> },
+        { path: RouteList.Car.Detail.CarLayout1, element: <CarLayout1 /> },
+        { path: RouteList.Car.Detail.CarLayout2, element: <CarLayout2 /> },
+        { path: RouteList.Car.Detail.CarSlider, element: <CarSlider /> },
+        { path: RouteList.Car.Detail.CarExpandSlider, element: <CarExpandSlider /> },
+        { path: RouteList.Car.Detail.CarModernSlider, element: <CarModernSlider /> },
+        { path: RouteList.Car.Detail.CarScrollspy, element: <CarScrollspy /> },
+        { path: RouteList.Car.Detail.CarVideo, element: <CarVideo /> },
+        { path: RouteList.Car.Detail.CarClassicSlider, element: <CarClassicSlider /> },
+        { path: RouteList.Car.Detail.CarThumbnailSlider, element: <CarThumbnailSlider /> },
 
-      //Car-Wishlist
-      { path: RouteList.Car.CarWishlist, element: <CarWishlist /> },
+        //Car-Wishlist
+        { path: RouteList.Car.CarWishlist, element: <CarWishlist /> },
 
-      //Job-Grid
-      { path: RouteList.Job.Grid.JobGridProgress, element: <JobGridProgress /> },
-      { path: RouteList.Job.Grid.JobGridType2, element: <JobGridType2 /> },
-      { path: RouteList.Job.Grid.JobGridType3, element: <JobGridType3 /> },
-      { path: RouteList.Job.Grid.JobLeftSidebar, element: <JobLeftSidebar /> },
-      { path: RouteList.Job.Grid.JobRightSidebar, element: <JobRightSidebar /> },
-      { path: RouteList.Job.Grid.JobGridNoSidebar, element: <JobGridNoSidebar /> },
+        //Job-Grid
+        { path: RouteList.Job.Grid.JobGridProgress, element: <JobGridProgress /> },
+        { path: RouteList.Job.Grid.JobGridType2, element: <JobGridType2 /> },
+        { path: RouteList.Job.Grid.JobGridType3, element: <JobGridType3 /> },
+        { path: RouteList.Job.Grid.JobLeftSidebar, element: <JobLeftSidebar /> },
+        { path: RouteList.Job.Grid.JobRightSidebar, element: <JobRightSidebar /> },
+        { path: RouteList.Job.Grid.JobGridNoSidebar, element: <JobGridNoSidebar /> },
 
-      //Job-Listing
-      { path: RouteList.Job.Listing.JobLeftList, element: <JobLeftList /> },
-      { path: RouteList.Job.Listing.JobRightList, element: <JobRightList /> },
-      { path: RouteList.Job.Listing.JobListNoSidebar, element: <JobListNoSidebar /> },
+        //Job-Listing
+        { path: RouteList.Job.Listing.JobLeftList, element: <JobLeftList /> },
+        { path: RouteList.Job.Listing.JobRightList, element: <JobRightList /> },
+        { path: RouteList.Job.Listing.JobListNoSidebar, element: <JobListNoSidebar /> },
 
-      //Job-Other
-      { path: RouteList.Job.Other.JobLeftDrawer, element: <JobLeftDrawer /> },
-      { path: RouteList.Job.Other.JobRightDrawer, element: <JobRightDrawer /> },
-      { path: RouteList.Job.Other.JobInfiniteScroll, element: <JobInfiniteScroll /> },
-      { path: RouteList.Job.Other.JobLoadMore, element: <JobLoadMore /> },
-      { path: RouteList.Job.Other.JobAd, element: <JobAd /> },
-      { path: RouteList.Job.Other.JobFilter, element: <JobFilter /> },
-      { path: RouteList.Job.Other.JobFullList, element: <JobFullList /> },
-      { path: RouteList.Job.Other.JobBothSidebar, element: <JobBothSidebar /> },
-      { path: RouteList.Job.Other.JobListStyle2, element: <JobListStyle2 /> },
+        //Job-Other
+        { path: RouteList.Job.Other.JobLeftDrawer, element: <JobLeftDrawer /> },
+        { path: RouteList.Job.Other.JobRightDrawer, element: <JobRightDrawer /> },
+        { path: RouteList.Job.Other.JobInfiniteScroll, element: <JobInfiniteScroll /> },
+        { path: RouteList.Job.Other.JobLoadMore, element: <JobLoadMore /> },
+        { path: RouteList.Job.Other.JobAd, element: <JobAd /> },
+        { path: RouteList.Job.Other.JobFilter, element: <JobFilter /> },
+        { path: RouteList.Job.Other.JobFullList, element: <JobFullList /> },
+        { path: RouteList.Job.Other.JobBothSidebar, element: <JobBothSidebar /> },
+        { path: RouteList.Job.Other.JobListStyle2, element: <JobListStyle2 /> },
 
-      //Job-Detail
-      { path: RouteList.Job.Detail.JobDetail1, element: <JobDetail1 /> },
-      { path: RouteList.Job.Detail.JobDetail2, element: <JobDetail2 /> },
-      { path: RouteList.Job.Detail.JobDetail3, element: <JobDetail3 /> },
-      { path: RouteList.Job.Detail.JobDetail4, element: <JobDetail4 /> },
-      { path: RouteList.Job.Detail.JobDetail5, element: <JobDetail5 /> },
+        //Job-Detail
+        { path: RouteList.Job.Detail.JobDetail1, element: <JobDetail1 /> },
+        { path: RouteList.Job.Detail.JobDetail2, element: <JobDetail2 /> },
+        { path: RouteList.Job.Detail.JobDetail3, element: <JobDetail3 /> },
+        { path: RouteList.Job.Detail.JobDetail4, element: <JobDetail4 /> },
+        { path: RouteList.Job.Detail.JobDetail5, element: <JobDetail5 /> },
 
-      //Job-Wishlist
-      { path: RouteList.Job.JobWishlist, element: <JobWishlist /> },
+        //Job-Wishlist
+        { path: RouteList.Job.JobWishlist, element: <JobWishlist /> },
 
-      //Blog-Pages
-      { path: RouteList.Pages.Blog.BlogLeftSidebar, element: <BlogLeftSidebar /> },
-      { path: RouteList.Pages.Blog.BlogRightSidebar, element: <BlogRightSidebar /> },
-      { path: RouteList.Pages.Blog.Blog2Grid, element: <Blog2Grid /> },
-      { path: RouteList.Pages.Blog.Blog2GridRight, element: <Blog2GridRight /> },
-      { path: RouteList.Pages.Blog.BlogTitle, element: <BlogTitle /> },
-      { path: RouteList.Pages.Blog.BlogLayout1, element: <BlogLayout1 /> },
-      { path: RouteList.Pages.Blog.BlogNoSidebar, element: <BlogNoSidebar /> },
-      { path: RouteList.Pages.Blog.BlogToSlider, element: <BlogToSlider /> },
-      { path: RouteList.Pages.Blog.Blog3Masonry, element: <Blog3Masonry /> },
-      { path: RouteList.Pages.Blog.BlogLoadMore, element: <BlogLoadMore /> },
-      { path: RouteList.Pages.Blog.BlogLeftList, element: <BlogLeftList /> },
-      { path: RouteList.Pages.Blog.BlogRightList, element: <BlogRightList /> },
-      { path: RouteList.Pages.Blog.BlogInfiniteScroll, element: <BlogInfiniteScroll /> },
+        //Blog-Pages
+        { path: RouteList.Pages.Blog.BlogLeftSidebar, element: <BlogLeftSidebar /> },
+        { path: RouteList.Pages.Blog.BlogRightSidebar, element: <BlogRightSidebar /> },
+        { path: RouteList.Pages.Blog.Blog2Grid, element: <Blog2Grid /> },
+        { path: RouteList.Pages.Blog.Blog2GridRight, element: <Blog2GridRight /> },
+        { path: RouteList.Pages.Blog.BlogTitle, element: <BlogTitle /> },
+        { path: RouteList.Pages.Blog.BlogLayout1, element: <BlogLayout1 /> },
+        { path: RouteList.Pages.Blog.BlogNoSidebar, element: <BlogNoSidebar /> },
+        { path: RouteList.Pages.Blog.BlogToSlider, element: <BlogToSlider /> },
+        { path: RouteList.Pages.Blog.Blog3Masonry, element: <Blog3Masonry /> },
+        { path: RouteList.Pages.Blog.BlogLoadMore, element: <BlogLoadMore /> },
+        { path: RouteList.Pages.Blog.BlogLeftList, element: <BlogLeftList /> },
+        { path: RouteList.Pages.Blog.BlogRightList, element: <BlogRightList /> },
+        { path: RouteList.Pages.Blog.BlogInfiniteScroll, element: <BlogInfiniteScroll /> },
 
-      //Blog-Detail
-      { path: RouteList.Pages.Blog.Detail.BlogLeftClassic, element: <BlogLeftClassic /> },
-      { path: RouteList.Pages.Blog.Detail.BlogRightClassic, element: <BlogRightClassic /> },
-      { path: RouteList.Pages.Blog.Detail.BlogVideoLayout, element: <BlogVideoLayout /> },
-      { path: RouteList.Pages.Blog.Detail.BlogAudioLayout, element: <BlogAudioLayout /> },
-      { path: RouteList.Pages.Blog.Detail.BlogSliderLayout, element: <BlogSliderLayout /> },
-      { path: RouteList.Pages.Blog.Detail.BlogQuoteLayout, element: <BlogQuoteLayout /> },
+        //Blog-Detail
+        { path: RouteList.Pages.Blog.Detail.BlogLeftClassic, element: <BlogLeftClassic /> },
+        { path: RouteList.Pages.Blog.Detail.BlogRightClassic, element: <BlogRightClassic /> },
+        { path: RouteList.Pages.Blog.Detail.BlogVideoLayout, element: <BlogVideoLayout /> },
+        { path: RouteList.Pages.Blog.Detail.BlogAudioLayout, element: <BlogAudioLayout /> },
+        { path: RouteList.Pages.Blog.Detail.BlogSliderLayout, element: <BlogSliderLayout /> },
+        { path: RouteList.Pages.Blog.Detail.BlogQuoteLayout, element: <BlogQuoteLayout /> },
 
-      //Portfolio-Page
-      { path: RouteList.Pages.Portfolio.Portfolio2Grid, element: <Portfolio2Grid /> },
-      { path: RouteList.Pages.Portfolio.Portfolio3Grid, element: <Portfolio3Grid /> },
-      { path: RouteList.Pages.Portfolio.Portfolio4Grid, element: <Portfolio4Grid /> },
-      { path: RouteList.Pages.Portfolio.PortfolioTransform, element: <PortfolioTransform /> },
-      { path: RouteList.Pages.Portfolio.PortfolioVideoModal, element: <PortfolioVideoModal /> },
-      { path: RouteList.Pages.Portfolio.PortfolioGalleryIcon, element: <PortfolioGalleryIcon /> },
-      { path: RouteList.Pages.Portfolio.PortfolioImageChange, element: <PortfolioImageChange /> },
-      { path: RouteList.Pages.Portfolio.PortfolioBoxSlider, element: <PortfolioBoxSlider /> },
-      { path: RouteList.Pages.Portfolio.PortfolioParallax, element: <PortfolioParallax /> },
-      { path: RouteList.Pages.Portfolio.PortfolioVerticalSlider, element: <PortfolioVerticalSlider /> },
-      { path: RouteList.Pages.Portfolio.PortfolioCreativeFull, element: <PortfolioCreativeFull /> },
-      { path: RouteList.Pages.Portfolio.PortfolioModern, element: <PortfolioModern /> },
+        //Portfolio-Page
+        { path: RouteList.Pages.Portfolio.Portfolio2Grid, element: <Portfolio2Grid /> },
+        { path: RouteList.Pages.Portfolio.Portfolio3Grid, element: <Portfolio3Grid /> },
+        { path: RouteList.Pages.Portfolio.Portfolio4Grid, element: <Portfolio4Grid /> },
+        { path: RouteList.Pages.Portfolio.PortfolioTransform, element: <PortfolioTransform /> },
+        { path: RouteList.Pages.Portfolio.PortfolioVideoModal, element: <PortfolioVideoModal /> },
+        { path: RouteList.Pages.Portfolio.PortfolioGalleryIcon, element: <PortfolioGalleryIcon /> },
+        { path: RouteList.Pages.Portfolio.PortfolioImageChange, element: <PortfolioImageChange /> },
+        { path: RouteList.Pages.Portfolio.PortfolioBoxSlider, element: <PortfolioBoxSlider /> },
+        { path: RouteList.Pages.Portfolio.PortfolioParallax, element: <PortfolioParallax /> },
+        { path: RouteList.Pages.Portfolio.PortfolioVerticalSlider, element: <PortfolioVerticalSlider /> },
+        { path: RouteList.Pages.Portfolio.PortfolioCreativeFull, element: <PortfolioCreativeFull /> },
+        { path: RouteList.Pages.Portfolio.PortfolioModern, element: <PortfolioModern /> },
 
-      //Portfolio-Detail
-      { path: RouteList.Pages.Portfolio.Detail.PortfolioDetail1, element: <PortfolioDetail1 /> },
-      { path: RouteList.Pages.Portfolio.Detail.PortfolioDetail2, element: <PortfolioDetail2 /> },
+        //Portfolio-Detail
+        { path: RouteList.Pages.Portfolio.Detail.PortfolioDetail1, element: <PortfolioDetail1 /> },
+        { path: RouteList.Pages.Portfolio.Detail.PortfolioDetail2, element: <PortfolioDetail2 /> },
 
-      //Other-Pages
-      { path: RouteList.Pages.Other.AboutUs1, element: <AboutUs1 /> },
-      { path: RouteList.Pages.Other.AboutUs2, element: <AboutUs2 /> },
-      { path: RouteList.Pages.Other.AboutUs3, element: <AboutUs3 /> },
-      { path: RouteList.Pages.Other.ContactUs1, element: <ContactUs1 /> },
-      { path: RouteList.Pages.Other.ContactUs2, element: <ContactUs2 /> },
-      { path: RouteList.Pages.Other.ContactUs3, element: <ContactUs3 /> },
-      { path: RouteList.Pages.Other.Services, element: <Services /> },
-      { path: RouteList.Pages.Other.Team, element: <Team /> },
-      { path: RouteList.Pages.Other.Pricing, element: <Pricing /> },
-      { path: RouteList.Pages.Other.Testimonial, element: <Testimonial /> },
-      { path: RouteList.Pages.Other.Faq, element: <Faq /> },
-      { path: RouteList.Pages.Other.UserDashboard, element: <UserDashboard /> },
-      { path: RouteList.Pages.Other.Privacy, element: <Privacy /> },
-      { path: RouteList.Pages.Other.Condition, element: <Condition /> },
-      { path: RouteList.Pages.Other.Error404, element: <Error404 /> },
-      { path: RouteList.Pages.Other.Login1, element: <Login1 /> },
-      { path: RouteList.Pages.Other.Login2, element: <Login2 /> },
-      { path: RouteList.Pages.Other.Login3, element: <Login3 /> },
-      { path: RouteList.Pages.Other.Login4, element: <Login4 /> },
-      { path: RouteList.Pages.Other.SignUp1, element: <SignUp1 /> },
-      { path: RouteList.Pages.Other.SignUp2, element: <SignUp2 /> },
-      { path: RouteList.Pages.Other.SignUp3, element: <SignUp3 /> },
-    ],
-  },
-]);
+        //Other-Pages
+        { path: RouteList.Pages.Other.AboutUs1, element: <AboutUs1 /> },
+        { path: RouteList.Pages.Other.AboutUs2, element: <AboutUs2 /> },
+        { path: RouteList.Pages.Other.AboutUs3, element: <AboutUs3 /> },
+        { path: RouteList.Pages.Other.ContactUs1, element: <ContactUs1 /> },
+        { path: RouteList.Pages.Other.ContactUs2, element: <ContactUs2 /> },
+        { path: RouteList.Pages.Other.ContactUs3, element: <ContactUs3 /> },
+        { path: RouteList.Pages.Other.Services, element: <Services /> },
+        { path: RouteList.Pages.Other.Team, element: <Team /> },
+        { path: RouteList.Pages.Other.Pricing, element: <Pricing /> },
+        { path: RouteList.Pages.Other.Testimonial, element: <Testimonial /> },
+        { path: RouteList.Pages.Other.Faq, element: <Faq /> },
+        { path: RouteList.Pages.Other.UserDashboard, element: <UserDashboard /> },
+        { path: RouteList.Pages.Other.Privacy, element: <Privacy /> },
+        { path: RouteList.Pages.Other.Condition, element: <Condition /> },
+        { path: RouteList.Pages.Other.Error404, element: <Error404 /> },
+        { path: RouteList.Pages.Other.Login1, element: <Login1 /> },
+        { path: RouteList.Pages.Other.Login2, element: <Login2 /> },
+        { path: RouteList.Pages.Other.Login3, element: <Login3 /> },
+        { path: RouteList.Pages.Other.Login4, element: <Login4 /> },
+        { path: RouteList.Pages.Other.SignUp1, element: <SignUp1 /> },
+        { path: RouteList.Pages.Other.SignUp2, element: <SignUp2 /> },
+        { path: RouteList.Pages.Other.SignUp3, element: <SignUp3 /> },
+      ],
+    },
+  ]
+  // {
+  //   basename: "/fuso",
+  // }
+);
 
 export default Router;

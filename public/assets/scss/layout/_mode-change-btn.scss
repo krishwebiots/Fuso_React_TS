@@ -30,6 +30,15 @@
         align-items: center;
         gap: 5px;
         font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+        border: none;
+
+        &.btn {
+            &:active {
+                color: #fff;
+                background-color: rgba(var(--theme-color), 1);
+                border-color: transparent;
+            }
+        }
 
         [dir="rtl"] & {
             border-radius: 10px 0 10px 0;

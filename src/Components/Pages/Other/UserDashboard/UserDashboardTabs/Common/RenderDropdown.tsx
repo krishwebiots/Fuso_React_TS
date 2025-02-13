@@ -18,7 +18,7 @@ const RenderDropdown: FC<DropdownType> = ({ label, placeholder, items }) => {
         </DropdownToggle>
         <DropdownMenu className="select-menu">
           {items.map((item, index) => (
-            <DropdownItem key={index} className="select-item" href={Href} onClick={() => setSelected(item)}>
+            <DropdownItem key={index} className={`select-item ${selected === item ? "active" : ""}`} href={Href} onClick={() => setSelected(item)}>
               {item}
             </DropdownItem>
           ))}

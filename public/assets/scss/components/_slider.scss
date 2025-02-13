@@ -117,51 +117,14 @@
       }
 
       .iconsax {
-        --Iconsax-Size: calc(16px + (28 - 16) * ((100vw - 320px) / (1920 - 320)));
-        --Iconsax-Color: rgba(var(--white), 1);
+        width: calc(16px + (28 - 16) * ((100vw - 320px) / (1920 - 320)));
+        height: calc(16px + (28 - 16) * ((100vw - 320px) / (1920 - 320)));
+        stroke: #fff;
         transition: 0.4s ease;
       }
     }
   }
 }
-
-.category-inner-slider {
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    width: calc(38px + (48 - 38) * ((100vw - 320px) / (1920 - 320)));
-    height: calc(38px + (48 - 38) * ((100vw - 320px) / (1920 - 320)));
-    background: rgba(var(--title-color), 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    transition: 0.4s ease;
-
-    &.swiper-button-disabled {
-      width: calc(30px + (34 - 30) * ((100vw - 320px) / (1920 - 320)));
-      height: calc(30px + (34 - 30) * ((100vw - 320px) / (1920 - 320)));
-      opacity: 1;
-      background: rgba(var(--title-color), 0.03);
-
-      .iconsax {
-        --Iconsax-Size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-        --Iconsax-Color: rgba(var(--title-color), 1);
-      }
-    }
-
-    &::after {
-      display: none;
-    }
-
-    .iconsax {
-      --Iconsax-Size: calc(18px + (28 - 18) * ((100vw - 320px) / (1920 - 320)));
-      --Iconsax-Color: rgba(var(--white), 1);
-      transition: 0.4s ease;
-    }
-  }
-}
-
 .detail-swiper-section {
   position: relative;
 
@@ -302,8 +265,9 @@
       display: none;
     }
 
-    i {
-      --Iconsax-Size: calc(18px + (28 - 18) * ((100vw - 320px) / (1920 - 320)));
+    .iconsax {
+      width: calc(18px + (28 - 18) * ((100vw - 320px) / (1920 - 320)));
+      height: calc(18px + (28 - 18) * ((100vw - 320px) / (1920 - 320)));
       --Iconsax-Color: rgba(var(--white), 1);
       transition: 0.4s ease;
     }
@@ -337,7 +301,8 @@
         }
 
         .iconsax {
-          --Iconsax-Size: calc(16px + (28 - 16) * ((100vw - 320px) / (1920 - 320)));
+          width: calc(16px + (28 - 16) * ((100vw - 320px) / (1920 - 320)));
+          height: calc(16px + (28 - 16) * ((100vw - 320px) / (1920 - 320)));
           --Iconsax-Color: rgba(var(--title-color), 1);
           transition: 0.4s ease;
         }

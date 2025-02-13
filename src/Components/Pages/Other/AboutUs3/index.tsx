@@ -12,7 +12,7 @@ const AboutUs3Container = () => {
       <Breadcrumbs title="About" url={RouteList.Home.CarDemo1} mainClass="page-breadcrumbs-section" />
       <Service about />
       <StepBooking />
-      <Testimonials type={"car_demo2"} animation={false} />
+      <Testimonials type={"about3"} animation={false} />
       <Team type="about3" />
     </Fragment>
   );

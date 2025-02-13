@@ -14,7 +14,7 @@ const LeftHeader: FC<HeaderType> = ({ part, isJobOrProperty }) => {
 
   return (
     <div className="left-side-header">
-      <a href={Href} className={`toggle ${sidebarOpen ? "open" : ""}`} onClick={() => dispatch(setSidebarOpen())}>
+      <a href={Href} className={`toggle ${sidebarOpen ? "open" : ""}`} onClick={() => dispatch(setSidebarOpen(!sidebarOpen))}>
         <i className="ri-menu-line" />
       </a>
       <Link to={RouteList.Home.CarDemo1} className="header-logo">

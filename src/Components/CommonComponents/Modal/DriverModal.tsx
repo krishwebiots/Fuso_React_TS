@@ -19,7 +19,7 @@ const DriverModal = () => {
           <RenderInput placeholder="Enter Your Name" ColClass="col-xs-12" review />
           <RenderInput placeholder="Enter Your E-mail" ColClass="col-xs-12" review />
           <RenderInput placeholder="Select Date" ColClass="col-xs-12" inputType="date" review />
-          <RenderInput placeholder="Select Time" ColClass="col-xs-12" review />
+          <RenderInput placeholder="Select Time" ColClass="col-xs-12" inputType="time" review />
           <RenderInput button={SubmitReview} ColClass="col-xs-12" review />
         </Row>
       </ModalBody>

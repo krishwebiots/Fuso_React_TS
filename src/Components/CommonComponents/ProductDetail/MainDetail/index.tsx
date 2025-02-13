@@ -11,6 +11,7 @@ import { MainDetailType } from "../../../../Types/ProductType";
 import { dynamicSvg, Image } from "../../../../Utils";
 import SvgIcon from "../../../../Utils/SvgIcon";
 import ShareModal from "./ShareModal";
+import Tooltips from "../../Tooltips";
 
 const MainDetail: FC<MainDetailType> = ({ type, detailType }) => {
   const dispatch = useAppDispatch();
@@ -24,7 +25,7 @@ const MainDetail: FC<MainDetailType> = ({ type, detailType }) => {
               <h3>{PropertyMainLabel}</h3>
               <h6>{PropertyLocation}</h6>
               <div className="label-flex">
-                <Rating initialValue={4} size={23} />
+                <Rating initialValue={4} size={18} />
                 <Label className="detail-label">{ForSale}</Label>
               </div>
             </div>
@@ -74,19 +75,22 @@ const MainDetail: FC<MainDetailType> = ({ type, detailType }) => {
             <div className="price-box">
               <ul className="detail-social-list">
                 <li>
-                  <a href={Href} onClick={() => dispatch(setShareModal())}>
+                  <a href={Href} onClick={() => dispatch(setShareModal())} id="share">
                     <i className="ri-share-line" />
                   </a>
+                  <Tooltips target="share" title="Share" />
                 </li>
                 <li>
-                  <a href={Href} className="print-button" onClick={() => window.print()}>
+                  <a href={Href} className="print-button" onClick={() => window.print()} id="print">
                     <i className="ri-printer-line" />
                   </a>
+                  <Tooltips target="print" title="Print" />
                 </li>
                 <li>
-                  <a href={Href} className={`add-to-fav ${isSave ? "clicked" : ""}`} onClick={() => setSave(!isSave)}>
+                  <a href={Href} className={`add-to-fav ${isSave ? "clicked" : ""}`} onClick={() => setSave(!isSave)} id="save">
                     <i className={`ri-bookmark-${isSave ? "fill" : "line"} save-${isSave ? "icon" : "outline"}`} />
                   </a>
+                  <Tooltips target="save" title="Save" />
                 </li>
               </ul>
               <h4>

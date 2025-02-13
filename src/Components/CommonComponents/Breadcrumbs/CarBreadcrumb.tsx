@@ -11,7 +11,13 @@ import CarImageSlider from "../../Home/Common/CarImageSlider";
 import DetailImages from "../ProductDetail/DetailImages";
 import MainDetail from "../ProductDetail/MainDetail";
 
-const CarBreadcrumb: FC<CarBreadcrumbType> = ({ detailImages, mailClass, multiple, type, modernSlider }) => {
+const CarBreadcrumb: FC<CarBreadcrumbType> = ({
+  detailImages,
+  mailClass,
+  multiple,
+  type,
+  modernSlider,
+}) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   return (
@@ -19,20 +25,37 @@ const CarBreadcrumb: FC<CarBreadcrumbType> = ({ detailImages, mailClass, multipl
       {type === "car_thumbnail_slider" ? (
         <div className="style-breadcrumbs-4">
           <div className="car-detail-image">
-            <Swiper className="back-slider ratio_45" {...BackSlider} thumbs={{ swiper: thumbsSwiper }}>
+            <Swiper
+              className="back-slider ratio_45"
+              {...BackSlider}
+              thumbs={{ swiper: thumbsSwiper }}
+            >
               {dynamicNumber(8).map((item, index) => (
                 <SwiperSlide key={index}>
                   <a href={Href} className="back-img">
-                    <RatioImage src={dynamicImage(`car/black-images/${item}.jpg`)} alt="dm-1" className="img-fluid bg-img" />
+                    <RatioImage
+                      src={dynamicImage(`car/black-images/${item}.jpg`)}
+                      alt="dm-1"
+                      className="img-fluid bg-img"
+                    />
                   </a>
                 </SwiperSlide>
               ))}
             </Swiper>
-            <Swiper className="front-slider" {...FrontSlider} direction="vertical" onSwiper={setThumbsSwiper}>
+            <Swiper
+              className="front-slider"
+              {...FrontSlider}
+              direction="vertical"
+              onSwiper={setThumbsSwiper}
+            >
               {dynamicNumber(8).map((item, index) => (
                 <SwiperSlide key={index}>
                   <a href={Href} className="front-img">
-                    <Image src={dynamicImage(`car/black-images/${item}.jpg`)} alt="dm-1" className="img-fluid" />
+                    <Image
+                      src={dynamicImage(`car/black-images/${item}.jpg`)}
+                      alt="dm-1"
+                      className="img-fluid"
+                    />
                   </a>
                 </SwiperSlide>
               ))}
@@ -40,7 +63,9 @@ const CarBreadcrumb: FC<CarBreadcrumbType> = ({ detailImages, mailClass, multipl
           </div>
         </div>
       ) : (
-        <div className={`car-breadcrumbs-section ${mailClass ? mailClass : ""}`}>
+        <div
+          className={`car-breadcrumbs-section ${mailClass ? mailClass : ""}`}
+        >
           <Container>
             {!detailImages && (
               <div className="car-detail-image">

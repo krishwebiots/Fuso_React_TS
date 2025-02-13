@@ -111,7 +111,7 @@
             background: rgba(var(--white), 1);
             border-radius: 5px;
             box-shadow: 0 0 20px 0px rgba(var(--title-color), 0.05);
-
+            height: 100%;
             .testimonials-content {
                 p {
                     margin-right: 0;
@@ -381,6 +381,7 @@
 
 .car2-testimonial-section {
     &.car2-about-testimonial {
+        padding-top: calc(40px + (100 - 40) * ((100vw - 320px) / (1920 - 320)));
         .testimonial-box {
             img {
                 filter: invert(40%) sepia(89%) saturate(1923%) hue-rotate(188deg) brightness(96%) contrast(91%);
@@ -449,6 +450,7 @@
                 li {
                     font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
                     color: #FBBF24;
+                    line-height: 0;
 
                     &:last-child {
                         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));

@@ -81,6 +81,36 @@ const Testimonials: FC<TestimonialsType> = ({ type, animation, title }) => {
           </Container>
         </section>
       )}
+       {/* about3 */}
+       {type === "about3" && (
+        <section className="car2-testimonial-section car2-about-testimonial section-t-lg-space">
+          <Container>
+            <CommonHeader title={TestimonialsTitle} content={TestimonialsContentData} headClass="title-style-5" />
+            <Swiper {...Job3BoxSlider} className="car2-testimonial-slider">
+              {TestimonialsData.CarDemo2.map((testimonial, index) => (
+                <SwiperSlide key={index}>
+                  <div className="testimonial-box">
+                    <Image src={dynamicSvg("car2/quote.svg")} alt="quote" className="img-fluid" />
+                    <p>{testimonial.text}</p>
+                    <div className="profile-flex">
+                      <div className="profile-name">
+                        <h5>{testimonial.name}</h5>
+                        <span>{testimonial.position}</span>
+                      </div>
+                      <ul className="rating-list">
+                        <li>
+                          <Rating initialValue={4} size={20} />
+                        </li>
+                        <li>{testimonial.rating}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </Container>
+        </section>
+      )}
 
       {/* Job Demo-2 */}
       {type === "job_demo2" && (

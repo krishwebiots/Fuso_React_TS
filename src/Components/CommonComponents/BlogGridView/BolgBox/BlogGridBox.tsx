@@ -5,7 +5,7 @@ import { BlogGridBoxType } from "../../../../Types/BlogType";
 import { dynamicGrf, dynamicImage, Image } from "../../../../Utils";
 import RatioImage from "../../../../Utils/RatioImage";
 
-const BlogGridBox: FC<BlogGridBoxType> = ({ data, type, index }) => {
+const   BlogGridBox: FC<BlogGridBoxType> = ({ data, type, index }) => {
   return (
     <div className={`blog-grid-box ${type === "layout_1" && index === 1 ? "full-box" : ""}`}>
       <div className="blog-img">

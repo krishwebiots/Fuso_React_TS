@@ -1,18 +1,19 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 import { Loaders } from "../Data/Layout/Loader";
-import { PathTypes } from "../Types/LayoutType";
 import { dynamicGrf, Image } from "../Utils";
+import UsePathName from "../Utils/UsePathName";
 
-const Loader: FC<PathTypes> = ({ part }) => {
+const Loader = () => {
   const [show, setShow] = useState<boolean>(true);
+  const [Path] = UsePathName();
 
   useEffect(() => {
     const timeout = setTimeout(() => setShow(false), 2000);
     return () => clearTimeout(timeout);
   }, [show]);
 
-  const loaderKey = Object.keys(Loaders).find((key) => part === key);
+  const loaderKey = Object.keys(Loaders).find((key) => Path === key);
 
   const loaderContent = Loaders[loaderKey || ""]?.svg || (
     <Fragment>
@@ -25,7 +26,7 @@ const Loader: FC<PathTypes> = ({ part }) => {
     <Fragment>
       {show && (
         <div className="loader-wrapper">
-          <div className={`${part?.includes("property") ? "property-loader" : `text-center ${part?.includes("job") ? "job-loader" : "car-loader"}`}`}>{loaderContent}</div>
+          <div className={`${Path?.includes("property") ? "property-loader" : `text-center ${Path?.includes("job") ? "job-loader" : "car-loader"}`}`}>{loaderContent}</div>
         </div>
       )}
     </Fragment>

@@ -33,7 +33,7 @@ const RangeInputFields: FC<RangeInputFieldsType> = ({ type }) => {
           <div
             ref={props.ref}
             style={{
-              height: "5px",
+              height: "4px",
               width: "100%",
               borderRadius: "4px",
               background: getTrackBackground({
@@ -42,7 +42,6 @@ const RangeInputFields: FC<RangeInputFieldsType> = ({ type }) => {
                 min: value[0] || 10,
                 max: value[1] || 1000000,
               }),
-              alignSelf: "center",
             }}
           >
             {children}

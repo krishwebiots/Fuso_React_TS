@@ -1,12 +1,22 @@
 import { Link } from "react-router-dom";
 import { Button, Form, Input, Label } from "reactstrap";
-import { DonTHaveAnAccount, LogIn, LogInYourAccount, OR, Remember, SignUp, Welcome } from "../../../../Constants/Constants";
+import { DonTHaveAnAccount, Href, LogIn, LogInYourAccount, OR, Remember, SignUp, Welcome } from "../../../../Constants/Constants";
 import { RouteList } from "../../../../Routers/RouteList";
 import { dynamicImage, Image } from "../../../../Utils";
 import { LoginSocialData } from "../../../../Data/Pages/Other";
 import RenderInput from "../../../CommonComponents/RenderInput";
+import UsePathName from "../../../../Utils/UsePathName";
+import { useAppDispatch } from "../../../../ReduxToolkit/Hooks";
+import { setLoginModal, setSignUpModal } from "../../../../ReduxToolkit/Reducers/LayoutReducers";
 
 const LoginForm = () => {
+  const Path = UsePathName();
+  const dispatch = useAppDispatch();
+
+  const handleNavigate = () => {
+    Path[2] === "login-4" && dispatch(setSignUpModal());
+    dispatch(setLoginModal());
+  };
   return (
     <div className="form-box">
       <div className="login-title">
@@ -38,7 +48,9 @@ const LoginForm = () => {
         </ul>
         <div className="signup-box">
           <h6>{DonTHaveAnAccount}</h6>
-          <Link to={RouteList.Pages.Other.SignUp1}>{SignUp}</Link>
+          <Link to={Path[2] === "login-4" ? Href : RouteList.Pages.Other.SignUp1} onClick={handleNavigate}>
+            {SignUp}
+          </Link>
         </div>
       </Form>
     </div>

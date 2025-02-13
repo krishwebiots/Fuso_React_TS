@@ -46,7 +46,7 @@ const JobHomeSection = () => {
       <RatioImage src={dynamicImage("job-3/bg-effect/home-bg-effect.png")} className="bg-img" alt="job" />
       <Container>
         <Row className="justify-content-center">
-          <Col xll="8" xl="9" lg="10">
+          <Col xxl="8" xl="9" lg="10">
             <div className="home-content">
               <h1 className="text-white">{NextJob}</h1>
               <p>{NextJobContent}</p>
@@ -72,7 +72,7 @@ const JobHomeSection = () => {
                           ))}
                         </ul>
                       ) : (
-                        <Row>
+                        <Row className="row gy-xl-0 gy-3">
                           {Cities.map((cityList, i) => (
                             <CitySelectMenu key={i} multiColumn cityList={cityList} selectedCity={selectedCity[index]} onSelectCity={(city) => handleSelect(index, city)} href={Href} />
                           ))}

@@ -9,6 +9,7 @@ import { dynamicImage, dynamicNumber, dynamicVideo, Image } from "../../../../Ut
 import RatioImage from "../../../../Utils/RatioImage";
 import VideoModal from "../../../CommonComponents/Modal/VideoModal";
 import RenderImage from "./RenderImage";
+import { Gallery } from "react-photoswipe-gallery";
 
 const DetailImages: FC<PropertyDetailType> = ({ type, thumb, multiple }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
@@ -60,7 +61,7 @@ const DetailImages: FC<PropertyDetailType> = ({ type, thumb, multiple }) => {
           </div>
         </Fragment>
       ) : type === "car_detail" ? (
-        <Fragment>
+        <Gallery>
           {multiple ? (
             <Row className="ratio3_2 g-sm-3 g-2">
               {dynamicNumber(7).map((item) => (
@@ -80,17 +81,19 @@ const DetailImages: FC<PropertyDetailType> = ({ type, thumb, multiple }) => {
             </Row>
           )}
           <VideoModal />
-        </Fragment>
+        </Gallery>
       ) : (
         <Row className="ratio_landscape m-0 image-radius">
-          <RenderImage item={1} type={type} multiple={multiple} />
-          <Col md="6" className="p-0">
-            <Row className="m-0">
-              {dynamicNumber(4).map((item) => (
-                <RenderImage item={item + 1} type={type} multiple={multiple} key={item} />
-              ))}
-            </Row>
-          </Col>
+          <Gallery>
+            <RenderImage item={1} type={type} multiple={multiple} />
+            <Col md="6" className="p-0">
+              <Row className="m-0">
+                {dynamicNumber(4).map((item) => (
+                  <RenderImage item={item + 1} type={type} multiple={multiple} key={item} />
+                ))}
+              </Row>
+            </Col>
+          </Gallery>
         </Row>
       )}
     </Fragment>

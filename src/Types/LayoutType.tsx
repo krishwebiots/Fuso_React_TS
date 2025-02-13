@@ -20,6 +20,7 @@ export interface MenuListType {
 
 export interface ChildMenuType {
   mainMenu: MenuItemtype[];
+  toggleMenu: () => void;
 }
 
 export interface LoaderConfig {

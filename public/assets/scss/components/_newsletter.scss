@@ -141,7 +141,11 @@
                         right: unset;
                         left: 8px;
                     }
-
+                    &:active{
+                        border-color: #081f2e !important;
+                        color: #081f2e !important;
+                        background: transparent !important;
+                    }
 
                     &:hover {
                         border-color: #081f2e;
@@ -310,6 +314,13 @@
 
         h2 {
             margin-top: calc(-5px + (-10 - -5) * ((100vw - 320px) / (1920 - 320)));
+        }
+        .btn-pills{
+            &:active{
+                background-color: transparent !important;
+                color: rgba(var(--theme-color), 1) !important;
+                border-color: rgba(var(--theme-color), 1) !important;
+            }
         }
     }
 }

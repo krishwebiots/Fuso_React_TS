@@ -20,7 +20,7 @@ const ReviewModal = () => {
       <ModalHeader toggle={toggle} close={<CloseBtn toggle={toggle} />} />
       <ModalBody>
         <h4 className="detail-page-title">{Path.includes("car") ? AddReviewTitle : Path.includes("blog-left-classic") ? LeaveCommentTitle : WriteReview}</h4>
-        <Row className="gy-sm-4 gy-3">
+        <Row className="gy-lg-4 gy-2">
           {Path.includes("car") && (
             <Fragment>
               <Col lg="6">

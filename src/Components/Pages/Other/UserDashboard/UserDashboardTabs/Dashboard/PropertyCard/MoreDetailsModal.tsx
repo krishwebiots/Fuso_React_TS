@@ -20,8 +20,8 @@ const MoreDetailsModal = () => {
       <ModalHeader toggle={toggle} close={<CloseBtn toggle={toggle} />} />
       <ModalBody className="detail-body">
         <Overview type="use_dashboard" label />
-        <Row>
-          <Col xs="8">
+        <Row className="gy-sm-0 gy-3">
+          <Col sm="8">
             <h4 className="modal-title">{InteriorInspirations}</h4>
             <Swiper className="modal-swiper-slider ratio_square" {...ModalSwiperSlider}>
               {AmenitiesData.map((item, index) => (
@@ -33,7 +33,7 @@ const MoreDetailsModal = () => {
               ))}
             </Swiper>
           </Col>
-          <Col xs="4">
+          <Col sm="4">
             <h4 className="modal-title">{FloorPlansTitle}</h4>
             <div className="floor-plan">
               <Image src={dynamicImage("property/detail/floor.png")} alt="floor-plan" className="img-fluid" />

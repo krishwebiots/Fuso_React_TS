@@ -1,8 +1,8 @@
 //About-Us
-import { CallCalling, Global, Location, Message, MessageQuestion, ReceiptText, Sms } from "iconsax-react";
+import { ApexOptions } from "apexcharts";
+import { CallCalling, Global, Location, Sms } from "iconsax-react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { RouteList } from "../../Routers/RouteList";
-import { ApexOptions } from "apexcharts";
 
 export const PrimeCarRentalsContent = "At Prime Car Rentals, we pride ourselves on delivering top-tier car rental services that cater to a wide range of needs, from business trips to family vacations.";
 
@@ -56,35 +56,35 @@ export const ContactCards = [
     description: "See our frequently asked questions.",
     link: RouteList.Pages.Other.ContactUs1,
     linkText: "Chat to sales",
-    icon: <Message className="iconsax" />,
+    icon: "message.gif",
   },
   {
     title: "Our Location",
     description: "Speak to someone from our sales team today.",
     link: "https://www.google.com/maps",
     linkText: "Visit location",
-    icon: <MessageQuestion className="iconsax" />,
+    icon: "google-maps.gif",
   },
   {
     title: "Get Help Center",
     description: "Speak to our team today and ask anything about Coast.",
     link: RouteList.Pages.Other.ContactUs1,
     linkText: "Get Answer",
-    icon: <Location className="iconsax" />,
+    icon: "message-question.gif",
   },
   {
     title: "Call Us",
     description: "See how Coast can help your business by getting early access.",
     link: RouteList.Pages.Other.ContactUs1,
     linkText: "Call our team",
-    icon: <CallCalling className="iconsax" />,
+    icon: "call.gif",
   },
   {
     title: "Press & Media",
     description: "Get in touch with our PR team today.",
     link: RouteList.Pages.Other.ContactUs1,
     linkText: "Get Answer",
-    icon: <ReceiptText className="iconsax" />,
+    icon: "newspaper.gif",
   },
 ];
 
@@ -430,7 +430,7 @@ export const DealChart: ApexOptions = {
       },
     },
   },
-  colors: ["#FFA941", "var(--chart-theme)"],
+  colors: ["#FFA941", "#188aec"],
   xaxis: {
     categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
     tickAmount: 4,
@@ -466,9 +466,6 @@ export const DealChart: ApexOptions = {
     fontFamily: "outfit, sans-serif",
     fontSize: "14px",
     fontWeight: 400,
-    markers: {
-      size: 6, // Use size instead of width/height
-    },
     itemMargin: {
       horizontal: 10,
     },
@@ -547,7 +544,7 @@ export const CarOrdersNavList = [
 ];
 
 export const OrdersHeadData = ["Item", "Model", "Price"];
-  
+
 export const OrdersData = [
   {
     type: "sedan",
@@ -1121,3 +1118,6 @@ export const LogoutModalContent = "you are about to logout. are you sure this is
 
 //Not Found
 export const NotFoundContent = "There are no products that meet your criteria. It's possible they're unavailable, too specific, or out of stock. To improve your search, please try again later. Get assistance by contacting support.";
+
+//Common
+export const ModeButtonHidden = ["job-2", "portfolio-detail-2", "portfolio-modern", "portfolio-creative-full", "portfolio-parallax", "login-2", "login-3", "signup-2", "signup-3"];

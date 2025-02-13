@@ -7,9 +7,9 @@ const PriceDetails = () => {
   return (
     <div className="user-form-box">
       <h4 className="dashboard-title">{PriceDetailsTitle}</h4>
-      <Row className="g-4">
-        <RenderInput label="Price" inputType="number" placeholder="Enter Your Price" ColClass="col-sm-6" />
-        <RenderInput label="Show Price As" inputType="number" placeholder="Enter price As" ColClass="col-sm-6" />
+      <Row className="gy-lg-4 g-3">
+        <RenderInput label="Price" inputType="number" placeholder="Enter Your Price" ColClass="col-sm-6 col-md-4" />
+        <RenderInput label="Show Price As" inputType="number" placeholder="Enter price As" ColClass="col-sm-6 col-md-4" />
         <div className="include-price-list">
           <span>{PriceInclude}</span>
           <ul className="user-choose-list">

@@ -93,7 +93,7 @@ const Team: FC<PropsType> = ({ type }) => {
             <CommonHeader title={TeamTitle} content={TeamContent} headClass="content-title" />
             <Row className="g-xl-5 gy-4 ratio_square">
               {TeamData.slice(9).map((item, index) => (
-                <Col xl="3" lg="4" sm="6" key={index}>
+                <Col xxl="3" lg="4" md="6" key={index}>
                   <div className="team-box">
                     <div className="overflow-hidden">
                       <div className="team-img">

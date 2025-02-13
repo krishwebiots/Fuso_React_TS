@@ -7,9 +7,9 @@
 ==========================**/
 
 $outfit: "Outfit",
-  sans-serif;
+sans-serif;
 $rochester: "Rochester",
-  cursive;
+cursive;
 
 /**=====================
   2. CSS Variables
@@ -62,6 +62,8 @@ $rochester: "Rochester",
   --theme-color: 50, 96, 231;
   --border-color: 238, 238, 238;
   --content-color: 153, 153, 153;
+  --light-border-color: 238, 238, 238;
+  
 }
 
 .job3-color {
@@ -71,6 +73,7 @@ $rochester: "Rochester",
   --content-color: 153, 153, 153;
   --title-color: 34, 34, 34;
   --blue-shade-bg: 238, 246, 255;
+  --light-border-color: 238, 238, 238;
 }
 
 /**=====================
@@ -107,6 +110,7 @@ $rochester: "Rochester",
     --bg-color: 6, 10, 31;
     --border-color: 22, 25, 38;
     --blue-shade-bg: 8, 14, 42;
+    --light-border-color: 68, 68, 68;
   }
 
   &.car2-color {

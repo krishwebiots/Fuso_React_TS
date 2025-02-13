@@ -1,21 +1,21 @@
 svg {
-    display: inline-block;
-    width: var(--Iconsax-Size);
-    height: var(--Iconsax-Size);
-    stroke: var(--Iconsax-Color);
-    
-    [fill] {
-        fill: var(--Iconsax-Color);
-    }
+  display: inline-block;
+  width: var(--Iconsax-Size);
+  height: var(--Iconsax-Size);
+  stroke: var(--Iconsax-Color);
 
-    &.iconsax {
-        display: block;
-        speak: never;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: var(--Iconsax-Size);
-        vertical-align: middle;
-    }
+  [fill] {
+    fill: var(--Iconsax-Color);
+  }
+
+  &.iconsax {
+    display: block;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: var(--Iconsax-Size);
+    vertical-align: middle;
+  }
 }

@@ -1,4 +1,4 @@
-import { Award, Building, Calendar1, Call, Car, Coin1, Driving, Location, SearchNormal1, Tag2, Verify, Wallet, Wallet3 } from "iconsax-react";
+import { Award, Building, Calendar, Call, Car, Coin1, Driving, Location, SearchNormal1, Tag2, Verify, Wallet, Wallet3 } from "iconsax-react";
 import { Autoplay, EffectFade, FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { NavType } from "../../Types/HomeDemoType";
 
@@ -23,15 +23,15 @@ export const HomeTabData: NavType[] = [
   },
   {
     id: 3,
-    icon: <Calendar1 className="iconsax" />,
+    icon: <Calendar className="iconsax" />,
     label: "Pick up Date",
     inputLabel: "Choose your Date",
   },
   {
     id: 4,
-    icon: <Calendar1 className="iconsax" />,
-    label: "Pick up Time",
-    inputLabel: "Choose your Time",
+    icon: <Calendar className="iconsax" />,
+    label: "Pick off Date",
+    inputLabel: "Choose your Date",
   },
   {
     id: 5,
@@ -133,7 +133,7 @@ export const WorkContentData = "Understanding how our system operates is crucial
 
 export const WorkData = [
   { icon: <Location className="iconsax" />, text: "Choose your pickup and drop-off points to find rental options.", duration: 300 },
-  { icon: <Calendar1 className="iconsax" />, text: "Set your desired rental period to see available vehicles.", duration: 500, svg: true },
+  { icon: <Calendar className="iconsax" />, text: "Set your desired rental period to see available vehicles.", duration: 500, svg: true },
   { icon: <Verify className="iconsax" />, text: "Browse and pick the perfect car for your journey.", duration: 700 },
 ];
 

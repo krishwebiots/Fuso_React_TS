@@ -12,6 +12,11 @@
     border: 1px solid transparent;
     transition: 0.4s ease;
     line-height: 1;
+    &:active{
+        border-color: rgba(var(--theme-color), 1) !important; 
+        background: transparent !important;
+        color: rgba(var(--theme-color), 1) !important;
+    }
 
     &:hover {
         border-color: rgba(var(--theme-color), 1);
@@ -63,6 +68,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
 
     &:focus {
         box-shadow: none;
@@ -95,6 +101,11 @@
     background: rgba(var(--theme-color), 1);
     color: rgba(var(--white), 1);
     border-radius: 100%;
+    border: none;
+    &:hover, &:active{
+        background-color: rgba(var(--theme-color), 1) !important;
+        color: rgba(var(--white), 1) !important;
+    }
 
     &::before {
         content: "";

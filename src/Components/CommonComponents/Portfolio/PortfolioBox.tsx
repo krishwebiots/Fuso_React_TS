@@ -4,7 +4,7 @@ import { Gallery, Item } from "react-photoswipe-gallery";
 import { Link } from "react-router-dom";
 import { Button, Col, Row } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Href, PortfolioTitle } from "../../../Constants/Constants";
+import { Href} from "../../../Constants/Constants";
 import { PortfolioData, PortfolioImagesSlider } from "../../../Data/Pages/Portfolio";
 import { useAppDispatch, useAppSelector } from "../../../ReduxToolkit/Hooks";
 import { setVideoModal } from "../../../ReduxToolkit/Reducers/LayoutReducers";
@@ -44,10 +44,6 @@ const PortfolioBox: FC<PortfolioBoxType> = ({ activeTab, gridSize, type }) => {
                         <RatioImage src={dynamicImage(item.backImage)} alt="blog" className="bg-img" />
                       </Link>
                     </div>
-                  </div>
-                  <div className="portfolio-info">
-                    <h4>{PortfolioTitle}</h4>
-                    <span>{PortfolioTitle}</span>
                   </div>
                 </div>
               </Col>

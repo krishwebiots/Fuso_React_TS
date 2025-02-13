@@ -67,9 +67,7 @@ const Reviews: FC<DetailBodyItemType> = ({ label, type }) => {
                   <div className="profile-flex">
                     <div>
                       <h6>{item.name}</h6>
-                      <ul className="rating">
-                        <Rating size={20} initialValue={item.stars} />
-                      </ul>
+                      <Rating size={20} initialValue={item.stars} />
                     </div>
                     <span>
                       <Clock className="iconsax" /> {item.date}

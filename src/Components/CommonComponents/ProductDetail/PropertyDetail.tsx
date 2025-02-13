@@ -62,7 +62,22 @@ const PropertyDetail: FC<PropertyDetailType> = ({ type, mainClass, thumb }) => {
               <div className="detail-images">
                 <Row>
                   <Col md="2" className="order-md-0 order-1">
-                    <Swiper {...StickySliderNav} direction={"vertical"} onSwiper={setThumbsSwiper} className="sub-vertical-image ratio_asos">
+                    <Swiper
+                      {...StickySliderNav}
+                      direction={"vertical"}
+                      onSwiper={setThumbsSwiper}
+                      breakpoints={{
+                        0: {
+                          slidesPerView: 3,
+                          direction: "horizontal",
+                          spaceBetween: 15,
+                        },
+                        768: {
+                          slidesPerView: 6,
+                        },
+                      }}
+                      className="sub-vertical-image ratio_asos"
+                    >
                       {dynamicNumber(9).map((data, i) => (
                         <SwiperSlide tag="a" className="detail-sub-image bg-size" key={i}>
                           <RatioImage src={dynamicImage(`property/detail-main/${data}.jpg`)} className="img-fluid bg-img" alt="image" />
@@ -71,7 +86,20 @@ const PropertyDetail: FC<PropertyDetailType> = ({ type, mainClass, thumb }) => {
                     </Swiper>
                   </Col>
                   <Col md="10">
-                    <Swiper {...StickySliderFor} direction={"vertical"} thumbs={{ swiper: thumbsSwiper }} className="main-vertical-image ratio_asos">
+                    <Swiper
+                      {...StickySliderFor}
+                      direction={"vertical"}
+                      thumbs={{ swiper: thumbsSwiper }}
+                      breakpoints={{
+                        0: {
+                          direction: "horizontal",
+                        },
+                        768: {
+                          direction: "vertical",
+                        },
+                      }}
+                      className="main-vertical-image ratio_asos"
+                    >
                       {dynamicNumber(9).map((data, i) => (
                         <SwiperSlide className="detail-main-image bg-size" key={i}>
                           <RatioImage src={dynamicImage(`property/detail-main/${data}.jpg`)} className="img-fluid bg-img" alt="image" />

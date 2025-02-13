@@ -125,6 +125,8 @@
             }
 
             .iconsax {
+                display: inline-block;
+                margin-left: 3px;
                 --Iconsax-Size: 21px;
                 --Iconsax-Color: rgba(var(--theme-color), 1);
             }
@@ -409,6 +411,7 @@
 
             .iconsax {
                 --Iconsax-Color: #fff;
+                display: inline-block;
             }
         }
     }

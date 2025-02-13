@@ -1,4 +1,4 @@
-import { MouseEvent, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Container } from "reactstrap";
 import { PortfolioItems } from "../../../../../Data/Pages/Portfolio";
@@ -20,7 +20,37 @@ const PortfolioModernContainer = () => {
       index,
     });
   };
+  useEffect(() => {
+    const navLinks = document.querySelectorAll(".portfolio-link");
 
+    const handleMouseEnter = (link: Element) => {
+      navLinks.forEach((l) => {
+        if (l instanceof HTMLElement) {
+          l.style.opacity = l === link ? "1" : "0.2";
+        }
+      });
+    };
+
+    const handleMouseLeave = () => {
+      navLinks.forEach((l) => {
+        if (l instanceof HTMLElement) {
+          l.style.opacity = "1";
+        }
+      });
+    };
+
+    navLinks.forEach((link) => {
+      link.addEventListener("mouseenter", () => handleMouseEnter(link));
+      link.addEventListener("mouseleave", handleMouseLeave);
+    });
+
+    return () => {
+      navLinks.forEach((link) => {
+        link.removeEventListener("mouseenter", () => handleMouseEnter(link));
+        link.removeEventListener("mouseleave", handleMouseLeave);
+      });
+    };
+  }, []);
   const handleMouseLeave = () => setHoveredImageStyle({ left: 0, top: 0, index: null });
 
   return (

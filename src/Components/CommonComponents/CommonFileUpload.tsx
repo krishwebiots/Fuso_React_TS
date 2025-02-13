@@ -1,3 +1,4 @@
+import { Export } from "iconsax-react";
 import { FC, Fragment, useState } from "react";
 import Dropzone from "react-dropzone";
 
@@ -12,8 +13,9 @@ const CommonFileUpload: FC<{ multiple?: boolean }> = ({ multiple }) => {
         <Dropzone onDrop={onDrop}>
           {({ getRootProps, getInputProps }) => (
             <div {...getRootProps()} className="dropzone-container">
+              <Export className="iconsax" />
               <input {...getInputProps()} />
-              <p>Drag & drop your file here, or click to select a file</p>
+              <h5>Click to upload, or drop files here.</h5>
             </div>
           )}
         </Dropzone>
@@ -23,8 +25,9 @@ const CommonFileUpload: FC<{ multiple?: boolean }> = ({ multiple }) => {
             <Dropzone onDrop={onDrop}>
               {({ getRootProps, getInputProps }) => (
                 <div {...getRootProps()} className="add-more-files-zone">
+                  <Export className="iconsax" />
                   <input {...getInputProps()} />
-                  <p>Click or drag more files to add</p>
+                  <h5>Click or drag more files to add</h5>
                 </div>
               )}
             </Dropzone>

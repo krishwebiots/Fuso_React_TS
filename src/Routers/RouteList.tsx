@@ -146,7 +146,7 @@ export const RouteList = {
         BlogVideoLayout: `/pages/blog/detail/blog-video-layout`,
         BlogAudioLayout: `/pages/blog/detail/blog-audio-layout`,
         BlogSliderLayout: `/pages/blog/detail/blog-slider-layout`,
-        BlogQuoteLayout: `/pages/blog/detail/blog-Quote-layout`,
+        BlogQuoteLayout: `/pages/blog/detail/blog-quote-layout`,
       },
     },
     Portfolio: {
@@ -155,12 +155,12 @@ export const RouteList = {
       Portfolio4Grid: `/pages/portfolio/portfolio-4-grid`,
       PortfolioTransform: `/pages/portfolio/portfolio-transform`,
       PortfolioVideoModal: `/pages/portfolio/portfolio-video-modal`,
-      PortfolioGalleryIcon: `/pages/portfolio/portfolio-Gallery-icon`,
+      PortfolioGalleryIcon: `/pages/portfolio/portfolio-gallery-icon`,
       PortfolioImageChange: `/pages/portfolio/portfolio-image-change`,
       PortfolioBoxSlider: `/pages/portfolio/portfolio-box-slider`,
       PortfolioParallax: `/pages/portfolio/portfolio-parallax`,
       PortfolioVerticalSlider: `/pages/portfolio/portfolio-vertical-slider`,
-      PortfolioCreativeFull: `/pages/portfolio/portfolio-Creative-full`,
+      PortfolioCreativeFull: `/pages/portfolio/portfolio-creative-full`,
       PortfolioModern: `/pages/portfolio/portfolio-modern`,
       Detail: {
         PortfolioDetail1: `/pages/portfolio/detail/portfolio-detail-1`,

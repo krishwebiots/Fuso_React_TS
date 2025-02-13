@@ -10,7 +10,7 @@ import { useAppDispatch } from "../../../ReduxToolkit/Hooks";
 import { setSearchModal } from "../../../ReduxToolkit/Reducers/LayoutReducers";
 import { RouteList } from "../../../Routers/RouteList";
 import { SearchTabListType } from "../../../Types/HomeDemoType";
-import { dynamicGrf, Image } from "../../../Utils";
+import { dynamicGrf, dynamicSvg, Image } from "../../../Utils";
 import UseOutsideDropdown from "../../../Utils/UseOutsideDropdown";
 import UsePathName from "../../../Utils/UsePathName";
 import RangeInputFields from "../../CommonComponents/GridView/Filter/Common/RangeInputFields";
@@ -20,7 +20,7 @@ const SearchTabList: FC<SearchTabListType> = ({ showTab, datePicker, scrollDown,
   const [selected, setSelected] = useState(HomeTabData.filter(({ id }) => showTab?.includes(id)));
   const [basicTab, setBasicTab] = useState(1);
   const dispatch = useAppDispatch();
-  const Path = UsePathName();
+  const [Path] = UsePathName();
 
   const dropdownRefs = selected.map(() => UseOutsideDropdown(false));
 
@@ -33,6 +33,8 @@ const SearchTabList: FC<SearchTabListType> = ({ showTab, datePicker, scrollDown,
     handleSelect(id, format(date, "MM/dd/yyyy"));
   };
 
+  const NavigateLink = Path.includes("job") ? RouteList.Job.Grid.JobGridType2 : Path.includes("property") ? RouteList.Property.Grid.Property2Grid : RouteList.Car.Grid.Car3Grid;
+
   return (
     <Fragment>
       {!showNav && (
@@ -40,7 +42,7 @@ const SearchTabList: FC<SearchTabListType> = ({ showTab, datePicker, scrollDown,
           {HomeNavData.slice(0, endPoint || 3).map((item, index) =>
             datePicker ? (
               <NavItem key={index}>
-                <NavLink className={basicTab === item.id ? "active" : ""} color="transparent" onClick={() => setBasicTab(item.id)} key={index}>
+                <NavLink href="#!" className={basicTab === item.id ? "active" : ""} color="transparent" onClick={() => setBasicTab(item.id)} key={index}>
                   {item.title}
                   {icon && <i className="ri-arrow-right-line" />}
                 </NavLink>
@@ -53,7 +55,7 @@ const SearchTabList: FC<SearchTabListType> = ({ showTab, datePicker, scrollDown,
                 </Button>
               </NavItem>
             ) : (
-              <NavLink className={basicTab === item.id ? "active" : ""} color="transparent" onClick={() => setBasicTab(item.id)} key={index}>
+              <NavLink href="#!" className={basicTab === item.id ? "active" : ""} color="transparent" onClick={() => setBasicTab(item.id)} key={index}>
                 {item.title}
                 {icon && <i className="ri-arrow-right-line" />}
               </NavLink>
@@ -74,8 +76,9 @@ const SearchTabList: FC<SearchTabListType> = ({ showTab, datePicker, scrollDown,
                 )}
                 <div ref={dropdownRefs[index].ref} className="select-dropdown">
                   <Dropdown isOpen={dropdownRefs[index].isComponentVisible} toggle={() => dropdownRefs[index].setIsComponentVisible(!dropdownRefs[index].isComponentVisible)}>
-                    <div className="select-button" onClick={() => dropdownRefs[index].setIsComponentVisible(true)}>
+                    <div className="select-button" onClick={() => dropdownRefs[index].setIsComponentVisible(!dropdownRefs[index].isComponentVisible)}>
                       <Input type="text" value={item.inputLabel} placeholder={item.inputLabel || "Select an option"} readOnly />
+                      {datePicker && <Image src={dynamicSvg("car2/arrow.svg")} alt="arrow-svg" className="img-fluid" />}
                     </div>
                     <DropdownMenu className="select-menu">
                       {item.dropdownMenu ? (
@@ -84,17 +87,20 @@ const SearchTabList: FC<SearchTabListType> = ({ showTab, datePicker, scrollDown,
                             key={idx}
                             onClick={() => {
                               handleSelect(item.id, list.title);
-                              dropdownRefs[index].setIsComponentVisible(false);
+                              dropdownRefs[index].setIsComponentVisible(!dropdownRefs[index].isComponentVisible);
                             }}
+                            className={item.inputLabel === list.title ? "active" : ""}
                           >
                             {list.icon && list.icon}
-                            {list.title}
+                            <h6>{list.title}</h6>
                           </DropdownItem>
                         ))
                       ) : datePicker ? (
                         <DatePicker selected={startDate} onChange={(date: Date | null) => date && handleChange(date, item.id)} inline />
                       ) : (
-                        <RangeInputFields />
+                        <div className="range-slider">
+                          <RangeInputFields />
+                        </div>
                       )}
                     </DropdownMenu>
                   </Dropdown>
@@ -107,7 +113,7 @@ const SearchTabList: FC<SearchTabListType> = ({ showTab, datePicker, scrollDown,
               </li>
             )}
             <li className="tab-item">
-              <Link to={RouteList.Car.Grid.Car3Grid} className={`btn-solid ${form ? "property2-change" : Path[0] === "car-2" ? "btn-pills" : ""}`}>
+              <Link to={NavigateLink} className={`btn-solid ${form ? "property2-change" : Path === "car-2" ? "btn-pills" : ""}`}>
                 {Search}
               </Link>
             </li>

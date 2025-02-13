@@ -10,7 +10,6 @@ const Work = () => {
       <Container>
         <CommonHeader title={WorkTitle} content={WorkContentData} headClass="title-style-2" animation />
         <Row className="g-lg-5 gy-4 align-items-center justify-content-center">
-          <Row>
             {WorkData.map((item, index) => (
               <Col lg="4" sm="6" key={index}>
                 {item.svg && <Image src={dynamicSvg("car/svg-line.svg")} alt="svg-line" className="img-fluid top-wave" />}
@@ -23,7 +22,6 @@ const Work = () => {
                 {item.svg && <Image src={dynamicSvg("car/svg-line.svg")} alt="svg-line" className="img-fluid bottom-wave" />}
               </Col>
             ))}
-          </Row>
         </Row>
       </Container>
     </section>

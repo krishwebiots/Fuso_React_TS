@@ -28,7 +28,16 @@ const PropertyProductBox1: FC<ProductBoxType> = ({ data, view, wishlist }) => {
     <div className="featured-box">
       {view === "video" ? (
         <div className="featured-video">
-          <video autoPlay muted loop>
+          <video ref={(video) => {
+            if (video) {
+              video.pause();
+            }
+            }}
+            onMouseEnter={(e) => e.currentTarget.play()}
+            onMouseLeave={(e) => e.currentTarget.pause()}
+            muted
+            loop
+            autoPlay>
             <source src={dynamicVideo(data.video ? data.video : "1.mp4")} type="video/mp4" />
             <source src={dynamicVideo(data.video ? data.video : "1.mp4")} type="video/ogg" />
           </video>
@@ -38,13 +47,13 @@ const PropertyProductBox1: FC<ProductBoxType> = ({ data, view, wishlist }) => {
           <Link to={view === "multiple" ? Href : RouteList.Property.Detail.PropertySidebarLayout} className="featured-img">
             <PropertyBoxSlider view={view} data={data} />
           </Link>
-          {data.label && <Label className="save-btn">{data.label.text}</Label>}
+          {data.label && <Label className="save-btn-label">{data.label.text}</Label>}
           {wishlist ? (
             <Link to={Href} className="remove-button" onClick={() => handleRemove(data.id)}>
               <Trash className="iconsax" />
             </Link>
           ) : (
-            <Link to={Href} className="wishlist-btn" onClick={() => handleWishlist()}>
+            <Link to={Href} className="save-btn" onClick={() => handleWishlist()}>
               <i className="ri-bookmark-line" />
             </Link>
           )}

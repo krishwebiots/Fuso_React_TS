@@ -86,10 +86,10 @@ const CarDetail: FC<CarDetailType> = ({ detailImages, type, scrollspy, classicSl
                     </SwiperSlide>
                   ))}
                   <div className="swiper-button-next">
-                    <ArrowLeft2 className="iconsax" />
+                    <ArrowRight2 className="iconsax" />
                   </div>
                   <div className="swiper-button-prev">
-                    <ArrowRight2 className="iconsax" />
+                    <ArrowLeft2 className="iconsax" />
                   </div>
                 </Swiper>
                 <Button className="video-modal-btn" onClick={() => dispatch(setVideoModal())}>

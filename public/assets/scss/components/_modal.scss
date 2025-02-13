@@ -13,14 +13,20 @@
             border: none;
 
             .overview-list {
-                margin-bottom: 30px;
+                margin-bottom: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
             }
 
             .floor-plan {
                 img {
                     width: 82%;
+                    @media (max-width:575px) {
+                        width: 100%;
+                    }
                 }
             }
+        }
+        .btn-solid{
+            padding-inline: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
         }
     }
 
@@ -133,13 +139,11 @@
                             border-radius: 0;
                             margin-top: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
                         }
-
-                        .accordion-body {
-                            .range-slider {
-                                margin-bottom: calc(32px + (42 - 32) * ((100vw - 320px) / (1920 - 320)));
+                        .accordion-body{
+                            &:has(.model-list){
+                                padding-top: 10px;
                             }
                         }
-
                         .accordion-button,
                         .accordion-body {
                             padding: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320))) 0;
@@ -338,6 +342,11 @@
             height: 100%;
             padding-inline: 20px;
             line-height: 1;
+
+            &:active {
+                background-color: transparent;
+                color: rgba(var(--theme-color), 1);
+            }
         }
     }
 

@@ -47,7 +47,7 @@ const JobHomeSection = () => {
                           if ("childrenClass" in imgData) {
                             return (
                               <div key={imgIndex} className={imgData.childrenClass}>
-                                {imgData.childrenImage.map((childImg, childIndex) => renderImage(childImg))}
+                                {imgData.childrenImage.map((childImg) => renderImage(childImg))}
                               </div>
                             );
                           }
