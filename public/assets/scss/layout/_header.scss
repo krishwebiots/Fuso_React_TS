@@ -26,23 +26,83 @@ header {
 
             .sidebar-nav {
                 .menu-items {
-                    >li {
+                    >.expand-btn {
                         &:hover {
                             &::after {
                                 color: rgba(var(--theme-color), 1);
                             }
-
-                            >a {
+    
+                            .menu-item {
                                 color: rgba(var(--theme-color), 1);
                             }
                         }
-
+    
                         &::after {
                             color: rgba(var(--title-color), 1);
                         }
-
-                        >a {
+    
+                        .menu-item {
                             color: rgba(var(--title-color), 1);
+    
+                            &.open {
+                                @media (max-width: 1199px) {
+                                    color: rgba(var(--theme-color), 1) !important;
+    
+                                    &::after {
+                                        color: rgba(var(--theme-color), 1) !important;
+                                    }
+                                }
+                            }
+    
+                            @media (max-width: 1199px) {
+                                color: rgba(var(--title-color), 1) !important;
+                            }
+                        }
+                    }
+    
+                    .dropdown-megamenu {
+                        >li {
+                            &:hover {
+                                >a {
+                                    color: rgba(var(--theme-color), 1) !important;
+    
+                                    &::after {
+                                        @media (max-width: 1199px) {
+                                            color: rgba(var(--theme-color), 1) !important;
+                                        }
+                                    }
+                                }
+    
+                                &::after {
+                                    color: rgba(var(--theme-color), 1) !important;
+                                }
+                            }
+    
+                            >a {
+                                color: rgba(var(--title-color), 1) !important;
+    
+                                &::before {
+                                    background-color: rgba(var(--theme-color), 1) !important;
+                                }
+                            }
+    
+                            ul {
+                                li {
+                                    &:hover {
+                                        a {
+                                            color: rgba(var(--theme-color), 1) !important;
+                                        }
+                                    }
+    
+                                    a {
+                                        color: rgba(var(--title-color), 1) !important;
+    
+                                        &::before {
+                                            background-color: rgba(var(--theme-color), 1) !important;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -896,6 +956,7 @@ header {
                             width: 100%;
                             &:active{
                                 background: rgba(var(--theme-color), 1) !important; 
+                                color: #fff !important;
                             }
                         }
                     }

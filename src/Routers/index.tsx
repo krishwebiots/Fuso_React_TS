@@ -340,7 +340,7 @@ const Router = createBrowserRouter(
         { path: RouteList.Pages.Other.SignUp3, element: <SignUp3 /> },
       ],
     },
-  ]
+  ],
   // {
   //   basename: "/fuso",
   // }

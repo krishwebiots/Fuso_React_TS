@@ -68,7 +68,7 @@ const JobHomeSection = () => {
                         {selectedCity}
                       </DropdownToggle>
                       <DropdownMenu>
-                        <Row className="row gy-xl-0 gy-3">
+                        <Row className="gy-xl-0 gy-3">
                           {Cities.map((cityList, i) => (
                             <CitySelectMenu key={i} multiColumn cityList={cityList} selectedCity={selectedCity} onSelectCity={(city) => setSelectedCity(city)} href={Href} />
                           ))}

@@ -385,6 +385,7 @@
       left: -10px;
     }
   }
+ 
 
   .swiper-button-next,
   .swiper-button-prev {
@@ -399,6 +400,8 @@
     margin-top: 0;
     top: 50%;
     transform: translateY(-50%);
+    
+   
 
     &::before {
       content: "";

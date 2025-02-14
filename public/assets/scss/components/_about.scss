@@ -129,6 +129,11 @@
                 margin-left: 3px;
                 --Iconsax-Size: 21px;
                 --Iconsax-Color: rgba(var(--theme-color), 1);
+                
+                [dir="rtl"] & {
+                    margin: 0;
+                    margin-right: 3px;
+                }
             }
         }
     }

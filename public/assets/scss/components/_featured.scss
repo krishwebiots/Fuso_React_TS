@@ -1267,7 +1267,7 @@
                 color: rgba(var(--theme-color), 1);
                 padding: calc(6px + (11 - 6) * ((100vw - 320px) / (1920 - 320))) calc(12px + (32 - 12) * ((100vw - 320px) / (1920 - 320)));
                 white-space: nowrap;
-
+               
                 &.active {
                     background: rgba(var(--theme-color), 1);
                     color: #fff;

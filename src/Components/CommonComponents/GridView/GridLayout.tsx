@@ -29,7 +29,7 @@ const GridLayout: FC<GridLayoutType> = ({ value, type, gridSize, gridType, view,
   const totalPages = Math.ceil(Product?.length / cardToShow);
   const showProduct = scrollType === "infinite" ? Product.slice(0, cardToShow * currentPage) : Product?.slice(cardToShow * currentPage - cardToShow, cardToShow * currentPage);
   const RowBoxClass = gridType === "list-view" ? (type === "car" ? "car-list-section ratio_65" : "ratio3_2") : view === "multiple" ? "ratio_65" : "ratio_landscape";
-  const ColBoxClass = gridSize === 3 ? "col-lg-4 col-sm-6" : gridSize === 4 ? "col-xxl-3 col-lg-4" : gridSize === 1 ? "col-xl-12" : gridSize === 2 ? "col-lg-6 " : "col-sm-6";
+  const ColBoxClass = gridSize === 3 ? "col-lg-4 col-sm-6" : gridSize === 4 ? "col-xxl-3 col-lg-4 col-sm-6" : gridSize === 1 ? "col-xl-12" : gridSize === 2 ? "col-lg-6 " : "col-sm-6";
 
   const fetchMoreData = () => {
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);

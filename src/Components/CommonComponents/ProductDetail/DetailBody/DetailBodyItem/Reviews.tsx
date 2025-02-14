@@ -98,7 +98,7 @@ const Reviews: FC<DetailBodyItemType> = ({ label, type }) => {
                       <span>{review.date}</span>
                     </div>
                   </div>
-                  <div className="rating-flex d-sm-block d-none">
+                  <div className="rating-flex">
                     <div className="like-section">
                       <span>{WasThisHelpful}</span>
                       <a href={Href}>
